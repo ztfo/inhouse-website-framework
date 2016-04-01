@@ -28,16 +28,16 @@ angular.module('inhouseApp')
             autoplayHoverPause: true,
             responsive: {
               0: {
-                item: 1
+                items: 1
               },
               480: {
-                item: 1
+                items: 1
               },
               768: {
-                item: 2
+                items: 2
               },
               1024: {
-                item: 4
+                items: 4
               }
             }
           });
