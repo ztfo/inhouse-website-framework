@@ -181,6 +181,14 @@ p {
   text-align: left;
 }
 
+.navbar-nav>li:nth-child(2) {
+  text-align: left;
+}
+
+.navbar-nav>li:nth-child(4) {
+  text-align: right;
+}
+
 .navbar-nav>li:last-child a {
   text-align: right;
 }
