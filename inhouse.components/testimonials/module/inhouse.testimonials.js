@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.directive('ihTestimonials', function() {
+.directive('ihTestimonials', ['$timeout', function($timeout) {
 	return {
 		templateUrl : 'inhouse.components/testimonials/template/inhouse.testimonials.htm',
 		restrict: 'E',
@@ -31,4 +31,4 @@ angular.module('inhouseApp')
 			});
 		}
 	};
-});
+}]);
