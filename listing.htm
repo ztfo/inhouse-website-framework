@@ -55,7 +55,7 @@
       </div>
       <div class="ih-listing-dets col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
         <h2 class="ih-font-secondary">{{listing.price | currency:"$":0}}</h2>
-        <h4 class="ih-font-secondary">{{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total}} SQFT</h4>
+        <h4 class="ih-font-secondary">{{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT</h4>
       </div>
     </div>
     <div class="ih-sm-divider ih-ext-divider"></div>
@@ -98,7 +98,7 @@
               <th><small class="text-muted">YEAR BUILT</small></th>
               <td><small class="text-muted">{{listing.yearbuilt}}</small></td>
               <th><small class="text-muted">PRICE/SF</small></th>
-              <td><small class="text-muted">{{listing.psf}}</small></td>
+              <td><small class="text-muted">{{listing.psf | currency}}</small></td>
             </tr>
             <tr>
               <th><small class="text-muted">STORIES</small></th>
