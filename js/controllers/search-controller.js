@@ -10,11 +10,10 @@ angular.module('inhouseApp')
 		if(typeof gets.page == 'undefined') {
 			gets.page = 1;
 		}
-		if(typeof gets.active == 'undefined') {
-			gets.active = true;
-		}
 		$scope.filters = gets;
 	};
+	$scope.noWipe = false;
+
 	$scope.moreListings = function() {
 		$scope.filters.page ++;
 		$scope.noWipe = true;
@@ -29,6 +28,7 @@ angular.module('inhouseApp')
 	};
 	$scope.searchMLS = function() {
 		if(Object.keys($scope.filters).length > 0) {
+
 			$scope.listingLoaders = 15;
 			inhouseApi.getData({resource: 'search-mls', params: $scope.filters}).success(function(response) {
 				if(typeof response.response != 'undefined' && response.response.length > 0) {
@@ -40,6 +40,12 @@ angular.module('inhouseApp')
 				}
 
 				$scope.listingLoaders = 0;
+				if(!$scope.noWipe) {
+					$scope.listings = [];
+					$scope.filters.page = 1;
+				}
+
+				$scope.noWipe = false;
 				if(typeof $scope.listings == 'undefined') {
 					$scope.listings = [];
 				}
@@ -62,12 +68,7 @@ angular.module('inhouseApp')
 	}
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
 		$location.search($scope.filters);
-		if(!$scope.noWipe) {
-			$scope.listings = [];
-			$scope.filters.page = 1;
-		}
 
-		$scope.noWipe = false;
 		$scope.searchMLS();
 		$('#listingDisplay').off('click');
 		$('#listingDisplay').click(function() {

@@ -17,6 +17,9 @@ angular.module('inhouseApp')
 			};
 			$scope.searchMLS = function() {
 				
+				if(typeof this.filters != 'undefined') {
+					this.filters.active = true;
+				}
 				//price filter split
 				if(typeof this.filters['price_from'] !== 'undefined') {
 					this.filters.price = this.filters['price_from'] + ',';

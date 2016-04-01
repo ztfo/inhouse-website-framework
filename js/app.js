@@ -6,8 +6,7 @@ angular.module('inhouseApp', ['ngRoute'])
 	})
 	.when('/search-mls', {
 		templateUrl: 'results.htm',
-		controller: 'searchController',
-		reloadOnSearch: false
+		controller: 'searchController'
 	})
 	.when('/listing/:mls', {
 		templateUrl: 'listing.htm',
