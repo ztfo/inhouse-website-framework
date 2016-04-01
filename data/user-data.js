@@ -49,6 +49,11 @@ window.storySettings = {
       "children": [
         {
           "type": "internal",
+          "href": "#/search-mls?active",
+          "display": "Search Homes"
+        },
+        {
+          "type": "internal",
           "href": "#/search-mls?page=1&price=800000,5000000&pool=true&gated=true",
           "display": "Luxury Homes"
 		},
