@@ -1,0 +1,15 @@
+tmp/*
+*.*~
+*.swp
+media/*
+*.swo
+commits.php
+.DS_Store
+*GruntFile.js
+*README.md
+*node_modules/
+*package.json
+vendor
+.env
+*.phar
+.inhouse.assets.changelog.txt

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ng-app="inhouseApp" ng-controller="mainView">
+
+<head>
+  <title>{{agent.teamName}}{{windowTitle}}</title>
+  <link rel="icon" type="image/x-icon" href="ua/logos/favicon.ico" />
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <!-- assets -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="ia/css/uikit.css" rel="stylesheet" />
+  <link href="ia/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+  <link href="ia/css/bootstrap-lightbox.css" rel="stylesheet" type="text/css" />
+  <link href="ia/css/owl.carousel.css" type="text/css" rel="stylesheet" />
+  <link href="ia/css/inhouse.css" rel="stylesheet" type="text/css" />
+  <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
+
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+  <!-- seo and social tags -->
+  <meta name="description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
+
+
+  <script src="data/user-data.js"></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <ih-navbar></ih-navbar>
+
+  <!-- main view -->
+  <div class="ih-view-container">
+    <div ng-view autoscroll="true" class="" id='main-view'></div>
+  </div>
+
+  <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+
+      <h1 class="ih-header text-center">Connect with Us</h1>
+      <div class="ih-md-divider"></div>
+
+      <div class="ih-social large-social text-center">
+        <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+        <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+        <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+        <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+        <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+        <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
+      </div>
+
+      <div class="ih-legal row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <img src="ia/icons/fairhousing.svg" alt="Fair Housing" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+          <img src="ia/icons/realtor.svg" alt="National Association of Realtors | Realtor" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          {{agent.brokerage}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
+          {{agent.contactAddress}} {{agent.contactAddress2}}
+        </div>
+      </div>
+      <div class="ih-sm-divider ih-ext-divider"></div>
+      <div class="row">
+        <div class="ih-copyright col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          &copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}
+        </div>
+        <div class="ih-breadcrumbs col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+          <a href="#/">home</a> / <a href="#/places">places</a> / <a href="#/videos">videos</a>
+          <a class="hidden" href="/sitemap" alt="{{agent.teamName}} sitemap">Sitemap</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ih-footer">
+      <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank">Designed &amp; Powered By InHouse</a></div>
+      <a href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
+    </div>
+  </footer>
+
+
+
+  <!-- inhouse/angular -->
+  <script src="js/app.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/filters.js"></script>
+
+  <!-- controllers -->
+  <script src="js/controllers/landing-controller.js"></script>
+  <script src="js/controllers/listing-controller.js"></script>
+  <script src="js/controllers/search-controller.js"></script>
+  <script src="js/controllers/bio-controller.js"></script>
+  <script src="js/controllers/content-controller.js"></script>
+
+  <!-- components -->
+  <script src="inhouse.components/slider/module/inhouse.slider.js"></script>
+  <script src="inhouse.components/testimonials/module/inhouse.testimonials.js"></script>
+  <script src="inhouse.components/featured-listings/module/inhouse.featured-listings.js"></script>
+  <script src="inhouse.components/navbar/module/inhouse.navbar.js"></script>
+  <script src="inhouse.components/about/module/inhouse.about.js"></script>
+  <script src="inhouse.components/landing-search/module/inhouse.landing-search.js"></script>
+  <script src="inhouse.components/gmaps/module/inhouse.gmaps.js"></script>
+  <script src="inhouse.components/dropdown/module/inhouse.dropdown.js"></script>
+  <script src="inhouse.components/contact/module/inhouse.contact.js"></script>
+  <script src="inhouse.components/bootstrap-slider/module/inhouse.bootstrap-slider.js"></script>
+  <script src="inhouse.components/listing-loader/module/inhouse.listing-loader.js"></script>
+
+  <!-- bootstrap/uikit -->
+  <script src="js/bootstrap-lightbox.min.js"></script>
+  <script src="js/bootstrap-slider.js"></script>
+  <script src="https://cdn.getinhouse.io/resources/uikit/js/uikit.min.js"></script>
+  <script src="https://cdn.getinhouse.io/resources/uikit/js/core/core.min.js"></script>
+  <script src="https://cdn.getinhouse.io/resources/uikit/js/components/lightbox.min.js"></script>
+
+  <!-- -->
+  <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
+  <script src="js/owl.carousel.js"></script>
+</body>
+
+</html>

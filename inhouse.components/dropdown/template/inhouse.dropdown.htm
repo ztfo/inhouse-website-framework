@@ -1,0 +1,9 @@
+<div class="{{classes}}">
+	<button class="btn btn-default dropdown-toggle" type="button" id="{{dropdownId}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		{{name}}
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="{{dropdownId}}">
+		<li ng-repeat="item in menuItems"><a data-value="{{item.value}}" data-name="{{item.name}}">{{item.name}}</a></li>
+	</ul>
+</div>
