@@ -26,6 +26,7 @@ angular.module('inhouseApp')
             margin: 10,
             autoplay: true,
             autoplayHoverPause: true,
+						responsiveClass:true,
             responsive: {
               0: {
                 items: 1
@@ -59,21 +60,21 @@ angular.module('inhouseApp')
               margin: 10,
               autoplay: true,
               autoplayHoverPause: true,
-              responsive: {
-                0: {
-                  item: 1
-                },
-                480: {
-                  item: 1
-                },
-                768: {
-                  item: 2
-                },
-                1024: {
-                  item: 4
-                }
-              }
-            });
+							responsiveClass:true,
+							responsive: {
+								0: {
+									items: 1
+								},
+								480: {
+									items: 1
+								},
+								768: {
+									items: 2
+								},
+								1024: {
+									items: 4
+								}
+						});
           });
         });
       }
