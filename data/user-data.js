@@ -93,7 +93,6 @@ window.agentSettings = {
   bio1: undefined,
   bio2: undefined,
   brokerageLogo: 'ua/logos/retucsonelite-logo.svg',
-  teamName: 'The Meridian Group',
   teamLogo: 'ua/logos/meridian-logo.svg',
   accentLogo: 'ua/dividers/accent-divider.svg',
   content: {
