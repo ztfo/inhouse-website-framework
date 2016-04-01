@@ -742,7 +742,7 @@ footer .ih-ext-divider:after {
 .ih-listview .ih-ft-listing-desc {
   float: right;
   width: 65%;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .ih-listview .ih-ft-listing {
