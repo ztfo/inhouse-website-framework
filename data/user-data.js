@@ -141,7 +141,7 @@ window.agentSettings = {
       name: "Jason Tadeo",
       headshot: "ua/headshots/jason-tadeo-realtor.jpg",
       title: "Co-founder / Managing Partner",
-      bio: "A highly competent and motivated marketing and real estate professional with over 13 years of experience. Possesses the skills necessary to excel in a challenging workplace and complete a multitude of tasks while managing various projects. Strong technical qualifications and demonstrated expertise in the marketing and real estate arena.",
+      bio: "<p>Jason Tadeo launched Meridian Group as a Licensed Real Estate Executive and Founding Managing Partner. For nearly a decade, Jason has been working in the real estate field.</p><p>Whether working with buyers, sellers, or investors, he looks forward to the unique challenges that come with each new transaction. Clients appreciate the enthusiasm, professionalism, confidentiality and attention he brings to every deal. Jason’s ability to oversee a transaction from inception to completion is largely attributed to his attention to detail and extensive knowledge of the Southern Arizona market. Jason’s professional, down-to-earth demeanor is praised by both his clients and his peers within the industry.</p><p>After graduating from the University of Arizona in Visual Communications, his love of design, architecture, marketing, and working with people came together in residential real estate. In his spare time, Jason enjoys traveling overseas, spending time on his family ranch in Sonoita, Arizona, and learning about new cultures.</p>",
       contactEmail: "jason@meridiangroupaz.com"
     }
   },
