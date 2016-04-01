@@ -13,7 +13,7 @@ window.storySettings = {
     favicon: 'ua/images/favicon.ico',
     fairhousingIcon: 'ia/icons/fairhousing.svg',
     realtorIcon: 'ia/icons/realtor.svg',
-    defaultSliderImage: 'http://photowizdesign.com/wp-content/uploads/2016/03/Dazzling-Exterior-Design-of-House-which-is-Completed-with-the-Design-Home-Plan-Home-with-the-Spacious-Green-Lawn-Garden-Design-Idea.jpg'
+    defaultSliderImage: 'ua/backgrounds/meridiangroupaz-mainimage.jpg'
   },
 
   NavBar: [
