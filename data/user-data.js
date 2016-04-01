@@ -66,7 +66,7 @@ window.storySettings = {
 	},
     {
       "type": "internal",
-      "href": "#Videos",
+      "href": "#/videos",
       "display": "Videos"
 		}
 	]
@@ -93,7 +93,6 @@ window.agentSettings = {
   bio1: undefined,
   bio2: undefined,
   brokerageLogo: 'ua/logos/retucsonelite-logo.svg',
-  teamName: 'The Meridian Group',
   teamLogo: 'ua/logos/meridian-logo.svg',
   accentLogo: 'ua/dividers/accent-divider.svg',
   content: {
@@ -129,7 +128,7 @@ window.agentSettings = {
       headshot: "ua/headshots/brooke-pfaff-realtor.jpg",
       title: "Co-founder / Managing Partner",
       bio: "<p>Brooke Pfaff is a founding managing partner of the Meridian Group at Realty Executives Tucson Elite. Brooke brings 15 years of experience as a top performing sales manager, consistently ranking within the top 1% for sales performance. Brooke was elected as a national sales manager and coach implementing best practices across the country to enhance store performance.</p><p>Brooke's dedication to exceeding expectations of her clientele is evidenced in her thoughtful approach to every real estate transaction she manages. Brooke brings a talent for diligently addressing client needs and creating a tailored solution for each opportunity. Her innate ability to listen to and integrate one's needs into a successful buying or selling plan ensures clients a personalized experience through every step of the transaction process and beyond.</p><p>Originally from the Midwest, Brooke holds a Bachelor of Arts degree in psychology from the University of Kansas. Brooke serves as a member on the junior chair for Big Brothers Big Sisters of Tucson. During her free time, Brooke enjoys her passion for Tucson's endless outdoor adventures and spending time in the gorgeous desert terrain.</p>",
-      contactEmail: "brooke@meridiangroup.com"
+      contactEmail: "brooke@meridiangroupaz.com"
     },
     tanner: {
       name: "Tanner Herbert",

@@ -119,8 +119,8 @@ button:focus {
     transform: scale(1) translate(, 50% );
   }
   100% { 
-    -webkit-transform: scale(7) translate(0, 90%); 
-    transform: scale(7) translate(0, 90%);
+    -webkit-transform: scale(5) translate(0, 90%); 
+    transform: scale(5) translate(0, 90%);
   }
 }
 @keyframes kenburns {
@@ -129,8 +129,8 @@ button:focus {
     transform: scale(1) translate(, 50% );
   }
   100% { 
-    -webkit-transform: scale(7) translate(0, 90%); 
-    transform: scale(7) translate(0, 90%);
+    -webkit-transform: scale(5) translate(0, 90%); 
+    transform: scale(5) translate(0, 90%);
   }
 }
 
