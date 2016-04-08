@@ -23,9 +23,24 @@ angular.module('inhouseApp', ['ngRoute'])
 
 //	$locationProvider.html5Mode(true);
 })
-.controller('mainView', function($scope) {
+.controller('mainView', ['inhouseApi', '$scope', function(inhouseApi, $scope) {
 	$scope.agent = window.agentSettings;
-});
+	$scope.submitNewUser = function() {
+		inhouseApi.getData({resource: 'new-lead', name: $scope.newAgent.name, email: $scope.newAgent.email, phone: $scope.newAgent.phone}).success(function(result) {
+			if(typeof Storage !== 'undefined') {
+				if(typeof result.id === 'undefined') {
+					delete localStorage.inhouseAgentUser;
+					$('#accountModal').attr('data-success-register', 'false');
+				} else {
+					localStorage.inhouseAgentUser = result.id;
+					window.inhouseAgentUser = result.id;
+					$('#accountModal').attr('data-success-register', 'true');
+					$('#accountModal').modal('hide');
+				}
+			}
+		});
+	};
+}]);
 
 // back to top 
 

@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.controller('searchController', ['$scope', 'inhouseApi', '$routeParams', '$location', function($scope, inhouseApi, $routeParams, $location) {
+.controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', function($timeout, $scope, inhouseApi, $routeParams, $location) {
 	$scope.getGets = function() {
 		var gets = {};
 		for (var property in $routeParams) {
@@ -53,6 +53,42 @@ angular.module('inhouseApp')
 				for (var i = 0; i < response.response.length; i++) {
 					$scope.listings.push(response.response[i]);
 				}
+
+				$timeout((function(inhouseApi) {
+						return function () {
+						$('.ih-like-btn').click(function() {
+							data = {};
+							data.mls = $(this).attr('data-mls');
+							data.address = $(this).attr('data-address');
+							if(typeof Storage !== 'undefined') {
+								if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+									inhouseApi.getData({resource: 'lead-like-listing', mls: data.mls, address: data.address}).success((function(el) {
+										return function(response) {
+											if(response.code == '200') {
+												el.addClass('ih-liked'); //todo: change this to whatever class marks it as liked!
+											}
+										};
+									})($(this)));
+								} else {
+									//have them register
+									$('#accountModal').modal('show');
+									$('#accountModal').on('hidden.bs.modal', (function(data, el) {
+										return function() {
+											if(typeof Storage !== 'undefined' && typeof localStorage.inhouseAgentUser !== 'undefined') {
+												inhouseApi.getData({resource: 'lead-like-listing', mls: data.mls, address: data.address}).success(function(response) {
+														if(response.code == '200') {
+															el.addClass('ih-liked'); //todo: change this to whatever class marks it as liked!
+														}
+														$('#accountModal').off('hidden.bs.modal');
+												});
+											}
+										};
+									})(data, $(this)));
+								}
+							}
+						});
+					};
+				})(inhouseApi));
 			});
 		}
 	};
