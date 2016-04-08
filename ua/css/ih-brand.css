@@ -995,6 +995,18 @@ footer .ih-ext-divider:after {
 
 /* content end */
 
+/* visitor capture styles */
+
+.modal-header {
+  background-color: rgba(169, 89, 53, 0.9);
+  color: #fff;
+}
+
+.modal-footer {
+  border-bottom: 5px solid #E3C9BD;
+}
+
+/* visitor ends */
 
 /* bootstrap resets */
 

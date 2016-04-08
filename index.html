@@ -107,37 +107,55 @@
   </footer>
 
   
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#accountModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="accountLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <p>
-          Save your favorite listings, searches, and continue to view properties by entering your information below. 
-        </p>
-        <form name="visitorAccount" id="visitorAccount">
-          
-        </form>
-        <p>
-          <small>All your information is kept confidential and is only viewable by a member of {{agent.teamName}}.</small>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <!-- visitor capture modal -->
+  <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title text-center" id="accountLabel">Save your searches and listings</h2>
+        </div>
+        <div class="modal-body">
+          <p class="lead">
+            Save your favorite listings, searches, and continue to view properties by entering your information below.
+          </p>
+          <form name="visitorAccount" id="visitorAccount">
+            <div class="form-group">
+              <label for="messageName">Full Name</label>
+              <input type="name" class="ih-form-input form-control" id="messageName" required>
+            </div>
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" class="ih-form-input form-control" id="emailAddress" required>
+              <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+            </div>
+            <div class="form-group">
+              <label for="accountPassword">Phone Number/Password</label>
+              <input type="password" class="ih-form-input form-control" id="accountPassword" required>
+            </div>
+          </form>
+          <p class="text-center">
+            <small>
+              All your information is kept confidential and is only viewable by a member of {{agent.teamName}}.
+              <a href="#/privacy" class="block">View Privacy Policy</a>
+            </small>
+          </p>
+          <p class="text-center">
+            <!-- should only appear the first time we ask for account info -->
+            <small>
+              <span class="skip-box"><strong><em>Not Ready to make an account?</em></strong>
+                <br>
+                <a href="#" data-dismiss="modal" aria-label="Close">Continue viewing <strong>3</strong> more listings.</a><!-- second attempt listing # should be set by agent -->  
+              </span>
+            </small>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary inline-block">Create Account</button>
+        </div>
       </div>
     </div>
   </div>
-</div>  
 
 
   <!-- inhouse/angular -->
