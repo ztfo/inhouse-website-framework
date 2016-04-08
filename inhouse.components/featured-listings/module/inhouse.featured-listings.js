@@ -24,7 +24,7 @@ angular.module('inhouseApp')
 					items: 4,
 					nav: true,
 					margin: 10,
-					autoplay: true,
+					autoplay: false,
 					autoplayHoverPause: true,
 					responsiveClass: true,
 					responsive: {
