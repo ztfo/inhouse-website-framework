@@ -30,7 +30,9 @@ angular.module('inhouseApp')
 		if(Object.keys($scope.filters).length > 0) {
 
 			$scope.listingLoaders = 15;
-			inhouseApi.getData({resource: 'search-mls', params: $scope.filters}).success(function(response) {
+			var params = $scope.filters;
+
+			inhouseApi.getData({resource: 'search-mls', params: params}).success(function(response) {
 				if(typeof response.response != 'undefined' && response.response.length > 0) {
 					$scope.totalListings = response.response[0].total_results;
 					$scope.displayListings = response.response.length;
@@ -42,7 +44,6 @@ angular.module('inhouseApp')
 				$scope.listingLoaders = 0;
 				if(!$scope.noWipe) {
 					$scope.listings = [];
-					$scope.filters.page = 1;
 				}
 
 				$scope.noWipe = false;
