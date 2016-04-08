@@ -9,6 +9,13 @@ angular.module('inhouseApp')
 		data.userId = userId;
 		data.userHash = userHash;
 		data.callback = 'JSON_CALLBACK';
+
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+			}
+		}
+
 		var url = urlBase + (typeof data.resource !== 'undefined' ? data.resource : '') + '?' + $.param(data);
 			
 		var result = $http.jsonp(url);
