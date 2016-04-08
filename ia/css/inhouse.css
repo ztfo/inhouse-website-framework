@@ -582,6 +582,30 @@ footer {}
 /* content end */
 
 
+/* visitor capture styles */
+
+.modal-content {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2) !important;
+  border-radius: 2px;
+  border: none;
+}
+
+.modal-title {
+  padding: 10px 0;
+}
+
+.modal-body {
+  padding: 40px 45px;
+  padding-bottom: 15px;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+/* visitr ends */
+
+
 /* dividers */
 
 .ih-lg-divider {
