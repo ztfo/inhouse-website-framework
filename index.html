@@ -106,6 +106,38 @@
     </div>
   </footer>
 
+  
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#accountModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="accountLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          Save your favorite listings, searches, and continue to view properties by entering your information below. 
+        </p>
+        <form name="visitorAccount" id="visitorAccount">
+          
+        </form>
+        <p>
+          <small>All your information is kept confidential and is only viewable by a member of {{agent.teamName}}.</small>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>  
 
 
   <!-- inhouse/angular -->
