@@ -201,6 +201,7 @@ button:focus {
 .ih-ft-listing {
   position: relative;
   border: 1px solid #eee;
+  min-height: 430px;
 }
 .ih-ft-listing-img {
   height: 200px;
@@ -434,6 +435,69 @@ footer {}
 }
 /* listing end */
 
+/* list view styles */
+.ih-listview {
+  width: 100% !important;
+}
+.ih-listview .ih-listing-card-img {
+  float: left;
+  height: 275px;
+  width: 35%;
+}
+.ih-listview .ih-listing-card-desc {
+  float: right;
+  width: 65%;
+  padding: 10px 20px;
+}
+.ih-listview .ih-listing-card {
+  min-height: initial;
+}
+.ih-listview .fit-image {
+  height: 275px;
+}
+.ih-listview .ih-ft-listing-link {
+  line-height: 275px;
+}
+.ih-listview .ih-ft-listing-addr {
+  text-align: left;
+}
+.ih-listview h4 {
+  font-size: 25px;
+}
+.ih-listview .lead {
+  font-size: 30px;
+}
+.ih-listview .ih-listing-card-desc>p {
+  min-height: auto;
+}
+.ih-breadcrumb {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  font-size: 13px;
+  margin: 0 5px;
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.ih-breadcrumb:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* map results styles */
+.listing-pane {
+  overflow: auto;
+}
+.ih-map-listing img {
+  height: 100px;
+}
+.ih-map-listing {
+  margin-bottom: 10px;
+}
+
 /* content */
 .ih-content-header {
   min-height: 200px;
@@ -629,12 +693,12 @@ footer {}
   text-transform: uppercase;
   font-size: 12px;
   transition: .3s;
+  z-index: 9999;
 }
 .my-listings:hover {
   text-decoration: none;
   background-color: #3277b2;
   color: #fff;
-  z-index: 9999;
 }
 .my-listings:focus,
 .my-listings:visited,
