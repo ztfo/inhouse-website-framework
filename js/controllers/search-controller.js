@@ -103,7 +103,6 @@ angular.module('inhouseApp')
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
 		if(!$scope.noWipe) {
 			$scope.listings = [];
-			$scope.filters.page = 1;
 		}
 
 		$location.search($scope.filters);
