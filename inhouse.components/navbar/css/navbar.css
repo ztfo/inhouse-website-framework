@@ -1,0 +1,56 @@
+/*
+
+config class is added to .ih-nav
+
+*/
+
+/* logo center navigation*/
+.s1.ih-nav {
+  min-height: 220px;
+}
+.s1.ih-nav>.container {
+  height: 100%;
+}
+.s1.ih-nav .navbar-header {
+  position: relative;
+  width: 100%;
+  float: none !important;
+  text-align: center;
+  padding: 15px 0;
+}
+.s1.ih-nav .navbar-brand {
+  width: 100%;
+  float: none;
+}
+.s1.ih-nav .navbar-brand img {
+  display: initial;
+}
+.s1.ih-nav .navbar-nav {
+  width: 100%;
+  float: none !important;
+  margin: 0;
+}
+.s1.ih-nav .navbar-nav>li {
+  float: none;
+  display: table-cell;
+  width: 1%;
+  text-align: center;
+}
+.s1.ih-nav .navbar-nav>li>a {
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.s1.ih-nav .navbar-nav>li:first-child a {
+  text-align: left;
+}
+.s1.ih-nav .navbar-nav>li:nth-child(2) {
+  text-align: left;
+}
+.s1.ih-nav .navbar-nav>li:nth-child(4) {
+  text-align: right;
+}
+.s1.ih-nav .navbar-nav>li:last-child a {
+  text-align: right;
+}

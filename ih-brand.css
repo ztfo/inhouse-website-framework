@@ -1,0 +1,65 @@
+* {}
+h1 {}
+h2 {}
+h3 {}
+p {}
+input {}
+textarea {}
+
+/* background colors */ 
+.ih-color-01 { background-color: {{@@brand_styles['color_1']}} !important;}
+.ih-color-02 { background-color: {{@@brand_styles['color_2']}} !important;}
+.ih-color-03 { background-color: {{@@brand_styles['color_3']}} !important;}
+.ih-color-04 { background-color: {{@@brand_styles['color_4']}} !important;}
+
+.ih-fill-01 { fill: {{@@brand_styles['color_1']}} !important;}
+.ih-fill-02 { fill: {{@@brand_styles['color_2']}} !important;}
+.ih-fill-03 { fill: {{@@brand_styles['color_3']}} !important;}
+.ih-fill-04 { fill: {{@@brand_styles['color_4']}} !important;}
+
+/* psuedo-element colors */
+.ih-color-01-bkbf::before { background-color: {{@@brand_styles['color_1']}};}
+.ih-color-02-bkbf::before { background-color: {{@@brand_styles['color_2']}};}
+.ih-color-03-bkbf::before { background-color: {{@@brand_styles['color_3']}};}
+.ih-color-04-bkbf::before { background-color: {{@@brand_styles['color_4']}};}
+
+.ih-color-01-bdbf::before { border-color: {{@@brand_styles['color_1']}};}
+.ih-color-02-bdbf::before { border-color: {{@@brand_styles['color_2']}};}
+.ih-color-03-bdbf::before { border-color: {{@@brand_styles['color_3']}};}
+.ih-color-04-bdbf::before { border-color: {{@@brand_styles['color_4']}};}
+
+.ih-color-01-bkaf::after { background-color: {{@@brand_styles['color_1']}};}
+.ih-color-02-bkaf::after { background-color: {{@@brand_styles['color_2']}};}
+.ih-color-03-bkaf::after { background-color: {{@@brand_styles['color_3']}};}
+.ih-color-04-bkaf::after { background-color: {{@@brand_styles['color_4']}};}
+
+.ih-color-01-bdaf::after { border-color: {{@@brand_styles['color_1']}};}
+.ih-color-02-bdaf::after { border-color: {{@@brand_styles['color_2']}};}
+.ih-color-03-bdaf::after { border-color: {{@@brand_styles['color_3']}};}
+.ih-color-04-bdaf::after { border-color: {{@@brand_styles['color_4']}};}
+
+/* font colors */
+.ih-fc-01 { color: {{@@brand_styles['color_1']}} !important;}
+.ih-fc-02 { color: {{@@brand_styles['color_2']}} !important;}
+.ih-fc-03 { color: {{@@brand_styles['color_3']}} !important; }  
+.ih-fc-04 { color: {{@@brand_styles['color_4']}} !important; }  
+
+/* border colors */
+.ih-border-01 { border-color: {{@@brand_styles['color_1']}} !important;}
+.ih-border-02 { border-color: {{@@brand_styles['color_2']}} !important;}
+.ih-border-03 { border-color: {{@@brand_styles['color_3']}} !important;}
+.ih-border-04 { border-color: {{@@brand_styles['color_4']}} !important;}
+
+/* font family */
+.ih-font-primary { font-family: {{@@brand_styles['font_1']}};}
+.ih-font-secondary { font-family: {{@@brand_styles['font_2']}};}
+
+/* button styles */
+.btn-primary {}
+.btn-primary:hover {}
+.btn-default {}
+.btn-default:hover {}
+
+/* Input Styles */
+.ih-input {}
+.ih-search-input {}
