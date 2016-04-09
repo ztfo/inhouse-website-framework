@@ -13,6 +13,10 @@ angular.module('inhouseApp', ['ngRoute'])
 		templateUrl: 'listing.htm',
 		controller: 'listingController'
 	})
+	.when('/my-listings', {
+		templateUrl: 'content.htm',
+		controller: 'myListingsController'
+	})
 	.when('/:content', {
 		templateUrl: 'content.htm',
 		controller: 'contentController'
@@ -26,21 +30,32 @@ angular.module('inhouseApp', ['ngRoute'])
 })
 .controller('mainView', ['inhouseApi', '$scope', function(inhouseApi, $scope) {
 	$scope.agent = window.agentSettings;
-	$scope.submitNewUser = function() {
-		inhouseApi.getData({resource: 'new-lead', name: $scope.newAgent.name, email: $scope.newAgent.email, phone: $scope.newAgent.phone}).success(function(result) {
-			if(typeof Storage !== 'undefined') {
-				if(typeof result.id === 'undefined') {
-					delete localStorage.inhouseAgentUser;
-					$('#accountModal').attr('data-success-register', 'false');
-				} else {
-					localStorage.inhouseAgentUser = result.id;
-					window.inhouseAgentUser = result.id;
-					$('#accountModal').attr('data-success-register', 'true');
-					$('#accountModal').modal('hide');
+	if(typeof Storage !== 'undefined') {
+		if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+			$scope.inhouseAgentUserLoggedIn = true;
+		} else {
+			$scope.inhouseAgentUserLoggedIn = false;
+		}
+	}
+	$scope.submitNewUser = (function($scope) {
+			return function() {
+			inhouseApi.getData({resource: 'new-lead', name: $scope.newAgent.name, email: $scope.newAgent.email, phone: $scope.newAgent.phone}).success(function(result) {
+				if(typeof Storage !== 'undefined') {
+					if(typeof result.id === 'undefined') {
+						$scope.inhouseAgentUserLoggedIn = false;
+						delete localStorage.inhouseAgentUser;
+						$('#accountModal').attr('data-success-register', 'false');
+					} else {
+						$scope.inhouseAgentUserLoggedIn = true;
+						localStorage.inhouseAgentUser = result.id;
+						window.inhouseAgentUser = result.id;
+						$('#accountModal').attr('data-success-register', 'true');
+						$('#accountModal').modal('hide');
+					}
 				}
-			}
-		});
-	};
+			});
+		};
+	})($scope);
 }]);
 
 // back to top 
