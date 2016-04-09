@@ -1,0 +1,84 @@
+/*** *** BRYAN ALVAREZ BRAND *** ***/
+
+* {}
+h1 {}
+h2 {}
+h3 {}
+p {}
+
+
+/* colors */ 
+.ih-color-01 { background-color: #COLOR01 !important;}
+.ih-color-02 { background-color: #COLOR02 !important;}
+.ih-color-03 { background-color: #COLOR03 !important;}
+.ih-color-04 { background-color: #COLOR04 !important;}
+
+/* background colors */ 
+.bkc-01 { background-color: #COLOR01 !important;}
+.bkc-02 { background-color: #COLOR02 !important;}
+.bkc-03 { background-color: #COLOR03 !important;}
+.bkc-04 { background-color:  #COLOR04 !important;}
+
+.fl-01 { fill: #COLOR01 !important;}
+.fl-02 { fill: #COLOR02 !important;}
+.fl-03 { fill: #COLOR03 !important;}
+.fl-04 { fill:  #COLOR04 !important;}
+
+/* psuedo-element colors */
+.bkbf-01::before { background-color: #COLOR01;}
+.bkbf-02::before { background-color: #COLOR02;}
+.bkbf-03::before { background-color: #COLOR03;}
+.bkbf-04::before { background-color:  #COLOR04;}
+
+.bdbf-01::before { border-color: #COLOR01;}
+.bdbf-02::before { border-color: #COLOR02;}
+.bdbf-03::before { border-color: #COLOR03;}
+.bdbf-04::before { border-color:  #COLOR04;}
+
+.bkaf-01::after { background-color: #COLOR01;}
+.bkaf-02::after { background-color: #COLOR02;}
+.bkaf-03::after { background-color: #COLOR03;}
+.bkaf-04::after { background-color:  #COLOR04;}
+
+.bdaf-01::after { border-color: #COLOR01;}
+.bdaf-02::after { border-color: #COLOR02;}
+.bdaf-03::after { border-color: #COLOR03;}
+.bdaf-04::after { border-color:  #COLOR04;}
+
+/* font colors */
+.fc-01 { color: #COLOR01 !important;}
+.fc-02 { color: #COLOR02 !important;}
+.fc-03 { color: #COLOR03 !important; }  
+.fc-04 { color:  #COLOR04 !important; }  
+
+/* border colors */
+.bd-01 { border-color: #COLOR01 !important;}
+.bd-02 { border-color: #COLOR02 !important;}
+.bd-03 { border-color: #COLOR03 !important;}
+.bd-04 { border-color:  #COLOR04 !important;}
+
+/* font family */
+.fp { font-family: PRIMARY-FONT !important; }
+.fs { font-family: SECONDARY-FONT !important; }
+
+/* button styles */
+.btn-primary {}
+.btn-primary:hover {}
+
+.btn-default {}
+.btn-default:hover {}
+
+/* input styles */
+.ih-input {}
+.ih-search-input {}
+
+/* special header styles */
+.ih-header {}
+.ih-subheader {}
+
+/**** **** RESPONSIVE STYLES *** ****/
+@media screen and (max-width: 767px) {}
+@media screen and (min-width: 426px) and (max-width: 768px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 1921px) {}
+
