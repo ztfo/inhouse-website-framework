@@ -615,7 +615,7 @@ footer {}
 /* listing tags end */
 
 /* view my listings */
-.visitor-listings {
+.my-listings {
   position: fixed;
   top: 50px;
   right: 50px;
@@ -630,14 +630,15 @@ footer {}
   font-size: 12px;
   transition: .3s;
 }
-.visitor-listings:hover {
+.my-listings:hover {
   text-decoration: none;
   background-color: #3277b2;
   color: #fff;
+  z-index: 9999;
 }
-.visitor-listings:focus,
-.visitor-listings:visited,
-.visitor-listings:active {
+.my-listings:focus,
+.my-listings:visited,
+.my-listings:active {
   text-decoration: none;
   color: #fff;
 }
