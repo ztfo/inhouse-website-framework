@@ -90,7 +90,8 @@ angular.module('inhouseApp')
 							items: 4,
 							nav: true,
 							margin: 10,
-							autoplay: true,
+							autoplay: false,
+                            loop: true,
 							autoplayHoverPause: true,
 							responsiveClass: true,
 							responsive: {
