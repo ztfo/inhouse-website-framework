@@ -7,9 +7,6 @@ angular.module('inhouseApp')
 				gets[property] = $routeParams[property];
 			}
 		}
-		if(typeof gets.page == 'undefined') {
-			gets.page = 1;
-		}
 		$scope.filters = gets;
 	};
 	$scope.noWipe = false;
@@ -106,7 +103,6 @@ angular.module('inhouseApp')
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
 		if(!$scope.noWipe) {
 			$scope.listings = [];
-			$scope.filters.page = 1;
 		}
 
 		$location.search($scope.filters);
