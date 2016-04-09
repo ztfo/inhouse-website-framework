@@ -438,6 +438,7 @@ footer {}
 /* list view styles */
 .ih-listview {
   width: 100% !important;
+  margin-bottom: 25px;
 }
 .ih-listview .ih-listing-card-img {
   float: left;

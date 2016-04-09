@@ -102,7 +102,7 @@
       </div>
       <div class="ih-listings-menu">
         <div class="row">
-          <div class="col-lg-9 col-md-9 col-sm-12 col-sm-12 ih-font-secondary lead">
+          <div class="col-lg-9 col-md-9 col-sm-12 col-sm-12 fs lead">
             <span><strong>{{totalListings | number}}</strong> Total Listings</span> /
             <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
           </div>
@@ -155,7 +155,7 @@
                     <small ng-if="home.sq_total != ''">{{home.sq_total | number}} SQFT</small>
                   </div>
                   <div class="col-lg-6 text-right">
-                    <small><strong class="lead ih-font-secondary">{{home.price | currency:"$":0}}</strong></small>
+                    <small><strong class="lead fs">{{home.price | currency:"$":0}}</strong></small>
                   </div>
                 </div>
               </div>

@@ -13,47 +13,53 @@ p {}
 .ih-color-03 { background-color: #e3c9BD !important;}
 .ih-color-04 { background-color: #505050 !important;}
 
-.ih-fill-01 { fill: #A95935 !important;}
-.ih-fill-02 { fill: #C69179 !important;}
-.ih-fill-03 { fill: #e3c9BD !important;}
-.ih-fill-04 { fill: #505050 !important;}
+/* background colors */ 
+.bkc-01 { background-color: #A95935 !important;}
+.bkc-02 { background-color: #C69179 !important;}
+.bkc-03 { background-color: #e3c9BD !important;}
+.bkc-04 { background-color:  #505050 !important;}
 
-/* psuedo-element colors  */
-.ih-color-01-bkbf::before { background-color: #A95935;}
-.ih-color-02-bkbf::before { background-color: #C69179;}
-.ih-color-03-bkbf::before { background-color: #e3c9BD;}
-.ih-color-04-bkbf::before { background-color: #505050;}
+.fl-01 { fill: #A95935 !important;}
+.fl-02 { fill: #C69179 !important;}
+.fl-03 { fill: #e3c9BD !important;}
+.fl-04 { fill:  #505050 !important;}
 
-.ih-color-01-bdbf::before { border-color: #A95935;}
-.ih-color-02-bdbf::before { border-color: #C69179;}
-.ih-color-03-bdbf::before { border-color: #e3c9BD;}
-.ih-color-04-bdbf::before { border-color: #505050;}
+/* psuedo-element colors */
+.bkbf-01::before { background-color: #A95935;}
+.bkbf-02::before { background-color: #C69179;}
+.bkbf-03::before { background-color: #e3c9BD;}
+.bkbf-04::before { background-color:  #505050;}
 
-.ih-color-01-bkaf::after { background-color: #A95935;}
-.ih-color-02-bkaf::after { background-color: #C69179;}
-.ih-color-03-bkaf::after { background-color: #e3c9BD;}
-.ih-color-04-bkaf::after { background-color: #505050;}
+.bdbf-01::before { border-color: #A95935;}
+.bdbf-02::before { border-color: #C69179;}
+.bdbf-03::before { border-color: #e3c9BD;}
+.bdbf-04::before { border-color:  #505050;}
 
-.ih-color-01-bdaf::after { border-color: #A95935;}
-.ih-color-02-bdaf::after { border-color: #C69179;}
-.ih-color-03-bdaf::after { border-color: #e3c9BD;}
-.ih-color-04-bdaf::after { border-color: #505050;}
+.bkaf-01::after { background-color: #A95935;}
+.bkaf-02::after { background-color: #C69179;}
+.bkaf-03::after { background-color: #e3c9BD;}
+.bkaf-04::after { background-color:  #505050;}
+
+.bdaf-01::after { border-color: #A95935;}
+.bdaf-02::after { border-color: #C69179;}
+.bdaf-03::after { border-color: #e3c9BD;}
+.bdaf-04::after { border-color:  #505050;}
 
 /* font colors */
-.ih-fc-01 { color: #A95935 !important;}
-.ih-fc-02 { color: #C69179 !important;}
-.ih-fc-03 { color: #e3c9BD !important; }  
-.ih-fc-04 { color: #505050 !important; }  
+.fc-01 { color: #A95935 !important;}
+.fc-02 { color: #C69179 !important;}
+.fc-03 { color: #e3c9BD !important; }  
+.fc-04 { color:  #505050 !important; }  
 
 /* border colors */
-.ih-border-01 { border-color: #A95935 !important;}
-.ih-border-02 { border-color: #C69179 !important;}
-.ih-border-03 { border-color: #e3c9BD !important;}
-.ih-border-04 { border-color: #505050 !important;}
+.bd-01 { border-color: #A95935 !important;}
+.bd-02 { border-color: #C69179 !important;}
+.bd-03 { border-color: #e3c9BD !important;}
+.bd-04 { border-color:  #505050 !important;}
 
 /* font family */
-.ih-font-primary { font-family: 'Lato', sans-serif !important; }
-.ih-font-secondary { font-family: 'PT Serif', serif !important; }
+.fp { font-family: 'Lato', sans-serif !important; }
+.fs { font-family: 'PT Serif', serif !important; }
 
 /* button styles */
 .btn-primary {
@@ -94,7 +100,7 @@ p {}
   margin: 15px 0;
 }
 
-/*** *** website settings *** ***/
+/*** *** MeridianMade Custom Brand *** ***/
 .ih-accent-divider {
   text-align: center;
   margin: 50px 0;
