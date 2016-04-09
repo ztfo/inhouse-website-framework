@@ -526,6 +526,23 @@ footer {}
   padding: 0;
   margin: 0;
 }
+.ih-like-btn:hover,
+.ih-like-btn:active,
+.ih-like-btn:focus,
+.ih-like-btn:visited {
+  text-decoration: none;
+}
+.ih-like-btn .fa-heart,
+.ih-like-btn .fa-star,
+.ih-like-btn .fa-star-o {
+  display: none;
+}
+.ih-liked .fa-heart-o {
+  display: none !important;
+}
+.ih-liked .fa-heart {
+  display: inline !important;
+}
 /* buttons ends */
 
 /* absolute styles */
@@ -598,7 +615,7 @@ footer {}
 /* listing tags end */
 
 /* view my listings */
-.visitor-listings {
+.my-listings {
   position: fixed;
   top: 50px;
   right: 50px;
@@ -613,14 +630,15 @@ footer {}
   font-size: 12px;
   transition: .3s;
 }
-.visitor-listings:hover {
+.my-listings:hover {
   text-decoration: none;
   background-color: #3277b2;
   color: #fff;
+  z-index: 9999;
 }
-.visitor-listings:focus,
-.visitor-listings:visited,
-.visitor-listings:active {
+.my-listings:focus,
+.my-listings:visited,
+.my-listings:active {
   text-decoration: none;
   color: #fff;
 }
