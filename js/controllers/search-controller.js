@@ -7,9 +7,6 @@ angular.module('inhouseApp')
 				gets[property] = $routeParams[property];
 			}
 		}
-		if(typeof gets.page == 'undefined') {
-			gets.page = 1;
-		}
 		$scope.filters = gets;
 	};
 	$scope.noWipe = false;
