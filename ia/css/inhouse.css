@@ -597,6 +597,35 @@ footer {}
 }
 /* listing tags end */
 
+/* view my listings */
+.visitor-listings {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  padding: 10px 15px;
+  width: auto;
+  text-align: center;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: .3s;
+}
+.visitor-listings:hover {
+  text-decoration: none;
+  background-color: #3277b2;
+  color: #fff;
+}
+.visitor-listings:focus,
+.visitor-listings:visited,
+.visitor-listings:active {
+  text-decoration: none;
+  color: #fff;
+}
+/* view ends */
+
 /* scroll up */
 .ih-scroll-up {
     width: 50px;
