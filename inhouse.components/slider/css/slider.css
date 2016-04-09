@@ -1,0 +1,11 @@
+/*
+
+config class is added to .ih-slider-row
+
+*/
+
+/* full-width slider */
+.s1.ih-slider-row>.container {
+  width: 100%;
+  padding: 0;
+}

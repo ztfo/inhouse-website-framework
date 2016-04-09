@@ -1,0 +1,17 @@
+/*
+
+config class is added to .ih-search-inner
+
+*/
+
+/* centered overlay config */
+.s1.ih-search-inner {
+  margin: 0px 15px;
+  margin-top: -110px;
+  background-color: #f5f5f5;
+  border-bottom: 10px solid #fff;
+}
+.s1.ih-search-inner .ih-header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

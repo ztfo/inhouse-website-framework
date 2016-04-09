@@ -1,19 +1,19 @@
-/*** INHOUSE CMS ***/
+/*** INHOUSE v.1.0 ***/
 
-
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
 /* element resets */
-
 button,
 button:active, 
 button:focus {
   outline: 0 !important;
 }
-
 /* elements ends */
 
-
 /* format styles */
-
 .ih { position: relative; }
 .iha { position: absolute; }
 .block { display: block; }
@@ -24,44 +24,33 @@ button:focus {
   width: 100%;
   height: 100%;
 }
-
 /* format end */
 
 /* empty states */
-
 .ih-view-container {
   min-height: calc(100vh - 516px);
 }
-
 /* empty end */
 
 /* navigation */
-
 .ih-nav {
   margin: 0;
 }
-
 .ih-cta {
   padding: 5px 0;
 }
-
 .ih-nav .dropdown-menu {
   width: 100%;
 }
-
-
 /* nav end */
 
-
 /* landing */
-
 .ih-slider {
   position: relative;
   min-height: 750px;
   background-color: #f5f5f5;
   overflow: hidden;
 }
-
 .ih-greeting {
   z-index: 1;
   padding-top: 15em;
@@ -71,28 +60,20 @@ button:focus {
   left: 0;
   bottom: 0;
 }
-
 .ih-slider .item {
   height: 750px;
 }
-
 .ih-narrative {}
 .ih-slider-row {}
 .ih-slider-inner {}
-
-.ih-comm-links {
-  z-index: 10;
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-  left: 0;
+.ih-slider .item>div {
+  background-size: cover;
+  transition: 1s;
 }
-
-.ih-comm-link:hover {
-  color: #fff;
-  text-decoration: none;
+.ih-slider .item.active>div {
+  -webkit-animation: kenburns 250s ease infinite;
+  animation: kenburns 250s ease infinite;
 }
-
 .full-screen-image {
   width: 100%;
   height: 100%;
@@ -102,17 +83,7 @@ button:focus {
   transition: all 1s ease;
 }
 
-
-.ih-slider .item>div {
-  background-size: cover;
-  transition: 1s;
-}
-
-.ih-slider .item.active>div {
-  -webkit-animation: kenburns 250s ease infinite;
-  animation: kenburns 250s ease infinite;
-}
-
+/* ken burns animation */
 @-webkit-keyframes kenburns {
   0% { 
     -webkit-transform: scale(1) translate(, 50% ); 
@@ -134,32 +105,27 @@ button:focus {
   }
 }
 
-
+/* carousel fade */
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
 }
-
 .carousel-fade .carousel-inner .active {
   opacity: 1;
 }
-
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right {
   left: 0;
   opacity: 0;
   z-index: 1;
 }
-
 .carousel-fade .carousel-inner .next.left,
 .carousel-fade .carousel-inner .prev.right {
   opacity: 1;
 }
-
 .carousel-fade .carousel-control {
   z-index: 2;
 }
-
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-fade .carousel-inner > .item.next,
     .carousel-fade .carousel-inner > .item.active.right {
@@ -181,93 +147,66 @@ button:focus {
               transform: translate3d(0, 0, 0);
     }
 }
-
-
 /* landing end */
 
-
 /* search */
-
 .ih-search {
   position: relative;
   padding: 25px 0;
   z-index: 1;
 }
-
 .ih-search-inner {
   position: relative;
   padding: 25px 15px;
-  border: 1px solid #eee;
 }
-
 .ih-main-search {
   position: relative;
   padding: 20px 0;
 }
-
 .ih-search-btns {}
-
 .ih-search-input {
   overflow: hidden;
 }
-
 .ih-search-dropdown {}
-
 .ih-advanced-search {
   margin: 20px 0px;
 }
-
 .ih-advanced-search .ih-input-box {
   margin-bottom: 15px;
 }
-
 .ih-adv-toggle {
   margin-top: 15px;
 }
-
 /* search end */
 
-
 /* about */
-
 .ih-about {
   position: relative;
   min-height: 500px;
 }
-
 .ih-about-inner {}
-
 .ih-about-text {}
-
 .ih-team {
   position: relative;
   margin: 50px 0;
 }
-
 .ih-headshot {}
-
-
 /* about end */
 
-
 /* featured homes */
-
 .ih-featured-slider {
   position: relative;
   padding: 30px 0;
 }
-
 .ih-ft-listing {
   position: relative;
   border: 1px solid #eee;
 }
-
 .ih-ft-listing-img {
   height: 200px;
   position: relative;
   background-size: cover;
 }
-
 .ih-ft-listing-link {
   position: absolute;
   top: 0;
@@ -283,17 +222,14 @@ button:focus {
   line-height: 200px;
   text-shadow: 1px 1px 10px rgba(0,0,0,0.2);
 }
-
 .ih-ft-listing-link:hover {
   background-color: rgba(0,0,0,0.3);
   opacity: 1;
 }
-
 .fit-image {
   height: 200px;
   object-fit: cover;
 }
-
 .ih-owl-thumbnail {
 	height:80px;
 	width:80px;
@@ -301,61 +237,44 @@ button:focus {
 .ih-ft-listing-img>a:first-child {
   min-height: 200px;
 }
-
 .ih-ft-listing-desc {
   position: relative;
   padding: 15px;
 }
-
-
 /* featured ends */
 
-
 /* testimonials */
-
 .ih-testimonials {
   position: relative;
   background-color: #f5f5f5;
   padding: 25px 0;
   margin: 50px 0;
 }
-
 .ih-testimonials-inner {
   position: relative;
   padding: 25px 0;
 }
-
 .ih-testimonial {}
-
-
+.ih-testimonials .read-more {
+  margin: 0;
+}
 /* testimonials end */
 
-
 /* contact */
-
 .ih-contact {}
-
 .ih-contact-form {}
-
 .ih-form-input {}
-
 .ih-textarea {
   min-height: 150px;
 }
-
-
 /* contact end */
 
-
 /* footer */
-
 footer {}
-
 .ih-social {
   position: relative;
   padding: 25px 0;
 }
-
 .ih-footer {
   position: relative;
   text-align: center;
@@ -364,104 +283,85 @@ footer {}
   background-color: #f5f5f5;
   box-shadow: inset 1px 0 5px rgba(0,0,0,0.5);
 }
-
 .ih-footer>div {
   margin-top: -40px;
   margin-bottom: 20px;
 }
-
 .ih-footer>div>a {
   color: #3277b2;
 }
-
 .ih-footer>div>a:hover {
   text-decoration: none;
 }
-
 .ih-legal {
   margin: 15px 0;
 }
-
 /* footer ends */
 
-
 /* results */
-
 .ih-results {
   position: relative;
   padding: 30px 0;
 }
-
 .ih-results-inner {
   min-height: 250px;
 }
-
 .ih-listing-card {
   position: relative;
   border: 1px solid #eee;
+  margin-bottom: 25px;
+  min-height: 570px;
 }
-
 .ih-listing-card-img {
+  position: relative;
   min-height: 200px;
   background-color: #eee;
-  position: relative;
+  background-size: cover;
 }
-
 .ih-listing-card-img>a:first-child {
   min-height: 200px;
 }
-
 .ih-listing-card-desc {
   position: relative;
   padding: 15px;
 }
-
 .ih-listings {
   padding: 30px 0;
 }
-
 .ih-slide {
   margin: 10px 0;
 }
-
 .ih-slide label {
   min-width: 100px;
   text-align: right;
   padding-right: 10px;
 }
-
 .ih-filters {
   padding: 15px;
   margin-bottom: 15px;
   border: 1px solid #eee;
   border-radius: 2px;
 }
-
 .ih-filter-row {
   position: relative;
   margin: 10px 0;
 }
-
 .ih-listings-map {
   height: 750px;
   margin-bottom: 25px;
 }
-
 .ih-listings-map>div {
   height: 100%;
 }
-
 .ih-more-listings {
   clear: both;
 }
-
 .ih-map-results {
   min-height: 400px;
   background-color: #eee;
   border-bottom: 15px solid #fff;
   margin-bottom: 25px;
 }
-
 .no-results {
   padding: 35px 0;
   text-align: center;
@@ -475,61 +375,56 @@ footer {}
   letter-spacing: 1px;
   color: #707070;
 }
-
+.ih-mls-legal {
+  margin: 25px 0;
+}
+.slider.slider-horizontal {
+  width: 70%;
+  margin-left: 25px;
+}
 /* results end */
 
-
 /* listing */
-
 .ih-listing {
   position: relative;
   padding: 25px 0;
 }
-
 .ih-listing-slider {
   position: relative;
   min-height: 350px;
   background-color: #eee;
 }
-
 .ih-listing-slider .item {
 	height:350px;
 }
-
 .ih-listing-map {
   position: relative;
   min-height: 350px;
   padding-right: 0;
 }
-
 .ih-gmap {
   position: relative;
   height: 350px;
   background-color: #eee;
 }
-
 .ih-listing-images {
   margin-top: 10px;
   min-height: 100px;
   background-color: #eee;
 }
-
 .ih-listing-details {
   position: relative;
   min-height: 250px;
 }
-
 .ih-listing-description {
   position: relative;
   padding-right: 25px;
   border-right: 2px solid #eee;
   min-height: 250px;
 }
-
 .ih-listing-contact {
   padding: 35px 0;
 }
-
 .ih-docs .tab-content {
   border: 1px solid #ddd;
   border-top: 0;
@@ -537,113 +432,58 @@ footer {}
   min-height: 281px;
   padding: 10px;
 }
-
-
 /* listing end */
 
-
 /* content */
-
 .ih-content-header {
   min-height: 200px;
   background-color: #f5f5f5;
   border-bottom: 1px solid #e7e7e7;
 }
-
 .ih-content-header>div {
   padding-top: 3em;
 }
-
 .ih-content-header h1 {
   margin: 0;
   padding: 10px 15px;
   background-color: rgba(0, 0, 0, 0.1);
 }
-
 .ih-content-header h3 {
   padding: 10px 15px;
   background-color: rgba(0, 0, 0, 0.1);
   margin-top: 10px;
 }
-
 .ih-content-inner {
   padding-top: 35px;
   padding-bottom: 35px;
   min-height: 500px;
 }
-
 .ih-side-panel {
   position: relative;
   border-left: 1px solid #e7e7e7;
   min-height: 500px;
 }
-
-
 /* content end */
 
-
 /* visitor capture styles */
-
 .modal-content {
   box-shadow: 0 1px 1px rgba(0,0,0,0.2) !important;
   border-radius: 2px;
   border: none;
 }
-
 .modal-title {
   padding: 10px 0;
 }
-
 .modal-body {
   padding: 40px 45px;
   padding-bottom: 15px;
 }
-
 .modal-footer {
   text-align: center;
 }
-
 /* visitr ends */
 
-/* dash */
-
-#adminNav {
-  padding: 0;
-}
-
-.admin-dash {
-  height: calc(100vh);
-  min-height: 950px;
-}
-
-.side-nav {
-  height: 100%;
-  background-color: #2b2b2b;
-}
-
-.dash-nav {
-  border: 0;
-  background-color: #eee;
-  margin-bottom: 5px;
-}
-
-.dash-contents {
-  height: calc(100vh - 50px);
-  position: absolute;
-  top: 50px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0 15px;
-  padding-top: 10px;
-  overflow: auto;
-}
-
-/* dash ends */
-
-
 /* dividers */
-
 .ih-lg-divider {
   height: 5px;
   background-color: #eee;
@@ -651,7 +491,6 @@ footer {}
   width: 50%;
   min-width: 250px;
 }
-
 .ih-md-divider {
   height: 3px;
   background-color: #eee;
@@ -659,7 +498,6 @@ footer {}
   width: 50%;
   min-width: 250px;
 }
-
 .ih-sm-divider {
   height: 1px;
   background-color: #eee;
@@ -667,17 +505,12 @@ footer {}
   width: 50%;
   min-width: 250px;
 }
-
 .ih-ext-divider {
   width: 100%;
 }
-
-
 /* dividers end */
 
-
 /* buttons */
-
 .ih-like-btn {
   position: absolute;
   bottom: 10px;
@@ -693,35 +526,24 @@ footer {}
   padding: 0;
   margin: 0;
 }
-
-
 /* buttons ends */
 
-
 /* absolute styles */
-
 .tp {
   top: 0;
 }
-
 .rt {
   right: 0;
 }
-
 .lt {
   left: 0;
 }
-
 .bm {
   bottom: 0;
 }
-
-
 /* absolute ends */
 
-
 /* 5-col */
-
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
@@ -731,26 +553,22 @@ footer {}
   padding-right: 10px;
   padding-left: 10px;
 }
-
 .col-xs-15 {
   width: 20%;
   float: left;
 }
-
 @media (min-width: 768px) {
   .col-sm-15 {
     width: 20%;
     float: left;
   }
 }
-
 @media (min-width: 992px) {
   .col-md-15 {
     width: 20%;
     float: left;
   }
 }
-
 @media (min-width: 1200px) {
   .col-lg-15 {
     width: 20%;
@@ -759,7 +577,6 @@ footer {}
 }
 
 /* listing tags */
-
 .ih-mls-status-Closed::before {
   content: "SOLD LISTING";
   position: absolute;
@@ -769,8 +586,7 @@ footer {}
   top: 10px;
   background-color: #C69179;
 }
-
-ih-mls-status-Pending::before {
+.ih-mls-status-Pending::before {
   content: "PENDING LISTING";
   position: absolute;
   z-index: 99;
@@ -779,9 +595,9 @@ ih-mls-status-Pending::before {
   top: 10px;
   background-color: #C69179;  
 }
+/* listing tags end */
 
 /* scroll up */
-
 .ih-scroll-up {
     width: 50px;
     height: 50px;
@@ -798,7 +614,6 @@ ih-mls-status-Pending::before {
     line-height: 50px;
     font-size: 15px;
 }
-
 .ih-scroll-up:hover,
 .ih-scroll-up:active,
 .ih-scroll-up:visited,
@@ -808,28 +623,19 @@ ih-mls-status-Pending::before {
 }
 
 /* browser overrides */
-
 ::-webkit-input-placeholder {}
-
 :-moz-placeholder {}
-
 ::-moz-placeholder {}
-
 :-ms-input-placeholder {}
-
-/* Scrollbar */
+/* scrollbar */
 ::-webkit-scrollbar {
     width: 5px;
 }
-
-/* Scrollbar Track */
 ::-webkit-scrollbar-track {
     -webkit-border-radius: 0px;
     border-radius: 0px;
     background-color: #ddd   ;
 }
-
-/* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0px;
     border-radius: 0px;
@@ -839,22 +645,18 @@ ih-mls-status-Pending::before {
     background: #E3C9BD ; 
 }
 
-
 /* bootstrap resets */
-
 .carousel-control {
   background-color: transparent !important;
   background: transparent !important;
 }
-
 .tooltip {
   pointer-events: none;
 }
-
 .lead {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 400;
 }
-
 .navbar-default .navbar-nav>.open>a, 
 .navbar-default .navbar-nav>.open>a:focus, 
 .navbar-default .navbar-nav>.open>a:hover {
@@ -863,11 +665,40 @@ ih-mls-status-Pending::before {
 input[type="radio"] {
 	display:none;
 }
+/* bs resets end*/
 
-#fairhousingIcon * {
-  fill: red;
+
+
+
+/*** DELETE? ***/
+/* dash */
+#adminNav {
+  padding: 0;
 }
-.lightbox-content img {
-	width:100%;
-	height:100%;
+.admin-dash {
+  height: calc(100vh);
+  min-height: 950px;
 }
+.side-nav {
+  height: 100%;
+  background-color: #2b2b2b;
+}
+.dash-nav {
+  border: 0;
+  background-color: #eee;
+  margin-bottom: 5px;
+}
+.dash-contents {
+  height: calc(100vh - 50px);
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+  padding-top: 10px;
+  overflow: auto;
+}
+/* dash ends */
+/****************/
+
