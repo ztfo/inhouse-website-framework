@@ -526,6 +526,23 @@ footer {}
   padding: 0;
   margin: 0;
 }
+.ih-like-btn:hover,
+.ih-like-btn:active,
+.ih-like-btn:focus,
+.ih-like-btn:visited {
+  text-decoration: none;
+}
+.ih-like-btn .fa-heart,
+.ih-like-btn .fa-star,
+.ih-like-btn .fa-star-o {
+  display: none;
+}
+.ih-liked .fa-heart-o {
+  display: none !important;
+}
+.ih-liked .fa-heart {
+  display: inline !important;
+}
 /* buttons ends */
 
 /* absolute styles */
