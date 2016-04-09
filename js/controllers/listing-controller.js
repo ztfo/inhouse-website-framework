@@ -5,6 +5,7 @@ angular.module('inhouseApp')
 	$('#main-view').addClass('load-overlay');
 	inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
 		$scope.listing = response.response.listing[0];
+		$scope.url = window.location.href;
 		$timeout(function() {
 			$scope.$broadcast('listingLoaded', $scope.listing);
 			$('.ih-owl-carousel').owlCarousel({
