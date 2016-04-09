@@ -15,8 +15,8 @@ angular.module('inhouseApp')
 	$scope.noWipe = false;
 
 	$scope.moreListings = function() {
-		$scope.filters.page ++;
 		$scope.noWipe = true;
+		$scope.filters.page ++;
 	};
 	$scope.range = function(min, max, step) {
 		step = step || 1;
@@ -104,8 +104,12 @@ angular.module('inhouseApp')
 
 	}
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
-		$location.search($scope.filters);
+		if(!$scope.noWipe) {
+			$scope.listings = [];
+			$scope.filters.page = 1;
+		}
 
+		$location.search($scope.filters);
 		$scope.searchMLS();
 		$('#listingDisplay').off('click');
 		$('#listingDisplay').click(function() {
