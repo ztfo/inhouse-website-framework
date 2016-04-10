@@ -6,13 +6,6 @@ h2 {}
 h3 {}
 p {}
 
-
-/* colors */ 
-.ih-color-01 { background-color: #COLOR01 !important;}
-.ih-color-02 { background-color: #COLOR02 !important;}
-.ih-color-03 { background-color: #COLOR03 !important;}
-.ih-color-04 { background-color: #COLOR04 !important;}
-
 /* background colors */ 
 .bkc-01 { background-color: #COLOR01 !important;}
 .bkc-02 { background-color: #COLOR02 !important;}
@@ -57,6 +50,10 @@ p {}
 .bd-03 { border-color: #COLOR03 !important;}
 .bd-04 { border-color:  #COLOR04 !important;}
 
+/* gradient accents */
+.bk-gd {}
+.fl-gd {}
+.bd-gd {}
 /* font family */
 .fp { font-family: PRIMARY-FONT !important; }
 .fs { font-family: SECONDARY-FONT !important; }
