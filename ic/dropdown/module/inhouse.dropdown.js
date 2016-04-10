@@ -2,7 +2,7 @@ angular.module('inhouseApp')
 .directive('ihDropdown', ['$routeParams', '$timeout', '$location', function($routeParams, $timeout, $location) {
 	return {
 		restrict: 'E',
-		templateUrl : 'inhouse.components/dropdown/template/inhouse.dropdown.htm',
+		templateUrl : 'ic/dropdown/template/inhouse.dropdown.htm',
 		require: 'ngModel',
 		transclude: true,
 		scope: {

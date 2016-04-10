@@ -1,7 +1,7 @@
 angular.module('inhouseApp')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
-		templateUrl: 'inhouse.components/featured-listings/template/inhouse.featured-listings.htm',
+		templateUrl: 'ic/featured-listings/template/inhouse.featured-listings.htm',
 		restrict: 'E',
 		replace: true,
 		controller: function ($scope) {

@@ -13,6 +13,10 @@ angular.module('inhouseApp', ['ngRoute'])
 		templateUrl: 'pages/listing/s1-listing.htm',
 		controller: 'listingController'
 	})
+	.when('/privacy', {
+		templateUrl: 'pages/privacy/s1-visitor-privacy.htm',
+		controller: 'privacyController'
+	})
 	.when('/:content', {
 		templateUrl: 'pages/content/s1-content.htm',
 		controller: 'contentController'
@@ -20,7 +24,8 @@ angular.module('inhouseApp', ['ngRoute'])
 	.when('/bio/:agent/', {
 		templateUrl: 'pages/bios/s1-bios.htm',
 		controller: 'bioController'
-	});
+	})
+;
 
 //	$locationProvider.html5Mode(true);
 })
