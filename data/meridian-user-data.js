@@ -8,12 +8,12 @@ window.storySettings = {
     buyAHomeText: 'Buy A Home',
     sellAHomeText: 'Sell My Home',
     adviceText: 'Just Need Advice',
-    welcomeText: 'Welcome, How Can I Help?',
+    welcomeText: 'Welcome to The Meridian Group.',
     loaderLogo: 'ua/dividers/accent-divider.svg',
     favicon: 'ua/images/favicon.ico',
     fairhousingIcon: 'ia/icons/fairhousing.svg',
     realtorIcon: 'ia/icons/realtor.svg',
-    defaultSliderImage: 'ua/backgrounds/mainimage.jpg'
+    defaultSliderImage: 'ua/backgrounds/meridiangroupaz-mainimage.jpg'
   },
 
   NavBar: [
@@ -30,7 +30,17 @@ window.storySettings = {
           "type": "internal",
           "href": "#/bio/brooke",
           "display": "Brooke Pfaff"
-		}
+		},
+        {
+          "type": "internal",
+          "href": "#/bio/jason",
+          "display": "Jason Tadeo"
+		},
+        {
+          "type": "internal",
+          "href": "#/bio/tanner",
+          "display": "Tanner Herbert"
+			}
 		]
 	},
     {
@@ -62,7 +72,7 @@ window.storySettings = {
           "type": "internal",
           "href": "#/tucson",
           "display": "About Tucson"
-		},
+		},        
         {
           "type": "internal",
           "href": "#/golf",
@@ -92,23 +102,23 @@ window.storySettings = {
 window.agentSettings = {
   userId: '56bb7ee39af74f5f008b456a',
   userHash: '996c31ea77454f41bd91df802b09d918faa38010',
-  contactEmail: 'bryan@bryanalvarez.com',
-  contactPhone: '5209553295',
+  contactEmail: 'jason@meridiangroupaz.com',
+  contactPhone: '5204094990',
   contactAddress: '6444 E Tanque Verde Rd.',
   contactAddress2: 'Tucson, AZ 85715',
   city: 'Tucson',
-  agentName: 'Bryan Alvarez',
-  agentBrand: 'BHomeTeam',
-  facebook: 'https://www.facebook.com/bryan.alvarez.5621?fref=ts',
+  agentName: 'The Meridian Group',
+  agentBrand: 'MeridianMade',
+  facebook: 'https://www.facebook.com/jasontadeotucson/?fref=ts',
   linkedin: undefined,
   instagram: undefined,
   pinterest: undefined,
   twitter: undefined,
-  teamName: undefined,
+  teamName: "The Meridian Group",
   brokerage: "Realty Executives Tucson Elite",
-  bio1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie elit quis urna aliquet, non condimentum neque sodales. Curabitur viverra quam vitae scelerisque efficitur.",
-  bio2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie elit quis urna aliquet, non condimentum neque sodales. Curabitur viverra quam vitae scelerisque efficitur.",
-  agentTagline: undefined,
+  bio1: "The Meridian Group is a team of premier executives who share a vision for an elevated level of service and are committed to innovation and the evolution of real estate. We celebrate our clients, their ideas and the spirit of collaboration and are dedicated to transparency.",
+  bio2: "The Meridian Group is proud to serve Tucson and Southern Arizona and we look forward to earning your business and your trust.",
+  agentTagline: "Redefining Real Estate",
   brokerageLogo: 'ua/logos/retucsonelite-logo.svg',
   teamLogo: 'ua/logos/meridian-logo.svg',
   accentLogo: 'ua/dividers/accent-divider.svg',
