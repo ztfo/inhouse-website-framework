@@ -8,6 +8,9 @@ angular.module('inhouseApp')
 		}
 	};
 })
+.filter('encode', function() {
+	return window.encodeURIComponent;
+})
 .filter('sentence', function() {
 	return function(str) {
 		if(typeof str !== 'undefined') {
