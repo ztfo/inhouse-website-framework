@@ -5,24 +5,20 @@ angular.module('inhouseApp', ['ngRoute'])
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'results.htm',
+		templateUrl: 'pages/search/s1-results.htm',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'listing.htm',
+		templateUrl: 'pages/listing/s1-listing.htm',
 		controller: 'listingController'
 	})
-	.when('/my-listings', {
-		templateUrl: 'content.htm',
-		controller: 'myListingsController'
-	})
 	.when('/:content', {
-		templateUrl: 'content.htm',
+		templateUrl: 'pages/content/s1-content.htm',
 		controller: 'contentController'
 	})
 	.when('/bio/:agent/', {
-		templateUrl: 'bios.htm',
+		templateUrl: 'pages/bios/s1-bios.htm',
 		controller: 'bioController'
 	});
 
