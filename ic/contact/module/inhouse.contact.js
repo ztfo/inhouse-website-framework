@@ -1,7 +1,7 @@
 angular.module('inhouseApp')
 .directive('ihContact', function() {
 	return {
-		templateUrl : 'inhouse.components/contact/template/inhouse.contact.htm',
+		templateUrl : 'ic/contact/template/inhouse.contact.htm',
 		transclude: true,
 		scope: {
 			contactMessage: "@message",

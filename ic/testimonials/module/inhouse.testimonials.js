@@ -1,7 +1,7 @@
 angular.module('inhouseApp')
 .directive('ihTestimonials', ['$timeout', function($timeout) {
 	return {
-		templateUrl : 'inhouse.components/testimonials/template/inhouse.testimonials.htm',
+		templateUrl : 'ic/testimonials/template/inhouse.testimonials.htm',
 		restrict: 'E',
 		replace: true,
 		scope: {
