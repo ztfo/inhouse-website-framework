@@ -706,6 +706,17 @@ footer .row {
 }
 /* brand end */
 
+/* loader styles */
+
+.s2 .ih-loader-listing hr {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.bkc-01 .s2 .ih-loader-listing {
+  border: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+
 /* browser overrides */
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
