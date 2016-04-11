@@ -10,7 +10,7 @@ angular.module('inhouseApp', ['ngRoute'])
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'pages/listing/s1-listing.htm',
+		templateUrl: 'pages/listing/s2-listing.htm',
 		controller: 'listingController'
 	})
 	.when('/privacy', {

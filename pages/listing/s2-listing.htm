@@ -1,0 +1,151 @@
+<section class="s2 ih-listing">
+  <div class="container-fluid">
+    <div class="col-lg-5 col-md-5 col-sm-6 hidden-xs fullh map-pane">
+      <ih-gmaps class="full"></ih-gmaps>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 fullh listing-pane">
+      <div class="container-fluid">
+        <!-- listing slider -->
+        <div class="ih-listing-slider">
+          <div class="row">
+            <div id="listingSlider" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
+                  <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}"></div>
+                  <div class="carousel-caption">
+                    {{slide.caption}}
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#listingSlider" role="button" data-slide="prev" onClick="event.preventDefault()">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#listingSlider" role="button" data-slide="next" onClick="event.preventDefault()">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- listing slider navigation -->
+      <div class="ih-listing-images">
+        <div class="ih-nav-carousel ih-owl-carousel">
+          <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
+            <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="fit-image ih-owl-thumbnail">
+          </div>
+        </div>
+        <!-- listing slideset navigation here -->
+      </div>
+
+      <!-- listing upper fact box -->
+      <div class="ih-listing-factbar container-fluid">
+        <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h2 class="fs">{{listing.address}}</h2>
+          <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+        </div>
+        <div class="ih-listing-dets col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+          <h2 class="fs">{{listing.price | currency:"$":0}}</h2>
+          <h4 class="fs">{{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT</h4>
+        </div>
+      </div>
+
+      <!-- listing description and details -->
+      <div class="ih-listing-details container-fluid">
+        <div class="ih-listing-description col-lg-5 col-md-5 col-sm-12 col-xs-12">
+          {{listing.PublicRemarks | sentence}}
+        </div>
+        <div class="ih-listing-table col-lg-7 col-md-7 col-sm-12 col-xs-12">
+          <table class="table table-responsive table-stripped table-hover">
+            <thead>
+              <tr>
+                <th colspan="2">Listing Details</th>
+                <td colspan="2" class="text-right">
+                  <div class="share-btns">
+                    <strong><span class="text-muted text-uppercase">Share on: </span></strong>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+                  </div>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><small class="text-muted">MLS</small></th>
+                <td><small class="text-muted">{{listing.mls}}</small></td>
+                <th><small class="text-muted">STATUS</small></th>
+                <td><small class="text-muted">{{listing.status}}</small></td>
+              </tr>
+              <tr>
+                <th><small class="text-muted">TYPE</small></th>
+                <td><small class="text-muted">{{listing.type}}</small></td>
+                <th><small class="text-muted">LOT</small></th>
+                <td><small class="text-muted">{{listing.lotsize}}</small></td>
+              </tr>
+              <tr>
+                <th><small class="text-muted">YEAR BUILT</small></th>
+                <td><small class="text-muted">{{listing.yearbuilt}}</small></td>
+                <th><small class="text-muted">PRICE/SF</small></th>
+                <td><small class="text-muted">{{listing.psf | currency}}</small></td>
+              </tr>
+              <tr>
+                <th><small class="text-muted">STORIES</small></th>
+                <td><small class="text-muted">{{listing.stories}}</small></td>
+                <th><small class="text-muted">POOL</small></th>
+                <td><small class="text-muted">{{listing.pool}}</small></td>
+              </tr>
+              <tr>
+                <th><small class="text-muted">GARAGE</small></th>
+                <td><small class="text-muted">{{listing.garage}}</small></td>
+                <th><small class="text-muted">HOA</small></th>
+                <td><small class="text-muted">{{listing.hoa}}</small></td>
+              </tr>
+              <tr>
+                <th><small class="text-muted">AREA</small></th>
+                <td><small class="text-muted">{{listing.area}}</small></td>
+                <th><small class="text-muted">COMMUNITY</small></th>
+                <td><small class="text-muted">{{listing.community}}</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <div class="ih-listing-contact container-fluid">
+
+      <!-- listing contact form -->
+      <div class="ih-listing-form col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <ih-contact message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
+      </div>
+
+      <!-- listing documents -->
+      <div class="ih-listing-documents col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <h3>Listing Documents</h3>
+        <div class="ih-docs">
+          <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li role="presentation" class="active"><a href="#mlsDocs" aria-controls="mlsDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Listing Documents</a></li>
+            <li role="presentation"><a href="#canvasDocs" aria-controls="canvasDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Agent Attachments</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="mlsDocs">
+              <div ng-repeat="doc in listing.documents">
+                <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="canvasDocs">
+              <div ng-repeat="doc in listing.canvasDocuments">
+                <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+              </div>
+            </div>
+            <!-- pull and show any docs generated on canvas if available by user only -->
+          </div>
+        </div>
+      </div>
+    </div>      
+    </div>
+  </div>
+</section>

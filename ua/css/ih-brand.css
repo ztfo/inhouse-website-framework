@@ -251,7 +251,7 @@ footer .ih-sm-divider.ih-ext-divider {
   left: 0;
   border: 0;
   border-radius: 0;
-  z-index: 9999;
+  z-index: 99;
   padding-top: 15px;
   /*** split ***/
   background-color: rgba(255,255,255,0.1);
@@ -271,6 +271,7 @@ footer .ih-sm-divider.ih-ext-divider {
   background: -webkit-linear-gradient(left,  rgba(205,60,63,1) 0%,rgba(48,53,79,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right,  rgba(205,60,63,1) 0%,rgba(48,53,79,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f',GradientType=1 ); /* IE6-9 */  
+  
 }
 #mainNav>ul>li {
   text-transform: uppercase;
@@ -751,6 +752,110 @@ input[type=checkbox] {
   background: #CD3C3F;
 }
 /* results end */
+
+/*  listing */
+.s2.ih-listing .listing-pane {
+  padding: 0;
+  border-left: 5px solid rgb(204, 60, 63);
+}
+
+.s2 .ih-listing-images {
+  min-height: initial !important;
+  margin-top: 0;
+  border-top: 2px solid #313131;
+}
+
+.s2 .ih-listing-slider .item {
+  height: 420px;
+}
+
+.s2 .ih-owl-thumbnail {
+  height: 60px;
+}
+
+.s2 .owl-carousel .owl-item {
+  margin-right: 0 !important;
+  border-right: 2px solid #171717;
+}
+
+.s2 .owl-controls>.owl-nav>div {
+  position: absolute;
+  background: #171717;
+  top: 0;
+  padding: 0 15px;
+  height: 100%;
+  line-height: 60px;
+}
+
+.owl-nav {}
+
+.owl-prev {
+  left: 0;
+}
+
+.owl-next {
+  right: 0;
+}
+
+.ih-listing-factbar {
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.05);
+}
+
+.s2 .ih-listing h2 {
+  margin: 10px 0;
+}
+
+.s2 .ih-listing-details {
+  padding: 15px 5px;
+}
+
+.table-hover>tbody>tr:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.s2 .ih-listing-table .text-muted {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ih-listing-table .ih-social-icon {
+  color: #fff;
+  border: 2px solid #fff;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 10px;
+  1: initial
+  line-height: inherit;
+  line-height: 20px;
+  transition: .3s;
+}
+
+.ih-listing-table .ih-social-icon:hover {
+  background-color: #fff;
+  color: #171717
+}
+
+.s2.ih-listing .ih-header {
+  text-transform: initial;
+  letter-spacing: initial;
+  font-size: 24px;
+  text-align: left;
+}
+
+.s2.ih-listing .ih-md-divider {
+  width: 100%;
+  margin: 20px 0;
+  margin-bottom: 15px;
+}
+
+.s2 .ih-listing-contact {
+  padding: 15px 5px !important;
+  background-color: rgba(255,255,255,0.05);
+}
+/* listing end */
 
 /* content */
 .ih-content-header {

@@ -449,7 +449,7 @@ footer {}
 
 /*s2*/
 .s2 .listing-pane {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.05);
   padding: 15px 35px;
   padding-bottom: 85px;
 }
@@ -466,7 +466,7 @@ footer {}
   position: fixed;
   top: 0;
   height: calc(100vh);
-  z-index: 999;
+  z-index: 10;
   padding-top: 135px;
   background-color: #1B1B1B;
   padding-bottom: 0;
@@ -530,6 +530,20 @@ footer {}
   border-radius: 4px;
   min-height: 281px;
   padding: 10px;
+}
+
+/* s2 */
+.s2.ih-listing {
+  height: calc(100vh);
+  padding-top: 135px;
+  padding-bottom: 0;
+}
+.s2.ih-listing>.container-fluid {
+  height: 100%;
+  padding: 0;
+}
+.s2 .map-pane {
+  padding: 0;
 }
 /* listing end */
 
@@ -938,12 +952,11 @@ input[type="radio"] {
   z-index: 999;
   text-align: center;
   padding-top: 20%;
-  background: linear-gradient(90deg, #f5f5f5, #fff);
+  background: linear-gradient(90deg, #1b1b1b, #171717);
   background-size: 400% 400%;
   opacity: 1;
   animation: loadOverlay .1s ease infinite;
   animation-iteration-count: 1;
-  border-bottom: 5px solid #a95935;
 }
 .load-overlay::after {
   content: "";
@@ -953,7 +966,7 @@ input[type="radio"] {
   left: 0;
   bottom: 0;
   height: 15px;
-  background: radial-gradient( #a95935, #fff);
+  background: radial-gradient( #CD3C3F, #31354F);
   background-size: 500% 500%;
   z-index: 1000;
   -webkit-animation: loadingBar 5s ease infinite;
