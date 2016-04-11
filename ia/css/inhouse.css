@@ -965,7 +965,7 @@ input[type="radio"] {
   right: 0;
   left: 0;
   bottom: 0;
-  height: 15px;
+  height: 5%;
   background: radial-gradient( #CD3C3F, #31354F);
   background-size: 500% 500%;
   z-index: 1000;
