@@ -97,9 +97,17 @@ p {}
   border-color: #fff;
   color: #2b2b2b;
 }
-
-.btn-default {}
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: transparent;
+  border-color: #fff;
+}
+.btn-default {
+  border: 0;
+  border-radius: 0;
+}
 .btn-default:hover {}
+
 
 /* input styles */
 .ih-search-dropdown button {
@@ -505,6 +513,7 @@ footer .ih-sm-divider.ih-ext-divider {
 .rc-label a:hover {
   text-decoration: none;
 }
+
 /* resources ends */
 
 /* about */
@@ -583,6 +592,73 @@ footer .ih-sm-divider.ih-ext-divider {
 .ih-results {
   padding-top: 150px;
 }
+.s2 .ih-listing-block {
+  padding: 0 7px;
+}
+
+.s2 .ih-listing-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: rgb(205,60,63); /* Old browsers */
+  background: -moz-linear-gradient(left,  rgba(205,60,63,1) 0%, rgba(48,53,79,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  rgba(205,60,63,1) 0%,rgba(48,53,79,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  rgba(205,60,63,1) 0%,rgba(48,53,79,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f',GradientType=1 ); /* IE6-9 */    
+}
+
+.ih-listing-card {
+  border: 0;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.ih-ft-listing-addr {
+  text-align: left;
+}
+
+.s2 .ih-ft-listing-addr h4 {
+  font-size: 16px;
+}
+
+.s2 .ih-listing-card .text-muted {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Open Sans' , sans-serif;
+}
+
+.s2 .ih-ft-listing-details .col-lg-6 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.s2 .ih-listing-card .read-more {
+  display: block;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: -15px;
+}
+.ih-breadcrumb {
+  color: rgba(255,255,255,0.5);
+}
+.ih-breadcrumb:hover {
+  color: #fff;
+  background-color: rgba(255,255,255,0.2);
+}
+
+
+.s2.ih-results .btn-default {
+  margin-right: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+}
 /* results end */
 
 /* content */
@@ -642,7 +718,7 @@ footer .row {
 ::-webkit-scrollbar-track {
     -webkit-border-radius: 0px;
     border-radius: 0px;
-    background-color: #ddd   ;
+    background-color: #171717;
 }
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0px;

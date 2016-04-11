@@ -6,39 +6,39 @@
 
 <ih-landing-search></ih-landing-search>
 
-<!-- needs to be component? -->
+<!-- needs to be component -->
 <div class="ih-resources">
   <div class="container">
-    <div class="col-lg-4">
+    <div class="col-lg-4"> <!-- this should be a repeat only 3 times with a choice of content pages to build this shortcuts? -->
       <a href="#" class="rc-link">
-        <img src="" alt="" />
+        <img ng-src="{{content.thumb}}" alt="{{content.title}}" />
       </a>
       <div class="rc-label">
-        <h4><a href="#/tucson"><i class="fa fa-caret-right"></i> About Tucson</a></h4>
+        <h4><a href=""><i class="fa fa-caret-right"></i> {{content.title}}</a></h4>
         <p>
-          Lorem Ipsum...
+          {{content.sub}}
         </p>
       </div>
     </div>
     <div class="col-lg-4">
       <a href="#" class="rc-link">
-        <img src="" alt="" />
+        <img ng-src="{{content.thumb}}" alt="{{content.title}}" />
       </a>
       <div class="rc-label">
-        <h4><a href="#/market"><i class="fa fa-caret-right"></i> Market Reports</a></h4>
+        <h4><a href=""><i class="fa fa-caret-right"></i> {{content.title}}</a></h4>
         <p>
-          Lorem Ipsum...
+          {{content.sub}}
         </p>
       </div>
     </div>
     <div class="col-lg-4">
       <a href="#" class="rc-link">
-        <img src="" alt="" />
+        <img ng-src="{{content.thumb}}" alt="{{content.title}}" />
       </a>
       <div class="rc-label">
-        <h4><a href="#/mortgage"><i class="fa fa-caret-right"></i> Mortgage Info</a></h4>
+        <h4><a href=""><i class="fa fa-caret-right"></i> {{content.title}}</a></h4>
         <p>
-          Lorem Ipsum...
+          {{content.sub}}
         </p>
       </div>
     </div>
