@@ -505,6 +505,17 @@ footer .ih-sm-divider.ih-ext-divider {
 }
 /* results end */
 
+/* content */
+.ih-content-header {
+  min-height: 355px;
+  padding-top: 140px;
+  background-image: url('../backgrounds/contentimage.jpg');
+  border-color: #CC3C3F;
+}
+.ih-side-panel {
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+/* content end */
 
 /* footer */
 footer {

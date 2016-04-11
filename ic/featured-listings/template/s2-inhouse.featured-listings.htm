@@ -1,65 +1,38 @@
 <section class="ih-featured-slider">
   <!-- featured listing -->
-    <h1 class="ih-header text-center">Featured Homes</h1>
-    <div class="ih-md-divider"></div>
+  <h1 class="ih-header text-center">Featured Homes</h1>
+  <div class="ih-md-divider"></div>
 
-
-    <div class="ih-grid-carousel">
-      <div id="gridCarousel" class="carousel slide listing-grid-carousel" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#gridCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#gridCarousel" data-slide-to="1"></li>
-          <li data-target="#gridCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-          </div>
-          <div class="item">
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
-            <div class="ih-ft-listing col-lg-15"></div>
+  <div class="ih-grid-carousel">
+    <div id="gridCarousel" class="carousel slide listing-grid-carousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <!-- todo remove -->
+          <div class="ih-ft-carousel hidden"></div>
+          <div class="ih-ft-listing col-lg-15" ng-repeat="home in homes" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')">
+            <a href="#/listing/{{home.mls}}" class="ih">
+              <span>
+                  {{home.address}}<br>
+                  <small>{{home.price | currency:"$";0}} | {{home.bed}} BEDS - {{home.baths}} BATHS</small>                
+                </span>
+            </a>
+            <a href="#" class="ih-like-btn" data-mls="{{home.mls}}" data-address="{{home.address}}" onClick="event.preventDefault()">
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star"></i>
+            </a>
           </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#gridCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#gridCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#gridCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#gridCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+  </div>
 </section>

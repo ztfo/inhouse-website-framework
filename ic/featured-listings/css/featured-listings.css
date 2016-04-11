@@ -1,0 +1,104 @@
+/* s1 */
+
+.ih-featured-slider {
+  position: relative;
+  padding: 30px 0;
+}
+
+.ih-ft-listing {
+  position: relative;
+  border: 1px solid #eee;
+  min-height: 430px;
+}
+
+.ih-ft-listing-img {
+  height: 200px;
+  position: relative;
+  background-size: cover;
+}
+
+.ih-ft-listing-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .3s;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 20px !important;
+  line-height: 200px;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ih-ft-listing-link:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+.fit-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.ih-owl-thumbnail {
+  height: 80px;
+  width: 80px;
+}
+
+.ih-ft-listing-img>a:first-child {
+  min-height: 200px;
+}
+
+.ih-ft-listing-desc {
+  position: relative;
+  padding: 15px;
+}
+
+
+/* s2 */
+
+.ih-grid-carousel {
+  padding: 25px 0;
+}
+
+.ih-grid-carousel .ih-ft-listing {
+  min-height: 220px;
+  border: 1px solid #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.ih-grid-carousel a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ih-grid-carousel .ih-ft-listing a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: right;
+  font-size: 1.3em;
+  padding: 20px;
+  opacity: 0;
+  transition: .3s;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ih-grid-carousel .ih-ft-listing small {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.ih-grid-carousel .ih-ft-listing a:hover {
+  opacity: 1;
+  text-decoration: none;
+}

@@ -5,7 +5,7 @@ angular.module('inhouseApp', ['ngRoute'])
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'pages/search/s1-results.htm',
+		templateUrl: 'pages/results/s2-results.htm',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})

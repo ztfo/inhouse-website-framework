@@ -1,11 +1,29 @@
-/*
+/* s2 */
 
-config class is added to .ih-slider-row
-
-*/
-
-/* full-width slider */
-.s1.ih-slider-row>.container {
+.s2.ih-slider-row>.container {
   width: 100%;
   padding: 0;
+}
+
+.s2.ih-slider-row {
+  position: relative;
+  height: calc(100vh);
+}
+
+.s2.ih-slider-row .container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.s2.ih-slider-inner {
+  height: 100%;
+}
+
+.s2.ih-slider .item {
+  height: 100%;
+}
+
+.s2.ih-slider-inner .carousel-inner {
+  height: 100%;
 }

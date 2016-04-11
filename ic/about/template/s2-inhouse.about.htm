@@ -1,0 +1,26 @@
+<!-- about -->
+<section class="ih-about">
+  <div class="container">
+
+    <div class="ih-about-inner row">
+      <div class="col-lg-4">
+        <a href="#/bio/{{ agent.team[0].name | split: ' ':0 | lowercase }}" class="text-center">
+          <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square img-responsive">
+        </a>
+      </div>
+      <div class="ih-about-text col-lg-8">
+        <h3>{{agent.agentName}}</h3>
+        <p>
+          <strong class="text-uppercase">{{agent.agentTagline}}</strong>
+        </p>
+        <p>
+          {{agent.bio1}}
+        </p>
+        <p>
+          {{agent.bio2}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
