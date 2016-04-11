@@ -146,13 +146,13 @@ window.agentSettings = {
     }
   },
   bio: {
-    brooke: {
+    bryan: {
       name: "Bryan Alvarez",
       headshot: "ua/headshots/bryan-alvarez-realtor.jpg",
       title: "Realtor",
       bio: undefined,
       contactEmail: "bryan@bryanalvarez.com"
-    },
+    }
   },
   team: [
     {

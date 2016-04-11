@@ -11,6 +11,8 @@ button:active,
 button:focus {
   outline: 0 !important;
 }
+input:active,
+input:focus { outline: none !important; }
 /* elements ends */
 
 /* format styles */
@@ -250,9 +252,54 @@ button:focus {
 .ih-grid-carousel .ih-ft-listing {
   min-height: 220px;
   border: 1px solid #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+.ih-grid-carousel a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
+.ih-grid-carousel .ih-ft-listing a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: right;
+  font-size: 1.3em;
+  padding: 20px;
+  opacity: 0;
+  transition: .3s;
+  color: #fff;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.ih-grid-carousel .ih-ft-listing small {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.ih-grid-carousel .ih-ft-listing a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
 /* featured ends */
+
+/* resources */
+.ih-resources {
+  min-height: 500px;
+  padding: 100px 0;
+}
+.rc-link {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  margin-bottom: 25px;
+}
+/* resouces ends */
 
 /* testimonials */
 .ih-testimonials {
@@ -742,29 +789,6 @@ footer {}
 .ih-scroll-up:focus {
   color: #fff;
   background-color: rgba(0,0,0,0.3);
-}
-
-/* browser overrides */
-::-webkit-input-placeholder {}
-:-moz-placeholder {}
-::-moz-placeholder {}
-:-ms-input-placeholder {}
-/* scrollbar */
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-track {
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    background-color: #ddd   ;
-}
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    background: #A95935 ; 
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background: #E3C9BD ; 
 }
 
 /* bootstrap resets */
