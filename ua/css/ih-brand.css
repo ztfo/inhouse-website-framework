@@ -77,7 +77,7 @@ p {}
 
 /* font family */
 .fp { font-family: 'Raleway' , sans-serif !important; }
-.fs { font-family: 'Raleway' , sans-serif !important; }
+.fs { font-family: 'Open Sans' , sans-serif !important; }
 
 /* button styles */
 .btn-primary {
@@ -377,6 +377,48 @@ footer .ih-sm-divider.ih-ext-divider {
   color: #fff;
   opacity: 1;
 }
+.ih-grid-carousel .ih-ft-listing {
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.ih-grid-carousel .ih-like-btn {
+  bottom: 10px !important;
+  right: 10px !important;
+  font-size: 20px !important;
+  width: 35px !important;
+  height: 35px !important;
+  top: initial !important;
+  left: initial !important;
+  opacity: 1 !important;
+  z-index: 99999 !important;
+  background-color: rgba(0,0,0,0.75) !important;
+  border-radius: 0 !important;
+  color: #F1C63E !important;
+  padding: 0 !important;
+  text-align: center !important;
+  line-height: 35px;
+}
+.ih-like-btn .fa-heart, 
+.ih-like-btn .fa-heart-o, 
+.ih-like-btn .fa-star {
+  display: none;
+}
+.ih-like-btn .fa-star-o {
+  display: inline;
+}
+
+.ih-like-btn.ih-liked .fa-star {
+  display: inline !important;
+}
+.ih-like-btn.ih-liked .fa-star-o {
+  display: none !important;
+}
+.ih-ft-listing strong {
+  display: block;
+  font-size: 25px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
 /* featured listings ends */
 
 /* search */
@@ -395,6 +437,7 @@ footer .ih-sm-divider.ih-ext-divider {
   max-height: 250px;
   overflow: auto;
   border: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
 }
 .ih-search-btns .btn-primary {
   width: auto;
@@ -456,15 +499,52 @@ footer .ih-sm-divider.ih-ext-divider {
 .rc-label p {
   margin: 20px 0;
 }
+.rc-label a {
+  color: #fff;
+}
+.rc-label a:hover {
+  text-decoration: none;
+}
 /* resources ends */
 
 /* about */
 .ih-about {
   margin-top: 130px;
   min-height: 300px;
+  padding-bottom: 70px;
 }
 .ih-about .img-square {
   border: 10px solid rgba(0,0,0,0.2);
+}
+.ih-about h2 {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+.about-social {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  font-size: 15px;
+}
+
+.about-social a {
+  color: #fff; 
+  border: 2px solid #fff;
+  border-radius: 99px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
+  line-height: 22px;
+  font-size: 10px;
+  transition: .3s;
+}
+
+.about-social a:hover {
+  background-color: #fff;
+  color: #171717;
 }
 /* about end */
 

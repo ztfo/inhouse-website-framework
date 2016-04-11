@@ -12,8 +12,8 @@
           <div class="ih-ft-listing col-lg-15" ng-repeat="home in homes" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')">
             <a href="#/listing/{{home.mls}}" class="ih">
               <span>
-                  {{home.address}}<br>
-                  <small>{{home.price | currency:"$";0}} | {{home.bed}} BEDS - {{home.baths}} BATHS</small>                
+                  <strong>{{home.address}}<br></strong>
+                  <small class="fs">{{home.price | currency}} | {{home.beds}} BEDS - {{home.baths}} BATHS</small>                
                 </span>
             </a>
             <a href="#" class="ih-like-btn" data-mls="{{home.mls}}" data-address="{{home.address}}" onClick="event.preventDefault()">

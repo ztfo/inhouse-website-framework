@@ -274,7 +274,7 @@ input:focus { outline: none !important; }
   opacity: 0;
   transition: .3s;
   color: #fff;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.5);
 }
 
 .ih-grid-carousel .ih-ft-listing small {

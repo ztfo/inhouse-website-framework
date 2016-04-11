@@ -24,16 +24,10 @@ window.storySettings = {
       "display": "Home"
 	},
     {
-      "type": "menu",
-      "display": "People",
-      "children": [
-        {
-          "type": "internal",
-          "href": "#/bio/brooke",
-          "display": "Brooke Pfaff"
-		}
-		]
-	},
+      "type": "internal",
+      "href": "#/about",
+      "display": "About"
+		},
     {
       "type": "menu",
       "display": "Properties",
@@ -105,9 +99,9 @@ window.agentSettings = {
   instagram: undefined,
   pinterest: undefined,
   twitter: undefined,
-  teamName: undefined,
+  teamName: 'BHomeTeam',
   brokerage: "Realty Executives Tucson Elite",
-  bio1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie elit quis urna aliquet, non condimentum neque sodales. Curabitur viverra quam vitae scelerisque efficitur.",
+  bio1: "<p>Arizona native, born and raised in Tucson, Bryan grew up around a family with a Real Estate background.His Father retired with more than 30 years in the Real Estate business, and his Mother and 2 older sisters also hold Real Estate licenses in Arizona.</p><p>Bryan first became licensed at the age of 18, his knowledge is in all aspects of the Real Estate business, including but not limited to; selling, listing , and working with all types of buyers to help them find their dream home, or that perfect investment property. Bryan is an intergral part of a diverse team, and contributes a wealth of knowledge with his history in Tucson , and Pima County. Bryan is a fulltime agent , and is dedicated to his profession. His is always willing and ready to take a call when it comes to Real Estate!</p><p>Bryan is a supporter of the Univeristy of Arizona , and loves to attend football games. He also enjoys hiking , and taking time to polish his golf game at any one of the amazing gold courses Tucson has to offer. Bryan is also an active member of the Young Professionals Network in Tucson , and enjoys learing and contributing to the promotion of growth of young professionals in Tucson.</p>",
   bio2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie elit quis urna aliquet, non condimentum neque sodales. Curabitur viverra quam vitae scelerisque efficitur.",
   agentTagline: undefined,
   brokerageLogo: 'ua/logos/retucsonelite-logo.svg',
