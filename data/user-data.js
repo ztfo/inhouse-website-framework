@@ -9,6 +9,7 @@ window.storySettings = {
     sellAHomeText: 'Sell My Home',
     adviceText: 'Just Need Advice',
     welcomeText: 'Welcome, How Can I Help?',
+    greetingText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut augue diam. Phasellus finibus, tortor non pulvinar imperdiet, purus lectus commodo ipsum, id luctus augue eros ac ex. Mauris ornare non velit sit amet sollicitudin. Suspendisse in nunc nulla.',
     loaderLogo: 'ua/dividers/accent-divider.svg',
     favicon: 'ua/images/favicon.ico',
     fairhousingIcon: 'ia/icons/fairhousing.svg',
@@ -82,8 +83,8 @@ window.storySettings = {
 	},
     {
       "type": "internal",
-      "href": "#/videos",
-      "display": "Videos"
+      "href": "#/contact",
+      "display": "Get In Touch"
 		}
 	]
 };
@@ -110,7 +111,7 @@ window.agentSettings = {
   bio2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla molestie elit quis urna aliquet, non condimentum neque sodales. Curabitur viverra quam vitae scelerisque efficitur.",
   agentTagline: undefined,
   brokerageLogo: 'ua/logos/retucsonelite-logo.svg',
-  teamLogo: 'ua/logos/balvarez-logo.svg',
+  teamLogo: 'ua/logos/bryanalvarez-logo.svg',
   accentLogo: 'ua/dividers/accent-divider.svg',
   content: {
     sellers: {
