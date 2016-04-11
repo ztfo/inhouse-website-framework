@@ -2,7 +2,73 @@
   <div class="container-fluid full">
     <div class="ih-filters row">
       <div class="container">
-        <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
+        <div class="row">
+          <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <a class="btn btn-default ih-adv-toggle bkc-03" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
+              <i class="fa fa-filter"></i> More Filters
+            </a>
+          </div>
+        </div>
+        <div id="searchFilters" class="ih-advanced-filters collapse container-fluid">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="ih-slide">
+              <label for="#priceFilter">Price Range</label>
+              <bootstrap-slider name="priceFilter" ng-model="filters.price" type="text" data-slider-min="100000" data-slider-max="5000000" data-slider-step="10000" data-slider-value="[100000,5000000]" data-filter="price"></bootstrap-slider>
+            </div>
+            <div class="ih-slide">
+              <label for="#bedsFilter">Bedrooms</label>
+              <bootstrap-slider name="bedsFilter" ng-model="filters.bedsRange" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="[1,10]" data-filter="bedsRange"></bootstrap-slider>
+            </div>
+            <div class="ih-slide">
+              <label for="#bathsFilter">Baths</label>
+              <bootstrap-slider id="bathsFilter" name="bathsFilter" ng-model="filters.bathsRange" type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="[1,15]" data-filter="bathsRange"></bootstrap-slider>
+            </div>
+            <div class="ih-slide">
+              <label for="#sqft">Sqft</label>
+              <bootstrap-slider name="sqft" ng-model="filters.sqft" type="text" data-slider-min="1" data-slider-max="20000" data-slider-step="1000" data-slider-value="[1,20000]" data-filter="sqft"></bootstrap-slider>
+            </div>
+            <div class="ih-slide">
+              <label for="#lotsizeRange">Lot Size</label>
+              <bootstrap-slider name="lotsizeRange" ng-model="filters.lotsizeRange" type="text" data-slider-min="1" data-slider-max="1000" data-slider-step="10" data-slider-value="[1,1000]" data-filter="lotsizeRange"></bootstrap-slider>
+            </div>
+            <div class="ih-slide">
+              <label for="#yearRange">Year Built</label>
+              <bootstrap-slider id="yearRange" name="yearRange" ng-model="filters.yearRange" type="text" data-slider-min="1900" data-slider-max="2017" data-slider-step="1" data-slider-value="[1900,2017]" data-filter="yearRange"></bootstrap-slider>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="ih-filter-row row">
+              <div class="ih-filter-box col-lg-6">
+                <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]' id="type" name="Type" ng-model="filters.type"></ih-dropdown>
+              </div>
+              <div class="ih-filter-box col-lg-6">
+                <ih-dropdown items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]' id="pool" name="Pool" ng-model="filters.pool"></ih-dropdown>
+              </div>
+              <div class="ih-filter-box col-lg-6">
+                <ih-dropdown items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]' id="numGarage" name="Garage Size" ng-model="filters.numGarage"></ih-dropdown>
+              </div>
+              <div class="ih-filter-box col-lg-6">
+                <ih-dropdown items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]' id="stories" name="Stories" ng-model="filters.stories"></ih-dropdown>
+              </div>              
+            </div>
+            <div class="ih-filter-row col-lg-12">
+              <div class="btn-group">
+                <label class="btn btn-default {{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}">
+                  <input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
+                </label>
+                <label class="btn btn-default {{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}">
+                  <input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
+                </label>
+                <label class="btn btn-default {{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}">
+                  <input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-6 hidden-xs fullh map-pane">
@@ -33,7 +99,7 @@
             <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
             <hr> Sorry, there are no listings that match your search criteria.
           </div>
-          <div class="ih-listing-block col-lg-3 col-md-4 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings">
+          <div class="ih-listing-block col-lg-4 col-md-4 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings">
             <div class="ih-listing-card">
               <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
@@ -69,7 +135,7 @@
               </div>
             </div>
           </div>
-          <div class="ih-listing-block col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="n in range(0,listingLoaders)">
+          <div class="ih-listing-block col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="n in range(0,listingLoaders)">
             <ih-listing-loader></ih-listing-loader>
           </div>
         </div>

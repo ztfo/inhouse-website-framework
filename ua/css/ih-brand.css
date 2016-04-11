@@ -388,7 +388,7 @@ footer .ih-sm-divider.ih-ext-divider {
 .ih-grid-carousel .ih-ft-listing {
   border: 1px solid rgba(255,255,255,0.5);
 }
-.ih-grid-carousel .ih-like-btn {
+.ih-like-btn {
   bottom: 10px !important;
   right: 10px !important;
   font-size: 20px !important;
@@ -408,7 +408,7 @@ footer .ih-sm-divider.ih-ext-divider {
 .ih-like-btn .fa-heart, 
 .ih-like-btn .fa-heart-o, 
 .ih-like-btn .fa-star {
-  display: none;
+  display: none !important;
 }
 .ih-like-btn .fa-star-o {
   display: inline;
@@ -592,10 +592,18 @@ footer .ih-sm-divider.ih-ext-divider {
 .ih-results {
   padding-top: 150px;
 }
+.ih-listing-card {
+  border: 0;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.ih-ft-listing-addr {
+  text-align: left;
+}
 .s2 .ih-listing-block {
   padding: 0 7px;
 }
-
 .s2 .ih-listing-card::before {
   content: "";
   position: absolute;
@@ -607,33 +615,24 @@ footer .ih-sm-divider.ih-ext-divider {
   background: -webkit-linear-gradient(left,  rgba(205,60,63,1) 0%,rgba(48,53,79,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right,  rgba(205,60,63,1) 0%,rgba(48,53,79,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f',GradientType=1 ); /* IE6-9 */    
+  z-index: 10;
 }
-
-.ih-listing-card {
-  border: 0;
-  background-color: rgba(0,0,0,0.2);
-  position: relative;
+.s2 .ih-listing-block p {
+  display: none;
 }
-
-.ih-ft-listing-addr {
-  text-align: left;
+.s2 .ih-listing-block hr {
+  display: none;
 }
-
+.s2 .ih-listing-card {
+  min-height: 395px;
+}
 .s2 .ih-ft-listing-addr h4 {
   font-size: 16px;
 }
-
 .s2 .ih-listing-card .text-muted {
   color: rgba(255, 255, 255, 0.7);
   font-family: 'Open Sans' , sans-serif;
 }
-
-.s2 .ih-ft-listing-details .col-lg-6 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
 .s2 .ih-listing-card .read-more {
   display: block;
   text-align: right;
@@ -643,21 +642,113 @@ footer .ih-sm-divider.ih-ext-divider {
   margin-top: 5px;
   margin-bottom: -15px;
 }
+.s2 .ih-listing-card-img {
+  min-height: 250px;
+}
+.s2 .ih-ft-listing-link {
+  line-height: 250px;
+}
 .ih-breadcrumb {
-  color: rgba(255,255,255,0.5);
+  padding: 6px 10px; 
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: initial;
+  background-color: rgba(255,255,255,0.05);
 }
 .ih-breadcrumb:hover {
   color: #fff;
   background-color: rgba(255,255,255,0.2);
 }
-
-
 .s2.ih-results .btn-default {
   margin-right: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
   background: rgba(0,0,0,0.2);
   color: #fff;
+}
+.s2 .ih-listview .ih-listing-card {
+  min-height: 220px;
+  margin-bottom: 0;
+}
+
+.s2 .ih-listview .ih-listing-card-img {
+  width: 33% !important;
+  height: 220px !important;
+  min-height: initial;
+  background-position: 50%;
+  z-index: 0;
+}
+
+.s2 .ih-listview .ih-listing-card-desc {
+  width: 67%;
+}
+
+.s2 .ih-listview h4 {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.s2 .ih-listview h6 {
+  font-size: 15px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.s2 .ih-listview .ih-ft-listing-details {
+  padding: 20px 0;
+}
+
+.s2 .ih-listview small {
+  font-size: 16px;
+  font-family: 'Open Sans' , sans-serif;
+}
+.ih-listview .ih-like-btn {
+  bottom: initial !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: initial !important;
+}
+.ih-filter-row .btn.active {
+  background-color: rgb(205, 60, 63);
+  color: #3D3D3D;
+  box-shadow: none;
+}
+
+.ih-filter-box {
+  margin-bottom: 10px;
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.ih-filter-row .btn-group .btn {
+  width: 33.333333%;
+  padding: 5px 0;
+  border: 2px solid rgba(255,255,255,0.2);
+  margin: 0;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  }
+
+input[type=checkbox] {
+  display: none;
+}
+
+.slider-track {
+  background-color: rgba(0,0,0,0.5) !important;
+  background: rgba(0,0,0,0.5) !important;
+  background-image: initial;
+}
+
+.slider-selection {
+  background-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.5);
+}
+
+.slider-handle {
+  background: #CD3C3F;
 }
 /* results end */
 
@@ -707,8 +798,11 @@ footer .row {
 /* brand end */
 
 /* loader styles */
-
+.ih-loader-listing {
+  min-height: initial;
+}
 .s2 .ih-loader-listing hr {
+  display: block;
   border-color: rgba(255,255,255,0.1);
 }
 

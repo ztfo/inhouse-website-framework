@@ -451,6 +451,7 @@ footer {}
 .s2 .listing-pane {
   background-color: rgba(255,255,255,0.1);
   padding: 15px 35px;
+  padding-bottom: 85px;
 }
 .s2.ih-results>.container-fluid {
   padding: 0;
@@ -459,7 +460,7 @@ footer {}
   margin: 0;
   border: 0;
   background-color: rgba(255,255,255,0.15);
-  padding: 20px 0;
+  padding: 0;
 }
 .s2.ih-results {
   position: fixed;
@@ -472,6 +473,13 @@ footer {}
 }
 .s2 .ih-listings {
   padding: 0;
+}
+.s2 .ih-filters .ih-adv-toggle {
+  margin: 0;
+}
+.s2 .ih-filters>.container {
+  padding: 15px 15px;
+  background-color: rgba(255,255,255,0.02);
 }
 /* results end */
 
