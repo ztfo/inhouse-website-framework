@@ -3,10 +3,10 @@
     <div class="ih-filters row">
       <div class="container">
         <div class="row">
-          <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+          <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
             <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
           </div>
-          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
             <a class="btn btn-default ih-adv-toggle bkc-03" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
               <i class="fa fa-filter"></i> More Filters
             </a>
@@ -71,10 +71,10 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-5 col-md-5 col-sm-6 hidden-xs fullh map-pane">
+    <div class="col-lg-5 col-md-5 hidden-sm hidden-xs fullh map-pane">
 
     </div>
-    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 fullh listing-pane">
+    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fullh listing-pane">
       <div class="ih-listings-menu">
         <div class="row">
           <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs lead">

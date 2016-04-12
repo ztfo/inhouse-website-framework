@@ -4,6 +4,7 @@
 .s2.ih-slider-row {
   position: relative;
   height: calc(100vh);
+  min-height: 850px;
 }
 .s2.ih-slider-row>.container {
   width: 100%;

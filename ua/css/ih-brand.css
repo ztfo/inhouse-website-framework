@@ -779,11 +779,151 @@ footer .row {
 
 /**** **** RESPONSIVE STYLES *** ****/
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+  .navbar-brand>img {
+    width: 260px;
+  }
+  .navbar-brand {
+    height: auto;
+  }
+  .navbar-toggle {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    border: 0;
+    border-radius: 0;
+    transition: .3s;
+    padding: 15px;
+  }
+  .navbar-toggle:hover {
+    background-color: #CA3C3F !important;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+    height: 3px;
+    width: 30px;
+    margin-bottom: 7px;
+  }
+  .navbar-default .navbar-toggle .icon-bar:last-child {
+    margin-bottom: 0;
+  }
+  .my-listings {
+    top: initial;
+    bottom: 0;
+    width: 100%;
+  }
+  .ih-greeting {
+    padding-top: 15em;
+  }
+  #mainNav>ul>li {
+    padding: 10px;
+    text-align: center;
+  }
+  .ih-nav {
+    background-color: rgb(49, 53, 79);
+  }
+  .ih-nar-btn {
+    margin-bottom: 15px;
+  }
+  .ih-grid-carousel .ih-ft-listing {
+    min-height: 300px;
+  }
+
+  .ih-input-box {
+    margin-bottom: 25px;
+  }
+
+  .ih-testimonial-icon {
+    margin: 0 auto;
+    width: 40%;
+    margin-bottom: 35px;
+  }
+  footer,
+  footer .text-right {
+    text-align: center;
+  }
+
+  footer div {
+    margin-bottom: 10px;
+  }  
+  .ih-filders .container .row div {
+    margin-bottom: 10px;
+  }
+
+  .ih-filters .row>div:first-child {
+    margin-bottom: 15px;
+  }
+
+  .s2.ih-results .ih-adv-toggle {
+    display: block;
+  }
+
+  .s2.ih-results {
+    padding-top: 95px;
+  }
+  
+  .s2.ih-listing {
+    padding-top: 95px;
+  }
+
+  .ih-listings-menu {
+    margin-bottom: 25px;
+  }
+}
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
-  
-  
+  .navbar-brand {
+    float: none;
+    width: 100%;
+    text-align: center;
+    display: block;
+    height: auto;
+  }
+  .navbar-header {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-brand>img {
+    display: inline-block;
+    width: 300px;
+  }
+  #mainNav>ul>li {
+    padding: 5px 0;
+  }
+  .navbar-right {
+    float: none !important;
+    width: 100%;
+    margin-right: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+  }
+  .my-listings {
+    top: initial;
+    bottom: 0;
+    width: 100%;
+  }
+  .btn-primary {
+    font-size: 15px;
+  }
+  .ih-input-box {
+    margin-bottom: 20px;
+  }
+  .ih-about .col-lg-4 {
+    text-align: center;
+  }
+  .ih-about img {
+    display: inline-block;
+    width: 260px;
+  }
+  .s2.ih-results {
+    padding-top: 165px;
+  }  
+  .s2.ih-listing {
+    padding-top: 165px;
+  }  
+  .ih-listing-description {
+    border: 0;
+  }    
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
