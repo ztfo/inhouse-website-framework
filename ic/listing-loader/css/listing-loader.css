@@ -1,0 +1,109 @@
+/* per-listing loader */
+.text-block {
+  display: block;
+  width: 100%;
+  height: 15px;
+  margin-bottom: 10px;
+  animation: gradientLoad 2s ease infinite;
+  background: radial-gradient( rgba(255,255,255,0.05), rgba(255,255,255,0.15) );
+  background-size: 400% 400%;
+}
+.text-block:nth-child(2) {
+  width: 55%;
+}
+.ih-loader-listing {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+.ih-listings .ih-loader-listing {
+  min-height: 535px;
+  margin-bottom: 25px;
+}
+.ih-loader-listing .ih-ft-listing-img {
+  text-align: center;
+  line-height: 190px;
+  animation: loadingFade 2s ease infinite;
+}
+.ih-loader-listing .ih-ft-listing-img img {
+  display: inline !important;
+}
+.ih-loader-listing .ih-ft-listing:hover {
+  box-shadow: none;
+}
+.ih-loader-listing .ih-ft-listing {
+  border-bottom: 1px solid #eee;
+  border: 1px solid #E2E2E2;
+  border-radius: 2px;
+}
+@keyframes loadingFade {
+  0%,
+  100% {
+    background-color: rgba(0,0,0,0.1);
+  }
+  50% {
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+@keyframes gradientLoad {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* listing page loader */
+.load-overlay {
+  transition: .3s;
+  pointer-events: all;
+  overflow: hidden;
+}
+.load-overlay::before {
+  content: url('../../../ia/icons/ih-loader.svg');
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  text-align: center;
+  padding-top: 20%;
+  background: linear-gradient(90deg, #1b1b1b, #171717);
+  background-size: 400% 400%;
+  opacity: 1;
+  animation: loadOverlay .1s ease infinite;
+  animation-iteration-count: 1;
+}
+.load-overlay::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 5%;
+  background: radial-gradient( #CD3C3F, #31354F);
+  background-size: 500% 500%;
+  z-index: 1000;
+  -webkit-animation: loadingBar 5s ease infinite;
+  -moz-animation: loadingBar 5s ease infinite;
+  animation: loadingBar 5s ease infinite;
+}
+@keyframes loadOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loadingBar {
+  0% {
+    background-position: 400% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
