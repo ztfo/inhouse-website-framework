@@ -306,6 +306,7 @@ footer {
   min-height: 200px;
   background-color: #eee;
   background-size: cover;
+  background-position: 50%;
 }
 .ih-listing-card-img>a:first-child {
   min-height: 200px;
@@ -404,7 +405,7 @@ footer {
   display: none;
 }
 .s2 .ih-listing-card {
-  min-height: 395px;
+  min-height: 410px;
 }
 .s2 .ih-ft-listing-addr h4 {
   font-size: 16px;

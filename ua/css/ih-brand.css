@@ -781,8 +781,50 @@ footer .row {
 
 @media screen and (max-width: 767px) {}
 
-@media screen and (min-width: 426px) and (max-width: 768px) {}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  
+  
+}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .navbar-brand>img {
+    width: 280px;
+    margin-top: 15px;
+  }
+  .ih-grid-carousel .ih-ft-listing {
+    min-height: 150px;
+  }
+  .ih-ft-listing strong {
+    font-size: 14px;
+  }
+  .ih-grid-carousel .ih-ft-listing small {
+    font-size: 10px;
+  }
+  .my-listings {
+    top: initial;
+    width: 100%;
+    border-radius: 0;
+    bottom: 0;
+    background-color: #3277b2;
+  }
+  .my-listings:hover {
+    background-color: #CC3C40;
+  }
+  .ih-listing-description {
+    border: 0;
+  }  
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .ih-ft-listing-details .lead {
+    font-size: 15px;
+    margin-top: 30px;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .s2 .ih-listing-card {
+    min-height: 430px;
+  }
+}
 
 @media screen and (min-width: 1921px) {}

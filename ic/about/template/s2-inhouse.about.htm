@@ -3,12 +3,12 @@
   <div class="container">
 
     <div class="ih-about-inner row">
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <a href="#/bio/{{ agent.team[0].name | split: ' ':0 | lowercase }}" class="text-center">
           <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square img-responsive">
         </a>
       </div>
-      <div class="ih-about-text col-lg-8">
+      <div class="ih-about-text col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <h2>
           {{agent.agentName}}
           <div class="about-social">

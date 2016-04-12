@@ -77,10 +77,10 @@
     <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 fullh listing-pane">
       <div class="ih-listings-menu">
         <div class="row">
-          <div class="col-lg-6 fs lead">
+          <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs lead">
             <span><strong>{{totalListings | number}}</strong> Total Listings</span>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
             <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last">
               <i class="fa fa-globe"></i>
             </button>
@@ -99,7 +99,7 @@
             <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
             <hr> Sorry, there are no listings that match your search criteria.
           </div>
-          <div class="ih-listing-block col-lg-4 col-md-4 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings">
+          <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings">
             <div class="ih-listing-card">
               <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
@@ -135,7 +135,7 @@
               </div>
             </div>
           </div>
-          <div class="ih-listing-block col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="n in range(0,listingLoaders)">
+          <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="n in range(0,listingLoaders)">
             <ih-listing-loader></ih-listing-loader>
           </div>
         </div>
