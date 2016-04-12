@@ -653,6 +653,20 @@ footer {
 }
 /* content end */
 
+/* bio pages defaults */
+  /* s1 - center page with slim side panel, active and sold listing gallery */
+.bio-image {
+  width: 230px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+}
+.ih-content-body .ih-social {
+  position: absolute;
+  top: 0;
+  right: 25px;
+}
+/* bio ends */
+
 /* visitor capture modal */
 .modal-content {
   box-shadow: 0 1px 1px rgba(0,0,0,0.2) !important;

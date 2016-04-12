@@ -25,7 +25,7 @@ window.storySettings = {
 	},
     {
       "type": "internal",
-      "href": "#/bryan",
+      "href": "#/bio/bryan",
       "display": "About"
 		},
     {
@@ -95,7 +95,7 @@ window.agentSettings = {
   agentName: 'Bryan Alvarez',
   agentBrand: 'BHomeTeam',
   facebook: 'https://www.facebook.com/bryan.alvarez.5621?fref=ts',
-  linkedin: undefined,
+  linkedin: 'https://www.linkedin.com/in/bryan-alvarez-ab7a78a9',
   instagram: undefined,
   pinterest: undefined,
   twitter: undefined,

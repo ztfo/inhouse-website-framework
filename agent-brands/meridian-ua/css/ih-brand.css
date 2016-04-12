@@ -1,17 +1,4 @@
-/*** *** The Meridian Group Brand *** ***/
-
-* {}
-h1 {}
-h2 {}
-h3 {}
-p {}
-
-
-/* colors */ 
-.ih-color-01 { background-color: #A95935 !important;}
-.ih-color-02 { background-color: #C69179 !important;}
-.ih-color-03 { background-color: #e3c9BD !important;}
-.ih-color-04 { background-color: #505050 !important;}
+/**** USER STYLESHEET ****/
 
 /* background colors */ 
 .bkc-01 { background-color: #A95935 !important;}
@@ -100,7 +87,6 @@ p {}
   margin: 15px 0;
 }
 
-/*** *** MeridianMade Custom Brand *** ***/
 .ih-accent-divider {
   text-align: center;
   margin: 50px 0;

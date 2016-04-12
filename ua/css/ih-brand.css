@@ -64,6 +64,58 @@ body { overflow: hidden; padding: 0; margin: 0; }
   border-image: -webkit-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
   border-image: linear-gradient(to right, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
 }
+.bf-gd-bm::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: rgb(205, 60, 63);
+  background: -moz-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: -webkit-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: linear-gradient(to right, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f', GradientType=1);
+  z-index: 10;
+}
+.bf-gd-tp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  background: rgb(205, 60, 63);
+  background: -moz-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: -webkit-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: linear-gradient(to right, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f', GradientType=1);
+  z-index: 10;
+}
+.af-gd-tp::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  background: rgb(205, 60, 63);
+  background: -moz-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: -webkit-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: linear-gradient(to right, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f', GradientType=1);
+  z-index: 10;
+}
+.af-gd-bm::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: rgb(205, 60, 63);
+  background: -moz-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: -webkit-linear-gradient(left, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  background: linear-gradient(to right, rgba(205, 60, 63, 1) 0%, rgba(48, 53, 79, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cd3c3f', endColorstr='#30354f', GradientType=1);
+  z-index: 10;
+}
 
 /* font family */
 .fp { font-family: 'Raleway', sans-serif !important; }
@@ -712,6 +764,12 @@ footer .ih-sm-divider.ih-ext-divider { display: none; }
 }
 /* content end */
 
+/* bio */
+.bio-image {
+  border: 10px solid rgba(255,255,255,0.1);
+}
+/* bio ends */
+
 /* footer */
 footer a,
 footer a:hover {
@@ -754,31 +812,30 @@ footer .row {
 /* loader ends */
 
 /* browser overrides */
-  ::-webkit-input-placeholder {}
-  :-moz-placeholder {}
-  ::-moz-placeholder {}
-  :-ms-input-placeholder {}
-  /* scrollbar */
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    background-color: #171717;
-  }
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    background: #cd3c3f;
-  }
-  ::-webkit-scrollbar-thumb:window-inactive {
-    background: #cd3c3f;
-  }
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+::-moz-placeholder {}
+:-ms-input-placeholder {}
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background-color: #171717;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: #cd3c3f;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #cd3c3f;
+}
 /*browser ends */
 
 /**** **** RESPONSIVE STYLES *** ****/
-
 @media screen and (max-width: 767px) {
   .navbar-brand>img {
     width: 260px;
@@ -870,7 +927,6 @@ footer .row {
     margin-bottom: 25px;
   }
 }
-
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .navbar-brand {
     float: none;
@@ -925,7 +981,6 @@ footer .row {
     border: 0;
   }    
 }
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .navbar-brand>img {
     width: 280px;
@@ -954,7 +1009,6 @@ footer .row {
     border: 0;
   }  
 }
-
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .ih-ft-listing-details .lead {
     font-size: 15px;
@@ -966,5 +1020,4 @@ footer .row {
     min-height: 430px;
   }
 }
-
 @media screen and (min-width: 1921px) {}
