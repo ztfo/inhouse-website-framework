@@ -1,7 +1,9 @@
 angular.module('inhouseApp')
 .directive('ihSlider', function() {
 	return {
-		templateUrl : 'ic/slider/template/inhouse.slider.htm',
+		templateUrl : function(el, attrs) {
+			return 'ic/slider/template/' + (attrs.config || 's1') + '-inhouse.slider.htm';
+		},
 		restrict: 'E',
 		replace: true,
 		scope: {

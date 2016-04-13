@@ -1,7 +1,9 @@
 angular.module('inhouseApp')
 .directive('ihLandingSearch', ['$location', function($location) {
 	return {
-		templateUrl : 'ic/landing-search/template/inhouse.landing-search.htm',
+		templateUrl : function(el, attrs) {
+			return 'ic/landing-search/template/' + (attrs.config || 's1') + '-inhouse.landing-search.htm';
+		},
 		restrict: 'E',
 		replace: true,
 		controller: function($scope) {
