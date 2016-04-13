@@ -10,6 +10,7 @@ angular.module('inhouseApp')
 		$scope.filters = gets;
 	};
 	$scope.noWipe = false;
+	$scope.firstLoad = true;
 
 	$scope.moreListings = function() {
 		$scope.noWipe = true;
@@ -28,7 +29,9 @@ angular.module('inhouseApp')
 		return input;
 	};
 	$scope.searchMLS = function() {
+		$scope.firstLoad = false;
 		if(Object.keys($scope.filters).length > 0) {
+			console.log('search');
 
 			$scope.listingLoaders = 15;
 			var params = $scope.filters;
@@ -51,10 +54,12 @@ angular.module('inhouseApp')
 				if(typeof $scope.listings == 'undefined') {
 					$scope.listings = [];
 				}
+
 				for (var i = 0; i < response.response.length; i++) {
 					$scope.listings.push(response.response[i]);
 				}
 
+				$scope.$broadcast('resultsLoaded', $scope.listings);
 				$timeout((function(inhouseApi) {
 						return function () {
 						$('.ih-like-btn').click(function() {
@@ -88,6 +93,19 @@ angular.module('inhouseApp')
 								}
 							}
 						});
+						$('#listingDisplay').click(function() {
+							if($(this).attr('data-display-type') == 'list-view') {
+								$('.ih-listing-block').removeClass('ih-listview');
+								$(this).attr('data-display-type', 'block-view');
+								$('[listview]').addClass('hidden');
+								$('[blockview]').removeClass('hidden');
+							} else {
+								$('.ih-listing-block').addClass('ih-listview');
+								$(this).attr('data-display-type', 'list-view');
+								$('[blockview]').addClass('hidden');
+								$('[listview]').removeClass('hidden');
+							}
+						});
 					};
 				})(inhouseApi));
 			});
@@ -112,25 +130,23 @@ angular.module('inhouseApp')
 			return;
 		}
 		if(!$scope.noWipe) {
+			if($scope.filters.page != 1 && !$scope.firstLoad) {
+				$scope.changedPage = true;
+				$scope.filters.page = 1;
+			}
 			$scope.listings = [];
+			$scope.$broadcast('resultsCleared');
 		}
 
-		$scope.searchMLS();
+		if(!$scope.changedPage) {
+			$scope.searchMLS();
+		} else {
+			$scope.changedPage = false;
+		}
+
 		$location.search($scope.filters);
 		$('#listingDisplay').off('click');
-		$('#listingDisplay').click(function() {
-			if($(this).attr('data-display-type') == 'list-view') {
-				$('.ih-listing-block').removeClass('ih-listview');
-				$(this).attr('data-display-type', 'block-view');
-				$('[listview]').addClass('hidden');
-				$('[blockview]').removeClass('hidden');
-			} else {
-				$('.ih-listing-block').addClass('ih-listview');
-				$(this).attr('data-display-type', 'list-view');
-				$('[blockview]').addClass('hidden');
-				$('[listview]').removeClass('hidden');
-			}
-		});
+
 	});
 
 	$scope.searchMLS();
