@@ -1082,33 +1082,37 @@ footer .row {
     border: 0;
   }  
 }
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    .ih-ft-listing-details .lead {
-      font-size: 15px;
-      margin-top: 30px;
-      display: inline-block;
-      font-weight: 600;
-    }
-    .s2 .ih-listing-card-img {
-      min-height: 190px;
-    }
-    .s2 .ih-listing-card {
-      min-height: 370px;
-    }
-    .ih-listing-description {
-      width: 100%;
-      border: 0;
-      min-height: auto;
-      margin-bottom: 25px;
-      float: none;
-    }
-    .ih-listing-table {
-      width: 100%;
-      float: none;
-    }
-    .s2 .ih-listing-slider .item {
-      height: 350px !important;
-    }
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .ih-ft-listing-details .lead {
+    font-size: 15px;
+    margin-top: 30px;
+    display: inline-block;
+    font-weight: 600;
   }
+  .s2 .ih-listing-card-img {
+    min-height: 165px;
+  }
+  .s2 .ih-listing-card {
+    min-height: 330px;
+  }
+  .ih-listing-description {
+    width: 100%;
+    border: 0;
+    min-height: auto;
+    margin-bottom: 25px;
+    float: none;
+  }
+  .ih-listing-table {
+    width: 100%;
+    float: none;
+  }
+  .s2 .ih-listing-slider .item {
+    height: 350px !important;
+  }
+  .s2 .ih-ft-listing-link {
+    min-height: 150px !important;
+    line-height: 175px !important;
+  }
+}
 @media screen and (min-width: 1921px) {
 }
