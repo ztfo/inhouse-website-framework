@@ -55,6 +55,7 @@ angular.module('inhouseApp')
 					$scope.listings.push(response.response[i]);
 				}
 
+				$scope.$broadcast('resultsLoaded', $scope.listings);
 				$timeout((function(inhouseApi) {
 						return function () {
 						$('.ih-like-btn').click(function() {
