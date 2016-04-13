@@ -13,7 +13,11 @@ angular.module('inhouseApp')
 
 	$scope.moreListings = function() {
 		$scope.noWipe = true;
-		$scope.filters.page ++;
+		if(typeof $scope.filters.page === 'undefined') {
+			$scope.filters.page = 2;
+		} else {
+			$scope.filters.page ++;
+		}
 	};
 	$scope.range = function(min, max, step) {
 		step = step || 1;
@@ -100,13 +104,19 @@ angular.module('inhouseApp')
 	$scope.loadingListings = function() {
 
 	}
+	$scope.$on('$locationChangeSuccess', function(event, oldUrl, newUrl) {
+		$scope.getGets();
+	});
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
+		if(newFilters == oldFilters) {
+			return;
+		}
 		if(!$scope.noWipe) {
 			$scope.listings = [];
 		}
 
-		$location.search($scope.filters);
 		$scope.searchMLS();
+		$location.search($scope.filters);
 		$('#listingDisplay').off('click');
 		$('#listingDisplay').click(function() {
 			if($(this).attr('data-display-type') == 'list-view') {
@@ -123,6 +133,7 @@ angular.module('inhouseApp')
 		});
 	});
 
+	$scope.searchMLS();
 	$('.btn-group').find('label').click(function() {
 		if($(this).find('input').is(':checked')) {
 			$(this).addClass('active');
