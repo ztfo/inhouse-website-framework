@@ -93,6 +93,19 @@ angular.module('inhouseApp')
 								}
 							}
 						});
+						$('#listingDisplay').click(function() {
+							if($(this).attr('data-display-type') == 'list-view') {
+								$('.ih-listing-block').removeClass('ih-listview');
+								$(this).attr('data-display-type', 'block-view');
+								$('[listview]').addClass('hidden');
+								$('[blockview]').removeClass('hidden');
+							} else {
+								$('.ih-listing-block').addClass('ih-listview');
+								$(this).attr('data-display-type', 'list-view');
+								$('[blockview]').addClass('hidden');
+								$('[listview]').removeClass('hidden');
+							}
+						});
 					};
 				})(inhouseApi));
 			});
@@ -133,19 +146,7 @@ angular.module('inhouseApp')
 
 		$location.search($scope.filters);
 		$('#listingDisplay').off('click');
-		$('#listingDisplay').click(function() {
-			if($(this).attr('data-display-type') == 'list-view') {
-				$('.ih-listing-block').removeClass('ih-listview');
-				$(this).attr('data-display-type', 'block-view');
-				$('[listview]').addClass('hidden');
-				$('[blockview]').removeClass('hidden');
-			} else {
-				$('.ih-listing-block').addClass('ih-listview');
-				$(this).attr('data-display-type', 'list-view');
-				$('[blockview]').addClass('hidden');
-				$('[listview]').removeClass('hidden');
-			}
-		});
+
 	});
 
 	$scope.searchMLS();
