@@ -32,7 +32,6 @@ angular.module('inhouseApp')
 				//set new markers
 				for (var i = 0; i < args.length; i++) {
 					scope.listing = args[i];
-					debugger;
 					var info = new google.maps.InfoWindow({
 						content: $interpolate(scope.contentTemplate)(scope)
 					});
