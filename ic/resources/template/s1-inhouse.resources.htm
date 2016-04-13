@@ -1,9 +1,7 @@
 <div class="ih-resources">
   <div class="container">
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-repeat="content in resources | limitTo: limit"> <!-- this should be a repeat only 3 times with a choice of content pages to build this shortcuts? -->
-      <a href="#" class="rc-link">
-        <img ng-src="{{content.thumb}}" alt="{{content.title}}" />
-      </a>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-repeat="content in resources | limitTo: limit">
+      <a href="#/{{content.page}}" class="rc-link" style="background-image: url('{{content.thumb}}')"></a>
       <div class="rc-label">
         <h4><a href=""><i class="fa fa-caret-right"></i> {{content.title}}</a></h4>
         <p>
