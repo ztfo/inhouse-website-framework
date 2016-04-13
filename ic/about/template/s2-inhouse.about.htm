@@ -24,8 +24,7 @@
         <p>
           <strong class="text-uppercase">{{agent.agentTagline}}</strong>
         </p>
-        <div class="bio">
-          {{agent.bio1}}
+				<div class="bio" ng-bind-html="agent.bio1 | to_trusted">
         </div>
       </div>
     </div>
