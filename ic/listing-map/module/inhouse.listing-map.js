@@ -27,12 +27,13 @@ angular.module('inhouseApp')
 				}
 			});
 			scope.$on('resultsLoaded', function(event, args) {
-				scope.bounds = new google.maps.LatLngBounds();
+				var bounds = new google.maps.LatLngBounds();
 				scope = event.currentScope;
 				//wipe markers
 				for (var i = 0; i < scope.markers.length; i++) {
 					scope.markers[i].setMap(null);
 				}
+				scope.markers = [];
 
 				//set new markers
 				for (var i = 0; i < args.length; i++) {
@@ -52,9 +53,9 @@ angular.module('inhouseApp')
 					})(scope.map, marker, info));
 
 					scope.markers.push(marker);
-					scope.bounds.extend(scope.markers[i].position);
+					bounds.extend(scope.markers[i].position);
 				}
-				scope.map.fitBounds(scope.bounds);
+				scope.map.fitBounds(bounds);
 			});
 		},
 	};
