@@ -53,6 +53,7 @@
   border: 1px solid #fff;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50%;
   padding: 0;
 }
 .ih-grid-carousel a {
