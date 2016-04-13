@@ -49,10 +49,12 @@ angular.module('inhouseApp')
 			scope.$on('storyLoaded', function (event, args) {
 				//destroy owl carousel
 				scope.listingLoaders = 0;
-				element.find('.ih-ft-carousel').data('owlCarousel').destroy()
-					element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on')
+				if(typeof element.find('.ih-ft-carousel').data('owlCarousel') !== 'undefined') {
+					element.find('.ih-ft-carousel').data('owlCarousel').destroy();
+					element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
+				}
 
-					scope.homes = args['featuredListings'].listings;
+				scope.homes = args['featuredListings'].listings;
 
 				$timeout((function(inhouseApi) {
 						return function () {
