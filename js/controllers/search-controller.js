@@ -13,7 +13,11 @@ angular.module('inhouseApp')
 
 	$scope.moreListings = function() {
 		$scope.noWipe = true;
-		$scope.filters.page ++;
+		if(typeof $scope.filters.page === 'undefined') {
+			$scope.filters.page = 2;
+		} else {
+			$scope.filters.page ++;
+		}
 	};
 	$scope.range = function(min, max, step) {
 		step = step || 1;

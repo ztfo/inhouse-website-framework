@@ -170,7 +170,7 @@
         <!-- more listing scrollspy/button -->
         <div class="ih-more-listings">
           <div class="ih-listing-count lead text-center">
-            <strong>{{displayListings | number}} / {{totalListings | number}}</strong>
+            <strong>{{displayListings * filters.page | number}} / {{totalListings | number}}</strong>
           </div>
           <button type="button" class="btn btn-primary btn-block" ng-click="moreListings()">Load More Listings</small>
           </button>
