@@ -127,31 +127,6 @@ input:focus { outline: none !important; }
 }
 /* about end */
 
-/* resource defaults */
-.ih-resources {
-  min-height: 500px;
-  padding: 100px 0;
-}
-.rc-link {
-  display: block;
-  width: 100%;
-  min-height: 400px;
-  margin-bottom: 25px;
-}
-.rc-label h4 {
-  font-size: 35px;
-}
-.rc-label p {
-  margin: 20px 0;
-}
-.rc-label a {
-  color: #fff;
-}
-.rc-label a:hover {
-  text-decoration: none;
-}
-/* resouces ends */
-
 /* testimonial default */
 .ih-testimonials {
   position: relative;

@@ -1,0 +1,26 @@
+/* global */
+.ih-resources {
+  min-height: 500px;
+  padding: 100px 0;
+}
+/* s1 */
+.rc-link {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  margin-bottom: 25px;
+  background-size: cover;
+  background-position: 50%;
+}
+.rc-label h4 {
+  font-size: 35px;
+}
+.rc-label p {
+  margin: 20px 0;
+}
+.rc-label a {
+  color: #fff;
+}
+.rc-label a:hover {
+  text-decoration: none;
+}

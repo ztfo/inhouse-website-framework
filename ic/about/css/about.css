@@ -1,3 +1,29 @@
 /* s1 */
+.ih-about .ih-header {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+.ih-headshot img {
+  width: 225px;
+  margin-bottom: 35px;
+  transition: .3s;
+  text-align: center;
+  display: inline-block;
+  border: 5px solid #fff;
+}
+.ih-headshot img:hover {
+  border: 10px solid #fff;
+}
+.ih-headshot a:hover,
+.ih-headshot a:active,
+.ih-headshot a:focus {
+  text-decoration: none;
+}
+.ih-teammate-name {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
 
 /* s2 */

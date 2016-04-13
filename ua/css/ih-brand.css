@@ -420,19 +420,19 @@ footer .ih-sm-divider.ih-ext-divider { display: none; }
 .ih-like-btn {
   bottom: 10px !important;
   right: 10px !important;
-  font-size: 20px !important;
-  width: 35px !important;
-  height: 35px !important;
+  font-size: 25px !important;
+  width: 45px !important;
+  height: 45px !important;
   top: initial !important;
   left: initial !important;
   opacity: 1 !important;
   z-index: 99999 !important;
-  background-color: rgba(0, 0, 0, 0.75) !important;
-  border-radius: 0 !important;
-  color: #F1C63E !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  color: #f5f5f5 !important;
   padding: 0 !important;
   text-align: center !important;
-  line-height: 35px;
+  line-height: 45px;
 }
 .ih-like-btn .fa-heart,
 .ih-like-btn .fa-heart-o,
@@ -534,7 +534,7 @@ footer .ih-sm-divider.ih-ext-divider { display: none; }
   /* IE6-9 */
 }
 .rc-link {
-  border: 10px solid rgba(0, 0, 0, 0.2);
+  border: 10px solid #171717;
 }
 /* resources ends */
 
@@ -981,6 +981,79 @@ footer .row {
     border: 0;
   }    
 }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .navbar-brand>img {
+    width: 170px;
+  }
+  .navbar-toggle {
+    top: 15px;
+    right: 0;
+    padding: 10px;
+  }
+  .ih-nar-btn {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .s2 .listing-pane {
+    padding: 10px 15px;
+  }
+  .s2.ih-results {
+    padding-top: 78px;
+  }
+  .s2 .ih-listing-card {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+  .ih-more-listings button {
+    font-size: 18px;
+  }
+  .ih-mls-legal {
+    padding-bottom: 125px;
+    font-size: 11px;
+    text-align: justify;
+  }
+  #searchFilters {
+    padding: 0;
+  }
+  #searchFilters div {
+    padding: 0;
+  }
+  .slider.slider-horizontal {
+    width: 90%;
+    margin: 0;
+  }
+  .ih-slide {
+  text-align: center;
+  }
+  .ih-slide label {
+    text-align: center;
+  }
+  .s2 .ih-listing-slider .item {
+    height: 300px !important;
+  }
+  .ih-listing-slider {
+    min-height: initial;
+  }
+  .owl-nav {
+    display: none;
+  }
+  .ih-listing-description {
+    border: 0;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding-right: initial;
+    padding: 10px;
+  }
+  .ih-listing-table {
+    padding: 0;
+  }
+  .s2.ih-listing {
+    padding-top: 75px;
+  }
+}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .navbar-brand>img {
     width: 280px;
@@ -1020,4 +1093,5 @@ footer .row {
     min-height: 430px;
   }
 }
-@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1921px) {
+}
