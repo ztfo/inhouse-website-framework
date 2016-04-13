@@ -51,6 +51,7 @@ angular.module('inhouseApp')
 				if(typeof $scope.listings == 'undefined') {
 					$scope.listings = [];
 				}
+
 				for (var i = 0; i < response.response.length; i++) {
 					$scope.listings.push(response.response[i]);
 				}
@@ -114,6 +115,7 @@ angular.module('inhouseApp')
 		}
 		if(!$scope.noWipe) {
 			$scope.listings = [];
+			$scope.$broadcast('resultsCleared');
 		}
 
 		$scope.searchMLS();

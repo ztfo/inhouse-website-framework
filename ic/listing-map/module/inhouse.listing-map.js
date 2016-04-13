@@ -21,6 +21,11 @@ angular.module('inhouseApp')
 				scope.contentTemplate = response.data;
 			});
 
+			scope.$on('resultsCleared', function(event, args) {
+				for (var i = 0; i < scope.markers.length; i++) {
+					scope.markers[i].setMap(null);
+				}
+			});
 			scope.$on('resultsLoaded', function(event, args) {
 				scope.bounds = new google.maps.LatLngBounds();
 				scope = event.currentScope;
