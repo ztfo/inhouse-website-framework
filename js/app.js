@@ -5,24 +5,24 @@ angular.module('inhouseApp', ['ngRoute'])
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'pages/results/' + window.storySettings.resultsConfig + '-results.htm',
+		templateUrl: 'pages/results/' + window.storySettings.resultsConfig | 's1' + '-results.htm',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'pages/listing/' + window.storySettings.listingConfig + '-listing.htm',
+		templateUrl: 'pages/listing/' + window.storySettings.listingConfig | 's1' + '-listing.htm',
 		controller: 'listingController'
 	})
 	.when('/privacy', {
-		templateUrl: 'pages/system/' + window.storySettings.privacyConfig + '-visitor-privacy.htm',
+		templateUrl: 'pages/system/' + window.storySettings.privacyConfig | 's1' + '-visitor-privacy.htm',
 		controller: 'privacyController'
 	})
 	.when('/:content', {
-		templateUrl: 'pages/content/' + window.storySettings.contentConfig + '-content.htm',
+		templateUrl: 'pages/content/' + window.storySettings.contentConfig  | 's1' + '-content.htm',
 		controller: 'contentController'
 	})
 	.when('/bio/:agent/', {
-		templateUrl: 'pages/bios/' + window.storySettings.bioConfig + '-bios.htm',
+		templateUrl: 'pages/bios/' + window.storySettings.bioConfig | 's1' + '-bios.htm',
 		controller: 'bioController'
 	})
 ;
