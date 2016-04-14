@@ -9,6 +9,7 @@ window.storySettings = {
     sellAHomeText: 'Sell My Home',
     adviceText: 'Just Need Advice',
     welcomeText: 'Welcome to The Meridian Group.',
+    greetingText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut augue diam. Phasellus finibus, tortor non pulvinar imperdiet, purus lectus commodo ipsum, id luctus augue eros ac ex. Mauris ornare non velit sit amet sollicitudin. Suspendisse in nunc nulla.',
     loaderLogo: 'ua/dividers/accent-divider.svg',
     favicon: 'ua/logos/favicon.ico',
     fairhousingIcon: 'ia/icons/fairhousing.svg',
