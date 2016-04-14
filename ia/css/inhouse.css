@@ -485,7 +485,7 @@ footer {
 
 /* listing pages defaults */
   /* global */
-.owl-controls>.owl-nav>div {
+.ih-listing .owl-controls>.owl-nav>div {
   position: absolute;
   background: #171717;
   top: 0;
@@ -493,25 +493,25 @@ footer {
   height: 100%;
   line-height: 60px;
 }
-.owl-prev {
+.ih-listing .owl-prev {
   left: 0;
 }
-.owl-next {
+.ih-listing .owl-next {
   right: 0;
 }
-.ih-owl-thumbnail {
+.ih-listing .ih-owl-thumbnail {
   height: 60px;
   width: 80px;
 }
-.owl-carousel .owl-item {
+.ih-listing .owl-carousel .owl-item {
   margin-right: 0 !important;
   border-right: 2px solid #171717;
 }
-.ih-owl-thumbnail::after {
+.ih-listing .ih-owl-thumbnail::after {
   content:"";
   transition: .3s;
 }
-.ih-owl-thumbnail:hover::after {
+.ih-listing .ih-owl-thumbnail:hover::after {
   content:"";
   position: absolute;
   top: 0; right: 0; left: 0; bottom: 0;

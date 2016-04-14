@@ -15,12 +15,12 @@
   <meta itemprop="url" content="{{pageURL}}" />
   <meta itemprop="thumbnailUrl" content="{{websiteImage}}" />
   <link rel="image_src" href="{{websiteImage}}" />
-  <meta itemprop="image" content="{{websiteImage}}"/>
-  <meta name="twitter:title" content="{{pageTitle}}"/>
-  <meta name="twitter:image" content="{{websiteImage}}"/>
-  <meta name="twitter:url" content="{{pageURL}}"/>
-  <meta name="twitter:card" content="summary"/>
-  
+  <meta itemprop="image" content="{{websiteImage}}" />
+  <meta name="twitter:title" content="{{pageTitle}}" />
+  <meta name="twitter:image" content="{{websiteImage}}" />
+  <meta name="twitter:url" content="{{pageURL}}" />
+  <meta name="twitter:card" content="summary" />
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
@@ -73,10 +73,10 @@
 
 </head>
 
-<body class="fp fc-04 bkc-01" itemscope itemtype="http://schema.org/RealEstateAgent">
+<body class="fp fc-04" itemscope itemtype="http://schema.org/RealEstateAgent">
   <!-- color classes on body need to be editable by user -->
 
-  <ih-navbar></ih-navbar>
+  <ih-navbar config="s2"></ih-navbar>
 
   <div class="ih-view-container">
     <div ng-view autoscroll="true" class="" id='main-view'></div>
@@ -109,7 +109,8 @@
           <span itemprop="branchCode">{{agent.brokerage}}</span>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="streetAddress">{{agent.contactAddress}}</span> {{agent.contactAddress2}} <!-- we need to split this up for schema o work, we need itemprop="addressLocality" itemprop="addressRegion" itemprop="postalCode" -->
+          <span itemprop="streetAddress">{{agent.contactAddress}}</span> {{agent.contactAddress2}}
+          <!-- we need to split this up for schema o work, we need itemprop="addressLocality" itemprop="addressRegion" itemprop="postalCode" -->
         </div>
       </div>
       <div class="ih-sm-divider ih-ext-divider"></div>
@@ -224,19 +225,6 @@
   <script src="js/owl.carousel.js"></script>
 
   <script>
-    function catch_that_image() {
-      global $post, $posts;
-      $first_img = '';
-      ob_start();
-      ob_end_clean();
-      $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post - > post_content, $matches);
-      $first_img = $matches[1][0];
-
-      if (empty($first_img)) { //Defines a default image
-        $first_img = "/ua/og-default.jpg";
-      }
-      return $first_img;
-    }
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
       i[r] = i[r] || function () {

@@ -10,7 +10,7 @@ window.storySettings = {
     adviceText: 'Just Need Advice',
     welcomeText: 'Welcome to The Meridian Group.',
     loaderLogo: 'ua/dividers/accent-divider.svg',
-    favicon: 'ua/images/favicon.ico',
+    favicon: 'ua/logos/favicon.ico',
     fairhousingIcon: 'ia/icons/fairhousing.svg',
     realtorIcon: 'ia/icons/realtor.svg',
     defaultSliderImage: 'ua/backgrounds/meridiangroupaz-mainimage.jpg'
@@ -114,14 +114,15 @@ window.agentSettings = {
   instagram: undefined,
   pinterest: undefined,
   twitter: undefined,
-  teamName: "The Meridian Group",
+  teamName: "The Meridian Group", //if nothing is entered here it should default to agentName wherever this appears?
   brokerage: "Realty Executives Tucson Elite",
-  bio1: "The Meridian Group is a team of premier executives who share a vision for an elevated level of service and are committed to innovation and the evolution of real estate. We celebrate our clients, their ideas and the spirit of collaboration and are dedicated to transparency.",
-  bio2: "The Meridian Group is proud to serve Tucson and Southern Arizona and we look forward to earning your business and your trust.",
+  bio1: "<p>The Meridian Group is a team of premier executives who share a vision for an elevated level of service and are committed to innovation and the evolution of real estate. We celebrate our clients, their ideas and the spirit of collaboration and are dedicated to transparency.</p><p>The Meridian Group is proud to serve Tucson and Southern Arizona and we look forward to earning your business and your trust.</p>",
+  bio2: undefined,
   agentTagline: "Redefining Real Estate",
   brokerageLogo: 'ua/logos/retucsonelite-logo.svg',
   teamLogo: 'ua/logos/meridian-logo.svg',
   accentLogo: 'ua/dividers/accent-divider.svg',
+  loaderLogo: 'ua/dividers/accent-divider.svg',
   content: {
     places: {
       title: "Coming Soon",

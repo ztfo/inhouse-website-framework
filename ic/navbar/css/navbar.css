@@ -3,7 +3,7 @@
 .navbar-brand { height: auto !important; min-height: auto !important; }
 
 /* s1 - default horizontal full-width absolute to top */
-.ih-nav {
+.s1.ih-nav {
   position: absolute;
   top: 0;
   right: 0;
@@ -13,8 +13,8 @@
   z-index: 99;
   padding-top: 15px;
 }
-.ih-nav>.container,
-.ih-nav nav .container {
+.s1.ih-nav>.container,
+.s1.ih-nav nav .container {
   width: 100%;
   padding: 0 30px;
 }
