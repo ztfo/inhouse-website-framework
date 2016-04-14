@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="inhouseApp" ng-controller="mainView">
+<html ng-app="inhouseApp" ng-controller="mainView" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
-  <title>{{agent.agentName}} | {{agent.teamName}} {{windowTitle}}</title>
-  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
-
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <title>{{agent.agentName}} | {{agent.teamName}} {{windowTitle}}</title>
+  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+  <link rel="canonical" href="{{pageURL}}" />
+  <meta itemprop="name" content="{{pageTitle}}" />
+  <meta itemprop="url" content="{{pageURL}}" />
+  <meta itemprop="thumbnailUrl" content="{{websiteImage}}" />
+  <link rel="image_src" href="{{websiteImage}}" />
+  <meta itemprop="image" content="{{websiteImage}}"/>
+  <meta name="twitter:title" content="{{pageTitle}}"/>
+  <meta name="twitter:image" content="{{websiteImage}}"/>
+  <meta name="twitter:url" content="{{pageURL}}"/>
+  <meta name="twitter:card" content="summary"/>
+  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -34,21 +46,34 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-  <!-- seo and social tags -->
-  <meta name="description" content="{{agent.bio1}}" />
-  <meta property="og:title" content="{{agent.agentName}} {{agent.teamName}}" />
-  <meta property="og:site_name" content="{{agent.agentName}} {{agent.teamName}}" />
-  <meta property="og:url" content="{{agent.agentURL}}" />
+  <!-- seo and social tags NEEDS TO BE IMPLEMENTED -->
+
+  <!-- sharing website -->
+  <meta property="og:title" content="{{agent.agentName}} | {{agent.brokerage}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{websiteURL}}" />
+  <meta property="og:image" content="{{websiteImage}}" />
+  <meta property="fb:admins" content="{{agent.facebookID}}" />
+  <meta property="og:site_name" content="{{windowTitle}}" />
   <meta property="og:description" content="{{agent.bio1}}" />
-  <meta property="og:image" content="{{agent.ogImage}}" />
   <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
+
+  <!-- sharing a listing -->
+  <meta property="og:title" content="{{listingAddress}} {{agent.agentName}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{listingURL}}" />
+  <meta property="og:image" content="{{listingImage}}" />
+  <meta property="fb:admins" content="{{agent.facebookID}}" />
+  <meta property="og:site_name" content="{{agent.agentURL}}" />
+  <meta property="og:description" content="{{listingDesc}}" />
 
   <!-- user dependent data -->
   <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
   <script src="data/user-data.js"></script>
+
 </head>
 
-<body class="fp fc-04 bkc-01">
+<body class="fp fc-04 bkc-01" itemscope itemtype="http://schema.org/RealEstateAgent">
 
   <ih-navbar></ih-navbar>
 
@@ -63,12 +88,12 @@
       <h1 class="ih-header text-center">Connect with Us</h1>
       <div class="ih-md-divider"></div>
       <div class="ih-social large-social text-center">
-        <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
-        <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
-        <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
-        <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
-        <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
-        <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
+        <a itemprop="url" href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+        <a itemprop="url" href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+        <a itemprop="url" href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+        <a itemprop="url" href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+        <a itemprop="url" href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+        <a itemprop="url" href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
       </div>
       <div class="ih-legal row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -80,26 +105,26 @@
       </div>
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          {{agent.brokerage}}
+          <span itemprop="branchCode">{{agent.brokerage}}</span>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
-          {{agent.contactAddress}} {{agent.contactAddress2}}
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">{{agent.contactAddress}}</span> {{agent.contactAddress2}} <!-- we need to split this up for schema o work, we need itemprop="addressLocality" itemprop="addressRegion" itemprop="postalCode" -->
         </div>
       </div>
       <div class="ih-sm-divider ih-ext-divider"></div>
       <div class="row">
         <div class="ih-copyright col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          &copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}
+          &copy; <span itemprop="copyrightYear">2016</span> All Rights Reserved - <span itemprop="copyrightHolder">InHouse</span> | {{agent.teamName}}
         </div>
-        <div class="ih-breadcrumbs col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+        <div class="ih-breadcrumbs col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right" itemprop="breadcrumbList">
           <a href="#/">home</a> / <a href="#/places">places</a> / <a href="#/videos">videos</a>
           <a class="hidden" href="/sitemap" alt="{{agent.teamName}} sitemap">Sitemap</a>
         </div>
       </div>
     </div>
     <div class="ih-footer">
-      <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank">Designed &amp; Powered By InHouse</a></div>
-      <a href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
+      <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
+      <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
     </div>
   </footer>
 
@@ -188,7 +213,7 @@
   <script src="ic/contact/module/inhouse.contact.js"></script>
   <script src="ic/bootstrap-slider/module/inhouse.bootstrap-slider.js"></script>
   <script src="ic/listing-loader/module/inhouse.listing-loader.js"></script>
-	<script src="ic/listing-map/module/inhouse.listing-map.js"></script>
+  <script src="ic/listing-map/module/inhouse.listing-map.js"></script>
 
   <!-- bootstrap/uikit -->
   <script src="js/bootstrap-slider.js"></script>
@@ -198,6 +223,19 @@
   <script src="js/owl.carousel.js"></script>
 
   <script>
+    function catch_that_image() {
+      global $post, $posts;
+      $first_img = '';
+      ob_start();
+      ob_end_clean();
+      $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post - > post_content, $matches);
+      $first_img = $matches[1][0];
+
+      if (empty($first_img)) { //Defines a default image
+        $first_img = "/ua/og-default.jpg";
+      }
+      return $first_img;
+    }
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
       i[r] = i[r] || function () {
@@ -213,6 +251,7 @@
     ga('create', 'UA-75858480-1', 'auto');
     ga('send', 'pageview');
   </script>
+
 
 </body>
 

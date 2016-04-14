@@ -14,7 +14,7 @@ angular.module('inhouseApp', ['ngRoute'])
 		controller: 'listingController'
 	})
 	.when('/privacy', {
-		templateUrl: 'pages/privacy/' + window.storySettings.privacyConfig + '-visitor-privacy.htm',
+		templateUrl: 'pages/system/' + window.storySettings.privacyConfig + '-visitor-privacy.htm',
 		controller: 'privacyController'
 	})
 	.when('/:content', {

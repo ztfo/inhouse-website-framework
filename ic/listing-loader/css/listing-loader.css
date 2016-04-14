@@ -5,14 +5,14 @@
   height: 15px;
   margin-bottom: 10px;
   animation: gradientLoad 2s ease infinite;
-  background: radial-gradient( rgba(255,255,255,0.05), rgba(255,255,255,0.15) );
+  background: radial-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0.15) );
   background-size: 400% 400%;
 }
 .text-block:nth-child(2) {
   width: 55%;
 }
 .ih-loader-listing {
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid #eee;
   border-radius: 2px;
   margin-bottom: 15px;
 }
@@ -70,9 +70,10 @@
   z-index: 999;
   text-align: center;
   padding-top: 20%;
-  background: linear-gradient(90deg, #1b1b1b, #171717);
+  background: linear-gradient(90deg, #ddd, #eee);
   background-size: 400% 400%;
   opacity: 1;
+  -webkit-animation: loadOverlay .1s ease infinite;  
   animation: loadOverlay .1s ease infinite;
   animation-iteration-count: 1;
 }
@@ -83,8 +84,8 @@
   right: 0;
   left: 0;
   bottom: 0;
-  height: 5%;
-  background: radial-gradient( #CD3C3F, #31354F);
+  height: 15px;
+  background: radial-gradient( #3277b2, #5BC64D);
   background-size: 500% 500%;
   z-index: 1000;
   -webkit-animation: loadingBar 5s ease infinite;

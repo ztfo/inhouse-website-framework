@@ -5,10 +5,10 @@
       <!-- individual featured listing card-->
       <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
       <div class="item" ng-repeat="home in homes">
-        <div class="ih-ft-listing">
+        <div class="ih-ft-listing" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
           <div class="ih-ft-listing-img">
-            <img ng-src="{{home.photo || 'ia/images/noimage-placeholder.jpg'}}" alt="{{home.caption}}" class="fit-image" ng>
-            <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
+            <img ng-src="{{home.photo || 'ia/images/noimage-placeholder.jpg'}}" alt="{{home.caption}}" class="fit-image" ng itemprop="photo">
+            <a itemprop="url" href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
               View Home
             </a>
             <a href="#" class="ih-like-btn" data-mls="{{home.mls}}" data-address="{{home.address}}" onClick="event.preventDefault()">
