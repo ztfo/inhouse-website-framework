@@ -1,71 +1,63 @@
-  <section class="ih-content">
-    <header class="ih-content-header"><!-- background editable by user -->
-      <div class="container">
-        <div>
-          <!-- needs to match page title in html header -->
-					<h1 class="inlineblock">{{content.title}}</h1></div>
-        <div>
-					<h3 class="inlineblock">{{content.sub}}</h3></div>
+<section class="ih-content">
+  <header class="ih-content-header">
+    <div class="container">
+      <h1 class="inlineblock clear" itemprop="headline">{{content.title}}</h1>
+      <div class="clear"></div>
+      <h3 class="inlineblock clear">{{content.sub}}</h3>
+  </header>
+  <div class="ih-content-inner container">
+
+    <div class="row">
+      <div class="ih-content-body col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <span ng-bind-html="content.content | to_trusted"></span>
+        <div class="ih-accent-divider clear"></div>
       </div>
-    </header>
-    <div class="ih-content-inner container">
-
-      <div class="row">
-        <div class="ih-content-body col-lg-9 col-md-9 col-sm-12 col-xs-12">
-					<span ng-bind-html="content.content | to_trusted"></span>
-          <div class="ih-accent-divider clear"></div>
-          <div class="ih-about-listings hidden"> <!-- this will house a sold/active/featured listing slider for agent -->
-            <h1 class="ih-header text-center"> Listings</h1>
-            <div class="ih-md-divider"></div>
-
-          </div>
-        </div>
-        <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <div class="panel-group" id="sideAccordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
+      <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="panel-group" id="sideAccordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick="event.preventDefault()">
 										Contact {{agent.teamName}}
                   </a>
                 </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
-                  <ih-contact message=""></ih-contact>
-                </div>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <ih-contact message=""></ih-contact>
               </div>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingTwo">
-                <h4 class="panel-title">
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onClick="event.preventDefault()">
 										{{agent.teamName}}'s Recommendations 
                   </a>
                 </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
-                  
-                </div>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+
               </div>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onClick="event.preventDefault()">
                     Resources
                   </a>
                 </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                </div>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-  </section>
+
+  </div>
+</section>

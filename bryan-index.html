@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html ng-app="inhouseApp" ng-controller="mainView" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <title>{{agent.agentName}} | {{agent.teamName}} {{windowTitle}}</title>
+  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+  <link rel="canonical" href="{{pageURL}}" />
+  <meta itemprop="name" content="{{pageTitle}}" />
+  <meta itemprop="url" content="{{pageURL}}" />
+  <meta itemprop="thumbnailUrl" content="{{websiteImage}}" />
+  <link rel="image_src" href="{{websiteImage}}" />
+  <meta itemprop="image" content="{{websiteImage}}"/>
+  <meta name="twitter:title" content="{{pageTitle}}"/>
+  <meta name="twitter:image" content="{{websiteImage}}"/>
+  <meta name="twitter:url" content="{{pageURL}}"/>
+  <meta name="twitter:card" content="summary"/>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="ia/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+  <link href="ia/css/owl.carousel.css" type="text/css" rel="stylesheet" />
+
+  <!-- ih styles -->
+  <link href="ia/css/inhouse.css" rel="stylesheet" type="text/css" />
+  <link href="ic/about/css/about.css" type="text/css" rel="stylesheet" />
+  <link href="ic/featured-listings/css/featured-listings.css" type="text/css" rel="stylesheet" />
+  <link href="ic/landing-search/css/search.css" type="text/css" rel="stylesheet" />
+  <link href="ic/listing-loader/css/listing-loader.css" type="text/css" rel="stylesheet" />
+  <link href="ic/navbar/css/navbar.css" type="text/css" rel="stylesheet" />
+  <link href="ic/slider/css/slider.css" type="text/css" rel="stylesheet" />
+  <link href="ic/resources/css/resources.css" type="text/css" rel="stylesheet" />
+
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+  <!-- seo and social tags NEEDS TO BE IMPLEMENTED -->
+
+  <!-- sharing website -->
+  <meta property="og:title" content="{{agent.agentName}} | {{agent.brokerage}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{websiteURL}}" />
+  <meta property="og:image" content="{{websiteImage}}" />
+  <meta property="fb:admins" content="{{agent.facebookID}}" />
+  <meta property="og:site_name" content="{{windowTitle}}" />
+  <meta property="og:description" content="{{agent.bio1}}" />
+  <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
+
+  <!-- sharing a listing -->
+  <meta property="og:title" content="{{listingAddress}} {{agent.agentName}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{listingURL}}" />
+  <meta property="og:image" content="{{listingImage}}" />
+  <meta property="fb:admins" content="{{agent.facebookID}}" />
+  <meta property="og:site_name" content="{{agent.agentURL}}" />
+  <meta property="og:description" content="{{listingDesc}}" />
+
+  <!-- user dependent data -->
+  <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
+  <script src="data/user-data.js"></script>
+
+</head>
+
+<body class="fp fc-04 bkc-01" itemscope itemtype="http://schema.org/RealEstateAgent">
+  <!-- color classes on body need to be editable by user -->
+
+  <ih-navbar></ih-navbar>
+
+  <div class="ih-view-container">
+    <div ng-view autoscroll="true" class="" id='main-view'></div>
+  </div>
+
+  <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+  <footer>
+    <div class="container">
+      <h1 class="ih-header text-center">Connect with Us</h1>
+      <div class="ih-md-divider"></div>
+      <div class="ih-social large-social text-center">
+        <a itemprop="url" href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+        <a itemprop="url" href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+        <a itemprop="url" href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+        <a itemprop="url" href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+        <a itemprop="url" href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+        <a itemprop="url" href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
+      </div>
+      <div class="ih-legal row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <img src="ia/icons/fairhousing.svg" alt="Fair Housing" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+          <img src="ia/icons/realtor.svg" alt="National Association of Realtors | Realtor" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <span itemprop="branchCode">{{agent.brokerage}}</span>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">{{agent.contactAddress}}</span> {{agent.contactAddress2}} <!-- we need to split this up for schema o work, we need itemprop="addressLocality" itemprop="addressRegion" itemprop="postalCode" -->
+        </div>
+      </div>
+      <div class="ih-sm-divider ih-ext-divider"></div>
+      <div class="row">
+        <div class="ih-copyright col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          &copy; <span itemprop="copyrightYear">2016</span> All Rights Reserved - <span itemprop="copyrightHolder">InHouse</span> | {{agent.teamName}}
+        </div>
+        <div class="ih-breadcrumbs col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right" itemprop="breadcrumbList">
+          <a href="#/">home</a> / <a href="#/places">places</a> / <a href="#/videos">videos</a>
+          <a class="hidden" href="/sitemap" alt="{{agent.teamName}} sitemap">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="ih-footer">
+      <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
+      <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
+    </div>
+  </footer>
+
+
+  <!-- visitor capture modal -->
+  <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn">
+    View My Listings  
+  </a>
+  <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">
+    <div class="modal-dialog" role="document">
+      <form name="visitorAccount" id="visitorAccount" ng-submit="submitNewUser()">
+        <div class="modal-content fp">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title text-center" id="accountLabel">Save your searches and listings</h2>
+          </div>
+          <div class="modal-body">
+            <p class="lead">
+              Save your favorite listings, searches, and continue to view properties by entering your information below.
+            </p>
+            <p class="lead">
+              Fill out the information below to create an account.
+            </p>
+            <div class="form-group">
+              <label for="messageName">Full Name</label>
+              <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
+            </div>
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
+              <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+            </div>
+            <div class="form-group">
+              <label for="accountPassword">Phone Number</label>
+              <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
+            </div>
+            <p class="text-center">
+              <small>
+                  All your information is kept confidential and is only viewable by a member of {{agent.teamName}}.
+                  <a href="#/privacy" class="block" target="_blank">View Privacy Policy</a>
+              </small>
+            </p>
+            <p class="text-center">
+              <!-- should only appear the first time we ask for account info -->
+              <small>
+                  <span class="skip-box"><strong><em>Not Ready to make an account?</em></strong>
+                      <br>
+                      <a href="" data-dismiss="modal" aria-label="Close">Continue viewing <strong>3</strong> more listings.</a><!-- second attempt listing # should be set by agent -->  
+                  </span>
+              </small>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Create Account</button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- inhouse/angular -->
+  <script src="js/app.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/filters.js"></script>
+
+  <!-- controllers -->
+  <script src="js/controllers/landing-controller.js"></script>
+  <script src="js/controllers/listing-controller.js"></script>
+  <script src="js/controllers/search-controller.js"></script>
+  <script src="js/controllers/bio-controller.js"></script>
+  <script src="js/controllers/content-controller.js"></script>
+  <script src="js/controllers/my-listings-controller.js"></script>
+  <script src="js/controllers/privacy-controller.js"></script>
+
+  <!-- components -->
+  <script src="ic/slider/module/inhouse.slider.js"></script>
+  <script src="ic/resources/module/inhouse.resources.js"></script>
+  <script src="ic/testimonials/module/inhouse.testimonials.js"></script>
+  <script src="ic/featured-listings/module/inhouse.featured-listings.js"></script>
+  <script src="ic/navbar/module/inhouse.navbar.js"></script>
+  <script src="ic/about/module/inhouse.about.js"></script>
+  <script src="ic/landing-search/module/inhouse.landing-search.js"></script>
+  <script src="ic/gmaps/module/inhouse.gmaps.js"></script>
+  <script src="ic/dropdown/module/inhouse.dropdown.js"></script>
+  <script src="ic/contact/module/inhouse.contact.js"></script>
+  <script src="ic/bootstrap-slider/module/inhouse.bootstrap-slider.js"></script>
+  <script src="ic/listing-loader/module/inhouse.listing-loader.js"></script>
+  <script src="ic/listing-map/module/inhouse.listing-map.js"></script>
+
+  <!-- bootstrap/uikit -->
+  <script src="js/bootstrap-slider.js"></script>
+
+  <!-- -->
+  <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
+  <script src="js/owl.carousel.js"></script>
+
+  <script>
+    function catch_that_image() {
+      global $post, $posts;
+      $first_img = '';
+      ob_start();
+      ob_end_clean();
+      $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post - > post_content, $matches);
+      $first_img = $matches[1][0];
+
+      if (empty($first_img)) { //Defines a default image
+        $first_img = "/ua/og-default.jpg";
+      }
+      return $first_img;
+    }
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-75858480-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</body>
+
+</html>

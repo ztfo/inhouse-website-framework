@@ -1,0 +1,34 @@
+<!-- about -->
+<section class="ih-about">
+  <div class="container">
+
+    <h1 class="ih-header text-center">
+			<span itemprop="name">{{agent.teamName}}</span>
+      <div class="ih-line"></div>
+    </h1>
+    <div class="ih-md-divider"></div>
+
+    <div class="ih-about-inner row">
+      <div class="ih-about-text col-md-6 col-md-offset-3">
+        <p>
+          <strong class="text-uppercase">{{agent.agentTagline}}</strong>
+        </p>
+        <div itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></div>
+      </div>
+    </div>
+
+    <div class="ih-accent-divider"></div>
+
+    <div class="ih-team row text-center">
+      <figure class="ih-headshot col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-repeat="member in agent.team">
+        <!-- member.title can also be used -->
+        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center"><img ng-src="{{member.photo}}" alt="{{member.name}}" class="img-circle img-responsive">
+          <span class="ih-teammate-name text-center block" itemprop="name">
+            <strong>{{member.name | split: ' ':0}}</strong> {{member.name | split:' ':1}}
+          </span>
+        </a>
+      </figure>
+    </div>
+
+  </div>
+</section>

@@ -1,12 +1,9 @@
 <section class="ih-content">
   <header class="ih-content-header">
-    <!-- background editable by user -->
     <div class="container">
-      <div>
-        <!-- needs to match page title in html header -->
-        <h1 class="inlineblock">About {{bioAgent.name}}</h1></div>
-      <div>
-        <h3 class="inlineblock">{{agent.teamName}}</h3></div>
+      <h1 class="inlineblock" itemprop="name">About {{bioAgent.name}}</h1>
+      <div class="clear"></div>
+      <h3 class="inlineblock" itemprop="organization">{{agent.teamName}}</h3>
     </div>
   </header>
   <div class="ih-content-inner container">
@@ -27,9 +24,10 @@
         <div class="ih-accent-divider clear"></div>
       </div>
       <div class="ih-content-body col-lg-9 col-md-9 col-sm-12 col-xs-12 hidden">
-        <img class="bio-image" align="left" ng-src="{{bioAgent.headshot}}" alt="{{bioAgent.name}}" />
+
+        <img class="bio-image img-responsive" align="left" ng-src="{{bioAgent.headshot}}" alt="{{bioAgent.name}}" />
         <div class="ih ih-about-header">
-          <h2>{{bioAgent.name}}</h2>
+          <h2 itemprop="name">{{bioAgent.name}}</h2>
           <h6>{{bioAgent.title}}</h6>
           <div class="ih-social about-social text-center">
             <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
@@ -40,22 +38,24 @@
             <a href="{{bioAgent.pinterest}}" class="ih-social-icon" ng-if="bioAgent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
           </div>
         </div>
-        <span ng-bind-html="bioAgent.bio | to_trusted"></span>
+        <span itemprop="about" ng-bind-html="bioAgent.bio | to_trusted"></span>
         <div class="ih-accent-divider clear"></div>
+
         <div class="ih-about-listings hidden">
           <!-- this will house a sold/active/featured listing slider for bioAgent -->
           <h1 class="ih-header text-center"> Listings</h1>
           <div class="ih-md-divider"></div>
-
         </div>
+
       </div>
+
       <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <div class="panel-group" id="sideAccordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick="event.preventDefault()">
-										Contact {{bioAgent.name}}
+                    Contact {{bioAgent.name}}
                   </a>
                 </h4>
             </div>
@@ -69,7 +69,7 @@
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onClick="event.preventDefault()">
-										{{bioAgent.name}}'s Recommendations 
+                    {{bioAgent.name}}'s Recommendations 
                   </a>
                 </h4>
             </div>
@@ -98,7 +98,3 @@
 
   </div>
 </section>
-
-
-
-</div>

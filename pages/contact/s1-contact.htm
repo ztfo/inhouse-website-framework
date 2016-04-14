@@ -1,0 +1,37 @@
+<section class="ih-content ih-contact-page">
+  <header class="ih-content-header">
+    <div class="container">
+      <h1 class="inlineblock">{{content.title}}</h1>
+      <div class="clear"></div>
+      <h3 class="inlineblock">{{content.sub}}</h3>
+    </div>
+  </header>
+  <div class="ih-content-inner container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact-info-pane fs">
+        <h3>Contact Information</h3>
+        <p>
+          {{agent.contactMessage}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu ligula erat. Quisque sit amet magna nec neque viverra varius at quis purus. Duis nunc ligula, dapibus at ultrices vitae, lobortis quis tellus. In pretium tortor non ipsum sollicitudin vestibulum.
+        </p>
+        <address>
+        <strong>{{agent.agentName}}</strong><br>
+        <strong>{{agent.brokerage}}</strong><br>
+        {{agent.contactAddress}}<br>
+        {{agent.contactAddress2}}<br>
+      </address>
+        <address>
+        <span class="space-icon"><i class="fa fa-envelope"></i></span> {{agent.contactEmail}}<br>
+        <span class="space-icon"><i class="fa fa-phone"></i></span> {{agent.contactPhone | tel}}
+      </address>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact-form-pane">
+        <ih-contact message="How can I help?"></ih-contact>
+      </div>
+    </div>
+    <div class="row">
+      <div class="contact-map-pane">
+        <!-- gmap of brokerage/agent address loads here -->
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,9 @@
 angular.module('inhouseApp')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
-		templateUrl: 'ic/featured-listings/template/inhouse.featured-listings.htm',
+		templateUrl : function(el, attrs) {
+			return 'ic/featured-listings/template/' + (attrs.config || 's1') + '-inhouse.featured-listings.htm';
+		},
 		restrict: 'E',
 		replace: true,
 		controller: function ($scope) {
@@ -47,10 +49,12 @@ angular.module('inhouseApp')
 			scope.$on('storyLoaded', function (event, args) {
 				//destroy owl carousel
 				scope.listingLoaders = 0;
-				element.find('.ih-ft-carousel').data('owlCarousel').destroy()
-					element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on')
+				if(typeof element.find('.ih-ft-carousel').data('owlCarousel') !== 'undefined') {
+					element.find('.ih-ft-carousel').data('owlCarousel').destroy();
+					element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
+				}
 
-					scope.homes = args['featuredListings'].listings;
+				scope.homes = args['featuredListings'].listings;
 
 				$timeout((function(inhouseApi) {
 						return function () {

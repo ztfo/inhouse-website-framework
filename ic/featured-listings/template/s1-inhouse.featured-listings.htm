@@ -1,0 +1,43 @@
+<section class="ih-featured-slider">
+  <!-- featured listing -->
+  <div class="container">
+    <div class="ih-ft-carousel">
+      <!-- individual featured listing card-->
+      <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
+      <div class="item" ng-repeat="home in homes">
+        <div class="ih-ft-listing" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
+          <div class="ih-ft-listing-img">
+            <img ng-src="{{home.photo || 'ia/images/noimage-placeholder.jpg'}}" alt="{{home.caption}}" class="fit-image" ng itemprop="photo">
+            <a itemprop="url" href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
+              View Home
+            </a>
+            <a href="#" class="ih-like-btn" data-mls="{{home.mls}}" data-address="{{home.address}}" onClick="event.preventDefault()">
+              <i class="fa fa-heart-o"></i>
+              <i class="fa fa-heart"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star"></i>
+            </a>
+          </div>
+          <div class="ih-ft-listing-desc container-fluid">
+            <div class="ih-ft-listing-addr text-center">
+              <h4>{{home.address}}</h4>
+              <h6 class="text-uppercase text-muted"><strong>{{home.city}} {{home.state}}, {{home.zip}}</strong></h6>
+            </div>
+            <hr>
+            <div class="ih-ft-listing-details row">
+              <div class="col-lg-6">
+                <small>{{home.beds}} BEDS | {{home.baths}} BATHS</small>
+                <br>
+                <small>{{home.sqft}} SQFT</small>
+              </div>
+              <div class="col-lg-6 text-right">
+                <small><strong class="lead fs">{{home.price | currency:"$":0}}</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
