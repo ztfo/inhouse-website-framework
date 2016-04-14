@@ -595,7 +595,7 @@ footer .ih-sm-divider.ih-ext-divider { display: none; }
   padding-top: 150px;
 }
 .ih-filter-row .btn.active {
-  background-color: rgb(205, 60, 63);
+  background-color: rgb(205, 60, 63) !important;
   color: #3D3D3D;
   box-shadow: none;
 }
