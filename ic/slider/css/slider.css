@@ -1,4 +1,36 @@
 /* s1 - default center 2/3 screen */
+.s1.ih-slider {
+  min-height: initial;
+  height: 600px;
+  overflow: hidden;
+}
+.s1.ih-slider {
+  min-height: initial;
+  height: 600px;
+  overflow: hidden;
+}
+.s1.ih-slider-row {
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: headerFlow 99s ease infinite;
+}
+.s1 .ih-slider-inner .item {
+  height: 600px;
+}
+.s1 .ih-comm-links {
+  bottom: 90px;
+}
+.s1 .ih-comm-links h4 {
+  font-size: 35px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.s1 .ih-comm-link {
+  color: #fff;
+  text-transform: uppercase;
+}
 
 /* s2 - full width */
 .s2.ih-slider-row {
@@ -66,7 +98,7 @@
   transition: all 1s ease;
 }
 
-/* ken burns animation */
+/* kenburns animation */
 @-webkit-keyframes kenburns {
   0% { 
     -webkit-transform: scale(1) translate(, 50% ); 
@@ -87,6 +119,27 @@
     transform: scale(5) translate(0, 90%);
   }
 }
+/* headerFlow animaions */
+@keyframes headerFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    background-size: 100%;
+  }
+  25% {
+    background-position: 25% 75%;
+    background-size: 200%;
+  }
+  50% {
+    background-position: 55% 100%;
+    background-size: 100%;
+  }
+  75% {
+    background-position: 75% 25%;
+    background-size: 200%;
+  }
+}
+
 
 /* carousel fade */
 .carousel-fade .carousel-inner .item {

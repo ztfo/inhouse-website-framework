@@ -1,10 +1,10 @@
 /* s1 */
-.ih-about .ih-header {
+.s1 .ih-about .ih-header {
   position: relative;
   width: 50%;
   margin: 0 auto;
 }
-.ih-headshot img {
+.s1 .ih-headshot img {
   width: 225px;
   margin-bottom: 35px;
   transition: .3s;
@@ -12,20 +12,19 @@
   display: inline-block;
   border: 5px solid #fff;
 }
-.ih-headshot img:hover {
+.s1 .ih-headshot img:hover {
   border: 10px solid #fff;
 }
-.ih-headshot a:hover,
-.ih-headshot a:active,
-.ih-headshot a:focus {
+.s1 .ih-headshot a:hover,
+.s1 .ih-headshot a:active,
+.s1 .ih-headshot a:focus {
   text-decoration: none;
 }
-.ih-teammate-name {
+.s1 .ih-teammate-name {
   text-transform: uppercase;
   font-size: 20px;
   margin-bottom: 35px;
 }
-
 /* s2 */
 
 

@@ -48,6 +48,12 @@
 .fp { font-family: 'Lato', sans-serif !important; }
 .fs { font-family: 'PT Serif', serif !important; }
 
+/* hidden elements */
+.ih-greeting {
+  display: none;
+}
+/* hidden ends */
+
 /* button styles */
 .btn-primary {
   border-radius: 0;
@@ -151,43 +157,11 @@
 /* slider settings */
 .ih-slider-row {
   background-image: url('../backgrounds/main-slider.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   animation: headerFlow 99s ease infinite;
 }
-.ih-slider {
-  min-height: initial;
-  height: 600px;
-  overflow: hidden;
-}
-.ih-greeting {
-  display: none;
-}
-.ih-comm-links {
-  bottom: 90px;
-}
-.ih-comm-links h4 {
-  font-size: 35px;
-  font-weight: 400;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.ih-comm-link {
-  color: #fff;
-  text-transform: uppercase;
-}
-#mainSlider .item {
-  height: 600px;
-}
+/* slider ends */
 
 /* search settings */
-.ih-search-inner {
-  margin: 0px 15px;
-  margin-top: -110px;
-  background-color: #f5f5f5;
-  border-bottom: 10px solid #E3C9BD;
-}
 .ih-search-inner .ih-header {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -237,15 +211,10 @@
   letter-spacing: 1px;
   color: #777777;
 }
+/* search ends */
 
 /* about settings */
-.ih-about .ih-header {
-  position: relative;
-  text-align: left;
-  width: 50%;
-  margin: 0 auto;
-}
-.ih-est {
+.s1 .ih-est {
   font-family: 'PT Serif', serif;
   font-size: 15px;
   font-weight: 600;
@@ -255,47 +224,40 @@
   padding-left: 10px;
   background-color: #fff;
 }
-.ih-headshot img {
-  width: 225px;
+.s1 .ih-headshot img {
   border: 3px solid #E3C9BD;
-  margin-bottom: 35px;
-  transition: .3s;
 }
-.ih-headshot img:hover {
+.s1 .ih-headshot img:hover {
   border-width: 10px;
   border-color: rgba(227, 201, 189, 0.5);
 }
-.ih-headshot a:hover,
-.ih-headshot a:active,
-.ih-headshot a:focus {
+.s1 .ih-headshot a:hover,
+.s1 .ih-headshot a:active,
+.s1 .ih-headshot a:focus {
   text-decoration: none;
 }
-.ih-teammate-name {
-  text-transform: uppercase;
-  font-size: 20px;
-  margin-bottom: 35px;
+.s1 .ih-teammate-name {
   color: #5f5f5f;
 }
+/* about ends */
 
 /* featured listings settings */
-.ih-ft-listing {
+.s1 .ih-ft-listing {
   border-bottom: 5px solid #E3C9BD;
-  overflow: hidden;
-  transition: .3s;
-  min-height: 420px;
 }
-.ih-ft-listing:hover {
+.s1 .ih-ft-listing:hover {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
-.ih-ft-carousel {
-  overflow: hidden;
+.s1 .ih-ft-carousel .owl-nav div {
+  background-color: #E3C9BD;
+  color: #fff;
 }
-.ih-featured-slider .owl-stage-outer {
-  overflow: initial;
+.s1 .ih-ft-carousel .owl-nav div:hover {
+  background-color: #C69179;
 }
-.ih-featured-slider .hide-carousel {
-  display: none;
-}
+/* featured ends */
+
+/* like btn */
 .ih-like-btn {
   background-color: rgba(255, 255, 255, 0.7);
   transition: .3s;
@@ -311,51 +273,12 @@
 .ih-like-btn i:hover {
   color: #303030;
 }
-.ih-featured-slider .owl-controls {
-  margin-top: 25px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-.ih-ft-carousel .owl-prev {
-  width: auto;
-  padding: 5px 15px;
-  margin: 0;
-  display: inline-block;
-  border-right: 1px solid #ddd;
-  border-radius: 100px 0 0 100px;
-}
-.ih-ft-carousel .owl-next {
-  width: auto;
-  padding: 5px 15px;
-  margin: 0;
-  display: inline-block;
-  border-radius: 0 100px 100px 0;
-}
-.ih-ft-carousel .owl-nav div {
-  background-color: #E3C9BD;
-  color: #fff;
-  transition: .3s;
-}
-.ih-ft-carousel .owl-nav div:hover {
-  background-color: #C69179;
-}
+/* like ends */
 
 /* testimonials settings */
 .ih-testimonials {
   background-image: url('../backgrounds/testimonial-slider.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 50px 0;
-  border-top: 1px solid #ddd;
   box-shadow: inset 0px 0 2px rgba(0, 0, 0, 0.3);
-}
-.ih-testimonials .ih-header {
-  color: #fff;
-  font-size: 30px;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 .ih-testimonials .col-lg-2 {
   display: none;
