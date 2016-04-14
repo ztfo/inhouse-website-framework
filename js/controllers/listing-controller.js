@@ -13,7 +13,7 @@ angular.module('inhouseApp')
 				autoWidth: true,
 				nav: true,
 				margin: 10,
-				autoplay: true,
+				autoplay: false,
 				autoplayHoverPause: true
 			});
 			$('.ih-owl-carousel').find('.owl-item').click(function() {

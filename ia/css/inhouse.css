@@ -894,6 +894,9 @@ footer {
 input[type="radio"] {
 	display:none;
 }
+.dropdown-menu {
+  padding-bottom: 0;
+}
 /* bs resets end*/
 
 /*** *** responsive *** ***/
