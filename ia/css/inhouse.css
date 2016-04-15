@@ -36,6 +36,10 @@ input:focus { outline: none !important; }
 .nomar-l { margin-left: 0; }
 /* format end */
 
+/* frames */
+.b35 { border: 35px solid #fff; }
+/* frames end */
+
 /* empty states */
 .ih-view-container { 
   overflow: hidden;
@@ -55,22 +59,6 @@ input:focus { outline: none !important; }
   background-color: #f5f5f5;
   overflow: hidden;
   padding: 0;
-}
-.ih-greeting {
-  z-index: 1;
-  padding-top: 25em;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-.ih-greeting-picture img {
-  width: 230px;
-  margin-bottom: 25px;
-}
-.ih-greeting p {
-  padding: 30px 0;
 }
 .ih-slider .item {
   height: 750px;
@@ -709,6 +697,11 @@ footer.footer {
   position: relative;
   border-left: 1px solid #e7e7e7;
   min-height: 500px;
+}
+.ih-side-panel .panel-title a:hover,
+.ih-side-panel .panel-title a:focus,
+.ih-side-panel .panel-title a:active {
+  text-decoration: none;
 }
 /* content end */
 

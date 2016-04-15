@@ -72,7 +72,13 @@
   font-weight: 900;
   background-color: #fff;
 }
-
+/* s3 split navigation logo center */
+.s3.ih-nav { 
+  top: 35px; 
+  left: 35px; 
+  right: 35px; 
+  z-index: 1; 
+}
 /*** *** responsive *** ***/
 @media screen and (max-width: 320px) {
   /* s1 */

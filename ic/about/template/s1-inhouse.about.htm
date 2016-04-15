@@ -1,4 +1,3 @@
-<!-- about -->
 <section class="s1 ih-about">
   <div class="container">
 
@@ -21,7 +20,6 @@
 
     <div class="ih-team row text-center">
       <figure class="ih-headshot col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-repeat="member in agent.team">
-        <!-- member.title can also be used -->
         <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center"><img ng-src="{{member.photo}}" alt="{{member.name}}" class="img-circle img-responsive">
           <span class="ih-teammate-name text-center block" itemprop="name">
             <strong>{{member.name | split: ' ':0}}</strong> {{member.name | split:' ':1}}
