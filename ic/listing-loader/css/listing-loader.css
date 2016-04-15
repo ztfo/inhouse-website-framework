@@ -16,6 +16,9 @@
   border-radius: 2px;
   margin-bottom: 15px;
 }
+.ih-loader-listing .ih-ft-listing-desc {
+  margin: 20px 0;
+}
 .ih-listings .ih-loader-listing {
   min-height: 535px;
   margin-bottom: 25px;

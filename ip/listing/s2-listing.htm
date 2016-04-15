@@ -55,7 +55,8 @@
       <!-- listing description and details -->
       <div class="ih-listing-details container-fluid">
         <div class="ih-listing-description col-lg-5 col-md-12 col-sm-12 col-xs-12">
-          {{listing.PublicRemarks | sentence}}
+          <p>{{listing.PublicRemarks | sentence}}</p>
+          <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         </div>
         <div class="ih-listing-table col-lg-7 col-md-12 col-sm-12 col-xs-12">
           <table class="table table-responsive table-stripped table-hover">
@@ -114,38 +115,38 @@
           </table>
         </div>
       </div>
-    <div class="ih-listing-contact container-fluid">
+      <div class="ih-listing-contact container-fluid">
 
-      <!-- listing contact form -->
-      <div class="ih-listing-form col-lg-8 col-md-12 col-sm-12 col-xs-12">
-        <ih-contact message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
-      </div>
+        <!-- listing contact form -->
+        <div class="ih-listing-form col-lg-8 col-md-12 col-sm-12 col-xs-12">
+          <ih-contact message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
+        </div>
 
-      <!-- listing documents -->
-      <div class="ih-listing-documents col-lg-4 col-md-12 col-sm-12 col-xs-12">
-        <h3>Listing Documents</h3>
-        <div class="ih-docs">
-          <ul class="nav nav-tabs nav-justified" role="tablist">
-            <li role="presentation" class="active"><a href="#mlsDocs" aria-controls="mlsDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Listing Documents</a></li>
-            <li role="presentation"><a href="#canvasDocs" aria-controls="canvasDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Agent Attachments</a></li>
-          </ul>
+        <!-- listing documents -->
+        <div class="ih-listing-documents col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <h3>Listing Documents</h3>
+          <div class="ih-docs">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active"><a href="#mlsDocs" aria-controls="mlsDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Listing Documents</a></li>
+              <li role="presentation"><a href="#canvasDocs" aria-controls="canvasDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Agent Attachments</a></li>
+            </ul>
 
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="mlsDocs">
-              <div ng-repeat="doc in listing.documents">
-                <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="mlsDocs">
+                <div ng-repeat="doc in listing.documents">
+                  <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+                </div>
               </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="canvasDocs">
-              <div ng-repeat="doc in listing.canvasDocuments">
-                <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+              <div role="tabpanel" class="tab-pane" id="canvasDocs">
+                <div ng-repeat="doc in listing.canvasDocuments">
+                  <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+                </div>
               </div>
+              <!-- pull and show any docs generated on canvas if available by user only -->
             </div>
-            <!-- pull and show any docs generated on canvas if available by user only -->
           </div>
         </div>
       </div>
-    </div>      
     </div>
   </div>
 </section>

@@ -17,6 +17,7 @@
   border: 1px solid #eee;
   min-height: 430px;
   overflow: hidden;
+  transition: .3s;
 }
 .s1 .ih-ft-listing:hover {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);

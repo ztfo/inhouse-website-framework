@@ -226,9 +226,10 @@ input:focus { outline: none !important; }
 /* contact end */
 
 /* brand footer defaults */
-footer {
+footer.footer {
   text-transform: uppercase;
   font-size: 12px;
+  margin-top: 100px;
 }
 .ih-social {
   position: relative;
@@ -362,6 +363,10 @@ footer {
   border: 1px solid #eee;
   margin-bottom: 25px;
   min-height: 570px;
+  transition: .3s;
+}
+.ih-listing-card:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 .ih-listing-card-img {
   position: relative;
@@ -1101,6 +1106,11 @@ input[type="radio"] {
     bottom: 0;
     width: 100%;
   }
+  .ih-about .ih-header { width: 95%; }
+  .ih-about-inner { margin: 0 auto; }
+  .ih-md-divider { width: 90%; }
+  .ih-copyright { text-align: center; margin: 10px 0; }
+  .ih-breadcrumbs { text-align: center; }  
   .btn-primary { font-size: 15px; }
   .ih-input-box { margin-bottom: 20px; }
   /* landing end */
@@ -1119,6 +1129,16 @@ input[type="radio"] {
       right: initial;
     }  
   /* listing end */
+  /* results page */
+    .ih-filter-box { margin-bottom: 10px; }
+    .ih-filter-row { margin: 0; }  
+  /* results end */
+  /* content */
+    .ih-side-panel .ih-md-divider {
+      min-width: initial;
+      width: 100%;
+    }  
+  /* content end */
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   /* landing */
@@ -1157,6 +1177,11 @@ input[type="radio"] {
       float: none;
     }
     /* s1 */
+    .s1 .ih-filter-box { margin-bottom: 10px; }
+    .s1 .ih-filter-row { margin: 0; }
+    .s1 .ih-advanced-filters { margin-top: 15px; }  
+    .s1 .ih-listings .ih-ft-listing { min-height: 545px; }
+    .s1 .slider.slider-horizontal { width: 95%; }  
     /* s2 */
     .s2 .ih-listing-card-img { min-height: 165px; }
     .s2 .ih-listing-card { min-height: 350px; }  
@@ -1170,7 +1195,20 @@ input[type="radio"] {
     /* s2 */
     .s2 .ih-listing-slider .item { height: 350px !important; }
   /* listing end */
+  /* content page */
+  .ih-side-panel .ih-md-divider {
+    min-width: initial;
+    width: 100%;
+  }  
+  /* content end */
 }
-@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1921px) {
+  
+  /* temp fix */
+    body {
+      zoom: 1.5;
+    }  
+  
+}
 
 

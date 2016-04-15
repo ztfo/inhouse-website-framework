@@ -63,7 +63,8 @@
     <!-- listing description and details -->
     <div class="ih-listing-details row">
       <div class="ih-listing-description col-lg-7 col-md-6 col-sm-12 col-xs-12">
-        {{listing.PublicRemarks | sentence}}
+        <p>{{listing.PublicRemarks | sentence}}</p>
+        <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
       </div>
       <div class="ih-listing-table col-lg-5 col-md-6 col-sm-12 col-xs-12">
         <table class="table table-responsive table-stripped table-hover">

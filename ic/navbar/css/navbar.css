@@ -102,6 +102,9 @@
   .s2 .ih-cta .col-lg-6 {
     margin-bottom: 10px;
   }
+  .s2.ih-nav {
+    min-height: 310px !important;
+  }  
   .s2 button.navbar-toggle {
     position: absolute;
     top: -73px;
