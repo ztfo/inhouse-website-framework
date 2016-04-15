@@ -501,7 +501,7 @@ footer.footer {
   min-height: 250px;
 }
 .s2 .ih-ft-listing-link {
-  line-height: 250px;
+  line-height: 250px !important;
 }
 .s2 .ih-listview .ih-listing-card {
   min-height: 220px;
@@ -1066,8 +1066,8 @@ input[type="radio"] {
       height: auto !important;
     }    
     .s2.ih-results .ih-adv-toggle { display: block; }
-    .s2.ih-results { padding-top: 95px; }
-    .s2.ih-listing { padding-top: 95px; }
+    .s2.ih-listing,
+    .s2.ih-results { padding-top: 95px !important ; }
   /* results end */
   /* listing page */
     /* s1 */
@@ -1102,7 +1102,7 @@ input[type="radio"] {
 @media screen and (min-width: 426px) and (max-width: 768px) {
   /* landing */
   .my-listings {
-    top: initial;
+    top: initial !important;
     bottom: 0;
     width: 100%;
   }
@@ -1111,7 +1111,7 @@ input[type="radio"] {
   .ih-md-divider { width: 90%; }
   .ih-copyright { text-align: center; margin: 10px 0; }
   .ih-breadcrumbs { text-align: center; }  
-  .btn-primary { font-size: 15px; }
+  .btn-primary { font-size: 15px !important; }
   .ih-input-box { margin-bottom: 20px; }
   /* landing end */
   /* listing page */
