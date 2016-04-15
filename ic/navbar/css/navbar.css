@@ -19,9 +19,6 @@
   padding: 0 30px;
 }
 /* s2 - stacked brand logo center top */
-.s2.ih-nav {
-  min-height: 310px !important;
-}
 .s2.ih-nav>.container {
   height: 100%;
 }
@@ -79,8 +76,13 @@
 /*** *** responsive *** ***/
 @media screen and (max-width: 320px) {
   /* s1 */
-  .navbar-brand>img {
+  .s1 .navbar-brand>img {
     width: 170px !important;
+  }
+  
+  /* s2 */
+  .s2.ih-nav {
+    min-height: 310px !important;
   }
   
 }
@@ -167,6 +169,7 @@
   
 }
 @media screen and (min-width: 426px) and (max-width: 768px) {
+  
   /* s1 */
   .navbar-brand {
     float: none;

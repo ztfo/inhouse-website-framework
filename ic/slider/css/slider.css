@@ -208,7 +208,18 @@
   
 }
 
-@media screen and (min-width: 426px) and (max-width: 768px) {}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  
+  /* s1 */
+  .s1 .ih-slider-row {
+    animation: initial;
+    background-size: cover;
+  }
+  .s1 .ih-slider-row>div {
+    padding: 0;
+  }
+  
+}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 

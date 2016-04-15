@@ -1051,7 +1051,9 @@ input[type="radio"] {
     .ih-filters .row>div:first-child { margin-bottom: 15px; }
     .ih-listings-menu { margin-bottom: 25px; }  
     /* s1 */
-  
+    .slider.slider-horizontal { width: 90%; }
+    .ih-filter-box { margin-bottom: 10px; }
+    .ih-filter-row { margin: 0; }  
     /* s2 */
     .s2.ih-results {
       position: relative !important;
@@ -1063,6 +1065,12 @@ input[type="radio"] {
     .s2.ih-listing { padding-top: 95px; }
   /* results end */
   /* listing page */
+    /* s1 */
+    .s2 .ih-listing-description {
+      border: 0;
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }    
     /* s2 */
     .s2.ih-listing { 
       padding-top: 75px; 
@@ -1073,6 +1081,18 @@ input[type="radio"] {
       right: initial;
     }    
   /* listing ends */
+  
+  /* about */
+  .ih-about-header { clear: both; }  
+  /* about end */
+  
+  /* content */
+  .ih-content-header {
+    animation: initial;
+    background-size: cover;
+  }  
+  /* content end */
+  
 }
 @media screen and (min-width: 426px) and (max-width: 768px) {
   /* landing */
