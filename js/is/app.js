@@ -5,24 +5,24 @@ angular.module('inhouseApp', ['ngRoute'])
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'pages/results/' + (window.storySettings.resultsConfig || 's1') + '-results.htm',
+		templateUrl: 'ip/results/' + (window.storySettings.resultsConfig || 's1') + '-results.htm',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'pages/listing/' + (window.storySettings.listingConfig || 's1') + '-listing.htm',
+		templateUrl: 'ip/listing/' + (window.storySettings.listingConfig || 's1') + '-listing.htm',
 		controller: 'listingController'
 	})
 	.when('/privacy', {
-		templateUrl: 'pages/system/' + (window.storySettings.privacyConfig || 's1') + '-visitor-privacy.htm',
+		templateUrl: 'ip/system/' + (window.storySettings.privacyConfig || 's1') + '-visitor-privacy.htm',
 		controller: 'privacyController'
 	})
 	.when('/:content', {
-		templateUrl: 'pages/content/' + (window.storySettings.contentConfig  || 's1') + '-content.htm',
+		templateUrl: 'ip/content/' + (window.storySettings.contentConfig  || 's1') + '-content.htm',
 		controller: 'contentController'
 	})
 	.when('/bio/:agent/', {
-		templateUrl: 'pages/bios/' + (window.storySettings.bioConfig || 's1') + '-bios.htm',
+		templateUrl: 'ip/bios/' + (window.storySettings.bioConfig || 's1') + '-bios.htm',
 		controller: 'bioController'
 	})
 ;
