@@ -44,7 +44,8 @@ angular.module('inhouseApp')
 					var marker = new google.maps.Marker({
 						position: {lat: parseFloat(args[i].latlong.split(',')[0]), lng: parseFloat(args[i].latlong.split(',')[1])},
 						map: scope.map,
-						title: args[i].address
+						title: args[i].address,
+						icon: 'ia/icons/map-pin.png'
 					});
 					marker.addListener('click', (function(map, marker, infoWindow) {
 						return function() {
