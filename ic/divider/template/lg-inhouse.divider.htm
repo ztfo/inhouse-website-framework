@@ -1,0 +1,32 @@
+<section class="ih-about">
+  <div class="container">
+
+    <div class="ih-about-inner row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <a href="#/bio/{{ agent.team[0].name | split: ' ':0 | lowercase }}" class="text-center">
+          <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square img-responsive">
+        </a>
+      </div>
+      <div class="ih-about-text col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <h2>
+          <span itemprop="name">{{agent.agentName}}</span>
+          <div class="about-social">
+            <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+            <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+            <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+            <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+            <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+            <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>          
+          </div>
+        </h2>
+        <h4>Realtor &reg; | {{agent.teamName}} - {{agent.brokerage}}</h4>
+        <p>
+          <strong class="text-uppercase">{{agent.agentTagline}}</strong>
+        </p>
+        <div itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

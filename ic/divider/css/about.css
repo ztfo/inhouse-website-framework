@@ -1,0 +1,45 @@
+/* s1 */
+.s1 .ih-about .ih-header {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+.s1 .ih-headshot img {
+  width: 225px;
+  margin-bottom: 35px;
+  transition: .3s;
+  text-align: center;
+  display: inline-block;
+  border: 5px solid #fff;
+}
+.s1 .ih-headshot img:hover {
+  border: 10px solid #fff;
+}
+.s1 .ih-headshot a:hover,
+.s1 .ih-headshot a:active,
+.s1 .ih-headshot a:focus {
+  text-decoration: none;
+}
+.s1 .ih-teammate-name {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+/* s2 */
+
+
+/*** *** responsive *** ***/
+@media screen and (max-width: 767px) {}
+@media screen and (min-width: 320px) and (max-width: 766px) {}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .ih-about .col-lg-4 {
+    text-align: center;
+  }
+  .ih-about img {
+    display: inline-block;
+    width: 260px;
+  }  
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 1921px) {}

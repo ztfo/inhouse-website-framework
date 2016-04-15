@@ -1,7 +1,7 @@
 angular.module('inhouseApp', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/', {
-		templateUrl: 'landing.htm',
+		template: '<ih-landing-layout></ih-landing-layout>',
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
@@ -31,6 +31,8 @@ angular.module('inhouseApp', ['ngRoute'])
 })
 .controller('mainView', ['inhouseApi', '$scope', function(inhouseApi, $scope) {
 	$scope.agent = window.agentSettings;
+	$scope.story = window.storySettings;
+
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseAgentUser !== 'undefined') {
 			$scope.inhouseAgentUserLoggedIn = true;

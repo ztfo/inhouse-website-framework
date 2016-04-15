@@ -16,7 +16,30 @@ window.storySettings = {
     realtorIcon: 'ia/icons/realtor.svg',
     defaultSliderImage: 'ua/backgrounds/mainimage.jpg'
   },
-
+	landingLayout: {
+		slider: {
+			slider: 'mainSlider'
+		},
+		'featured-listings': {
+			config: 's2'
+		},
+		'landing-search': {
+			config: 's2'
+		},
+		resources: {
+			limit: '3'
+		},
+		about: {
+			config: 's2'
+		},
+		testimonials: {
+			testimonial: 'mainTests',
+			config: 's1'
+		},
+		contact: {
+			config: 's2'
+		}
+	},
   NavBar: [
     {
       "type": "internal",
