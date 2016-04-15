@@ -18,7 +18,8 @@ angular.module('inhouseApp')
 				scope.marker = new google.maps.Marker({
 					position: scope.center,
 					map: scope.map,
-					title: args.address
+					title: args.address,
+					icon: 'ia/icons/map-pin.png'
 				});
 			});
 		}
