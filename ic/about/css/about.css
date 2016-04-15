@@ -30,7 +30,13 @@
 
 /*** *** responsive *** ***/
 @media screen and (max-width: 767px) {}
-@media screen and (min-width: 320px) and (max-width: 766px) {}
+@media screen and (min-width: 320px) and (max-width: 766px) {
+  /* s2 */
+  .s2.ih-about .ih-header {
+    width: 100%;
+    text-align: center;
+  }
+}
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .ih-about .col-lg-4 {
     text-align: center;

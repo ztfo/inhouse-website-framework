@@ -2,13 +2,13 @@
 /* global */
 
 /* s1 */
-.s1 .ih-testimonials {
+.s1.ih-testimonials {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px 0;
   border-top: 1px solid #ddd;
 }
-.s1 .ih-testimonials .ih-header {
+.s1.ih-testimonials .ih-header {
   color: #fff;
   font-size: 30px;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);

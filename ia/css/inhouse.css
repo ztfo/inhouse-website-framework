@@ -185,6 +185,44 @@ input:focus { outline: none !important; }
 .ih-textarea {
   min-height: 150px;
 }
+  /* landing page form */
+  .ih-contact-form .btn-group {
+    width: 100%;
+  }
+  .ih-contact-form .btn-group .btn {
+    width: 33%;
+  }
+  .ih-contact-form .btn-default {
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
+  }
+  .ih-contact-form input[type="checkbox"] {
+    display: none;
+  }
+  .ih-contact-form .form-group {
+    margin: 10px 0;
+  }
+  .ih-contact-form .btn-group {
+    margin-bottom: 20px;
+  }
+  .ih-form-input {
+    padding: 20px 15px;
+    border-radius: 0;
+  }
+  .ih-contact-form .form-group>label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  .ih-contact .btn.active {
+    color: #fff;
+    box-shadow: none;
+  }
+  .alert h3 {
+    margin: 5px;
+  }
+  /* landing page end */
 /* contact end */
 
 /* brand footer defaults */
@@ -333,7 +371,23 @@ footer {
   background-position: 50%;
 }
 .ih-listing-card-img>a:first-child {
+  display: block;
+  height: 100%;
+  width: 100%;
   min-height: 200px;
+  opacity: 0;
+  transition: .3s;
+  text-align: center;
+  line-height: 200px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,0.3);
+}
+.ih-listing-card-img>a:first-child:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 .ih-listing-card-desc {
   position: relative;
@@ -988,6 +1042,8 @@ input[type="radio"] {
   footer,
   footer .text-right { text-align: center; }
   footer div { margin-bottom: 10px; }  
+  footer .row { margin: 20px 0; }
+  .ih-copyright { margin: 10px 0px; }  
   /* landing end */
   
   /* results page */

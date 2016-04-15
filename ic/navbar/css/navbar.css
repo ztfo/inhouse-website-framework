@@ -20,7 +20,7 @@
 }
 /* s2 - stacked brand logo center top */
 .s2.ih-nav {
-  min-height: 220px;
+  min-height: 310px !important;
 }
 .s2.ih-nav>.container {
   height: 100%;
@@ -84,24 +84,64 @@
   }
   
 }
-@media screen and (min-width: 321px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .navbar-toggle {
     top: 15px;
     right: 0;
     padding: 10px;
   }
   /* s2 */
-  
+  .s2 .ih-cta {
+    text-align: center;
+  }
+  .s2 .ih-cta .text-right {
+    text-align: center;
+  }
+  .s2 .ih-cta .col-lg-6 {
+    margin-bottom: 10px;
+  }
+  .s2 button.navbar-toggle {
+    position: absolute;
+    top: -73px;
+    right: -20px;
+    background-color: transparent !important;
+    border: 0;
+  }
+  .s2.ih-nav .navbar-header {
+    margin: 0;
+  }  
+  .s2.navbar-default .navbar-toggle .icon-bar {
+    height: 4px;
+    width: 30px;
+    margin-bottom: 5px;
+  }  
+  .s2.ih-nav .navbar-nav>li {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .s2 .navbar-nav>li:first-child a {
+    text-align: center !important;
+  }
+  .s2 .navbar-nav>li:last-child a {
+    text-align: center !important;
+  }
+  .s2 .navbar-nav .open .dropdown-menu>li>a {
+    text-align: center !important;
+  }  
+  .s2.ih-nav .navbar-nav>li>a {
+    text-align: center !important;
+  }
 }
 @media screen and (max-width: 766px) {
   /* s1 */
-  .navbar-brand>img {
+  .s1 .navbar-brand>img {
     width: 260px;
   }
-  .navbar-brand {
+  .s1 .navbar-brand {
     height: auto;
   }
-  .navbar-toggle {
+  .s1.navbar-toggle {
     position: absolute;
     top: 20px;
     right: 10px;
@@ -110,16 +150,16 @@
     transition: .3s;
     padding: 15px;
   }
-  .navbar-default .navbar-toggle .icon-bar {
+  .s1.navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
     height: 3px;
     width: 30px;
     margin-bottom: 7px;
   }
-  .navbar-default .navbar-toggle .icon-bar:last-child {
+  .s1.navbar-default .navbar-toggle .icon-bar:last-child {
     margin-bottom: 0;
   }  
-  #mainNav>ul>li {
+  .s1 #mainNav>ul>li {
     padding: 10px !important;
     text-align: center;
   }  
