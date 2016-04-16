@@ -14,3 +14,8 @@
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 /* s2 */
+.s2.ih-testimonials {
+  padding-top: 130px;
+  padding-bottom: 110px;
+  min-height: 630px;
+}

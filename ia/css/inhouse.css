@@ -15,6 +15,11 @@ input:active,
 input:focus { outline: none !important; }
 /* elements ends */
 
+/* color styles */
+.fw { color: #f5f5f5; }
+.fb { color: #171717; }
+/* color ends */
+
 /* format styles */
 .ih { position: relative; }
 .iha { position: absolute; }
@@ -89,39 +94,6 @@ input:focus { outline: none !important; }
   margin-top: 15px;
 }
 /* search end */
-
-/* about defaults */
-  /* s1 - single agent configuration */
-.ih-about {
-  margin-top: 130px;
-  min-height: 300px;
-  padding-bottom: 70px;
-}
-.ih-about .img-square {
-  border: 10px solid rgba(0, 0, 0, 0.2);
-}
-.ih-about h2 {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-}
-.about-social {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  font-size: 15px;
-}
-  /* s2 - team configuration */
-.ih-about {
-  position: relative;
-  min-height: 500px;
-}
-.ih-team {
-  position: relative;
-  margin: 50px 0;
-}
-/* about end */
 
 /* testimonial default */
 .ih-testimonials {

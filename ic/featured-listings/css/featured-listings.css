@@ -87,7 +87,7 @@
   background-color: rgba(0,0,0,0.3);
 }
 
-/* s2 - grid carousel */
+/* s2 - grid carousel 15 listings per page  */
 .ih-grid-carousel {
   padding: 25px 0;
 }
@@ -126,6 +126,18 @@
   opacity: 1;
   text-decoration: none;
 }
+
+/* s3 - grid carousel 8 listings per page */
+.s3.ih-featured-slider {
+  padding-top: 100px;
+  padding-bottom: 0;
+  margin: 0;
+}
+.s3 .ih-grid-carousel .ih-ft-listing {
+  border: 0;
+  min-height: 320px;
+}
+
 
 /*** *** responsive *** ***/
 @media screen and (min-width: 320px) and (max-width: 766px) {}

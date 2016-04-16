@@ -1,13 +1,25 @@
-<section class="s1 ih-about">
+<section class="s3 ih-about">
   <div class="container">
-
-    <h1 class="ih-header text-center">
-			<span itemprop="name">{{agent.teamName}}</span>
-      <div class="ih-line"></div>
-    </h1>
+    <h1 itemprop="name" class="ih-header text-center">Who We Are</h1>
     <div class="ih-md-divider"></div>
-    
-    
-    
+    <div class="row ih-about-inner">
+      <h1 class="tagline fs text-center fc-01">
+        <em>{{agent.agentTagline}}</em>
+      </h1>
+      <p itemprop="description" class="columns text-justify">
+        {{agent.bio1}}
+      </p>
+    </div>
+    <div class="ih-md-divider"></div>
+    <h2 class="ih-subheader text-center fs">Meet Our Team</h2>
+    <div class="row">
+      <figure class="ih-headshot col-lg-15 col-md-15 col-sm-6 col-xs-12" ng-repeat="member in agent.team">
+        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center" style="background-image: url('{{member.photo}}');">
+          <span class="ih-teammate-name text-center block text-uppercase" itemprop="name">
+            {{member.name | split: ' ':0}}
+          </span>
+        </a>
+      </figure>
+    </div>
   </div>
 </section>

@@ -1,0 +1,24 @@
+<section class="s2 ih-testimonials bkc-02 bd-01 fw">
+
+  <h1 class="ih-header text-center">What Our Clients Say</h1>
+  <div class="ih-md-divider"></div>
+
+  <div id="mainTestimonails" class="ih-testimonials-inner">
+    <div class="owl-carousel tst-carousel">
+      <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
+        <blockquote itemprop="review">
+          <div class="ih-ratings" itemprop="rating">
+            <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
+          </div>
+          <p itemprop="review">{{slide.testimonial}}</p>
+          <a href="#" class="read-more">Read More</a>
+          <footer>{{slide.reviewer}} | {{slide.context}}</footer>
+        </blockquote>
+      </div>
+    </div>
+    <div class="text-center">
+      <img src="ic/testimonials/assets/zillow.svg" alt="Testimonial Provided By Zillow" class="testimonial-icon" />
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,11 @@
+/* global */
+/* s1 */
+/* s2 */
+/* s3 */
+.s3 .contact-form {
+  padding: 30px;
+}
+.s3 .contact-form,
+.s3 .contact-map {
+  min-height: 700px;
+}
