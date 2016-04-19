@@ -89,61 +89,7 @@
 
   <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-  <footer class="footer">
-    <div class="s2 containcer-fluid"> <!-- partner/social footer -->
-      <div class="row partners">
-      
-      </div>
-      <div class="row site-footer bkc-01">
-      
-      </div>
-    </div>
-    
-    <div class="s1 container hidden"> <!-- simple/social footer -->
-      <h1 class="ih-header text-center">Connect with Us</h1>
-      <div class="ih-md-divider"></div>
-      <div class="ih-social large-social text-center">
-        <a itemprop="url" href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
-        <a itemprop="url" href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
-        <a itemprop="url" href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
-        <a itemprop="url" href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
-        <a itemprop="url" href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
-        <a itemprop="url" href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
-      </div>
-      <div class="ih-legal row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <img src="ia/icons/fairhousing.svg" alt="Fair Housing" />
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
-          <img src="ia/icons/realtor.svg" alt="National Association of Realtors | Realtor" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <span itemprop="branchCode">{{agent.brokerage}}</span>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="streetAddress">{{agent.contactAddress}}</span> {{agent.contactAddress2}}
-          <!-- we need to split this up for schema to work, we need itemprop="addressLocality" itemprop="addressRegion" itemprop="postalCode" -->
-        </div>
-      </div>
-      <div class="ih-sm-divider ih-ext-divider"></div>
-      <div class="row">
-        <div class="ih-copyright col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          &copy; <span itemprop="copyrightYear">2016</span> All Rights Reserved - <span itemprop="copyrightHolder">InHouse</span> | {{agent.teamName}}
-        </div>
-        <div class="ih-breadcrumbs col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right" itemprop="breadcrumbList">
-          <a href="#/">home</a> / <a href="#/places">places</a> / <a href="#/videos">videos</a>
-          <a class="hidden" href="/sitemap" alt="{{agent.teamName}} sitemap">Sitemap</a>
-        </div>
-      </div>
-    </div>
-    <div class="ih-footer bkc-01">
-      <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
-      <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
-    </div>
-  </footer>
-
+	<ih-footer></ih-footer> 
 
   <!-- visitor capture modal -->
   <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn">
@@ -232,6 +178,7 @@
   <script src="ic/bootstrap-slider/module/inhouse.bootstrap-slider.js"></script>
   <script src="ic/listing-loader/module/inhouse.listing-loader.js"></script>
   <script src="ic/listing-map/module/inhouse.listing-map.js"></script>
+  <script src="ic/footer/module/inhouse.footer.js"></script>
 
   <!-- vendor scripts -->
   <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
