@@ -89,6 +89,53 @@
 
   <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
+  <section class="ih-partners bkc-02">
+    <div class="container">
+      <div class="owl-carousel partner-carousel">
+        <div>
+          <a href="#" class="partner-link">
+            <img src="" class="img-responsive" />
+          </a>
+        </div>
+        <div>
+          <a href="#" class="partner-link">
+            <img src="" class="img-responsive" />
+          </a>
+        </div>
+        <div>
+          <a href="#" class="partner-link">
+            <img src="" class="img-responsive" />
+          </a>
+        </div>
+        <div>
+          <a href="#" class="partner-link">
+            <img src="" class="img-responsive" />
+          </a>
+        </div>        
+      </div>
+    </div>
+  </section>
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel.partner-carousel").owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 5
+          }
+        }
+      });
+    });
+  </script>
+
 	<ih-footer></ih-footer> 
 
   <!-- visitor capture modal -->

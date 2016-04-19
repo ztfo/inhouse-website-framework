@@ -1,6 +1,10 @@
 /* global */
 .ih-nav,
 .navbar-brand { height: auto !important; min-height: auto !important; }
+.navbar-center {
+  float: none;
+  display: inline-block;
+}
 
 /* s1 - default horizontal full-width absolute to top */
 .s1.ih-nav {
@@ -74,10 +78,13 @@
 }
 /* s3 split navigation logo center */
 .s3.ih-nav { 
-  top: 35px; 
+  top: 45px; 
   left: 35px; 
   right: 35px; 
   z-index: 100; 
+}
+.s3 .nav.navbar-nav {
+  margin-top: 50px;
 }
 /*** *** responsive *** ***/
 @media screen and (max-width: 320px) {

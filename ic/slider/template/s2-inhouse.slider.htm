@@ -1,14 +1,13 @@
 <section class="s2 ih-slider container-fluid">
-  <!-- slider section height can be set to 1/2 2/3 and full screen -->
 
-  <!-- greeting and narrative links -->
   <div class="ih-greeting container" ng-if="LandingComponent.showGreeting">
     <div class="ih-greeting-picture text-center">
-      <img ng-src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" />
+      <img ng-src="{{agent.emblem}}" alt="{{agent.teamName}}" class="hidden"/>
+      <!-- needs to be swapable with headshot, team logo, broker logo, emblem, or hide -->
     </div>
-    <h1 class="text-center">{{LandingComponent.welcomeText}}</h1>
-    <div class="ih-sm-divider"></div>
-    <p class="text-center col-md-6 col-md-offset-3">
+    <h1 class="text-center fs">{{LandingComponent.welcomeText}}</h1>
+    <div class="ih-md-divider"></div>
+    <p class="text-center col-md-6 col-md-offset-3 hidden">
       {{LandingComponent.greetingText}}
     </p>
     <div class="ih-narrative text-center">
@@ -46,7 +45,6 @@
     </div>
   </div>
 
-  <!-- MLS Slider -->
   <div class="ih-slider-row s2 row">
     <div class="container">
       <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
