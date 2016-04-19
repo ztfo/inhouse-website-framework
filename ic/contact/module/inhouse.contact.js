@@ -9,7 +9,8 @@ angular.module('inhouseApp')
 			contactMessage: "@message",
 			noButtons: "@noButtons",
 			prefill: "@prefill",
-			prefillPrefix: "@"
+			prefillPrefix: "@",
+			classes: "@classes"
 		},
 		link: function(scope, element, attrs) {
 			if(typeof scope.contact == 'undefined') {
