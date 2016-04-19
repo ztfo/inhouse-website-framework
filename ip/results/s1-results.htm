@@ -96,9 +96,9 @@
     <div class="ih-results-inner">
 
       <!-- result page navigation and pagination -->
-      <div class="ihmap-results hidden">
+			<div class="ihmap-results" ng-show="mapShown" style="height:300px">
         <!--map should stick to the top of the screen when scrolling -->
-
+				<ih-listing-map class="full"></ih-listing-map>
       </div>
       <div class="ih-listings-menu">
         <div class="row">
@@ -107,7 +107,7 @@
             <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12">
-            <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last">
+            <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last" ng-click="toggleMaps()">
               <i class="fa fa-globe"></i>
             </button>
             <button name="listingDisplay" id="listingDisplay" type="button" class="btn btn-default pull-right hidden-xs">

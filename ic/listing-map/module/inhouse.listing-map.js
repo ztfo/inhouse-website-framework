@@ -21,6 +21,10 @@ angular.module('inhouseApp')
 				scope.contentTemplate = response.data;
 			});
 
+			scope.$on('refreshMap', function(event, args) {
+				google.maps.event.trigger(scope.map, 'resize');
+				scope.map.fitBounds(scope.bounds);
+			});
 			scope.$on('resultsCleared', function(event, args) {
 				for (var i = 0; i < scope.markers.length; i++) {
 					scope.markers[i].setMap(null);
@@ -56,7 +60,8 @@ angular.module('inhouseApp')
 					scope.markers.push(marker);
 					bounds.extend(scope.markers[i].position);
 				}
-				scope.map.fitBounds(bounds);
+				scope.bounds = bounds;
+				scope.map.fitBounds(scope.bounds);
 			});
 		},
 	};
