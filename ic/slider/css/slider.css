@@ -86,11 +86,12 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
 }
 .s2 .ih-greeting {
   z-index: 1;
-  padding-top: 25em;
+  padding-top: 15em;
   position: absolute;
   top: 0;
   right: 0;
