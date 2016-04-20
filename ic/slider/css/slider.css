@@ -4,6 +4,7 @@
   margin-bottom: 25px;
 }
 .ih-greeting p {
+  padding-top: 0;
   padding: 30px 0;
 } 
 
@@ -90,8 +91,8 @@
   z-index: 1;
 }
 .s2 .ih-greeting {
-  z-index: 1;
-  padding-top: 15em;
+  z-index: 2;
+  padding-top: 25em;
   position: absolute;
   top: 0;
   right: 0;
