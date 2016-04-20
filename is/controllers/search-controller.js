@@ -44,7 +44,6 @@ angular.module('inhouseApp')
 	$scope.searchMLS = function() {
 		$scope.firstLoad = false;
 		if(Object.keys($scope.filters).length > 0) {
-			console.log('search');
 
 			$scope.listingLoaders = 15;
 			var params = $scope.filters;
@@ -73,54 +72,13 @@ angular.module('inhouseApp')
 				}
 
 				$scope.$broadcast('resultsLoaded', $scope.listings);
-				$timeout((function(inhouseApi) {
-						return function () {
-						$('.ih-like-btn').click(function() {
-							data = {};
-							data.mls = $(this).attr('data-mls');
-							data.address = $(this).attr('data-address');
-							if(typeof Storage !== 'undefined') {
-								if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-									inhouseApi.getData({resource: 'lead-like-listing', mls: data.mls, address: data.address}).success((function(el) {
-										return function(response) {
-											if(response.code == '200') {
-												el.addClass('ih-liked'); //todo: change this to whatever class marks it as liked!
-											}
-										};
-									})($(this)));
-								} else {
-									//have them register
-									$('#accountModal').modal('show');
-									$('#accountModal').on('hidden.bs.modal', (function(data, el) {
-										return function() {
-											if(typeof Storage !== 'undefined' && typeof localStorage.inhouseAgentUser !== 'undefined') {
-												inhouseApi.getData({resource: 'lead-like-listing', mls: data.mls, address: data.address}).success(function(response) {
-														if(response.code == '200') {
-															el.addClass('ih-liked'); //todo: change this to whatever class marks it as liked!
-														}
-														$('#accountModal').off('hidden.bs.modal');
-												});
-											}
-										};
-									})(data, $(this)));
-								}
-							}
-						});
-						$('#listingDisplay').click(function() {
-							if($(this).attr('data-display-type') == 'list-view') {
-								$('.ih-listing-block').removeClass('ih-listview');
-								$(this).attr('data-display-type', 'block-view');
-								$('[listview]').addClass('hidden');
-								$('[blockview]').removeClass('hidden');
-							} else {
-								$('.ih-listing-block').addClass('ih-listview');
-								$(this).attr('data-display-type', 'list-view');
-								$('[blockview]').addClass('hidden');
-								$('[listview]').removeClass('hidden');
-							}
-						});
-					};
-				})(inhouseApi));
+				$scope.toggleListView = function() {
+					if($scope.showListView) {
+						$scope.showListView = false;
+					} else {
+						$scope.showListView = true;
+					}
+				};
 			});
 		}
 	};
