@@ -99,7 +99,8 @@
   left: 0;
   bottom: 0;
 }
-.b35 .s2.ih-slider-row {
+.b35 .s2.ih-slider-row,
+.b35 .s3.ih-slider-row {
   height: calc(100vh - 70px);
 }
 .botton-btn.fw {
