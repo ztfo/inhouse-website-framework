@@ -18,7 +18,7 @@ angular.module('inhouseApp')
 				scope.slides = args[scope.slider].slides;
 				element.carousel({
                   pause: "false",
-                  interval: 7000
+                  interval: 25000
                 });
 			});
 		}

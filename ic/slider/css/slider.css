@@ -101,6 +101,15 @@
 .b35 .s2.ih-slider-row {
   height: calc(100vh - 70px);
 }
+.botton-btn.fw {
+  position: absolute;
+  bottom: 2%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 10;
+  font-size: 35px;
+}
 /* slider fade and kenburns animations */
 .ih-slider .item>div {
   background-size: cover;

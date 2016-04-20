@@ -34,45 +34,47 @@
                 <i class="fa fa-search"></i> Advanced Search
               </a>
             </div>
-            <div id="advancedSearch" class="ih-advanced-search collapse">
-              <div class="row">
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Zip-code" name="propertyZip" ng-model="filters.zipcode" />
-                </div>                
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12 hidden">
-                  <input type="text" class="ih-search-input full" placeholder="Subdivision" name="propertySubdivision" ng-model="filters.subdivision" />
-                  <!-- AJAX Autofill -->
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Min Beds" name="propertyMinBeds" ng-model="filters.min_beds" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Max Beds" name="propertyMaxBeds" ng-model="filters.max_beds" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Min Sqft" name="propertyMinSF" ng-model="filters.min_sqft" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Max Sqft" name="propertyMaxSF" ng-model="filters.max_sqft" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                  <input type="text" class="ih-search-input full" placeholder="Min Lot Size" name="propertyMinLot" ng-model="filters.min_acres" />
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
-									<button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyPool" ng-click="toggleButton($event, 'pool')">
-                    Pool
-                  </button>
-                </div>
-                <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
-									<button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyGated" ng-click="toggleButton($event, 'gated')">
-                    Gated
-                  </button>
+            <div class="row">
+              <div id="advancedSearch" class="ih-advanced-search collapse">
+                <div class="container-fluid nopad">
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Zip-code" name="propertyZip" ng-model="filters.zipcode" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12 hidden">
+                    <input type="text" class="ih-search-input full" placeholder="Subdivision" name="propertySubdivision" ng-model="filters.subdivision" />
+                    <!-- AJAX Autofill -->
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Min Beds" name="propertyMinBeds" ng-model="filters.min_beds" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Max Beds" name="propertyMaxBeds" ng-model="filters.max_beds" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Min Sqft" name="propertyMinSF" ng-model="filters.min_sqft" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Max Sqft" name="propertyMaxSF" ng-model="filters.max_sqft" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                    <input type="text" class="ih-search-input full" placeholder="Min Lot Size" name="propertyMinLot" ng-model="filters.min_acres" />
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                    <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyPool" ng-click="toggleButton($event, 'pool')">
+                      Pool
+                    </button>
+                  </div>
+                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                    <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyGated" ng-click="toggleButton($event, 'gated')">
+                      Gated
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -79,9 +79,6 @@
 </head>
 
 <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
-  <!-- background-color classes on body need to be editable by user -->
-
-  <ih-navbar></ih-navbar>
 
   <div class="ih-view-container">
     <div ng-view autoscroll="true" class="" id='main-view'></div>
@@ -111,7 +108,7 @@
           <a href="#" class="partner-link">
             <img src="" class="img-responsive" />
           </a>
-        </div>        
+        </div>
       </div>
     </div>
   </section>
@@ -136,7 +133,7 @@
     });
   </script>
 
-	<ih-footer></ih-footer> 
+  <ih-footer></ih-footer>
 
   <!-- visitor capture modal -->
   <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn">
