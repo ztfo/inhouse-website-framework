@@ -6,8 +6,12 @@ angular.module('inhouseApp')
 		},
 		restrict: 'E',
 		replace: true,
+		scope: {
+			classes: "@classes"
+		},
 		controller: function($scope) {
 			$scope.agent = window.agentSettings;
+			$scope.filters = {};
 			$scope.toggleButton = function($event, val) {
 				if(!$($event.target).hasClass('active')) {
 					this.filters[val] = true;

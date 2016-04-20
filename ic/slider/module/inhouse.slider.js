@@ -8,6 +8,7 @@ angular.module('inhouseApp')
 		replace: true,
 		scope: {
 			slider: '@',
+			classes: '@'
 		},
 		controller: function($scope) {
 			$scope.LandingComponent = window.storySettings.LandingComponent;

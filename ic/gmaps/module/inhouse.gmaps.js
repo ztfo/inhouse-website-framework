@@ -5,7 +5,8 @@ angular.module('inhouseApp')
 		replace: true,
 		restrict: 'E',
 		scope: {
-			center: '@'
+			center: '@',
+			classes: '@'
 		},
 		link: function(scope, element, attrs) {
 			scope.$on('listingLoaded', function(event, args) {

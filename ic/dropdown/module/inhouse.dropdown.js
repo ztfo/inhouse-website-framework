@@ -8,6 +8,7 @@ angular.module('inhouseApp')
 		require: 'ngModel',
 		transclude: true,
 		scope: {
+			'classes' : '@',
 			'menuItems': '=items',
 			'val' : '@name',
 			'name' : '@name',

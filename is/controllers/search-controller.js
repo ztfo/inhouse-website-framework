@@ -28,6 +28,19 @@ angular.module('inhouseApp')
 		}
 		return input;
 	};
+	$scope.toggleMaps = function() {
+		if($scope.mapShown) {
+			$scope.mapShown = false;
+			$timeout(function() {
+				$scope.$broadcast('refreshMap');	
+			});
+		} else {
+			$scope.mapShown = true;
+			$timeout(function() {
+				$scope.$broadcast('refreshMap');	
+			});
+		}
+	};
 	$scope.searchMLS = function() {
 		$scope.firstLoad = false;
 		if(Object.keys($scope.filters).length > 0) {

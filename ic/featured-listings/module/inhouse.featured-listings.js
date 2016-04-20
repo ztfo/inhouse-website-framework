@@ -6,6 +6,9 @@ angular.module('inhouseApp')
 		},
 		restrict: 'E',
 		replace: true,
+		scope: {
+			classes: "@classes"
+		},
 		controller: function ($scope) {
 			$scope.LandingComponent = window.storySettings.FeaturedListings;
 			$scope.agent = window.agentSettings;
