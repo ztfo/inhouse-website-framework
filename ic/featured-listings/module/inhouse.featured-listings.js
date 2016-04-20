@@ -23,7 +23,7 @@ angular.module('inhouseApp')
 			};
 		},
 		link: function (scope, element, attrs) {
-			$timeout(function () {
+			$timeout(function() {
 				element.find('.ih-ft-carousel').owlCarousel({
 					mouseDrag: false,
 					items: 4,
@@ -48,7 +48,6 @@ angular.module('inhouseApp')
 					}
 				});
 			});
-
 			scope.$on('storyLoaded', function (event, args) {
 				//destroy owl carousel
 				scope.listingLoaders = 0;
@@ -56,6 +55,31 @@ angular.module('inhouseApp')
 					element.find('.ih-ft-carousel').data('owlCarousel').destroy();
 					element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
 				}
+				$timeout(function() {
+					element.find('.ih-ft-carousel').owlCarousel({
+						mouseDrag: false,
+						items: 4,
+						nav: true,
+						margin: 10,
+						autoplay: false,
+						autoplayHoverPause: true,
+						responsiveClass: true,
+						responsive: {
+							0: {
+								items: 1
+							},
+							480: {
+								items: 1
+							},
+							768: {
+								items: 2
+							},
+							1024: {
+								items: 4
+							}
+						}
+					});
+				});
 
 				scope.homes = args['featuredListings'].listings;
 			});

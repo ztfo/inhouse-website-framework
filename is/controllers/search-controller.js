@@ -116,8 +116,6 @@ angular.module('inhouseApp')
 		}
 
 		$location.search($scope.filters);
-		$('#listingDisplay').off('click');
-
 	});
 
 	$scope.searchMLS();
