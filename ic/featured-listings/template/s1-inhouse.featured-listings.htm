@@ -13,12 +13,7 @@
             <a itemprop="url" href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
               View Home
             </a>
-            <a href="#" class="ih-like-btn" data-mls="{{home.mls}}" data-address="{{home.address}}" onClick="event.preventDefault()">
-              <i class="fa fa-heart-o"></i>
-              <i class="fa fa-heart"></i>
-              <i class="fa fa-star-o"></i>
-              <i class="fa fa-star"></i>
-            </a>
+						<ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
           </div>
           <div class="ih-ft-listing-desc container-fluid">
             <div class="ih-ft-listing-addr text-center">
