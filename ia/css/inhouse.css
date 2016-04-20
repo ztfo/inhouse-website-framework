@@ -14,6 +14,11 @@ button:focus {
 }
 input:active,
 input:focus { outline: none !important; }
+
+p {
+  text-align: justify;
+}
+
 /* elements ends */
 
 /* color styles */
@@ -953,6 +958,14 @@ input[type="radio"] {
     text-align: center;
     padding-bottom: 10px;
   }
+  
+  /* listing */
+  
+  /* s1 */
+  .ih-listing-slider .item {
+    height: 175px !important;
+  }
+  
 }
 
 @media screen and (min-width: 320px) and (max-width: 766px) {
