@@ -942,6 +942,19 @@ input[type="radio"] {
 /* uk ends */
 
 /*** *** responsive *** ***/
+@media screen and (max-width: 320px) {
+  /* results */
+  /* s1 */
+  .s1 .ih-filter-row .btn-group .btn {
+    font-size: 9px;
+  }
+
+  .s1 .ih-listings-menu {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+
 @media screen and (min-width: 320px) and (max-width: 766px) {
   /* landing */
   .ih-nar-btn {
@@ -1009,8 +1022,10 @@ input[type="radio"] {
   }  
   .my-listings {
     top: initial !important;
+    right: initial !important;
     bottom: 0;
     width: 100%;
+    border-radius: 0;
   }
   .ih-greeting {
     padding-top: 10em;
@@ -1042,6 +1057,13 @@ input[type="radio"] {
     .slider.slider-horizontal { width: 90%; }
     .ih-filter-box { margin-bottom: 10px; }
     .ih-filter-row { margin: 0; }  
+    .s2 .ih-filter-row .btn-group .btn {
+      font-size: 9px;
+    }
+    .s1 .ih-listings-menu {
+      text-align: center;
+      padding-bottom: 10px;
+    }  
     /* s2 */
     .s2.ih-results {
       position: relative !important;
