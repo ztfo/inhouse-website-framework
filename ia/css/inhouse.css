@@ -316,6 +316,15 @@ footer.footer {
     width: 100%;
     height: 100%;
 }
+.ihmap-results {
+  height: 300px;
+  margin-bottom: 35px;
+  border-top: 10px solid #fff;
+}
+.ih-listings-menu {
+  background-color: #fff;
+  padding-top: 10px;
+}
 .gmap-popwindow {
 	color:black;
 }
@@ -923,6 +932,14 @@ input[type="radio"] {
   padding-bottom: 0;
 }
 /* bs resets end*/
+
+/* uk resets */
+
+.uk-sticky-placeholder {
+  height: auto !important;
+}
+
+/* uk ends */
 
 /*** *** responsive *** ***/
 @media screen and (min-width: 320px) and (max-width: 766px) {

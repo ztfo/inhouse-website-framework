@@ -28,7 +28,7 @@ angular.module('inhouseApp')
 				$timeout(function() {
 					element.carousel({
 						pause: "false",
-						interval: 7000
+						interval: 9999
 					});
 				});
 			});
