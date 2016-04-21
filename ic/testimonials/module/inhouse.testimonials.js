@@ -8,7 +8,8 @@ angular.module('inhouseApp')
 		replace: true,
 		scope: {
 			testimonial: '@',
-			classes: '@'
+			classes: '@',
+			source: '@'
 		},
 		controller: function($scope) {
 			$scope.LandingComponent = window.storySettings.LandingComponent;
@@ -23,15 +24,30 @@ angular.module('inhouseApp')
 			};
 		},
 		link: function(scope, element, attrs) {
-			scope.$on('storyLoaded', function(event, args) {
-				scope.testimonials = args[scope.testimonial].testimonials;
-				$timeout(function() {
-					element.carousel({
-						pause: "false",
-						interval: 9999
+			if(typeof scope.source !== 'undefined' && scope.source == 'storySettings') {
+				if(typeof window.storySettings.testimonials !== 'undefined') {
+					scope.testimonials = window.storySettings.testimonials;
+				}
+			}
+			if(typeof scope.source === 'undefined' || scope.source == 'hybrid' || scope.source == 'zillow') {
+				scope.showZillow = true;
+				scope.$on('storyLoaded', function(event, args) {
+					scope.testimonials = [];
+					scope.testimonials = args[scope.testimonial].testimonials;
+
+					if(typeof scope.source !== 'undefined' && scope.source == 'hybrid' && typeof window.storySettings.testimonials !== 'undefined') {
+						for (var i = 0; i < window.storySettings.testimonials.length; i++) {
+							scope.testimonials.unshift(window.storySettings.testimonials[i]);
+						}
+					}
+					$timeout(function() {
+						element.carousel({
+							pause: "false",
+							interval: 9999
+						});
 					});
 				});
-			});
+			}
 		}
 	};
 }]);
