@@ -45,14 +45,14 @@
   <link href="ic/testimonials/css/testimonials.css" type="text/css" rel="stylesheet" />
   <link href="ic/contact/css/contact.css" type="text/css" rel="stylesheet" />
 
-  <!-- fonts -->
+  <!-- fs -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-  <!-- TODO seo and social tags NEEDS TO BE IMPLEMENTED -->
+<!-- TODO seo and social tags NEEDS TO BE IMPLEMENTED -->
 
   <!-- opengraph protocol sharing website -->
   <meta property="og:title" content="{{agent.agentName}} | {{agent.brokerage}}" />
@@ -86,7 +86,7 @@
     <div ng-view autoscroll="true" class="" id='main-view'></div>
   </div>
 
-  <ih-footer></ih-footer>
+  <ih-footer config="{{story.footerConfig}}"></ih-footer>
 
   <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
 

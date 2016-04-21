@@ -42,7 +42,7 @@ angular.module('inhouseApp')
 					}
 					$timeout(function() {
 						element.carousel({
-							pause: "false",
+							pause: "true",
 							interval: 9999
 						});
 					});
