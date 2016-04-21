@@ -10,6 +10,9 @@ angular.module('inhouseApp')
 		restrict: 'E',
 		controller: function($scope) {
 			$scope.navbar = window.storySettings.NavBar;
+			if(typeof window.storySettings.navbarClasses !== 'undefined') {
+				$scope.classes = window.storySettings.navbarClasses;
+			}
 			$scope.agent = window.agentSettings;
 		}
 	};

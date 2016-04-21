@@ -35,7 +35,7 @@ angular.module('inhouseApp')
 					scope.testimonials = [];
 					scope.testimonials = args[scope.testimonial].testimonials;
 
-					if(typeof scope.source !== 'undefined' && scope.source == 'hybrid' && typeof window.storySettings.testimonials !== 'undefined') {
+					if((typeof scope.source === 'undefined' || scope.source == 'hybrid') && typeof window.storySettings.testimonials === 'object') {
 						for (var i = 0; i < window.storySettings.testimonials.length; i++) {
 							scope.testimonials.unshift(window.storySettings.testimonials[i]);
 						}
