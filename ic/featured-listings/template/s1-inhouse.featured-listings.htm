@@ -1,11 +1,13 @@
-<section class="s1 ih-featured-slider">
-  <!-- featured listing -->
+<section class="s1 ih-featured-slider {{extraClasses}}">
   <div class="container">
-  <h1 class="ih-header text-center">Featured Homes</h1>
-  <div class="ih-md-divider"></div>
+    
+    <h1 class="ih-header text-center">Featured Homes</h1>
+    <div class="ih-md-divider"></div>
+    
     <div class="ih-ft-carousel">
-      <!-- individual featured listing card-->
+      
       <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
+      
       <div class="item" ng-repeat="home in homes">
         <div class="ih-ft-listing" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
           <div class="ih-ft-listing-img">
@@ -13,7 +15,7 @@
             <a itemprop="url" href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
               View Home
             </a>
-						<ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
+            <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
           </div>
           <div class="ih-ft-listing-desc container-fluid">
             <div class="ih-ft-listing-addr text-center">
@@ -34,6 +36,7 @@
           </div>
         </div>
       </div>
+      
     </div>
 
   </div>

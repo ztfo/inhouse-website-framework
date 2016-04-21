@@ -1,7 +1,5 @@
-<section class="s1 ih-slider container-fluid">
-  <!-- slider section height can be set to 1/2 2/3 and full screen -->
+<section class="s1 ih-slider container-fluid {{extraClasses}}">
 
-  <!-- greeting and narrative links -->
   <div class="ih-greeting container" ng-if="LandingComponent.showGreeting">
     <div class="ih-greeting-picture text-center">
       <img ng-src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" />
@@ -46,7 +44,6 @@
     </div>
   </div>
 
-  <!-- MLS Slider -->
   <div class="ih-slider-row s1 row">
     <div class="container">
       <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">

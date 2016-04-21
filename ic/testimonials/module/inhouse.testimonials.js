@@ -27,7 +27,7 @@ angular.module('inhouseApp')
 				scope.testimonials = args[scope.testimonial].testimonials;
 				$timeout(function() {
 					element.carousel({
-						pause: "false",
+						pause: "true",
 						interval: 9999
 					});
 				});
