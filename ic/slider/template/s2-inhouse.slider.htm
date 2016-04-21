@@ -29,38 +29,20 @@
     </div>
   </div>
 
-  <!-- community links TODO-->
-  <div class="ih-comm-links container hidden">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <div class="ih-comm-links-inner">
-        <h4>Community Name</h4>
-        <!-- this will be a slider that switching between the different communities -->
-        <h5><a href="#" class="ih-comm-link">View all {{LandingComponent.mlsSize}} Homes in Community Link</a></h5>
-        <!-- this will show # of active listings in community -->
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-      <h4>Contact Us</h4>
-      <h5><a class="ih-comm-link" href="maito:{{agent.contactEmail}}">{{agent.contactEmail}} | {{agent.contactPhone}}</a></h5>
-    </div>
-  </div>
-
   <div class="botton-btn fw">
     <i class="fa fa-sort-desc"></i>
   </div>
 
   <div class="ih-slider-row s2 row">
-    <div class="container">
-      <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined">
-            <div class="full-screen-image" ng-style="{'background-image':'url(' + LandingComponent.defaultSliderImage + ')'}"></div>
-          </div>
-          <div class="item {{$index == 0 && LandingComponent.defaultSliderImage === undefined ? 'active' : ''}}" ng-repeat="slide in slides">
-            <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.image + ')'}"></div>
-            <div class="carousel-caption hidden">
-              {{slide.caption}}
-            </div>
+    <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined">
+          <div class="full-screen-image" ng-style="{'background-image':'url(' + LandingComponent.defaultSliderImage + ')'}"></div>
+        </div>
+        <div class="item {{$index == 0 && LandingComponent.defaultSliderImage === undefined ? 'active' : ''}}" ng-repeat="slide in slides">
+          <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.image + ')'}"></div>
+          <div class="carousel-caption hidden">
+            {{slide.caption}}
           </div>
         </div>
       </div>
