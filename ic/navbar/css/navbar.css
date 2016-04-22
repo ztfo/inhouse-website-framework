@@ -5,7 +5,7 @@
   float: none;
   display: inline-block;
 }
-
+[data-uk-sticky].uk-active { position: fixed !important; }
 /* s1 - default horizontal full-width absolute to top */
 .s1.ih-nav.iha {
   position: absolute;
@@ -77,8 +77,12 @@
   background-color: #fff;
 }
 /* s3 */
-
-
+.s3 .navbar-header {
+  float: none;
+}
+.s3 .navbar-right {
+  margin: 0;
+}
 
 /*** *** responsive *** ***/
 @media screen and (max-width: 320px) {

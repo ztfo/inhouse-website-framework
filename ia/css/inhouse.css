@@ -27,8 +27,8 @@ p {
 /* color ends */
 
 /* format styles */
-.ih { position: relative; }
-.iha { position: absolute; }
+.ih { position: relative !important; }
+.iha { position: absolute !important; }
 .tp { top: 0; }
 .rt { right: 0; }
 .lt { left: 0; }
