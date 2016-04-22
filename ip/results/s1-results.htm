@@ -95,7 +95,7 @@
     <!-- listing results -->
     <div class="ih-results-inner">
       <div class="ih-listings-menu" data-uk-sticky>
-        <div class="ihmap-results" id="mapResults">
+        <div class="ihmap-results" id="mapResults" ng-show="mapShown">
           <ih-listing-map class="full"></ih-listing-map>
         </div>
         <div class="row">
@@ -104,7 +104,7 @@
             <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
-            <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last" data-uk-toggle="{target: '#mapResults'}">
+						<button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last" ng-click="toggleMaps()">
               <i class="fa fa-globe"></i>
             </button>
             <button name="listingDisplay" type="button" class="btn btn-default pull-right hidden-xs" ng-click="toggleListView()">

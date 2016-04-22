@@ -1,10 +1,15 @@
 angular.module('inhouseApp')
-.controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', function($timeout, $scope, inhouseApi, $routeParams, $location) {
+.controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', '$window', function($timeout, $scope, inhouseApi, $routeParams, $location, $window) {
 	$scope.searchCount = 0;
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseSearchCount !== 'undefined') {
 			$scope.searchCount = localStorage.inhouseSearchCount;
 		}
+	}
+	if($window.innerWidth < 1367) {
+		$scope.mapShown = false;
+	} else {
+		$scope.mapShown = true;
 	}
 	$scope.getGets = function() {
 		var gets = {};
