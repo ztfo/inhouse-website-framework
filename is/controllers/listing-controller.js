@@ -6,6 +6,16 @@ angular.module('inhouseApp')
 	inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
 		$scope.listing = response.response.listing[0];
 		$scope.url = window.location.href;
+		$scope.lightBox = [];
+
+		for (var i = 0; i < $scope.listing.photos.length; i++) {
+			$scope.lightBox.push({
+				'source' : $scope.listing.photos[i].UriLarge,
+				'type' : 'image',
+				'caption' : $scope.listing.photos[i].Caption
+			});
+		}
+
 		$timeout(function() {
 			$scope.$broadcast('listingLoaded', $scope.listing);
 			$('.ih-owl-carousel').owlCarousel({
@@ -24,11 +34,7 @@ angular.module('inhouseApp')
 			$('#main-view').removeClass('load-overlay');
 		});
 	});
-	$scope.showLightbox = function() {
-		$scope.$parent.currentLightboxImage = $(event.currentTarget).attr('data-image');
-		$scope.$parent.currentLightboxCaption = $(event.currentTarget).attr('data-caption');
-		$timeout(function() {
-			$('#lightbox').lightbox({backdrop: true}).show();
-		});
+	$scope.showLightBox = function() {
+		UIkit.lightbox.create($scope.lightBox).show();
 	};
 }]);

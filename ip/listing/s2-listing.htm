@@ -11,8 +11,8 @@
             <div id="listingSlider" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
-                  <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
-                    <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox></a>
+									<div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
+                    <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
                   </div>
                   <div class="carousel-caption">
                     {{slide.caption}}
