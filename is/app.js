@@ -17,6 +17,9 @@ angular.module('inhouseApp', ['ngRoute'])
 		templateUrl: 'ip/system/' + (window.storySettings.privacyConfig || 's1') + '-visitor-privacy.htm',
 		controller: 'privacyController'
 	})
+	.when('/missing', {
+		templateUrl: 'ip/system/404.htm'
+	})
 	.when('/:content', {
 		templateUrl: 'ip/content/' + (window.storySettings.contentConfig  || 's1') + '-content.htm',
 		controller: 'contentController'
@@ -25,6 +28,9 @@ angular.module('inhouseApp', ['ngRoute'])
 		templateUrl: 'ip/bios/' + (window.storySettings.bioConfig || 's1') + '-bios.htm',
 		controller: 'bioController'
 	})
+	.otherwise({
+		templateUrl: 'ip/system/404.htm'
+	});
 ;
 
 //	$locationProvider.html5Mode(true);
