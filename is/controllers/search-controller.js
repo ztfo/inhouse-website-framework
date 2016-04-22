@@ -55,7 +55,6 @@ angular.module('inhouseApp')
 	};
 	$scope.searchMLS = function() {
 		$scope.firstLoad = false;
-		$scope.searchCount ++;
 
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser === 'undefined') {
@@ -75,6 +74,8 @@ angular.module('inhouseApp')
 						};
 					})($scope));
 					return;
+				} else {
+					$scope.searchCount ++;
 				}
 			}
 		}

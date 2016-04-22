@@ -39,6 +39,7 @@ angular.module('inhouseApp', ['ngRoute'])
 	$scope.agent = window.agentSettings;
 	$scope.story = window.storySettings;
 	$scope.freebies = true;
+	$scope.max = window.storySettings.maxSearchNoLead || 3;
 
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseAgentUser !== 'undefined') {
