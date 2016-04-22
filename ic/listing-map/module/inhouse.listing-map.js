@@ -30,6 +30,17 @@ angular.module('inhouseApp')
 					scope.markers[i].setMap(null);
 				}
 			});
+			scope.$on('focusListing', function(event, args) {
+				scope = event.currentScope;
+				for (var i = 0; i < scope.infoWinds.length; i++) {
+					scope.infoWinds[i].close();
+				}
+				scope.infoWinds[args].open(scope.map, scope.markers[args]);
+			});
+			scope.$on('blurListing', function(event, args) {
+				scope = event.currentScope;
+				scope.infoWinds[args].close();
+			});
 			scope.$on('resultsLoaded', function(event, args) {
 				var bounds = new google.maps.LatLngBounds();
 				scope = event.currentScope;
@@ -38,6 +49,7 @@ angular.module('inhouseApp')
 					scope.markers[i].setMap(null);
 				}
 				scope.markers = [];
+				scope.infoWinds = [];
 
 				//set new markers
 				for (var i = 0; i < args.length; i++) {
@@ -45,6 +57,7 @@ angular.module('inhouseApp')
 					var info = new google.maps.InfoWindow({
 						content: $interpolate(scope.contentTemplate)(scope)
 					});
+					scope.infoWinds.push(info);
 					var marker = new google.maps.Marker({
 						position: {lat: parseFloat(args[i].latlong.split(',')[0]), lng: parseFloat(args[i].latlong.split(',')[1])},
 						map: scope.map,

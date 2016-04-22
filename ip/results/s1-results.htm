@@ -122,7 +122,7 @@
             <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
             <hr> Sorry, there are no listings that match your search criteria.
           </div>
-          <div class="ih-listing-block col-lg-3 col-md-4 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-class="showListView ? 'ih-listview' : ''" ng-repeat="home in listings">
+					<div class="ih-listing-block col-lg-3 col-md-4 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-class="showListView ? 'ih-listview' : ''" ng-repeat="home in listings" ng-mouseover="focusListing($index)">
             <div class="ih-listing-card">
               <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">

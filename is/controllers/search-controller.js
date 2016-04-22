@@ -12,6 +12,12 @@ angular.module('inhouseApp')
 	$scope.noWipe = false;
 	$scope.firstLoad = true;
 
+	$scope.focusListing = function(listing) {
+		$scope.$broadcast('focusListing', listing);
+	};
+	$scope.blurListing = function(listing) {
+		$scope.$broadcast('blurListing', listing);
+	};
 	$scope.moreListings = function() {
 		$scope.noWipe = true;
 		if(typeof $scope.filters.page === 'undefined') {
