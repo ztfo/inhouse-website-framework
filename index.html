@@ -129,12 +129,12 @@
                   <a href="#/privacy" class="block" target="_blank">View Privacy Policy</a>
               </small>
             </p>
-            <p class="text-center">
+            <p class="text-center" ng-if="freebies">
               <!-- should only appear the first time we ask for account info -->
               <small>
                   <span class="skip-box"><strong><em>Not Ready to make an account?</em></strong>
                       <br>
-                      <a href="" data-dismiss="modal" aria-label="Close">Continue viewing <strong>3</strong> more listings.</a><!-- second attempt listing # should be set by agent -->  
+                      <a href="" data-dismiss="modal" aria-label="Close" ng-click="viewFreebies()">Continue viewing <strong>3</strong> more listings.</a><!-- second attempt listing # should be set by agent -->  
                   </span>
               </small>
             </p>

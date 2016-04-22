@@ -38,6 +38,7 @@ angular.module('inhouseApp', ['ngRoute'])
 .controller('mainView', ['inhouseApi', '$scope', function(inhouseApi, $scope) {
 	$scope.agent = window.agentSettings;
 	$scope.story = window.storySettings;
+	$scope.freebies = true;
 
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseAgentUser !== 'undefined') {
@@ -46,6 +47,23 @@ angular.module('inhouseApp', ['ngRoute'])
 			$scope.inhouseAgentUserLoggedIn = false;
 		}
 	}
+
+	if(typeof Storage !== 'undefined') {
+		if(typeof localStorage.inhouseSearchFreebies !== 'undefined' && localStorage.inhouseSearchFreebies === 'false') {
+			$scope.freebies = false;
+		}
+	}
+	$scope.viewFreebies = function() {
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseSearchFreebies === 'undefined' && localStorage.inhouseSearchFreebies !== 'false') {
+				localStorage.inhouseSearchFreebies = 'false';
+				localStorage.inhouseSearchCount = 0;
+				$scope.freebies = false;
+				$('#accountModal').off('hidden.bs.modal');
+				$('#accountModal').modal('hide');
+			}
+		}
+	};
 	$scope.submitNewUser = (function($scope) {
 			return function() {
 			inhouseApi.getData({resource: 'new-lead', name: $scope.newAgent.name, email: $scope.newAgent.email, phone: $scope.newAgent.phone}).success(function(result) {

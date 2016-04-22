@@ -1,5 +1,11 @@
 angular.module('inhouseApp')
 .controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', function($timeout, $scope, inhouseApi, $routeParams, $location) {
+	$scope.searchCount = 0;
+	if(typeof Storage !== 'undefined') {
+		if(typeof localStorage.inhouseSearchCount !== 'undefined') {
+			$scope.searchCount = localStorage.inhouseSearchCount;
+		}
+	}
 	$scope.getGets = function() {
 		var gets = {};
 		for (var property in $routeParams) {
@@ -49,6 +55,30 @@ angular.module('inhouseApp')
 	};
 	$scope.searchMLS = function() {
 		$scope.firstLoad = false;
+		$scope.searchCount ++;
+
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser === 'undefined') {
+				if(localStorage.inhouseSearchCount == 0 && localStorage.inhouseSearchFreebies == 'false') {
+					$scope.searchCount = 1;
+					localStorage.inhouseSearchCount = 1;
+				} else {
+					localStorage.inhouseSearchCount = $scope.searchCount;
+				}
+				var max = window.storySettings.maxSearchNoLead || 3;
+				if($scope.searchCount > max) {
+					$('#accountModal').modal('show');
+					$('#accountModal').off('hidden.bs.modal');
+					$('#accountModal').on('hidden.bs.modal', (function(scope) {
+						return function() {
+							$scope.searchMLS();
+						};
+					})($scope));
+					return;
+				}
+			}
+		}
+
 		if(Object.keys($scope.filters).length > 0) {
 
 			$scope.listingLoaders = 15;
