@@ -1,16 +1,22 @@
 angular.module('inhouseApp')
 .controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', '$window', function($timeout, $scope, inhouseApi, $routeParams, $location, $window) {
+
+	//init lead capture search counting, if in local storage if not zero
 	$scope.searchCount = 0;
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseSearchCount !== 'undefined') {
 			$scope.searchCount = localStorage.inhouseSearchCount;
 		}
 	}
+	
+	//responsive screensize hiding the map
 	if($window.innerWidth < 1367) {
 		$scope.mapShown = false;
 	} else {
 		$scope.mapShown = true;
 	}
+
+	//start off by getting location parameters
 	$scope.getGets = function() {
 		var gets = {};
 		for (var property in $routeParams) {
@@ -20,15 +26,20 @@ angular.module('inhouseApp')
 		}
 		$scope.filters = gets;
 	};
+	
+	//some logic to prevent double loading
 	$scope.noWipe = false;
 	$scope.firstLoad = true;
 
+	//these hide and show infoWindows
 	$scope.focusListing = function(listing) {
 		$scope.$broadcast('focusListing', listing);
 	};
 	$scope.blurListing = function(listing) {
 		$scope.$broadcast('blurListing', listing);
 	};
+
+	//loads more listings, increments the pages
 	$scope.moreListings = function() {
 		$scope.noWipe = true;
 		if(typeof $scope.filters.page === 'undefined') {
@@ -37,6 +48,8 @@ angular.module('inhouseApp')
 			$scope.filters.page ++;
 		}
 	};
+	
+	//creates an array to use for ng-repeat
 	$scope.range = function(min, max, step) {
 		step = step || 1;
 		var input = [];
@@ -45,6 +58,8 @@ angular.module('inhouseApp')
 		}
 		return input;
 	};
+
+	//toggles the map view on the results page
 	$scope.toggleMaps = function() {
 		if($scope.mapShown) {
 			$scope.mapShown = false;
@@ -58,6 +73,8 @@ angular.module('inhouseApp')
 			});
 		}
 	};
+
+	//search mls 
 	$scope.searchMLS = function() {
 		$scope.firstLoad = false;
 
@@ -125,6 +142,7 @@ angular.module('inhouseApp')
 		}
 	};
 
+	//get the get parameters
 	$scope.getGets();
 
 	$scope.removeFilter = function(filter) {
@@ -132,12 +150,13 @@ angular.module('inhouseApp')
 			delete $scope.filters[filter];
 		}
 	};
-	$scope.loadingListings = function() {
 
-	}
+	//refresh gets
 	$scope.$on('$locationChangeSuccess', function(event, oldUrl, newUrl) {
 		$scope.getGets();
 	});
+
+	//trigger mls search on $scope.filter change
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
 		if(newFilters == oldFilters) {
 			return;
@@ -160,7 +179,10 @@ angular.module('inhouseApp')
 		$location.search($scope.filters);
 	});
 
+	//search MLS
 	$scope.searchMLS();
+
+	//label click action
 	$('.btn-group').find('label').click(function() {
 		if($(this).find('input').is(':checked')) {
 			$(this).addClass('active');
