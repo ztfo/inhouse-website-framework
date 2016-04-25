@@ -1,0 +1,36 @@
+<section class="s4 ih-slider container-fluid {{classes}}">
+
+  <div class="ih-greeting container" ng-if="LandingComponent.showGreeting">
+    <h1 class="text-center fs">{{LandingComponent.welcomeText}}</h1>
+    <div class="ih-md-divider"></div>
+    <p class="text-center">
+      {{LandingComponent.greetingText}}
+    </p>
+    <div class="ih-narrative text-center">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-if="LandingComponent.showBuyAHome">
+        <a href="{{LandingComponent.buyLink}}" class="ih-nar-btn btn btn-primary fullw">
+            {{LandingComponent.buyAHomeText}}
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-if="LandingComponent.showSellAHome">
+        <a href="{{LandingComponent.sellLink}}" class="ih-nar-btn btn btn-primary fullw">
+            {{LandingComponent.sellAHomeText}}
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-if="LandingComponent.showJustAdvice">
+        <a href="{{LandingComponent.adviceLink}}" class="ih-nar-btn btn btn-primary fullw">
+            {{LandingComponent.adviceText}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="botton-btn fw">
+    <i class="fa fa-angle-down"></i>
+  </div>
+
+  <div class="ih-slider-row" style="background-image: url('https://d3ui957tjb5bqd.cloudfront.net/uploads/2015/01/cinemagraphs-20.gif');">
+
+  </div>
+
+</section>
