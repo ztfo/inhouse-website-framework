@@ -730,9 +730,32 @@ footer.footer {
   .narrative-links {
     padding: 30px 0;
   }
+  .ih-narrative p {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  .ih-narrative .ih-sm-divider {
+    width: 30px;
+    min-width: auto;
+    background-color: rgba(255,255,255,0.2);
+    height: 2px;
+  }
   /* buy end */
 
 /* narrative end */
+
+/* searches */
+
+  /* community search */
+  .comm-block a {
+    min-height: 140px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0,0,0,0.3);
+  }
+  /* community end */
+
+/* searches end */
 
 
 /* divider defaults */
