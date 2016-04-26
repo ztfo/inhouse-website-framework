@@ -1,4 +1,4 @@
-<nav class="s2 ih-nav navbar navbar-default {{classes}}">
+<nav class="s2 ih-nav navbar navbar-default {{classes}}" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
   <div class="ih-cta">
     <div class="container">
       <div class="row">
@@ -27,6 +27,7 @@
         </button>
         <a itemprop="url" class="navbar-brand" href="#/">
           <img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo" />
+          <img itemprop="logo" ng-src="{{agent.emblem}}" alt="{{agent.teamName}} logo" class="hidden" />
         </a>
       </div>
       <div class="collapse navbar-collapse" id="mainNav">

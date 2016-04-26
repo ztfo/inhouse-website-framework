@@ -1,5 +1,40 @@
-<section class="ih-content ih-bio">
+<section class="ih-content ih-bio s2">
   <div class="container">
-    
+    <div class="ih ih-about-header">
+      <h2 itemprop="name">{{bioAgent.name}}</h2>
+      <h6>{{bioAgent.title}}</h6>
+      <div class="ih-social about-social text-center">
+        <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+        <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+        <a href="{{bioAgent.linkedin}}" class="ih-social-icon" ng-if="bioAgent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+        <a href="{{bioAgent.twitter}}" class="ih-social-icon" ng-if="bioAgent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+        <a href="{{bioAgent.instagram}}" class="ih-social-icon" ng-if="bioAgent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+        <a href="{{bioAgent.pinterest}}" class="ih-social-icon" ng-if="bioAgent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="bio-wide-img" style="background-image: url('{{bioAgent.headshot}}')"></div>
+    <div class="row">
+      <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+        <div itemprop="about" ng-bind-html="bioAgent.bio | to_trusted"></div>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 bio-contact">
+        <h2><i class="fa fa-phone"></i> {{bioAgent.contactPhone | tel}}</h2>
+        <h3><i class="fa fa-envelope"></i> <a href="mailto:{{bioAgent.contactEmail}}">{{bioAgent.contactEmail}}</a></h3>
+        <h3>
+        <address>
+          {{agent.teamName}}<br>
+          {{agent.contactAddress}}<br>
+          {{agent.contactAddress2}}
+        </address>        
+        </h3>
+      </div>
+    </div>
+    <div class="ih-accent-divider clear"></div>
+
+    <div class="ih-about-listings hidden">
+      <!-- this will house a sold/active/featured listing slider for bioAgent -->
+      <h1 class="ih-header text-center"> Listings</h1>
+      <div class="ih-md-divider"></div>
+    </div>
   </div>
 </section>

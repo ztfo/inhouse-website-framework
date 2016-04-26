@@ -247,6 +247,15 @@ footer.footer {
   width: 33.333333%;
 }
 .gmap-popwindow a {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.gmap-popwindow a:hover {
+  text-decoration: none;
+}
+/*.gmap-popwindow a {
   display: block;
   min-height: 130px;
   width: 180px;
@@ -261,7 +270,7 @@ footer.footer {
   bottom: 2px;
   font-size: 12px;
   font-weight: 600;
-} 
+}*/
   /* grid to list view toggle */
 .ih-listview {
   width: 100% !important;
@@ -699,16 +708,32 @@ footer.footer {
 
 /* bio pages defaults */
   /* s1 - center page with slim side panel, active and sold listing gallery */
-.bio-image {
-  width: 230px;
-  margin-right: 25px;
-  margin-bottom: 10px;
-}
-.ih-content-body .ih-social {
-  position: absolute;
-  top: 0;
-  right: 25px;
-}
+  .bio-image {
+    width: 230px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+  }
+  .ih-content-body .ih-social {
+    position: absolute;
+    top: 0;
+    right: 25px;
+  }
+
+  /* s2 - wide page with large agent image */
+  .s2 .bio-wide-img {
+    min-height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-bottom: 30px;
+  }
+  .s2 .ih-about-header {
+    padding: 15px 0;
+  }
+  .s2 .bio-contact {
+    border-left: 1px solid #ddd;
+    min-height: 300px;
+  }
 /* bio ends */
 
 /* privacy page */
