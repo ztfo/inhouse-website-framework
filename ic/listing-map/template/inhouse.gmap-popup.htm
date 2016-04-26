@@ -1,3 +1,5 @@
-<div class="gmap-popwindow"><a href="#/listing/{{listing.mls}}">{{listing.address}} | {{listing.price | currency:'$':0}}</a>
-  
+<div class="gmap-popwindow">
+  <a href="#/listing/{{listing.mls}}" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')">
+    <span>{{listing.address}}<br>{{listing.price | currency:'$':0}}</span>
+  </a>
 </div>

@@ -246,6 +246,22 @@ footer.footer {
 .ih-filter-row .btn-group .btn {
   width: 33.333333%;
 }
+.gmap-popwindow a {
+  display: block;
+  min-height: 130px;
+  width: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.gmap-popwindow span {
+  position: absolute;
+  bottom: 2px;
+  font-size: 12px;
+  font-weight: 600;
+} 
   /* grid to list view toggle */
 .ih-listview {
   width: 100% !important;
@@ -1128,6 +1144,7 @@ input[type="radio"] {
     .s2.ih-results .ih-adv-toggle { display: block; }
     .s2.ih-listing,
     .s2.ih-results { padding-top: 95px !important ; }
+  
   /* results end */
   /* listing page */
     /* s1 */
