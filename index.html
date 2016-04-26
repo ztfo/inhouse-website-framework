@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <title>{{agent.agentName}} | {{agent.teamName}} {{windowTitle}}</title>
-  <link rel="icon" type="image/x-icon" href="ua/logos/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
   <link rel="canonical" href="{{pageURL}}" />
   <meta itemprop="name" content="{{pageTitle}}" />
   <meta itemprop="url" content="{{pageURL}}" />
@@ -94,7 +94,7 @@
   <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
   <!-- visitor capture modal -->
-  <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn">
+  <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
     View My Listings  
   </a>
   <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">

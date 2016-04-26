@@ -748,10 +748,26 @@ footer.footer {
 
   /* community search */
   .comm-block a {
+    position: relative;
     min-height: 140px;
-    padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(0,0,0,0.3);
+    padding: 20px 15px;
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  .comm-block a:hover,
+  .comm-block a:focus,
+  .comm-block a:active {
+    text-decoration: none !important;
+  }
+  .comm-block h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .comm-block p {
+    text-transform: uppercase;
+    font-weight: 600;
   }
   /* community end */
 
@@ -1187,7 +1203,7 @@ input[type="radio"] {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   /* landing */
   .my-listings {
-    top: initial;
+    top: initial !important;
     width: 100%;
     border-radius: 0;
     bottom: 0;
