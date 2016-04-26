@@ -60,7 +60,6 @@ angular.module('inhouseApp', ['ngRoute'])
 				localStorage.inhouseSearchFreebies = 'false';
 				localStorage.inhouseSearchCount = 0;
 				$scope.freebies = false;
-				$('#accountModal').off('hidden.bs.modal');
 				$('#accountModal').modal('hide');
 			}
 		}
