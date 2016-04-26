@@ -8,7 +8,7 @@
   <div class="ih-content-inner container">
 
     <div class="row">
-      <div class="ih-content-body col-lg-9 col-md-9 col-sm-12 col-xs-12">
+      <div class="ih-content-body" ng-class="!content.disableSidebar ? 'col-lg-9 col-md-9 col-sm-12 col-xs-12' : ''">
         <span ng-bind-html="content.content | to_trusted"></span>
         <div class="ih-accent-divider clear"></div>
       </div>
