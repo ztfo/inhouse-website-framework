@@ -16,7 +16,6 @@ angular.module('inhouseApp')
 			var contentUrl = $sce.getTrustedResourceUrl($scope.content.contentUrl);
 			$templateRequest(contentUrl).then((function($scope) {
 					return function(template) {
-						debugger;
 						$scope.content.content = $interpolate(template)($scope);
 					};
 			})($scope));

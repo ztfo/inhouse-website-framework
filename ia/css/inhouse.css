@@ -722,6 +722,19 @@ footer.footer {
 }
 /* visitor modal ends */
 
+/* narrative sections */
+  /* buy */
+  .ih-narrative .ih-nar-btn {
+    margin-bottom: 25px;
+  }
+  .narrative-links {
+    padding: 30px 0;
+  }
+  /* buy end */
+
+/* narrative end */
+
+
 /* divider defaults */
 .ih-lg-divider {
   height: 5px;
