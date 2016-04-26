@@ -12,7 +12,7 @@
         <span ng-bind-html="content.content | to_trusted"></span>
         <div class="ih-accent-divider clear"></div>
       </div>
-      <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12">
+      <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12" ng-hide="content.disableSidebar">
         <div class="panel-group" id="sideAccordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
