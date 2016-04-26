@@ -1,5 +1,10 @@
 angular.module('inhouseApp')
 .controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', '$window', function($timeout, $scope, inhouseApi, $routeParams, $location, $window) {
+	$scope.$on('$destroy', function() {
+		//prevent the modal from persisting
+		$('#accountModal').off('hidden.bs.modal');
+		$('#accountModal').modal('hide');
+	});
 
 	//init lead capture search counting, if in local storage if not zero
 	$scope.searchCount = 0;

@@ -4,6 +4,11 @@ angular.module('inhouseApp')
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
 
+	$scope.$on('$destroy', function() {
+		//prevent the modal from persisting
+		$('#accountModal').off('hidden.bs.modal');
+		$('#accountModal').modal('hide');
+	});
 	$scope.getData = function() {
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
