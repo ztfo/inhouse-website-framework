@@ -7,6 +7,7 @@
 }
 
 /* element resets */
+body { overflow: hidden !important; }
 button,
 button:active, 
 button:focus {
@@ -55,10 +56,10 @@ p {
 
 /* empty states */
 .ih-view-container { 
-  overflow: hidden;
+  overflow: hidden !important;
   min-height: calc(100vh - 516px); 
 }
-#main-view { overflow: hidden; }
+#main-view { overflow: hidden !important; }
 /* empty end */
 
 /* nav defaults */
