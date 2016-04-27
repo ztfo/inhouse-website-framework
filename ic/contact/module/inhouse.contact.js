@@ -45,16 +45,16 @@ angular.module('inhouseApp')
 				var contact = this.scope.contact;
 				contact.form = this.scope.contactMessage;
 				var api = this.scope.inhouseApi;
+				$scope.contactSending = true;
 				api.getData({resource: 'submit-contact', contact: contact}).success((function($scope) {
 					return function(response) {
+						delete $scope.contactSending;
 						if(response.result == 'success') {
-							$scope.element.find('.alert').addClass('hidden');
-							$scope.element.find('.alert-success').removeClass('hidden');
 							//tell user it worked
+							$scope.contactSent = true;
 						} else {
-							$scope.element.find('.alert').addClass('hidden');
-							$scope.element.find('.alert-danger').removeClass('hidden');
 							//notify user it didn't work
+							$scope.contactSendFailed = true;
 						}
 					};
 				})($scope));
