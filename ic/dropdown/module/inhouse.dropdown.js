@@ -33,7 +33,7 @@ angular.module('inhouseApp')
 			});
 			$timeout((function(scope, element, attrs) {
 				return function() {
-					if(typeof scope.$parent.filters[attrs.id] !== 'undefined') {
+					if(typeof scope.$parent.filters !== 'undefined' && typeof scope.$parent.filters[attrs.id] !== 'undefined') {
 						scope.val = scope.$parent.filters[attrs.id];
 						scope.name = scope.origName + " | " + scope.val;
 						ngModelCtrl.$setViewValue(scope.val);

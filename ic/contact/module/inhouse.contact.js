@@ -10,13 +10,14 @@ angular.module('inhouseApp')
 			noButtons: "@noButtons",
 			prefill: "@prefill",
 			prefillPrefix: "@",
-			classes: "@classes"
+			classes: "@classes",
+			typeofcontact: '@typeofcontact'
 		},
 		link: function(scope, element, attrs) {
 			if(typeof scope.contact == 'undefined') {
 				scope.contact = {};
 			}
-			scope.contact.typeOfContact = "BuyAHome";
+			scope.contact.typeofcontact = attrs.typeofcontact || "BuyAHome";
 			scope.element = element;
 			element.find('input[type="radio"]').each(function() {
 				$(this).click(function() {

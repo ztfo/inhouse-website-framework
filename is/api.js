@@ -1,6 +1,6 @@
 angular.module('inhouseApp')
 .factory('inhouseApi', function($http) {
-	var urlBase = 'https://www.getinhouse.io/api/v1/';
+	var urlBase = 'http://localhost/inhouse-canvas/api/v1/';
 	var inhouseApi = {};
 	var userId = window.agentSettings.userId;
 	var userHash = window.agentSettings.userHash;

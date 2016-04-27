@@ -11,34 +11,34 @@
             <h3>Your Contact Information</h3>
             <div class="form-group">
               <label for="sellerName">Full Name</label>
-              <input type="text" class="form-control" id="sellerName" placeholder="Full Name" name="Full Name">
+              <input type="text" class="form-control" id="sellerName" placeholder="Full Name" name="Full Name" ng-model="contact.FullName">
             </div>
             <div class="row">
               <div class="form-group col-lg-6">
                 <label for="sellerPhone">Phone</label>
-                <input type="text" class="form-control" id="sellerPhone" name="Phone" placeholder="Phone">
+                <input type="text" class="form-control" id="sellerPhone" name="Phone" placeholder="Phone" ng-model="contact.PhoneNumber">
               </div>
               <div class="form-group col-lg-6">
                 <label for="sellerEmail">Email</label>
-                <input type="text" class="form-control" id="sellerEmail" name="Email" placeholder="Email" required>
+                <input type="text" class="form-control" id="sellerEmail" name="Email" placeholder="Email" required ng-model="contact.Email">
               </div>
             </div>
             <h3>Your Property Information</h3>
             <div class="form-group">
               <label for="sellerAddress">Property Address</label>
-              <input type="text" class="form-control" id="sellerAddress" placeholder="Property Address" name="Property Address">
+              <input type="text" class="form-control" id="sellerAddress" placeholder="Property Address" name="Property Address" ng-model="contact.PropertyAddress">
             </div>
             <div class="row">
               <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <ih-dropdown items='[{"name": "Owner", "value": "Owner"}, {"name": "Relative", "value": "Relative"}, {"name": "Neighbor", "value": "Neighbor"}, {"name": "Advisor", "value": "Advisor"}]' name="Relationship to Property" ng-model="contact.relationship"></ih-dropdown>
+                <ih-dropdown items='[{"name": "Owner", "value": "Owner"}, {"name": "Relative", "value": "Relative"}, {"name": "Neighbor", "value": "Neighbor"}, {"name": "Advisor", "value": "Advisor"}]' name="Relationship to Property" ng-model="contact.RelationshipToHome"></ih-dropdown>
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <ih-dropdown items='[{"name": "Immediately", "value": "Immediately"}, {"name": "30-days", "value": "30-days"}, {"name": "60-days", "value": "60-days"}, {"name": "4 months +", "value": "4 months +"}]' name="How soon are you looking to sell?" ng-model="contact.urgency"></ih-dropdown>
+                <ih-dropdown items='[{"name": "Immediately", "value": "Immediately"}, {"name": "30-days", "value": "30-days"}, {"name": "60-days", "value": "60-days"}, {"name": "4 months +", "value": "4 months +"}]' name="How soon are you looking to sell?" ng-model="contact.Urgency"></ih-dropdown>
               </div>
             </div>
             <div class="row">
               <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]' name="Property Type" ng-model="contact.homeType"></ih-dropdown>
+                <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]' name="Property Type" ng-model="contact.HomeType"></ih-dropdown>
               </div>
             </div>
             <div class="form-group">
