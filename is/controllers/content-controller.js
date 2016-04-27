@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.controller('contentController', ['$interpolate', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($interpolate, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
+.controller('contentController', ['$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
 	if(typeof window.agentSettings.content[$route.content] === 'undefined') {
 		var content = window.agentSettings.content;
 		for (var i = 0; i < content.length; i++) {
@@ -13,12 +13,7 @@ angular.module('inhouseApp')
 	}
 	if(typeof $scope.content === 'undefined' || typeof $scope.content.title === 'undefined' || typeof $scope.content.content === 'undefined') {
 		if(typeof $scope.content.contentUrl !== 'undefined') {
-			var contentUrl = $sce.getTrustedResourceUrl($scope.content.contentUrl);
-			$templateRequest(contentUrl).then((function($scope) {
-					return function(template) {
-						$scope.content.content = $interpolate(template)($scope);
-					};
-			})($scope));
+
 		} else {
 			$location.path('/missing');
 		}
