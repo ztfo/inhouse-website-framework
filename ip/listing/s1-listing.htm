@@ -7,9 +7,9 @@
           <div class="row">
             <div id="listingSlider" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
-								<div class="item active" ng-hide="listing.photos.length > 0">
-									<div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
-								</div>
+                <div class="item active" ng-hide="listing.photos.length > 0">
+                  <div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
+                </div>
                 <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
                   <div ng-click="showLightBox()" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}"></div>
                   <div class="carousel-caption">
@@ -40,7 +40,7 @@
     <div class="ih-listing-images">
       <div class="ih-nav-carousel ih-owl-carousel">
         <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
-					<img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="fit-image ih-owl-thumbnail">
+          <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="fit-image ih-owl-thumbnail">
         </div>
       </div>
     </div>
