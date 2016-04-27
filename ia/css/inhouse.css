@@ -1121,7 +1121,7 @@ input[type="radio"] {
     right: initial !important;
     bottom: 0;
     width: 100%;
-    border-radius: 0;
+    border-radius: 0 !important;
   }
   .ih-greeting {
     padding-top: 10em;
@@ -1286,7 +1286,7 @@ input[type="radio"] {
     .s1 .slider.slider-horizontal { width: 95%; }  
     /* s2 */
     .s2 .ih-listing-card-img { min-height: 165px; }
-    .s2 .ih-listing-card { min-height: 350px; }  
+    .s2 .ih-listing-card { min-height: 360px; }  
     .s2 .ih-ft-listing-link {
       min-height: 150px !important;
       line-height: 175px !important;
