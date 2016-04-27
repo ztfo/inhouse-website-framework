@@ -11,8 +11,9 @@ angular.module('inhouseApp')
 		controller: function($scope) {
 			$scope.likeButton = function($event) {
 				data = {};
-				data.mls = $(this).attr('data-mls');
-				data.address = $(this).attr('data-address');
+				var button = $($event.target).parent();
+				data.mls = button.attr('data-mls');
+				data.address = button.attr('data-address');
 				if(typeof Storage !== 'undefined') {
 					if(typeof localStorage.inhouseAgentUser !== 'undefined') {
 						inhouseApi.getData({resource: 'lead-like-listing', mls: data.mls, address: data.address}).success((function(el) {
@@ -21,7 +22,7 @@ angular.module('inhouseApp')
 									el.addClass('ih-liked'); //todo: change this to whatever class marks it as liked!
 								}
 							};
-						})($(this)));
+						})(button));
 					} else {
 						//have them register
 						$('#accountModal').modal('show');
