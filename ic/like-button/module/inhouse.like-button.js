@@ -12,8 +12,8 @@ angular.module('inhouseApp')
 			$scope.likeButton = function($event) {
 				data = {};
 				var button = $($event.target).parent();
-				data.mls = button.attr('data-mls');
-				data.address = button.attr('data-address');
+				data.mls = $scope.mls;
+				data.address = data.address = $scope.address;
 				if(typeof Storage !== 'undefined') {
 					if(typeof localStorage.inhouseAgentUser !== 'undefined') {
 						inhouseApi.getData({resource: 'lead-like-listing', mls: data.mls, address: data.address}).success((function(el) {
