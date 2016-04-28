@@ -708,6 +708,7 @@ footer.footer {
 /* content end */
 
 /* bio pages defaults */
+
   /* s1 - center page with slim side panel, active and sold listing gallery */
   .bio-image {
     width: 230px;
@@ -734,6 +735,23 @@ footer.footer {
   .s2 .bio-contact {
     border-left: 1px solid #ddd;
     min-height: 300px;
+  }
+/* s3 - alternating panels with listing maps */
+  .s3.ih-bio header {
+    min-height: 300px;
+    background-color: #ddd;
+    margin-bottom: 35px;
+  }
+  .s3.ih-bio .agent-image {
+    min-height: 600px;
+    background-color: #eee;
+  }
+  .s3.ih-bio .row {
+    margin-bottom: 30px;
+  }
+  .s3.ih-bio .listing-map {
+    min-height: 600px;
+    background-color: #eee;
   }
 /* bio ends */
 

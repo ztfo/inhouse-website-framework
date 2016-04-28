@@ -1,9 +1,12 @@
 <section class="ih-content ih-bio s3" itemscope itemtype="http://schema.org/RealEstateAgent">
+  <header data-uk-parallax="{bg: '-150'}">
+
+  </header>
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-pane">
-        <h1 itemprop="name">{{bioAgent.name}}</h1>
-        <h2>{{bioAgent.titke}}</h2>
+        <h1 class="fs" itemprop="name">{{bioAgent.name}}</h1>
+        <h2 class="fp">{{bioAgent.titke}}</h2>
         <div class="ih-social about-social text-center">
           <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
@@ -20,31 +23,44 @@
         </div>
       </div>
     </div>
+    <div class="ih-md-divider"></div>
     <div class="row">
       <!-- sold listings block -->
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
         <!-- sold listing map -->
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing">
-        <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
-          Current Listings
-        </a>
-        <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
-          Sold Listings
-        </a>
+        <ul class="nav nav-pills nav-justified">
+          <li role="presentation">
+            <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
+              Current Listings
+            </a>
+          </li>
+          <li role="presentation">
+            <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
+              Sold Listings
+            </a>
+          </li>
+        </ul>
         <div class="agent-listings">
           <div class="collapse" id="agentSolds">
             <div class="well">
-            
+
             </div>
           </div>
           <div class="collapse" id="agentSolds">
             <div class="well">
-            
+
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Blog</h1>
+      <div class="ih-md-divider"></div>
+      
+      
     </div>
   </div>
 </section>
