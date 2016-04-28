@@ -1,0 +1,66 @@
+<section class="ih-content ih-bio s3" itemscope itemtype="http://schema.org/RealEstateAgent">
+  <header data-uk-parallax="{bg: '-150'}">
+
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-pane">
+        <h1 class="fs" itemprop="name">{{bioAgent.name}}</h1>
+        <h2 class="fp">{{bioAgent.titke}}</h2>
+        <div class="ih-social about-social text-center">
+          <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+          <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+          <a href="{{bioAgent.linkedin}}" class="ih-social-icon" ng-if="bioAgent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+          <a href="{{bioAgent.twitter}}" class="ih-social-icon" ng-if="bioAgent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+          <a href="{{bioAgent.instagram}}" class="ih-social-icon" ng-if="bioAgent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+          <a href="{{bioAgent.pinterest}}" class="ih-social-icon" ng-if="bioAgent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
+        </div>
+        <div itemprop="about" ng-bind-html="bioAgent.bio | to_trusted" class="agent-bio"></div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 image-pane">
+        <div class="agent-image">
+          <span class="sr-only">{{bioAgent.name}} Picture</span>
+        </div>
+      </div>
+    </div>
+    <div class="ih-md-divider"></div>
+    <div class="row">
+      <!-- sold listings block -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
+        <!-- sold listing map -->
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing">
+        <ul class="nav nav-pills nav-justified">
+          <li role="presentation">
+            <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
+              Current Listings
+            </a>
+          </li>
+          <li role="presentation">
+            <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
+              Sold Listings
+            </a>
+          </li>
+        </ul>
+        <div class="agent-listings">
+          <div class="collapse" id="agentSolds">
+            <div class="well">
+
+            </div>
+          </div>
+          <div class="collapse" id="agentSolds">
+            <div class="well">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Blog</h1>
+      <div class="ih-md-divider"></div>
+      
+      
+    </div>
+  </div>
+</section>
