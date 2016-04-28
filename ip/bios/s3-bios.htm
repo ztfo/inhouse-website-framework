@@ -4,10 +4,10 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-pane">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-pane ih">
         <h1 class="fs" itemprop="name">{{bioAgent.name}}</h1>
-        <h2 class="fp">{{bioAgent.titke}}</h2>
-        <div class="ih-social about-social text-center">
+        <h4 class="fp">{{bioAgent.title}}</h4>
+        <div class="ih-social about-social text-center iha tp rt">
           <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
           <a href="{{bioAgent.linkedin}}" class="ih-social-icon" ng-if="bioAgent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
@@ -17,7 +17,7 @@
         </div>
         <div itemprop="about" ng-bind-html="bioAgent.bio | to_trusted" class="agent-bio"></div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 image-pane">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 image-pane ih">
         <div class="agent-image">
           <span class="sr-only">{{bioAgent.name}} Picture</span>
         </div>
