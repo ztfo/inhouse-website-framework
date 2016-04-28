@@ -1264,20 +1264,47 @@ input[type="radio"] {
   .sq-404 {
     width: 100%;
     margin-top: 140px;
+}
+.ih404 h1 {
+  font-size: 100px;
+}
+.ih404 h4 {
+  font-size: 14px;
+  margin: 15px;
+}
+.ih404 span {
+  font-size: 15px;
+}
+
+/* 404 ends */
+
+  /* capture */
+  .modal-dialog {
+    padding: 0;
+    margin: 0;
   }
-  
-  .ih404 h1 {
-    font-size: 100px;
+  #accountModal {
+    padding: 0 !important;
+    overflow: auto;
   }
-  
-  .ih404 h4 {
-    font-size: 14px;
-    margin: 15px;
+  h2#accountLabel {
+    font-size: 25px;
+    font-weight: 600;
   }
-  
-  .ih404 span {
+  .modal-body {
+    padding: 25px;
+  }
+  .modal-body p {
     font-size: 15px;
-    /* 404 ends */
+    text-align: left;
+  }
+  .modal-footer .btn-primary {
+    font-size: 15px;
+  }
+  .modal-footer {
+    padding: 20px;
+  }
+  /* capture ends */
 }
 @media screen and (min-width: 426px) and (max-width: 768px) {
   /* landing */
