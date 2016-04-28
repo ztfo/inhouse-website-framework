@@ -718,9 +718,8 @@ footer.footer {
   .ih-content-body .ih-social {
     position: absolute;
     top: 0;
-    right: 25px;
+  right: 25px;
   }
-
   /* s2 - wide page with large agent image */
   .s2 .bio-wide-img {
     min-height: 400px;
@@ -736,7 +735,7 @@ footer.footer {
     border-left: 1px solid #ddd;
     min-height: 300px;
   }
-/* s3 - alternating panels with listing maps */
+  /* s3 - alternating panels with listing maps */
   .s3.ih-bio header {
     min-height: 300px;
     background-color: #ddd;
@@ -747,13 +746,16 @@ footer.footer {
     background-color: #eee;
   }
   .s3.ih-bio .row {
-    margin-bottom: 30px;
+    margin: 30px 0;
   }
   .s3.ih-bio .listing-map {
     min-height: 600px;
     background-color: #eee;
   }
-/* bio ends */
+  .s3.ih-bio .blog-row {
+    margin-top: 150px !important;
+  }
+  /* bio ends */
 
 /* privacy page */
 .privacy {
