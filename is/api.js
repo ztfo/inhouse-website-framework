@@ -15,6 +15,12 @@ angular.module('inhouseApp')
 				data.inhouseAgentUser = localStorage.inhouseAgentUser;
 			}
 		}
+		if(typeof window.geolocation !== 'undefined') {
+			if(typeof data.params === 'undefined') {
+				data.params = {};
+			}
+			data.params.geolocation = window.geolocation;
+		}
 
 		var url = urlBase + (typeof data.resource !== 'undefined' ? data.resource : '') + '?' + $.param(data);
 			

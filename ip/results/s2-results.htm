@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
-            <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
+            <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page' && filter != 'geolocation'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}: {{val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
             <a class="btn btn-default ih-adv-toggle bkc-03" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
