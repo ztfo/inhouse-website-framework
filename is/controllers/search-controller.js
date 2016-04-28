@@ -30,6 +30,16 @@ angular.module('inhouseApp')
 			}
 		}
 		$scope.filters = gets;
+		if(typeof $scope.filters['near-me'] !== 'undefined') {
+			if(typeof navigator.geolocation !== 'undefined') {
+				navigator.geolocation.getCurrentPosition((function(scope) {
+					return function(geolocation) {
+						window.geolocation = geolocation.coords.latitude + ',' + geolocation.coords.longitude;
+						scope.searchMLS();
+					}
+				})($scope));
+			}
+		}
 	};
 	
 	//some logic to prevent double loading
