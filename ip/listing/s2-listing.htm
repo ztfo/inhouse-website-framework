@@ -5,7 +5,6 @@
     </div>
     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fullh listing-pane">
       <div class="container-fluid">
-        <!-- listing slider -->
         <div class="ih-listing-slider">
           <div class="row">
             <div id="listingSlider" class="carousel slide" data-ride="carousel">
@@ -32,17 +31,14 @@
         </div>
       </div>
 
-      <!-- listing slider navigation -->
       <div class="ih-listing-images">
         <div class="ih-nav-carousel ih-owl-carousel">
           <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
             <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="img-responsive ih-owl-thumbnail">
           </div>
         </div>
-        <!-- listing slideset navigation here -->
       </div>
 
-      <!-- listing upper fact box -->
       <div class="ih-listing-factbar container-fluid">
         <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <h2 class="fs">{{listing.address}}</h2>
@@ -54,7 +50,6 @@
         </div>
       </div>
 
-      <!-- listing description and details -->
       <div class="ih-listing-details container-fluid">
         <div class="ih-listing-description col-lg-5 col-md-12 col-sm-12 col-xs-12">
           <p>{{listing.PublicRemarks | sentence}}</p>
@@ -76,43 +71,55 @@
                 </td>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="text-uppercase">
               <tr>
-                <th><small class="text-muted">MLS</small></th>
+                <th><small class="text-muted">Mls</small></th>
                 <td><small class="text-muted">{{listing.mls}}</small></td>
-                <th><small class="text-muted">STATUS</small></th>
+                <th><small class="text-muted">Status</small></th>
                 <td><small class="text-muted">{{listing.status}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">TYPE</small></th>
+                <th><small class="text-muted">Type</small></th>
                 <td><small class="text-muted">{{listing.type}}</small></td>
-                <th><small class="text-muted">LOT</small></th>
+                <th><small class="text-muted">Lot</small></th>
                 <td><small class="text-muted">{{listing.lotsize}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">YEAR BUILT</small></th>
+                <th><small class="text-muted">Year Built</small></th>
                 <td><small class="text-muted">{{listing.yearbuilt}}</small></td>
-                <th><small class="text-muted">PRICE/SF</small></th>
+                <th><small class="text-muted">Price/SF</small></th>
                 <td><small class="text-muted">{{listing.psf | currency}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">STORIES</small></th>
+                <th><small class="text-muted">Stories</small></th>
                 <td><small class="text-muted">{{listing.stories}}</small></td>
-                <th><small class="text-muted">POOL</small></th>
+                <th><small class="text-muted">Pool</small></th>
                 <td><small class="text-muted">{{listing.pool}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">GARAGE</small></th>
+                <th><small class="text-muted">Garage</small></th>
                 <td><small class="text-muted">{{listing.garage}}</small></td>
                 <th><small class="text-muted">HOA</small></th>
                 <td><small class="text-muted">{{listing.hoa}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">AREA</small></th>
+                <th><small class="text-muted">Area</small></th>
                 <td><small class="text-muted">{{listing.area}}</small></td>
-                <th><small class="text-muted">COMMUNITY</small></th>
+                <th><small class="text-muted">Community</small></th>
                 <td><small class="text-muted">{{listing.community}}</small></td>
               </tr>
+              <tr>
+                <th><small class="text-muted">School District</small></th>
+                <td><small class="text-muted">{{listing.schoolDistrict}}</small></td>
+                <th><small class="text-muted">Elementary School</small></th>
+                <td><small class="text-muted">{{listing.elementarySchool}}</small></td>
+              </tr>
+              <tr>
+                <th><small class="text-muted">Middle School</small></th>
+                <td><small class="text-muted">{{listing.middleSchool}}</small></td>
+                <th><small class="text-muted">High School</small></th>
+                <td><small class="text-muted">{{listing.highSchool}}</small></td>
+              </tr>              
             </tbody>
           </table>
         </div>
