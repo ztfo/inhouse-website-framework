@@ -1,0 +1,24 @@
+<section class="s3 ih-search">
+  <div class="container">
+    <h2>Search</h2>
+    <div class="ih-search-inner">
+      <form ng-submit="searchMLS()">
+        <fieldset>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="ih-input-box col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
+              </div>
+              <div class="ih-input-box col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
+              </div>
+            </div>
+            <div class="ih-search-btns text-center">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</section>
