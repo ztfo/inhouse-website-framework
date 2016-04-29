@@ -45,6 +45,12 @@
                 <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]' id="type" name="Type" ng-model="filters.type"></ih-dropdown>
               </div>
               <div class="ih-filter-box col-lg-6">
+                <ih-dropdown items='[{"name": "North", "value": "North"}, {"name": "Northwest", "value": "Northwest"}, {"name": "Northeast", "value": "Northeast"}, {"name": "East", "value": "East"}, {"name": "West", "value": "West"}, {"name": "South", "value": "South"}, {"name": "Southwest", "value": "Southwest"}, {"name": "Southeast", "value": "Southeast"}]' id="area" name="Area" ng-model="filters.area"></ih-dropdown>
+              </div>
+              <div class="ih-filter-box col-lg-6">
+                <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]' id="type" name="Type" ng-model="filters.type"></ih-dropdown>
+              </div>
+              <div class="ih-filter-box col-lg-6">
                 <ih-dropdown items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]' id="pool" name="Pool" ng-model="filters.pool"></ih-dropdown>
               </div>
               <div class="ih-filter-box col-lg-6">
@@ -52,7 +58,7 @@
               </div>
               <div class="ih-filter-box col-lg-6">
                 <ih-dropdown items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]' id="stories" name="Stories" ng-model="filters.stories"></ih-dropdown>
-              </div>              
+              </div>
             </div>
             <div class="ih-filter-row col-lg-12">
               <div class="btn-group">
@@ -72,7 +78,7 @@
       </div>
     </div>
     <div class="col-lg-5 col-md-5 hidden-sm hidden-xs fullh map-pane">
-			<ih-listing-map></ih-listing-map>
+      <ih-listing-map></ih-listing-map>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fullh listing-pane">
       <div class="ih-listings-menu">
@@ -99,13 +105,13 @@
             <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
             <hr> Sorry, there are no listings that match your search criteria.
           </div>
-					<div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
+          <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
             <div class="ih-listing-card">
               <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
                   View Home
                 </a>
-								<ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
+                <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
               </div>
               <div class="ih-listing-card-desc container-fluid">
                 <div class="ih-ft-listing-addr text-center">
