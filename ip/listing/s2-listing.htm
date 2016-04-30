@@ -10,7 +10,7 @@
             <div id="listingSlider" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
-									<div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
+                  <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
                     <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
                   </div>
                   <div class="carousel-caption">
@@ -109,17 +109,17 @@
                 <td><small class="text-muted">{{listing.community}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">School District</small></th>
+                <th><small class="text-muted"><small>School District</small></th>
                 <td><small class="text-muted">{{listing.schoolDistrict}}</small></td>
-                <th><small class="text-muted">Elementary School</small></th>
+                <th><small class="text-muted"><small>Elementary</small></th>
                 <td><small class="text-muted">{{listing.elementarySchool}}</small></td>
               </tr>
               <tr>
-                <th><small class="text-muted">Middle School</small></th>
+                <th><small class="text-muted"><small>Middle School</small></th>
                 <td><small class="text-muted">{{listing.middleSchool}}</small></td>
-                <th><small class="text-muted">High School</small></th>
+                <th><small class="text-muted"><small>High School</small></th>
                 <td><small class="text-muted">{{listing.highSchool}}</small></td>
-              </tr>              
+              </tr>
             </tbody>
           </table>
         </div>
