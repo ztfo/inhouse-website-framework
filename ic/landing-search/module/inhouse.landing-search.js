@@ -26,6 +26,21 @@ angular.module('inhouseApp')
 				if(typeof this.filters != 'undefined') {
 					this.filters.active = true;
 				}
+
+				if(typeof this.filters.mlsOrAddress !== 'undefined') {
+					//trim whitespace
+					this.filters.mlsOrAddress = this.filters.mlsOrAddress.trim();
+
+					//no spaces
+					if(this.filters.mlsOrAddress.indexOf(' ') == -1) {
+						this.filters.mls = this.filters.mlsOrAddress;
+					} else {
+						this.filters.address = this.filters.mlsOrAddress;
+					}
+
+					delete this.filters.mlsOrAddress;
+				}
+
 				//price filter split
 				if(typeof this.filters['price_from'] !== 'undefined') {
 					this.filters.price = this.filters['price_from'] + ';';
