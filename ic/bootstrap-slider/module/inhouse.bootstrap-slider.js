@@ -26,7 +26,7 @@ angular.module('inhouseApp')
 			});
 
 			element.on('slideStop', function() {
-				ngModelCtrl.$setViewValue($(this).slider('getValue').toString());
+				ngModelCtrl.$setViewValue($(this).slider('getValue').toString().replace(',', ';'));
 				scope.$apply();
 			});
 
@@ -34,8 +34,8 @@ angular.module('inhouseApp')
 				return function() {
 					if(typeof scope.filters[attrs.filter] !== 'undefined') {
 						var val = scope.filters[attrs.filter];
-						var range = val.split(',');
-						$(element).slider('setValue', [parseInt(range[0]), parseInt(range[1])]); //todo: check if this has 1 or no parameters!
+						var range = val.split(';');
+						$(element).slider('setValue', [parseInt(range[0].replace(/[^0-9]/, '')), parseInt(range[1].replace(/[^0-9]/, ''))]); //todo: check if this has 1 or no parameters!
 					}
 				};
 			})(scope, element, attrs));
