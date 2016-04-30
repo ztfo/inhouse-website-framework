@@ -126,8 +126,9 @@
 .s3.ih-slider .item {
   height: calc(100vh - 150px);
 }
-.b35 .s3.ih-slider-row {
-  height: calc(100vh - 70px);
+.s3 .mini-search {
+  width: 500px;
+  margin: 0 auto;
 }
 
 /* s4 - full video/cinematograph */
