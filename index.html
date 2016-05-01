@@ -14,15 +14,15 @@
 	<any ng-non-bindable>
 	<title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
   <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
-  <link rel="canonical" href="{{@story['websiteUrl']}}" />
+  <link rel="canonical" href="http://{{@story['websiteUrl']}}" />
 	<link rel="image_src" href="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
   <meta itemprop="name" content="{{@story['websiteTitle']}}" />
-  <meta itemprop="url" content="{{@story['websiteUrl']}}" />
+  <meta itemprop="url" content="http://{{@story['websiteUrl']}}" />
   <meta itemprop="thumbnailUrl" content="ua/images/og-image.jpg" />
   <meta itemprop="image" content="ua/images/og-image.jpg" />
 	<meta name="twitter:title" content="{{@story['websiteTitle']}}" />
   <meta name="twitter:image" content="ua/images/og-image.jpg" />
-	<meta name="twitter:url" content="{{@story['websiteUrl']}}" />
+	<meta name="twitter:url" content="http://{{@story['websiteUrl']}}" />
 	</any>
 	<ignore>
   <meta name="twitter:card" content="summary" />
@@ -70,7 +70,7 @@
   <!-- opengraph protocol sharing website -->
 	<meta property="og:title" content="{{@story['websiteTitle']}}"/>
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{@story['websiteUrl']}}" />
+  <meta property="og:url" content="http://{{@story['websiteUrl']}}" />
 	<meta property="og:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
   <meta property="fb:admins" content="{{@story['facebookID']}}" />
   <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
