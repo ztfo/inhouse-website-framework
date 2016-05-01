@@ -11,17 +11,19 @@
 
     <!-- io -->
   </ignore>
-  <title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
-  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
-  <link rel="canonical" href="{{@story['websiteUrl']}}" />
-  <link rel="image_src" href="ua/images/og-image.jpg" />
-  <meta itemprop="name" content="{{@story['websiteTitle']}}" />
-  <meta itemprop="url" content="{{@story['websiteUrl']}}" />
-  <meta itemprop="thumbnailUrl" content="ua/images/og-image.jpg" />
-  <meta itemprop="image" content="ua/images/og-image.jpg" />
-  <meta name="twitter:title" content="{{@story['websiteTitle']}}" />
-  <meta name="twitter:image" content="ua/images/og-image.jpg" />
-  <meta name="twitter:url" content="{{@story['websiteUrl']}}" />
+  <any ng-non-bindable>
+    <title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
+    <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+    <link rel="canonical" href="{{@story['websiteUrl']}}" />
+    <link rel="image_src" href="ua/images/og-image.jpg" />
+    <meta itemprop="name" content="{{@story['websiteTitle']}}" />
+    <meta itemprop="url" content="{{@story['websiteUrl']}}" />
+    <meta itemprop="thumbnailUrl" content="ua/images/og-image.jpg" />
+    <meta itemprop="image" content="ua/images/og-image.jpg" />
+    <meta name="twitter:title" content="{{@story['websiteTitle']}}" />
+    <meta name="twitter:image" content="ua/images/og-image.jpg" />
+    <meta name="twitter:url" content="{{@story['websiteUrl']}}" />
+  </any>
   <ignore>
     <meta name="twitter:card" content="summary" />
     <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
@@ -63,150 +65,152 @@
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
 
   </ignore>
-  <!-- TODO -->
-  <!-- opengraph protocol sharing website -->
-  <meta property="og:title" content="{{@agent['name']}} | {{@agent['brokerage']}}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{@story['websiteUrl']}}" />
-  <meta property="og:image" content="ua/images/og-image.jpg" />
-  <meta property="fb:admins" content="{{@story['facebookID']}}" />
-  <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
-  <meta property="og:description" content="{{@story['bio1']}}" />
-
+  <any ng-non-bindable>
+    <!-- TODO -->
+    <!-- opengraph protocol sharing website -->
+    <meta property="og:title" content="{{@story['websiteTitle']}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{@story['websiteUrl']}}" />
+    <meta property="og:image" content="ua/images/og-image.jpg" />
+    <meta property="fb:admins" content="{{@story['facebookID']}}" />
+    <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
+    <meta property="og:description" content="{{@story['bio1']}}" />
+  </any>
   <ignore>
     <!-- ua -->
     <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
     <script src="ua/data/user-data.js"></script>
 </head>
+<ignore>
 
-<body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
+  <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
 
-  <ih-navbar></ih-navbar>
-  <div class="ih-view-container">
-    <div ng-view autoscroll="true" class="" id='main-view'></div>
-  </div>
-  <ih-footer></ih-footer>
+    <ih-navbar></ih-navbar>
+    <div class="ih-view-container">
+      <div ng-view autoscroll="true" class="" id='main-view'></div>
+    </div>
+    <ih-footer></ih-footer>
 
-  <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-  <!-- visitor capture -->
-  <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
+    <!-- visitor capture -->
+    <a href="#/search-mls?page=1&my-listings" class="my-listings" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
     View Saved Listings  
   </a>
-  <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">
-    <div class="modal-dialog" role="document">
-      <form name="visitorAccount" id="visitorAccount" ng-submit="submitNewUser()">
-        <div class="modal-content fp">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h2 class="modal-title text-center" id="accountLabel">Save your searches and listings</h2>
-          </div>
-          <div class="modal-body">
-            <p class="lead">
-              Save your favorite listings, searches, and continue to view properties by entering your information below.
-            </p>
-            <p class="lead">
-              Fill out the information below to create an account.
-            </p>
-            <div class="form-group">
-              <label for="messageName">Full Name</label>
-              <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
+    <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountLabel">
+      <div class="modal-dialog" role="document">
+        <form name="visitorAccount" id="visitorAccount" ng-submit="submitNewUser()">
+          <div class="modal-content fp">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title text-center" id="accountLabel">Save your searches and listings</h2>
             </div>
-            <div class="form-group">
-              <label for="emailAddress">Email Address</label>
-              <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
-              <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
-            </div>
-            <div class="form-group">
-              <label for="accountPassword">Phone Number</label>
-              <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
-            </div>
-            <p class="text-center">
-              <small>
+            <div class="modal-body">
+              <p class="lead">
+                Save your favorite listings, searches, and continue to view properties by entering your information below.
+              </p>
+              <p class="lead">
+                Fill out the information below to create an account.
+              </p>
+              <div class="form-group">
+                <label for="messageName">Full Name</label>
+                <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
+              </div>
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
+                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+              </div>
+              <div class="form-group">
+                <label for="accountPassword">Phone Number</label>
+                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
+              </div>
+              <p class="text-center">
+                <small>
                   All your information is kept confidential and is only viewable by a member of {{agent.teamName}}.
                   <a href="#/privacy" class="block" target="_blank">View Privacy Policy</a>
               </small>
-            </p>
-            <p class="text-center" ng-if="freebies">
-              <small>
+              </p>
+              <p class="text-center" ng-if="freebies">
+                <small>
                   <span class="skip-box"><strong><em>Not Ready to make an account?</em></strong>
                       <br>
                       <a href="" data-dismiss="modal" aria-label="Close" ng-click="viewFreebies()">Continue viewing <strong>{{max}}</strong> more listings.</a>
                   </span>
               </small>
-            </p>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Create Account</button>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Create Account</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <!-- ia -->
-  <script src="is/app.js"></script>
-  <script src="is/api.js"></script>
-  <script src="is/filters.js"></script>
+    <!-- ia -->
+    <script src="is/app.js"></script>
+    <script src="is/api.js"></script>
+    <script src="is/filters.js"></script>
 
-  <!-- cs -->
-  <script src="is/controllers/landing-controller.js"></script>
-  <script src="is/controllers/listing-controller.js"></script>
-  <script src="is/controllers/search-controller.js"></script>
-  <script src="is/controllers/bio-controller.js"></script>
-  <script src="is/controllers/content-controller.js"></script>
-  <script src="is/controllers/my-listings-controller.js"></script>
-  <script src="is/controllers/privacy-controller.js"></script>
+    <!-- cs -->
+    <script src="is/controllers/landing-controller.js"></script>
+    <script src="is/controllers/listing-controller.js"></script>
+    <script src="is/controllers/search-controller.js"></script>
+    <script src="is/controllers/bio-controller.js"></script>
+    <script src="is/controllers/content-controller.js"></script>
+    <script src="is/controllers/my-listings-controller.js"></script>
+    <script src="is/controllers/privacy-controller.js"></script>
 
-  <!-- ic -->
-  <script src="ic/slider/module/inhouse.slider.js"></script>
-  <script src="ic/divider/module/inhouse.divider.js"></script>
-  <script src="ic/landing-layout/module/inhouse.landing-layout.js"></script>
-  <script src="ic/resources/module/inhouse.resources.js"></script>
-  <script src="ic/testimonials/module/inhouse.testimonials.js"></script>
-  <script src="ic/featured-listings/module/inhouse.featured-listings.js"></script>
-  <script src="ic/navbar/module/inhouse.navbar.js"></script>
-  <script src="ic/about/module/inhouse.about.js"></script>
-  <script src="ic/landing-search/module/inhouse.landing-search.js"></script>
-  <script src="ic/gmaps/module/inhouse.gmaps.js"></script>
-  <script src="ic/dropdown/module/inhouse.dropdown.js"></script>
-  <script src="ic/contact/module/inhouse.contact.js"></script>
-  <script src="ic/bootstrap-slider/module/inhouse.bootstrap-slider.js"></script>
-  <script src="ic/listing-loader/module/inhouse.listing-loader.js"></script>
-  <script src="ic/listing-map/module/inhouse.listing-map.js"></script>
-  <script src="ic/footer/module/inhouse.footer.js"></script>
-  <script src="ic/partners/module/inhouse.partners.js"></script>
-  <script src="ic/like-button/module/inhouse.like-button.js"></script>
+    <!-- ic -->
+    <script src="ic/slider/module/inhouse.slider.js"></script>
+    <script src="ic/divider/module/inhouse.divider.js"></script>
+    <script src="ic/landing-layout/module/inhouse.landing-layout.js"></script>
+    <script src="ic/resources/module/inhouse.resources.js"></script>
+    <script src="ic/testimonials/module/inhouse.testimonials.js"></script>
+    <script src="ic/featured-listings/module/inhouse.featured-listings.js"></script>
+    <script src="ic/navbar/module/inhouse.navbar.js"></script>
+    <script src="ic/about/module/inhouse.about.js"></script>
+    <script src="ic/landing-search/module/inhouse.landing-search.js"></script>
+    <script src="ic/gmaps/module/inhouse.gmaps.js"></script>
+    <script src="ic/dropdown/module/inhouse.dropdown.js"></script>
+    <script src="ic/contact/module/inhouse.contact.js"></script>
+    <script src="ic/bootstrap-slider/module/inhouse.bootstrap-slider.js"></script>
+    <script src="ic/listing-loader/module/inhouse.listing-loader.js"></script>
+    <script src="ic/listing-map/module/inhouse.listing-map.js"></script>
+    <script src="ic/footer/module/inhouse.footer.js"></script>
+    <script src="ic/partners/module/inhouse.partners.js"></script>
+    <script src="ic/like-button/module/inhouse.like-button.js"></script>
 
-  <!-- ui -->
-  <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
-  <script src="ia/js/uikit.min.js"></script>
-  <script src="ia/js/smooth-scroll.min.js"></script>
-  <script src="ia/js/core.min.js"></script>
-  <script src="ia/js/modal.min.js"></script>
-  <script src="ia/js/parallax.min.js"></script>
-  <script src="ia/js/lightbox.min.js"></script>
-  <script src="ia/js/sticky.min.js"></script>
-  <script src="ia/js/owl.carousel.js"></script>
-  <script src="ia/js/bootstrap-slider.js"></script>
+    <!-- ui -->
+    <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
+    <script src="ia/js/uikit.min.js"></script>
+    <script src="ia/js/smooth-scroll.min.js"></script>
+    <script src="ia/js/core.min.js"></script>
+    <script src="ia/js/modal.min.js"></script>
+    <script src="ia/js/parallax.min.js"></script>
+    <script src="ia/js/lightbox.min.js"></script>
+    <script src="ia/js/sticky.min.js"></script>
+    <script src="ia/js/owl.carousel.js"></script>
+    <script src="ia/js/bootstrap-slider.js"></script>
 
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', '{{agent.gaKey}}', 'auto');
-    ga('send', 'pageview');
-  </script>
-</body>
+      ga('create', '{{agent.gaKey}}', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </ignore>
 
 </html>
