@@ -2,84 +2,84 @@
 <html ng-app="inhouseApp" ng-controller="mainView" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
-	<ignore>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <ignore>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <!-- io -->
-	</ignore>
-	<any ng-non-bindable>
-	<title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
-  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
-  <link rel="canonical" href="{{@story['websiteUrl']}}" />
-	<link rel="image_src" href="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta itemprop="name" content="{{@story['websiteTitle']}}" />
-  <meta itemprop="url" content="{{@story['websiteUrl']}}" />
-  <meta itemprop="thumbnailUrl" content="ua/images/og-image.jpg" />
-  <meta itemprop="image" content="ua/images/og-image.jpg" />
-	<meta name="twitter:title" content="{{@story['websiteTitle']}}" />
-  <meta name="twitter:image" content="ua/images/og-image.jpg" />
-	<meta name="twitter:url" content="{{@story['websiteUrl']}}" />
-	</any>
-	<ignore>
-  <meta name="twitter:card" content="summary" />
-  <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
-  
-  <!-- ui -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="ia/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
-  <link href="ia/css/owl.carousel.css" type="text/css" rel="stylesheet" />
-  <link href="ia/css/uikit.css" type="text/css" rel="stylesheet" />
-  <link href="ia/css/sticky.min.css" type="text/css" rel="stylesheet" />
+    <!-- io -->
+  </ignore>
+  <any ng-non-bindable>
+    <title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
+    <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+    <link rel="canonical" href="{{@story['websiteUrl']}}" />
+    <link rel="image_src" href="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta itemprop="name" content="{{@story['websiteTitle']}}" />
+    <meta itemprop="url" content="{{@story['websiteUrl']}}" />
+    <meta itemprop="thumbnailUrl" content="ua/images/og-image.jpg" />
+    <meta itemprop="image" content="ua/images/og-image.jpg" />
+    <meta name="twitter:title" content="{{@story['websiteTitle']}}" />
+    <meta name="twitter:image" content="ua/images/og-image.jpg" />
+    <meta name="twitter:url" content="{{@story['websiteUrl']}}" />
+  </any>
+  <ignore>
+    <meta name="twitter:card" content="summary" />
+    <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
 
-  <!-- ia -->
-  <link href="ia/css/inhouse.css" rel="stylesheet" type="text/css" />
-  <link href="ic/about/css/about.css" type="text/css" rel="stylesheet" />
-  <link href="ic/featured-listings/css/featured-listings.css" type="text/css" rel="stylesheet" />
-  <link href="ic/landing-search/css/search.css" type="text/css" rel="stylesheet" />
-  <link href="ic/listing-loader/css/listing-loader.css" type="text/css" rel="stylesheet" />
-  <link href="ic/navbar/css/navbar.css" type="text/css" rel="stylesheet" />
-  <link href="ic/slider/css/slider.css" type="text/css" rel="stylesheet" />
-  <link href="ic/resources/css/resources.css" type="text/css" rel="stylesheet" />
-  <link href="ic/testimonials/css/testimonials.css" type="text/css" rel="stylesheet" />
-  <link href="ic/contact/css/contact.css" type="text/css" rel="stylesheet" />
-  <link href="ic/partners/css/partners.css" type="text/css" rel="stylesheet" />
-  <link href="ic/footer/css/footer.css" type="text/css" rel="stylesheet" />
+    <!-- ui -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="ia/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+    <link href="ia/css/owl.carousel.css" type="text/css" rel="stylesheet" />
+    <link href="ia/css/uikit.css" type="text/css" rel="stylesheet" />
+    <link href="ia/css/sticky.min.css" type="text/css" rel="stylesheet" />
 
-  <!-- fs -->
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+    <!-- ia -->
+    <link href="ia/css/inhouse.css" rel="stylesheet" type="text/css" />
+    <link href="ic/about/css/about.css" type="text/css" rel="stylesheet" />
+    <link href="ic/featured-listings/css/featured-listings.css" type="text/css" rel="stylesheet" />
+    <link href="ic/landing-search/css/search.css" type="text/css" rel="stylesheet" />
+    <link href="ic/listing-loader/css/listing-loader.css" type="text/css" rel="stylesheet" />
+    <link href="ic/navbar/css/navbar.css" type="text/css" rel="stylesheet" />
+    <link href="ic/slider/css/slider.css" type="text/css" rel="stylesheet" />
+    <link href="ic/resources/css/resources.css" type="text/css" rel="stylesheet" />
+    <link href="ic/testimonials/css/testimonials.css" type="text/css" rel="stylesheet" />
+    <link href="ic/contact/css/contact.css" type="text/css" rel="stylesheet" />
+    <link href="ic/partners/css/partners.css" type="text/css" rel="stylesheet" />
+    <link href="ic/footer/css/footer.css" type="text/css" rel="stylesheet" />
 
-	</ignore>
-	<any ng-non-bindable>
-<!-- TODO -->
-  <!-- opengraph protocol sharing website -->
-	<meta property="og:title" content="{{@story['websiteTitle']}}"/>
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{@story['websiteUrl']}}" />
-	<meta property="og:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta property="fb:admins" content="{{@story['facebookID']}}" />
-  <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
-  <meta property="og:description" content="{{@story['bio1']}}" />
-	</any>
-	<ignore>
-  <!-- ua -->
-  <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
-  <script src="ua/data/user-data.js"></script>
+    <!-- fs -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+
+  </ignore>
+  <any ng-non-bindable>
+    <!-- TODO -->
+    <!-- opengraph protocol sharing website -->
+    <meta property="og:title" content="{{@story['websiteTitle']}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{@story['websiteUrl']}}" />
+    <meta property="og:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta property="fb:admins" content="{{@story['facebookID']}}" />
+    <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
+    <meta property="og:description" content="{{@story['bio1']}}" />
+  </any>
+  <ignore>
+    <!-- ua -->
+    <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
+    <script src="ua/data/user-data.js"></script>
 </head>
 <ignore>
 
