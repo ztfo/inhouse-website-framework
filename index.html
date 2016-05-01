@@ -10,6 +10,7 @@
 
   <!-- io -->
 	</ignore>
+	<any ng-non-bindable>
 	<title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
   <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
   <link rel="canonical" href="{{@story['websiteUrl']}}" />
@@ -21,6 +22,7 @@
 	<meta name="twitter:title" content="{{@story['websiteTitle']}}" />
   <meta name="twitter:image" content="ua/images/og-image.jpg" />
 	<meta name="twitter:url" content="{{@story['websiteUrl']}}" />
+	</any>
 	<ignore>
   <meta name="twitter:card" content="summary" />
   <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
@@ -62,6 +64,7 @@
   <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
 
 	</ignore>
+	<any ng-non-bindable>
 <!-- TODO -->
   <!-- opengraph protocol sharing website -->
   <meta property="og:title" content="{{@agent['name']}} | {{@agent['brokerage']}}" />
@@ -71,12 +74,13 @@
   <meta property="fb:admins" content="{{@story['facebookID']}}" />
   <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
   <meta property="og:description" content="{{@story['bio1']}}" />
-
+	</any>
 	<ignore>
   <!-- ua -->
   <link href="ua/css/ih-brand.css" rel="stylesheet" type="text/css" />
   <script src="ua/data/user-data.js"></script>
 </head>
+<ignore>
 <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
   
   <ih-navbar></ih-navbar>
