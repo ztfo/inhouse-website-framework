@@ -41,8 +41,11 @@
 
       <div class="ih-listing-factbar container-fluid">
         <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <h2 class="fs">{{listing.address}}</h2>
-          <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+          <ih-like-button mls="{{home.mls}}" address="{{address}}" class="pull-left"></ih-like-button>
+          <div class="pull-left">
+            <h2 class="fs">{{listing.address}}</h2>
+            <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+          </div>
         </div>
         <div class="ih-listing-dets col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
           <h2 class="fs">{{listing.price | currency:"$":0}}</h2>

@@ -29,43 +29,55 @@
             </div>
             <div class="row">
               <div id="advancedSearch" class="ih-advanced-search collapse">
-                <div class="container-fluid nopad">
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Zip-code" name="propertyZip" ng-model="filters.zipcode" />
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <div class="ih-slide">
+                        <label for="#bedsFilter">Bedrooms</label>
+                        <bootstrap-slider name="bedsFilter" ng-model="filters.bedsRange" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="[1,10]" data-filter="bedsRange"></bootstrap-slider>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <div class="ih-slide">
+                        <label for="#bathsFilter">Baths</label>
+                        <bootstrap-slider id="bathsFilter" name="bathsFilter" ng-model="filters.bathsRange" type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="[1,15]" data-filter="bathsRange"></bootstrap-slider>
+                      </div>
+                    </div>
                   </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12 hidden">
-                    <input type="text" class="ih-search-input full" placeholder="Subdivision" name="propertySubdivision" ng-model="filters.subdivision" />
+                  <div class="row">
+                    <div class="ih-input-box col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                      <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
+                    </div>
+                    <div class="ih-input-box col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                      <input type="text" class="ih-search-input full" placeholder="Zip-code" name="propertyZip" ng-model="filters.zipcode" />
+                    </div>
+                    <div class="ih-input-box col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                      <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
+                    </div>
                   </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Min Beds" name="propertyMinBeds" ng-model="filters.min_beds" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Max Beds" name="propertyMaxBeds" ng-model="filters.max_beds" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Min Sqft" name="propertyMinSF" ng-model="filters.min_sqft" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Max Sqft" name="propertyMaxSF" ng-model="filters.max_sqft" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
-                    <input type="text" class="ih-search-input full" placeholder="Min Lot Size" name="propertyMinLot" ng-model="filters.min_acres" />
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
-                    <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyPool" ng-click="toggleButton($event, 'pool')">
-                      Pool
-                    </button>
-                  </div>
-                  <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
-                    <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyGated" ng-click="toggleButton($event, 'gated')">
-                      Gated
-                    </button>
+                  <div class="row">
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12 hidden">
+                      <input type="text" class="ih-search-input full" placeholder="Subdivision" name="propertySubdivision" ng-model="filters.subdivision" />
+                    </div>
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                      <input type="text" class="ih-search-input full" placeholder="Min Sqft" name="propertyMinSF" ng-model="filters.min_sqft" />
+                    </div>
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                      <input type="text" class="ih-search-input full" placeholder="Max Sqft" name="propertyMaxSF" ng-model="filters.max_sqft" />
+                    </div>
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-4 col-xs-12">
+                      <input type="text" class="ih-search-input full" placeholder="Min Lot Size (Acres)" name="propertyMinLot" ng-model="filters.min_acres" />
+                    </div>
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                      <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyPool" ng-click="toggleButton($event, 'pool')">
+                        Pool
+                      </button>
+                    </div>
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                      <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyGated" ng-click="toggleButton($event, 'gated')">
+                        Gated
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
