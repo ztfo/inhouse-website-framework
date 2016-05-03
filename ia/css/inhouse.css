@@ -46,6 +46,9 @@ p {
 .nomar { margin: 0; }
 .nomar-r { margin-right: 0; }
 .nomar-l { margin-left: 0; }
+.fo { font-family: 'Open Sans' , sans-serif; }
+.clean-link { color: inherit; }
+.clean-link:hover { text-decoration: none; color: inherit; }
 /* format end */
 
 /* frames */
