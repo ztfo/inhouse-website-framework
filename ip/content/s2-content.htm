@@ -1,3 +1,13 @@
 <section class="ih-content s2">
-
+  <header class="text-center" data-uk-parallax="{bg: '-300'}">
+    <h1 class="inlineblock" itemprop="headline">{{content.title}}</h1>
+  </header>
+  <div class="ih-content-inner">
+    <div ng-if="content.content !== undefined">
+      <span ng-bind-html="content.content | to_trusted"></span>
+    </div>
+    <div ng-if="content.contentUrl !== undefined">
+      <ng-include src="content.contentUrl"></ng-include>
+    </div>
+  </div>
 </section>

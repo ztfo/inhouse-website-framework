@@ -706,6 +706,17 @@ footer.footer {
 .ih-side-panel .panel-title a:active {
   text-decoration: none;
 }
+
+  /* s2 */
+.s2.ih-content header {
+  min-height: 250px;
+  text-align: center;
+  padding-top: 150px;
+  background-color: #ddd;
+  color: #fff;
+  font-weight: 300;
+}
+
 /* content end */
 
 /* bio pages defaults */

@@ -198,6 +198,9 @@
   height: calc(100vh - 50px);
   min-height: auto;
 }
+.b15 .s4.ih-slider {
+  height: calc(100vh - 30px);
+}
 .s4 .ih-slider-row {
   height: 100%;
   width: 100%;

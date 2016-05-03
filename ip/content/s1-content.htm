@@ -9,12 +9,12 @@
 
     <div class="row">
       <div class="ih-content-body" ng-class="!content.disableSidebar ? 'col-lg-9 col-md-9 col-sm-12 col-xs-12' : ''">
-				<div ng-if="content.content !== undefined">
-					<span ng-bind-html="content.content | to_trusted"></span>
-				</div>
-				<div ng-if="content.contentUrl !== undefined">
-					<ng-include src="content.contentUrl"></ng-include>
-				</div>
+        <div ng-if="content.content !== undefined">
+          <span ng-bind-html="content.content | to_trusted"></span>
+        </div>
+        <div ng-if="content.contentUrl !== undefined">
+          <ng-include src="content.contentUrl"></ng-include>
+        </div>
         <div class="ih-accent-divider clear"></div>
       </div>
       <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12" ng-hide="content.disableSidebar">
