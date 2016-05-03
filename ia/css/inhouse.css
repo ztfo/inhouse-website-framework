@@ -15,10 +15,7 @@ button:focus {
 }
 input:active,
 input:focus { outline: none !important; }
-
-p {
-  text-align: justify;
-}
+p { text-align: justify; }
 
 /* elements ends */
 
@@ -59,11 +56,11 @@ p {
 /* frames end */
 
 /* empty states */
+#main-view,
 .ih-view-container { 
   overflow: hidden !important;
-  min-height: calc(100vh - 516px); 
+  min-height: calc(100vh); 
 }
-#main-view { overflow: hidden !important; }
 /* empty end */
 
 /* nav defaults */
@@ -260,23 +257,7 @@ footer.footer {
 .gmap-popwindow a:hover {
   text-decoration: none;
 }
-/*.gmap-popwindow a {
-  display: block;
-  min-height: 130px;
-  width: 180px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  text-transform: uppercase;
-  margin-bottom: 40px;
-}
-.gmap-popwindow span {
-  position: absolute;
-  bottom: 2px;
-  font-size: 12px;
-  font-weight: 600;
-}*/
-  /* grid to list view toggle */
+
 .ih-listview {
   width: 100% !important;
   margin-bottom: 25px;
