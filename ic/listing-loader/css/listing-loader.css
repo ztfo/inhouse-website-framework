@@ -57,6 +57,10 @@
   }
 }
 
+.listing-grid-carousel .ih-loader-listing .ih-ft-listing-desc {
+  display: none;
+}
+
 /* listing page loader */
 .load-overlay {
   transition: .3s;

@@ -69,14 +69,35 @@
                       <input type="text" class="ih-search-input full" placeholder="Min Lot Size (Acres)" name="propertyMinLot" ng-model="filters.min_acres" />
                     </div>
                     <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                      <ih-dropdown items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]' id="numGarage" name="Garage Size" ng-model="filters.numGarage"></ih-dropdown>
+                    </div>
+                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                      <ih-dropdown items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]' id="stories" name="Stories" ng-model="filters.stories"></ih-dropdown>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="ih-filter-box col-lg-3 col-md-6 col-sm-12 col-xs-12">
                       <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyPool" ng-click="toggleButton($event, 'pool')">
                         Pool
                       </button>
                     </div>
-                    <div class="ih-input-box col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                    <div class="ih-filter-box col-lg-3 col-md-6 col-sm-12 col-xs-12">
                       <button type="button" class="btn btn-primary full" data-toggle="button" aria-pressed="false" autocomplete="off" value="" name="propertyGated" ng-click="toggleButton($event, 'gated')">
                         Gated
                       </button>
+                    </div>
+                    <div class="ih-filter-row col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                      <div class="btn-group">
+                        <label class="btn btn-default {{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}">
+                          <input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
+                        </label>
+                        <label class="btn btn-default {{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}">
+                          <input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
+                        </label>
+                        <label class="btn btn-default {{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}">
+                          <input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>

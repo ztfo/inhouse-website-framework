@@ -429,7 +429,7 @@ footer.footer {
   border-bottom: 15px solid #fff;
   margin-bottom: 25px;
 }
-  /* s2 - horizontal split page configuration with map-pane */
+  /* s2 - vertical split page configuration with map-pane */
 .s2 .listing-pane {
   background-color: rgba(255,255,255,0.05);
   padding: 15px 35px;
@@ -534,6 +534,13 @@ footer.footer {
   right: 10px !important;
   left: initial !important;
 }
+.s2 .ih-advanced-filters {
+  padding-top: 15px;
+}
+
+.s2 .ih-advanced-filters .row {
+  margin-bottom: 15px;
+}
 /* results end */
 
 /* listing pages defaults */
@@ -571,6 +578,7 @@ footer.footer {
   background-color: rgba(0,0,0,0.5);
   cursor: pointer;
 }
+
   /* s1 - vertical center page configuration */ 
 .ih-listing {
   position: relative;
