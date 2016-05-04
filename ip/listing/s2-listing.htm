@@ -59,7 +59,7 @@
           <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         </div>
         <div class="ih-listing-table col-lg-7 col-md-12 col-sm-12 col-xs-12">
-          <ul class="uk-subnav" data-uk-switcher="{connect: '#listingData'}">
+          <ul class="uk-subnav nav nav-pills nav-justified" data-uk-switcher="{connect: '#listingData'}">
             <li><a href=""><small>Listing Details</small></a></li>
             <li><a href=""><small>Listing Features</small></a></li>
             <li><a href=""><small>Mortgage Details</small></a></li>
@@ -173,12 +173,10 @@
       </div>
       <div class="ih-listing-contact container-fluid">
 
-        <!-- listing contact form -->
         <div class="ih-listing-form col-lg-8 col-md-12 col-sm-12 col-xs-12">
           <ih-contact message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
         </div>
 
-        <!-- listing documents -->
         <div class="ih-listing-documents col-lg-4 col-md-12 col-sm-12 col-xs-12">
           <h3>Listing Documents</h3>
           <div class="ih-docs">
@@ -198,7 +196,6 @@
                   <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
                 </div>
               </div>
-              <!-- pull and show any docs generated on canvas if available by user only -->
             </div>
           </div>
         </div>
