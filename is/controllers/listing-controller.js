@@ -1,8 +1,13 @@
 angular.module('inhouseApp')
-.controller('listingController', ['$scope', '$routeParams', 'inhouseApi', '$timeout', function($scope, $route, inhouseApi, $timeout) {
+.controller('listingController', ['$rootScope', '$scope', '$routeParams', 'inhouseApi', '$timeout', function($rootScope, $scope, $route, inhouseApi, $timeout) {
 	$scope.mls = $route.mls;
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
+
+	$rootScope.$broadcast('hideFooter');	
+	$scope.$on('$destroy', function() {
+		$rootScope.$broadcast('showFooter');
+	});
 
 	$scope.$on('$destroy', function() {
 		//prevent the modal from persisting

@@ -10,6 +10,12 @@ angular.module('inhouseApp')
 		restrict: 'E',
 		controller: function($scope) {
 			$scope.agent = window.agentSettings;
+			$scope.$on('hideFooter', function() {
+				$scope.showFooter = false;
+			});
+			$scope.$on('showFooter', function() {
+				$scope.showFooter = true;
+			});
 		}
 	};
 }]);
