@@ -3,7 +3,6 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-cta">
-          <a href="#" class="sign-in">Sign-in/Register</a>
           <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
           <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
@@ -13,6 +12,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right tel-cta">
           Call us today:<span itemprop="telephone">{{agent.contactPhone | tel}}</span> <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
+          <button type="button" data-target="#loginModal" data-toggle="modal" class="sign-in">Sign-in</a>
         </div>
       </div>
     </div>
