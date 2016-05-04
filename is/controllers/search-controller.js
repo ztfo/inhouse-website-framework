@@ -184,6 +184,7 @@ angular.module('inhouseApp')
 
 	//trigger mls search on $scope.filter change
 	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
+		$scope.$broadcast('filtersChanged', newFilters);
 		if(newFilters == oldFilters) {
 			return;
 		}
