@@ -27,7 +27,6 @@ angular.module('inhouseApp')
 			}
 
 			scope.$watch(function() {
-				debugger;
 				return ngModelCtrl.$modelValue;
 			}, function(newVal) {
 				if(typeof newVal === 'undefined') {
