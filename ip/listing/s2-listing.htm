@@ -59,72 +59,116 @@
           <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         </div>
         <div class="ih-listing-table col-lg-7 col-md-12 col-sm-12 col-xs-12">
-          <table class="table table-responsive table-stripped table-hover">
-            <thead>
-              <tr>
-                <th colspan="2">Listing Details</th>
-                <td colspan="2" class="text-right">
-                  <div class="share-btns">
-                    <strong><span class="text-muted text-uppercase">Share on: </span></strong>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
-                  </div>
-                </td>
-              </tr>
-            </thead>
-            <tbody class="text-uppercase">
-              <tr>
-                <th><small class="text-muted">Mls</small></th>
-                <td><small class="text-muted">{{listing.mls}}</small></td>
-                <th><small class="text-muted">Status</small></th>
-                <td><small class="text-muted">{{listing.status}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted">Type</small></th>
-                <td><small class="text-muted">{{listing.type}}</small></td>
-                <th><small class="text-muted">Lot</small></th>
-                <td><small class="text-muted">{{listing.lotsize}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted">Year Built</small></th>
-                <td><small class="text-muted">{{listing.yearbuilt}}</small></td>
-                <th><small class="text-muted">Price/SF</small></th>
-                <td><small class="text-muted">{{listing.psf | currency}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted">Stories</small></th>
-                <td><small class="text-muted">{{listing.stories}}</small></td>
-                <th><small class="text-muted">Pool</small></th>
-                <td><small class="text-muted">{{listing.pool}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted">Garage</small></th>
-                <td><small class="text-muted">{{listing.garage}}</small></td>
-                <th><small class="text-muted">HOA</small></th>
-                <td><small class="text-muted">{{listing.hoa}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted">Area</small></th>
-                <td><small class="text-muted">{{listing.area}}</small></td>
-                <th><small class="text-muted">Community</small></th>
-                <td><small class="text-muted">{{listing.community}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted"><small>School District</small></th>
-                <td><small class="text-muted">{{listing.schoolDistrict}}</small></td>
-                <th><small class="text-muted"><small>Elementary</small></th>
-                <td><small class="text-muted">{{listing.elementarySchool}}</small></td>
-              </tr>
-              <tr>
-                <th><small class="text-muted"><small>Middle School</small></th>
-                <td><small class="text-muted">{{listing.middleSchool}}</small></td>
-                <th><small class="text-muted"><small>High School</small></th>
-                <td><small class="text-muted">{{listing.highSchool}}</small></td>
-              </tr>
-            </tbody>
-          </table>
+          <ul class="uk-subnav" data-uk-switcher="{connect: '#listingData'}">
+            <li><a href=""><small>Listing Details</small></a></li>
+            <li><a href=""><small>Listing Features</small></a></li>
+            <li><a href=""><small>Mortgage Details</small></a></li>
+          </ul>
+          <ul class="uk-switcher" id="listingData">
+            <li>
+              <table class="table table-responsive table-stripped table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Listing Details</th>
+                    <td colspan="2" class="text-right">
+                      <div class="share-btns">
+                        <strong><span class="text-muted text-uppercase">Share on: </span></strong>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody class="text-uppercase">
+                  <tr>
+                    <th><small class="text-muted">Mls</small></th>
+                    <td><small class="text-muted">{{listing.mls}}</small></td>
+                    <th><small class="text-muted">Status</small></th>
+                    <td><small class="text-muted">{{listing.status}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted">Type</small></th>
+                    <td><small class="text-muted">{{listing.type}}</small></td>
+                    <th><small class="text-muted">Lot</small></th>
+                    <td><small class="text-muted">{{listing.lotsize}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted">Year Built</small></th>
+                    <td><small class="text-muted">{{listing.yearbuilt}}</small></td>
+                    <th><small class="text-muted">Price/SF</small></th>
+                    <td><small class="text-muted">{{listing.psf | currency}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted">Stories</small></th>
+                    <td><small class="text-muted">{{listing.stories}}</small></td>
+                    <th><small class="text-muted">Pool</small></th>
+                    <td><small class="text-muted">{{listing.pool}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted">Garage</small></th>
+                    <td><small class="text-muted">{{listing.garage}}</small></td>
+                    <th><small class="text-muted">HOA</small></th>
+                    <td><small class="text-muted">{{listing.hoa}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted">Area</small></th>
+                    <td><small class="text-muted">{{listing.area}}</small></td>
+                    <th><small class="text-muted">Community</small></th>
+                    <td><small class="text-muted">{{listing.community}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted"><small>School District</small></th>
+                    <td><small class="text-muted">{{listing.schoolDistrict}}</small></td>
+                    <th><small class="text-muted"><small>Elementary</small></th>
+                    <td><small class="text-muted">{{listing.elementarySchool}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted"><small>Middle School</small></th>
+                    <td><small class="text-muted">{{listing.middleSchool}}</small></td>
+                    <th><small class="text-muted"><small>High School</small></th>
+                    <td><small class="text-muted">{{listing.highSchool}}</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table class="table table-responsive table-stripped table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Listing Features</th>
+                    <td colspan="2" class="text-right">
+                      <div class="share-btns">
+                        <strong><span class="text-muted text-uppercase">Share on: </span></strong>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody class="text-uppercase">
+                  <tr>
+                    <th><small class="text-muted"><small>School District</small></th>
+                    <td><small class="text-muted">{{listing.schoolDistrict}}</small></td>
+                    <th><small class="text-muted"><small>Elementary</small></th>
+                    <td><small class="text-muted">{{listing.elementarySchool}}</small></td>
+                  </tr>
+                  <tr>
+                    <th><small class="text-muted"><small>Middle School</small></th>
+                    <td><small class="text-muted">{{listing.middleSchool}}</small></td>
+                    <th><small class="text-muted"><small>High School</small></th>
+                    <td><small class="text-muted">{{listing.highSchool}}</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+
+            </li>
+          </ul>
         </div>
       </div>
       <div class="ih-listing-contact container-fluid">
