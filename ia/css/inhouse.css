@@ -596,7 +596,7 @@ footer.footer {
   position: relative;
   padding-right: 25px;
   border-right: 2px solid #eee;
-  min-height: 350px;
+  min-height: 450px;
 }
 .ih-listing-contact {
   padding: 35px 0;
@@ -764,10 +764,11 @@ footer.footer {
 /* privacy page */
 .privacy {
   padding: 35px;
-  margin-top: 150px;
-  background-color: #fff;
+  margin-top: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #000;
   margin-bottom: 50px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 /* privacy ends */
 
@@ -782,7 +783,7 @@ footer.footer {
 }
 .modal-body {
   padding: 40px 45px;
-  padding-bottom: 15px;
+  padding-bottom: 0;
 }
 .modal-footer {
   text-align: center;

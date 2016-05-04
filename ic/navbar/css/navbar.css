@@ -20,7 +20,6 @@
 .s1.ih-nav.fullw>.container,
 .s1.ih-nav.fullw nav .container {
   width: 100%;
-  padding: 0;
 }
 .s1.ih-nav.fullw .ih-cta>.container {
   width: 100%;
@@ -103,7 +102,7 @@
 @media screen and (max-width: 767px) {
   /* global */
   .navbar-toggle {
-    top: 10px;
+    top: 0px;
     right: 0;
     padding: 10px;
     border: 0;

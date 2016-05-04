@@ -1,82 +1,84 @@
 <!DOCTYPE html>
 <html ng-app="inhouseApp" ng-controller="mainView" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage">
+
 <head>
   <ignore>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   </ignore>
   <!-- io -->
   <any ng-non-bindable>
-  <title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
-  <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
-  <link rel="canonical" href="http://{{@story['websiteUrl']}}" />
-  <link rel="image_src" href="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta itemprop="name" content="{{@story['websiteTitle']}}" />
-  <meta itemprop="url" content="http://{{@story['websiteUrl']}}" />
-  <meta itemprop="thumbnailUrl" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta itemprop="image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta name="twitter:title" content="{{@story['websiteTitle']}}" />
-  <meta name="twitter:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta name="twitter:url" content="http://{{@story['websiteUrl']}}" />
-  <!-- TODO add description truncate to max of 150 -->
-  <meta name="description" content=""/>
+    <title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
+    <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+    <link rel="canonical" href="http://{{@story['websiteUrl']}}" />
+    <link rel="image_src" href="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta itemprop="name" content="{{@story['websiteTitle']}}" />
+    <meta itemprop="url" content="http://{{@story['websiteUrl']}}" />
+    <meta itemprop="thumbnailUrl" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta itemprop="image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta name="twitter:title" content="{{@story['websiteTitle']}}" />
+    <meta name="twitter:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta name="twitter:url" content="http://{{@story['websiteUrl']}}" />
+    <!-- TODO add description truncate to max of 150 -->
+    <meta name="description" content="" />
   </any>
   <ignore>
-  <meta name="twitter:card" content="summary" />
-  <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
-  <!-- ui -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="ia/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
-  <link href="ia/css/owl.carousel.css" type="text/css" rel="stylesheet" />
-  <link href="ia/css/uikit.css" type="text/css" rel="stylesheet" />
-  <link href="ia/css/sticky.min.css" type="text/css" rel="stylesheet" />
-  <!-- ia -->
-  <link href="ia/css/inhouse.css" rel="stylesheet" type="text/css" />
-  <link href="ic/about/css/about.css" type="text/css" rel="stylesheet" />
-  <link href="ic/featured-listings/css/featured-listings.css" type="text/css" rel="stylesheet" />
-  <link href="ic/landing-search/css/search.css" type="text/css" rel="stylesheet" />
-  <link href="ic/listing-loader/css/listing-loader.css" type="text/css" rel="stylesheet" />
-  <link href="ic/navbar/css/navbar.css" type="text/css" rel="stylesheet" />
-  <link href="ic/slider/css/slider.css" type="text/css" rel="stylesheet" />
-  <link href="ic/resources/css/resources.css" type="text/css" rel="stylesheet" />
-  <link href="ic/testimonials/css/testimonials.css" type="text/css" rel="stylesheet" />
-  <link href="ic/contact/css/contact.css" type="text/css" rel="stylesheet" />
-  <link href="ic/partners/css/partners.css" type="text/css" rel="stylesheet" />
-  <link href="ic/footer/css/footer.css" type="text/css" rel="stylesheet" />
-  <!-- fs -->
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+    <meta name="twitter:card" content="summary" />
+    <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited." />
+    <!-- ui -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="ia/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+    <link href="ia/css/owl.carousel.css" type="text/css" rel="stylesheet" />
+    <link href="ia/css/uikit.css" type="text/css" rel="stylesheet" />
+    <link href="ia/css/sticky.min.css" type="text/css" rel="stylesheet" />
+    <!-- ia -->
+    <link href="ia/css/inhouse.css" rel="stylesheet" type="text/css" />
+    <link href="ic/about/css/about.css" type="text/css" rel="stylesheet" />
+    <link href="ic/featured-listings/css/featured-listings.css" type="text/css" rel="stylesheet" />
+    <link href="ic/landing-search/css/search.css" type="text/css" rel="stylesheet" />
+    <link href="ic/listing-loader/css/listing-loader.css" type="text/css" rel="stylesheet" />
+    <link href="ic/navbar/css/navbar.css" type="text/css" rel="stylesheet" />
+    <link href="ic/slider/css/slider.css" type="text/css" rel="stylesheet" />
+    <link href="ic/resources/css/resources.css" type="text/css" rel="stylesheet" />
+    <link href="ic/testimonials/css/testimonials.css" type="text/css" rel="stylesheet" />
+    <link href="ic/contact/css/contact.css" type="text/css" rel="stylesheet" />
+    <link href="ic/partners/css/partners.css" type="text/css" rel="stylesheet" />
+    <link href="ic/footer/css/footer.css" type="text/css" rel="stylesheet" />
+    <!-- fs -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
   </ignore>
   <!-- og -->
   <any ng-non-bindable>
-  <meta property="fb:app_id" content="1471637189804874" />
-  <meta property="og:title" content="{{@story['websiteTitle']}}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://{{@story['websiteUrl']}}" />
-  <meta property="og:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
-  <meta property="fb:admins" content="{{@story['facebookID']}}" />
-  <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
-  <meta property="og:description" content="{{@story['bio1']}}" />
+    <meta property="fb:app_id" content="1471637189804874" />
+    <meta property="og:title" content="{{@story['websiteTitle']}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://{{@story['websiteUrl']}}" />
+    <meta property="og:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+    <meta property="fb:admins" content="{{@story['facebookID']}}" />
+    <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
+    <meta property="og:description" content="{{@story['bio1']}}" />
   </any>
   <!-- ua -->
   <link href="ua/css/ih-brand.css?{{microtime()}}" rel="stylesheet" type="text/css" />
   <script src="ua/data/user-data.js"></script>
 </head>
 <ignore>
+
   <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
 
     <ih-navbar></ih-navbar>
@@ -95,45 +97,67 @@
           <div class="modal-content fp">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h2 class="modal-title text-center" id="accountLabel">Save your searches and listings</h2>
+              <h2 class="modal-title text-center" id="accountLabel">Register</h2>
             </div>
             <div class="modal-body">
               <p class="lead">
-                Save your favorite listings, searches, and continue to view properties by entering your information below.
+                Create an account to save your favorite listings, searches, and continue to view properties.
               </p>
               <p class="lead">
                 Fill out the information below to create an account.
               </p>
-              <div class="form-group">
-                <label for="messageName">Full Name</label>
-                <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
-              </div>
-              <div class="form-group">
-                <label for="emailAddress">Email Address</label>
-                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
-                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
-              </div>
-              <div class="form-group">
-                <label for="accountPassword">Phone Number</label>
-                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone" placeholder="This will be your password">
-              </div>
-              <p class="text-center">
-                <small>
-                  All your information is kept confidential and is only viewable by a member of {{agent.teamName}}.
-                  <a href="#/privacy" class="block" target="_blank">View Privacy Policy</a>
-              </small>
+              <ul class="form-box uk-switcher" id="visitorInfo">
+                <li>
+                  <div class="form-group">
+                    <label for="messageName">Your Name</label>
+                    <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
+                  </div>
+                  <div class="form-group hidden">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
+                    <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+                  </div>
+                  <div class="form-group hidden">
+                    <label for="accountPassword">Phone Number</label>
+                    <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone" placeholder="This will be your password">
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
+                    <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+                  </div>
+                  <div class="form-group">
+                    <label for="accountPassword">Phone Number</label>
+                    <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
+                  </div>
+                </li>
+              </ul>
+              <p class="text-center seperators">
+                Already have an account?
               </p>
+              <ul class="uk-subnav text-center" data-uk-switcher="{connect: '#visitorInfo'}">
+                <li><a href="">Register</a></li>
+                <li><a href="">Login</a></li>
+              </ul>
               <p class="text-center" ng-if="freebies">
                 <small>
                   <span class="skip-box"><strong><em>Not Ready to make an account?</em></strong>
                       <br>
-                      <a href="" data-dismiss="modal" aria-label="Close" ng-click="viewFreebies()">Continue viewing <strong>{{max}}</strong> more listings.</a>
+                      That's ok. <a href="" data-dismiss="modal" aria-label="Close" ng-click="viewFreebies()">Click here to continue viewing <strong>{{max}}</strong> more listings.</a>
                   </span>
               </small>
               </p>
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Create Account</button>
+              <p class="text-center">
+                <small>
+                  Your information is not sold to anyone. All your information is kept confidential.
+                  <a href="#/privacy" class="block" target="_blank">View Privacy Policy</a>
+              </small>
+              </p>
             </div>
           </div>
         </form>
@@ -201,4 +225,5 @@
     </script>
   </body>
 </ignore>
+
 </html>
