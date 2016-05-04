@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.controller('searchController', ['$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', '$window', function($timeout, $scope, inhouseApi, $routeParams, $location, $window) {
+.controller('searchController', ['$rootScope', '$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', '$window', function($rootScope, $timeout, $scope, inhouseApi, $routeParams, $location, $window) {
 	$scope.$on('$destroy', function() {
 		//prevent the modal from persisting
 		$('#accountModal').off('hidden.bs.modal');
@@ -13,6 +13,11 @@ angular.module('inhouseApp')
 			$scope.searchCount = localStorage.inhouseSearchCount;
 		}
 	}
+
+	$rootScope.$broadcast('hideFooter');	
+	$scope.$on('$destroy', function() {
+		$rootScope.$broadcast('showFooter');
+	});
 	
 	//responsive screensize hiding the map
 	if($window.innerWidth < 1367) {
