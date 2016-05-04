@@ -88,13 +88,13 @@
                     </div>
                     <div class="ih-filter-row col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div class="btn-group">
-                        <label class="btn btn-default {{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}">
-                          <input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
+                        <label class="btn btn-default" ng-class="filters.active != undefined && filters.active == true ? 'active' : ''">
+                          <input type="checkbox" autocomplete="off" ng-model="filters.active"> Active
                         </label>
-                        <label class="btn btn-default {{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}">
+                        <label class="btn btn-default" ng-class="filters.sold != undefined && filters.sold == true ? 'active' : ''">
                           <input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
                         </label>
-                        <label class="btn btn-default {{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}">
+                        <label class="btn btn-default" ng-class="filters.pending != undefined && filters.pending == true ? 'active' : ''">
                           <input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
                         </label>
                       </div>
@@ -103,6 +103,7 @@
                 </div>
               </div>
             </div>
+						{{filters}}
             <div class="ih-search-btns text-center">
               <button type="submit" class="btn btn-primary">Search</button>
               <div class="space"></div>

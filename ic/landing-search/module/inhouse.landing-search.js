@@ -11,7 +11,7 @@ angular.module('inhouseApp')
 		},
 		controller: function($scope) {
 			$scope.agent = window.agentSettings;
-			$scope.filters = {};
+			$scope.filters = {active: true};
 			$scope.toggleButton = function($event, val) {
 				if(!$($event.target).hasClass('active')) {
 					this.filters[val] = true;
