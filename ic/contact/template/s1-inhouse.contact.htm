@@ -2,7 +2,7 @@
 <div class="ih-md-divider"></div>
 
 <div class="ih-contact-form">
-  <form ng-submit="submitContact()" name="Contact">
+  <form ng-submit="Contact.$valid && submitContact()" name="Contact">
 		<div class="text-center alert alert-success fade in" ng-show="contactSent">
 			<h3><strong>Thank You!</strong></h3>
 			<hr> A member from the {{agent.teamName}} will be in touch with you as soon as possible. You can also call <strong>{{agent.contactPhone | tel}}</strong>.
