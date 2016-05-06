@@ -93,73 +93,70 @@
 
     <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
       <div class="modal-dialog" role="document">
-				<div class="modal-content fp">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title text-center" id="accountLabel">Login</h2>
-					</div>
-					<div class="modal-body">
-							<form name="login" ng-submit="login.$valid && submitLogin()" ng-hide="showRegister">
-								<h2 class="text-center">
-									Welcome back!
-								</h2>
-								<p class="text-center">
-									Sign-in below.
-								</p>
-								<div class="form-group">
-									<label for="emailAddress">Email Address</label>
-									<input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
-									<input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
-								</div>
-								<div class="form-group">
-									<label for="accountPassword">Phone Number</label>
-									<input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
-								</div>
-								<div class="text-center">
-									<button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>                
-								</div>
-							</form>
-							<form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
-								<p class="lead text-center">
-									Create an account to save your favorite listings, searches, and continue to view properties.
-								</p>
-								<p class="lead text-center">
-									Fill out the information below to create an account.
-								</p>
-								<div class="form-group">
-									<label for="messageName">Your Name</label>
-									<input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
-								</div>
-								<div class="form-group">
-									<label for="emailAddress">Email Address</label>
-									<input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
-									<input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
-								</div>
-								<div class="form-group">
-									<label for="accountPassword">Phone Number</label>
-									<input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone" placeholder="This will be your password">
-								</div>
-								<div class="text-center">
-									<button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>                
-								</div>                  
-							</form>
-						
-						<ul class="uk-subnav text-center">
-							<li><a href="" ng-click="showRegister=false">Login</a></li>
-							<li><a href="" ng-click="showRegister=true">Register</a></li>
-						</ul>
-						
-					</div>
-					
-					<div class="modal-footer">
-						<p class="text-center">
-							<small>
-								Your information is not sold to anyone. All your information is kept confidential.
-								<a href="#/privacy" class="block privacy-link" target="_blank">View Privacy Policy</a>
-						</small>
-						</p>
-					</div>
-				</div>
+        <div class="modal-content fp">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title text-center" id="accountLabel">Login</h2>
+          </div>
+          <div class="modal-body">
+            <form name="login" ng-submit="login.$valid && submitLogin()" ng-hide="showRegister">
+              <h2 class="text-center">
+                Welcome back!
+              </h2>
+              <p class="text-center">
+                Sign-in below.
+              </p>
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
+                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+              </div>
+              <div class="form-group">
+                <label for="accountPassword">Phone Number</label>
+                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>
+              </div>
+            </form>
+            <form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
+              <p class="lead text-center">
+                Create an account to save your favorite listings, searches, and continue to view properties.
+              </p>
+              <p class="lead text-center">
+                Fill out the information below to create an account.
+              </p>
+              <div class="form-group">
+                <label for="messageName">Your Name</label>
+                <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
+              </div>
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
+                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+              </div>
+              <div class="form-group">
+                <label for="accountPassword">Phone Number</label>
+                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone" placeholder="This will be your password">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>
+              </div>
+            </form>
+            <ul class="uk-subnav text-center">
+              <li><a href="" ng-click="showRegister=false">Login</a></li>
+              <li><a href="" ng-click="showRegister=true">Register</a></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              <small>
+                Your information is not sold to anyone. All your information is kept confidential.
+                <a href="#/privacy" class="block privacy-link" target="_blank">View Privacy Policy</a>
+              </small>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
