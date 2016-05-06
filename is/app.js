@@ -64,9 +64,28 @@ angular.module('inhouseApp', ['ngRoute'])
 			}
 		}
 	};
-	$scope.submitNewUser = (function($scope) {
+	$scope.submitRegister = (function($scope) {
 			return function() {
-			inhouseApi.getData({resource: 'new-lead', name: $scope.newAgent.name, email: $scope.newAgent.email, phone: $scope.newAgent.phone}).success(function(result) {
+			inhouseApi.getData({resource: 'new-lead', name: $scope.register.name, email: $scope.register.email, phone: $scope.register.phone}).success(function(result) {
+				if(typeof Storage !== 'undefined') {
+					if(typeof result.id === 'undefined') {
+						$scope.inhouseAgentUserLoggedIn = false;
+						delete localStorage.inhouseAgentUser;
+						$('#accountModal').attr('data-success-register', 'false');
+					} else {
+						$scope.inhouseAgentUserLoggedIn = true;
+						localStorage.inhouseAgentUser = result.id;
+						window.inhouseAgentUser = result.id;
+						$('#accountModal').attr('data-success-register', 'true');
+						$('#accountModal').modal('hide');
+					}
+				}
+			});
+		};
+	});
+	$scope.submitLogin = (function($scope) {
+			return function() {
+			inhouseApi.getData({resource: 'new-lead', name: $scope.login.name, email: $scope.login.email, phone: $scope.login.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
 						$scope.inhouseAgentUserLoggedIn = false;

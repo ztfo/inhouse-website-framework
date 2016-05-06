@@ -9,6 +9,10 @@ angular.module('inhouseApp')
 		},
 		restrict: 'E',
 		controller: function($scope) {
+			$scope.signIn = function() {
+				this.$parent.$parent.showRegister = false;
+				$('#accountModal').modal('show');
+			};
 			$scope.inhouseAgentUserLoggedIn = $scope.$parent.inhouseAgentUserLoggedIn;
 			$scope.navbar = window.storySettings.NavBar;
 			if(typeof window.storySettings.navbarClasses !== 'undefined') {
