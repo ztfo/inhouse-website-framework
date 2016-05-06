@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <a href="#" class="sign-in" ng-if="!inhouseAgentUserLoggedIn">Sign-in/Register</a>
+          <a href="#" class="sign-in" ng-if="!inhouseAgentUserLoggedIn" ng-click="signIn()">Sign-in/Register</a>
           <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
           <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>

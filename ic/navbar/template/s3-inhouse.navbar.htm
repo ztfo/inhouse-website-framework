@@ -10,7 +10,7 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right tel-cta nopad">
         <span itemprop="telephone">{{agent.contactPhone | tel}}</span> <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
-        <button type="button" data-target="#loginModal" data-toggle="modal" class="sign-in" ng-if="!inhouseAgentUserLoggedIn">Sign-in</a>
+        <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in" ng-if="!inhouseAgentUserLoggedIn">Sign-in</a>
       </div>
   </div>
   <div class="container">

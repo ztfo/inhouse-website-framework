@@ -10,6 +10,7 @@ angular.module('inhouseApp')
 			classes: "@classes"
 		},
 		controller: function ($scope) {
+			$scope.maxFeaturedListings = window.storySettings.maxFeaturedListings || 4;
 			$scope.LandingComponent = window.storySettings.FeaturedListings;
 			$scope.agent = window.agentSettings;
 			$scope.listingLoaders = 10;
