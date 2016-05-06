@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.directive('ihNavbar', ['$window', function($window) {
+.directive('ihNavbar', ['$rootScope', '$window', function($rootScope, $window) {
 	return {
 		templateUrl : function(el, attrs) {
 			return 'ic/navbar/template/' + ($window.storySettings.navbarConfig || attrs.config || 's1') + '-inhouse.navbar.htm';
@@ -9,6 +9,7 @@ angular.module('inhouseApp')
 		},
 		restrict: 'E',
 		controller: function($scope) {
+			$scope.inhouseAgentUserLoggedIn = $scope.$parent.inhouseAgentUserLoggedIn;
 			$scope.navbar = window.storySettings.NavBar;
 			if(typeof window.storySettings.navbarClasses !== 'undefined') {
 				$scope.classes = window.storySettings.navbarClasses;
