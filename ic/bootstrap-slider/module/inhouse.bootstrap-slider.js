@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.directive('bootstrapSlider', ['$filter', '$routeParams', '$timeout', function($filter, $routeParams, $timeout) {
+.directive('bootstrapSlider', ['$window', '$filter', '$routeParams', '$timeout', function($window, $filter, $routeParams, $timeout) {
 	return {
 		restrict: 'E',
 		require: 'ngModel',
@@ -22,16 +22,18 @@ angular.module('inhouseApp')
 			})(attrs);
 
 			$(element).slider({
-				formatter: format
+				formatter: format,
+				tooltip: 'always'
 			});
 
 			element.on('slideStop', function() {
-				ngModelCtrl.$setViewValue($(this).slider('getValue').toString().replace(',', ';'));
+				ngModelCtrl.$setViewValue(scope.val);
 				scope.$apply();
 			});
 
 			$timeout((function(scope, element, attrs) {
 				return function() {
+					$(element).css('display', 'inline');
 					if(typeof scope.filters[attrs.filter] !== 'undefined') {
 						var val = scope.filters[attrs.filter];
 						var range = val.split(';');
