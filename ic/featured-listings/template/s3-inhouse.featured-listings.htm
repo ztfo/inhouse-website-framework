@@ -19,11 +19,12 @@
           <div class="ih-ft-listing col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="home in homes" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
             <a href="#/listing/{{home.mls}}">
               <span>
-                  <strong>{{home.address}}<br></strong>
-                  <small class="fs" itemprop="description">{{home.price | currency}} | {{home.beds}} BEDS - {{home.baths}} BATHS</small>                
-                </span>
+                <strong>{{home.address}}<br></strong>
+                <small class="fs" itemprop="description">{{home.price | currency}} | {{home.beds}} BEDS - {{home.baths}} BATHS</small>                
+                <a href="" class="btn btn-primary">View Listing</a>
+              </span>
+              <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
             </a>
-            <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
           </div>
         </div>
       </div>

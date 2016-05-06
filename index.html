@@ -177,8 +177,9 @@
               <h2 class="modal-title text-center" id="accountLabel">Login</h2>
             </div>
             <div class="modal-body">
-              <ul class="form-box uk-switcher" id="loginInfo">
-                <li>
+              
+              
+                <form login>
                   <h2 class="text-center">
                     Welcome back!
                   </h2>
@@ -194,8 +195,13 @@
                     <label for="accountPassword">Phone Number</label>
                     <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
                   </div>
-                </li>
-                <li>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>                
+                  </div>
+                </form>
+              
+              
+                <form register>
                   <p class="lead text-center">
                     Create an account to save your favorite listings, searches, and continue to view properties.
                   </p>
@@ -206,27 +212,28 @@
                     <label for="messageName">Your Name</label>
                     <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="newAgent.name">
                   </div>
-                  <div class="form-group hidden">
+                  <div class="form-group">
                     <label for="emailAddress">Email Address</label>
                     <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="newAgent.email">
                     <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
                   </div>
-                  <div class="form-group hidden">
+                  <div class="form-group">
                     <label for="accountPassword">Phone Number</label>
                     <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone" placeholder="This will be your password">
                   </div>
-                </li>
-              </ul>
-              <p class="text-center seperators">
-                Don't have an account?
-              </p>
-              <ul class="uk-subnav text-center" data-uk-switcher="{connect: '#loginInfo'}">
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>                
+                  </div>                  
+                </form>
+              
+              <ul class="uk-subnav text-center">
                 <li><a href="">Login</a></li>
                 <li><a href="">Register</a></li>
               </ul>
+              
             </div>
+            
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Submit</button>
               <p class="text-center">
                 <small>
                   Your information is not sold to anyone. All your information is kept confidential.
@@ -234,6 +241,7 @@
               </small>
               </p>
             </div>
+            
           </div>
         </form>
       </div>
