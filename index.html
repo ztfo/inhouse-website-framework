@@ -116,7 +116,7 @@
                 <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone">
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>
+                <button type="submit" class="btn btn-default inline-block" id="inhouseAgentUserCreate">Login</button>
               </div>
             </form>
             <form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
@@ -140,13 +140,17 @@
                 <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="newAgent.phone" placeholder="This will be your password">
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary inline-block" id="inhouseAgentUserCreate">Login</button>
+                <button type="submit" class="btn btn-default inline-block" id="inhouseAgentUserCreate">Login</button>
               </div>
             </form>
-            <ul class="uk-subnav text-center">
-              <li><a href="" ng-click="showRegister=false">Login</a></li>
-              <li><a href="" ng-click="showRegister=true">Register</a></li>
-            </ul>
+            <p class="text-center reg-divider">
+              <small ng-hide="showRegister">Don't have an account?</small>
+              <small ng-show="showRegister">Already have an account?</small>
+            </p>
+            <div class="text-center reg-btns">
+              <a href="" ng-click="showRegister=false" ng-show="showRegister">Login</a>
+              <a href="" ng-click="showRegister=true" ng-hide="showRegister">Register</a>
+            </div>
           </div>
           <div class="modal-footer">
             <p class="text-center">
