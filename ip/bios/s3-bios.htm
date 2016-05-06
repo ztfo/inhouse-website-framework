@@ -4,7 +4,7 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-pane ih">
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 about-pane ih">
         <h1 class="fs" itemprop="name">{{bioAgent.name}}</h1>
         <h4 class="fp">{{bioAgent.title}}</h4>
         <div class="ih-social about-social text-center iha tp rt">
@@ -15,52 +15,53 @@
           <a href="{{bioAgent.instagram}}" class="ih-social-icon" ng-if="bioAgent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
           <a href="{{bioAgent.pinterest}}" class="ih-social-icon" ng-if="bioAgent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
         </div>
-        <div itemprop="about" ng-bind-html="bioAgent.bio | to_trusted" class="agent-bio"></div>
+        <div itemprop="about" ng-bind-html="bioAgent.bio | to_trusted" class="agent-bio fo"></div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 image-pane ih">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 image-pane ih">
         <div class="agent-image">
           <span class="sr-only">{{bioAgent.name}} Picture</span>
         </div>
       </div>
     </div>
-    <div class="ih-md-divider"></div>
-    <div class="row">
-      <!-- sold listings block -->
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
-        <!-- sold listing map -->
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing">
-        <ul class="nav nav-pills nav-justified">
-          <li role="presentation">
-            <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
-              Current Listings
-            </a>
-          </li>
-          <li role="presentation">
-            <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
-              Sold Listings
-            </a>
-          </li>
-        </ul>
-        <div class="agent-listings">
-          <div class="collapse" id="agentSolds">
-            <div class="well">
+  </div>
+  <div class="row">
+    <!-- sold listings block -->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
+      <!-- sold listing map -->
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing">
+      <ul class="nav nav-pills nav-justified">
+        <li role="presentation">
+          <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
+            Current Listings
+          </a>
+        </li>
+        <li role="presentation">
+          <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
+            Sold Listings
+          </a>
+        </li>
+      </ul>
+      <div class="agent-listings">
+        <div class="collapse" id="agentSolds">
+          <div class="well">
 
-            </div>
           </div>
-          <div class="collapse" id="agentSolds">
-            <div class="well">
+        </div>
+        <div class="collapse" id="agentSolds">
+          <div class="well">
 
-            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>  
+  <div class="container">
     <div class="row blog-row">
       <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Blog</h1>
       <div class="ih-md-divider"></div>
       
       
-    </div>
+    </div>  
   </div>
 </section>

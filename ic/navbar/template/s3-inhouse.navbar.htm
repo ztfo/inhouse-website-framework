@@ -1,5 +1,18 @@
 <nav class="s3 ih-nav navbar navbar-default text-center {{classes}}" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-
+  <div class="ih-cta container-fluid fo">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-cta text-left nopad">
+        <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
+        <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
+        <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
+        <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
+        <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
+        <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right tel-cta nopad">
+        <span itemprop="telephone">{{agent.contactPhone | tel}}</span> <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
+        <button type="button" data-target="#loginModal" data-toggle="modal" class="sign-in">Sign-in</a>
+      </div>
+  </div>
   <div class="container">
     <div class="collapse navbar-collapse navbar-left" id="mainNavRight">
       <ul class="nav navbar-nav navbar-right" role="menubar">
