@@ -45,7 +45,9 @@ p { text-align: justify; }
 .nomar-l { margin-left: 0; }
 .fo { font-family: 'Open Sans' , sans-serif; }
 .clean-link { color: inherit; }
-.clean-link:hover { text-decoration: none; color: inherit; }
+.clean-link:hover,
+.clean-link:active,
+.clean-link:focus { text-decoration: none; color: inherit; }
 /* format end */
 
 /* frames */
@@ -1228,7 +1230,10 @@ input[type="radio"] {
   footer .text-right { text-align: center; }
   footer div { margin-bottom: 10px; }  
   footer .row { margin: 20px 0; }
-  .ih-copyright { margin: 10px 0px; }  
+  .ih-copyright { margin: 10px 0px; } 
+    .mini-search {
+      width: 100% !important;
+    }  
   /* landing end */
   
   /* results page */
@@ -1321,7 +1326,6 @@ input[type="radio"] {
   }
   .modal-body p {
     font-size: 15px;
-    text-align: left;
   }
   .modal-footer .btn-primary {
     font-size: 15px;
