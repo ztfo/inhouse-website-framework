@@ -55,6 +55,18 @@
 
       <div class="ih-listing-details container-fluid">
         <div class="ih-listing-description">
+          <div class="row">
+            <div class="ih col-lg-6"><p><strong class="text-uppercase">About this listing:</strong></p></div>
+            <div class="ih col-lg-6 text-right">
+              <div class="share-btns">
+                <strong><span class="text-muted text-uppercase">Share on: </span></strong>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
           <p>{{listing.PublicRemarks | sentence}}</p>
           <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         </div>
@@ -73,13 +85,7 @@
                   <tr>
                     <th colspan="4">Listing Details</th>
                     <td colspan="4" class="text-right">
-                      <div class="share-btns">
-                        <strong><span class="text-muted text-uppercase">Share on: </span></strong>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
-                      </div>
+
                     </td>
                   </tr>
                 </thead>

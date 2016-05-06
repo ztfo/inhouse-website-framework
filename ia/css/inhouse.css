@@ -613,8 +613,6 @@ footer.footer {
 }
 .ih-listing-description {
   position: relative;
-  padding-right: 25px;
-  border-right: 2px solid #eee;
 }
 .ih-listing-table {
   min-height: 400px;
@@ -650,7 +648,7 @@ footer.footer {
   padding: 10px 15px;
 }
 .s2 .ih-listing-details {
-  padding: 20px 5px;
+  padding: 20px 25px;
   padding-top: 35px;
 }
 .s2.ih-listing .ih-header {
