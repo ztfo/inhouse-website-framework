@@ -27,6 +27,7 @@ angular.module('inhouseApp')
 			});
 
 			element.on('slideStop', function() {
+				scope.val = $(this).slider('getValue').toString().replace(',', ';');
 				ngModelCtrl.$setViewValue(scope.val);
 				scope.$apply();
 			});
