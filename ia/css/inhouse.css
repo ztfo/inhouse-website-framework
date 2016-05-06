@@ -253,7 +253,17 @@ footer.footer {
   font-weight: 600;
   padding: 0;
 }
-
+.ih-slide .tooltip {
+  margin-top: -23px !important;
+}
+.ih-slide .tooltip-arrow {
+  display: none;
+}
+.ih-slide .tooltip-inner {
+  background-color: rgba(0,0,0,0.1);
+  color: #171717;
+  border-radius: 0;
+}
 .gmap-popwindow a:hover {
   text-decoration: none;
 }
