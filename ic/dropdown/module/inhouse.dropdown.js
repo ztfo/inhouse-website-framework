@@ -57,7 +57,7 @@ angular.module('inhouseApp')
 				}
 			});
 
-			scope.selectAttribute = function(val, name) {
+			scope.selectAttribute = function(val, name, $event) {
 				if(typeof scope.multiSelectList == 'object' && scope.multiSelect == 'true') {
 					if(typeof scope.multiSelectList[val] !== 'undefined') {
 						delete scope.multiSelectList[val];
@@ -72,13 +72,18 @@ angular.module('inhouseApp')
 					}
 					val = val.substr(1);
 
-
 				} else { // single select 
 					var display = typeof scope.truncate != 'undefined' && scope.truncate != '' ? name.substr(0,parseInt(scope.truncate)) : name;
 					scope.name = scope.origName + " | " + display;
 				}
 				scope.val = val;
 				ngModelCtrl.$setViewValue(val);
+				if(typeof scope.multiSelect !== 'undefined' && scope.multiSelect == 'true') {
+console.log('preventing default');
+					return false;
+				} else {
+					scope.dropdownOpen = false;
+				}
 			};
 
 			$timeout((function(scope, element, attrs) {

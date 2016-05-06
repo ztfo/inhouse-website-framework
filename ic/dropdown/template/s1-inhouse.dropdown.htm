@@ -1,9 +1,9 @@
-<div class="{{classes}}">
-	<button class="btn btn-default dropdown-toggle" type="button" id="{{dropdownId}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<div class="{{classes}}" ng-class="dropdownOpen ? 'open' : ''">
+	<button class="btn btn-default dropdown-toggle" type="button" id="{{dropdownId}}" ng-click="dropdownOpen = !dropdownOpen">
 		{{name}}
 		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu" aria-labelledby="{{dropdownId}}">
-		<li ng-repeat="item in menuItems" ng-class="multiSelectList[item.value] == true ? 'active' : ''"><a ng-click="selectAttribute(item.value, item.name)">{{item.name}}</a></li>
+	<ul class="dropdown-menu">
+		<li ng-repeat="item in menuItems" ng-class="multiSelectList[item.value] == true ? 'active' : ''"><a ng-click="selectAttribute(item.value, item.name, $event)">{{item.name}}</a></li>
 	</ul>
 </div>
