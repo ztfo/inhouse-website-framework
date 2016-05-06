@@ -569,7 +569,15 @@ footer.footer {
   background-color: rgba(0,0,0,0.5);
   cursor: pointer;
 }
-
+.ih-listing-table .uk-subnav a {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 0;
+}
+.ih-listing-table .uk-subnav a:hover {
+  color: #171717;
+}
   /* s1 - vertical center page configuration */ 
 .ih-listing {
   position: relative;
@@ -579,6 +587,7 @@ footer.footer {
   position: relative;
   min-height: 350px;
   background-color: #eee;
+  cursor: pointer;
 }
 .ih-listing-slider .item {
 	height: 350px !important;
@@ -606,7 +615,9 @@ footer.footer {
   position: relative;
   padding-right: 25px;
   border-right: 2px solid #eee;
-  min-height: 450px;
+}
+.ih-listing-table {
+  min-height: 400px;
 }
 .ih-listing-contact {
   padding: 35px 0;
