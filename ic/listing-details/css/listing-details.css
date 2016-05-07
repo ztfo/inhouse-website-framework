@@ -1,0 +1,12 @@
+.data-table {
+  font-size: 14px;
+}
+.data-table td,
+.data-table th {
+  width: 16.666% !important;
+}
+
+.data-table th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
