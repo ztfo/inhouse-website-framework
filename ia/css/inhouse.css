@@ -1136,10 +1136,15 @@ input[type="radio"] {
   .ih-listing-slider .item {
     height: 175px !important;
   }
-  
+  .s2.ih-listing, .s2.ih-results {
+    padding-top: 116px !important;
+  }
+  .s2 .ih-advanced-filters {
+    padding: 0;
+  }
 }
 
-@media screen and (min-width: 320px) and (max-width: 766px) {
+@media screen and (min-width: 321px) and (max-width: 766px) {
   /* landing */
   .ih-nar-btn {
     font-size: 18px;
@@ -1150,7 +1155,6 @@ input[type="radio"] {
   /* results page */
     /* global */
     .ih-more-listings button { font-size: 18px; }
-    #searchFilters { padding: 0; }
     #searchFilters div { padding: 0; }
     .ih-slide { text-align: center; }
     .ih-slide label { text-align: center; }    
@@ -1166,7 +1170,7 @@ input[type="radio"] {
     /* s1 */
     /* s2 */
     .s2 .listing-pane { padding: 10px 15px; }
-    .s2.ih-results { padding-top: 78px !important; }
+    .s2.ih-results { padding-top: 134px !important; }
     .s2 .ih-listing-card {
       width: 95%;
       margin: 0 auto;
@@ -1228,7 +1232,6 @@ input[type="radio"] {
   }
   footer,
   footer .text-right { text-align: center; }
-  footer div { margin-bottom: 10px; }  
   footer .row { margin: 20px 0; }
   .ih-copyright { margin: 10px 0px; } 
     .mini-search {
@@ -1259,7 +1262,7 @@ input[type="radio"] {
     }    
     .s2.ih-results .ih-adv-toggle { display: block; }
     .s2.ih-listing,
-    .s2.ih-results { padding-top: 95px !important ; }
+    .s2.ih-results { padding-top: 116px; }
   
   /* results end */
   /* listing page */
