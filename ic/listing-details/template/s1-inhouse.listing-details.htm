@@ -1,0 +1,231 @@
+<div class="ih-listing-table">
+	<ul class="uk-subnav nav nav-pills" data-uk-switcher="{connect: '#listingData'}">
+		<li><a href=""><small>Listing Details</small></a></li>
+		<li><a href=""><small>School Information</small></a></li>
+		<li><a href=""><small>Listing Includes</small></a></li>
+		<li><a href=""><small>Mortgage Details</small></a></li>
+	</ul>
+	<ul class="uk-switcher" id="listingData">
+		<li>
+			<table class="table table-responsive table-stripped table-hover">
+				<thead>
+					<tr>
+						<th colspan="4">Listing Details</th>
+						<td colspan="4" class="text-right">
+
+						</td>
+					</tr>
+				</thead>
+				<tbody class="text-uppercase">
+					<tr>
+						<th><small class="text-muted">Community</small></th>
+						<td colspan="3"><small class="text-muted">{{listing.community}}</small></td>
+						<th><small class="text-muted">MLS</small></th>
+						<td><small class="text-muted">{{listing.mls}}</small></td>
+						<!-- new -->
+						<th><small class="text-muted">Type</small></th>
+						<td><small class="text-muted">{{listing.type}}</small></td>
+					</tr>
+					<tr>
+						<th><small class="text-muted">Status</small></th>
+						<td><small class="text-muted">{{listing.status}}</small></td>
+						<th><small class="text-muted">Sqft.</small></th>
+						<td><small class="text-muted">{{listing.sq_total | number}}</small></td>
+						<th><small class="text-muted">Main House Sqft.</small></th>
+						<!-- new main house? -->
+						<td><small class="text-muted">{{listing.sq_total | number}}</small></td>
+						<th><small class="text-muted">Short Sale</small></th>
+						<td><small class="text-muted">{{listing.shortsale}}</small></td>
+					</tr>
+					<tr>
+						<th><small class="text-muted">Bedrooms</small></th>
+						<td><small class="text-muted">{{listing.beds_total}}</small></td>
+						<th><small class="text-muted">Total Baths</small></th>
+						<td><small class="text-muted">{{listing.baths_total}}</small></td>
+						<th><small class="text-muted">Stories</small></th>
+						<td><small class="text-muted">{{listing.stories}}</small></td>
+						<th><small class="text-muted">Year Built</small></th>
+						<td><small class="text-muted">{{listing.yearbuilt}}</small></td>
+					</tr>
+					<tr>
+						<th><small class="text-muted"># of Garage</small></th>
+						<td><small class="text-muted">{{listing.garage}}</small></td>
+						<th><small class="text-muted">Pool</small></th>
+						<td><small class="text-muted">{{listing.pool}}</small></td>
+						<th><small class="text-muted">Spa</small></th>
+						<td><small class="text-muted">{{listing.spa}}</small></td>
+						<th><small class="text-muted"># of Stories</small></th>
+						<td><small class="text-muted">{{listing.stories}}</small></td>
+					</tr>
+					<tr>
+						<!-- new | whole section -->
+						<th><small class="text-muted">Patio:</small></th>
+						<td><small class="text-muted">{{listing.patio}}</small></td>
+						<th><small class="text-muted">RV Parking</small></th>
+						<td><small class="text-muted">{{listing.rv}}</small></td>
+						<th><small class="text-muted">Style:</small></th>
+						<td><small class="text-muted">{{listing.style}}</small></td>
+						<th><small class="text-muted">Roof</small></th>
+						<td><small class="text-muted">{{listing.roof}}</small></td>
+					</tr>
+					<tr>
+						<!-- new | whole section -->
+						<th><small class="text-muted">Fence:</small></th>
+						<td><small class="text-muted">{{listing.fence}}</small></td>
+						<th><small class="text-muted"># Fireplace/Log</small></th>
+						<td><small class="text-muted">{{listing.fireplace}}</small></td>
+						<th><small class="text-muted">Floor Covering:</small></th>
+						<td><small class="text-muted">{{listing.floorcovering}}</small></td>
+						<th><small class="text-muted">View</small></th>
+						<td><small class="text-muted">{{listing.view}}</small></td>
+					</tr>
+					<tr>
+						<th><small class="text-muted">Price/SF</small></th>
+						<td><small class="text-muted">{{listing.psf | currency}}</small></td>
+						<th><small class="text-muted">HOA</small></th>
+						<td><small class="text-muted">{{listing.hoa}}</small></td>
+						<th><small class="text-muted">Area</small></th>
+						<td><small class="text-muted">{{listing.area}}</small></td>
+						<th><small class="text-muted">Security</small></th>
+						<td><small class="text-muted">{{listing.security}}</small></td>
+					</tr>
+					<tr>
+						<th><small class="text-muted">Contruction</small></th>
+						<td><small class="text-muted">{{listing.construction}}</small></td>
+						<th><small class="text-muted">HVAC</small></th>
+						<td><small class="text-muted">{{listing.hvac}}</small></td>
+						<th><small class="text-muted">A/C</small></th>
+						<td><small class="text-muted">{{listing.ac}}</small></td>
+						<th><small class="text-muted">Heat</small></th>
+						<td><small class="text-muted">{{listing.heat}}</small></td>
+					</tr>
+					<tr>
+						<!--  new | whole section -->
+						<th><small class="text-muted">New Contruction</th>
+						<td><small class="text-muted">{{listing.newconstruction}}</small></td>
+						<th><small class="text-muted">Gas</small></th>
+						<td><small class="text-muted">{{listing.gas}}</small></td>
+						<th><small class="text-muted">Water</small></th>
+						<td><small class="text-muted">{{listing.water}}</small></td>
+						<th><small class="text-muted">Sewer</small></th>
+						<td><small class="text-muted">{{listing.sewer}}</small></td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+		<li>
+			<table class="table table-responsive table-stripped table-hover">
+				<thead>
+					<tr>
+						<th colspan="2">School Information</th>
+						<td colspan="2" class="text-right">
+							<div class="share-btns">
+								<strong><span class="text-muted text-uppercase">Share on: </span></strong>
+								<a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+								<a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+								<a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+								<a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</td>
+					</tr>
+				</thead>
+				<tbody class="text-uppercase">
+					<tr>
+						<th><small class="text-muted">School District</small></th>
+						<td><small class="text-muted">{{listing.schoolDistrict}}</small></td>
+						<th><small class="text-muted">Elementary</small></th>
+						<td><small class="text-muted">{{listing.elementarySchool}}</small></td>
+					</tr>
+					<tr>
+						<th><small class="text-muted">Middle School</small></th>
+						<td><small class="text-muted">{{listing.middleSchool}}</small></td>
+						<th><small class="text-muted">High School</small></th>
+						<td><small class="text-muted">{{listing.highSchool}}</small></td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+		<li>
+			<div class="container-fluid">
+				<div class="row">
+					<!-- NEW | whole table -->
+					<table class="table table-responsive table-stripped">
+						<thead>
+							<tr>
+								<th colspan="4">Listing Includes</th>
+								<td colspan="4" class="text-right">
+									<div class="share-btns">
+										<strong><span class="text-muted text-uppercase">Share on: </span></strong>
+										<a href="https://www.facebook.com/sharer/sharer.php?u={{url|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+										<a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+										<a href="https://twitter.com/home?status={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+										<a href="https://plus.google.com/share?url={{url}}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+									</div>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th><small class="text-muted">Adult Community</small></th>
+								<td><small class="text-muted">{{listing.adult}}</small></td>
+								<th><small class="text-muted">Athletic Facilities:</small></th>
+								<td><small class="text-muted">{{listing.athletic}}</small></td>
+								<th><small class="text-muted">Basement:</small></th>
+								<td><small class="text-muted">{{listing.basement}}</small></td>
+								<th><small class="text-muted">Cable Available:</small></th>
+								<td><small class="text-muted">{{listing.cable}}</small></td>
+							</tr>
+							<tr>
+								<th><small class="text-muted">Deed Restrictions</small></th>
+								<td><small class="text-muted">{{listing.adult}}</small></td>
+								<th><small class="text-muted">Disability Adapted:</small></th>
+								<td><small class="text-muted">{{listing.disability}}</small></td>
+								<th><small class="text-muted">Dividable Lot:</small></th>
+								<td><small class="text-muted">{{listing.dividable}}</small></td>
+								<th><small class="text-muted">Fix up:</small></th>
+								<td><small class="text-muted">{{listing.fix}}</small></td>
+							</tr>
+							<tr>
+								<th><small class="text-muted">Horse Facilities</small></th>
+								<td><small class="text-muted">{{listing.horsefacilities}}</small></td>
+								<th><small class="text-muted">Horses Allowed:</small></th>
+								<td><small class="text-muted">{{listing.horseallowed}}</small></td>
+								<th><small class="text-muted">Interior Steps:</small></th>
+								<td><small class="text-muted">{{listing.steps}}</small></td>
+								<th><small class="text-muted">On Golf Course:</small></th>
+								<td><small class="text-muted">{{listing.fix}}</small></td>
+							</tr>
+							<tr>
+								<th><small class="text-muted">Paved Street</small></th>
+								<td><small class="text-muted">{{listing.paved}}</small></td>
+								<th><small class="text-muted">Split Bedroom Plan:</small></th>
+								<td><small class="text-muted">{{listing.splitbed}}</small></td>
+								<th><small class="text-muted">Split Level:</small></th>
+								<td><small class="text-muted">{{listing.splitlevel}}</small></td>
+								<th><small class="text-muted">Green Features:</small></th>
+								<td><small class="text-muted">{{listing.green}}</small></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<strong>Appliances</strong>
+						<ul class="accent-list">
+							<li>List Here</li>
+						</ul>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<strong>Room Types</strong>
+						<ul class="accent-list">
+							<li>List Here</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			Coming Soon
+		</li>
+	</ul>
+</div>
