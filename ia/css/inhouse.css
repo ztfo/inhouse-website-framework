@@ -617,7 +617,7 @@ footer.footer {
   position: relative;
 }
 .ih-listing-table {
-  min-height: 400px;
+  min-height: 200px;
 }
 .ih-listing-contact {
   padding: 35px 0;

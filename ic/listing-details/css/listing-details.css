@@ -1,11 +1,15 @@
 .data-table {
   font-size: 14px;
 }
-.data-table td,
-.data-table th {
+.data-table>tr>td,
+.data-table>tr>th {
   width: 16.666% !important;
 }
-
+.data-table-inner>tr>td,
+.data-table-inner>tr>th {
+  width: 25%;
+  padding: 8px;
+} 
 .data-table th {
   text-transform: uppercase;
   letter-spacing: 1px;
