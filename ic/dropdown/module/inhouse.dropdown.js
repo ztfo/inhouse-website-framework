@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.directive('ihDropdown', ['$routeParams', '$timeout', '$location', function($routeParams, $timeout, $location) {
+.directive('ihDropdown', ['$routeParams', '$timeout', '$location', '$document', function($routeParams, $timeout, $location, $document) {
 	return {
 		restrict: 'E',
 		templateUrl : function(el, attrs) {
@@ -19,6 +19,7 @@ angular.module('inhouseApp')
 		},
 		link: function(scope, element, attrs, ngModelCtrl) {
 			scope.multiSelectList = {};
+
 
 			if(typeof attrs.class == 'undefined') {
 				scope.classes = "ih-search-dropdown dropdown full";
@@ -59,6 +60,7 @@ angular.module('inhouseApp')
 
 			scope.selectAttribute = function(val, name, $event) {
 				if(typeof scope.multiSelectList == 'object' && scope.multiSelect == 'true') {
+					$event.preventDefault();
 					if(typeof scope.multiSelectList[val] !== 'undefined') {
 						delete scope.multiSelectList[val];
 					} else {
@@ -79,7 +81,7 @@ angular.module('inhouseApp')
 				scope.val = val;
 				ngModelCtrl.$setViewValue(val);
 				if(typeof scope.multiSelect !== 'undefined' && scope.multiSelect == 'true') {
-console.log('preventing default');
+					$event.preventDefault();
 					return false;
 				} else {
 					scope.dropdownOpen = false;
@@ -88,6 +90,13 @@ console.log('preventing default');
 
 			$timeout((function(scope, element, attrs) {
 				return function() {
+					if(scope.multiSelect == 'true') {
+						element.find('a').click(function(e) {
+							e.stopPropagation;
+							e.preventDefault();
+							return false;
+						});
+					}
 					if(typeof scope.$parent.filters !== 'undefined' && typeof scope.$parent.filters[attrs.id] !== 'undefined') {
 						if(scope.$parent.filters[attrs.id].indexOf(';') !== -1) {
 							var vals = newVal.split(';');
