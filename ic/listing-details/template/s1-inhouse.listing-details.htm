@@ -177,7 +177,7 @@
 							</tr>
 							<tr>
 								<th><small class="text-muted">Deed Restrictions</small></th>
-								<td><small class="text-muted">{{listing.adult}}</small></td>
+								<td><small class="text-muted">{{listing.deed}}</small></td>
 								<th><small class="text-muted">Disability Adapted:</small></th>
 								<td><small class="text-muted">{{listing.disability}}</small></td>
 								<th><small class="text-muted">Dividable Lot:</small></th>
@@ -193,7 +193,7 @@
 								<th><small class="text-muted">Interior Steps:</small></th>
 								<td><small class="text-muted">{{listing.steps}}</small></td>
 								<th><small class="text-muted">On Golf Course:</small></th>
-								<td><small class="text-muted">{{listing.fix}}</small></td>
+								<td><small class="text-muted">{{listing.golfcourse}}</small></td>
 							</tr>
 							<tr>
 								<th><small class="text-muted">Paved Street</small></th>
@@ -212,13 +212,13 @@
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<strong>Appliances</strong>
 						<ul class="accent-list">
-							<li>List Here</li>
+							<li ng-repeat="(appliance,v) in listing.appliances">{{appliance}}</li>
 						</ul>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<strong>Room Types</strong>
 						<ul class="accent-list">
-							<li>List Here</li>
+							<li ng-repeat="room in listing.rooms">{{room}}</li>
 						</ul>
 					</div>
 				</div>
