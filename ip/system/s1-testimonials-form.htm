@@ -1,6 +1,52 @@
 <!-- there should be a way to link the email and this form to make sure it is an approved testimonial to begin, we should also first allow the agent to approve before posting -->
 <section class="ih-testimonial-form">
-  <form>
-    
-  </form>
+  <div class="container">
+    <p class="lead">
+      {{agent.testimonialText}}
+    </p>
+    <form ng-submit="Review.$valid && submitReview()" name="Testimonial">
+      <div class="text-center alert alert-success fade in" ng-show="reviewSent">
+        <h3><strong>Thank You!</strong></h3>
+        <hr>
+          Your Feedback is truly appreciate it! Your testimonial will appear on {{agent.agentName | split ' ':0}}'s website as soon as he approves it.
+        </strong>
+      </div>
+      <div class="text-center alert alert-info fade in" ng-show="reviewSending">
+        <h3><strong>Please wait..</strong></h3>
+        <hr> We're submitting your testimonial...</hr>
+      </div>
+      <div class="text-center alert alert-danger fade in" ng-show="reviewSendFailed">
+        <h3><strong>We're sorry...</strong></h3>
+        <hr> There was an issue submitting your testimonial. Please try again.
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="messageName">Full Name</label>
+          <input type="name" class="ih-form-input form-control" id="messageName" ng-model="review.name" required>
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="phoneNumber">Date of Transaction</label>
+          <input type="phone" class="ih-form-input form-control" id="reviewDate" ng-model="review.date">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="transaction">How did {{agent.agentName | split: ' ':0}} help you?</label>
+          <ih-dropdown items='[{"name": "Sold a Home", "value": "Sell a Home"}, {"name": "Buy a Home", "value": "Buy a Home"}, {"name": "Just Advice", "value": "Just Advice"}]' id="transaction" name="Help helped me..." ng-model="filters.type"></ih-dropdown>
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="transaction">What star rating would you give to {{agent.agentName | split: ' ':0}}?</label>
+          <ih-dropdown items='[{"name": "1 star", "value": "1 star"}, {"name": "2 stars", "value": "2 stars"}, {"name": "3 stars", "value": "3 stars"}, {"name": "4 stars", "value": "4 stars"}, {"name": "5 stars", "value": "5 stars"}]' id="transaction" name="Help helped me..." ng-model="filters.type"></ih-dropdown>          
+        </div>
+        <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+      </div>
+      <div class="form-group">
+        <label for="textMessage">Your Testimonial</label>
+        <textarea type="text" class="ih-form-input ih-textarea form-control" id="textMessage" required ng-model="contact.message"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
 </section>
