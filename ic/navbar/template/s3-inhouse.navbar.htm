@@ -9,7 +9,7 @@
         <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right tel-cta nopad">
-        <span itemprop="telephone">{{agent.contactPhone | tel}}</span> <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
+        <a href="tel:{{agent.contactPhone}}" class="clean-link"><span itemprop="telephone">{{agent.contactPhone | tel}} <span class="ih-social-icon"><i class="fa fa-phone"></i></span></span></a>
         <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in" ng-if="!inhouseAgentUserLoggedIn">Sign-in</a>
       </div>
   </div>
