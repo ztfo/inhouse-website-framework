@@ -1,3 +1,29 @@
 .top-footer {
   min-height: 250px;
 }
+
+@media screen and (max-width: 767px) {
+  footer,
+  footer .text-right {
+    text-align: center;
+  }
+  footer .row {
+    margin: 20px 0;
+  }
+  .ih-copyright {
+    margin: 10px 0px;
+  }
+  .mini-search {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .ih-copyright {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .ih-breadcrumbs {
+    text-align: center;
+  }
+}

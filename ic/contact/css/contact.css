@@ -1,4 +1,40 @@
 /* global */
+  .ih-contact-form .btn-group {
+    width: 100%;
+  }
+  .ih-contact-form .btn-group .btn {
+    width: 33%;
+  }
+  .ih-contact-form .btn-default {
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
+  }
+  .ih-contact-form input[type="checkbox"] {
+    display: none;
+  }
+  .ih-contact-form .form-group {
+    margin: 10px 0;
+  }
+  .ih-contact-form .btn-group {
+    margin-bottom: 20px;
+  }
+  .ih-form-input {
+    padding: 20px 15px;
+    border-radius: 0;
+  }
+  .ih-contact-form .form-group>label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  .ih-contact .btn.active {
+    color: #fff;
+    box-shadow: none;
+  }
+  .alert h3 {
+    margin: 5px;
+  }
 /* s1 */
 /* s2 */
 /* s3 */

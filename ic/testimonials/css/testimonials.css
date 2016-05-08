@@ -29,3 +29,12 @@
   padding-bottom: 110px;
   min-height: 630px;
 }
+
+
+@media screen and (max-width: 767px) {
+  .ih-testimonial-icon {
+    margin: 0 auto;
+    width: 40%;
+    margin-bottom: 35px;
+  }
+}
