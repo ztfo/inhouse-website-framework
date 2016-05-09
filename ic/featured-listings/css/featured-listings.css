@@ -149,7 +149,7 @@
     font-weight: 600;
   }  
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .ih-grid-carousel .ih-ft-listing {
     min-height: 150px;
   }
@@ -160,8 +160,8 @@
     font-size: 10px;
   }
 }
-@media screen and (min-width: 375px) and (max-width: 767px) {}
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
   .ih-grid-carousel .ih-ft-listing {
     min-height: 220px;
   }

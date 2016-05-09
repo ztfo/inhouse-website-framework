@@ -341,7 +341,7 @@
   }  
   
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   
   /* s1 */
   .s1 .ih-slider-row {
@@ -353,7 +353,7 @@
   }  
   
 }
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   
   /* global */
   .ih-greeting {
@@ -380,7 +380,7 @@
   }  
   
 }
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 768px) {}
 @media screen and (max-width: 375px) {
   /* s1 */
   .s1 .ih-slider-row {

@@ -1050,7 +1050,7 @@ input[type="radio"] {
   }  
   /* content end */
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   /* landing */
   .my-listings {
     top: initial !important;
@@ -1070,7 +1070,7 @@ input[type="radio"] {
     /* s1 */
     /* s2 */
 }
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   
   /* landing */
   .ih-nar-btn {
@@ -1141,7 +1141,7 @@ input[type="radio"] {
     }  
   /* content end */    
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   /* landing */
   .ih-scroll-up {
     right: 20px;

@@ -98,7 +98,7 @@
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   /* s1 */
   .navbar-brand>img {
     width: 280px;
@@ -106,7 +106,7 @@
   }
   /* s2 */
 }
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   
   /* s1 */
   .navbar-brand {
@@ -136,7 +136,7 @@
   }
   /* s2 */
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   /* global */
   .navbar-toggle {
     top: 0px;

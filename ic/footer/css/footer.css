@@ -4,7 +4,7 @@
 }
 
 /*** responsive ****/
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .ih-copyright {
     text-align: center;
     margin: 10px 0;
@@ -13,7 +13,7 @@
     text-align: center;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   footer,
   footer .text-right {
     text-align: center;

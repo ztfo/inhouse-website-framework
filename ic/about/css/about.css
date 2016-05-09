@@ -90,8 +90,8 @@
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .ih-about .ih-header { width: 95%; }
   .ih-about-inner { margin: 0 auto; }  
   .ih-about .col-lg-4 {
@@ -107,7 +107,7 @@
     text-align: center;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .ih-about-header { clear: both; }  
 }
 @media screen and (max-width: 375px) {}

@@ -33,7 +33,7 @@
 }
 
 /*** responsive ***/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .ih-testimonial-icon {
     margin: 0 auto;
     width: 40%;
