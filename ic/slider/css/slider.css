@@ -371,6 +371,7 @@
   }
   .s1 .ih-slider-row>div {
     padding: 0;
+    width: 100%;
   }    
   .s1.ih-slider {
     height: auto !important;

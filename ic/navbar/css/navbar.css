@@ -203,11 +203,6 @@
     width: 30px;
     margin-bottom: 5px;
   }  
-  .s2.ih-nav .navbar-nav>li {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
   .s2 .navbar-nav>li:first-child a {
     text-align: center !important;
   }
@@ -221,7 +216,7 @@
     text-align: center !important;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   /* s1 */
   .s1 .navbar-brand>img {
     width: 170px !important;
@@ -230,6 +225,11 @@
   /* s2 */
   .s2.ih-nav {
     min-height: 310px !important;
+  }
+  .s2.ih-nav .navbar-nav>li {
+    width: 100%;
+    display: block;
+    text-align: center;
   }
   
 }

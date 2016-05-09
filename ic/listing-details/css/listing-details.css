@@ -15,3 +15,11 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+
+/*** responsive ***/
+@media screen and (max-width: 768px) {
+  #listingData {
+    overflow: auto;
+  }
+}
