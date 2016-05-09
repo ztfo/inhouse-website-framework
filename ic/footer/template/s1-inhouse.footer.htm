@@ -1,15 +1,5 @@
 <footer class="s1 footer {{classes}}" ng-show="showFooter == undefined || showFooter == true">
   <div class="container">
-    <h1 class="ih-header text-center">Connect with Us</h1>
-    <div class="ih-md-divider"></div>
-    <div class="ih-social large-social text-center">
-      <a itemprop="url" href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
-      <a itemprop="url" href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
-      <a itemprop="url" href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
-      <a itemprop="url" href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined"><i class="fa fa-twitter"></i></a>
-      <a itemprop="url" href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
-      <a itemprop="url" href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
-    </div>
     <div class="row text-center broker-logo">
       <img ng-src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" />
     </div>
