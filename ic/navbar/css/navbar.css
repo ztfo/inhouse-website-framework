@@ -1,12 +1,18 @@
 /* global */
 .ih-nav,
-.navbar-brand { z-index: 99;  height: auto !important; min-height: auto !important; margin: 0; }
+.navbar-brand { 
+  z-index: 99;  
+  height: auto !important; 
+  min-height: auto !important; 
+  margin: 0; 
+}
 .navbar-center {
   float: none;
   display: inline-block;
 }
 .ih-cta { padding: 5px 0; }
 [data-uk-sticky].uk-active { position: fixed !important; }
+
 /* s1 - default horizontal full-width absolute to top */
 .s1.ih-nav.iha {
   position: absolute;
@@ -80,6 +86,7 @@
   font-weight: 900;
   background-color: #fff;
 }
+
 /* s3 */
 .s3 .navbar-header {
   float: none;
@@ -89,17 +96,45 @@
 }
 
 /*** *** responsive *** ***/
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   /* s1 */
-  .s1 .navbar-brand>img {
-    width: 170px !important;
+  .navbar-brand>img {
+    width: 280px;
+    margin-top: 15px;
   }
-  
   /* s2 */
-  .s2.ih-nav {
-    min-height: 310px !important;
-  }
+}
+@media screen and (min-width: 376px) and (max-width: 767px) {
   
+  /* s1 */
+  .navbar-brand {
+    float: none;
+    width: 100%;
+    text-align: center;
+    display: block;
+    height: auto;
+  }
+  .navbar-header {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-brand>img {
+    display: inline-block;
+    width: 300px;
+  }
+  #mainNav>ul>li {
+    padding: 5px 0 !important;
+  }
+  .navbar-right {
+    float: none !important;
+    width: 100%;
+    margin-right: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+  }
+  /* s2 */
 }
 @media screen and (max-width: 767px) {
   /* global */
@@ -187,43 +222,15 @@
     text-align: center !important;
   }
 }
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media screen and (max-width: 375px) {
+  /* s1 */
+  .s1 .navbar-brand>img {
+    width: 170px !important;
+  }
   
-  /* s1 */
-  .navbar-brand {
-    float: none;
-    width: 100%;
-    text-align: center;
-    display: block;
-    height: auto;
-  }
-  .navbar-header {
-    float: none;
-    width: 100%;
-    text-align: center;
-  }
-  .navbar-brand>img {
-    display: inline-block;
-    width: 300px;
-  }
-  #mainNav>ul>li {
-    padding: 5px 0 !important;
-  }
-  .navbar-right {
-    float: none !important;
-    width: 100%;
-    margin-right: 0 !important;
-    border-top: 1px solid rgba(255, 255, 255, .2);
-  }
   /* s2 */
-}
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* s1 */
-  .navbar-brand>img {
-    width: 280px;
-    margin-top: 15px;
+  .s2.ih-nav {
+    min-height: 310px !important;
   }
-  /* s2 */
+  
 }
-@media screen and (min-width: 1025px) and (max-width: 1440px) {}
-@media screen and (min-width: 1921px) {}

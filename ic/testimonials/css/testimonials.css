@@ -10,6 +10,7 @@
   position: relative;
   padding: 25px 0;
 }
+
 /* s1 */
 .s1.ih-testimonials {
   background-size: cover;
@@ -23,6 +24,7 @@
   font-size: 30px;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
+
 /* s2 */
 .s2.ih-testimonials {
   padding-top: 130px;
@@ -30,7 +32,7 @@
   min-height: 630px;
 }
 
-
+/*** responsive ***/
 @media screen and (max-width: 767px) {
   .ih-testimonial-icon {
     margin: 0 auto;

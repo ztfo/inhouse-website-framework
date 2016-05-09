@@ -25,7 +25,8 @@
   z-index: 10;
   font-size: 20px;
 }
-/* s1 - default center 2/3 screen centet justified */
+
+/* s1 */
 .s1.ih-slider {
   min-height: initial;
   height: 600px;
@@ -59,7 +60,7 @@
   text-transform: uppercase;
 }
 
-/* s2 - full width */
+/* s2 */
 .s2.ih-slider-row {
   position: relative;
   height: calc(100vh);
@@ -127,7 +128,7 @@
   height: calc(100vh - 50px);
 }
 
-/* s3 - 5/6 screen and narrative buttons outside slider */
+/* s3 */
 .s3.ih-slider {
   background-color: transparent;
   height: calc(100vh);  
@@ -147,7 +148,7 @@
   margin: 0 auto;
 }
 
-/* s4 - full video/cinematograph */
+/* s4 */
 .s4.ih-slider-row {
   position: relative;
   height: calc(100vh);
@@ -284,7 +285,6 @@
   }
 }
 
-
 /* carousel fade */
 .carousel-fade .carousel-inner .item {
   opacity: 0;
@@ -329,7 +329,20 @@
 }
 
 /*** responsive ***/
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  
+  /* global */
+  .ih-greeting { padding-top: 15em; }
+  
+  /* s2 */
+  .s2 .ih-greeting {
+    padding-top: 15em;
+  }  
+  
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  
   /* s1 */
   .s1 .ih-slider-row {
     animation: initial;
@@ -337,18 +350,10 @@
   }
   .s1 .ih-slider-row>div {
     padding: 0;
-  }    
-  .s1.ih-slider {
-    height: auto !important;
-  }
-  .s1 .ih-slider-inner .item {
-   height: 220px !important;
   }  
+  
 }
-
-@media screen and (max-width: 766px) {}
-
-@media screen and (min-width: 321px) and (max-width: 767px) {
+@media screen and (min-width: 376px) and (max-width: 767px) {
   
   /* global */
   .ih-greeting {
@@ -375,9 +380,8 @@
   }  
   
 }
-
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 375px) {
   /* s1 */
   .s1 .ih-slider-row {
     animation: initial;
@@ -385,33 +389,16 @@
   }
   .s1 .ih-slider-row>div {
     padding: 0;
+  }    
+  .s1.ih-slider {
+    height: auto !important;
   }
-  
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  
-  /* s1 */
-  .s1 .ih-slider-row {
-    animation: initial;
-    background-size: cover;
-  }
-  .s1 .ih-slider-row>div {
-    padding: 0;
+  .s1 .ih-slider-inner .item {
+   height: 220px !important;
   }  
-  
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  
-  /* global */
-  .ih-greeting { padding-top: 15em; }
-  
-  /* s2 */
-  .s2 .ih-greeting {
-    padding-top: 15em;
-  }  
-  
-}
 
-@media screen and (min-width: 1921px) {}
+
+
+

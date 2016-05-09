@@ -24,7 +24,6 @@
 .ih-textarea {
   min-height: 150px;
 }
-/* end global */
 
 /* s1 */
 .s1 .ih-search-inner {
@@ -37,6 +36,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 /* s2 */
 
 /* s3 */
@@ -61,7 +61,12 @@
 }
 
 /*** responsive ***/
-
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  /* global */
+  .ih-input-box {
+    margin-bottom: 25px;
+  }
+}
 @media screen and (max-width: 375px) {
   
   /* global */
@@ -74,11 +79,4 @@
     margin-left: 0;
   }
   
-}
-
-@media screen and (max-width: 767px) {
-  /* global */
-  .ih-input-box {
-    margin-bottom: 25px;
-  }
 }

@@ -1,7 +1,18 @@
+/* global */
 .top-footer {
   min-height: 250px;
 }
 
+/*** responsive ****/
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .ih-copyright {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .ih-breadcrumbs {
+    text-align: center;
+  }
+}
 @media screen and (max-width: 767px) {
   footer,
   footer .text-right {
@@ -17,13 +28,4 @@
     width: 100% !important;
   }
 }
-
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .ih-copyright {
-    text-align: center;
-    margin: 10px 0;
-  }
-  .ih-breadcrumbs {
-    text-align: center;
-  }
-}
+@media screen and (max-width: 375px) {}
