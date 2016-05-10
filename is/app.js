@@ -35,7 +35,10 @@ angular.module('inhouseApp', ['ngRoute'])
 
 //	$locationProvider.html5Mode(true);
 })
-.controller('mainView', ['inhouseApi', '$scope', function(inhouseApi, $scope) {
+.controller('mainView', ['$rootScope', 'inhouseApi', '$scope', function($rootScope, inhouseApi, $scope) {
+	$rootScope.$on("$routeChangeSuccess", function(e, data) {
+		$scope.$broadcast('viewChanged', data.controller);
+	});
 	$scope.agent = window.agentSettings;
 	$scope.story = window.storySettings;
 	$scope.freebies = true;
