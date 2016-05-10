@@ -72,8 +72,10 @@ angular.module('inhouseApp', ['ngRoute'])
 						$scope.inhouseAgentUserLoggedIn = false;
 						delete localStorage.inhouseAgentUser;
 						$('#accountModal').attr('data-success-register', 'false');
+						$scope.$broadcast('loginChanged', false);
 					} else {
 						$scope.inhouseAgentUserLoggedIn = true;
+						$scope.$broadcast('loginChanged', true);
 						localStorage.inhouseAgentUser = result.id;
 						window.inhouseAgentUser = result.id;
 						$('#accountModal').attr('data-success-register', 'true');
@@ -91,12 +93,14 @@ angular.module('inhouseApp', ['ngRoute'])
 						$scope.inhouseAgentUserLoggedIn = false;
 						delete localStorage.inhouseAgentUser;
 						$('#accountModal').attr('data-success-register', 'false');
+						$scope.$broadcast('loginChanged', false);
 					} else {
 						$scope.inhouseAgentUserLoggedIn = true;
 						localStorage.inhouseAgentUser = result.id;
 						window.inhouseAgentUser = result.id;
 						$('#accountModal').attr('data-success-register', 'true');
 						$('#accountModal').modal('hide');
+						$scope.$broadcast('loginChanged', true);
 					}
 				}
 			});

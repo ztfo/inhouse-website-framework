@@ -13,6 +13,9 @@ angular.module('inhouseApp')
 				this.$parent.$parent.showRegister = false;
 				$('#accountModal').modal('show');
 			};
+			$scope.$on('loginChanged', function(event, args) {
+				$scope.inhouseAgentUserLoggedIn = args;
+			});
 			$scope.inhouseAgentUserLoggedIn = $scope.$parent.inhouseAgentUserLoggedIn;
 			$scope.navbar = window.storySettings.NavBar;
 			if(typeof window.storySettings.navbarClasses !== 'undefined') {
