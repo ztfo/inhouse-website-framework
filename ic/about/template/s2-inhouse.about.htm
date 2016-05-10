@@ -21,7 +21,7 @@
         </h2>
         <h4>Realtor &reg; | {{agent.teamName}} - {{agent.brokerage}}</h4>
         <p class="fo">
-          <strong><small class="text-uppercase"><a class="clean-link" href="mailto:{{agent.contactEmail}}">{{agent.contactEmail}}</a> | {{agent.contactPhone | tel}}</small></strong>
+          <strong><small class="text-uppercase"><a class="clean-link" href="mailto:{{agent.contactEmail}}">{{agent.contactEmail}}</a> | <a href="tel:{{agent.contactPhone | tel}}" class="clean-link">{{agent.contactPhone | tel}}</a></small></strong>
         </p>
         <div itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted">
         </div>
