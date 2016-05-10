@@ -9,6 +9,9 @@ angular.module('inhouseApp')
 		},
 		restrict: 'E',
 		controller: function($scope) {
+			$scope.$on('viewChanged', function(event, args) {
+				$scope.controller = args;
+			});
 			$scope.signIn = function() {
 				this.$parent.$parent.showRegister = false;
 				$('#accountModal').modal('show');

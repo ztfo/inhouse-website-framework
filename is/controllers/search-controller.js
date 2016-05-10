@@ -136,7 +136,11 @@ angular.module('inhouseApp')
 			inhouseApi.getData({resource: 'search-mls', params: params}).success(function(response) {
 				if(typeof response.response != 'undefined' && response.response.length > 0) {
 					$scope.totalListings = response.response[0].total_results;
-					$scope.displayListings = response.response.length;
+					if(response.response.length == 15) {
+						$scope.displayListings = response.response.length * ($scope.filters.page || 1);
+					} else {
+						$scope.displayListings = response.response[0].total_results;
+					}
 				} else {
 					$scope.totalListings = 0;
 					$scope.displayListings = 0;
