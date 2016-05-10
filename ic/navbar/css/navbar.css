@@ -1,7 +1,7 @@
 /* global */
 .ih-nav,
 .navbar-brand { 
-  z-index: 99;  
+  z-index: 9999 !important;  
   height: auto !important; 
   min-height: auto !important; 
   margin: 0; 
