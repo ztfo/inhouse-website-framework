@@ -84,7 +84,7 @@ angular.module('inhouseApp', ['ngRoute'])
 				}
 			});
 		};
-	});
+	})($scope);
 	$scope.submitLogin = (function($scope) {
 			return function() {
 			inhouseApi.getData({resource: 'new-lead', name: $scope.login.name, email: $scope.login.email, phone: $scope.login.phone}).success(function(result) {
