@@ -66,7 +66,7 @@ angular.module('inhouseApp', ['ngRoute'])
 	};
 	$scope.submitRegister = (function($scope) {
 			return function() {
-			inhouseApi.getData({resource: 'new-lead', name: $scope.register.name, email: $scope.register.email, phone: $scope.register.phone}).success(function(result) {
+			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
 						$scope.inhouseAgentUserLoggedIn = false;
@@ -87,7 +87,7 @@ angular.module('inhouseApp', ['ngRoute'])
 	})($scope);
 	$scope.submitLogin = (function($scope) {
 			return function() {
-			inhouseApi.getData({resource: 'new-lead', name: $scope.login.name, email: $scope.login.email, phone: $scope.login.phone}).success(function(result) {
+			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
 						$scope.inhouseAgentUserLoggedIn = false;
