@@ -693,10 +693,8 @@ footer.footer {
     background-color: #eee;
   }
   .s3.ih-bio .blog-row {
-    margin-top: 150px !important;
-  }
-  .s3.ih-bio>.row {
-    margin: 60px 0;
+    margin-top: 50px;
+    min-height: 350px;
   }
   .s3.ih-bio .about-pane h3 {
     margin-top: 0;
@@ -706,6 +704,7 @@ footer.footer {
   .s3.ih-bio .agent-bio {
     font-size: 15px;
     line-height: 25px;
+    margin-bottom: 40px;
   }
   .s3.ih-bio .agent-listing {
     min-height: 180px !important;
@@ -714,7 +713,6 @@ footer.footer {
   .s3.ih-bio .agent-listings {
     margin-top: 10px;
   }
-  .s3.ih-bio .agent-listing-map { margin: 150px 0 }
   /* bio ends */
 
 /* privacy page */
