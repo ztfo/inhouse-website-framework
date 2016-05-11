@@ -710,8 +710,10 @@ footer.footer {
     min-height: 180px !important;
     padding: 0 10px 10px 0 !important;
   }
-  .s3.ih-bio .agent-listings {
-    margin-top: 10px;
+  .s3.ih-bio .agent-listing>a {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
   }
   /* bio ends */
 
