@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 about-pane ih">
-        <h3 class="text-uppercase">A bit about me</h3>
+        <h3 class="text-uppercase">About {{bioAgent.name | split: ' ':0}}</h3>
         <div class="ih-social about-social text-center iha tp rt">
           <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
@@ -25,16 +25,17 @@
         </div>
       </div>
     </div>
-    <div class="row blog-row">
+    <!-- defer -->
+    <div class="row blog-row hidden">
       <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Blog</h1>
       <div class="ih-md-divider"></div>
-
-
-    </div>
+    </div>    
   </div>
+  <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Listings</h1>
+  <div class="ih-md-divider"></div>
   <div class="row agent-listing-map">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
-      <!-- sold listing map -->
+      <ih-listing-map class="full"></ih-listing-map>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing">
       <ul class="nav nav-pills nav-justified" data-uk-switcher="{connect: '#agentListings'}">
