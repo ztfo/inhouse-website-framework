@@ -95,6 +95,23 @@
   margin: 0;
 }
 
+/* s4 */
+.s4.ih-nav .navbar-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 0;
+}
+.s4.ih-nav .navbar-header {
+  z-index: 1;
+}
+.s4.ih-nav .navbar-center>.navbar-nav {
+  display: inline-block !important;
+  float: none;
+}
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}

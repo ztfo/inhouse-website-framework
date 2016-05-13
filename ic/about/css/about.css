@@ -87,6 +87,15 @@
 }
 
 
+/* s5 */
+.s5.ih-about {
+  position: relative;
+  padding: 70px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}

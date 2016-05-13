@@ -1,0 +1,18 @@
+<section class="s5 ih-about {{classes}}">
+  <div class="container">
+    <div class="row">
+      <h1 class="ih-header text-center">Our <strong>Team</strong></h1>
+      <div class="ih-md-divider bk-gd"></div>
+      <p class="col-md-6 col-md-offset-3 text-center" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
+    </div>
+    <div class="row">
+      <figure class="col-lg-3 col-md-3 col-sm-12 col-xs-12 agent-card" ng-repeat="member in agent.team">
+        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center" style="background-image: url('{{member.photo}}');">
+          <span class="ih-teammate-name text-center block text-uppercase" itemprop="name">
+            {{member.name | split: ' ':0}}
+          </span>
+        </a>
+      </figure>
+    </div>
+  </div>
+</section>

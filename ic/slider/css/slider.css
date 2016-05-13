@@ -225,6 +225,13 @@
   height: 100%;
 }
 
+/* s5 */
+.s5 .ih-greeting {
+  z-index: 10;
+  bottom: 5%;
+  width: 100%;
+}
+
 /* slider fade and kenburns animations */
 .ih-slider .item>div {
   background-size: cover;
