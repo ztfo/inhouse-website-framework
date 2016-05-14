@@ -25,6 +25,9 @@ p { text-align: justify; }
 
 /* background color defaults */
 .bw { background-color: #fff; }
+.bf5 { background-color: #f5f5f5; }
+.bee { background-color: #eee; }
+.bdd { background-color: #ddd; }
 /* background ends */
 
 /* format styles */
