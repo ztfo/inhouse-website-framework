@@ -94,7 +94,10 @@
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
-
+.s5 .agent-card {
+  display: block;
+  height: 260px;
+}
 
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}

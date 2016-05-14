@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <figure class="col-lg-3 col-md-3 col-sm-12 col-xs-12 agent-card" ng-repeat="member in agent.team">
-        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center" style="background-image: url('{{member.photo}}');">
+        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center block full" style="background-image: url('{{member.photo}}');">
           <span class="ih-teammate-name text-center block text-uppercase" itemprop="name">
             {{member.name | split: ' ':0}}
           </span>
