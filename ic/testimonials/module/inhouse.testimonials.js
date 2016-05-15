@@ -9,7 +9,8 @@ angular.module('inhouseApp')
 		scope: {
 			testimonial: '@',
 			classes: '@',
-			source: '@'
+			source: '@',
+			max: '@'
 		},
 		controller: function($scope) {
 			$scope.LandingComponent = window.storySettings.LandingComponent;
@@ -41,10 +42,19 @@ angular.module('inhouseApp')
 						}
 					}
 					$timeout(function() {
-						element.carousel({
-							pause: "true",
-							interval: 9999
-						});
+						if(element.find('.owl-carousel').length > 0) {
+							var params = {};
+							if(typeof scope.max !== 'undefined' && scope.max != '') {
+								scope.max = parseInt(scope.max);
+								params.items = scope.max;
+							}
+							element.find('.owl-carousel').owlCarousel(params);
+						} else {
+							element.carousel({
+								pause: "true",
+								interval: 9999
+							});
+						}
 					});
 				});
 			}
