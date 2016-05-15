@@ -5,12 +5,15 @@
       <div class="ih-md-divider bk-gd"></div>
       <p class="col-md-6 col-md-offset-3 text-center" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
     </div>
-    <div class="row">
+    <div class="row agent-row">
       <figure class="col-lg-3 col-md-3 col-sm-12 col-xs-12 agent-card" ng-repeat="member in agent.team">
-        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="text-center block full" style="background-image: url('{{member.photo}}');">
-          <span class="ih-teammate-name text-center block text-uppercase" itemprop="name">
-            {{member.name | split: ' ':0}}
-          </span>
+        <a href="#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="ih block full" style="background-image: url('{{member.photo}}');">
+          <div class="agent-hover block" itemprop="name">
+            <strong class="text-uppercase">{{member.name}}</strong>
+            <div class="clear"></div>
+            <small><em>{{member.title}}</em></small>
+            <span class="agent-icon iha"><i class="fa fa-caret-right"></i></span>
+          </div>
         </a>
       </figure>
     </div>

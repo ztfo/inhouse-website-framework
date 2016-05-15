@@ -1,4 +1,7 @@
 /* global */
+.ih-contact {
+  position: relative;
+}
 .ih-contact-form .btn-group {
   width: 100%;
 }
