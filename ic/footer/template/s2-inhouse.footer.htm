@@ -1,33 +1,48 @@
 <footer class="s2 footer {{classes}}" ng-hide="showFooter != undefined && showFooter == false">
   <div class="container top-footer">
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      <h4>About {{agent.teamName}}</h4>
-      <ul class="footer-list">
-        <li></li>
-      </ul>
+    <div class="footer-col row">
+      <!-- always about panel -->
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <h6>About {{agent.teamName}}</h6>
+
+      </div>
+      <!-- first editable option -->
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <h6>{{footer.nav1}}</h6>
+        <ul class="footer-list">
+          <li></li>
+        </ul>
+      </div>
+      <!-- second editable option -->
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <h6>{{footer.nav2}}</h6>
+          <ul class="footer-list">
+            <li></li>
+          </ul>
+      </div>
+      <!-- first editable option -->
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <h6>{{footer.nav3}}</h6>
+        <ul class="footer-list">
+          <li></li>
+        </ul>
+      </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      <h4>{{}}</h4>
-      <ul class="footer-list">
-        <li></li>
-      </ul>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      <h4></h4>
-      <ul class="footer-list">
-        <li></li>
-      </ul>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      <h4></h4>
-      <ul class="footer-list">
-        <li></li>
-      </ul>
+    <div class="row legal-row">
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-left">
+        <img src="ia/icons/fairhousing.svg" alt="Fair Housing" />
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center text-uppercase">
+        <a href="{{sitemap}}" class="sitemap fo text-uppercase"><small>sitemap</small></a>
+        <h6 class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</h6>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-right">
+        <img src="ia/icons/realtor.svg" alt="National Association of Realtors | Realtor" />
+      </div>
     </div>
   </div>
   <div class="ih-footer">
-    <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
+    <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank" class="fo">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
     <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
-  </div>
   </div>
 </footer>

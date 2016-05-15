@@ -72,6 +72,12 @@ p { text-align: justify; }
 .btb-15 { border-top: 15px solid #fff; }
 /* border ends */
 
+/* list styles */
+.footer-list {
+  list-style: none;
+}
+/* list ends */
+
 /* empty states */
 #main-view,
 .ih-view-container { 
