@@ -9,7 +9,10 @@
   display: inline-block;
   margin-bottom: 7px;
 }
-
+.footer address {
+  padding-left: 10px;
+  border-left: 5px solid #ddd;
+}
 .sitemap:hover {
   text-decoration: none;
   background-color: rgba(0,0,0,0.1);
@@ -18,7 +21,7 @@
 /* s2 */
 .s2 .footer-col>div {
   border-right: 1px solid #ddd;
-  min-height: 200px;
+  min-height: 250px;
 }
 .s2 .footer-col>div:last-child {
   border-right: none;
@@ -26,6 +29,15 @@
 .s2 .legal-row {
   margin-top: 15px;
 }
+.s2 .footer-bio {
+  font-size: 11px;
+  text-transform: initial;
+  margin-bottom: 15px
+}
+.s2 .top-footer h6 {
+  font-weight: 600;
+}
+
 /*** responsive ****/
 @media screen and (min-width: 376px) and (max-width: 768px) {
   .ih-copyright {

@@ -19,7 +19,7 @@
             <a ng-if="link.children !== undefined" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
             <ul ng-if="link.children !== undefined" class="dropdown-menu">
               <li ng-repeat="sublink in link.children">
-                <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{sublink.display}}</span></a>
+                <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{sublink.display}}</span><i class="fa fa-caret-right"></i></a>
               </li>
             </ul>
           </li>
