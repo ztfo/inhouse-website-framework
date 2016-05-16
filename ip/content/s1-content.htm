@@ -1,14 +1,13 @@
 <section class="ih-content s1">
-  <header class="ih-content-header">
+  <header class="ih-content-header fw" style="background-image: url('{{content.thumb}}');">
     <div class="container">
-      <h1 class="inlineblock clear" itemprop="headline">{{content.title}}</h1>
+      <h1 class="inlineblock" itemprop="headline">{{content.title}}</h1>
       <div class="clear"></div>
       <h3 class="inlineblock clear">{{content.sub}}</h3>
   </header>
   <div class="ih-content-inner container">
-
     <div class="row">
-      <div class="ih-content-body" ng-class="!content.disableSidebar ? 'col-lg-9 col-md-9 col-sm-12 col-xs-12' : ''">
+      <div class="ih-content-body" ng-class="!content.disableSidebar ? 'col-lg-8 col-md-8 col-sm-12 col-xs-12' : ''">
         <div ng-if="content.content !== undefined">
           <span ng-bind-html="content.content | to_trusted"></span>
         </div>
@@ -17,13 +16,13 @@
         </div>
         <div class="ih-accent-divider clear"></div>
       </div>
-      <div class="ih-side-panel col-lg-3 col-md-3 col-sm-12 col-xs-12" ng-hide="content.disableSidebar">
+      <div class="ih-side-panel col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-hide="content.disableSidebar">
         <div class="panel-group" id="sideAccordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick="event.preventDefault()">
-										Contact {{agent.teamName}}
+                    Contact {{agent.teamName}}
                   </a>
                 </h4>
             </div>
@@ -33,11 +32,12 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+<!-- TODO -->
+          <div class="panel panel-default hidden">
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onClick="event.preventDefault()">
-										{{agent.teamName}}'s Recommendations 
+                    {{agent.teamName}}'s Recommendations 
                   </a>
                 </h4>
             </div>
@@ -47,7 +47,8 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+<!-- TODO -->
+          <div class="panel panel-default hidden">
             <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onClick="event.preventDefault()">
@@ -63,6 +64,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>

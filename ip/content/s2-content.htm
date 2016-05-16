@@ -1,10 +1,10 @@
 <section class="ih-content s2">
-  <header class="text-center" data-uk-parallax="{bg: '-300'}">
+  <header class="text-center" data-uk-parallax="{bg: '-300'}" style="background-image: url('{{content.thumb}}');">
     <h1 class="inlineblock" itemprop="headline">{{content.title}}</h1>
   </header>
-  <div class="ih-content-inner">
+  <div class="ih-content-inner container">
     <div ng-if="content.content !== undefined">
-      <span ng-bind-html="content.content | to_trusted"></span>
+      <div ng-bind-html="content.content | to_trusted"></div>
     </div>
     <div ng-if="content.contentUrl !== undefined">
       <ng-include src="content.contentUrl"></ng-include>
