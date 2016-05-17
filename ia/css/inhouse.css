@@ -73,8 +73,11 @@ p { text-align: justify; }
 /* border ends */
 
 /* list styles */
+.no-list,
 .footer-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 /* list ends */
 
