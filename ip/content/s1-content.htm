@@ -19,14 +19,14 @@
       <div class="ih-side-panel col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-hide="content.disableSidebar">
         <div class="panel-group" id="sideAccordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
+            <div class="panel-heading" role="tab" id="sideHeadingOne">
               <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick="event.preventDefault()">
+                  <a role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#sideCollapseOne" aria-expanded="true" aria-controls="sideCollapseOne" onClick="event.preventDefault()">
                     Contact {{agent.teamName}}
                   </a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="sideCollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sideHeadingOne">
               <div class="panel-body">
                 <ih-contact message=""></ih-contact>
               </div>
@@ -34,14 +34,14 @@
           </div>
 <!-- TODO -->
           <div class="panel panel-default hidden">
-            <div class="panel-heading" role="tab" id="headingTwo">
+            <div class="panel-heading" role="tab" id="sideHeadingTwo">
               <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onClick="event.preventDefault()">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#sideCollapseTwo" aria-expanded="false" aria-controls="sideCollapseTwo" onClick="event.preventDefault()">
                     {{agent.teamName}}'s Recommendations 
                   </a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="sideCollapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="sideHeadingTwo">
               <div class="panel-body">
 
               </div>
@@ -49,14 +49,14 @@
           </div>
 <!-- TODO -->
           <div class="panel panel-default hidden">
-            <div class="panel-heading" role="tab" id="headingThree">
+            <div class="panel-heading" role="tab" id="sideHeadingThree">
               <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onClick="event.preventDefault()">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#sideCollapseThree" aria-expanded="false" aria-controls="sideCollapseThree" onClick="event.preventDefault()">
                     Resources
                   </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="sideCollapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="sideHeadingThree">
               <div class="panel-body">
               </div>
             </div>
