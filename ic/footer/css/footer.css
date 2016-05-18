@@ -37,6 +37,19 @@
 .s2 .top-footer h6 {
   font-weight: 600;
 }
+.s2 .footer-list a {
+  padding: 10px 0;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  color: #707070;
+  font-size: 11px;
+}
+.s2 .footer-list a:hover {
+  text-decoration: none;
+}
+.s2 .footer-list>li:last-child>a {
+  border-bottom: 0;
+}
 
 /*** responsive ****/
 @media screen and (min-width: 376px) and (max-width: 768px) {
