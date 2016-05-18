@@ -16,18 +16,13 @@
         </address>
       </div>
       <!-- first editable option -->
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <h6>{{footer.nav1}}</h6>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="column in footerColumns | limitTo:maxNavColumns">
+        <h6>{{column.display}}</h6>
         <ul class="footer-list">
-          <li></li>
+          <li ng-repeat="item in column.children">
+            <a itemprop="url" href="{{item.href}}" ng-if="item.children === undefined" ng-attr-target="{{item.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{item.display}}</span></a>
+					</li>
         </ul>
-      </div>
-      <!-- second editable option -->
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <h6>{{footer.nav2}}</h6>
-          <ul class="footer-list">
-            <li></li>
-          </ul>
       </div>
       <!-- first editable option -->
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">

@@ -14,7 +14,7 @@
               <span class="sr-only">{{rating}}</span>
             </div>
             <p itemprop="review">{{slide.testimonial}}</p>
-            <a href="#" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
+						<a href="{{slide.reviewURL}}" target="_blank" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
             <footer>{{slide.reviewer}} | {{slide.context}}</footer>
           </blockquote>
         </div>
