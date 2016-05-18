@@ -10,18 +10,39 @@ angular.module('inhouseApp')
 		},
 		link: function(scope, element, attrs) {
 			scope.$on('listingLoaded', function(event, args) {
-				scope.center = {lat: parseFloat(args.latlong.split(',')[0]), lng: parseFloat(args.latlong.split(',')[1])};
-				scope.map = new google.maps.Map(element[0], {
-					center: scope.center,
-					mapTypeId: google.maps.MapTypeId.SATELLITE,
-					zoom: 19
-				});
-				scope.marker = new google.maps.Marker({
-					position: scope.center,
-					map: scope.map,
-					title: args.address,
-					icon: 'ia/icons/map-pin.png'
-				});
+				if(typeof args.address !== 'undefined') {
+					var geocoder = new google.maps.Geocoder();
+					geocoder.geocode( { 'address': args.address}, function(results, status) {
+						if (status == google.maps.GeocoderStatus.OK) {
+							scope.center = results[0].geometry.location;
+							scope.map = new google.maps.Map(element[0], {
+								center: scope.center,
+								mapTypeId: google.maps.MapTypeId.HYBRID,
+								zoom: 19
+							});
+							scope.marker = new google.maps.Marker({
+								position: scope.center,
+								map: scope.map,
+								title: args.address,
+								icon: 'ia/icons/map-pin.png'
+							});
+						}
+					});
+
+				} else {
+					scope.center = {lat: parseFloat(args.latlong.split(',')[0]), lng: parseFloat(args.latlong.split(',')[1])};
+					scope.map = new google.maps.Map(element[0], {
+						center: scope.center,
+						mapTypeId: google.maps.MapTypeId.SATELLITE,
+						zoom: 19
+					});
+					scope.marker = new google.maps.Marker({
+						position: scope.center,
+						map: scope.map,
+						title: args.address,
+						icon: 'ia/icons/map-pin.png'
+					});
+				}
 			});
 		}
 	};

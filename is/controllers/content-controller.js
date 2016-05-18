@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.controller('contentController', ['$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
+.controller('contentController', ['$rootScope', '$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($rootScope, $compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
 	if(typeof window.agentSettings.content[$route.content] === 'undefined') {
 		var content = window.agentSettings.content;
 		for (var i = 0; i < content.length; i++) {
@@ -29,5 +29,6 @@ angular.module('inhouseApp')
 
 	$timeout(function() {
 		$scope.$broadcast('contentLoaded', $scope.listing);
+		$rootScope.$broadcast('listingLoaded', {address: window.agentSettings.contactAddress + ' ' + window.agentSettings.contactAddress2});
 	});
 }]);
