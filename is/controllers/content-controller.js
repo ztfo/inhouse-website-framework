@@ -31,6 +31,8 @@ angular.module('inhouseApp')
 		$rootScope.$on("$includeContentLoaded", function(event, templateName){
 			$rootScope.$broadcast('listingLoaded', {address: window.agentSettings.contactAddress + ' ' + window.agentSettings.contactAddress2});
 		});
+
+		$rootScope.$broadcast('listingLoaded', {address: window.agentSettings.contactAddress + ' ' + window.agentSettings.contactAddress2});
 		$scope.$broadcast('contentLoaded', $scope.listing);
 	});
 }]);
