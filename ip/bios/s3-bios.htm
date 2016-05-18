@@ -1,12 +1,13 @@
 <section class="ih-content ih-bio s3" itemscope itemtype="http://schema.org/RealEstateAgent">
   <header data-uk-parallax="{bg: '-150'}">
-
+    <h1 class="fs inlineblock fw" itemprop="name">{{bioAgent.name}}</h1>
+    <div class="clear"></div>
+    <h4 class="fp inlineblock fw">{{bioAgent.title}}</h4>
   </header>
   <div class="container">
     <div class="row">
       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 about-pane ih">
-        <h1 class="fs" itemprop="name">{{bioAgent.name}}</h1>
-        <h4 class="fp">{{bioAgent.title}}</h4>
+        <h3 class="text-uppercase">About {{bioAgent.name | split: ' ':0}}</h3>
         <div class="ih-social about-social text-center iha tp rt">
           <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
@@ -16,52 +17,73 @@
           <a href="{{bioAgent.pinterest}}" class="ih-social-icon" ng-if="bioAgent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
         </div>
         <div itemprop="about" ng-bind-html="bioAgent.bio | to_trusted" class="agent-bio fo"></div>
+        <a href="#/contact" class="btn btn-default">Contact Me</a>
       </div>
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 image-pane ih">
-        <div class="agent-image">
+        <div class="agent-image" style="background-image: url('{{bioAgent.headshot}}')">
           <span class="sr-only">{{bioAgent.name}} Picture</span>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <!-- sold listings block -->
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
-      <!-- sold listing map -->
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing">
-      <ul class="nav nav-pills nav-justified">
-        <li role="presentation">
-          <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
-            Current Listings
-          </a>
-        </li>
-        <li role="presentation">
-          <a class="btn btn-default" role="button" data-toggle="collapse" href="#agentSolds" aria-expanded="false" aria-controls="agentSolds">
-            Sold Listings
-          </a>
-        </li>
-      </ul>
-      <div class="agent-listings">
-        <div class="collapse" id="agentSolds">
-          <div class="well">
-
-          </div>
-        </div>
-        <div class="collapse" id="agentSolds">
-          <div class="well">
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>  
-  <div class="container">
-    <div class="row blog-row">
+    <!-- defer -->
+    <div class="row blog-row hidden">
       <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Blog</h1>
       <div class="ih-md-divider"></div>
-      
-      
-    </div>  
+    </div>    
+  </div>
+  <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Listings</h1>
+  <div class="ih-md-divider"></div>
+  <div class="row agent-listing-map">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
+      <ih-listing-map class="full"></ih-listing-map>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing nopad">
+      <ul class="nav nav-pills nav-justified text-uppercase" data-uk-switcher="{connect: '#agentListings'}">
+        <li role="presentation">
+          <a href="" class="clean-link">Current Listings</a>
+        </li>
+        <li role="presentation">
+          <a href="" class="clean-link">Recent Sold Listings</a>
+        </li>
+      </ul>
+      <ul class="agent-listings uk-switcher" id="agentListings">
+        <li>
+          <div class="container-fluid">
+            <div class="row">
+              <!-- max current listing displayed = 9 -->
+              <div class="agent-listing col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <a href="{{agent.listing}}" class="ih block full" style="background-image: url('{{listing.image}}');">
+                  <span class="ih-a">
+                    <span>{{listing.address}}</span>
+                  <strong>{listing.price}} | {{listing.beds_total}} <small>BEDS</small> - {{listing.baths_total}}</strong>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="row text-center">
+              <a href="#/search-mls?active&status=featured" class="btn btn-primary">View All Current</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="container-fluid">
+            <div class="row">
+              <!-- max sold listings displayed = 9 -->
+              <div class="agent-listing col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <a href="{{agent.listing}}" class="ih block full">
+                  <span class="ih-a">
+                    <span>{{listing.address}}</span>
+                  <strong>Sold for: {{listing.soldprice}}</strong>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="row text-center">
+              <a href="#/search-mls?sold&status=featured" class="btn btn-primary">View All Sold</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

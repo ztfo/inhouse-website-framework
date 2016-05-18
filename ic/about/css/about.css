@@ -87,6 +87,57 @@
 }
 
 
+/* s5 */
+.s5.ih-about {
+  position: relative;
+  padding: 70px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.s5 .agent-card {
+  display: block;
+  height: 260px;
+}
+.s5 .agent-card>a {
+  background-size: cover;
+  background-repeat: none;
+  background-position: 50%;
+}
+.s5 .agent-hover {
+  position: absolute;
+  padding: 10px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  opacity: 0;
+  transition: .3s;
+}
+.s5 .agent-hover:hover {
+  top: 13px;
+  left: 13px;
+  right: 13px;
+  bottom: 13px;
+  opacity: 1;
+}
+.s5 .agent-icon {
+  bottom: 10px;
+  right: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+.s5 .agent-hover>strong {
+  display: block;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+.s5 .agent-row {
+  margin-top: 25px;
+}
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}

@@ -18,10 +18,17 @@ input:focus { outline: none !important; }
 p { text-align: justify; }
 /* elements ends */
 
-/* color styles */
+/* font color defaults */
 .fw { color: #f5f5f5; }
 .fb { color: #171717; }
 /* color ends */
+
+/* background color defaults */
+.bw { background-color: #fff !important; }
+.bf5 { background-color: #f5f5f5 !important; }
+.bee { background-color: #eee !important; }
+.bdd { background-color: #ddd !important; }
+/* background ends */
 
 /* format styles */
 .ih { position: relative !important; }
@@ -30,12 +37,13 @@ p { text-align: justify; }
 .rt { right: 0; }
 .lt { left: 0; }
 .bm { bottom: 0; }
-.block { display: block; }
-.inline { display: inline; }
-.inlineblock { display: inline-block; }
+.block { display: block !important; }
+.inline { display: inline !important; }
+.inlineblock { display: inline-block !important; }
 .fullh { height: 100%; }
 .fullw { width: 100%;  }
 .full { position: relative; width: 100%; height: 100%; }
+.afull { top: 0; right: 0; bottom: 0; left: 0; }
 .nopad { padding: 0; }
 .nopad-l { padding-left: 0; }
 .nopad-r { padding-right: 0; }
@@ -55,6 +63,23 @@ p { text-align: justify; }
 .b15 { border: 15px solid #fff; }
 .b10 { border: 10px solid #fff; }
 /* frames end */
+
+/* border accents */
+.tpb-10 { border-top: 10px solid #fff; }
+.btb-10 { border-top: 10px solid #fff; }
+
+.tpb-15 { border-top: 15px solid #fff; }
+.btb-15 { border-top: 15px solid #fff; }
+/* border ends */
+
+/* list styles */
+.no-list,
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* list ends */
 
 /* empty states */
 #main-view,
@@ -494,7 +519,23 @@ footer.footer {
 .ih-listing-table .uk-subnav a:hover {
   color: #171717;
 }
-
+.tab-content {
+  min-height: 300px;
+  border: 1px solid #ddd;
+  border-top: 0;
+  padding: 15px;
+}
+.ih-doc {
+  padding: 10px 15px;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  color: #171717;
+}
+.ih-doc:hover {
+  background-color: rgba(0,0,0,0.05);
+  text-decoration: none;
+}
   /* s1 - vertical center page configuration */ 
 .s1.ih-listing {
   position: relative;
@@ -689,14 +730,62 @@ footer.footer {
     background-color: #eee;
   }
   .s3.ih-bio .listing-map {
-    min-height: 600px;
+    min-height: 650px;
     background-color: #eee;
   }
   .s3.ih-bio .blog-row {
-    margin-top: 150px !important;
+    margin-top: 50px;
+    min-height: 350px;
   }
-  .s3.ih-bio .row {
-    margin: 60px 0;
+  .s3.ih-bio .about-pane h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .s3.ih-bio .agent-bio {
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 40px;
+  }
+  .s3.ih-bio .agent-listing {
+    min-height: 180px !important;
+    padding: 0 10px 10px 0 !important;
+  }
+  .s3.ih-bio .agent-listing>a {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  /* s4 */
+  .s4.ih-bio header {
+    min-height: 260px;
+    background-color: #eee;
+    margin-bottom: 35px;
+    text-align: center;
+    padding-top: 115px;
+  }
+  .s4.ih-bio .agent-image {
+    position: relative;
+    min-height: 600px !important;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .s4 .agent-bio {
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+  }
+  .s4 .about-social {
+    margin-right: 25px;
+    margin-top: 15px;
+  }
+  .s4.ih-bio h1 {
+    padding: 5px 20px;
+    background-color: rgba(255,255,255,0.15);
+  }
+  .s4.ih-bio {
+    margin-bottom: 100px;
   }
   /* bio ends */
 
@@ -726,6 +815,28 @@ footer.footer {
 }
 .modal-footer {
   text-align: center;
+}
+.reg-btns {
+  margin-bottom: 20px;
+}
+.reg-divider {
+  margin-top: 10px;
+}
+.privacy-link {
+  color: #3277b2 !important;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.reg-btns a {
+  text-transform: uppercase;
+  padding: 5px 15px;
+  background-color: #eee;
+  font-size: 12px;
+  font-weight: 600;
+}
+#accountModal .modal-body h2 {
+  margin-top: 0;
 }
 /* visitor modal ends */
 

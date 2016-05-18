@@ -82,6 +82,7 @@ angular.module('inhouseApp')
 					});
 				});
 
+				scope.query = args['featuredListings'].query;
 				scope.homes = args['featuredListings'].listings;
 			});
 		}

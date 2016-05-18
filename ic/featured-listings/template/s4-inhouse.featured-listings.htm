@@ -1,0 +1,32 @@
+<section class="s4 ih ih-featured-slider {{classes}}">
+  <div class="container">
+    <div class="row">
+      <h1 class="ih-header text-center">Featured Homes</h1>
+      <div class="ih-md-divider bk-gd"></div>
+      <h2 class="ih-subheader fc-01 text-center fs">{{section.header}}</h2>    
+    </div>
+    <div class="row listing-row">
+      <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="col-lg-3 col-md-3 col-sm-6 col-xs-12"></ih-listing-loader>
+      <div class="ft-listing col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="home in homes | limitTo:6">
+        <a href="#/listing/{{home.mls}}" class="ih block full" href="" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
+          <div class="listing-hover iha afull">
+            <ih-like-button></ih-like-button>
+            <div class="ft-facts text-right">
+              <small class="fs" itemprop="description">
+                <span class="badge">{{home.price | currency}}</span><br>
+                {{home.beds}} BEDS - {{home.baths}} BATHS
+              </small>     
+            </div>
+            <div class="ih-addr">
+              <strong>{{home.address}}</strong><br>
+              <small><em>{{home.city}} {{home.state}} {{home.zipcode}}</em></small>
+            </div>
+          </div>  
+        </a>
+      </div>
+    </div>
+    <div class="row text-center">
+      <a href="#/search-mls?{{query}}" class="btn btn-primary">View More</a>
+    </div>
+  </div>
+</section>

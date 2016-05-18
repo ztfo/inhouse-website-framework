@@ -5,10 +5,21 @@ angular.module('inhouseApp')
 			return 'ic/footer/template/' + ($window.storySettings.footerConfig || attrs.config || 's1') + '-inhouse.footer.htm';
 		},
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			maxNavColumns: "@navColumns"
 		},
 		restrict: 'E',
 		controller: function($scope) {
+			$scope.NavBar = window.storySettings.NavBar;
+			$scope.footerColumns = [];
+			if($scope.maxNavColumns === undefined) { //default to 2 columns
+				$scope.maxNavColumns = 2;
+			}
+			for (var i = 0; i < $scope.NavBar.length; i++) {
+				if($scope.NavBar[i].type == 'menu') {
+					$scope.footerColumns.push($scope.NavBar[i]);
+				}
+			}
 			$scope.agent = window.agentSettings;
 			$scope.$on('hideFooter', function() {
 				$scope.showFooter = false;
