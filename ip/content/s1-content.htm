@@ -9,7 +9,7 @@
     <div class="row">
       <div class="ih-content-body" ng-class="!content.disableSidebar ? 'col-lg-8 col-md-8 col-sm-12 col-xs-12' : ''">
         <div ng-if="content.content !== undefined">
-          <span ng-bind-html="content.content | to_trusted"></span>
+          <div ng-bind-html="content.content | to_trusted"></div>
         </div>
         <div ng-if="content.contentUrl !== undefined">
           <ng-include src="content.contentUrl"></ng-include>
