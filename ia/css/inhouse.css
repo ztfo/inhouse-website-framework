@@ -1171,6 +1171,18 @@ input[type="radio"] {
   }
   /* landing end */
   
+  /* result page */
+  
+  /* s2 */
+  .s2 .ih-listing-card-img {
+  height: 200px !important;
+  }
+  .s2 .ih-listing-card {
+    min-height: 370px !important;
+  }
+
+  /* result end */
+  
   /* listing page */
     /* global */
     .ih-listing-description {
@@ -1345,7 +1357,7 @@ input[type="radio"] {
   /* capture */
   .modal-dialog {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
   }
   #accountModal {
     padding: 0 !important;
