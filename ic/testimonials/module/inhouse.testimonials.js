@@ -48,12 +48,16 @@ angular.module('inhouseApp')
 								scope.max = parseInt(scope.max);
 								params.items = scope.max;
 							}
+							if(typeof window.storySettings.landingLayout.testimonials.responsive !== 'undefined') {
+								params.responsive = window.storySettings.landingLayout.testimonials.responsive;
+							}
 							element.find('.owl-carousel').owlCarousel(params);
 						} else {
-							element.carousel({
+							var params = {
 								pause: "true",
 								interval: 9999
-							});
+							};
+							element.carousel(params);
 						}
 					});
 				});
