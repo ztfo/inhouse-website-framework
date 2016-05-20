@@ -59,22 +59,22 @@
   text-transform: uppercase;
   color: #fff;
 }
-.owl-nav {
+.s2.ih-testimonials .owl-nav {
   text-align: center;
   margin: 30px 0;
 }
-.owl-nav>div {
+.s2.ih-testimonials .owl-nav>div {
   display: inline-block;
   padding: 7px 25px;
   border: 1px solid rgba(255,255,255,0.1);
   text-transform: uppercase;
   transition: .3s;
 }
-.owl-nav>div:first-child {
+.s2.ih-testimonials .owl-nav>div:first-child {
   border-radius: 50px 0 0 50px;
   border-right: 0;
 }
-.owl-nav>div:last-child { 
+.s2.ih-testimonials .owl-nav>div:last-child { 
   border-radius: 0 50px 50px 0;
 }
 /* s3 */
