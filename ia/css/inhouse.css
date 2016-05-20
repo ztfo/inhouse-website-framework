@@ -7,7 +7,7 @@
 }
 
 /* element resets */
-body { overflow: hidden !important; }
+body { overflow-x: hidden !important; }
 button,
 button:active, 
 button:focus {

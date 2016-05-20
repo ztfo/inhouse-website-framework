@@ -31,7 +31,52 @@
   padding-bottom: 110px;
   min-height: 630px;
 }
-
+.s2.ih-testimonials blockquote {
+  border-left: 0;
+  margin: 0;
+  padding: 0 60px;
+  font-size: 14px;
+  border-right: 2px solid rgba(255,255,255,0.1);
+}
+.ih-ratings {
+  margin-bottom: 15px;
+  font-size: 20px;
+  letter-spacing: 22px;
+}
+.s2.ih-testimonials blockquote>p {
+  font-weight: 300;
+  min-height: 220px;
+}
+.s2.ih-testimonials blockquote footer {
+  font-size: 18px;
+  color: #fff;
+  font-style: italic;
+}
+.s2.ih-testimonials blockquote .read-more {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.owl-nav {
+  text-align: center;
+  margin: 30px 0;
+}
+.owl-nav>div {
+  display: inline-block;
+  padding: 7px 25px;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-transform: uppercase;
+  transition: .3s;
+}
+.owl-nav>div:first-child {
+  border-radius: 50px 0 0 50px;
+  border-right: 0;
+}
+.owl-nav>div:last-child { 
+  border-radius: 0 50px 50px 0;
+}
 /* s3 */
 .s3.ih-testimonials blockquote {
   position: relative;

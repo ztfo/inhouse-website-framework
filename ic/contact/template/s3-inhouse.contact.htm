@@ -1,7 +1,8 @@
 <section class="s3 ih-contact container-fluid">
+  <div class="ih-md-divider"></div>
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact-form">
-      <h2 class="text-center">Get in touch with <strong>{{agent.teamName}}</strong></h2>
+      <h2 class="text-center">Get In Touch With <strong>{{agent.teamName}}</strong></h2>
       <form ng-submit="submitContact()" name="Contact">
         <div class="text-center alert alert-success fade in" ng-show="contactSent">
           <h3><strong>Thank You!</strong></h3>
@@ -53,7 +54,8 @@
       </form>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact-map bkc-04">
-      <ih-listing-map class="full" address="{{agent.contactAddress}} {{agent.contactAddress2}}"></ih-listing-map>
+      <ih-gmaps class="contact-map-pane"></ih-gmaps>
     </div>
   </div>
+  <div class="ih-md-divider"></div>
 </section>
