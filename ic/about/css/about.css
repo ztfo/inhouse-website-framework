@@ -138,6 +138,30 @@
 .s5 .agent-row {
   margin-top: 25px;
 }
+
+/* s6 */
+.s6.ih-about {
+  margin: 200px 0;
+  padding: 50px 0;
+}
+.s6.ih-about .ih-md-divider {
+  display: none;
+}
+.s6.ih-about .tab-content {
+  border: 0;
+  padding: 0;
+  margin-top: 25px;
+}
+.s6.ih-about .nav-justified {
+  margin: 30px 0;
+}
+.s6.ih-about .tab-pane {
+  padding: 0;
+}
+.s6.ih-about .ih-bio-img {
+  margin-top: 30px;
+}
+
 /*** *** responsive *** ***/
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
