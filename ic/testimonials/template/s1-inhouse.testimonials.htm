@@ -1,4 +1,4 @@
-<section class="s1 ih-testimonials {{classes}}" ng-show="testimonials.length > 0" data-uk-parallax="{bg: '-300'}">
+<section class="s1 ih-testimonials {{classes}}" ng-show="testimonials.length > 0">
   <div class="container">
 
     <h1 class="ih-header text-center">What Our Clients Say</h1>
@@ -9,10 +9,10 @@
         <div class="item ih-testimonial {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
           <div class="container-fluid">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-              <img src="ia/icons/testimonial-01.svg" class="ih-testimonial-icon img-responsive" alt="testimonial icon" />
+              <img ng-src="{{agent.starIcon || 'ia/icons/testimonial-01.svg'}}" class="ih-testimonial-icon img-responsive" alt="testimonial icon" />
             </div>
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-              <blockquote class="ih">
+              <blockquote class="ih fs">
                 <div class="ih-ratings" itemprop="rating">
                   <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
                 </div>
@@ -20,11 +20,11 @@
                 <a href="#" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
                 <footer>{{slide.reviewer}} | {{slide.context}}</footer>
               </blockquote>
-              <div class="text-center" ng-hide="!showZillow">
-                <img src="ic/testimonials/assets/zillow.svg" alt="Testimonial Provided By Zillow" class="testimonial-icon" />
-              </div>
             </div>
           </div>
+          <div class="text-center" ng-hide="!showZillow">
+            <img src="ic/testimonials/assets/zillow.svg" alt="Testimonial Provided By Zillow" class="testimonial-icon" />
+          </div>          
         </div>
       </div>
       <div class="ih-review-source text-right">
