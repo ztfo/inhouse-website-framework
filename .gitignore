@@ -13,4 +13,5 @@ vendor
 .env
 *.phar
 .inhouse.assets.changelog.txt
+scratch.htm
 ua/
