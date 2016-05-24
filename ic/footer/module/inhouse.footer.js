@@ -12,6 +12,10 @@ angular.module('inhouseApp')
 		controller: function($scope) {
 			$scope.NavBar = window.storySettings.NavBar;
 			$scope.footerColumns = [];
+
+			$scope.$on('viewChanged', function(event, args) {
+				$scope.controller = args;
+			});
 			if($scope.maxNavColumns === undefined) { //default to 2 columns
 				$scope.maxNavColumns = 2;
 			}
