@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row sub-slider">
+    <div class="s1"></div><!-- s1 listing slider with subdivision homes -->
+  </div>
+  <div class="row">
+    <p>
+      {{subdivision.description}}
+    </p>  
+  </div>
+  <div class="row">
+    <!-- dynamic modals? -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nh-link">
+      <a href="{{subdivision.platMap}}" class="block full btn-primary btn text-center">Plat Map</a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nh-link">
+      <a href="{{subdivision.standardFeatures}}" class="block full btn-primary btn text-center">Standard Features</a>
+    </div>
+    <!-- if available -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nhdefault-link">
+      <a href="#/{{subdivision.name}}-floorplans" class="block full btn-primary btn text-center">Brochure</a>
+    </div>
+  </div>
+  <h2>Available Floorplans</h2>
+  <div class="row floorplans">
+    
+  </div>
+  <div class="row developer">
+    <div class="dev-logo text-center">
+      <img ng-src="{{dev.logo}}" alt="{{dev.name}}" />
+      <h3>{{subdivision.developername}}</h3>
+      <p>{{dev.website}}</p>
+    </div>
+    <p>
+      {{dev.description}}
+    </p>
+  </div>
+</div>
