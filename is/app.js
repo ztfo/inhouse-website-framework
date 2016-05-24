@@ -28,6 +28,10 @@ angular.module('inhouseApp', ['ngRoute'])
 		templateUrl: 'ip/bios/' + (window.storySettings.bioConfig || 's1') + '-bios.htm',
 		controller: 'bioController'
 	})
+	.when('/subdivision/:sub', {
+		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subdivision.htm',
+		controller: 'subdivisionController'
+	})
 	.otherwise({
 		templateUrl: 'ip/system/404.htm'
 	});
