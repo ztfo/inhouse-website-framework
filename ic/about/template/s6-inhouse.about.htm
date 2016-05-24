@@ -3,12 +3,12 @@
     <h1 class="ih-header text-center">Meet Our Team</h1>
     <div class="ih-md-divider"></div>
     <ul class="nav nav-pills nav-justified">
-        <li class="" ng-repeat="member in agent.team">
+        <li class="" ng-repeat="member in agent.team" ng-class="$index == 0 ? 'active' : ''">
           <a data-toggle="pill" data-target="#{{member.name | split: ' ':0}}">{{member.name}}</a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane container-fluid no-padding" ng-repeat="member in agent.team" id="{{member.name | split: ' ':0}}">
+        <div class="tab-pane container-fluid no-padding" ng-repeat="member in agent.team" id="{{member.name | split: ' ':0}}" ng-class="$index == 0 ? 'active' : ''">
             <div class="ih-bio-img col-lg-3 col-md-3 col-sm-12 col-xs-12 nopag">
                 <img class="img-responsive ih-img img-square" ng-src="{{member.photo}}">
             </div>
