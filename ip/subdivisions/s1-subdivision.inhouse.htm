@@ -22,7 +22,17 @@
   </div>
   <h2>Available Floorplans</h2>
   <div class="row floorplans">
-    
+    <!-- repeat per flooplan -->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 floor-link">
+      <a href="#/{{subpage}}" class="block full" ng-src="{{flooplan.mainimage}}">
+        <div class="link-hover">
+          <h4>{{floorplan.name}}</h4>
+          {{floorplan.beds}} Beds | {{floorplan.baths}} Baths<br>
+          Price from: {{floorplan.priceFrom}}<br>
+          <span class="link-btn"><i class="fa fa-caret-right"></i> View Plan &amp; Elavation</span>
+        </div>
+      </a>
+    </div>
   </div>
   <div class="row developer">
     <div class="dev-logo text-center">

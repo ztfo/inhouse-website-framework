@@ -1,10 +1,50 @@
 <div class="container-fluid">
+  <h1 class="ih-header">{{floorplan.name}}</h1>
   <div class="row">
-    <p>
-      {{sub.description}}
-    </p>
+    <table class="table table-responsive">
+      <tbody>
+        <tr>
+          <th>Price</th>
+          <th>Sqft.</th>
+          <th>Beds</th>
+          <th>Baths</th>
+          <th>Garage</th>
+          <th>Stories</th>
+        </tr>
+        <tr>
+          <td>{{Price}}</td>
+          <td>{{Sqft}}</td>
+          <td>{{Beds}}</td>
+          <td>{{Baths}}</td>
+          <td>{{Garage}}</td>
+          <td>{{Stories}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="row">
-    
+    <div id="fpCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <!-- repeat per image -->
+        <div class="item active">
+          <img ng-src="{{image}}" alt="{{name}}">
+          <div class="carousel-caption">
+            {{name}}
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <!-- floorplan layout image -->
+    <img ng-src="{{floorplan.image}}" alt="{{name}}" class="img-responsive" />
   </div>
 </div>
