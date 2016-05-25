@@ -17,7 +17,7 @@
     <div class="container">
       <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
-          <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined">
+          <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined && !nodefault">
             <div class="full-screen-image" ng-style="{'background-image':'url(' + LandingComponent.defaultSliderImage + ')'}"></div>
           </div>
           <div class="item {{$index == 0 && LandingComponent.defaultSliderImage === undefined ? 'active' : ''}}" ng-repeat="slide in slides">
