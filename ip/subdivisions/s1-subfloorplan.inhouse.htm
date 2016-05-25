@@ -12,12 +12,12 @@
           <th>Stories</th>
         </tr>
         <tr>
-          <td>{{floorplan.Price}}</td>
-          <td>{{floorplan.Sqft}}</td>
-          <td>{{floorplan.Beds}}</td>
-          <td>{{floorplan.Baths}}</td>
-          <td>{{floorplan.Garage}}</td>
-          <td>{{floorplan.Stories}}</td>
+          <td>{{floorplan.price}}</td>
+          <td>{{floorplan.sqft}}</td>
+          <td>{{floorplan.beds}}</td>
+          <td>{{floorplan.baths}}</td>
+          <td>{{floorplan.garage}}</td>
+          <td>{{floorplan.stories}}</td>
         </tr>
       </tbody>
     </table>
@@ -26,10 +26,10 @@
     <div id="fpCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
         <!-- repeat per image -->
-        <div class="item active">
-          <img ng-src="{{floorplan.image}}" alt="{{floorplan.name}}">
+        <div class="item active" ng-repeat="image in floorplan.images">
+          <img ng-src="{{image.url}}" alt="{{image.caption}}">
           <div class="carousel-caption">
-            {{floorplan.name}}
+						{{image.caption}}
           </div>
         </div>
       </div>
