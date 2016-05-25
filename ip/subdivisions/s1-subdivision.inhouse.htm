@@ -1,14 +1,13 @@
-<section class="s1 ih-content sudivision">
+<section class="s1 ih-content subdivision">
   <header class="ih-content-header fw" style="background-image: url('{{subdivision.backdrop}}');">
     <div class="container">
       <h1 class="inlineblock" itemprop="headline">{{subdivision.name}}</h1>
   </header>  
   <div class="container">
-      <ih-featured-listings slider="wildcatPass" pull nodefault></ih-featured-listings>
-      <p ng-bind-html="subdivision.description | to_trusted">
+    <div class="sub-desc" ng-bind-html="subdivision.description | to_trusted">
       {{subdivision.description}}
-    </p>  
-    <div class="row">
+    </div>  
+    <div class="row sub-btns">
       <!-- dynamic modals? -->
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nh-link">
         <a href="{{subdivision.platMap}}" class="block full btn-primary btn text-center">Plat Map</a>
@@ -20,16 +19,21 @@
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nhdefault-link">
         <a href="#/{{subdivision.name}}-floorplans" class="block full btn-primary btn text-center">Brochure</a>
       </div>
-    </div>
-    <h2>Available Floorplans</h2>
+    </div>    
+    <h3 class="text-center">Available Homes</h3>
+    <div class="ih-sm-divider"></div>
+    <ih-featured-listings slider="wildcatPass" pull nodefault></ih-featured-listings>
+    <h3 class="text-center">Available Floorplans</h3>
+    <div class="ih-sm-divider"></div>
     <div class="row floorplans">
       <!-- repeat per flooplan -->
       <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 floor-link" ng-repeat="floorplan in subdivision.floorplans">
-              <a href="#/subdivision/{{subdivision.key}}/floorplan/{{floorplan.name}}" class="block full" ng-src="{{flooplan.mainimage}}">
+        <a href="#/subdivision/{{subdivision.key}}/floorplan/{{floorplan.name}}" class="block full" style="background-image: url('{{floorplan.mainimage}}');">
           <div class="link-hover">
             <h4>{{floorplan.name}}</h4>
+            <div class="ih-sm-divider"></div>
             {{floorplan.beds}} Beds | {{floorplan.baths}} Baths<br>
-            Price from: {{floorplan.priceFrom}}<br>
+            Price from: {{floorplan.priceFrom | currency}}<br>
             <span class="link-btn"><i class="fa fa-caret-right"></i> View Plan &amp; Elavation</span>
           </div>
         </a>
@@ -37,12 +41,11 @@
     </div>
     <div class="developer">
       <div class="dev-logo text-center">
-        <img ng-src="{{dev.logo}}" alt="{{dev.name}}" />
-        <h3>{{subdivision.developername}}</h3>
-        <p>{{dev.website}}</p>
+        <img ng-src="{{developer.logo}}" alt="{{dev.name}}" class="inlineblock"/>
+        <h3>{{developer.name}}</h3>
+        <p>{{developer.website}}</p>
       </div>
-          <p ng-bind-html="dev.description | to_trusted">
-      </p>
+      <div ng-bind-html="developer.description | to_trusted"></div>
     </div>  
   </div>
 </section>
@@ -52,7 +55,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">{{modal.content}} Plat Map or Standard Featuress</h4>
       </div>
       <div class="modal-body">
