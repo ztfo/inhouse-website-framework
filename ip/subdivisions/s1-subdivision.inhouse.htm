@@ -19,8 +19,8 @@
   <h2>Available Floorplans</h2>
   <div class="row floorplans">
     <!-- repeat per flooplan -->
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 floor-link" ng-repeat="floorplan in subdivision.floorplan">
-      <a href="#/{{subpage}}" class="block full" ng-src="{{flooplan.mainimage}}">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 floor-link" ng-repeat="floorplan in subdivision.floorplans">
+			<a href="#/subdivision/{{subdivision.key}}/floorplan/{{floorplan.name}}" class="block full" ng-src="{{flooplan.mainimage}}">
         <div class="link-hover">
           <h4>{{floorplan.name}}</h4>
           {{floorplan.beds}} Beds | {{floorplan.baths}} Baths<br>
