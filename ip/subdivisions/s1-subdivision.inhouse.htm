@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<ih-featured-listings slider="wildcatPass" pull nodefault></ih-featured-listings>
-  <p>
+	<p ng-bind-html="subdivision.description | to_trusted">
     {{subdivision.description}}
   </p>  
   <div class="row">
@@ -36,8 +36,7 @@
       <h3>{{subdivision.developername}}</h3>
       <p>{{dev.website}}</p>
     </div>
-    <p>
-      {{dev.description}}
+		<p ng-bind-html="dev.description | to_trusted">
     </p>
   </div>
 </div>
