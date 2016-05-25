@@ -7,7 +7,8 @@ angular.module('inhouseApp')
 		restrict: 'E',
 		replace: true,
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			pull: '@'
 		},
 		controller: function ($scope) {
 			$scope.maxFeaturedListings = window.storySettings.maxFeaturedListings || 4;
@@ -49,42 +50,80 @@ angular.module('inhouseApp')
 					}
 				});
 			});
-			scope.$on('storyLoaded', function (event, args) {
-				//destroy owl carousel
-				scope.listingLoaders = 0;
-				if(typeof element.find('.ih-ft-carousel').data('owlCarousel') !== 'undefined') {
-					element.find('.ih-ft-carousel').data('owlCarousel').destroy();
-					element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
-				}
-				$timeout(function() {
-					element.find('.ih-ft-carousel').owlCarousel({
-						mouseDrag: false,
-						items: 4,
-						nav: true,
-						margin: 10,
-						autoplay: false,
-						autoplayHoverPause: true,
-						responsiveClass: true,
-						responsive: {
-							0: {
-								items: 1
-							},
-							480: {
-								items: 1
-							},
-							768: {
-								items: 2
-							},
-							1024: {
-								items: 4
+			if(typeof scope.pull !== 'undefined') {
+				inhouseApi.getData({resource: 'featured-listings', 'featured-listings': 'wildcatPassListings'}).success(function(response) {
+					//destroy owl carousel
+					scope.listingLoaders = 0;
+					if(typeof element.find('.ih-ft-carousel').data('owlCarousel') !== 'undefined') {
+						element.find('.ih-ft-carousel').data('owlCarousel').destroy();
+						element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
+					}
+					scope.homes = response.response.listings;
+
+					$timeout(function() {
+						element.find('.ih-ft-carousel').owlCarousel({
+							mouseDrag: false,
+							items: 4,
+							nav: true,
+							margin: 10,
+							autoplay: false,
+							autoplayHoverPause: true,
+							responsiveClass: true,
+							responsive: {
+								0: {
+									items: 1
+								},
+								480: {
+									items: 1
+								},
+								768: {
+									items: 2
+								},
+								1024: {
+									items: 4
+								}
 							}
-						}
+						});
 					});
 				});
+			} else {
+				scope.$on('storyLoaded', function (event, args) {
+					//destroy owl carousel
+					scope.listingLoaders = 0;
+					if(typeof element.find('.ih-ft-carousel').data('owlCarousel') !== 'undefined') {
+						element.find('.ih-ft-carousel').data('owlCarousel').destroy();
+						element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
+					}
+					$timeout(function() {
+						element.find('.ih-ft-carousel').owlCarousel({
+							mouseDrag: false,
+							items: 4,
+							nav: true,
+							margin: 10,
+							autoplay: false,
+							autoplayHoverPause: true,
+							responsiveClass: true,
+							responsive: {
+								0: {
+									items: 1
+								},
+								480: {
+									items: 1
+								},
+								768: {
+									items: 2
+								},
+								1024: {
+									items: 4
+								}
+							}
+						});
+					});
 
-				scope.query = args['featuredListings'].query;
-				scope.homes = args['featuredListings'].listings;
-			});
+					scope.query = args['featuredListings'].query;
+					scope.homes = args['featuredListings'].listings;
+				});
+			}
 		}
 	};
 }]);
