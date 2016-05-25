@@ -29,7 +29,7 @@ angular.module('inhouseApp', ['ngRoute'])
 		controller: 'bioController'
 	})
 	.when('/subdivision/:sub', {
-		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subdivision.htm',
+		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subdivision.inhouse.htm',
 		controller: 'subdivisionController'
 	})
 	.otherwise({
