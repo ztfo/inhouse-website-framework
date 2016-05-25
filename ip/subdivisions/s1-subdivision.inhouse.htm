@@ -22,19 +22,19 @@
         <a href="#/{{subdivision.name}}-floorplans" class="block full btn-primary btn text-center">Brochure</a>
       </div>
     </div>
-    <h2 class="text-center">Available Floorplans</h2>
-    <div class="row floorplans">
-      <!-- repeat per flooplan -->
-      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 floor-link" ng-repeat="floorplan in subdivision.floorplan">
-        <a href="#/{{subpage}}" class="block full" ng-src="{{flooplan.mainimage}}">
-          <div class="link-hover">
-            <h4>{{floorplan.name}}</h4>
-            {{floorplan.beds}} Beds | {{floorplan.baths}} Baths<br>
-            Price from: {{floorplan.priceFrom}}<br>
-            <span class="link-btn"><i class="fa fa-caret-right"></i> View Plan &amp; Elavation</span>
-          </div>
-        </a>
-      </div>
+  </div>
+  <h2>Available Floorplans</h2>
+  <div class="row floorplans">
+    <!-- repeat per flooplan -->
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 floor-link" ng-repeat="floorplan in subdivision.floorplans">
+      <a href="#/subdivision/{{subdivision.key}}/floorplan/{{floorplan.name}}" class="block full" ng-src="{{flooplan.mainimage}}">
+        <div class="link-hover">
+          <h4>{{floorplan.name}}</h4>
+          {{floorplan.beds}} Beds | {{floorplan.baths}} Baths<br>
+          Price from: {{floorplan.priceFrom}}<br>
+          <span class="link-btn"><i class="fa fa-caret-right"></i> View Plan &amp; Elavation</span>
+        </div>
+      </a>
     </div>
     <div class="developer">
       <div class="dev-logo text-center">
