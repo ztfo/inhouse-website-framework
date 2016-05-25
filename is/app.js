@@ -32,6 +32,10 @@ angular.module('inhouseApp', ['ngRoute'])
 		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subdivision.inhouse.htm',
 		controller: 'subdivisionController'
 	})
+	.when('/subdivision/:sub/floorplan/:floorplan', {
+		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subfloorplan.inhouse.htm',
+		controller: 'subfloorplanController'
+	})
 	.otherwise({
 		templateUrl: 'ip/system/404.htm'
 	});

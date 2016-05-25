@@ -12,12 +12,12 @@
           <th>Stories</th>
         </tr>
         <tr>
-          <td>{{Price}}</td>
-          <td>{{Sqft}}</td>
-          <td>{{Beds}}</td>
-          <td>{{Baths}}</td>
-          <td>{{Garage}}</td>
-          <td>{{Stories}}</td>
+          <td>{{floorplan.Price}}</td>
+          <td>{{floorplan.Sqft}}</td>
+          <td>{{floorplan.Beds}}</td>
+          <td>{{floorplan.Baths}}</td>
+          <td>{{floorplan.Garage}}</td>
+          <td>{{floorplan.Stories}}</td>
         </tr>
       </tbody>
     </table>
@@ -27,9 +27,9 @@
       <div class="carousel-inner" role="listbox">
         <!-- repeat per image -->
         <div class="item active">
-          <img ng-src="{{image}}" alt="{{name}}">
+          <img ng-src="{{floorplan.image}}" alt="{{floorplan.name}}">
           <div class="carousel-caption">
-            {{name}}
+            {{floorplan.name}}
           </div>
         </div>
       </div>
@@ -45,6 +45,6 @@
   </div>
   <div class="row">
     <!-- floorplan layout image -->
-    <img ng-src="{{floorplan.image}}" alt="{{name}}" class="img-responsive" />
+    <img ng-src="{{floorplan.image}}" alt="{{floorplan.name}}" class="img-responsive" />
   </div>
 </div>
