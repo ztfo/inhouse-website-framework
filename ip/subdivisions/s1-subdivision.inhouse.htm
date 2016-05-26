@@ -40,11 +40,10 @@
         </a>
       </div>
     </div>
-    <div class="developer">
+    <div class="developer well">
       <div class="dev-logo text-center">
-        <img ng-src="{{subdivision.developer.logo}}" alt="{{subdivision.developer.name}}" class="inlineblock"/>
+        <a href="{{subdivision.developer.website}}" class="clean-link" target="_blank"><img ng-src="{{subdivision.developer.logo}}" alt="{{subdivision.developer.name}}" class="inlineblock"/></a>
         <h3>{{subdivision.developer.name}}</h3>
-        <p>{{subdivision.developer.website}}</p>
       </div>
       <div ng-bind-html="subdivision.developer.description | to_trusted"></div>
     </div>  
