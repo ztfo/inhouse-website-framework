@@ -7,7 +7,7 @@ angular.module('inhouseApp')
 			if(typeof $scope.subdivision[content].content !== 'undefined') {
 				modal.body = $scope.subdivision[content].content;
 			} else if(typeof $scope.subdivision[content].image !== 'undefined') {
-				modal.body = "<img src='" + $scope.subdivision[content].image + "'>";
+				modal.body = "<img class='img-responsive' src='" + $scope.subdivision[content].image + "'>";
 			}
 			$scope.$broadcast('showModal', {modal: modal, id: 'subdivModal'});
 		}
