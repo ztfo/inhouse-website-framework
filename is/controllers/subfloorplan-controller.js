@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.controller('subfloorplanController', ['$scope', 'inhouseApi', '$window', '$routeParams', function($scope, inhouseApi, $window, $routeParams) {
+.controller('subfloorplanController', ['$scope', 'inhouseApi', '$window', '$routeParams', '$timeout', function($scope, inhouseApi, $window, $routeParams, $timeout) {
 	if(typeof $window.storySettings.subdivisions !== 'undefined') {
 		var subdivs = $window.storySettings.subdivisions;
 		for (var i = 0; i < subdivs.length; i++) {
@@ -16,4 +16,9 @@ angular.module('inhouseApp')
 			}
 		}
 	}
+	$scope.$on('sliderLoaded', function(event, args) {
+		if(args.slider == 'floorplans') {
+			$scope.$broadcast('storyLoaded', {floorplans: {slides: $scope.floorplan.images}});
+		}
+	});
 }]);
