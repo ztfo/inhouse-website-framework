@@ -10,10 +10,10 @@
     <div class="row sub-btns">
       <!-- dynamic modals? -->
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nh-link">
-        <a href="{{subdivision.platMap}}" class="block full btn-primary btn text-center">Plat Map</a>
+        <a ng-click="showModal('platMap')" class="block full btn-primary btn text-center">Plat Map</a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nh-link">
-        <a href="{{subdivision.standardFeatures}}" class="block full btn-primary btn text-center">Standard Features</a>
+        <a ng-click="showModal('standardFeatures')" class="block full btn-primary btn text-center">Standard Features</a>
       </div>
       <!-- if available -->
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nhdefault-link">
@@ -51,21 +51,4 @@
   </div>
 </section>
 
-<!-- modal -->
-<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">{{modal.content}} Plat Map or Standard Featuress</h4>
-      </div>
-      <div class="modal-body">
-        if standardFeatures load: <div with contents ></div>
-        if platMap load <img ng-src="platMap" class="img-responsive" alt="{{subdivision.name}} Plat Map"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<ih-modal id="subdivModal"></ih-modal>
