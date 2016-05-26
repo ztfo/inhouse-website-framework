@@ -8,7 +8,8 @@ angular.module('inhouseApp')
 		replace: true,
 		scope: {
 			classes: "@classes",
-			pull: '@'
+			pull: '@',
+			slider: '='
 		},
 		controller: function ($scope) {
 			$scope.maxFeaturedListings = window.storySettings.maxFeaturedListings || 4;
@@ -51,7 +52,7 @@ angular.module('inhouseApp')
 				});
 			});
 			if(typeof scope.pull !== 'undefined') {
-				inhouseApi.getData({resource: 'featured-listings', 'featured-listings': 'wildcatPassListings'}).success(function(response) {
+				inhouseApi.getData({resource: 'featured-listings', 'featured-listings': scope.slider + '-featured'}).success(function(response) {
 					//destroy owl carousel
 					scope.listingLoaders = 0;
 					if(typeof element.find('.ih-ft-carousel').data('owlCarousel') !== 'undefined') {
