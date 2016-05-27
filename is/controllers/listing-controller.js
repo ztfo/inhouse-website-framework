@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.controller('listingController', ['$rootScope', '$scope', '$routeParams', 'inhouseApi', '$timeout', function($rootScope, $scope, $route, inhouseApi, $timeout) {
+.controller('listingController', ['$window', '$rootScope', '$scope', '$routeParams', 'inhouseApi', '$timeout', function($window, $rootScope, $scope, $route, inhouseApi, $timeout) {
 	$scope.mls = $route.mls;
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
@@ -19,20 +19,22 @@ angular.module('inhouseApp')
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
 			} else {
 				if(typeof localStorage.inhouseViewedListings !== 'undefined') { //user isn't signed in yet, and they have viewed listings already
-					$scope.viewedListings = $.parseJSON(localStorage.inhouseViewedListings);
-					if($scope.viewedListings.indexOf($scope.mls) !== -1) { //they have already viewed this listing, let them view it again.
-					} else if((localStorage.inhouseSearchFreebies !== 'false' && $scope.viewedListings.length > 2 )|| (localStorage.inhouseSearchFreebies == 'false' && $scope.viewedListings.length > 5)) { //they have viewed too many, show the modal
-						$('#accountModal').modal('show');
-						$('#accountModal').off('hidden.bs.modal');
-						$('#accountModal').on('hidden.bs.modal', (function(scope) {
-							return function() {
-								$scope.getData();
-							};
-						})($scope));
-						return;
-					} else { //not at the limit yet. push this mls to the stack
-						$scope.viewedListings.push($scope.mls);	
-						localStorage.inhouseViewedListings = JSON.stringify($scope.viewedListings);
+					if($window.storySettings.disableLeadSignup !== true) {
+						$scope.viewedListings = $.parseJSON(localStorage.inhouseViewedListings);
+						if($scope.viewedListings.indexOf($scope.mls) !== -1) {
+						} else if((localStorage.inhouseSearchFreebies !== 'false' && $scope.viewedListings.length > 2 )|| (localStorage.inhouseSearchFreebies == 'false' && $scope.viewedListings.length > 5)) {
+							$('#accountModal').modal('show');
+							$('#accountModal').off('hidden.bs.modal');
+							$('#accountModal').on('hidden.bs.modal', (function(scope) {
+								return function() {
+									$scope.getData();
+								};
+							})($scope));
+							return;
+						} else { //not at the limit yet. push this mls to the stack
+							$scope.viewedListings.push($scope.mls);	
+							localStorage.inhouseViewedListings = JSON.stringify($scope.viewedListings);
+						}
 					}
 				} else { //they haven't viewed any yet, add this to the arr
 					$scope.viewedListings = [$scope.mls];
@@ -76,7 +78,7 @@ angular.module('inhouseApp')
 
 
 	$scope.getData();
-	
+
 	$scope.showLightBox = function() {
 		UIkit.lightbox.create($scope.lightBox).show();
 	};
