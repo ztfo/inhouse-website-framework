@@ -123,7 +123,9 @@ angular.module('inhouseApp')
 					})($scope));
 					return;
 				} else {
-					$scope.searchCount ++;
+					if($window.storySettings.disableLeadSignup !== true) {
+						$scope.searchCount ++;
+					}
 				}
 			}
 		}
