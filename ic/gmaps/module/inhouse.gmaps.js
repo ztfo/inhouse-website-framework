@@ -10,9 +10,9 @@ angular.module('inhouseApp')
 		},
 		link: function(scope, element, attrs) {
 			scope.$on('listingLoaded', function(event, args) {
-				if(typeof args.address !== 'undefined') {
+				if(typeof args.latlong === 'undefined') {
 					var geocoder = new google.maps.Geocoder();
-					geocoder.geocode( { 'address': args.address}, function(results, status) {
+					geocoder.geocode( { 'address': args.address + ' ' + args.zipcode}, function(results, status) {
 						if (status == google.maps.GeocoderStatus.OK) {
 							scope.center = results[0].geometry.location;
 							scope.map = new google.maps.Map(element[0], {

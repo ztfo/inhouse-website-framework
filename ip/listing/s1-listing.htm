@@ -47,9 +47,9 @@
 
     <div class="ih-listing-factbar row">
       <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <ih-like-button mls="{{listing.mls}}" address="{{listing.address}}" class="pull-left"></ih-like-button>
+        <ih-like-button mls="{{listing.mls}}" address="{{listing['Building Address']}}" class="pull-left"></ih-like-button>
         <div class="pull-left">
-          <h2 class="fs">{{listing.address}}</h2>
+          <h2 class="fs">{{listing['Building Address']}}</h2>
           <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
         </div>
       </div>
