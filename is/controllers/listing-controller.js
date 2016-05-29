@@ -14,6 +14,7 @@ angular.module('inhouseApp')
 		$('#accountModal').off('hidden.bs.modal');
 		$('#accountModal').modal('hide');
 	});
+	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + window.agentSettings.userId + '/' + $scope.mls;
 	$scope.getData = function() {
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
