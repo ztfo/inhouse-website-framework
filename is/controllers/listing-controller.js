@@ -4,10 +4,12 @@ angular.module('inhouseApp')
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
 
-	$rootScope.$broadcast('hideFooter');	
-	$scope.$on('$destroy', function() {
-		$rootScope.$broadcast('showFooter');
-	});
+	if(typeof $window.storySettings.listingConfig !== 'undefined' && $window.storySettings.listingConfig !== 's1') {
+		$rootScope.$broadcast('hideFooter');	
+		$scope.$on('$destroy', function() {
+			$rootScope.$broadcast('showFooter');
+		});
+	}
 
 	$scope.$on('$destroy', function() {
 		//prevent the modal from persisting
