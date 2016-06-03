@@ -13,11 +13,13 @@ angular.module('inhouseApp')
 			$scope.searchCount = localStorage.inhouseSearchCount;
 		}
 	}
-
-	$rootScope.$broadcast('hideFooter');	
-	$scope.$on('$destroy', function() {
-		$rootScope.$broadcast('showFooter');
-	});
+	
+	if(typeof $window.storySettings.resultsConfig !== 'undefined' && $window.storySettings.resultsConfig !== 's1') {
+		$rootScope.$broadcast('hideFooter');	
+		$scope.$on('$destroy', function() {
+			$rootScope.$broadcast('showFooter');
+		});
+	}
 	
 	//responsive screensize hiding the map
 	if($window.innerWidth < 1367) {

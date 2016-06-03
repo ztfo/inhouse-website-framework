@@ -4,16 +4,19 @@ angular.module('inhouseApp')
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
 
-	$rootScope.$broadcast('hideFooter');	
-	$scope.$on('$destroy', function() {
-		$rootScope.$broadcast('showFooter');
-	});
+	if(typeof $window.storySettings.listingConfig !== 'undefined' && $window.storySettings.listingConfig !== 's1') {
+		$rootScope.$broadcast('hideFooter');	
+		$scope.$on('$destroy', function() {
+			$rootScope.$broadcast('showFooter');
+		});
+	}
 
 	$scope.$on('$destroy', function() {
 		//prevent the modal from persisting
 		$('#accountModal').off('hidden.bs.modal');
 		$('#accountModal').modal('hide');
 	});
+	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + window.agentSettings.userId + '/' + $scope.mls;
 	$scope.getData = function() {
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
