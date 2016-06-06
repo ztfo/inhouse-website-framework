@@ -1,5 +1,5 @@
-<section class="s6 ih-about {{classes}}">
-  <div class="container">
+<section class="s7 ih-about {{classes}}">
+  <div class="about-frame">
     <h1 class="ih-header text-center">About Me</h1>
     <div class="about-inner">
       <div class="about-img text-center">
@@ -7,6 +7,10 @@
       </div>
       <div class="about-bio">
         <h3 class="text-center">{{agent.agentName}}</h3>
+        <div itemprop="description" ng-bind-html="agent.bio1 | to_trusted" class="fs bio-text"></div>
+        <div class="text-center bio-more">
+          <a href="#/bio/#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="btn btn-primary">Read More</a>
+        </div>
       </div>
     </div>
   </div>

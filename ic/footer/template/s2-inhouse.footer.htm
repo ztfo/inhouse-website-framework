@@ -1,7 +1,6 @@
 <footer class="s2 footer {{classes}} {{controller}}" ng-hide="showFooter != undefined && showFooter == false">
   <div class="container top-footer">
     <div class="footer-col row">
-      <!-- always about panel -->
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <h6>About {{agent.teamName}}</h6>
         <p class="text-justify footer-bio" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
@@ -15,16 +14,14 @@
           {{agent.contactEmail}}        
         </address>
       </div>
-      <!-- first editable option -->
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="column in footerColumns | limitTo:maxNavColumns">
         <h6>{{column.display}}</h6>
         <ul class="footer-list">
           <li ng-repeat="item in column.children">
             <a itemprop="url" href="{{item.href}}" ng-if="item.children === undefined" ng-attr-target="{{item.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{item.display}}</span></a>
-					</li>
+          </li>
         </ul>
       </div>
-      <!-- first editable option -->
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <h6>Connect with Us</h6>
         <div class="social-links">
