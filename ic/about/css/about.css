@@ -97,11 +97,13 @@
 .s5 .agent-card {
   display: block;
   height: 260px;
+  margin-bottom: 20px; 
 }
 .s5 .agent-card>a {
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-position: 50%;
+  background-color: #eee;
 }
 .s5 .agent-hover {
   position: absolute;
