@@ -9,7 +9,7 @@
         <h3 class="text-center">{{agent.agentName}}</h3>
         <div itemprop="description" ng-bind-html="agent.bio1 | to_trusted" class="fs bio-text"></div>
         <div class="text-center bio-more">
-          <a href="#/bio/#/bio/{{ member.name | split: ' ':0 | lowercase}}" class="btn btn-primary">Read More</a>
+          <a href="#/bio/{{agent.agentName | split: ' ':0 | lowercase}}" class="btn btn-primary">Read More</a>
         </div>
       </div>
     </div>

@@ -1,0 +1,400 @@
+/* owl carousel css, nav buttons */
+.owl-carousel {
+	position: relative;
+}
+
+.owl-prev,
+.owl-next {
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px; // Half of the prev/next buttons height here in negatives to center them perfectly
+}
+
+.owl-prev {
+	left: 0;
+}
+
+.owl-next {
+	right: 0;
+}
+
+.owl-carousel:hover .owl-prev{
+	opacity: 1 !important;
+}
+
+.owl-carousel:hover .owl-next{
+	opacity: 1 !important;
+}
+
+.owl-carousel .owl-item .item {
+padding: 10px;
+border-right: 1px solid #f00;    
+}
+
+/* info divider for resources page */
+.divider {
+  height: 3px;
+  width: 200px;
+  position: relative;
+  display: block; /* for use on default inline elements like span */
+  margin: 30px auto;
+  margin-top: 15px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.divider-sm {
+  height: 3px;
+  width: 100%;
+  position: relative;
+  display: block; /* for use on default inline elements like span */
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: #333;
+  float: left;
+}
+
+.divider-lg {
+  height: 3px;
+  width: 100%;
+  position: relative;
+  display: block; /* for use on default inline elements like span */
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: #333;
+  float: left;
+}
+
+/* bullet point font size */
+.small-font {
+  font-size: 10px !important;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+/* vertical */
+.vertical {
+  vertical-align: middle;
+}
+/* component 8 */
+.site-page{
+  padding-top: 50px;
+  padding-bottom: 120px;
+  overflow: hidden;
+}
+
+.sort-control{
+  float: right;
+}
+
+.page-list{
+  margin-bottom: 40px;
+}
+
+.header {
+  margin-top: 5px;
+  margin-bottom: 4px;
+}
+
+.background-color {
+  background-color: gray;
+}
+
+.background-white {
+  background-color: white;
+}
+
+/* padding and margin spacing for component 1 */
+.space {
+  padding-bottom: 20px;
+}
+
+.space-top {
+  padding-top: 50px;
+}
+
+.picture {
+	border-radius: 50%;
+	height: 250px;
+	width: auto;
+}
+
+.header-lg {
+	margin-bottom: 0px;
+	margin-top: 25px;
+}
+
+.header-sm {
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+.description {
+	margin-top: 25px;
+}
+
+/* social media icon css */
+a > .social-icon {
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	font-size: 10px;
+	text-align: center;
+	transition: .3s;
+	color: #fff;
+	background-color: #808080;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+/* icons of different shades */
+a > .social-icon-dark {
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	font-size: 10px;
+	text-align: center;
+	transition: .3s;
+	color: #fff;
+	background-color: #808080;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+a > .social-icon-darker {
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	font-size: 10px;
+	text-align: center;
+	transition: .3s;
+	color: #fff;
+	background-color: #606060;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+a > .social-icon-darkest {
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	font-size: 10px;
+	text-align: center;
+	transition: .3s;
+	color: #fff;
+	background-color: #404040;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+/* overlay css for top half of owl carousel for component 4 and 5*/
+div.img-list {
+	position: relative;
+
+}
+
+div.img-list span.overlay {
+	color: white;
+	cursor: pointer;
+	display: table;
+	width: 100%;
+	height: 100%;
+	font-size: 200%;
+	position: absolute;
+	bottom: 50%;
+	color: #fff;
+	padding: 0 10px;
+	line-height: 150%;
+	z-index: 10;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+
+}
+
+div.img-list a:hover span.overlay {
+	opacity: 0;
+}
+
+span.text-content {
+	background: rgba(0,0,0,0.5);
+	color: white;
+	cursor: pointer;
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+
+span.text-content span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+div.img-list a:hover span.text-content {
+	opacity: 1;
+}
+
+/* overlay css for bottom half of carousel for component 5*/
+div.img-list span.overlay2 {
+	color: white;
+	cursor: pointer;
+	display: table;
+	width: 100%;
+	height: 100%;
+	left: 10px;
+	bottom: 0;
+	line-height: 150%;
+	position: absolute;
+	font-size: 200%;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+
+}
+
+div.img-list a:hover span.overlay2 {
+	opacity: 0;
+}
+
+span.text-content2 {
+	background: rgba(0,0,0,0.5);
+	color: white;
+	cursor: pointer;
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+
+span.text-content2 span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+div.img-list a:hover span.text-content2 {
+	opacity: 1;
+}
+
+/* border for owl items */
+.img-border {
+	border-style: solid;
+	border-width: 2px;
+}
+
+/* used for displaying 2x2 carousel items smaller */
+@media (min-width: 768px) {
+    .container-small {
+        width: 400px;
+	padding-left: 15px;
+	padding-right: 15px;
+    }
+    .container-medium {
+        width: 600px;
+    }
+    .container-large {
+        width: 970px;
+    }
+    .meta-item {
+	width: 66%;
+    }
+} 
+@media (min-width: 992px) {
+    .container-small {
+        width: 600px;
+    }
+    .container-medium {
+        width: 800px;
+    }
+    .container-large {
+        width: 1170px;
+    }
+    .meta-item {
+	width: 25%;
+    }
+} 
+@media (min-width: 1200px) {
+    .container-small {
+        width: 800px;
+    }
+    .container-medium {
+        width: 1000px;
+    }
+    .container-large {
+        width: 1500px;
+    }
+    .property-img {
+	width: 30% !important;
+    }
+    .property-data {
+	width: 40% !important;
+	padding: 25px 45px 0;
+    }
+    .property-description {
+	width: 30%;
+	padding: 25px 45px 0;
+    }
+}
+
+.container-small, .container-large {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* component 8a listing page */
+.meta-item {
+	float: left;
+	margin-bottom: 15px;
+}
+
+.meta-item-label {
+	display: inline-block;
+	line-height: 18px;
+}
+
+.meta-item-unit {
+
+}
+
+.no-horizontal-padding {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <h6>About {{agent.teamName}}</h6>
-        <p class="text-justify footer-bio" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
+        <p class="text-justify footer-bio fs" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
         <address>
           <strong>{{agent.brokerage}}</strong><br>
           {{agent.contactAddress}}<br>
@@ -18,7 +18,7 @@
         
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <h6>Connect with Us</h6>
+        <h6>Connect</h6>
         <div class="social-links">
           <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
           <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
@@ -34,7 +34,7 @@
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center text-uppercase">
         <a href="{{sitemap}}" class="sitemap fo text-uppercase"><small>sitemap</small></a>
-        <h6 class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</h6>
+        <div class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</div>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-right">
         <img src="ia/icons/realtor-white.svg" alt="National Association of Realtors | Realtor" />
