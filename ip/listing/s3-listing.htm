@@ -1,0 +1,93 @@
+<section class="s3 ih-listing">
+  <div class="container">
+    <div class="row">
+      <div id="listingSlider" class="carousel slide col-xs-12 col-sm-12 col-md-12 col-lg-8" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
+            <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
+              <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
+            </div>
+            <div class="carousel-caption">
+              {{slide.caption}}
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#listingSlider" role="button" data-slide="prev" onClick="event.preventDefault()">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#listingSlider" role="button" data-slide="next" onClick="event.preventDefault()">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>      
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 listing-details">
+        <header>
+          <h2 class="fp">{{listing['Building Address']}}</h2>
+          <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+          <h6 class="fs">{{listing.price | currency:"$":0}}</h6>
+        </header>
+        <div class="item-list">
+          <div class="meta-item">
+            <i class="fa fa-object-group"></i>
+            <div class="meta-item-field">
+                <div class="meta-item-label">Size</div>
+                <div>{{home.sq_total}} <small>SQFT</small></div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <i class="fa fa-bed"></i>
+            <div class="meta-item-field">
+                <div class="meta-item-label">Bedrooms</div>
+                <div>{{home.beds_total}}</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <i class="fa fa-tint"></i>
+            <div class="meta-item-field">
+                <div class="meta-item-label">Bathrooms</div>
+                <div>{{home.baths_total}}</div>
+            </div>
+          </div>              
+          <div class="meta-item">
+            <i class="fa fa-car"></i>
+            <div class="meta-item-field">
+                <div class="meta-item-label">Garage</div>
+                <div>{{home.garage}}</div>
+            </div>
+          </div>                            
+          <div class="meta-item">
+            <i class="fa fa-home"></i>
+            <div class="meta-item-field">
+                <div class="meta-item-label">Type</div>
+                <div>{{home.propertyType}}</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <i class="fa fa-tag"></i>
+            <div class="meta-item-field">
+                <div class="meta-item-label">Status</div>
+                <div>{{home.status}}</div>
+            </div>
+          </div>	
+        </div>
+        <div class="favorite-and-print">
+          <a id="add-to-favorite" class="add-to-fav" href="#"><i class="fa fa-star-o"></i><span>Add to Favorites</span></a>
+          <a class="printer-icon " href="javascript:window.print()"><i class="fa fa-print"></i>Print</a>
+        </div>	
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <h3>About Home</h3>
+        <p>{{listing.PublicRemarks | sentence}}</p>
+        <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
+        <h3>Home Details</h3>
+        <ih-listing-details></ih-listing-details>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <h3>Contact {{agent.agentName}}</h3>
+      </div>
+    </div>
+  </div>
+</section>
