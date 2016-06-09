@@ -6,10 +6,10 @@
     <div class="container">
       
       <div class="row page-list">
-        <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs lead">
-          <span><strong>{{totalListings | number}}</strong> Total Listings</span>
+        <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs">
+          <h4 class="result-count"><strong>{{totalListings | number}}</strong> Total Listings</h4>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 listing-btns">
           <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last">
             <i class="fa fa-globe"></i>
           </button>
@@ -19,7 +19,7 @@
           </a>          
         </div>
       </div>
-      <div id="searchFilters" class="ih-advanced-filters collapse container-fluid">
+      <div id="searchFilters" class="ih-advanced-filters collapse row">
         <div class="row">
           <div class="ih-input-box col-lg-6 col-md-6 col-sm-4 col-xs-12">
             <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
@@ -104,8 +104,9 @@
         </div>
         
         <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">          
-          <div class="property-img col-lg-4 col-md-4 col-sm-4 col-xs-12 nopad">
-              <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');" class="block full"></a>
+          <div class="ih property-img col-lg-4 col-md-4 col-sm-4 col-xs-12 nopad">
+            <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
+            <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
           </div>
           <div class="property-data col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <header>
@@ -165,13 +166,13 @@
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 property-description visible-lg-inline-block bkc-02 fw">
             <h4>About Home</h4>
             <p class="fs">
-              {{home.PublicRemarks|limitTo:130:0|words|sentence}}... <a class="read-more" href="#/listing/{{home.mls}}">Read More</a>        
+              {{home.PublicRemarks|limitTo:130:0|words|sentence}}.. 
             </p>
-            <div>
-                <span>Price</span>
-                <span>{{home.price | currency:"$":0}}</span>
+            <div class="listing-price">
+                <h6 class="text-uppercase">Price</h6>
+                <h3 class="nomar">{{home.price | currency:"$":0}}</h3>
             </div>
-            <a class="btn-default" href="link">
+            <a class="btn btn-primary view-home" href="#/listing/{{home.mls}}">
               View Home <i class="fa fa-caret-right"></i>
             </a>
           </div>
