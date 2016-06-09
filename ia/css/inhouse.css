@@ -473,6 +473,27 @@ footer.footer {
 .s2 .ih-advanced-filters .row {
   margin-bottom: 15px;
 }
+
+  /* s3 */
+.s3 .ih-listing-block {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 0;
+  height: 275px;
+  overflow: hidden;
+}
+.s3 .ih-listing-block>div {
+  height: 100%;
+}
+.s3 .property-img>a {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+.s3 .meta-item {
+  width: 50%;
+}
 /* results end */
 
 /* listing pages defaults */
