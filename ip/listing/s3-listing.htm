@@ -1,94 +1,132 @@
 <section class="s3 ih-listing">
-  <div class="container-fluid">
+  <header class="text-center fw">
+    <h1>{{listing['Building Address']}}</h1>
+    <h4 class="fs text-uppercase">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+  </header>
+  <div class="ih-md-divider"></div>
+  <div class="container">
     <div class="row">
-      <div id="listingSlider" class="carousel slide col-xs-12 col-sm-12 col-md-12 col-lg-8" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
-            <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
-              <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
-            </div>
-            <div class="carousel-caption">
-              {{slide.caption}}
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 nopad">
+        <div class="ih-listing-slider">
+          <div class="row">
+            <div id="listingSlider" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
+                  <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
+                    <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
+                  </div>
+                  <div class="carousel-caption">
+                    {{slide.caption}}
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#listingSlider" role="button" data-slide="prev" onClick="event.preventDefault()">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#listingSlider" role="button" data-slide="next" onClick="event.preventDefault()">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
           </div>
         </div>
-        <a class="left carousel-control" href="#listingSlider" role="button" data-slide="prev" onClick="event.preventDefault()">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#listingSlider" role="button" data-slide="next" onClick="event.preventDefault()">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="ih-listing-images">
+          <div class="ih-nav-carousel ih-owl-carousel">
+            <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
+              <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="img-responsive ih-owl-thumbnail">
+            </div>
+          </div>
+        </div>
       </div>      
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 listing-details">
-        <header>
-          <h2 class="fp">{{listing['Building Address']}}</h2>
-          <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
-          <h6 class="fs">{{listing.price | currency:"$":0}}</h6>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 listing-details bkc-02 fw">
+        <header class="ih">
+          <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
+          <h3 class="nomar">Price</h3>
+          <h1 class="nomar">{{listing.price | currency:"$":0}}</h1>
         </header>
         <div class="item-list">
           <div class="meta-item">
             <i class="fa fa-object-group"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Size</div>
-                <div>{{home.sq_total}} <small>SQFT</small></div>
+                <div>{{listing.sq_total}} <small>SQFT</small></div>
             </div>
           </div>
           <div class="meta-item">
             <i class="fa fa-bed"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Bedrooms</div>
-                <div>{{home.beds_total}}</div>
+                <div>{{listing.beds_total}}</div>
             </div>
           </div>
           <div class="meta-item">
             <i class="fa fa-tint"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Bathrooms</div>
-                <div>{{home.baths_total}}</div>
+                <div>{{listing.baths_total}}</div>
             </div>
           </div>              
           <div class="meta-item">
             <i class="fa fa-car"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Garage</div>
-                <div>{{home.garage}}</div>
+                <div>{{listing.garage}}</div>
             </div>
           </div>                            
           <div class="meta-item">
             <i class="fa fa-home"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Type</div>
-                <div>{{home.propertyType}}</div>
+                <div>{{listing.type}}</div>
             </div>
           </div>
           <div class="meta-item">
             <i class="fa fa-tag"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Status</div>
-                <div>{{home.status}}</div>
+                <div>{{listing.status}}</div>
             </div>
           </div>	
-        </div>
-        <div class="favorite-and-print">
-          <a id="add-to-favorite" class="add-to-fav" href="#"><i class="fa fa-star-o"></i><span>Add to Favorites</span></a>
-          <a class="printer-icon " href="javascript:window.print()"><i class="fa fa-print"></i>Print</a>
-        </div>	
+        </div>      
       </div>      
-    </div>  
-  </div>
-  <div class="container">
+    </div>    
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <h3>About Home</h3>
+        <div class="share-btns">
+          <strong><span class="text-muted text-uppercase">Share on: </span></strong>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="https://twitter.com/home?status={{shareUrl|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://plus.google.com/share?url={{shareUrl}|encode}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
+        </div>  
         <p>{{listing.PublicRemarks | sentence}}</p>
         <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         <h3>Home Details</h3>
         <ih-listing-details></ih-listing-details>
+        <div class="listing-map"><ih-gmaps class="full"></ih-gmaps></div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <h3>Contact {{agent.agentName}}</h3>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 bkc-01 fw contact-panel">
+        <div class="text-center">
+          <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-circle img-responsive">
+        </div>
+        <h3 class="text-center">Contact {{agent.agentName}}</h3>
+        <div class="social-icons text-center">
+          <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>          
+        </div>
+        <div class="fs">
+          <p><i class="fa fa-phone round-icon bkc-03 fw"></i> {{agent.contactPhone | tel}}</p>
+          <p><i class="fa fa-map-marker round-icon bkc-03 fw"></i> {{agent.contactAddress}} {{agent.contactAddress2}}</p>
+        </div>
+        <p>
+          <strong class="text-uppercase">{{agent.agentTagline}}</strong>
+        </p>       
+        <ih-contact config="s1"></ih-contact>
       </div>
     </div>
   </div>

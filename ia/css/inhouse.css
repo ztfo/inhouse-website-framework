@@ -510,7 +510,7 @@ footer.footer {
   left: 0;
 }
 .ih-listing .owl-next {
-  right: 0;
+  right: -1px;
 }
 .ih-listing .ih-owl-thumbnail {
   height: 60px;
