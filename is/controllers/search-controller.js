@@ -14,7 +14,7 @@ angular.module('inhouseApp')
 		}
 	}
 	
-	if(typeof $window.storySettings.resultsConfig !== 'undefined' && $window.storySettings.resultsConfig !== 's1') {
+	if(typeof $window.storySettings.resultsConfig !== 'undefined' && $window.storySettings.resultsConfig === 's2') {
 		$rootScope.$broadcast('hideFooter');	
 		$scope.$on('$destroy', function() {
 			$rootScope.$broadcast('showFooter');

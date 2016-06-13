@@ -4,7 +4,7 @@ angular.module('inhouseApp')
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
 
-	if(typeof $window.storySettings.listingConfig !== 'undefined' && $window.storySettings.listingConfig !== 's1') {
+	if(typeof $window.storySettings.listingConfig !== 'undefined' && $window.storySettings.listingConfig === 's2') {
 		$rootScope.$broadcast('hideFooter');	
 		$scope.$on('$destroy', function() {
 			$rootScope.$broadcast('showFooter');
