@@ -1,61 +1,26 @@
-<section class="s3 ih-contact container-fluid">
-  <div class="ih-md-divider"></div>
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact-form">
-      <h2 class="text-center">Get In Touch With <strong>{{agent.teamName}}</strong></h2>
-      <form ng-submit="submitContact()" name="Contact">
-        <div class="text-center alert alert-success fade in" ng-show="contactSent">
-          <h3><strong>Thank You!</strong></h3>
-          <hr> A member from the {{agent.teamName}} will be in touch with you as soon as possible. You can also call <strong>{{agent.contactPhone | tel}}</strong>.
-        </div>
-        <div class="text-center alert alert-info fade in" ng-show="contactSending">
-          <h3><strong>Please wait..</strong></h3>
-          <hr> We're sending your message...</hr>
-        </div>
-        <div class="text-center alert alert-danger fade in" ng-show="contactSendFailed">
-          <h3><strong>We're sorry...</strong></h3>
-          <hr> There was an issue sending your message. Please make sure you have entered a valid name and email address and try again. If this problem continues, please call us at {{agent.contactPhone | tel}}. Sorry for the inconvenience.
-        </div>
-        <div class="form-group" ng-if="noButtons == true">
-          <div class="btn-group center">
-            <label class="btn btn-default active">
-              <input type="radio" autocomplete="off" name="typeOfContact" ng-model="contact.typeOfContact" value="BuyAHome"> Buy A Home
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" autocomplete="off" name="typeOfContact" ng-model="contact.typeOfContact" value="SellAHome"> Sell A Home
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" autocomplete="off" name="typeOfContact" ng-model="contact.typeOfContact" value="NeedAdvice"> Need Advice
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="messageName">Full Name</label>
-          <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="contact.name">
-        </div>
+<section class="s3 ih-contact">
+    <div class="container">
         <div class="row">
-          <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <label for="emailAddress">Email Address</label>
-            <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="contact.email">
-          </div>
-          <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <label for="phoneNumber">Phone</label>
-            <input type="phone" class="ih-form-input form-control" id="phoneNumber" ng-model="contact.phone">
-          </div>
-          <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h1 class="text-center">How can we help?</h1>
+                <div class="divider"></div>
+                <ih-contact config="f1"></ih-contact>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="text-center space-top vertical">
+                    <img src="http://placehold.it/200x200/42bdc2/FFFFFF&text=2nd Row D" alt="headshot" class="img-square img-responsive center-block" src="ua/headshots/tanner-herbert-realtor.jpg">
+                    <h3>{{agent.agentName}}</h3>
+                    <h3>{{agent.contactPhone}}</h3>
+                    <h3>{{agent.contactEmail}}</h3>
+                    <div class="social">
+                        <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="textMessage">Message</label>
-          <textarea type="text" class="ih-form-input ih-textarea form-control" id="textMessage" required ng-model="contact.message"></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact-map bkc-04">
-      <ih-gmaps class="full"></ih-gmaps>
-    </div>
-  </div>
-  <div class="ih-md-divider"></div>
 </section>

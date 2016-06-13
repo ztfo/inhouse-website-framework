@@ -13,9 +13,6 @@
   font-weight: 600;
   border-radius: 0;
 }
-.ih-contact-form input[type="checkbox"] {
-  display: none;
-}
 .ih-contact-form .form-group {
   margin: 10px 0;
 }
@@ -47,10 +44,10 @@
 
 
 /* s3 */
-.s3 .contact-form {
+.s2 .contact-form {
   padding: 30px;
 }
-.s3 .contact-form,
-.s3 .contact-map {
+.s2 .contact-form,
+.s2 .contact-map {
   height: 520px;
 }
