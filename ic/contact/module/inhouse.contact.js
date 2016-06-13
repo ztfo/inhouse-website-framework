@@ -1,5 +1,5 @@
 angular.module('inhouseApp')
-.directive('ihContact', function() {
+.directive('ihContact', ['$timeout', function($timeout) {
 	return {
 		templateUrl : function(el, attrs) {
 			return 'ic/contact/template/' + (attrs.config || 's1') + '-inhouse.contact.htm';
@@ -27,6 +27,9 @@ angular.module('inhouseApp')
 			});
 		},
 		controller: ['$scope', 'inhouseApi', function($scope, inhouseApi) {
+			$timeout(function() {
+				$scope.$broadcast('listingLoaded', {address: window.agentSettings.contactAddress, zipcode: window.agentSettings.contactAddress2});
+			});
 			$scope.navbar = window.storySettings.NavBar;
 			$scope.agent = window.agentSettings;
 			$scope.inhouseApi = inhouseApi;
@@ -61,4 +64,4 @@ angular.module('inhouseApp')
 			};
 		}]
 	};
-});
+}]);
