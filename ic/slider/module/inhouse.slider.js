@@ -14,6 +14,10 @@ angular.module('inhouseApp')
 		},
 		controller: function($scope) {
 			$scope.LandingComponent = window.storySettings.LandingComponent;
+			if(typeof $scope.LandingComponent.defaultSliderImages === 'object') {
+				var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));
+				$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];
+			}
 			$scope.agent = window.agentSettings;
 		},
 		link: function(scope, element, attrs) {
