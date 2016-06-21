@@ -1,0 +1,38 @@
+<section class="s1 ih-nearby">
+  <h1 class="ih-header text-center">What's Nearby</h1>
+  <div class="ih-md-divider"></div>
+  <div class="container">
+    <div class="btn-group btn-group-justified" role="group" aria-label="nearbyToggle">
+      <a href="#/" class="btn btn-default" role="button">Schools</a>
+      <a href="#/" class="btn btn-default" role="button">Shopping</a>
+      <a href="#/" class="btn btn-default" role="button">Food</a>
+      <a href="#/" class="btn btn-default" role="button">Fun</a>
+      <a href="#/" class="btn btn-default" role="button">Parks</a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="nearby-list col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+      <!-- ng-repeat results -->
+      <div class="nearby-place clearfix">
+        <div class="pull-left result-img">
+          <img src="{{googleresults}}" alt="{{googleplace}}" class="img-responsive img-square" />
+        </div>
+        <div class="pull-left">
+          <h4>{{googleplace}}</h4>
+          <div class="g-rating">
+            <i class="fa fa-star"></i> | ({{googlereviewcount}})
+          </div>
+          <div>
+            {{googleaddress}}
+            <br> {{googlehours}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="nearby-map col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <ih-gmaps class="full"></ih-gmaps>
+    </div>
+  </div>
+</section>
