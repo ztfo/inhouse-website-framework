@@ -1,0 +1,33 @@
+<section class="p1 ih-about">
+  <div class="container">
+
+    <div class="ih-about-inner row">
+<!-- <div class="ih-property-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		ammenities logos
+	</div>
+-->
+		<h3 class="text-center">About this home</h3>
+		<div class="ih-md-divider"></div>
+      <div class="ih-about-text col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+			<h2 class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+				<span>Agent Remarks</span>
+			</h2>
+			<div class="about-social col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
+				<a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
+				<a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+				<a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>          
+			</div>
+		</div>
+        <div itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted">
+        </div>
+		<div class="ih-sm-divider ih-ext-divider"></div>
+		<ih-listing-details></ih-listing-details>
+      </div>
+    </div>
+
+  </div>
+</section>

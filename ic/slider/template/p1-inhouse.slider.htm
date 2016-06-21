@@ -1,0 +1,38 @@
+
+<section class="p1 ih-slider container-fluid">
+
+  <div class="ih-greeting container" ng-if="LandingComponent.showGreeting">
+    <div class="ih-greeting-picture text-center">
+      <img ng-src="{{agent.bio.janell.headshot}}" alt="{{agent.teamName}}" />
+    </div>
+    <h3 class="text-center fs">{{LandingComponent.welcomeText}}</h3>
+	<!-- street address -->
+	<h1 class="text-center">Address Here</h1>
+    <div class="ih-md-divider"></div>
+	<!-- city, state zipcode -->
+	<h3 class="text-center">More Address Here</h3>
+    <p class="text-center col-md-6 col-md-offset-3">
+      {{LandingComponent.greetingText}}
+    </p>
+  </div>
+
+  <div class="botton-btn fw">
+    <i class="fa fa-angle-down"></i>
+  </div>
+
+  <div class="ih-slider-row p1 row">
+    <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined">
+          <div class="full-screen-image" ng-style="{'background-image':'url(' + LandingComponent.defaultSliderImage + ')'}"></div>
+        </div>
+        <div class="item {{$index == 0 && LandingComponent.defaultSliderImage === undefined ? 'active' : ''}}" ng-repeat="slide in slides">
+          <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.image + ')'}"></div>
+          <div class="carousel-caption hidden">
+            {{slide.caption}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

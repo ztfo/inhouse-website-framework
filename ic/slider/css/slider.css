@@ -232,6 +232,17 @@
   width: 100%;
 }
 
+/* p1 */
+.p1 .ih-greeting {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 15em;
+}
+
 /* slider fade and kenburns animations */
 .ih-slider .item>div {
   background-size: cover;
