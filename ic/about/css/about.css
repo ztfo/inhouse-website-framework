@@ -97,7 +97,7 @@
 .s5 .agent-card {
   display: block;
   height: 260px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 .s5 .agent-card>a {
   background-size: cover;
@@ -164,6 +164,42 @@
   margin-top: 30px;
 }
 
+/* s8 */
+.s8.ih-about {
+  position: relative;
+  min-height: 500px;
+}
+.s8 .ih-team {
+  position: relative;
+  margin: 50px 0;
+}
+.s8.ih-about .ih-header {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+.s8 .ih-headshot img {
+  width: 225px;
+  margin-bottom: 35px;
+  transition: .3s;
+  text-align: center;
+  display: inline-block;
+  border: 5px solid #fff;
+}
+.s8 .ih-headshot img:hover {
+  border: 10px solid #fff;
+}
+.s8 .ih-headshot a:hover,
+.s8 .ih-headshot a:active,
+.s8 .ih-headshot a:focus {
+  text-decoration: none;
+}
+.s8 .ih-teammate-name {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
 /* p1 */
 .p1.ih-about .ih-about-text {
 	padding: 0;
@@ -194,14 +230,14 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 @media screen and (min-width: 376px) and (max-width: 768px) {
   .ih-about .ih-header { width: 95%; }
-  .ih-about-inner { margin: 0 auto; }  
+  .ih-about-inner { margin: 0 auto; }
   .ih-about .col-lg-4 {
     text-align: center;
   }
   .ih-about img {
     display: inline-block;
     width: 260px;
-  }    
+  }
   /* s2 */
   .s2.ih-about .ih-header {
     width: 100%;
@@ -209,6 +245,6 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .ih-about-header { clear: both; }  
+  .ih-about-header { clear: both; }
 }
 @media screen and (max-width: 375px) {}

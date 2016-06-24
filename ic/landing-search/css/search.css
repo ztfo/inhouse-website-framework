@@ -73,6 +73,16 @@
   padding: 20px 0;
 }
 
+/* s5 */
+.s5 .ih-search-inner {
+  margin: 0px 15px;
+  margin-top: -30%;
+  background-color: #f5f5f5;
+}
+.s5 .ih-search-inner .ih-header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 /*** responsive ***/
 @media screen and (min-width: 376px) and (max-width: 768px) {
   /* global */
@@ -81,7 +91,7 @@
   }
 }
 @media screen and (max-width: 375px) {
-  
+
   /* global */
   .ih-input-box {
     margin-bottom: 10px;
@@ -91,5 +101,5 @@
     margin-right: 0;
     margin-left: 0;
   }
-  
+
 }
