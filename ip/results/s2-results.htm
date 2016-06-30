@@ -98,7 +98,7 @@
             <ih-listing-map></ih-listing-map>
         </div>
         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fullh listing-pane">
-            <div class="ih-listings-menu">
+            <div class="ih-listings-menu fs">
                 <div class="row">
                     <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs lead">
                         <span><strong>{{totalListings | number}}</strong> Total Listings</span>
@@ -127,21 +127,21 @@
                         <div class="ih-listing-card">
                             <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
                                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
-                  View Home
-                </a>
+                                  View Home
+                                </a>
                                 <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
                             </div>
                             <div class="ih-listing-card-desc container-fluid">
                                 <div class="ih-ft-listing-addr text-center">
-                                    <h4>{{home.address}}</h4>
-                                    <h6 class="text-uppercase text-muted"><strong>{{home.city}} {{home.state}}, {{home.zipcode}}</strong></h6>
+                                    <h4 class="fp">{{home.address}}</h4>
+                                    <h6 class="text-uppercase text-muted fs"><strong>{{home.city}} {{home.state}}, {{home.zipcode}}</strong></h6>
                                 </div>
                                 <hr>
-                                <p class="text-muted">
+                                <p class="text-muted fs">
                                     {{home.PublicRemarks|limitTo:130:0|words|sentence}}... <a class="read-more" href="#/listing/{{home.mls}}">Read More</a>
                                 </p>
                                 <hr>
-                                <div class="ih-ft-listing-details row">
+                                <div class="ih-ft-listing-details row fs">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <small ng-if="home.beds_total != '' && home.baths_total != ''">{{home.beds_total}} BEDS | {{home.baths_total}} BATHS</small>
                                         <br ng-if="home.beds_total != '' && home.baths_total != ''">
