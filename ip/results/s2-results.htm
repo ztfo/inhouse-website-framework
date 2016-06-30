@@ -1,172 +1,177 @@
 <section class="s2 ih-results">
-  <div class="container-fluid full">
-    <div class="ih-filters row">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
-            <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page' && filter != 'geolocation'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}{{val == true ? '' : ': ' + val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span> </span>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-            <a class="btn btn-default ih-adv-toggle bkc-03" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
-              <i class="fa fa-filter"></i> More Filters
-            </a>
-          </div>
-        </div>
-        <div id="searchFilters" class="ih-advanced-filters collapse container-fluid">
-          <div class="row">
-            <div class="ih-input-box col-lg-6 col-md-6 col-sm-4 col-xs-12">
-              <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
-            </div>
-            <div class="ih-input-box col-lg-3 col-md-3 col-sm-4 col-xs-12">
-              <input type="text" class="ih-search-input full" placeholder="Zip-code" name="propertyZip" ng-model="filters.zipcode" />
-            </div>
-            <div class="ih-input-box col-lg-3 col-md-3 col-sm-4 col-xs-12">
-              <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <div class="ih-slide">
-                <label for="#priceFilter">Price Range</label>
-                <bootstrap-slider name="priceFilter" ng-model="filters.price" type="text" data-slider-min="100000" data-slider-max="2000000" data-slider-step="1000" data-slider-value="[100000,2000000]" data-filter="price"></bootstrap-slider>
-              </div>
-              <div class="ih-slide">
-                <label for="#bedsFilter">Bedrooms</label>
-                <bootstrap-slider name="bedsFilter" ng-model="filters.bedsRange" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="[1,10]" data-filter="bedsRange"></bootstrap-slider>
-              </div>
-              <div class="ih-slide">
-                <label for="#bathsFilter">Baths</label>
-                <bootstrap-slider id="bathsFilter" name="bathsFilter" ng-model="filters.bathsRange" type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="[1,15]" data-filter="bathsRange"></bootstrap-slider>
-              </div>
-              <div class="ih-slide">
-                <label for="#sqft">Sqft</label>
-                <bootstrap-slider name="sqft" ng-model="filters.sqft" type="text" data-slider-min="1" data-slider-max="20000" data-slider-step="1000" data-slider-value="[1,20000]" data-filter="sqft"></bootstrap-slider>
-              </div>
-              <div class="ih-slide hidden">
-                <label for="#lotsizeRange">Lot Size</label>
-                <bootstrap-slider name="lotsizeRange" ng-model="filters.lotsizeRange" type="text" data-slider-min="1" data-slider-max="1000" data-slider-step="10" data-slider-value="[1,1000]" data-filter="lotsizeRange"></bootstrap-slider>
-              </div>
-              <div class="ih-slide">
-                <label for="#yearRange">Year Built</label>
-                <bootstrap-slider id="yearRange" name="yearRange" ng-model="filters.yearRange" type="text" data-slider-min="1900" data-slider-max="2017" data-slider-step="1" data-slider-value="[1900,2017]" data-filter="yearRange"></bootstrap-slider>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <div class="ih-filter-row row">
-                <div class="ih-filter-box col-lg-6">
-                  <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]' id="type" name="Type" multi="true" ng-model="filters.type"></ih-dropdown>
+    <div class="container-fluid full">
+        <div class="ih-filters row fs bee">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12 filter-crumbs">
+                        <span ng-repeat="(filter,val) in filters" ng-if="filter != 'page' && filter != 'geolocation'"><a class="ih-breadcrumb" href="" ng-click="removeFilter(filter)">{{filter}}{{val == true ? '' : ': ' + val}} <i class="fa fa-times"></i> </a> <span ng-if="!$last">/</span>                        </span>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                        <a class="btn btn-primary ih-adv-toggle" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
+                            <i class="fa fa-filter"></i> More Filters
+                        </a>
+                    </div>
                 </div>
-                <div class="ih-filter-box col-lg-6">
-                  <ih-dropdown items='[{"name": "North", "value": "North"}, {"name": "Northwest", "value": "Northwest"}, {"name": "Northeast", "value": "Northeast"}, {"name": "East", "value": "East"}, {"name": "West", "value": "West"}, {"name": "South", "value": "South"}, {"name": "Southwest", "value": "Southwest"}, {"name": "Southeast", "value": "Southeast"}, {"name": "Extended Northeast", "value": "Extended Northeast"}, {"name": "Extended Northwest", "value": "Extended Northwast"}, {"name": "Extended South", "value": "Extended South"}, {"name": "Extended Southwest", "value": "Extended Southwest"},  {"name": "Extended West", "value": "Extended West"}, {"name": "Pima East", "value": "Pima East"},  {"name": "Pima Far West", "value": "Pima Far West"}, {"name": "Pima Northwest", "value": "Pima Northwest"}, {"name": "Pima South", "value": "Pima South"}, {"name": "Pima Southwest", "value": "Pima Southwest"}]' id="area" name="Area" multi="true" ng-model="filters.area"></ih-dropdown>
+                <div id="searchFilters" class="ih-advanced-filters collapse container-fluid fs">
+                    <div class="row">
+                        <div class="ih-input-box col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                            <input type="text" class="ih-search-input full" placeholder="Address" name="propertyAddress" ng-model="filters.address" />
+                        </div>
+                        <div class="ih-input-box col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <input type="text" class="ih-search-input full" placeholder="Zip-code" name="propertyZip" ng-model="filters.zipcode" />
+                        </div>
+                        <div class="ih-input-box col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <input type="text" class="ih-search-input full" placeholder="MLS #" name="propertyMLS" ng-model="filters.mls" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="ih-slide">
+                                <label for="#priceFilter">Price Range</label>
+                                <bootstrap-slider name="priceFilter" ng-model="filters.price" type="text" data-slider-min="100000" data-slider-max="2000000" data-slider-step="1000" data-slider-value="[100000,2000000]" data-filter="price"></bootstrap-slider>
+                            </div>
+                            <div class="ih-slide">
+                                <label for="#bedsFilter">Bedrooms</label>
+                                <bootstrap-slider name="bedsFilter" ng-model="filters.bedsRange" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="[1,10]" data-filter="bedsRange"></bootstrap-slider>
+                            </div>
+                            <div class="ih-slide">
+                                <label for="#bathsFilter">Baths</label>
+                                <bootstrap-slider id="bathsFilter" name="bathsFilter" ng-model="filters.bathsRange" type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="[1,15]" data-filter="bathsRange"></bootstrap-slider>
+                            </div>
+                            <div class="ih-slide">
+                                <label for="#sqft">Sqft</label>
+                                <bootstrap-slider name="sqft" ng-model="filters.sqft" type="text" data-slider-min="1" data-slider-max="20000" data-slider-step="1000" data-slider-value="[1,20000]" data-filter="sqft"></bootstrap-slider>
+                            </div>
+                            <div class="ih-slide hidden">
+                                <label for="#lotsizeRange">Lot Size</label>
+                                <bootstrap-slider name="lotsizeRange" ng-model="filters.lotsizeRange" type="text" data-slider-min="1" data-slider-max="1000" data-slider-step="10" data-slider-value="[1,1000]" data-filter="lotsizeRange"></bootstrap-slider>
+                            </div>
+                            <div class="ih-slide">
+                                <label for="#yearRange">Year Built</label>
+                                <bootstrap-slider id="yearRange" name="yearRange" ng-model="filters.yearRange" type="text" data-slider-min="1900" data-slider-max="2017" data-slider-step="1" data-slider-value="[1900,2017]" data-filter="yearRange"></bootstrap-slider>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="ih-filter-row row">
+                                <div class="ih-filter-box col-lg-6">
+                                    <ih-dropdown items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]'
+                                        id="type" name="Type" multi="true" ng-model="filters.type"></ih-dropdown>
+                                </div>
+                                <div class="ih-filter-box col-lg-6">
+                                    <ih-dropdown items='[{"name": "North", "value": "North"}, {"name": "Northwest", "value": "Northwest"}, {"name": "Northeast", "value": "Northeast"}, {"name": "East", "value": "East"}, {"name": "West", "value": "West"}, {"name": "South", "value": "South"}, {"name": "Southwest", "value": "Southwest"}, {"name": "Southeast", "value": "Southeast"}, {"name": "Extended Northeast", "value": "Extended Northeast"}, {"name": "Extended Northwest", "value": "Extended Northwast"}, {"name": "Extended South", "value": "Extended South"}, {"name": "Extended Southwest", "value": "Extended Southwest"},  {"name": "Extended West", "value": "Extended West"}, {"name": "Pima East", "value": "Pima East"},  {"name": "Pima Far West", "value": "Pima Far West"}, {"name": "Pima Northwest", "value": "Pima Northwest"}, {"name": "Pima South", "value": "Pima South"}, {"name": "Pima Southwest", "value": "Pima Southwest"}]'
+                                        id="area" name="Area" multi="true" ng-model="filters.area"></ih-dropdown>
 
+                                </div>
+                                <div class="ih-filter-box col-lg-6">
+                                    <ih-dropdown items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]'
+                                        id="community" name="Community" ng-model="filters.community" truncate="4" multi="true"></ih-dropdown>
+                                </div>
+                                <div class="ih-filter-box col-lg-6">
+                                    <ih-dropdown items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]' id="pool" name="Pool" ng-model="filters.pool"></ih-dropdown>
+                                </div>
+                                <div class="ih-filter-box col-lg-6">
+                                    <ih-dropdown items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]' id="numGarage" name="Garage Size" ng-model="filters.numGarage"></ih-dropdown>
+                                </div>
+                                <div class="ih-filter-box col-lg-6">
+                                    <ih-dropdown items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]' id="stories" name="Stories" ng-model="filters.stories"></ih-dropdown>
+                                </div>
+                            </div>
+                            <div class="ih-filter-row col-lg-12">
+                                <div class="btn-group">
+                                    <label class="btn btn-default {{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}">
+                                        <input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
+                                    </label>
+                                    <label class="btn btn-default {{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}">
+                                        <input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
+                                    </label>
+                                    <label class="btn btn-default {{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}">
+                                        <input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ih-filter-box col-lg-6">
-                  <ih-dropdown items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]' id="community" name="Community" ng-model="filters.community" truncate="4" multi="true"></ih-dropdown>
-                </div>
-                <div class="ih-filter-box col-lg-6">
-                  <ih-dropdown items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]' id="pool" name="Pool" ng-model="filters.pool"></ih-dropdown>
-                </div>
-                <div class="ih-filter-box col-lg-6">
-                  <ih-dropdown items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]' id="numGarage" name="Garage Size" ng-model="filters.numGarage"></ih-dropdown>
-                </div>
-                <div class="ih-filter-box col-lg-6">
-                  <ih-dropdown items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]' id="stories" name="Stories" ng-model="filters.stories"></ih-dropdown>
-                </div>
-              </div>
-              <div class="ih-filter-row col-lg-12">
-                <div class="btn-group">
-                  <label class="btn btn-default {{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}">
-                    <input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
-                  </label>
-                  <label class="btn btn-default {{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}">
-                    <input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
-                  </label>
-                  <label class="btn btn-default {{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}">
-                    <input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
-                  </label>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-lg-5 col-md-5 hidden-sm hidden-xs fullh map-pane">
-      <ih-listing-map></ih-listing-map>
-    </div>
-    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fullh listing-pane">
-      <div class="ih-listings-menu">
-        <div class="row">
-          <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs lead">
-            <span><strong>{{totalListings | number}}</strong> Total Listings</span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-            <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last hidden">
-              <i class="fa fa-globe"></i>
-            </button>
-            <button name="listingDisplay" id="listingDisplay" type="button" class="btn btn-default pull-right hidden-xs" ng-click="toggleListView()">
-              <i class="fa fa-list" ng-show="!showListView"></i>
-              <i class="fa fa-th-large" ng-show="showListView"></i>
-            </button>
-            <ih-dropdown class="dropdown pull-right" items='[{"name": "Lowest Price", "value": "+ListPrice"}, {"name": "Highest Price", "value": "-ListPrice"}, {"name": "Newest Listings", "value": "-OnMarketDate"}, {"name": "Oldest Listings", "value": "+OnMarketDate"}]' id="sort" name="Sort By" ng-model="filters.sort"></ih-dropdown>
-          </div>
+        <div class="col-lg-5 col-md-5 hidden-sm hidden-xs fullh map-pane">
+            <ih-listing-map></ih-listing-map>
         </div>
-      </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 fullh listing-pane">
+            <div class="ih-listings-menu">
+                <div class="row">
+                    <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs lead">
+                        <span><strong>{{totalListings | number}}</strong> Total Listings</span>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                        <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last hidden">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <button name="listingDisplay" id="listingDisplay" type="button" class="btn btn-default pull-right hidden-xs" ng-click="toggleListView()">
+                            <i class="fa fa-list" ng-show="!showListView"></i>
+                            <i class="fa fa-th-large" ng-show="showListView"></i>
+                        </button>
+                        <ih-dropdown class="dropdown pull-right" items='[{"name": "Lowest Price", "value": "+ListPrice"}, {"name": "Highest Price", "value": "-ListPrice"}, {"name": "Newest Listings", "value": "-OnMarketDate"}, {"name": "Oldest Listings", "value": "+OnMarketDate"}]'
+                            id="sort" name="Sort By" ng-model="filters.sort"></ih-dropdown>
+                    </div>
+                </div>
+            </div>
 
-      <div class="ih-listings container-fluid">
-        <div class="ih-listings-grid row">
-          <div class="no-results hidden">
-            <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
-            <hr> Sorry, there are no listings that match your search criteria.
-          </div>
-          <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
-            <div class="ih-listing-card">
-              <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
-                <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
+            <div class="ih-listings container-fluid">
+                <div class="ih-listings-grid row">
+                    <div class="no-results hidden">
+                        <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
+                        <hr> Sorry, there are no listings that match your search criteria.
+                    </div>
+                    <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
+                        <div class="ih-listing-card">
+                            <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
+                                <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
                   View Home
                 </a>
-                <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
-              </div>
-              <div class="ih-listing-card-desc container-fluid">
-                <div class="ih-ft-listing-addr text-center">
-                  <h4>{{home.address}}</h4>
-                  <h6 class="text-uppercase text-muted"><strong>{{home.city}} {{home.state}}, {{home.zipcode}}</strong></h6>
+                                <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
+                            </div>
+                            <div class="ih-listing-card-desc container-fluid">
+                                <div class="ih-ft-listing-addr text-center">
+                                    <h4>{{home.address}}</h4>
+                                    <h6 class="text-uppercase text-muted"><strong>{{home.city}} {{home.state}}, {{home.zipcode}}</strong></h6>
+                                </div>
+                                <hr>
+                                <p class="text-muted">
+                                    {{home.PublicRemarks|limitTo:130:0|words|sentence}}... <a class="read-more" href="#/listing/{{home.mls}}">Read More</a>
+                                </p>
+                                <hr>
+                                <div class="ih-ft-listing-details row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <small ng-if="home.beds_total != '' && home.baths_total != ''">{{home.beds_total}} BEDS | {{home.baths_total}} BATHS</small>
+                                        <br ng-if="home.beds_total != '' && home.baths_total != ''">
+                                        <small ng-if="home.sq_total != ''">{{home.sq_total | number}} SQFT</small>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                        <small><strong class="lead fs">{{home.price | currency:"$":0}}</strong></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="n in range(0,listingLoaders)" ng-class="showListView ? 'ih-listview' : ''">
+                        <ih-listing-loader></ih-listing-loader>
+                    </div>
                 </div>
-                <hr>
-                <p class="text-muted">
-                  {{home.PublicRemarks|limitTo:130:0|words|sentence}}... <a class="read-more" href="#/listing/{{home.mls}}">Read More</a>
-                </p>
-                <hr>
-                <div class="ih-ft-listing-details row">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <small ng-if="home.beds_total != '' && home.baths_total != ''">{{home.beds_total}} BEDS | {{home.baths_total}} BATHS</small>
-                    <br ng-if="home.beds_total != '' && home.baths_total != ''">
-                    <small ng-if="home.sq_total != ''">{{home.sq_total | number}} SQFT</small>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
-                    <small><strong class="lead fs">{{home.price | currency:"$":0}}</strong></small>
-                  </div>
+
+                <div class="ih-more-listings" ng-hide="displayListings == 0 || displayListings < 15">
+                    <div class="ih-listing-count lead text-center">
+                        <strong>{{displayListings | number}} / {{totalListings | number}}</strong>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" ng-click="moreListings()">Load More Listings</small>
+                    </button>
                 </div>
-              </div>
+                <div class="ih-mls-legal">
+                    &copy; 2016 - All Rights Reserved - Tucson Association of Realtors. All information deemed reliable, but not guaranteed. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than
+                    to identify prospective properties consumers may be interested in purchasing.
+                </div>
+
             </div>
-          </div>
-          <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="n in range(0,listingLoaders)" ng-class="showListView ? 'ih-listview' : ''">
-            <ih-listing-loader></ih-listing-loader>
-          </div>
         </div>
-
-        <div class="ih-more-listings" ng-hide="displayListings == 0 || displayListings < 15">
-          <div class="ih-listing-count lead text-center">
-            <strong>{{displayListings | number}} / {{totalListings | number}}</strong>
-          </div>
-          <button type="button" class="btn btn-primary btn-block" ng-click="moreListings()">Load More Listings</small>
-          </button>
-        </div>
-        <div class="ih-mls-legal">
-          &copy; 2016 - All Rights Reserved - Tucson Association of Realtors. All information deemed reliable, but not guaranteed. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing.
-        </div>
-
-      </div>
     </div>
-  </div>
 </section>
