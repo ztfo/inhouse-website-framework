@@ -1,12 +1,12 @@
 <div class="ih-listing-table">
 	<ul class="uk-subnav nav nav-pills" data-uk-switcher="{connect: '#listingData'}">
         <li><a href=""><small>Details</small></a></li>
-		<li><a href=""><small>Interior</small></a></li>		
+		<li><a href=""><small>Interior</small></a></li>
 		<li><a href=""><small>Exterior</small></a></li>
         <li><a href=""><small>Community</small></a></li>
 		<li><a href=""><small>Mortgage</small></a></li>
 	</ul>
-	<ul class="uk-switcher" id="listingData">
+	<ul class="uk-switcher fs" id="listingData">
         <li><!-- listing details -->
           <table class="table table-stripped table-hover">
             <tbody class="data-table">
@@ -14,31 +14,31 @@
                 <th colspan="1"><small class="text-muted">Community</small></th>
                 <td colspan="2"><small class="text-muted">{{listing.community}}</small></td>
                 <th><small class="text-muted">Type</small></th>
-                <td colspan="2"><small class="text-muted">{{listing.type}}</small></td>                
+                <td colspan="2"><small class="text-muted">{{listing.type}}</small></td>
               </tr>
               <tr>
                 <th><small class="text-muted">Status</small></th>
-                <td><small class="text-muted">{{listing.status}}</small></td>                      
+                <td><small class="text-muted">{{listing.status}}</small></td>
                 <th><small class="text-muted">MLS</small></th>
                 <td><small class="text-muted">{{listing.mls}}</small></td>
                 <th><small class="text-muted">Price/SF</small></th>
-                <td><small class="text-muted">{{listing.psf | currency}}</small></td>              
+                <td><small class="text-muted">{{listing.psf | currency}}</small></td>
               </tr>
               <tr>
                 <th><small class="text-muted">Bedrooms</small></th>
                 <td><small class="text-muted">{{listing.beds_total}}</small></td>
                 <th><small class="text-muted">Total Baths</small></th>
-                <td><small class="text-muted">{{listing.baths_total}}</small></td>                
+                <td><small class="text-muted">{{listing.baths_total}}</small></td>
                 <th><small class="text-muted">Year Built</small></th>
-                <td><small class="text-muted">{{listing.yearbuilt}}</small></td>                 
+                <td><small class="text-muted">{{listing.yearbuilt}}</small></td>
               </tr>
               <tr>
                 <th><small class="text-muted">Sqft.</small></th>
                 <td><small class="text-muted">{{listing.sq_total | number}}</small></td>
                 <th><small class="text-muted">Lot Size:</small></th>
-                <td><small class="text-muted">{{listing.lotsize}} Acres</small></td>                 
+                <td><small class="text-muted">{{listing.lotsize}} Acres</small></td>
                 <th><small class="text-muted">Short Sale</small></th>
-                <td><small class="text-muted">{{listing.shortsale}}</small></td>                       
+                <td><small class="text-muted">{{listing.shortsale}}</small></td>
               </tr>
             </tbody>
           </table>
@@ -52,28 +52,28 @@
                     <th><small class="text-muted">Split Bedroom:</small></th>
                     <td><small class="text-muted">{{listing.splitbed}}</small></td>
                     <th><small class="text-muted">Split Level:</small></th>
-                    <td><small class="text-muted">{{listing.splitlevel}}</small></td>                       
+                    <td><small class="text-muted">{{listing.splitlevel}}</small></td>
                   </tr>
                   <tr>
                     <th><small class="text-muted">Green Features:</small></th>
-                    <td><small class="text-muted">{{listing.green}}</small></td>      
+                    <td><small class="text-muted">{{listing.green}}</small></td>
                     <th><small class="text-muted"># Fireplace/Log</small></th>
-                    <td><small class="text-muted">{{listing.fireplace}}</small></td>               
+                    <td><small class="text-muted">{{listing.fireplace}}</small></td>
                   </tr>
                   <tr>
                     <th><small class="text-muted">Floor Covering:</small></th>
                     <td><small class="text-muted">{{listing.floorcovering}}</small></td>
                     <th><small class="text-muted">View</small></th>
-                    <td><small class="text-muted">{{listing.view}}</small></td>                       
+                    <td><small class="text-muted">{{listing.view}}</small></td>
                   </tr>
                   <tr>
                     <th><small class="text-muted">Disability Adapted:</small></th>
-                    <td><small class="text-muted">{{listing.disability}}</small></td>      
+                    <td><small class="text-muted">{{listing.disability}}</small></td>
                     <th><small class="text-muted">Interior Steps:</small></th>
-                    <td><small class="text-muted">{{listing.steps}}</small></td>                    
+                    <td><small class="text-muted">{{listing.steps}}</small></td>
                   </tr>
                 </tbody>
-              </table>            
+              </table>
             </div>
             <div class="col-lg-6">
               <div class="row">
@@ -88,7 +88,7 @@
                     <ul class="accent-list">
                         <li ng-repeat="room in listing.rooms">{{room}}</li>
                     </ul>
-                </div>                 
+                </div>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
                   </tr>
                   <tr>
                       <th><small class="text-muted"># of Stories</small></th>
-                      <td><small class="text-muted">{{listing.stories}}</small></td>                    
+                      <td><small class="text-muted">{{listing.stories}}</small></td>
                       <th><small class="text-muted">Patio:</small></th>
                       <td><small class="text-muted">{{listing.patio}}</small></td>
                       <th><small class="text-muted">RV Parking</small></th>
@@ -130,7 +130,7 @@
                   </tr>
                   <tr>
                       <th><small class="text-muted">Contruction Status</th>
-                      <td><small class="text-muted">{{listing.newconstruction}}</small></td>                    
+                      <td><small class="text-muted">{{listing.newconstruction}}</small></td>
                       <th><small class="text-muted">A/C</small></th>
                       <td><small class="text-muted">{{listing.ac}}</small></td>
                       <th><small class="text-muted">Heat</small></th>
@@ -143,7 +143,7 @@
                       <td><small class="text-muted">{{listing.water}}</small></td>
                       <th><small class="text-muted">Sewer</small></th>
                       <td><small class="text-muted">{{listing.sewer}}</small></td>
-                  </tr>                          
+                  </tr>
                   <tr>
                       <th><small class="text-muted">Athletic Facilities:</small></th>
                       <td><small class="text-muted">{{listing.athletic}}</small></td>
@@ -158,7 +158,7 @@
                       <th><small class="text-muted">Fix up:</small></th>
                       <td><small class="text-muted">{{listing.fix}}</small></td>
                       <th><small class="text-muted">Paved Street</small></th>
-                      <td><small class="text-muted">{{listing.paved}}</small></td>                    
+                      <td><small class="text-muted">{{listing.paved}}</small></td>
                   </tr>
                   <tr>
                       <th><small class="text-muted">Horse Facilities</small></th>
@@ -170,21 +170,21 @@
                   </tr>
               </tbody>
           </table>
-		</li>		
-        <li><!-- community details -->          
+		</li>
+        <li><!-- community details -->
           <table class="table table-stripped table-hover">
             <tbody class="data-table">
               <tr>
                 <th><small class="text-muted">Community</small></th>
                 <td><small class="text-muted">{{listing.community}}</small></td>
                 <th><small class="text-muted">Adult Community</small></th>
-                <td><small class="text-muted">{{listing.adult}}</small></td>                      
+                <td><small class="text-muted">{{listing.adult}}</small></td>
               </tr>
               <tr>
                 <th><small class="text-muted">HOA</small></th>
                 <td><small class="text-muted">{{listing.hoa}}</small></td>
                 <th><small class="text-muted">Area</small></th>
-                <td><small class="text-muted">{{listing.area}}</small></td>                    
+                <td><small class="text-muted">{{listing.area}}</small></td>
               </tr>
               <tr>
                 <th><small class="text-muted">School District</small></th>

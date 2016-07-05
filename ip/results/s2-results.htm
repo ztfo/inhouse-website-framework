@@ -142,12 +142,12 @@
                                 </p>
                                 <hr>
                                 <div class="ih-ft-listing-details row fs">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="ih-listing-qfacts">
                                         <small ng-if="home.beds_total != '' && home.baths_total != ''">{{home.beds_total}} BEDS | {{home.baths_total}} BATHS</small>
                                         <br ng-if="home.beds_total != '' && home.baths_total != ''">
                                         <small ng-if="home.sq_total != ''">{{home.sq_total | number}} SQFT</small>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                    <div class="ih-listing-price text-right">
                                         <small><strong class="lead fs">{{home.price | currency:"$":0}}</strong></small>
                                     </div>
                                 </div>

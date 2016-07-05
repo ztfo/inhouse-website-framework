@@ -1,9 +1,9 @@
 <section class="ih-content ih-bio s1">
   <header class="ih-content-header">
-    <div class="container">
+    <div class="container fw">
       <h1 class="inlineblock" itemprop="name">About {{bioAgent.name}}</h1>
       <div class="clear"></div>
-      <h3 class="inlineblock" itemprop="organization">{{agent.teamName}}</h3>
+      <h3 class="inlineblock fs text-uppercase" itemprop="organization"><small class="fw">{{agent.brokerage}}</small></h3>
     </div>
   </header>
   <div class="ih-content-inner container">
@@ -69,7 +69,7 @@
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideAccordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onClick="event.preventDefault()">
-                    {{bioAgent.name}}'s Recommendations 
+                    {{bioAgent.name}}'s Recommendations
                   </a>
                 </h4>
             </div>
