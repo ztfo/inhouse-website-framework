@@ -1,0 +1,184 @@
+/* global */
+
+.ih-listing .owl-controls>.owl-nav>div {
+    position: absolute;
+    background: #171717;
+    top: 0;
+    padding: 0 15px;
+    height: 100%;
+    line-height: 60px;
+}
+.ih-listing .owl-prev {
+    left: 0;
+}
+.ih-listing .owl-next {
+    right: -1px;
+}
+.ih-listing .ih-owl-thumbnail {
+    height: 60px;
+    width: 80px;
+}
+.ih-listing .owl-carousel .owl-item {
+    margin-right: 0 !important;
+    border-right: 2px solid #171717;
+}
+.ih-listing .ih-owl-thumbnail::after {
+    content: "";
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+.ih-listing .ih-owl-thumbnail:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.ih-listing-table .uk-subnav a {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 0;
+}
+.ih-listing-table .uk-subnav a:hover {
+    color: #171717;
+}
+.tab-content {
+    min-height: 300px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    padding: 15px;
+}
+.ih-doc {
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #171717;
+}
+.ih-doc:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+
+/* s1 - vertical center page configuration */
+
+.s1.ih-listing {
+    position: relative;
+    padding: 25px 0;
+}
+.s1 .ih-listing-slider {
+    position: relative;
+    min-height: 350px;
+    background-color: #eee;
+    cursor: pointer;
+}
+.s1 .ih-listing-slider .item {
+    height: 350px !important;
+}
+.s1 .ih-listing-map {
+    position: relative;
+    min-height: 350px;
+    padding-right: 0;
+}
+.s1 .ih-gmap {
+    position: relative;
+    height: 350px;
+    background-color: #eee;
+}
+.s1 .ih-listing-images {
+    margin-top: 10px;
+    min-height: 100px;
+    background-color: #eee;
+}
+.s1 .ih-listing-details {
+    position: relative;
+    min-height: 250px;
+}
+.s1 .ih-listing-description {
+    position: relative;
+}
+.s1 .ih-listing-table {
+    min-height: 200px;
+}
+.s1 .ih-listing-contact {
+    padding: 35px 0;
+}
+.s1 .ih-docs .tab-content {
+    border: 1px solid #ddd;
+    border-top: 0;
+    border-radius: 4px;
+    min-height: 281px;
+    padding: 10px;
+}
+
+/* s2 - horizontal split page configuration with map-pane */
+
+.s2.ih-listing .ih-header {
+    text-transform: initial;
+    letter-spacing: initial;
+    font-size: 24px;
+    text-align: left;
+}
+.s2.ih-listing .ih-md-divider {
+    width: 100%;
+    margin: 20px 0;
+    margin-bottom: 15px;
+}
+.s2.ih-listing>.container-fluid {
+    height: 100%;
+    padding: 0;
+}
+.s2.ih-listing .listing-pane {
+    padding: 0;
+    border-left: 5px solid #fff;
+    overflow: auto;
+}
+.s2 .ih-listing-images {
+    min-height: initial !important;
+    margin-top: 0;
+    border-top: 2px solid #313131;
+}
+.s2 .ih-listing-slider .item {
+    height: 420px !important;
+}
+.s2 .ih-listing h2 {
+    margin: 10px 0;
+}
+.s2 .ih-listing-factbar {
+    padding: 10px 15px;
+}
+.s2 .ih-listing-details {
+    padding: 20px 25px;
+    padding-top: 35px;
+}
+.s2 .ih-listing-contact {
+    padding: 15px 5px !important;
+}
+.s2.ih-listing {
+    height: calc(100vh);
+    padding-top: 135px;
+    padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.s2 .map-pane {
+    padding: 0;
+}
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

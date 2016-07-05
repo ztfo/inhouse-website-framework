@@ -1,0 +1,33 @@
+/* community search */
+
+.comm-block a {
+    position: relative;
+    min-height: 200px;
+    padding: 20px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    margin-bottom: 25px;
+}
+.comm-block a:hover, .comm-block a:focus, .comm-block a:active {
+    text-decoration: none !important;
+}
+.comm-block h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.comm-block p {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

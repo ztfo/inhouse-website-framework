@@ -1,0 +1,37 @@
+.modal-content {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2) !important;
+  border-radius: 2px;
+  border: none;
+}
+.modal-title {
+  padding: 10px 0;
+}
+.modal-body {
+  padding: 40px 45px;
+  padding-bottom: 0;
+}
+.modal-footer {
+  text-align: center;
+}
+.reg-btns {
+  margin-bottom: 20px;
+}
+.reg-divider {
+  margin-top: 10px;
+}
+.privacy-link {
+  color: #3277b2 !important;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.reg-btns a {
+  text-transform: uppercase;
+  padding: 5px 15px;
+  background-color: #eee;
+  font-size: 12px;
+  font-weight: 600;
+}
+#accountModal .modal-body h2 {
+  margin-top: 0;
+}

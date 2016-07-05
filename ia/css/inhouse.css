@@ -166,6 +166,7 @@ input[type="radio"] {
     display: none;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.15);
+    -webkit-transition: .3s;
     transition: .3s;
     z-index: 9999;
     text-align: center;
