@@ -1,5 +1,5 @@
 /*** INHOUSE v.1.0 ***/
-
+/*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
 * {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -8,15 +8,9 @@
 
 /* element resets */
 body { overflow-x: hidden !important; }
-button,
-button:active,
-button:focus {
-  outline: 0 !important;
-}
-input:active,
-input:focus { outline: none !important; }
-p { text-align: justify; }
-/* elements ends */
+button, button:active, button:focus { outline: 0 !important; }
+input:active, input:focus { outline: none !important; }
+/* resets */
 
 /* font color defaults */
 .fw { color: #f5f5f5; }
