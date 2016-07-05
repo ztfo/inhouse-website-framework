@@ -46,9 +46,25 @@
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .ih-side-panel .ih-md-divider {
+        min-width: initial;
+        width: 100%;
+    }
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-@media screen and (min-width: 376px) and (max-width: 768px) {}
-@media screen and (max-width: 767px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+    .ih-side-panel .ih-md-divider {
+        min-width: initial;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .ih-content-header {
+        -webkit-animation: initial;
+        animation: initial;
+        background-size: cover;
+    }
+}
 @media screen and (max-width: 426px) {}
 @media screen and (max-width: 374px) {}

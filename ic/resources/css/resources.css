@@ -1,27 +1,39 @@
 /* global */
+
 .ih-resources {
-  min-height: 500px;
-  padding: 100px 0;
+    min-height: 500px;
+    padding: 100px 0;
 }
 
 /* s1 */
+
 .rc-link {
-  display: block;
-  width: 100%;
-  min-height: 400px;
-  margin-bottom: 25px;
-  background-size: cover;
-  background-position: 50%;
+    display: block;
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 25px;
+    background-size: cover;
+    background-position: 50%;
 }
 .rc-label h4 {
-  font-size: 30px;
+    font-size: 30px;
 }
 .rc-label p {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 .rc-label a {
-  color: #fff;
+    color: #fff;
 }
 .rc-label a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

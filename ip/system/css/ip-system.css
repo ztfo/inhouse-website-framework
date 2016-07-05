@@ -75,7 +75,29 @@ section.ih404 {
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-@media screen and (min-width: 376px) and (max-width: 768px) {}
-@media screen and (max-width: 767px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+    .ih-scroll-up {
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+@media screen and (max-width: 767px) {
+    /* 404 */
+    .sq-404 {
+        width: 100%;
+        margin-top: 140px;
+    }
+    .ih404 h1 {
+        font-size: 100px;
+    }
+    .ih404 h4 {
+        font-size: 14px;
+        margin: 15px;
+    }
+    .ih404 span {
+        font-size: 15px;
+    }
+    /* 404 ends */
+}
 @media screen and (max-width: 426px) {}
 @media screen and (max-width: 374px) {}
