@@ -33,57 +33,52 @@
                 My Account
             </a>
         </div>
-        <div class="navbar-header inlineblock">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="container">
-            <div class="collapse navbar-collapse navbar-left mainNav" id="mainNav">
-                <ul class="nav navbar-nav" role="menubar">
-                    <li ng-repeat="link in navbar | limitTo: halfway" ng-class="link.children !== undefined">
-                        <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase">
-                            <span itemprop="name">{{link.display}}</span>
-                        </a>
-                        <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}}
+    </div>
+    <div class="navbar-header inlineblock">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="collapse navbar-collapse mainNav" id="mainNav">
+            <ul class="nav navbar-nav" role="menubar">
+                <li ng-repeat="link in navbar | limitTo: halfway" ng-class="link.children !== undefined">
+                    <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase">
+                        <span itemprop="name">{{link.display}}</span>
+                    </a>
+                    <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}}
                             <span class="caret"></span>
                         </a>
-                        <ul ng-if="link.children !== undefined" class="dropdown-menu">
-                            <li ng-repeat="sublink in link.children">
-                                <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank">
-                                    <span itemprop="name">{{sublink.display}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo"/>
-                <ul class="nav navbar-nav navbar-right" role="menubar">
-                    <li ng-repeat="link in navbar | startFrom: halfway" ng-class="link.children !== undefined">
-                        <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase">
-                            <span itemprop="name">{{link.display}}</span>
-                        </a>
-                        <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}}
+                    <ul ng-if="link.children !== undefined" class="dropdown-menu">
+                        <li ng-repeat="sublink in link.children">
+                            <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank">
+                                <span itemprop="name">{{sublink.display}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#/" class="navbar-logo inlineblock"><img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo" class="img-responsive"/></a>
+            <ul class="nav navbar-nav navbar-right" role="menubar">
+                <li ng-repeat="link in navbar | startFrom: halfway" ng-class="link.children !== undefined">
+                    <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase">
+                        <span itemprop="name">{{link.display}}</span>
+                    </a>
+                    <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}}
                             <span class="caret"></span>
                         </a>
-                        <ul ng-if="link.children !== undefined" class="dropdown-menu">
-                            <li ng-repeat="sublink in link.children">
-                                <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank">
-                                    <span itemprop="name">{{sublink.display}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                    <ul ng-if="link.children !== undefined" class="dropdown-menu">
+                        <li ng-repeat="sublink in link.children">
+                            <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank">
+                                <span itemprop="name">{{sublink.display}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
-
-
-
-
-
 </nav>

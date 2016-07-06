@@ -1,48 +1,48 @@
 <footer class="s3 footer {{classes}} {{controller}}" ng-hide="showFooter != undefined && showFooter == false">
-  <div class="container-fluid top-footer">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <h6>About {{agent.teamName}}</h6>
-        <p class="text-justify footer-bio fs" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
-        <address>
+    <div class="container-fluid top-footer">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <h4 class="fp">About {{agent.teamName}}</h4>
+                <p class="text-justify footer-bio fo" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></p>
+                <address>
           <strong>{{agent.brokerage}}</strong><br>
           {{agent.contactAddress}}<br>
           {{agent.contactAddress2}}<br>
         </address>
-        <address>
+                <address>
           {{agent.contactPhone | tel}}<br>
-          {{agent.contactEmail}}        
-        </address>        
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center brokerage-brand">
-        <img ng-src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" />
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <h6>Connect</h6>
-        <div class="social-links">
-          <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
-          <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
-          <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
-          <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
-          <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>        
-        </div>        
-      </div>
+          {{agent.contactEmail}}
+        </address>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center brokerage-brand">
+                <img ng-src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-left">
+                <img src="ia/icons/fairhousing-white.svg" alt="Fair Housing" />
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center text-uppercase">
+                <a href="{{sitemap}}" class="sitemap fo text-uppercase"><small>sitemap</small></a>
+                <div class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-right">
+                <img src="ia/icons/realtor-white.svg" alt="National Association of Realtors | Realtor" />
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-left">
-        <img src="ia/icons/fairhousing-white.svg" alt="Fair Housing" />
-      </div>
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center text-uppercase">
-        <a href="{{sitemap}}" class="sitemap fo text-uppercase"><small>sitemap</small></a>
-        <div class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</div>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-right">
-        <img src="ia/icons/realtor-white.svg" alt="National Association of Realtors | Realtor" />
-      </div>    
+    <div class="ih-footer">
+        <div class="text-center text-uppercase"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank" class="fo">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
+        <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
     </div>
-  </div>
-  <div class="ih-footer">
-    <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank" class="fo">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
-    <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
-  </div>
 </footer>
