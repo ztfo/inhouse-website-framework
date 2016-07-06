@@ -13,12 +13,12 @@
 
           <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="col-lg-3 col-md-3 col-sm-6 col-xs-12"></ih-listing-loader>
 
-          <div class="ih-ft-listing col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="home in homes | limitTo:12" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
+          <div class="ih-ft-listing col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="home in homes | limitTo:8" style="background-image: url('{{home.photo || 'ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
             <a class="ft-link" href="#/listing/{{home.mls}}">
               <span>
                 <strong>{{home.address}}<br></strong>
                 <div class="ih-sm-divider"></div>
-                <small class="fs" itemprop="description">{{home.price | currency}} | {{home.beds}} BEDS - {{home.baths}} BATHS</small>                
+                <small class="fs" itemprop="description">{{home.price | currency}} | {{home.beds}} BEDS - {{home.baths}} BATHS</small>
                 <div class="clear"></div>
                 <span href="" class="fl-btn btn btn-primary">View Listing</span>
               </span>
@@ -34,7 +34,3 @@
   </div>
 
 </section>
-  
-
-
-

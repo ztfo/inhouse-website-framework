@@ -47,7 +47,8 @@
 }
 .s2.ih-testimonials blockquote>p {
     font-weight: 300;
-    min-height: 220px;
+    padding: 15px 0;
+    text-align: justify;
 }
 .s2.ih-testimonials blockquote footer {
     font-size: 18px;
