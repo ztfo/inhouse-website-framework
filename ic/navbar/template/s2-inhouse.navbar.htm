@@ -37,8 +37,8 @@
       <div class="collapse navbar-collapse fs" id="mainNav">
         <ul class="nav navbar-nav navbar-right" role="menubar">
           <li ng-repeat="link in navbar" ng-class="link.children !== undefined">
-            <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{link.display}}</span></a>
-            <a ng-if="link.children !== undefined" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
+            <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase"><span itemprop="name">{{link.display}}</span></a>
+            <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
             <ul ng-if="link.children !== undefined" class="dropdown-menu">
               <li ng-repeat="sublink in link.children">
                 <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{sublink.display}}</span></a>

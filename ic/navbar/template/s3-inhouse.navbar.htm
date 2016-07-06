@@ -1,6 +1,6 @@
 <nav class="s3 ih-nav navbar navbar-default text-center {{classes}} {{controller}}" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
   <div class="ih-cta container-fluid fo">
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-cta text-left nopad">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-cta text-left">
         <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
         <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
         <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
@@ -8,20 +8,20 @@
         <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
         <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
       </div>
-      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-right tel-cta nopad">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-right tel-cta">
         <a href="tel:{{agent.contactPhone}}" class="clean-link"><span itemprop="telephone">{{agent.contactPhone | tel}} <span class="ih-social-icon"><i class="fa fa-phone"></i></span></span></a>
-        <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in" ng-if="!inhouseAgentUserLoggedIn">Sign-in</button>
-        <a href="#/search-mls?page=1&my-listings" class="clean-link sign-in signed-in" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
-          My Account  
-        </a>        
+        <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in btn btn-primary" ng-if="!inhouseAgentUserLoggedIn">Sign-in</button>
+        <a href="#/search-mls?page=1&my-listings" class="clean-link sign-in signed-in btn btn-primary" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
+          My Account
+        </a>
       </div>
   </div>
   <div class="container">
     <div class="collapse navbar-collapse navbar-left" id="mainNavRight">
       <ul class="nav navbar-nav navbar-right" role="menubar">
         <li ng-repeat="link in navbar" ng-class="link.children !== undefined">
-          <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{link.display}}</span></a>
-          <a ng-if="link.children !== undefined" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
+          <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase"><span itemprop="name">{{link.display}}</span></a>
+          <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
           <ul ng-if="link.children !== undefined" class="dropdown-menu">
             <li ng-repeat="sublink in link.children">
               <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{sublink.display}}</span></a>
@@ -46,8 +46,8 @@
     <div class="collapse navbar-collapse navbar-right" id="mainNav">
       <ul class="nav navbar-nav navbar-right" role="menubar">
         <li ng-repeat="link in navbar" ng-class="link.children !== undefined">
-          <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{link.display}}</span></a>
-          <a ng-if="link.children !== undefined" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
+          <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase"><span itemprop="name">{{link.display}}</span></a>
+          <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
           <ul ng-if="link.children !== undefined" class="dropdown-menu">
             <li ng-repeat="sublink in link.children">
               <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank"><span itemprop="name">{{sublink.display}}</span></a>
