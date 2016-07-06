@@ -7,15 +7,26 @@ angular.module('inhouseApp')
 			for (var k in dirs) {
 				var others = ' ';
 				if(typeof dirs[k] === 'object') {
-					for (sK in dirs[k]) {
+					for (var sK in dirs[k]) {
 						others += sK + '="' + dirs[k][sK] + '" ';
 					}
 				}
 				template += '<ih-' + k + others + '></ih-' + k + '>';
 			}
+			console.log(template + '</div>');
 			return template + '</div>';
 		},
 		replace: true,
 		restrict: 'E'
 	};
 }]);
+// 
+// <div>
+// 	<ih-slider config="s1" slider="mainSlider" ></ih-slider>
+// 	<ih-landing-search ></ih-landing-search>
+// 	<ih-divider config="logo" ></ih-divider>
+// 	<ih-about config="s1" ></ih-about>
+// 	<ih-featured-listings config="s1"></ih-featured-listings>
+// 	<ih-testimonials config="s1" testimonial="mainTests" ></ih-testimonials>
+// 	<ih-contact config="s1" message="How can we help?" ></ih-contact>
+// </div>
