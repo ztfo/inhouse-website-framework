@@ -1,27 +1,24 @@
-<section class="s3 ih-testimonials {{classes}}" ng-show="testimonials.length > 0">
-  <div class="container">
-    <div class="row">
-      <h1 class="ih-header text-center">What our clients say</h1>
-      <div class="ih-md-divider bk-gd"></div>
-    </div>
-    <div class="row">
-      <div class="owl-carousel tst-carousel">
-        <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
-          <blockquote itemprop="review" class="testimonial">
-            <div class="ih-sm-header"></div>
-            <div class="ih-ratings" itemprop="rating">
-              <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
-              <span class="sr-only">{{rating}}</span>
-            </div>
-            <p itemprop="review">{{slide.testimonial}}</p>
-						<a href="{{slide.reviewURL}}" target="_blank" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
-            <footer>{{slide.reviewer}} | {{slide.context}}</footer>
-          </blockquote>
-        </div>
+<section class="s2 ih-testimonials {{classes}}" ng-show="testimonials.length > 0" data-uk-parallax="{bg: '-300'}">
+
+  <h1 class="ih-header text-center">What Our Clients Say</h1>
+  <div class="ih-md-divider"></div>
+
+  <div id="mainTestimonails" class="ih-testimonials-inner">
+    <div class="owl-carousel tst-carousel">
+      <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
+        <blockquote itemprop="review">
+          <div class="ih-ratings" itemprop="rating">
+            <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
+          </div>
+          <p itemprop="review">{{slide.testimonial}}</p>
+          <a href="#" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
+          <footer>{{slide.reviewer}} | {{slide.context}}</footer>
+        </blockquote>
       </div>
-      <div class="text-center" ng-hide="!showZillow">
-        <img src="ic/testimonials/assets/zillow-grey.svg" alt="Testimonial Provided By Zillow" class="testimonial-icon" />
-      </div>      
+    </div>
+    <div class="text-center" ng-hide="!showZillow">
+      <img src="ic/testimonials/assets/zillow.svg" alt="Testimonial Provided By Zillow" class="testimonial-icon" />
     </div>
   </div>
+
 </section>
