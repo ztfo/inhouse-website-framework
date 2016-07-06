@@ -5,10 +5,10 @@
     </div>
     <div class="divider text-center"></div>
     <div id="s5Resources" class="owl-carousel">
-      
+
       <!-- repeat -->
       <div class="img-list">
-          <a href="#link">
+          <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="_blank">
             <img class="img-border" ng-src="" alt="{{content.title}}" />
             <span class="overlay2">{{content.title}}</span>
             <span class="text-content">
@@ -18,7 +18,7 @@
             </span>
           </a>
 	   </div>
-      
+
     </div>
   </div>
 </section>

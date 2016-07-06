@@ -3,9 +3,9 @@
   <div class="ih-md-divider"></div>
   <div class="container">
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-repeat="(key, content) in resources | limitTo: limit">
-      <a href="#/{{content.key || key}}" class="rc-link" style="background-image: url('{{content.thumb}}')"></a>
+      <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="_blank" class="rc-link" style="background-image: url('{{content.thumb}}')"></a>
       <div class="rc-label">
-        <h4><a href="#/{{content.key || key}}"><i class="fa fa-caret-right"></i> {{content.title}}</a></h4>
+        <h4><a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="_blank"><i class="fa fa-caret-right"></i> {{content.title}}</a></h4>
         <p>
           {{content.sub}}
         </p>
