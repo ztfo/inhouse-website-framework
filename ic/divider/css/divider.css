@@ -29,9 +29,6 @@
     margin: 100px auto;
     text-align: center;
 }
-.ih-accent-divider::after {
-    content: url('../icons/ih-divider.svg')
-}
 
 /* responsive */
 

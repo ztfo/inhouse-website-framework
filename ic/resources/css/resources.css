@@ -21,8 +21,8 @@
 .rc-label p {
     margin: 20px 0;
 }
-.rc-label a {
-    color: #fff;
+.rc-label {
+    text-transform: capitalize;
 }
 .rc-label a:hover {
     text-decoration: none;

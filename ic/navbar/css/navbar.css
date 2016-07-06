@@ -1,5 +1,11 @@
 /* global */
 
+.ih-nav {
+  border: 0;
+  border-top: 7px solid #fff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
 .ih-nav, .navbar-brand {
     z-index: 1000 !important;
     height: auto !important;
@@ -260,3 +266,9 @@
         text-align: center;
     }
 }
+
+/* bootstrap resets */
+  .navbar-default {
+    border-radius: 0;
+  }
+/*  bs ends */
