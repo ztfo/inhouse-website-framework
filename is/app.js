@@ -117,9 +117,21 @@ angular.module('inhouseApp', ['ngRoute'])
 			});
 		};
 	})($scope);
-}]);
+}])
 
-// back to top 
+.directive('openTab', function () {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+          var href = element.href;
+          if(attrs.ngHref.includes('http')) {  // replace with your condition
+            element.attr("target", "_blank");
+          }
+        }
+    };
+});
+
+// back to top
 
 $(document).ready(function () {
 	$(window).scroll(function () {
