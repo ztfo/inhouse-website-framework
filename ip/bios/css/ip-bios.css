@@ -38,6 +38,8 @@
 .s3.ih-bio .agent-image {
     min-height: 600px;
     background-color: #eee;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .s3.ih-bio .listing-map {
     min-height: 650px;
