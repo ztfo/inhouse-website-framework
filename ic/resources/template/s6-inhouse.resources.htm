@@ -5,13 +5,13 @@
     </div>
     <div class="divider text-center"></div>
     <div id="s6Resources" class="owl-carousel">
-      
+
       <!-- repeat -->
       <div class="img-list">
-        
+
         <!-- repeat limit:2 inside img-list and continue rest on new .img-list -->
         <div class="">
-          <a href="#link">
+          <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="_blank">
           <img class="img-border" ng-src="" alt="{{content.title}}" />
           <span class="overlay">{{content.title}}</span>
           <span class="text-content">
@@ -19,11 +19,11 @@
               <p>{{content.sub}}</p>
             </span>
           </span>
-          </a>          
+          </a>
         </div>
 
-      </div>      
-      
+      </div>
+
     </div>
   </div>
 </section>
