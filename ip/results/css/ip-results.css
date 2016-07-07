@@ -262,6 +262,10 @@
 .s2 .ih-listing-card {
     min-height: 450px;
     margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 .s2 .ih-ft-listing-addr h4 {
     font-size: 16px;
@@ -290,10 +294,10 @@
     font-size: 20px;
     opacity: 0;
     transition: .3s;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .s2 .ih-listing-card-desc {
-  padding: 20px 15px;
+    padding: 20px 15px;
 }
 .s2 .ih-ft-listing-link:hover {
     opacity: 1;
@@ -365,6 +369,10 @@
 }
 .s3 .meta-item {
     width: 50%;
+}
+
+.s3.ih-results #map-results {
+  height: 400px;
 }
 
 /* results end */

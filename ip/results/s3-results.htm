@@ -1,10 +1,10 @@
 <section class="s3 ih-results">
   <div id="map-results">
-    <ih-listing-map></ih-listing-map>
+    <ih-listing-map class="full"></ih-listing-map>
   </div>
   <div class="listing-results">
     <div class="container">
-      
+
       <div class="row page-list">
         <div class="col-lg-6  col-md-6 col-sm-8 col-xs-12 fs">
           <h4 class="result-count"><strong>{{totalListings | number}}</strong> Total Listings</h4>
@@ -16,7 +16,7 @@
           <ih-dropdown class="dropdown pull-right" items='[{"name": "Lowest Price", "value": "+ListPrice"}, {"name": "Highest Price", "value": "-ListPrice"}, {"name": "Newest Listings", "value": "-OnMarketDate"}, {"name": "Oldest Listings", "value": "+OnMarketDate"}]' id="sort" name="Sort By" ng-model="filters.sort"></ih-dropdown>
           <a class="btn btn-default ih-adv-toggle pull-right" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
             <i class="fa fa-filter"></i> More Filters
-          </a>          
+          </a>
         </div>
       </div>
       <div id="searchFilters" class="ih-advanced-filters collapse row">
@@ -96,14 +96,14 @@
           </div>
         </div>
       </div>
-      
-      <div class="row listing-row">			
+
+      <div class="row listing-row">
         <div class="no-results hidden">
           <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
           <hr> Sorry, there are no listings that match your search criteria.
         </div>
-        
-        <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">          
+
+        <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
           <div class="ih property-img col-lg-4 col-md-4 col-sm-4 col-xs-12 nopad">
             <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
             <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
@@ -117,7 +117,7 @@
                 <span>{{home.price | currency:"$":0}}</span>
             </div>
             <div class="item-list clearfix">
-              
+
               <div class="meta-item pull-left">
                   <i class="fa fa-object-group"></i>
                   <span class="meta-item-field">
@@ -138,14 +138,14 @@
                       <span class="meta-item-label">Bathrooms</span>
                       <span>{{home.baths_total}}</span>
                   </span>
-              </div>              
+              </div>
               <div class="meta-item pull-left">
                   <i class="fa fa-car"></i>
                   <span class="meta-item-field">
                       <span class="meta-item-label">Garage</span>
                       <span>{{home.garage}}</span>
                   </span>
-              </div>                            
+              </div>
               <div class="meta-item pull-left">
                   <i class="fa fa-home"></i>
                   <span class="meta-item-field">
@@ -160,13 +160,13 @@
                       <span>{{home.status}}</span>
                   </span>
               </div>
-					
-            </div>							
+
+            </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 property-description visible-lg-inline-block bkc-02 fw hidden-xs">
             <h4>About Home</h4>
             <p class="fs">
-              {{home.PublicRemarks|limitTo:130:0|words|sentence}}.. 
+              {{home.PublicRemarks|limitTo:130:0|words|sentence}}..
             </p>
             <div class="listing-price">
                 <h6 class="text-uppercase">Price</h6>
@@ -177,8 +177,8 @@
             </a>
           </div>
         </article>
-        
-        
+
+
         <div class="ih-more-listings" ng-hide="displayListings == 0 || displayListings < 15">
           <div class="ih-listing-count lead text-center">
             <strong>{{displayListings | number}} / {{totalListings | number}}</strong>
@@ -186,13 +186,13 @@
           <button type="button" class="btn btn-primary btn-block" ng-click="moreListings()">
             Load More Listings</small>
           </button>
-        </div>   
+        </div>
         <div class="ih-mls-legal">
           &copy; 2016 - All Rights Reserved - Tucson Association of Realtors. All information deemed reliable, but not guaranteed. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing.
-        </div>      
+        </div>
       </div>
-        
-      
+
+
     </div>
   </div>
 </section>
