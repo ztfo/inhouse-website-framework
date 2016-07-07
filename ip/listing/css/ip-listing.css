@@ -136,6 +136,7 @@
     padding: 0;
     border-left: 5px solid #fff;
     overflow: auto;
+    overflow-x: hidden;
 }
 .s2 .ih-listing-images {
     min-height: initial !important;
