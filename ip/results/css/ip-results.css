@@ -44,6 +44,7 @@
     font-size: 20px;
     font-weight: 600;
     padding: 0;
+    color: #303030;
 }
 .gmap-popwindow a:hover {
     text-decoration: none;
@@ -259,7 +260,8 @@
     display: none;
 }
 .s2 .ih-listing-card {
-    min-height: 410px;
+    min-height: 450px;
+    margin-bottom: 30px;
 }
 .s2 .ih-ft-listing-addr h4 {
     font-size: 16px;
@@ -274,10 +276,27 @@
     margin-bottom: -15px;
 }
 .s2 .ih-listing-card-img {
+    position: relative;
     min-height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 .s2 .ih-ft-listing-link {
     line-height: 250px !important;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    opacity: 0;
+    transition: .3s;
+    background-color: rgba(0,0,0,0.2);
+}
+.s2 .ih-listing-card-desc {
+  padding: 20px 15px;
+}
+.s2 .ih-ft-listing-link:hover {
+    opacity: 1;
 }
 .s2 .ih-ft-listing-addr {
     text-align: left;
