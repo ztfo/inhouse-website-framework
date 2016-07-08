@@ -29,6 +29,12 @@
 .ih-filter-row .btn-group .btn {
     width: 33.333333%;
 }
+.ih-slide {
+  margin: 10px 0;
+}
+.ih-slide label {
+  min-width: 100px;
+}
 .ih-slide .tooltip {
     margin-top: -23px !important;
 }
