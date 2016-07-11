@@ -1,14 +1,21 @@
 <section class="s4 ih-contact">
-  <div class="container">
-    <h1 class="text-center">How can we help?</h1>
-    <div class="divider"></div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <ih-contact config="f1"></ih-contact>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 vertical">
-        Contact Information Needs to be added here.
-      </div>
+    <div class="container">
+        <h1 class="text-center">How can we help?</h1>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <ih-contact config="f1"></ih-contact>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 vertical">
+                <div class="map-box">
+                    <ih-gmaps class="full"></ih-gmaps>
+                </div>
+                <address>
+                  {{agent.brokerage}}<br />
+                  {{agent.contactAddress}}<br />
+                  {{agent.contactAddress2}}
+                </address>
+            </div>
+        </div>
     </div>
-  </div>
 </section>

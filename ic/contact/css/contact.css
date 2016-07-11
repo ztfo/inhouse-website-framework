@@ -52,6 +52,15 @@
     height: 520px;
 }
 
+/* s4 */
+
+.s4.ih-contact .map-box {
+  height: 225px;
+  border: 1px solid #ddd;
+  margin-top: 34px;
+  margin-bottom: 15px;
+}
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
