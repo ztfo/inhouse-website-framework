@@ -41,22 +41,22 @@
 
       <div class="ih-listing-factbar container-fluid">
         <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <ih-like-button mls="{{listing.mls}}" address="{{listing['Building Address']}}" class="pull-left"></ih-like-button>
+          <ih-like-button mls="{{listing.mls}}" address="{{listing['Building Address']}}" class="pull-left bkc-02 fw"></ih-like-button>
           <div class="pull-left">
-            <h2 class="fs">{{listing['Building Address']}}</h2>
-            <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+            <h2 class="fp">{{listing['Building Address']}}</h2>
+            <h4 class="fs text-uppercase">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
           </div>
         </div>
         <div class="ih-listing-dets col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-          <h2 class="fs">{{listing.price | currency:"$":0}}</h2>
+          <h2 class="fp">{{listing.price | currency:"$":0}}</h2>
           <h4 class="fs">{{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT</h4>
         </div>
       </div>
 
       <div class="ih-listing-details container-fluid">
-        <div class="ih-listing-description">
+        <div class="ih-listing-description fs">
           <div class="row">
-            <div class="ih col-lg-6"><p><strong class="text-uppercase">About this listing:</strong></p></div>
+            <div class="ih col-lg-6"><p><strong class="text-uppercase fp">About this listing:</strong></p></div>
             <div class="ih col-lg-6 text-right">
               <div class="share-btns">
                 <strong><span class="text-muted text-uppercase">Share on: </span></strong>
@@ -67,8 +67,8 @@
               </div>
             </div>
           </div>
-          <p>{{listing.PublicRemarks | sentence}}</p>
-          <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
+          <p class="fs">{{listing.PublicRemarks | sentence}}</p>
+          <p class="small text-uppercase fs">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         </div>
         <div class="ih-sm-divider ih-ext-divider"></div>
         <ih-listing-details></ih-listing-details>
@@ -79,7 +79,8 @@
       <div class="ih-listing-contact container-fluid">
 
         <div class="ih-listing-form col-lg-8 col-md-12 col-sm-12 col-xs-12">
-          <ih-contact message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
+          <h3>Questions about this listing?</h3>
+          <ih-contact config="f1" message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
         </div>
 
         <div class="ih-listing-documents col-lg-4 col-md-12 col-sm-12 col-xs-12">

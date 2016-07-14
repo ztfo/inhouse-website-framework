@@ -1,0 +1,158 @@
+/* privacy page */
+
+.privacy {
+    padding: 35px;
+    margin-top: 200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    margin-bottom: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* privacy ends */
+
+
+/* listing tags */
+
+.ih-mls-status-Closed::before {
+    content: "SOLD LISTING";
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    padding: 5px 15px;
+    top: 10px;
+    background-color: #ab0520;
+}
+.ih-mls-status-Pending::before {
+    content: "PENDING LISTING";
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    padding: 5px 15px;
+    top: 10px;
+    background-color: #002147;
+}
+
+/* listing tags end */
+
+
+/* 404 */
+
+.sq-404 {
+    width: 750px;
+    margin: 0 auto;
+    margin-top: 220px;
+    padding: 55px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-top: 20px;
+}
+section.ih404 {
+    min-height: 800px;
+}
+.ih404 h1 {
+    font-size: 175px;
+}
+.ih404 h4 {
+    text-transform: uppercase;
+    font-size: 31px;
+    margin: 25px;
+}
+.ih404 span {
+    font-size: 18px;
+    margin: 25px 0;
+    display: block;
+}
+.ih404 .btn-primary {
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+/* 404 ends */
+
+
+/* back-to-top button defaults */
+
+.ih-scroll-up {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-transition: .3s;
+    transition: .3s;
+    z-index: 9999;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+}
+.ih-scroll-up:hover, .ih-scroll-up:active, .ih-scroll-up:visited, .ih-scroll-up:focus {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* back-to-top ends */
+
+
+/* brand footer defaults */
+
+.ih-footer {
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px 0;
+    background-color: #3277b2;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+.ih-footer>div {
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+.ih-footer>div>a {
+    color: #3277b2;
+}
+.ih-footer>div>a:hover {
+    text-decoration: none;
+}
+.ih-legal {
+    margin: 15px 0;
+}
+
+/* footer ends */
+
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+    .ih-scroll-up {
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+@media screen and (max-width: 767px) {
+    /* 404 */
+    .sq-404 {
+        width: 100%;
+        margin-top: 140px;
+    }
+    .ih404 h1 {
+        font-size: 100px;
+    }
+    .ih404 h4 {
+        font-size: 14px;
+        margin: 15px;
+    }
+    .ih404 span {
+        font-size: 15px;
+    }
+    /* 404 ends */
+}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

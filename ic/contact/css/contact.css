@@ -1,41 +1,41 @@
 /* global */
+
 .ih-contact {
-  position: relative;
+    position: relative;
 }
 .ih-contact-form .btn-group {
-  width: 100%;
+    width: 100%;
 }
 .ih-contact-form .btn-group .btn {
-  width: 33%;
+    width: 33%;
 }
 .ih-contact-form .btn-default {
-  text-transform: uppercase;
-  font-weight: 600;
-  border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
 }
 .ih-contact-form .form-group {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 .ih-contact-form .btn-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .ih-form-input {
-  padding: 20px 15px;
-  border-radius: 0;
+    padding: 20px 15px;
+    border-radius: 0;
 }
 .ih-contact-form .form-group>label {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
 }
 .ih-contact .btn.active {
-  color: #fff;
-  box-shadow: none;
+    color: #fff;
+    box-shadow: none;
 }
 .alert h3 {
-  margin: 5px;
+    margin: 5px;
 }
-
 
 /* s1 */
 
@@ -44,10 +44,29 @@
 
 
 /* s3 */
+
 .s2 .contact-form {
-  padding: 30px;
+    padding: 30px;
 }
-.s2 .contact-form,
-.s2 .contact-map {
-  height: 520px;
+.s2 .contact-form, .s2 .contact-map {
+    height: 520px;
 }
+
+/* s4 */
+
+.s4.ih-contact .map-box {
+  height: 225px;
+  border: 1px solid #ddd;
+  margin-top: 34px;
+  margin-bottom: 15px;
+}
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

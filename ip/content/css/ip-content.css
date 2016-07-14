@@ -1,0 +1,70 @@
+/* s1 - center page with slim side-panel */
+
+.s1 .ih-content-header {
+    min-height: 200px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e7e7e7;
+}
+.s1 .ih-content-header>div {
+    padding-top: 3em;
+}
+.s1 .ih-content-header h1 {
+    margin: 0;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.s1 .ih-content-header h3 {
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+.s1 .ih-content-inner {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    min-height: 500px;
+}
+.s1 .ih-side-panel {
+    position: relative;
+    border-left: 1px solid #e7e7e7;
+    min-height: 500px;
+}
+.s1 .ih-side-panel .panel-title a:hover, .s1 .ih-side-panel .panel-title a:focus, .s1 .ih-side-panel .panel-title a:active {
+    text-decoration: none;
+}
+
+/* s2 */
+
+.s2.ih-content header {
+    min-height: 250px;
+    text-align: center;
+    padding-top: 150px;
+    background-color: #ddd;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .ih-side-panel .ih-md-divider {
+        min-width: initial;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+    .ih-side-panel .ih-md-divider {
+        min-width: initial;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .ih-content-header {
+        -webkit-animation: initial;
+        animation: initial;
+        background-size: cover;
+    }
+}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

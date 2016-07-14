@@ -25,65 +25,8 @@
         </div>
       </div>
     </div>
-    <!-- defer -->
-    <div class="row blog-row hidden">
-      <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Blog</h1>
-      <div class="ih-md-divider"></div>
-    </div>    
-  </div>
-  <h1 class="ih-header text-center">{{bioAgent.name | split: ' ':0}}'s Listings</h1>
-  <div class="ih-md-divider"></div>
-  <div class="row agent-listing-map">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing-map">
-      <ih-listing-map class="full"></ih-listing-map>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 listing nopad">
-      <ul class="nav nav-pills nav-justified text-uppercase" data-uk-switcher="{connect: '#agentListings'}">
-        <li role="presentation">
-          <a href="" class="clean-link">Current Listings</a>
-        </li>
-        <li role="presentation">
-          <a href="" class="clean-link">Recent Sold Listings</a>
-        </li>
-      </ul>
-      <ul class="agent-listings uk-switcher" id="agentListings">
-        <li>
-          <div class="container-fluid">
-            <div class="row">
-              <!-- max current listing displayed = 9 -->
-              <div class="agent-listing col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="{{agent.listing}}" class="ih block full" style="background-image: url('{{listing.image}}');">
-                  <span class="ih-a">
-                    <span>{{listing.address}}</span>
-                  <strong>{listing.price}} | {{listing.beds_total}} <small>BEDS</small> - {{listing.baths_total}}</strong>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="row text-center">
-              <a href="#/search-mls?active&status=featured" class="btn btn-primary">View All Current</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="container-fluid">
-            <div class="row">
-              <!-- max sold listings displayed = 9 -->
-              <div class="agent-listing col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="{{agent.listing}}" class="ih block full">
-                  <span class="ih-a">
-                    <span>{{listing.address}}</span>
-                  <strong>Sold for: {{listing.soldprice}}</strong>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="row text-center">
-              <a href="#/search-mls?sold&status=featured" class="btn btn-primary">View All Sold</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <!-- to do -->
+    <ih-featured-slider config="s4" status="active"></ih-featured-slider>
+    <ih-featured-slider config="s4" status="sold"></ih-featured-slider>
   </div>
 </section>

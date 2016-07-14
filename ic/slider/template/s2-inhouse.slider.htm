@@ -4,24 +4,24 @@
     <div class="ih-greeting-picture text-center">
       <img ng-src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" />
     </div>
-    <h1 class="text-center fs">{{LandingComponent.welcomeText}}</h1>
+    <h1 class="text-center fs fw text-capitalize">{{LandingComponent.welcomeText}}</h1>
     <div class="ih-md-divider"></div>
     <p class="text-center col-md-6 col-md-offset-3">
       {{LandingComponent.greetingText}}
     </p>
     <div class="ih-narrative text-center row">
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-if="LandingComponent.showBuyAHome">
-        <a href="{{LandingComponent.buyLink}}" class="ih-nar-btn btn btn-primary">
+        <a href="{{LandingComponent.buyLink}}" class="ih-nar-btn btn btn-primary text-uppercase">
             {{LandingComponent.buyAHomeText}}
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-if="LandingComponent.showSellAHome">
-        <a href="{{LandingComponent.sellLink}}" class="ih-nar-btn btn btn-primary">
+        <a href="{{LandingComponent.sellLink}}" class="ih-nar-btn btn btn-primary text-uppercase">
             {{LandingComponent.sellAHomeText}}
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-if="LandingComponent.showJustAdvice">
-        <a href="{{LandingComponent.adviceLink}}" class="ih-nar-btn btn btn-primary">
+        <a href="{{LandingComponent.adviceLink}}" class="ih-nar-btn btn btn-primary text-uppercase">
             {{LandingComponent.adviceText}}
         </a>
       </div>
@@ -29,7 +29,7 @@
     <ih-landing-search config="s3"></ih-landing-search>
   </div>
 
-  <div class="botton-btn fw">
+  <div class="bottom-btn fw">
     <i class="fa fa-angle-down"></i>
   </div>
 

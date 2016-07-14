@@ -1,26 +1,26 @@
-<section class="s4 resources">
-  <div class="container-small">
-    <div class="row text-center">
-      <h1>Resources</h1>
-    </div>
-    <div class="divider text-center"></div>
-    <div id="s4Resources" class="owl-carousel">
-      <div class="item">
-        
-        <!-- repeat limit:2, continue where left off next item -->
-		<div>
-          <a href="#link">
-		    <img class="img-border" src="http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A" alt="" />
-		  </a>
-          <div class="">
-            <h2><i class="fa fa-square small-font" aria-hidden="true"></i><a href="#/link">{{content.title}}</a></h2>
-            <div class="divider-sm"></div>
-            <p>{{content.sub}}</p>
-          </div>        
+<section class="s4 resources {{classes}}">
+    <div class="container-small">
+        <div class="row text-center">
+            <h1>Resources</h1>
         </div>
-        
-		
-	   </div>        
+        <div class="divider text-center"></div>
+        <div id="s4Resources" class="owl-carousel">
+            <div class="item">
+
+                <!-- repeat limit:2, continue where left off next item -->
+                <div>
+                    <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' open-tab>
+                        <img class="img-border" src="http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A" alt="" />
+                    </a>
+                    <div class="">
+                        <h2><i class="fa fa-square small-font" aria-hidden="true"></i><a href="#/link">{{content.title}}</a></h2>
+                        <div class="divider-sm"></div>
+                        <p>{{content.sub}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
-  </div>
 </section>

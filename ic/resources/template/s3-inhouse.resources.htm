@@ -1,4 +1,4 @@
-<section class="s3 resources">
+<section class="s3 resources {{classes}}">
   <div class="container">
     <div class="row text-center">
       <h1 class="uppercase">Resources</h1>
@@ -8,7 +8,7 @@
   <div id="s3Resources" class="owl-carousel">
     <!-- repeat -->
     <div class="item">
-      <a href="#link">
+      <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' open-tab>
         <img class="img-border" src="http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A" alt="" />
       </a>
       <div class="">
@@ -16,6 +16,6 @@
         <div class="divider-lg"></div>
         <p>{{content.sub}}</p>
       </div>
-	</div>    
+	</div>
   </div>
 </section>

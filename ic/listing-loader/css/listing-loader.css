@@ -1,118 +1,168 @@
 /* per-listing loader */
+
 .text-block {
-  display: block;
-  width: 100%;
-  height: 15px;
-  margin-bottom: 10px;
-  animation: gradientLoad 2s ease infinite;
-  background: radial-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0.15) );
-  background-size: 400% 400%;
+    display: block;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 10px;
+    -webkit-animation: gradientLoad 2s ease infinite;
+            animation: gradientLoad 2s ease infinite;
+    background: -webkit-radial-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+    background: radial-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+    background-size: 400% 400%;
 }
 .text-block:nth-child(2) {
-  width: 55%;
+    width: 55%;
 }
 .ih-loader-listing {
-  border: 1px solid #eee;
-  border-radius: 2px;
-  margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    margin-bottom: 15px;
 }
 .ih-loader-listing .ih-ft-listing-desc {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 .ih-listings .ih-loader-listing {
-  min-height: 535px;
-  margin-bottom: 25px;
+    min-height: 535px;
+    margin-bottom: 25px;
 }
 .ih-loader-listing .ih-ft-listing-img {
-  text-align: center;
-  line-height: 190px;
-  animation: loadingFade 2s ease infinite;
+    text-align: center;
+    line-height: 190px;
+    -webkit-animation: loadingFade 2s ease infinite;
+            animation: loadingFade 2s ease infinite;
 }
 .ih-loader-listing .ih-ft-listing-img img {
-  display: inline !important;
+    display: inline !important;
 }
 .ih-loader-listing .ih-ft-listing:hover {
-  box-shadow: none;
+    box-shadow: none;
 }
 .ih-loader-listing .ih-ft-listing {
-  border-bottom: 1px solid #eee;
-  border: 1px solid #E2E2E2;
-  border-radius: 2px;
+    border-bottom: 1px solid #eee;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+}
+@-webkit-keyframes loadingFade {
+    0%, 100% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 }
 @keyframes loadingFade {
-  0%,
-  100% {
-    background-color: rgba(0,0,0,0.1);
-  }
-  50% {
-    background-color: rgba(255,255,255,0.1);
-  }
+    0%, 100% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+@-webkit-keyframes gradientLoad {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
 }
 @keyframes gradientLoad {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 /* listing grid */
+
 .listing-grid-carousel .ih-loader-listing .ih-ft-listing-desc {
-  display: none;
+    display: none;
 }
 
 /* listing page loader */
+
 .load-overlay {
-  transition: .3s;
-  pointer-events: all;
-  overflow: hidden;
+    -webkit-transition: .3s;
+    transition: .3s;
+    pointer-events: all;
+    overflow: hidden;
 }
 .load-overlay::before {
-  content: url('../../../ia/icons/ih-loader.svg');
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  text-align: center;
-  padding-top: 20%;
-  background: linear-gradient(90deg, #ddd, #eee);
-  background-size: 400% 400%;
-  opacity: 1;
-  -webkit-animation: loadOverlay .1s ease infinite;  
-  animation: loadOverlay .1s ease infinite;
-  animation-iteration-count: 1;
+    content: url('../../../ia/icons/ih-loader.svg');
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    text-align: center;
+    padding-top: 20%;
+    background: -webkit-linear-gradient(left, #ddd, #eee);
+    background: linear-gradient(90deg, #ddd, #eee);
+    background-size: 400% 400%;
+    opacity: 1;
+    -webkit-animation: loadOverlay .1s ease infinite;
+    animation: loadOverlay .1s ease infinite;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
 }
 .load-overlay::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 15px;
-  background: radial-gradient( #3277b2, #5BC64D);
-  background-size: 500% 500%;
-  z-index: 1000;
-  -webkit-animation: loadingBar 5s ease infinite;
-  -moz-animation: loadingBar 5s ease infinite;
-  animation: loadingBar 5s ease infinite;
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 15px;
+    background: -webkit-radial-gradient( #3277b2, #5BC64D);
+    background: radial-gradient( #3277b2, #5BC64D);
+    background-size: 500% 500%;
+    z-index: 1000;
+    -webkit-animation: loadingBar 5s ease infinite;
+    animation: loadingBar 5s ease infinite;
+}
+@-webkit-keyframes loadOverlay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 @keyframes loadOverlay {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes loadingBar {
+    0% {
+        background-position: 400% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 @keyframes loadingBar {
-  0% {
-    background-position: 400% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
+    0% {
+        background-position: 400% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

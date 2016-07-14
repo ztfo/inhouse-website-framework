@@ -1,17 +1,17 @@
-<section class="s6 resources">
+<section class="s6 resources {{classes}}">
   <div class="container-small">
     <div class="row text-center">
       <h1>Resources</h1>
     </div>
     <div class="divider text-center"></div>
     <div id="s6Resources" class="owl-carousel">
-      
+
       <!-- repeat -->
       <div class="img-list">
-        
+
         <!-- repeat limit:2 inside img-list and continue rest on new .img-list -->
         <div class="">
-          <a href="#link">
+          <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' open-tab>
           <img class="img-border" ng-src="" alt="{{content.title}}" />
           <span class="overlay">{{content.title}}</span>
           <span class="text-content">
@@ -19,11 +19,11 @@
               <p>{{content.sub}}</p>
             </span>
           </span>
-          </a>          
+          </a>
         </div>
 
-      </div>      
-      
+      </div>
+
     </div>
   </div>
 </section>

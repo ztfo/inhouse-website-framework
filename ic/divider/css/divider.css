@@ -1,7 +1,41 @@
-/* logo divider */
 .ih-logo-divider {
-  margin: 50px 0;
-  text-align: center;
+    margin: 50px 0;
+    text-align: center;
+}
+.ih-lg-divider {
+    height: 5px;
+    background-color: #eee;
+    margin: 50px auto;
+    width: 50%;
+    min-width: 250px;
+}
+.ih-md-divider {
+    height: 3px;
+    background-color: #eee;
+    margin: 25px auto;
+    width: 50%;
+}
+.ih-sm-divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 15px auto;
+    width: 50%;
+    min-width: 250px;
+}
+.ih-ext-divider {
+    width: 100%;
+}
+.ih-accent-divider {
+    margin: 100px auto;
+    text-align: center;
 }
 
-/* accent divider */
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

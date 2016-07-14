@@ -1,135 +1,143 @@
-
 /* global */
+
 .ih-testimonials {
-  position: relative;
-  padding: 25px 0;
-  margin: 50px 0;
-  background: #eee;
+    position: relative;
+    padding: 25px 0;
+    margin: 50px 0;
+    background: #eee;
 }
 .ih-testimonials-inner {
-  position: relative;
-  padding: 25px 0;
+    position: relative;
+    padding: 25px 0;
 }
 
 /* s1 */
+
 .s1.ih-testimonials {
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 50px 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 .s1.ih-testimonials .ih-header {
-  color: #fff;
-  font-size: 30px;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* s2 */
-.s2.ih-testimonials {
-  padding-top: 130px;
-  padding-bottom: 110px;
-  min-height: 630px;
-}
+
 .s2.ih-testimonials blockquote {
-  border-left: 0;
-  margin: 0;
-  padding: 0 60px;
-  font-size: 14px;
-  border-right: 2px solid rgba(255,255,255,0.1);
+    position: relative;
+    border-left: 1px solid #eee !important;
+    border: 1px solid #eee;
+    background-color: #fff;
+    padding: 25px 40px !important;
+    min-height: 300px;
 }
-.ih-ratings {
-  margin-bottom: 15px;
-  font-size: 20px;
-  letter-spacing: 22px;
+.s2 .ih-ratings {
+    color: gold;
+    letter-spacing: 6px;
+    margin: 10px 0;
 }
-.s2.ih-testimonials blockquote>p {
-  font-weight: 300;
-  min-height: 220px;
+.s2 .testimonial footer {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
 }
-.s2.ih-testimonials blockquote footer {
-  font-size: 18px;
-  color: #fff;
-  font-style: italic;
+.s2.ih-testimonials .read-more {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    display: block;
+    text-align: right;
 }
-.s2.ih-testimonials blockquote .read-more {
-  display: block;
-  margin-top: -10px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  color: #fff;
+.s2 .owl-nav {
+    text-align: center;
 }
-.s2.ih-testimonials .owl-nav {
-  text-align: center;
-  margin: 30px 0;
+.s2 .owl-nav>div {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.5);
 }
-.s2.ih-testimonials .owl-nav>div {
-  display: inline-block;
-  padding: 7px 25px;
-  border: 1px solid rgba(255,255,255,0.1);
-  text-transform: uppercase;
-  transition: .3s;
+.s2 .owl-nav>div:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
-.s2.ih-testimonials .owl-nav>div:first-child {
-  border-radius: 50px 0 0 50px;
-  border-right: 0;
+.s2 .owl-nav>div:first-child {
+    border-right: 1px solid #ddd;
 }
-.s2.ih-testimonials .owl-nav>div:last-child { 
-  border-radius: 0 50px 50px 0;
-}
+
 /* s3 */
+
+.s3.ih-testimonials {
+    padding-top: 130px;
+    padding-bottom: 110px;
+    min-height: 630px;
+}
 .s3.ih-testimonials blockquote {
-  position: relative;
-  border-left: 1px solid #eee !important;
-  border: 1px solid #eee;
-  background-color: #fff;
-  padding: 25px 40px !important;
-  min-height: 300px;
+    border-left: 0;
+    margin: 0;
+    padding: 0 60px;
+    font-size: 14px;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
 }
 .s3 .ih-ratings {
-  color: gold;
-  letter-spacing: 6px;
-  margin: 10px 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    letter-spacing: 22px;
 }
-.s3 .testimonial footer {
-  position: absolute;
-  bottom: 30px;
-  right: 0;
-  left: 0;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
+.s3.ih-testimonials blockquote>p {
+    font-weight: 300;
+    padding: 15px 0;
+    text-align: justify;
 }
-.s3.ih-testimonials .read-more {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 800;
-  display: block;
-  text-align: right;
+.s3.ih-testimonials blockquote footer {
+    font-size: 18px;
+    color: #fff;
+    font-style: italic;
 }
-.s3 .owl-nav {
-  text-align: center;
+.s3.ih-testimonials blockquote .read-more {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
 }
-.s3 .owl-nav>div {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 5px 20px;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: rgba(0,0,0,0.5);
+.s3.ih-testimonials .owl-nav {
+    text-align: center;
+    margin: 30px 0;
 }
-.s3 .owl-nav>div:hover {
-  background-color: rgba(0,0,0,0.05);
+.s3.ih-testimonials .owl-nav>div {
+    display: inline-block;
+    padding: 7px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    -webkit-transition: .3s;
+    transition: .3s;
 }
-.s3 .owl-nav>div:first-child {
-  border-right: 1px solid #ddd;
+.s3.ih-testimonials .owl-nav>div:first-child {
+    border-radius: 50px 0 0 50px;
+    border-right: 0;
 }
-/*** responsive ***/
-@media screen and (max-width: 768px) {
-  .ih-testimonial-icon {
-    margin: 0 auto;
-    width: 40%;
-    margin-bottom: 35px;
-  }
+.s3.ih-testimonials .owl-nav>div:last-child {
+    border-radius: 0 50px 50px 0;
 }
+
+/* responsive */
+
+@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 426px) {}
+@media screen and (max-width: 374px) {}

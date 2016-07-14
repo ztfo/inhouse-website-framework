@@ -48,8 +48,16 @@ angular.module('inhouseApp')
 								scope.max = parseInt(scope.max);
 								params.items = scope.max;
 							}
-							if(typeof window.storySettings.landingLayout.testimonials.responsive !== 'undefined') {
-								params.responsive = window.storySettings.landingLayout.testimonials.responsive;
+
+							var testimonialsIndex = 0;
+							window.storySettings.landingLayout.map(function(item, index, arr){
+								if(item.responsive){
+									testimonialsIndex = index;
+								}
+							})
+
+							if(window.storySettings.landingLayout[testimonialsIndex].responsive) {
+								params.responsive = window.storySettings.landingLayout[testimonialsIndex].responsive;
 							}
 							element.find('.owl-carousel').owlCarousel(params);
 						} else {

@@ -8,7 +8,7 @@ angular.module('inhouseApp')
 			classes: "@classes"
 		},
 		restrict: 'E',
-		controller: function($scope) {
+		controller: function($scope, $filter) {
 			$scope.$on('viewChanged', function(event, args) {
 				$scope.controller = args;
 			});
@@ -21,10 +21,14 @@ angular.module('inhouseApp')
 			});
 			$scope.inhouseAgentUserLoggedIn = $scope.$parent.inhouseAgentUserLoggedIn;
 			$scope.navbar = window.storySettings.NavBar;
+			$scope.halfway = Math.ceil($scope.navbar.length/2);
 			if(typeof window.storySettings.navbarClasses !== 'undefined') {
 				$scope.classes = window.storySettings.navbarClasses;
 			}
 			$scope.agent = window.agentSettings;
 		}
+
+
+
 	};
 }]);
