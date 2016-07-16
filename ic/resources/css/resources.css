@@ -5,7 +5,7 @@
     padding: 100px 0;
 }
 
-/* s1 */
+/* global */
 
 .rc-link {
     display: block;
@@ -26,6 +26,20 @@
 }
 .rc-label a:hover {
     text-decoration: none;
+}
+
+/* s7 */
+
+.s7 .resource-frame {
+    width: 900px;
+    padding: 20px;
+}
+.s7 .resource-frame>div {
+    min-height: 325px;
+}
+.s7 .rc-link {
+    min-height: 250px;
+    margin-bottom: 15px;
 }
 
 /* responsive */
