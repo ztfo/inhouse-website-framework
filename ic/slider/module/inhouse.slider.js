@@ -18,9 +18,13 @@ angular.module('inhouseApp')
 				var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));
 				$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];
 			}
+
 			$scope.agent = window.agentSettings;
+
+			$scope.landingLayout = window.storySettings.landingLayout[0];
 		},
 		link: function(scope, element, attrs) {
+
 			if(scope.pull !== undefined) {
 				inhouseApi.getData({resource: 'slider', slider: scope.slider}).success(function(response) {
 					scope.slides = response.response.slides;
@@ -28,18 +32,20 @@ angular.module('inhouseApp')
 						if(typeof scope.nodefault === 'undefined') {
 							element.carousel({
 								pause: "false",
-								interval: 25000
+								interval: 2500
 							});
 						}
 					});
 				});
 			} else {
 				scope.$on('storyLoaded', function(event, args) {
-					scope.slides = args[scope.slider].slides;
+					console.log('story loaded');
+					scope.slides = scope.landingLayout.slides;
+					console.log('slides', scope.slides);
 					$timeout(function() {
 						element.carousel({
 							pause: "false",
-							interval: 25000
+							interval: 2500
 						});
 					});
 				});
