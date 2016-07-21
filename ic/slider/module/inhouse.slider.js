@@ -32,7 +32,7 @@ angular.module('inhouseApp')
 						if(typeof scope.nodefault === 'undefined') {
 							element.carousel({
 								pause: "false",
-								interval: 2500
+								interval: 25001
 							});
 						}
 					});
