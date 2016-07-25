@@ -7,11 +7,12 @@
   <div class="ih-slider-row">
     <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
-        <div class="daSlider item {{$index == 0 && LandingComponent.defaultSliderImage === undefined ? 'active' : ''}}" ng-repeat="slide in slides">
-          <div class="full-screen-image" style="background-image: url('{{slide.img}}');"></div>
+        <div class="daSlider item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in slides">
+          <div class="full-screen-image item-img" style="background-image: url('{{slide.img}}');"></div>
           <div class="carousel-caption">
             <h1>{{slide.header}}</h1>
             <h4>{{slide.sub}}</h4>
+            <a href="{{slide.link}}" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
