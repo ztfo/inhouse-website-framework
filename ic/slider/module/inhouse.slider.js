@@ -39,9 +39,7 @@ angular.module('inhouseApp')
 				});
 			} else {
 				scope.$on('storyLoaded', function(event, args) {
-					console.log('story loaded');
-					scope.slides = scope.landingLayout.slides;
-					console.log('slides', scope.slides);
+					scope.slides = args[scope.slider].slides;
 					$timeout(function() {
 						element.carousel({
 							pause: "false",
