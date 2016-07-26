@@ -32,7 +32,7 @@ angular.module('inhouseApp')
 						if(typeof scope.nodefault === 'undefined') {
 							element.carousel({
 								pause: "false",
-								interval: 25001
+								interval: 9999
 							});
 						}
 					});
@@ -43,7 +43,7 @@ angular.module('inhouseApp')
 					$timeout(function() {
 						element.carousel({
 							pause: "false",
-							interval: 25001
+							interval: 9999
 						});
 					});
 				});

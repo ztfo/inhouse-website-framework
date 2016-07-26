@@ -1,5 +1,5 @@
 <section class="ih-content ih-bio s3" itemscope itemtype="http://schema.org/RealEstateAgent">
-  <header data-uk-parallax="{bg: '-150'}">
+  <header>
     <div class="container">
       <h1 class="fs inlineblock fw" itemprop="name">{{bioAgent.name}}</h1>
       <div class="clear"></div>
@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 about-pane ih">
-        <h3 class="text-uppercase">About {{bioAgent.name | split: ' ':0}}</h3>
+        <h3 class="text-uppercase fc-01"><span class="fc-03">&#9670;</span> About {{bioAgent.name | split: ' ':0}}</h3>
         <div class="ih-social about-social text-center iha tp rt">
           <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
           <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
@@ -31,4 +31,5 @@
     <ih-featured-slider config="s4" status="active"></ih-featured-slider>
     <ih-featured-slider config="s4" status="sold"></ih-featured-slider>
   </div>
+  <ih-divider config="logo"></ih-divider>
 </section>
