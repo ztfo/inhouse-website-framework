@@ -214,18 +214,6 @@
     height: 100%;
     width: 100%;
 }
-.s4.ih-slider .item-img::after {
-  content: "";
-  position: absolute;
-  top: 0; right: 0; left: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-}
-.s4.ih-slider .carousel-caption {
-  text-align: left !important;
-  right: 10% !important;
-  left: 10% !important;
-  bottom: 10% !important;
-}
 /* s5 */
 
 .s5 .ih-greeting {
