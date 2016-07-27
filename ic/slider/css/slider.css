@@ -154,6 +154,9 @@
 
 /* s4 */
 
+.s4.ih-slider {
+  height: calc(100vh);
+}
 .s4.ih-slider-row {
     position: relative;
     height: calc(100vh);
