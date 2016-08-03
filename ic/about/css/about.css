@@ -205,6 +205,28 @@
     margin-bottom: 20px;
 }
 
+/* s10 carol */
+.s10.ih-about {
+    position: relative;
+    margin-top: 130px;
+    min-height: 300px;
+    padding-bottom: 70px;
+}
+.s10.ih-about .img-square {
+    border: 10px solid rgba(0, 0, 0, 0.2);
+}
+.s10.ih-about h2 {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+.s10.ih-about .about-social {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-size: 15px;
+}
 /* p1 */
 
 .p1.ih-about .ih-about-text {
