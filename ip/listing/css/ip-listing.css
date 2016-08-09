@@ -7,6 +7,8 @@
     padding: 0 15px;
     height: 100%;
     line-height: 60px;
+    text-transform: uppercase;
+    color: #fff;
 }
 .ih-listing .owl-prev {
     left: 0;
@@ -91,7 +93,6 @@
 }
 .s1 .ih-listing-images {
     margin-top: 10px;
-    min-height: 100px;
     background-color: #eee;
 }
 .s1 .ih-listing-details {
