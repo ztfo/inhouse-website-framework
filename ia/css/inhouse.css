@@ -112,6 +112,9 @@ input[type="radio"] {
 .dropdown-menu {
   padding-bottom: 0;
 }
+.modal {
+  z-index: 1080;
+}
 /* bs resets end*/
 
 /* uk resets */
