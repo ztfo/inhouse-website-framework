@@ -61,7 +61,7 @@
                     </ul>
                 </li>
             </ul>
-            <a href="#/" class="navbar-logo inlineblock"><img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo" class="img-responsive"/></a>
+            <a href="#/" class="navbar-logo inlineblock"><img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo" class="img-responsive" /></a>
             <ul class="nav navbar-nav navbar-right" role="menubar">
                 <li ng-repeat="link in navbar | startFrom: halfway" ng-class="link.children !== undefined">
                     <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase">
