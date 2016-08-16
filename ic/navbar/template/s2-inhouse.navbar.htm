@@ -34,7 +34,7 @@
                     <img itemprop="logo" ng-src="{{agent.emblem}}" alt="{{agent.teamName}} logo" class="hidden" />
                 </a>
             </div>
-            <div class="navbar-collapse" ng-class="{collapse: isCollapsed}" id="mainNav">
+            <div class="navbar-collapse fs" ng-class="{collapse: isCollapsed}" id="mainNav">
                 <ul class="nav navbar-nav navbar-right" role="menubar">
                     <li ng-repeat="link in navbar" ng-class="link.children !== undefined">
                         <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase" ng-click="$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed"><span itemprop="name">{{link.display}}</span></a>
