@@ -1,5 +1,4 @@
 /* global */
-
 .ih-nav {
   border: 0;
   border-top: 7px solid #fff;
@@ -7,7 +6,6 @@
   position: absolute;
   width: 100%;
 }
-
 .ih-nav, .navbar-brand {
     z-index: 1000 !important;
     height: auto !important;
@@ -25,8 +23,9 @@
     position: fixed !important;
 }
 
-/* s1 - default horizontal full-width absolute to top */
+/** AGENT STORIES **/
 
+/* s1 */
 .s1.ih-nav.iha {
     position: absolute;
     top: 0;
@@ -44,8 +43,7 @@
     width: 100%;
 }
 
-/* s2 - stacked brand logo center top */
-
+/* s2 */
 .s2.ih-nav>.container {
     height: 100%;
 }
@@ -80,7 +78,6 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
-
 .s2.ih-cta {
     border-top: 7px solid #fff;
     padding: 10px;
@@ -90,7 +87,6 @@
 }
 
 /* s3 */
-
 .s3 .navbar-header {
     float: none;
 }
@@ -99,7 +95,6 @@
 }
 
 /* s4 */
-
 .s4.ih-nav .navbar-center {
     position: absolute;
     top: 0;
@@ -117,13 +112,21 @@
     float: none;
 }
 
+/** PROPERTY STORIES **/
+
+/* p1 */
+.p1 .navbar-brand {
+  width: 300px;
+}
+
+
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     /* s1 */
-    .navbar-brand>img {
+    .s1 .navbar-brand>img {
         width: 280px;
         margin-top: 15px;
     }
@@ -131,26 +134,26 @@
 }
 @media screen and (min-width: 376px) and (max-width: 768px) {
     /* s1 */
-    .navbar-brand {
+    .s1 .navbar-brand {
         float: none;
         width: 100%;
         text-align: center;
         display: block;
         height: auto;
     }
-    .navbar-header {
+    .s1 .navbar-header {
         float: none;
         width: 100%;
         text-align: center;
     }
-    .navbar-brand>img {
+    .s1 .navbar-brand>img {
         display: inline-block;
         width: 300px;
     }
-    #mainNav>ul>li {
+    .s1 #mainNav>ul>li {
         padding: 5px 0 !important;
     }
-    .navbar-right {
+    .s1 .navbar-right {
         float: none !important;
         width: 100%;
         margin-right: 0 !important;
