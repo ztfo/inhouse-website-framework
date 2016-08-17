@@ -12,6 +12,7 @@
       <div class="ih-about-text col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <h2>
           <span itemprop="name">{{agent.agentName}}</span>
+          <span itemprop="title">{{agent.team[0].title}}</span>
           <div class="about-social">
             <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
             <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
