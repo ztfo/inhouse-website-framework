@@ -97,7 +97,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1029;
+    z-index: 1050;
     text-align: center;
     padding-top: 20%;
     background: -webkit-linear-gradient(left, #ddd, #eee);
@@ -120,7 +120,7 @@
     background: -webkit-radial-gradient( #3277b2, #5BC64D);
     background: radial-gradient( #3277b2, #5BC64D);
     background-size: 500% 500%;
-    z-index: 1030;
+    z-index: 1080;
     -webkit-animation: loadingBar 5s ease infinite;
     animation: loadingBar 5s ease infinite;
 }
