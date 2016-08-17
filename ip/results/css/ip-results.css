@@ -363,11 +363,14 @@
     border-radius: 3px;
     margin-bottom: 20px;
     padding: 0;
-    height: 275px;
+    height: auto;
     overflow: hidden;
 }
 .s3 .ih-listing-block>div {
     height: 100%;
+}
+.s3 .ih.property-img {
+  height: 285px !important;
 }
 .s3 .property-img>a {
     background-repeat: no-repeat;
