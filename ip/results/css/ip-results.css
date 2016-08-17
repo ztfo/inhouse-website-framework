@@ -421,7 +421,7 @@
         min-height: 165px;
     }
     .s2 .ih-listing-card {
-        min-height: 360px;
+        min-height: 430px;
     }
     .s2 .ih-ft-listing-link {
         min-height: 150px !important;
@@ -434,7 +434,7 @@
         height: 200px !important;
     }
     .s2 .ih-listing-card {
-        min-height: 370px !important;
+        min-height: 450px !important;
     }
 }
 @media screen and (min-width: 376px) and (max-width: 768px) {
