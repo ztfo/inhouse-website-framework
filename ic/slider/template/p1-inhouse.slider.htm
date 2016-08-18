@@ -1,18 +1,25 @@
 <section class="p1 ih-slider container-fluid">
-
-
-<div class="ih-banner">
-  <div class="banner-top">
-
-  </div>
-  <div class="address-bottom">
-
-  </div>
-</div>
-
-
+    <div class="container">
+        <div class="ih-banner">
+            <div class="container-fluid">
+                <div class="col-lg-7 bkc-02 fw">
+                    <h1>{{listing.listingCommunity}}</h1>
+                    <h3>{{listing.listingAddress}}</h3>
+                    <div class="home-facts">
+                      <span class="fact">{{listing.beds_total}} <small class="text-uppercase">Bedrooms</small></span>
+                      <span class="fact">{{listing.baths_total}} <small class="text-uppercase">Baths</small></span>
+                      <span class="fact">{{listing.sq_total}} <small class="text-uppercase">{{listing.sizeUnit}}</small></span>
+                    </div>
+                </div>
+                <div class="col-lg-5 bkc-01 fw">
+                  <h1>{{listing.price}}</h1>
+                  <a href="#/" class="btn btn-primary">Schedule Visit</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="bottom-btn fw">
-        <i class="fa fa-angle-down"></i>
+        <a href="#/"><i class="fa fa-angle-down"></i></a>
     </div>
     <div class="ih-slider-row p1 row">
         <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
