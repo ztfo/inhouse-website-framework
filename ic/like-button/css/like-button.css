@@ -14,6 +14,9 @@
 .ih-liked .fa-heart {
     display: inline !important;
 }
+.ih-mls-status-Closed .ih-like-btn {
+  display: none;
+}
 
 /* featured listing slider */
 .ih-ft-listing .ih-like-btn {

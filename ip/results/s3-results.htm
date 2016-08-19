@@ -104,11 +104,11 @@
         </div>
 
         <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
-          <div class="ih property-img col-lg-4 col-md-4 col-sm-4 col-xs-12 nopad">
+          <div class="ih property-img col-lg-4 col-md-4 col-sm-6 col-xs-12 nopad">
             <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
             <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
           </div>
-          <div class="property-data col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="property-data col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <header>
               <h3>{{home.address}}</h3>
               <h6 class="text-uppercase text-muted"><strong>{{home.city}} {{home.state}}, {{home.zipcode}}</strong></h6>
@@ -163,7 +163,7 @@
 
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 property-description visible-lg-inline-block bkc-02 fw hidden-xs">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 property-description bkc-02 fw hidden-xs">
             <h4>About Home</h4>
             <p class="fs">
               {{home.PublicRemarks|limitTo:130:0|words|sentence}}..
