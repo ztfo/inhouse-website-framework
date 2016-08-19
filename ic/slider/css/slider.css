@@ -46,7 +46,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-animation: headerFlow 99s ease infinite;
-            animation: headerFlow 99s ease infinite;
+    animation: headerFlow 99s ease infinite;
 }
 .s1 .ih-slider-inner .item {
     height: 600px;
@@ -158,7 +158,7 @@
 /* s4 */
 
 .s4.ih-slider {
-  height: calc(100vh);
+    height: calc(100vh);
 }
 .s4.ih-slider-row {
     position: relative;
@@ -217,6 +217,7 @@
     height: 100%;
     width: 100%;
 }
+
 /* s5 */
 
 .s5 .ih-greeting {
@@ -227,6 +228,9 @@
 
 /* p1 */
 
+.p1.ih-slider, .p1 .ih-slider-row, .p1 #mainSlider, .p1.ih-slider .item {
+    height: calc(100vh);
+}
 .p1 .ih-greeting {
     z-index: 10;
     position: absolute;
@@ -236,10 +240,15 @@
     right: 0;
     padding-top: 15em;
 }
-
-.p1 .carousel-control,
-.p1 .carousel-indicators {
-  display: none;
+.p1 .carousel-control, .p1 .carousel-indicators {
+    display: none;
+}
+.p1.ih-slider .ih-banner {
+    bottom: 10%;
+    left: 0;
+    width: 750px;
+    height: 160px;
+    z-index: 50;
 }
 
 /* slider fade and kenburns animations */
@@ -285,6 +294,7 @@
         transform: scale(5) translate(0, 90%);
     }
 }
+
 /* headerFlow animaions */
 
 @-webkit-keyframes headerFlow {
@@ -305,7 +315,6 @@
         background-size: 200%;
     }
 }
-
 @keyframes headerFlow {
     0%, 100% {
         background-position: 0% 50%;
@@ -366,7 +375,7 @@
 
 /*** responsive ***/
 
-@media screen and (min-width: 1921px) {}
+@media screen and (min-width: 1919px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /* global */
     .ih-greeting {
@@ -381,11 +390,16 @@
     /* s1 */
     .s1 .ih-slider-row {
         -webkit-animation: initial;
-                animation: initial;
+        animation: initial;
         background-size: cover;
     }
     .s1 .ih-slider-row>div {
         padding: 0;
+    }
+
+    /* p1 */
+    .p1.ih-slider .ih-banner {
+        left: 5%;
     }
 }
 @media screen and (min-width: 376px) and (max-width: 768px) {
@@ -400,7 +414,7 @@
     /* s1 */
     .s1 .ih-slider-row {
         -webkit-animation: initial;
-                animation: initial;
+        animation: initial;
         background-size: cover;
     }
     .s1 .ih-slider-row>div {
@@ -419,7 +433,7 @@
     /* s1 */
     .s1 .ih-slider-row {
         -webkit-animation: initial;
-                animation: initial;
+        animation: initial;
         background-size: cover;
     }
     .s1 .ih-slider-row>div {

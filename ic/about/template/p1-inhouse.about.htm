@@ -1,63 +1,34 @@
-<section class="s1 ih-about">
-    <div class="container">
-        <h1 class="ih-header text-center fc-01">About {{listing.streetAddress}}</h1>
-        <div class="row">
-            <p class="fs text-center col-md-6 col-md-offset-3">
-                {{listing.editableText}}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis. Cras tempus, enim nec porta ornare, urna magna consectetur nibh, eget semper sapien velit viverra nibh. In vitae est at lacus
-                consectetur malesuada in ac magna. Nam porttitor dui eu aliquam fermentum.
-            </p>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-ic-bed"></div>
-                <div class="fact-label">
-                    Bedroom
-                </div>
-                <div class="fact-value">
-                    {{listing.beds_total}}
-                </div>
-            </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-ic-baths"></div>
-                <div class="fact-label">
-                    Baths
-                </div>
-                <div class="fact-value">
-                    {{listing.baths_total}}
-                </div>
-            </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-ic-sqft"></div>
-                <div class="fact-label">
-                    {{listing.sizeUnit}}
-                </div>
-                <div class="fact-value">
-                    {{listing.sq_total}}
-                </div>
-            </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-ic-house"></div>
-                <div class="fact-label">
-                    Stories
-                </div>
-                <div class="fact-value">
-                    {{listing.stories}}
-                </div>
-            </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-ic-acre"></div>
-                <div class="fact-label">
-                    Acreage
-                </div>
-                <div class="fact-value">
-                    {{listing.lotSize}}
-                </div>
-            </div>
-        </div>
-        <div class="row text-center">
-            <a href="#/map" class="btn btn-default">View On Map</a>
-            <a href="#/map" class="btn btn-primary">Schedule Visit</a>
-        </div>
+<section class="p1 ih-about container-fluid">
+  <div class="container">
+    <div class="row">
+      <h1 class="ih-header fc-02 text-center">Meet Your Agent</h1>
     </div>
+    <div class="ih-about-inner row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <a href="#/bio/{{ agent.team[0].name | split: ' ':0 | lowercase }}" class="text-center">
+          <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square img-responsive">
+        </a>
+      </div>
+      <div class="ih-about-text col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <h2>
+          <span itemprop="name">{{agent.agentName}}</span>
+          <div class="about-social">
+            <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
+            <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+          </div>
+        </h2>
+        <h4>Realtor &reg; | {{agent.teamName}} - {{agent.brokerage}}</h4>
+        <p class="fo">
+          <strong><small class="text-uppercase"><a class="clean-link" href="mailto:{{agent.contactEmail}}">{{agent.contactEmail}}</a> | <a href="tel:{{agent.contactPhone | tel}}" class="clean-link">{{agent.contactPhone | tel}}</a></small></strong>
+        </p>
+        <div itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted">
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>

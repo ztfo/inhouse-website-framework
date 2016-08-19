@@ -1,6 +1,8 @@
-<section class="s2 ih-about">
+<section class="l1 ih-about container-fluid">
   <div class="container">
-
+    <div class="row">
+      <h1 class="ih-header fc-02 text-center">Meet Your Lender</h1>
+    </div>
     <div class="ih-about-inner row">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <a href="#/bio/{{ agent.team[0].name | split: ' ':0 | lowercase }}" class="text-center">
@@ -16,10 +18,10 @@
             <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
             <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
             <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>          
+            <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
           </div>
         </h2>
-        <h4>Realtor &reg; | {{agent.teamName}} - {{agent.brokerage}}</h4>
+        <h4>Mortgage Lender | {{lender.teamName}} - {{lender.brokerage}}</h4>
         <p class="fo">
           <strong><small class="text-uppercase"><a class="clean-link" href="mailto:{{agent.contactEmail}}">{{agent.contactEmail}}</a> | <a href="tel:{{agent.contactPhone | tel}}" class="clean-link">{{agent.contactPhone | tel}}</a></small></strong>
         </p>
