@@ -1,0 +1,62 @@
+<section class="s1 ih-about">
+    <div class="container">
+        <h1 class="ih-header text-center">About {{listing.streetAddress}}</h1>
+        <div class="row">
+            <p class="fs text-center col-md-6 col-md-offset-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis. Cras tempus, enim nec porta ornare, urna magna consectetur nibh, eget semper sapien velit viverra nibh. In vitae est at lacus
+                consectetur malesuada in ac magna. Nam porttitor dui eu aliquam fermentum. {{listing.listingDescription | limitTo: 250 }}
+            </p>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
+                <div class="ih-ic-bed"></div>
+                <div class="fact-label">
+                    Bedroom
+                </div>
+                <div class="fact-value">
+                    {{listing.beds_total}}
+                </div>
+            </div>
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
+                <div class="ih-ic-baths"></div>
+                <div class="fact-label">
+                    Baths
+                </div>
+                <div class="fact-value">
+                    {{listing.baths_total}}
+                </div>
+            </div>
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
+                <div class="ih-ic-sqft"></div>
+                <div class="fact-label">
+                    {{listing.sizeUnit}}
+                </div>
+                <div class="fact-value">
+                    {{listing.sq_total}}
+                </div>
+            </div>
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
+                <div class="ih-ic-house"></div>
+                <div class="fact-label">
+                    Stories
+                </div>
+                <div class="fact-value">
+                    {{listing.stories}}
+                </div>
+            </div>
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
+                <div class="ih-ic-acre"></div>
+                <div class="fact-label">
+                    Acreage
+                </div>
+                <div class="fact-value">
+                    {{listing.lotSize}}
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <a href="#/map" class="btn btn-default">View On Map</a>
+            <a href="#/map" class="btn btn-primary">Schedule Visit</a>
+        </div>
+    </div>
+</section>
