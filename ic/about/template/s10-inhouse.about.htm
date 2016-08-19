@@ -1,6 +1,6 @@
 <section class="s10 ih-about">
   <div class="container">
-    <h1 class="ih-header text-center" ng-repeat="member in agent.team">Meet {{member.name}}</h1>
+    <h1 class="ih-header text-center" ng-repeat="member in agent.team">Meet {{member.name | split: ' ':0}}</h1>
     <div class="ih-md-divider"></div>
     <h1 class="tagline text-center">{{agent.agentTagline}}</h1>
     <div class="ih-about-inner row">
