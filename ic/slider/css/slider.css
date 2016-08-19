@@ -9,6 +9,9 @@
 }
 .ih-slider .item {
     height: 750px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 .ih-greeting-picture img {
     width: 230px;
@@ -234,6 +237,11 @@
     padding-top: 15em;
 }
 
+.p1 .carousel-control,
+.p1 .carousel-indicators {
+  display: none;
+}
+
 /* slider fade and kenburns animations */
 
 .ih-slider .item>div {
@@ -277,7 +285,6 @@
         transform: scale(5) translate(0, 90%);
     }
 }
-
 /* headerFlow animaions */
 
 @-webkit-keyframes headerFlow {

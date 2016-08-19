@@ -1,10 +1,16 @@
-<section class="p1 ih-photo-slider">
-  <div id="photoSlider" class="owl-carousel">
-    <!--ng-repeat into 2 rows -->
-    <div class="listing-pic">
-      <a href="#/lightbox" class="block full" ng-style="background-image: url('{{listing.pictureURL}}')">
+<section class="p1 ih-photo-slider container-fluid">
+    <h1 class="ih-header text-center">Photo Gallery</h1>
+    <div class="row">
 
-      </a>
     </div>
-  </div>
+    <div class="row">
+        <div id="photoSlider" class="owl-carousel">
+            <!--ng-repeat into 2 rows -->
+            <div class="listing-pic">
+                <a href="#/lightbox" class="block full" ng-style="background-image: url('{{listing.pictureURL}}')">
+
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
