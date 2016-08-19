@@ -5,7 +5,7 @@ angular.module('inhouseApp')
 			classes: "@classes"
 		},
 		templateUrl : function(el, attrs) {
-			return 'ic/about/template/' + (attrs.config || 's1') + '-inhouse.photo-slider.htm';
+			return 'ic/photo-slider/template/' + (attrs.config || 's1') + '-inhouse.photo-slider.htm';
 		},
 		restrict: 'E',
 		controller: function($scope) {
