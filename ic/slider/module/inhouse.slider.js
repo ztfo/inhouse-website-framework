@@ -13,6 +13,7 @@ angular.module('inhouseApp')
 			nodefault: '@nodefault'
 		},
 		controller: function($scope) {
+			$scope.active = 0;
 			$scope.LandingComponent = window.storySettings.LandingComponent;
 			if(typeof $scope.LandingComponent.defaultSliderImages === 'object') {
 				var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));

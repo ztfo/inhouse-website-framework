@@ -1,4 +1,4 @@
-angular.module('inhouseApp', ['ngRoute'])
+angular.module('inhouseApp', ['ngRoute', 'ui.bootstrap'])
 .config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/', {
 		template: '<ih-landing-layout></ih-landing-layout>',

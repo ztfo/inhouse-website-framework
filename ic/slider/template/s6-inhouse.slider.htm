@@ -33,7 +33,13 @@
     <div class="ih-slider-row s6 row">
         <div class="container">
             <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
+              <div uib-carousel active="active" interval="5000" no-wrap="false" style="height:1000px;">
+                <div uib-slide ng-repeat="slide in slides" index="$index">
+                  <img ng-src="{{slide.image}}" style="margin:auto;width:100%;">
+                </div>
+              </div>
+
+                <!-- <div class="carousel-inner" role="listbox">
                     <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined && nodefault === undefined">
                         <div class="full-screen-image" ng-style="{'background-image':'url(' + LandingComponent.defaultSliderImage + ')'}"></div>
                     </div>
@@ -43,7 +49,7 @@
                             {{slide.caption}}
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
