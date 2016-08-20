@@ -1,0 +1,70 @@
+<section class="p1 ih-about">
+    <div class="container ih-about-inner">
+        <div class="row">
+            <h1 class="ih-header text-center fc-02">About {{listing.streetAddress}}</h1>
+        </div>
+        <div class="listing-info row">
+            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="pull-left">
+                    <img src="" class="img-responsive" alt="icon" />
+                </div>
+                <div class="pull-right">
+                    <h4>{{listing.beds_total}}</h4>
+                </div>
+            </div>
+            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="pull-left">
+                    <img src="" class="img-responsive" alt="icon" />
+                </div>
+                <div class="pull-right">
+                    <h4>{{listing.baths_total}}</h4>
+                </div>
+            </div>
+            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="pull-left">
+                    <img src="" class="img-responsive" alt="icon" />
+                </div>
+                <div class="pull-right">
+                    <h4>{{listing.sq_total | number}}</h4>
+                    <h6>SQFT</h6>
+                </div>
+            </div>
+            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="pull-left">
+                    <img src="" class="img-responsive" alt="icon" />
+                </div>
+                <div class="pull-right">
+                    <h4>{{listing.stories}}</h4>
+                    <h6>STORIES</h6>
+                </div>
+            </div>
+            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="pull-left">
+                    <img src="" class="img-responsive" alt="icon" />
+                </div>
+                <div class="pull-right">
+                    <h4>{{listing.lot_size}}</h4>
+                    <h6>ACRES</h6>
+                </div>
+            </div>
+            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="pull-left">
+                    <img src="" class="img-responsive" alt="icon" />
+                </div>
+                <div class="pull-right">
+                    <h6>listing Type</h6>
+                    <h4>{{listing.type}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="proerty-text row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <h3>Agent Remarks</h3>
+            </div>
+            <div class="share-social col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
+
+            </div>
+        </div>
+        <ih-listing-details></ih-listing-details>
+    </div>
+</section>
