@@ -1,5 +1,15 @@
 angular.module('inhouseApp', ['ngRoute', 'ui.bootstrap'])
-.config(function($routeProvider, $locationProvider) {
+.run(function($http){
+	$http.post('https://inhouse-api.herokuapp.com/auth/login?email=josh@getinhouse.io&password=Test').success(
+    function(res){
+      // console.log('mainCtrl res: ', res);
+    }
+  );
+})
+.config(function($routeProvider, $locationProvider, $httpProvider) {
+
+	$httpProvider.defaults.withCredentials = true;
+
 	$routeProvider.when('/', {
 		template: '<ih-landing-layout></ih-landing-layout>',
 		controller: 'mainController'
