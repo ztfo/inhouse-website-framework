@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .controller('contentController', ['$rootScope', '$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($rootScope, $compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
 	if(typeof window.agentSettings.content[$route.content] === 'undefined') {
 		var content = window.agentSettings.content;

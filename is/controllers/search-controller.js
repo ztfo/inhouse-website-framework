@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .controller('searchController', ['$rootScope', '$timeout', '$scope', 'inhouseApi', '$routeParams', '$location', '$window', function($rootScope, $timeout, $scope, inhouseApi, $routeParams, $location, $window) {
 	$scope.$on('$destroy', function() {
 		//prevent the modal from persisting

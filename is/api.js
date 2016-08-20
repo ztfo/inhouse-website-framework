@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .factory('inhouseApi', function($http) {
 	var urlBase = 'https://www.getinhouse.io/api/v1/';
 	var inhouseApi = {};

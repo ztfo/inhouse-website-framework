@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihResources', function() {
 	return {
 		templateUrl : function(el, attrs) {

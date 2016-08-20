@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihDropdown', ['$routeParams', '$timeout', '$location', '$document', function($routeParams, $timeout, $location, $document) {
 	return {
 		restrict: 'E',

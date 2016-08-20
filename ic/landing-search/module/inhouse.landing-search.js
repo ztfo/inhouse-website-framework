@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihLandingSearch', ['$location', function($location) {
 	return {
 		templateUrl : function(el, attrs) {

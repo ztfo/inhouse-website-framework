@@ -1,4 +1,4 @@
-angular.module('inhouseApp').service('listingService', function($http, $q){
+angular.module('ihframework').service('listingService', function($http, $q){
   var selectedListing = {};
 
   var assignSelectedListing = function(listing){

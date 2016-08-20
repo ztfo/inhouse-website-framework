@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .filter('words', function() {
 	return function(text) {
 		if(typeof text == 'string') {

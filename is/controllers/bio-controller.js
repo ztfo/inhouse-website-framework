@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .controller('bioController', ['$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', function($scope, $route, inhouseApi, $timeout, $sce) {
 	$('.ih-content-body').addClass('hidden');
 	$scope.bioAgent = window.agentSettings.bio[$route.agent];

@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
 		templateUrl : function(el, attrs) {

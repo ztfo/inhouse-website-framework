@@ -1,4 +1,4 @@
-angular.module('inhouseApp').factory('userData', function($http, $q, $window){
+angular.module('ihframework').factory('userData', function($http, $q, $window){
 
   var theUserData = '',
       theWebsiteData = '',

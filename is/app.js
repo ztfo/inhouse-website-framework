@@ -1,4 +1,4 @@
-angular.module('inhouseApp', ['ngRoute', 'ui.bootstrap'])
+angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData'])
 .run(function($http){
 	$http.post('https://inhouse-api.herokuapp.com/auth/login?email=josh@getinhouse.io&password=Test').success(
     function(res){

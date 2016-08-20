@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihNavbar', ['$rootScope', '$window', function($rootScope, $window) {
 	return {
 		templateUrl : function(el, attrs) {

@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('bootstrapSlider', ['$window', '$filter', '$routeParams', '$timeout', function($window, $filter, $routeParams, $timeout) {
 	return {
 		restrict: 'E',

@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .controller('subdivisionController', ['$scope', 'inhouseApi', '$window', '$routeParams', function($scope, inhouseApi, $window, $routeParams) {
 	$scope.showModal = function(content) {
 		var modal = {};

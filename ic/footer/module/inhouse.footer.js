@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihFooter', ['$window', function($window) {
 	return {
 		templateUrl : function(el, attrs) {

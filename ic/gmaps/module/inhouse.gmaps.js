@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihGmaps', function() {
 	return {
 		template: '<div></div>',

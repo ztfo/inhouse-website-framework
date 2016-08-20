@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihPartners', ['$window', '$timeout', function ($window, $timeout) {
 	return {
 		templateUrl : function(el, attrs) {

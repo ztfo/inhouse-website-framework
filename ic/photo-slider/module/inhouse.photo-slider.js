@@ -1,4 +1,4 @@
-angular.module('inhouseApp').directive('ihPhotoSlider', function(){
+angular.module('ihframework').directive('ihPhotoSlider', function(){
   return {
     restrict: 'E',
     template: '<ng-include src="theUrl"></ng-include>',

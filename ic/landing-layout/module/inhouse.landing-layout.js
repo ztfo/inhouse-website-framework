@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihLandingLayout', ['$window', function($window) {
 	return {
 		template: function() {

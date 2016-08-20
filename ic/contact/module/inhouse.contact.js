@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihContact', ['$timeout', function($timeout) {
 	return {
 		templateUrl : function(el, attrs) {

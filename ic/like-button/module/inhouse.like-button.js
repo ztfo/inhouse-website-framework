@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihLikeButton', ['inhouseApi', function(inhouseApi) {
 	return {
 		replace: true,

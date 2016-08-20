@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihModal', [function() {
 	return {
 		restrict: 'E',

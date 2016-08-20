@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihListingLoader', ['$routeParams', '$timeout', '$location', function($routeParams, $timeout, $location) {
 	return {
 		scope: {

@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .controller('subfloorplanController', ['$scope', 'inhouseApi', '$window', '$routeParams', '$timeout', function($scope, inhouseApi, $window, $routeParams, $timeout) {
 	if(typeof $window.storySettings.subdivisions !== 'undefined') {
 		var subdivs = $window.storySettings.subdivisions;

@@ -1,4 +1,4 @@
-angular.module('inhouseApp')
+angular.module('ihframework')
 .directive('ihListingMap', ['$filter', '$interpolate', '$templateCache', '$http', function($filter, $interpolate, $templateCache, $http) {
 	return {
 		template: '<div></div>',
