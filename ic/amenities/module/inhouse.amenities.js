@@ -1,11 +1,11 @@
 angular.module('inhouseApp')
-.directive('ihNearby', function() {
+.directive('ihAmenities', function() {
 	return {
 		scope: {
 			classes: "@classes"
 		},
 		templateUrl : function(el, attrs) {
-			return 'ic/nearby/template/' + (attrs.config || 's1') + '-inhouse.nearby.htm';
+			return 'ic/amenities/template/' + (attrs.config || 's1') + '-inhouse.amenities.htm';
 		},
 		restrict: 'E',
 		controller: function($scope) {

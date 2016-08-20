@@ -1,7 +1,7 @@
-<section class="p1 ih-about container-fluid">
+<section class="l1 ih-about container-fluid">
   <div class="container">
     <div class="row">
-      <h1 class="ih-header fc-02 text-center">Meet Your Agent</h1>
+      <h1 class="ih-header fc-02 text-center">Meet Your Lender</h1>
     </div>
     <div class="ih-about-inner row">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -21,7 +21,7 @@
             <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
           </div>
         </h2>
-        <h4>Realtor &reg; | {{agent.teamName}} - {{agent.brokerage}}</h4>
+        <h4>Mortgage Lender | {{lender.teamName}} - {{lender.brokerage}}</h4>
         <p class="fo">
           <strong><small class="text-uppercase"><a class="clean-link" href="mailto:{{agent.contactEmail}}">{{agent.contactEmail}}</a> | <a href="tel:{{agent.contactPhone | tel}}" class="clean-link">{{agent.contactPhone | tel}}</a></small></strong>
         </p>

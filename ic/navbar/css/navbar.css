@@ -1,9 +1,10 @@
 /* global */
+
 .ih-nav {
-  border: 0;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
-  position: absolute;
-  width: 100%;
+    border: 0;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
 }
 .ih-nav, .navbar-brand {
     z-index: 1000 !important;
@@ -24,7 +25,9 @@
 
 /** AGENT STORIES **/
 
+
 /* s1 */
+
 .s1.ih-nav.iha {
     position: absolute;
     top: 0;
@@ -43,6 +46,7 @@
 }
 
 /* s2 */
+
 .s2.ih-nav>.container {
     height: 100%;
 }
@@ -86,6 +90,7 @@
 }
 
 /* s3 */
+
 .s3 .navbar-header {
     float: none;
 }
@@ -94,6 +99,7 @@
 }
 
 /* s4 */
+
 .s4.ih-nav .navbar-center {
     position: absolute;
     top: 0;
@@ -113,11 +119,30 @@
 
 /** PROPERTY STORIES **/
 
-/* p1 */
-.p1 .navbar-brand {
-  width: 200px;
-}
 
+/* p1 */
+
+.p1 .navbar-brand {
+    width: 220px;
+}
+.p1 .navbar-nav {
+    margin: 10px 0;
+}
+.p1.ih-nav .ih-social-icon {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+}
+.p1 .ih-cta {
+    padding: 0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+.p1 .navbar-nav>li:first-child {
+  padding-right: 15px;
+  padding-top: 5px;
+}
 
 /*** *** responsive *** ***/
 
@@ -260,7 +285,9 @@
 }
 
 /* bootstrap resets */
-  .navbar-default {
+
+.navbar-default {
     border-radius: 0;
-  }
+}
+
 /*  bs ends */

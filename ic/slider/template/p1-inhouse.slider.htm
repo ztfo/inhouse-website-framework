@@ -1,19 +1,21 @@
 <section class="p1 ih-slider container-fluid">
-    <div class="iha tp bm rt lt">
-        <div class="iha ih-banner">
-            <div class="container-fluid full nopad">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 fullh bkc-02 fw">
-                    <h1>{{listing.listingCommunity}}</h1>
-                    <h3>{{listing.listingAddress}}</h3>
-                    <div class="home-facts">
-                        <span class="fact">{{listing.beds_total}} <small class="text-uppercase">Bedrooms</small></span>
-                        <span class="fact">{{listing.baths_total}} <small class="text-uppercase">Baths</small></span>
-                        <span class="fact">{{listing.sq_total}} <small class="text-uppercase">{{listing.sizeUnit}}</small></span>
+    <div class="iha afull">
+        <div class="ih container fullh">
+            <div class="iha ih-banner">
+                <div class="container-fluid full nopad">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 fullh bkc-02 fw">
+                        <h1>InHouse Headquarters{{listing.listingCommunity}}</h1>
+                        <h5 class="text-uppercase">33 S. 5th Ave, Tucson, AZ 85701 {{listing.listingAddress}}</h5>
+                        <div class="home-facts">
+                            <span class="fact">15{{listing.beds_total}} <small class="text-uppercase">Bedrooms</small></span>
+                            <span class="fact">2{{listing.baths_total}} <small class="text-uppercase">Baths</small></span>
+                            <span class="fact">5,213{{listing.sq_total}} <small class="text-uppercase">{{listing.sizeUnit}}</small></span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 fullh bkc-01 fw">
-                    <h1>{{listing.price}}</h1>
-                    <a href="#/" class="btn btn-primary">Schedule Visit</a>
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 fullh bkc-01 fw">
+                        <h1>$25,000,000{{listing.price}}</h1>
+                        <a href="#/" class="btn btn-primary">Schedule Visit</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,12 +23,12 @@
     <div class="bottom-btn fw">
         <a href="#/"><i class="fa fa-angle-down"></i></a>
     </div>
-    <div class="ih-slider-row p1 row">
-        <div id="{{slider}}" class="ih-slider-inner carousel-inner carousel slide carousel-fade" data-ride="carousel">
-          <div uib-carousel active="active" interval="5000" no-wrap="false">
-            <div uib-slide ng-repeat="slide in slides" index="$index" ng-style="{'background-image':'url(' + slide.image + ')'}">
+    <div class="ih-slider-row row">
+        <div id="{{slider}}" class="ih-slider-inner carousel-inner carousel slide carousel-fade full" data-ride="carousel">
+            <div uib-carousel active="active" interval="5000" no-wrap="false" class="full fade in">
+                <div uib-slide ng-repeat="slide in slides" index="$index" ng-style="{'background-image':'url(' + slide.image + ')'}">
+                </div>
             </div>
-          </div>
         </div>
     </div>
 </section>

@@ -23,6 +23,7 @@ input:active, input:focus { outline: none !important; }
 .bf5 { background-color: #f5f5f5 !important; }
 .bee { background-color: #eee !important; }
 .bdd { background-color: #ddd !important; }
+.tpt { opacity: .85 !important; }
 /* background ends */
 
 /* format styles */

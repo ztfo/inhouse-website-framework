@@ -227,32 +227,6 @@
     right: 0;
     font-size: 15px;
 }
-/* p1 */
-
-.p1.ih-about .ih-about-text {
-    padding: 0;
-}
-.p1 .ih-about-inner {
-    margin: 60px auto;
-    text-transform: uppercase;
-}
-.p1 .ih-about-inner h2 {
-    letter-spacing: 2px;
-}
-.p1 .ih-about-inner .bio {
-    text-transform: none;
-}
-.p1.ih-about .about-social {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-.p1.ih-about p {
-    -webkit-column-count: 2;
-    /* chrome, safari, opera */
-    -moz-column-count: 2;
-    /* firefox */
-    column-count: 2;
-}
 
 /*** *** responsive *** ***/
 
