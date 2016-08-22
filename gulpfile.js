@@ -11,9 +11,12 @@ var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 
 var paths = {
+  allJS: './**/*.js',
+  allCSS: './**/*.css',
   frameworkComponents: 'ic/**/*.js',
   frameworkMain: 'is/app.js',
   frameworkTemplates: './**/*.htm',
+  pugTemplates: './**/*.pug'
   frameworkCSS: './**/*.css',
 }
 
@@ -25,32 +28,32 @@ gulp.task('css-concat', function () {
 
 gulp.task('concat', function(cb) {
     pump([
-         gulp.src([paths.frameworkMain, paths.frameworkComponents]),
+         gulp.src([paths.allJS]),
          sourcemaps.init(),
          concat('all.min.js'),
         //  babel({ presets: ['es2015']}),
         //  .pipe(uglify())
          sourcemaps.write(),
-         gulp.dest('build/')
+         gulp.dest('./')
      ],
      function(err){ console.log('pipe finished: ', err || 'no errors');}
    );
 });
 
-gulp.task ('moveFwTemplates', function() {
-  pump([
-    gulp.src ([paths.frameworkTemplates, '!inhouse-website-framework/index.html']),
-    gulp.dest('build/templates/framework')
-  ],
-  function(err){
-    console.log('move finished: ', err || 'no errors');
-  })
-});
+// gulp.task ('moveFwTemplates', function() {
+//   pump([
+//     gulp.src ([paths.frameworkTemplates, '!inhouse-website-framework/index.html']),
+//     gulp.dest('build/templates/framework')
+//   ],
+//   function(err){
+//     console.log('move finished: ', err || 'no errors');
+//   })
+// });
 
 
 //render all other pages
 gulp.task ('otherTemplates', function() {
-  return gulp.src ([paths.editorTemplates])
+  return gulp.src ([paths.pugTemplates])
   .pipe(pug())
   .on('error', function(e){
     console.log('PUG ERROR >>>> ', e.message)
@@ -64,66 +67,66 @@ gulp.task ('otherTemplates', function() {
 // Template Caching
 /////////////////
 gulp.task('templatecache', function() {
-  gulp.src(['build/templates/**/*.html', 'build/templates/**/*.htm'])
+  gulp.src(['./**/*.html', paths.frameworkTemplates])
   .pipe(templateCache({standalone: true, base: function(file) {
     return 'build/templates/' + file.relative;
   }}))
-  .pipe(gulp.dest('build'));
+  .pipe(gulp.dest('./'));
 });
 
-//////////////////
-// Stylus Tasks
-/////////////////
-gulp.task('styles', function() {
-  gulp.src(['src/**/*.styl'])
-      .pipe(stylus())
-      .pipe(gulp.dest('src'))
-});
+// //////////////////
+// // Stylus Tasks
+// /////////////////
+// gulp.task('styles', function() {
+//   gulp.src(['src/**/*.styl'])
+//       .pipe(stylus())
+//       .pipe(gulp.dest('src'))
+// });
+//
+// //////////////////
+// // Pug Tasks
+// /////////////////
+//
+// gulp.task ('index_page', function() {
+//   gulp.src ('./src/index.pug')
+//     .pipe(pug())
+//     .on('error', function(e){
+//       console.log('PUG ERROR >>>> ', e.message)
+//       this.emit('end')
+//     })
+//     .pipe(ext_replace('.blade.php'))
+//     .pipe(gulp.dest('../resources/views'))
+// });
 
-//////////////////
-// Pug Tasks
-/////////////////
-
-gulp.task ('index_page', function() {
-  gulp.src ('./src/index.pug')
-    .pipe(pug())
-    .on('error', function(e){
-      console.log('PUG ERROR >>>> ', e.message)
-      this.emit('end')
-    })
-    .pipe(ext_replace('.blade.php'))
-    .pipe(gulp.dest('../resources/views'))
-});
-
-//////////////////
-// Babel Tasks
-/////////////////
-
-gulp.task('babel', function() {
-  // add function to ignore the scripts after initial build
-	gulp.src(['src/**/*.js'])
-    .pipe(sourcemaps.init())
-		.pipe(babel({
-			presets: ['es2015']
-		}))
-    .on('error', function(e){
-      console.log("BABEL ERROR >>>> ", e.message)
-      this.emit('end')
-    })
-    .pipe(sourcemaps.write())
-		.pipe(gulp.dest('build'))
-});
+// //////////////////
+// // Babel Tasks
+// /////////////////
+//
+// gulp.task('babel', function() {
+//   // add function to ignore the scripts after initial build
+// 	gulp.src(['src/**/*.js'])
+//     .pipe(sourcemaps.init())
+// 		.pipe(babel({
+// 			presets: ['es2015']
+// 		}))
+//     .on('error', function(e){
+//       console.log("BABEL ERROR >>>> ", e.message)
+//       this.emit('end')
+//     })
+//     .pipe(sourcemaps.write())
+// 		.pipe(gulp.dest('build'))
+// });
 
 //////////////////
 // Watch Tasks
 /////////////////
 
 gulp.task('watch', function(){
-  gulp.watch([paths.editorTemplates, paths.frameworkTemplates, '!inhouse-website-framework/index.html'], ['otherTemplates']);
-  gulp.watch(paths.theTemplates, ['templatecache']);
-  gulp.watch(paths.styles, ['styles']);
-  gulp.watch(paths.indexPage, ['index_page']);
-  gulp.watch(['inhouse-website-framework/is/app.js', 'src/app.js', paths.editorComponents, paths.frameworkComponents], ['concat']);
+  gulp.watch([paths.pugTemplates], ['otherTemplates']);
+  gulp.watch(['./**/*.html', paths.frameworkTemplates], ['templatecache']);
+ //  gulp.watch(paths.styles, ['styles']);
+ //  gulp.watch(paths.indexPage, ['index_page']);
+  gulp.watch([paths.allJS], ['concat']);
 });
 
-gulp.task('default', ['otherTemplates', 'moveFwTemplates', 'templatecache', 'concat', 'css-concat', 'watch']);
+gulp.task('default', ['otherTemplates', 'templatecache', 'concat', 'watch']);
