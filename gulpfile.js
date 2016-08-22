@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps')
+var sourcemaps = require('gulp-sourcemaps');
 var stylus = require('gulp-stylus');
 var pug = require ('gulp-pug');
 var babel = require('gulp-babel');
@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var pump = require('pump');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var paths = {
   allJS: './**/*.js',
@@ -16,9 +17,9 @@ var paths = {
   frameworkComponents: 'ic/**/*.js',
   frameworkMain: 'is/app.js',
   frameworkTemplates: './**/*.htm',
-  pugTemplates: './**/*.pug'
+  pugTemplates: './**/*.pug',
   frameworkCSS: './**/*.css',
-}
+};
 
 gulp.task('css-concat', function () {
   return gulp.src([paths.editorCSS, paths.frameworkCSS])
@@ -28,13 +29,12 @@ gulp.task('css-concat', function () {
 
 gulp.task('concat', function(cb) {
     pump([
-         gulp.src([paths.allJS]),
-         sourcemaps.init(),
-         concat('all.min.js'),
-        //  babel({ presets: ['es2015']}),
-        //  .pipe(uglify())
-         sourcemaps.write(),
-         gulp.dest('./')
+        gulp.src(['./is/app.js', paths.allJS, '!./gulpfile.js', '!./templates.js']),
+        babel({ presets: ['es2015']}),
+        ngAnnotate(),
+        concat('all.min.js'),
+        uglify(),
+        gulp.dest('./')
      ],
      function(err){ console.log('pipe finished: ', err || 'no errors');}
    );
@@ -56,8 +56,8 @@ gulp.task ('otherTemplates', function() {
   return gulp.src ([paths.pugTemplates])
   .pipe(pug())
   .on('error', function(e){
-    console.log('PUG ERROR >>>> ', e.message)
-    this.emit('end')
+    console.log('PUG ERROR >>>> ', e.message);
+    this.emit('end');
   })
   .pipe(gulp.dest('build/templates'));
 });
@@ -126,7 +126,7 @@ gulp.task('watch', function(){
   gulp.watch(['./**/*.html', paths.frameworkTemplates], ['templatecache']);
  //  gulp.watch(paths.styles, ['styles']);
  //  gulp.watch(paths.indexPage, ['index_page']);
-  gulp.watch([paths.allJS], ['concat']);
+  gulp.watch(['./is/app.js', paths.allJS, '!./gulpfile.js', '!./templates.js'], ['concat']);
 });
 
 gulp.task('default', ['otherTemplates', 'templatecache', 'concat', 'watch']);

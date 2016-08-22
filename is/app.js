@@ -1,10 +1,13 @@
 angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData'])
-.run(function($http){
-	$http.post('https://inhouse-api.herokuapp.com/auth/login?email=josh@getinhouse.io&password=Test').success(
-    function(res){
-      // console.log('mainCtrl res: ', res);
-    }
-  );
+.run(function($http, $rootScope, userData){
+	// $http.post('https://inhouse-api.herokuapp.com/auth/login?email=josh@getinhouse.io&password=Test').success(
+  //   function(res){
+  //     // console.log('mainCtrl res: ', res);
+  //   }
+  // );
+	$rootScope.theUserData = userData.userData;
+	$rootScope.theWebsiteData = userData.storySettings;
+
 })
 .config(function($routeProvider, $locationProvider, $httpProvider) {
 
@@ -49,7 +52,6 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData'])
 	.otherwise({
 		templateUrl: 'ip/system/404.htm'
 	});
-;
 
 //	$locationProvider.html5Mode(true);
 })
