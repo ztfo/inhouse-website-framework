@@ -29,7 +29,7 @@ gulp.task('css-concat', function () {
 
 gulp.task('concat', function(cb) {
     pump([
-        gulp.src(['./templates.js', './is/app.js', paths.allJS, '!./gulpfile.js']),
+        gulp.src(['!./templates.js', './is/app.js', paths.allJS, '!./gulpfile.js']),
         babel({ presets: ['es2015']}),
         ngAnnotate(),
         concat('all.min.js'),
@@ -67,7 +67,7 @@ gulp.task ('otherTemplates', function() {
 // Template Caching
 /////////////////
 gulp.task('templatecache', function() {
-  gulp.src(['./**/*.html', paths.frameworkTemplates])
+  gulp.src(['!./index.html', './**/*.html', paths.frameworkTemplates])
   .pipe(templateCache({standalone: true, base: function(file) {
     return 'build/templates/' + file.relative;
   }}))
