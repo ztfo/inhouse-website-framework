@@ -29,7 +29,7 @@ gulp.task('css-concat', function () {
 
 gulp.task('concat', function(cb) {
     pump([
-        gulp.src(['./is/app.js', paths.allJS, '!./gulpfile.js', '!./templates.js']),
+        gulp.src(['./templates.js', './is/app.js', paths.allJS, '!./gulpfile.js']),
         babel({ presets: ['es2015']}),
         ngAnnotate(),
         concat('all.min.js'),
