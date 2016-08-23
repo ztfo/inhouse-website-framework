@@ -22,9 +22,9 @@ var paths = {
 };
 
 gulp.task('css-concat', function () {
-  return gulp.src([paths.editorCSS, paths.frameworkCSS])
+  return gulp.src([paths.allCSS])
     .pipe(concatCss('bundle.css'))
-    .pipe(gulp.dest('test/'));
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('concat', function(cb) {
@@ -127,4 +127,4 @@ gulp.task('watch', function(){
   gulp.watch(['./is/app.js', paths.allJS, '!./gulpfile.js', '!./templates.js'], ['concat']);
 });
 
-gulp.task('default', ['otherTemplates', 'templatecache', 'concat', 'watch']);
+gulp.task('default', ['otherTemplates', 'templatecache', 'concat', 'css-concat', 'watch']);
