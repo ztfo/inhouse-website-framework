@@ -90,4 +90,4 @@ gulp.task('watch', function(){
   gulp.watch(['./dev/ic/**/*.js'], ['concat']);
 });
 
-gulp.task('default', ['pugTemplates', 'templatecache', 'concat-vendor', 'concat', 'concat-css', 'watch']);
+gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-css', 'watch']);

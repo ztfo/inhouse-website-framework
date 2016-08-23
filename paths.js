@@ -1,11 +1,11 @@
 module.exports = {
   allJS: './dev/**/*.js',
   allCSS: [
-    "dev/ia/css/bootstrap-slider.min.css",
-    "dev/ia/css/owl.carousel.css",
-    "dev/ia/css/uikit.css",
-    "dev/ia/css/sticky.min.css",
-    "dev/ia/css/slidenav.css",
+    // "dev/ia/css/bootstrap-slider.min.css",
+    // "dev/ia/css/owl.carousel.css",
+    // "dev/ia/css/uikit.css",
+    // "dev/ia/css/sticky.min.css",
+    // "dev/ia/css/slidenav.css",
     "dev/ia/css/inhouse.css",
     "dev/ia/icons/property-icons/ih-icons.css",
     "dev/ic/about/css/about.css",
@@ -43,5 +43,5 @@ module.exports = {
   frameworkMain: 'dev/is/app.js',
   frameworkTemplates: './dev/**/*.htm',
   pugTemplates: './dev/**/*.pug',
-  vendorFiles: './ia/js/*.js'
+  // vendorFiles: './ia/js/*.js'
 };

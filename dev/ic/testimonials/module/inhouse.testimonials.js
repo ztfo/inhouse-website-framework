@@ -38,6 +38,7 @@ angular.module('ihframework')
 				scope.$on('storyLoaded', function(event, args) {
 					scope.testimonials = [];
 					scope.testimonials = args[scope.testimonial].testimonials;
+					console.log(scope.testimonials);
 
 					if((typeof scope.source === 'undefined' || scope.source == 'hybrid') && typeof scope.$root.theWebsiteData.testimonials === 'object') {
 						for (var i = 0; i < scope.$root.theWebsiteData.testimonials.length; i++) {
