@@ -7,7 +7,7 @@ angular.module('ihframework')
 		link: function(scope, element, attrs, ngModelCtrl) {
 			var format = (function(attrs) {
 				return function(value) {
-					if(attrs.filter == 'price') { // this could be expanded easily to support other filter types. 
+					if(attrs.filter == 'price') { // this could be expanded easily to support other filter types.
 						if(typeof value == 'object') {
 							return [
 								$filter('currency')(value[0], '$', 0),
@@ -43,8 +43,8 @@ angular.module('ihframework')
 				};
 			})(scope, element, attrs));
 		},
-		controller: function($scope) {
-			$scope.agent = window.agentSettings;
+		controller: function($rootScope, $scope) {
+			$scope.agent = $rootScope.theUserData;
 		}
 	};
 }]);

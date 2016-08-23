@@ -6,7 +6,7 @@ angular.module('ihframework')
 			classes: "@classes"
 		},
 		restrict: 'E',
-		controller: function($scope, $filter) {
+		controller: function($rootScope, $scope, $filter) {
 			$scope.theUrl = function(config){
 				config = 's1';
 				return 'build/templates/ic/navbar/template/' + config + '-inhouse.navbar.htm';
@@ -23,12 +23,12 @@ angular.module('ihframework')
 				$scope.inhouseAgentUserLoggedIn = args;
 			});
 			$scope.inhouseAgentUserLoggedIn = $scope.$parent.inhouseAgentUserLoggedIn;
-			$scope.navbar = window.storySettings.NavBar;
+			$scope.navbar = $rootScope.theWebsiteData.NavBar;
 			$scope.halfway = Math.ceil($scope.navbar.length/2);
-			if(typeof window.storySettings.navbarClasses !== 'undefined') {
-				$scope.classes = window.storySettings.navbarClasses;
+			if(typeof $rootScope.theWebsiteData.navbarClasses !== 'undefined') {
+				$scope.classes = $rootScope.theWebsiteData.navbarClasses;
 			}
-			$scope.agent = window.agentSettings;
+			$scope.agent = $rootScope.theUserData;
 		}
 
 

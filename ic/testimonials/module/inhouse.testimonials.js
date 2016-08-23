@@ -29,8 +29,8 @@ angular.module('ihframework')
 		},
 		link: function(scope, element, attrs) {
 			if(typeof scope.source !== 'undefined' && scope.source == 'storySettings') {
-				if(typeof window.storySettings.testimonials !== 'undefined') {
-					scope.testimonials = window.storySettings.testimonials;
+				if(typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
+					scope.testimonials = $rootScope.theWebsiteData.testimonials;
 				}
 			}
 			if(typeof scope.source === 'undefined' || scope.source == 'hybrid' || scope.source == 'zillow') {
@@ -39,9 +39,9 @@ angular.module('ihframework')
 					scope.testimonials = [];
 					scope.testimonials = args[scope.testimonial].testimonials;
 
-					if((typeof scope.source === 'undefined' || scope.source == 'hybrid') && typeof window.storySettings.testimonials === 'object') {
-						for (var i = 0; i < window.storySettings.testimonials.length; i++) {
-							scope.testimonials.unshift(window.storySettings.testimonials[i]);
+					if((typeof scope.source === 'undefined' || scope.source == 'hybrid') && typeof scope.$root.theWebsiteData.testimonials === 'object') {
+						for (var i = 0; i < scope.$root.theWebsiteData.testimonials.length; i++) {
+							scope.testimonials.unshift(scope.$root.theWebsiteData.testimonials[i]);
 						}
 					}
 					$timeout(function() {
@@ -53,14 +53,14 @@ angular.module('ihframework')
 							}
 
 							var testimonialsIndex = 0;
-							window.storySettings.landingLayout.map(function(item, index, arr){
+							scope.$root.theWebsiteData.landingLayout.map(function(item, index, arr){
 								if(item.responsive){
 									testimonialsIndex = index;
 								}
 							})
 
-							if(window.storySettings.landingLayout[testimonialsIndex].responsive) {
-								params.responsive = window.storySettings.landingLayout[testimonialsIndex].responsive;
+							if(scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive) {
+								params.responsive = scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive;
 							}
 							element.find('.owl-carousel').owlCarousel(params);
 						} else {

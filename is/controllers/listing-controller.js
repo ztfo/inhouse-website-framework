@@ -4,7 +4,7 @@ angular.module('ihframework')
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
 
-	if(typeof $window.storySettings.listingConfig !== 'undefined' && $window.storySettings.listingConfig === 's2') {
+	if(typeof $$rootScope.theWebsiteData.listingConfig !== 'undefined' && $$rootScope.theWebsiteData.listingConfig === 's2') {
 		$rootScope.$broadcast('hideFooter');	
 		$scope.$on('$destroy', function() {
 			$rootScope.$broadcast('showFooter');
@@ -16,13 +16,13 @@ angular.module('ihframework')
 		$('#accountModal').off('hidden.bs.modal');
 		$('#accountModal').modal('hide');
 	});
-	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + window.agentSettings.userId + '/' + $scope.mls;
+	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $scope.mls;
 	$scope.getData = function() {
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
 			} else {
 				if(typeof localStorage.inhouseViewedListings !== 'undefined') { //user isn't signed in yet, and they have viewed listings already
-					if($window.storySettings.disableLeadSignup !== true) {
+					if($$rootScope.theWebsiteData.disableLeadSignup !== true) {
 						$scope.viewedListings = $.parseJSON(localStorage.inhouseViewedListings);
 						if($scope.viewedListings.indexOf($scope.mls) !== -1) {
 						} else if((localStorage.inhouseSearchFreebies !== 'false' && $scope.viewedListings.length > 2 )|| (localStorage.inhouseSearchFreebies == 'false' && $scope.viewedListings.length > 5)) {

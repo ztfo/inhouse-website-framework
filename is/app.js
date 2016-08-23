@@ -18,39 +18,39 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData', 'templates
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'ip/results/' + (window.storySettings.resultsConfig || 's1') + '-results.htm',
+		templateUrl: 'build/templates/ip/results/' + ( /*$rootScope.theWebsiteData.resultsConfig ||*/ 's1') + '-results.htm',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'ip/listing/' + (window.storySettings.listingConfig || 's1') + '-listing.htm',
+		templateUrl: 'build/templates/ip/listing/' + (/*$rootScope.theWebsiteData.listingConfig ||*/ 's1') + '-listing.htm',
 		controller: 'listingController'
 	})
 	.when('/privacy', {
-		templateUrl: 'ip/system/' + (window.storySettings.privacyConfig || 's1') + '-visitor-privacy.htm',
+		templateUrl: 'build/templates/ip/system/' + (/*$rootScope.theWebsiteData.privacyConfig ||*/ 's1') + '-visitor-privacy.htm',
 		controller: 'privacyController'
 	})
 	.when('/missing', {
-		templateUrl: 'ip/system/404.htm'
+		templateUrl: 'build/templates/ip/system/404.htm'
 	})
 	.when('/:content', {
-		templateUrl: 'ip/content/' + (window.storySettings.contentConfig  || 's1') + '-content.htm',
+		templateUrl: 'build/templates/ip/content/' + (/*$rootScope.theWebsiteData.contentConfig  ||*/ 's1') + '-content.htm',
 		controller: 'contentController'
 	})
 	.when('/bio/:agent/', {
-		templateUrl: 'ip/bios/' + (window.storySettings.bioConfig || 's1') + '-bios.htm',
+		templateUrl: 'build/templates/ip/bios/' + (/*$rootScope.theWebsiteData.bioConfig ||*/ 's1') + '-bios.htm',
 		controller: 'bioController'
 	})
 	.when('/subdivision/:sub', {
-		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subdivision.inhouse.htm',
+		templateUrl: 'build/templates/ip/subdivisions/' + (/*$rootScope.theWebsiteData.subdivConfig ||*/ 's1') + '-subdivision.inhouse.htm',
 		controller: 'subdivisionController'
 	})
 	.when('/subdivision/:sub/floorplan/:floorplan', {
-		templateUrl: 'ip/subdivisions/' + (window.storySettings.subdivConfig || 's1') + '-subfloorplan.inhouse.htm',
+		templateUrl: 'build/templates/ip/subdivisions/' + (/*$rootScope.theWebsiteData.subdivConfig ||*/ 's1') + '-subfloorplan.inhouse.htm',
 		controller: 'subfloorplanController'
 	})
 	.otherwise({
-		templateUrl: 'ip/system/404.htm'
+		templateUrl: 'build/templates/ip/system/404.htm'
 	});
 
 //	$locationProvider.html5Mode(true);
@@ -59,10 +59,10 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData', 'templates
 	$rootScope.$on("$routeChangeSuccess", function(e, data) {
 		$scope.$broadcast('viewChanged', data.controller);
 	});
-	$scope.agent = window.agentSettings;
-	$scope.story = window.storySettings;
+	$scope.agent = $rootScope.theUserData;
+	$scope.story = $rootScope.theWebsiteData;
 	$scope.freebies = true;
-	$scope.max = window.storySettings.maxSearchNoLead || 3;
+	$scope.max = $rootScope.theUserData.maxSearchNoLead || 3;
 
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseAgentUser !== 'undefined') {

@@ -5,7 +5,7 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
     link: function(scope, elem, attrs){
       attrs.config = 'p1';
     },
-    controller: function($scope, listingService){
+    controller: function($rootScope, $scope, listingService){
       $scope.listing = {
         listingDescription: '',
         photos: []

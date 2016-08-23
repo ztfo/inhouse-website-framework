@@ -1,8 +1,8 @@
 angular.module('ihframework')
-.directive('ihLandingLayout', ['$window', function($window) {
+.directive('ihLandingLayout', ['$window', '$rootScope', function($window, $rootScope) {
 	return {
 		template: function() {
-			var dirs = $window.storySettings.landingLayout;
+			var dirs = $rootScope.theWebsiteData.landingLayout;
 			var beginningDivTag = '<div>',
 					others = ' ',
 					template = '';

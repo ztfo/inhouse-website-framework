@@ -7,13 +7,13 @@ angular.module('ihframework')
 			maxNavColumns: "@navColumns"
 		},
 		restrict: 'E',
-		controller: function($scope) {
+		controller: function($rootScope, $scope) {
 			$scope.theUrl = function(config){
 				config = 's1';
 				return 'build/templates/ic/footer/template/' + config + '-inhouse.footer.htm';
 			};
 
-			$scope.NavBar = window.storySettings.NavBar;
+			$scope.NavBar = $rootScope.theWebsiteData.NavBar;
 			$scope.footerColumns = [];
 
 			$scope.$on('viewChanged', function(event, args) {
@@ -27,7 +27,7 @@ angular.module('ihframework')
 					$scope.footerColumns.push($scope.NavBar[i]);
 				}
 			}
-			$scope.agent = window.agentSettings;
+			$scope.agent = $rootScope.theUserData;
 			$scope.$on('hideFooter', function() {
 				$scope.showFooter = false;
 			});

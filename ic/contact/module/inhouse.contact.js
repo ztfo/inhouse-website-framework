@@ -24,16 +24,16 @@ angular.module('ihframework')
 				});
 			});
 		},
-		controller: ['$scope', 'inhouseApi', function($scope, inhouseApi) {
+		controller: ['$rootScope', '$scope', 'inhouseApi', function($rootScope, $scope, inhouseApi) {
 			$scope.theUrl = function(config){
 				config = 'f1';
 				return 'build/templates/ic/contact/template/' + config + '-inhouse.contact.htm';
 			};
 			$timeout(function() {
-				$scope.$broadcast('listingLoaded', {address: window.agentSettings.contactAddress, zipcode: window.agentSettings.contactAddress2});
+				$scope.$broadcast('listingLoaded', {address: $rootScope.theUserData.contactAddress, zipcode: $rootScope.theUserData.contactAddress2});
 			});
-			$scope.navbar = window.storySettings.NavBar;
-			$scope.agent = window.agentSettings;
+			$scope.navbar = $rootScope.theWebsiteData.NavBar;
+			$scope.agent = $rootScope.theUserData;
 			$scope.inhouseApi = inhouseApi;
 			$scope.scope = $scope;
 			if(typeof $scope.contact == 'undefined') {

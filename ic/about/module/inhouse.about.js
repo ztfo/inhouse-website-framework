@@ -13,7 +13,7 @@ angular.module('ihframework')
 				return 'build/templates/ic/about/template/' + config + '-inhouse.about.htm';
 			};
 			console.log(userData);
-			$scope.agent = window.agentSettings;
+			$scope.agent = $rootScope.theUserData;
 		}
 	};
 });

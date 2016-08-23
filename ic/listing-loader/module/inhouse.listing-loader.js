@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.directive('ihListingLoader', ['$routeParams', '$timeout', '$location', function($routeParams, $timeout, $location) {
+.directive('ihListingLoader', ['$rootScope', '$routeParams', '$timeout', '$location', function($rootScope, $routeParams, $timeout, $location) {
 	return {
 		scope: {
 			config: '@',
@@ -9,8 +9,10 @@ angular.module('ihframework')
 		templateUrl : function(el, attrs) {
 			return 'build/templates/ic/listing-loader/template/' + (attrs.config || 's1') + '-inhouse.listing-loader.htm';
 		},
+		controller: function($rootScope){
+			$scope.agent = $rootScope.theUserData;
+		},
 		link: function(scope) {
-			scope.agent = window.agentSettings;
 		}
 	};
 }]);

@@ -1,9 +1,9 @@
 angular.module('ihframework')
-.factory('inhouseApi', function($http) {
+.factory('inhouseApi', function($http, $rootScope) {
 	var urlBase = 'https://www.getinhouse.io/api/v1/';
 	var inhouseApi = {};
-	var userId = window.agentSettings.userId;
-	var userHash = window.agentSettings.userHash;
+	var userId = $rootScope.theUserData.userId;
+	var userHash = $rootScope.theUserData.userHash;
 
 	inhouseApi.getData = function(data) {
 		data.userId = userId;
@@ -23,7 +23,7 @@ angular.module('ihframework')
 		}
 
 		var url = urlBase + (typeof data.resource !== 'undefined' ? data.resource : '') + '?' + $.param(data);
-			
+
 		var result = $http.jsonp(url);
 		return result;
 	};

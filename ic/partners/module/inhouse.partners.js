@@ -12,9 +12,9 @@ angular.module('ihframework')
 				config = 's1';
 				return 'build/templates/ic/partners/template/' + config + '-inhouse.partners.htm';
 			};
+			$scope.partners = $rootScope.theWebsiteData.partners;
 		},
 		link: function (scope, element, attrs) {
-			scope.partners = $window.storySettings.partners;
 
 			$timeout(function () {
 				element.find(".owl-carousel.partner-carousel").owlCarousel({

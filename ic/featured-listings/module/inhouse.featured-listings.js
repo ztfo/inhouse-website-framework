@@ -9,15 +9,15 @@ angular.module('ihframework')
 			pull: '@',
 			slider: '='
 		},
-		controller: function ($scope) {
+		controller: function ($rootScope, $scope) {
 			$scope.theUrl = function(config){
 				config = 's1';
 				return 'build/templates/ic/featured-listings/template/' + config + '-inhouse.featured-listings.htm';
 			};
 
-			$scope.maxFeaturedListings = window.storySettings.maxFeaturedListings || 4;
-			$scope.LandingComponent = window.storySettings.FeaturedListings;
-			$scope.agent = window.agentSettings;
+			$scope.maxFeaturedListings = $rootScope.theWebsiteData.maxFeaturedListings || 4;
+			$scope.LandingComponent = $rootScope.theWebsiteData.FeaturedListings;
+			$scope.agent = $rootScope.theUserData;
 			$scope.listingLoaders = 10;
 			$scope.range = function (min, max, step) {
 				step = step || 1;

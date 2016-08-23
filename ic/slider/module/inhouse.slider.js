@@ -24,9 +24,9 @@ angular.module('ihframework')
 				$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];
 			}
 
-			$scope.agent = window.agentSettings;
+			$scope.agent = $rootScope.theUserData;
 
-			$scope.landingLayout = window.storySettings.landingLayout[0];
+			$scope.landingLayout = $rootScope.theWebsiteData.landingLayout[0];
 		},
 		link: function(scope, element, attrs) {
 

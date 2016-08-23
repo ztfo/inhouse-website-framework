@@ -6,12 +6,12 @@ angular.module('ihframework')
 		},
 		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
-		controller: function($scope) {
+		controller: function($rootScope, $scope) {
 			$scope.theUrl = function(config){
 				config = 's1';
 				return 'build/templates/ic/amenities/template/' + config + '-inhouse.amenities.htm';
 			};
-			$scope.agent = window.agentSettings;
+			$scope.agent = $rootScope.theUserData;
 		}
 	};
 });

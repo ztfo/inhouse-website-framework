@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.controller('subdivisionController', ['$scope', 'inhouseApi', '$window', '$routeParams', function($scope, inhouseApi, $window, $routeParams) {
+.controller('subdivisionController', ['$rootScope', '$scope', 'inhouseApi', '$window', '$routeParams', function($rootScope, $scope, inhouseApi, $window, $routeParams) {
 	$scope.showModal = function(content) {
 		var modal = {};
 		if(typeof $scope.subdivision[content] !== 'undefined') {
@@ -12,8 +12,8 @@ angular.module('ihframework')
 			$scope.$broadcast('showModal', {modal: modal, id: 'subdivModal'});
 		}
 	};
-	if(typeof $window.storySettings.subdivisions !== 'undefined') {
-		var subdivs = $window.storySettings.subdivisions;
+	if(typeof $$rootScope.theWebsiteData.subdivisions !== 'undefined') {
+		var subdivs = $$rootScope.theWebsiteData.subdivisions;
 		for (var i = 0; i < subdivs.length; i++) {
 			if(typeof subdivs[i].key !== 'undefined' && subdivs[i].key == $routeParams.sub) {
 				$scope.subdivision = subdivs[i];

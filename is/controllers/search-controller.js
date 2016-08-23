@@ -14,7 +14,7 @@ angular.module('ihframework')
 		}
 	}
 	
-	if(typeof $window.storySettings.resultsConfig !== 'undefined' && $window.storySettings.resultsConfig === 's2') {
+	if(typeof $$rootScope.theWebsiteData.resultsConfig !== 'undefined' && $$rootScope.theWebsiteData.resultsConfig === 's2') {
 		$rootScope.$broadcast('hideFooter');	
 		$scope.$on('$destroy', function() {
 			$rootScope.$broadcast('showFooter');
@@ -114,7 +114,7 @@ angular.module('ihframework')
 				} else {
 					localStorage.inhouseSearchCount = $scope.searchCount;
 				}
-				var max = window.storySettings.maxSearchNoLead || 3;
+				var max = $rootScope.theWebsiteData.maxSearchNoLead || 3;
 				if($scope.searchCount > max) {
 					$('#accountModal').modal('show');
 					$('#accountModal').off('hidden.bs.modal');
@@ -125,7 +125,7 @@ angular.module('ihframework')
 					})($scope));
 					return;
 				} else {
-					if($window.storySettings.disableLeadSignup !== true) {
+					if($$rootScope.theWebsiteData.disableLeadSignup !== true) {
 						$scope.searchCount ++;
 					}
 				}
