@@ -22,7 +22,45 @@ var paths = {
 };
 
 gulp.task('css-concat', function () {
-  return gulp.src([paths.allCSS])
+  return gulp.src([
+    "ia/css/bootstrap-slider.min.css",
+    "ia/css/owl.carousel.css",
+    "ia/css/uikit.css",
+    "ia/css/sticky.min.css",
+    "ia/css/slidenav.css",
+    "ia/css/inhouse.css",
+    "ia/icons/property-icons/ih-icons.css",
+    "ic/about/css/about.css",
+    "ic/featured-listings/css/featured-listings.css",
+    "ic/landing-search/css/search.css",
+    "ic/listing-loader/css/listing-loader.css",
+    "ic/navbar/css/navbar.css",
+    "ic/slider/css/slider.css",
+    "ic/resources/css/resources.css",
+    "ic/testimonials/css/testimonials.css",
+    "ic/contact/css/contact.css",
+    "ic/partners/css/partners.css",
+    "ic/footer/css/footer.css",
+    "ic/listing-details/css/listing-details.css",
+    "ic/divider/css/divider.css",
+    "ic/like-button/css/like-button.css",
+    "ic/visitor-modal/css/visitor-modal.css",
+    "ic/amenities/css/amenities.css",
+    "ic/listing-map/css/listing-map.css",
+    "ic/nearby/css/nearby.css",
+    "ic/photo-slider/css/photo-slider.css",
+    "ic/about-listing/css/about-listing.css",
+    "ip/bios/css/ip-bios.css",
+    "ip/contact/css/ip-contact.css",
+    "ip/content/css/ip-content.css",
+    "ip/journal/css/ip-journal.css",
+    "ip/listing/css/ip-listing.css",
+    "ip/narratives/css/ip-narratives.css",
+    "ip/results/css/ip-results.css",
+    "ip/search/css/ip-search.css",
+    "ip/subdivisions/css/ip-subdivisions.css",
+    "ip/system/css/ip-system.css"
+  ])
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest('./'));
 });
