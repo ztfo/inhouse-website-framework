@@ -12,6 +12,7 @@ angular.module('ihframework')
 				return 'build/templates/ic/nearby/template/' + config + '-inhouse.nearby.htm';
 			};
 			$scope.agent = $rootScope.theUserData;
+			console.log('testings');
 		}
 	};
 });

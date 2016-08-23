@@ -13,16 +13,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 
 var paths = {
   allJS: './**/*.js',
-  allCSS: './**/*.css',
-  frameworkComponents: 'ic/**/*.js',
-  frameworkMain: 'is/app.js',
-  frameworkTemplates: './**/*.htm',
-  pugTemplates: './**/*.pug',
-  frameworkCSS: './**/*.css',
-};
-
-gulp.task('css-concat', function () {
-  return gulp.src([
+  allCSS: [
     "ia/css/bootstrap-slider.min.css",
     "ia/css/owl.carousel.css",
     "ia/css/uikit.css",
@@ -60,14 +51,23 @@ gulp.task('css-concat', function () {
     "ip/search/css/ip-search.css",
     "ip/subdivisions/css/ip-subdivisions.css",
     "ip/system/css/ip-system.css"
-  ])
+  ],
+  frameworkComponents: 'ic/**/*.js',
+  frameworkMain: 'is/app.js',
+  frameworkTemplates: './**/*.htm',
+  pugTemplates: './**/*.pug',
+  frameworkCSS: './**/*.css',
+};
+
+gulp.task('css-concat', function () {
+  return gulp.src(paths.allCSS)
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('concat', function(cb) {
+gulp.task('concat', function() {
     pump([
-        gulp.src(['!./templates.js', './is/app.js', paths.allJS, '!./gulpfile.js', '!./ua/data/user-data.js']),
+        gulp.src(['!templates.js', 'is/app.js', paths.allJS, '!./gulpfile.js', '!ua/data/user-data.js']),
         babel({ presets: ['es2015']}),
         ngAnnotate(),
         concat('all.min.js'),
@@ -161,6 +161,7 @@ gulp.task('templatecache', function() {
 
 gulp.task('watch', function(){
   gulp.watch([paths.pugTemplates], ['otherTemplates']);
+  gulp.watch([paths.allCSS], ['css-concat']);
   gulp.watch(['./**/*.html', paths.frameworkTemplates], ['templatecache']);
   gulp.watch(['./is/app.js', paths.allJS, '!./gulpfile.js', '!./templates.js'], ['concat']);
 });
