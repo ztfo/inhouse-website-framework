@@ -12,8 +12,8 @@ angular.module('ihframework')
 			$scope.$broadcast('showModal', {modal: modal, id: 'subdivModal'});
 		}
 	};
-	if(typeof $$rootScope.theWebsiteData.subdivisions !== 'undefined') {
-		var subdivs = $$rootScope.theWebsiteData.subdivisions;
+	if(typeof $rootScope.theWebsiteData.subdivisions !== 'undefined') {
+		var subdivs = $rootScope.theWebsiteData.subdivisions;
 		for (var i = 0; i < subdivs.length; i++) {
 			if(typeof subdivs[i].key !== 'undefined' && subdivs[i].key == $routeParams.sub) {
 				$scope.subdivision = subdivs[i];

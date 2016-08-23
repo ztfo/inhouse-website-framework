@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .controller('subfloorplanController', ['$rootScope', '$scope', 'inhouseApi', '$window', '$routeParams', '$timeout', function($rootScope, $scope, inhouseApi, $window, $routeParams, $timeout) {
-	if(typeof $$rootScope.theWebsiteData.subdivisions !== 'undefined') {
-		var subdivs = $$rootScope.theWebsiteData.subdivisions;
+	if(typeof $rootScope.theWebsiteData.subdivisions !== 'undefined') {
+		var subdivs = $rootScope.theWebsiteData.subdivisions;
 		for (var i = 0; i < subdivs.length; i++) {
 			if(typeof subdivs[i].key !== 'undefined' && subdivs[i].key == $routeParams.sub) {
 				if(typeof subdivs[i].floorplans !== 'undefined') {

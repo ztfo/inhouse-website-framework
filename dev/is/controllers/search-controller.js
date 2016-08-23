@@ -13,14 +13,14 @@ angular.module('ihframework')
 			$scope.searchCount = localStorage.inhouseSearchCount;
 		}
 	}
-	
-	if(typeof $$rootScope.theWebsiteData.resultsConfig !== 'undefined' && $$rootScope.theWebsiteData.resultsConfig === 's2') {
-		$rootScope.$broadcast('hideFooter');	
+
+	if(typeof $rootScope.theWebsiteData.resultsConfig !== 'undefined' && $rootScope.theWebsiteData.resultsConfig === 's2') {
+		$rootScope.$broadcast('hideFooter');
 		$scope.$on('$destroy', function() {
 			$rootScope.$broadcast('showFooter');
 		});
 	}
-	
+
 	//responsive screensize hiding the map
 	if($window.innerWidth < 1367) {
 		$scope.mapShown = false;
@@ -54,7 +54,7 @@ angular.module('ihframework')
 			}
 		}
 	};
-	
+
 	//some logic to prevent double loading
 	$scope.noWipe = false;
 	$scope.firstLoad = true;
@@ -76,7 +76,7 @@ angular.module('ihframework')
 			$scope.filters.page ++;
 		}
 	};
-	
+
 	//creates an array to use for ng-repeat
 	$scope.range = function(min, max, step) {
 		step = step || 1;
@@ -92,17 +92,17 @@ angular.module('ihframework')
 		if($scope.mapShown) {
 			$scope.mapShown = false;
 			$timeout(function() {
-				$scope.$broadcast('refreshMap');	
+				$scope.$broadcast('refreshMap');
 			});
 		} else {
 			$scope.mapShown = true;
 			$timeout(function() {
-				$scope.$broadcast('refreshMap');	
+				$scope.$broadcast('refreshMap');
 			});
 		}
 	};
 
-	//search mls 
+	//search mls
 	$scope.searchMLS = function() {
 		$scope.firstLoad = false;
 
@@ -125,7 +125,7 @@ angular.module('ihframework')
 					})($scope));
 					return;
 				} else {
-					if($$rootScope.theWebsiteData.disableLeadSignup !== true) {
+					if($rootScope.theWebsiteData.disableLeadSignup !== true) {
 						$scope.searchCount ++;
 					}
 				}

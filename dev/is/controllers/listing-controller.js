@@ -4,8 +4,8 @@ angular.module('ihframework')
 	window.mls = $scope.mls;
 	$('#main-view').addClass('load-overlay');
 
-	if(typeof $$rootScope.theWebsiteData.listingConfig !== 'undefined' && $$rootScope.theWebsiteData.listingConfig === 's2') {
-		$rootScope.$broadcast('hideFooter');	
+	if(typeof $rootScope.theWebsiteData.listingConfig !== 'undefined' && $rootScope.theWebsiteData.listingConfig === 's2') {
+		$rootScope.$broadcast('hideFooter');
 		$scope.$on('$destroy', function() {
 			$rootScope.$broadcast('showFooter');
 		});
@@ -22,7 +22,7 @@ angular.module('ihframework')
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
 			} else {
 				if(typeof localStorage.inhouseViewedListings !== 'undefined') { //user isn't signed in yet, and they have viewed listings already
-					if($$rootScope.theWebsiteData.disableLeadSignup !== true) {
+					if($rootScope.theWebsiteData.disableLeadSignup !== true) {
 						$scope.viewedListings = $.parseJSON(localStorage.inhouseViewedListings);
 						if($scope.viewedListings.indexOf($scope.mls) !== -1) {
 						} else if((localStorage.inhouseSearchFreebies !== 'false' && $scope.viewedListings.length > 2 )|| (localStorage.inhouseSearchFreebies == 'false' && $scope.viewedListings.length > 5)) {
@@ -35,7 +35,7 @@ angular.module('ihframework')
 							})($scope));
 							return;
 						} else { //not at the limit yet. push this mls to the stack
-							$scope.viewedListings.push($scope.mls);	
+							$scope.viewedListings.push($scope.mls);
 							localStorage.inhouseViewedListings = JSON.stringify($scope.viewedListings);
 						}
 					}
