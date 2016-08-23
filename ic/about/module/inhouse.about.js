@@ -1,10 +1,10 @@
 angular.module('ihframework')
-.directive('ihAbout', function($templateCache) {
+.directive('ihAbout', function() {
 	return {
 		scope: {
 			classes: "@classes"
 		},
-		templateUrl: 'build/templates/ic/about/template/s1-inhouse.about.htm',
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		controller: function($scope, $rootScope, userData) {
 			$scope.config = $rootScope.theWebsiteData;

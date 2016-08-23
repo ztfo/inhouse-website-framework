@@ -4,12 +4,14 @@ angular.module('ihframework')
 		scope: {
 			classes: "@classes"
 		},
-		templateUrl : function(el, attrs) {
-			return 'ic/nearby/template/' + (attrs.config || 's1') + '-inhouse.nearby.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
-		controller: function($scope) {
-			$scope.agent = window.agentSettings;
+		controller: function($rootScope, $scope) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/nearby/template/' + config + '-inhouse.nearby.htm';
+			};
+			$scope.agent = $rootScope.theUserData;
 		}
 	};
 });

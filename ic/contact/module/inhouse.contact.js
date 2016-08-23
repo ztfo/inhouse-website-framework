@@ -1,9 +1,7 @@
 angular.module('ihframework')
 .directive('ihContact', ['$timeout', function($timeout) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/contact/template/' + (attrs.config || 's1') + '-inhouse.contact.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		transclude: true,
 		scope: {
 			contactMessage: "@message",
@@ -27,6 +25,10 @@ angular.module('ihframework')
 			});
 		},
 		controller: ['$scope', 'inhouseApi', function($scope, inhouseApi) {
+			$scope.theUrl = function(config){
+				config = 'f1';
+				return 'build/templates/ic/contact/template/' + config + '-inhouse.contact.htm';
+			};
 			$timeout(function() {
 				$scope.$broadcast('listingLoaded', {address: window.agentSettings.contactAddress, zipcode: window.agentSettings.contactAddress2});
 			});

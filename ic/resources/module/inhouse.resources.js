@@ -1,13 +1,17 @@
 angular.module('ihframework')
 .directive('ihResources', function() {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/resources/template/' + (attrs.config || 's1') + '-inhouse.resources.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		scope: {
 			classes: "@classes"
 		},
 		restrict: 'E',
+		controller: function($rootScope, $scope){
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/resources/template/' + config + '-inhouse.resources.htm';
+			};
+		},
 		link: function(scope, el, attrs) {
 			scope.limit = attrs.limit || 3;
 			var resources = [];

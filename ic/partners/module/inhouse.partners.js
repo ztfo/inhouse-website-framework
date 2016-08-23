@@ -1,13 +1,17 @@
 angular.module('ihframework')
 .directive('ihPartners', ['$window', '$timeout', function ($window, $timeout) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/partners/template/' + (attrs.config || 's1') + '-inhouse.partners.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
 			classes: "@classes"
+		},
+		controller: function($rootScope, $scope){
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/partners/template/' + config + '-inhouse.partners.htm';
+			};
 		},
 		link: function (scope, element, attrs) {
 			scope.partners = $window.storySettings.partners;

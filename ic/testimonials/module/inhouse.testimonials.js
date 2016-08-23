@@ -1,9 +1,7 @@
 angular.module('ihframework')
 .directive('ihTestimonials', ['$timeout', function($timeout) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/testimonials/template/' + (attrs.config || 's1') + '-inhouse.testimonials.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
@@ -12,9 +10,14 @@ angular.module('ihframework')
 			source: '@',
 			max: '@'
 		},
-		controller: function($scope) {
-			$scope.LandingComponent = window.storySettings.LandingComponent;
-			$scope.agent = window.agentSettings;
+		controller: function($rootScope, $scope) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/testimonials/template/' + config + '-inhouse.testimonials.htm';
+			};
+
+			$scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
+			$scope.agent = $rootScope.theUserData;
 			$scope.range = function(min, max, step) {
 				step = step || 1;
 				var input = [];

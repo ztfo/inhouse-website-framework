@@ -4,11 +4,13 @@ angular.module('ihframework')
 		scope: {
 			classes: "@classes"
 		},
-		templateUrl : function(el, attrs) {
-			return 'ic/divider/template/' + (attrs.config || 's1') + '-inhouse.divider.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		controller: function($scope) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/divider/template/' + config + '-inhouse.divider.htm';
+			};
 			$scope.agent = window.agentSettings;
 		}
 	};

@@ -1,9 +1,7 @@
 angular.module('ihframework')
 .directive('ihSlider', ['inhouseApi', '$timeout', function(inhouseApi, $timeout) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/slider/template/' + (attrs.config || 's1') + '-inhouse.slider.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
@@ -12,9 +10,15 @@ angular.module('ihframework')
 			pull: '@',
 			nodefault: '@nodefault'
 		},
-		controller: function($scope) {
+		controller: function($rootScope, $scope) {
+			console.log('rootScope', $rootScope);
+			$scope.theUrl = function(config){
+				config = 's2';
+				return 'build/templates/ic/slider/template/' + config + '-inhouse.slider.htm';
+			};
+
 			$scope.active = 0;
-			$scope.LandingComponent = window.storySettings.LandingComponent;
+			$scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
 			if(typeof $scope.LandingComponent.defaultSliderImages === 'object') {
 				var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));
 				$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];

@@ -10,7 +10,7 @@ angular.module('ihframework')
 		template: "<div ng-include='templateUrl()'></div>",
 		link: function(scope, element, attrs) {
 			scope.templateUrl = function() {
-				return 'ic/modal/template/' + (scope.config || 's1') + '-modal.inhouse.htm';
+				return 'build/templates/ic/modal/template/' + (scope.config || 's1') + '-modal.inhouse.htm';
 			}
 			scope.$on('showModal', function(event, args) {
 				scope.modal = args.modal;

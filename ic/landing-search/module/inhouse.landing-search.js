@@ -1,16 +1,19 @@
 angular.module('ihframework')
 .directive('ihLandingSearch', ['$location', function($location) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/landing-search/template/' + (attrs.config || 's1') + '-inhouse.landing-search.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
 			classes: "@classes"
 		},
-		controller: function($scope) {
-			$scope.agent = window.agentSettings;
+		controller: function($rootScope, $scope) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/landing-search/template/' + config + '-inhouse.landing-search.htm';
+			};
+
+			$scope.agent = $rootScope.theUserData;
 			$scope.filters = {active: true};
 			$scope.toggleButton = function($event, val) {
 				if(!$($event.target).hasClass('active')) {
@@ -22,7 +25,7 @@ angular.module('ihframework')
 				}
 			};
 			$scope.searchMLS = function() {
-				
+
 				if(typeof this.filters != 'undefined') {
 					this.filters.active = true;
 				}
@@ -42,47 +45,47 @@ angular.module('ihframework')
 				}
 
 				//price filter split
-				if(typeof this.filters['price_from'] !== 'undefined') {
-					this.filters.price = this.filters['price_from'] + ';';
+				if(typeof this.filters.price_from !== 'undefined') {
+					this.filters.price = this.filters.price_from + ';';
 				}
-				if(typeof this.filters['price_to'] !== 'undefined') {
+				if(typeof this.filters.price_to !== 'undefined') {
 					if(typeof this.filters.price == 'undefined') {
 						this.filters.price = "0;";
 					}
-					this.filters.price += this.filters['price_to'];
+					this.filters.price += this.filters.price_to;
 				}
 				delete this.filters.price_from;
 				delete this.filters.price_to;
 
 				//beds filter split
-				if(typeof this.filters['min_beds'] !== 'undefined') {
-					this.filters.bedsRange = this.filters['min_beds'] + ';';
+				if(typeof this.filters.min_beds !== 'undefined') {
+					this.filters.bedsRange = this.filters.min_beds + ';';
 				}
-				if(typeof this.filters['max_beds'] !== 'undefined') {
+				if(typeof this.filters.max_beds !== 'undefined') {
 					if(typeof this.filters.bedsRange == 'undefined') {
 						this.filters.bedsRange = "0;";
 					}
-					this.filters.bedsRange += this.filters['max_beds'];
+					this.filters.bedsRange += this.filters.max_beds;
 				}
 				delete this.filters.max_beds;
 				delete this.filters.min_beds;
 
 				//sqft filter split
-				if(typeof this.filters['min_sqft'] !== 'undefined') {
-					this.filters.sqft = this.filters['min_sqft'] + ';';
+				if(typeof this.filters.min_sqft !== 'undefined') {
+					this.filters.sqft = this.filters.min_sqft + ';';
 				}
-				if(typeof this.filters['max_sqft'] !== 'undefined') {
+				if(typeof this.filters.max_sqft !== 'undefined') {
 					if(typeof this.filters.sqft == 'undefined') {
 						this.filters.sqft = "0;";
 					}
-					this.filters.sqft += this.filters['max_sqft'];
+					this.filters.sqft += this.filters.max_sqft;
 				}
 				delete this.filters.max_sqft;
 				delete this.filters.min_sqft;
 
 				//acres filter split
-				if(typeof this.filters['min_acres'] !== 'undefined') {
-					this.filters.lotsizeRange = this.filters['min_acres'] + ';';
+				if(typeof this.filters.min_acres !== 'undefined') {
+					this.filters.lotsizeRange = this.filters.min_acres + ';';
 				}
 				delete this.filters.min_acres;
 
@@ -91,7 +94,7 @@ angular.module('ihframework')
 		},
 		link: function(scope, element, attrs) {
 			scope.$on('storyLoaded', function(event, args) {
-				scope.LandingSearch = args['LandingSearch'];
+				scope.LandingSearch = args.LandingSearch;
 			});
 		}
 	};

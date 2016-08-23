@@ -1,15 +1,18 @@
 angular.module('ihframework')
 .directive('ihFooter', ['$window', function($window) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/footer/template/' + ($window.storySettings.footerConfig || attrs.config || 's1') + '-inhouse.footer.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		scope: {
 			classes: "@classes",
 			maxNavColumns: "@navColumns"
 		},
 		restrict: 'E',
 		controller: function($scope) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/footer/template/' + config + '-inhouse.footer.htm';
+			};
+
 			$scope.NavBar = window.storySettings.NavBar;
 			$scope.footerColumns = [];
 
@@ -34,4 +37,3 @@ angular.module('ihframework')
 		}
 	};
 }]);
-

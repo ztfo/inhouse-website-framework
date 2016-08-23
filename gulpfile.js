@@ -124,8 +124,6 @@ gulp.task('templatecache', function() {
 gulp.task('watch', function(){
   gulp.watch([paths.pugTemplates], ['otherTemplates']);
   gulp.watch(['./**/*.html', paths.frameworkTemplates], ['templatecache']);
- //  gulp.watch(paths.styles, ['styles']);
- //  gulp.watch(paths.indexPage, ['index_page']);
   gulp.watch(['./is/app.js', paths.allJS, '!./gulpfile.js', '!./templates.js'], ['concat']);
 });
 

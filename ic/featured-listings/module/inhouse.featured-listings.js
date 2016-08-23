@@ -1,9 +1,7 @@
 angular.module('ihframework')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/featured-listings/template/' + (attrs.config || 's1') + '-inhouse.featured-listings.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
@@ -12,6 +10,11 @@ angular.module('ihframework')
 			slider: '='
 		},
 		controller: function ($scope) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/featured-listings/template/' + config + '-inhouse.featured-listings.htm';
+			};
+
 			$scope.maxFeaturedListings = window.storySettings.maxFeaturedListings || 4;
 			$scope.LandingComponent = window.storySettings.FeaturedListings;
 			$scope.agent = window.agentSettings;
@@ -121,8 +124,8 @@ angular.module('ihframework')
 						});
 					});
 
-					scope.query = args['featuredListings'].query;
-					scope.homes = args['featuredListings'].listings;
+					scope.query = args.featuredListings.query;
+					scope.homes = args.featuredListings.listings;
 				});
 			}
 		}

@@ -3,7 +3,7 @@ angular.module('ihframework')
 	return {
 		restrict: 'E',
 		templateUrl : function(el, attrs) {
-			return 'ic/dropdown/template/' + (attrs.config || 's1') + '-inhouse.dropdown.htm';
+			return 'build/templates/ic/dropdown/template/' + (attrs.config || 's1') + '-inhouse.dropdown.htm';
 		},
 		require: 'ngModel',
 		transclude: true,
@@ -66,7 +66,7 @@ angular.module('ihframework')
 					} else {
 						scope.multiSelectList[val] = true;
 					}
-					
+
 					val = '';
 					keys = Object.keys(scope.multiSelectList);
 					for (var i = 0; i < keys.length; i++) {
@@ -74,7 +74,7 @@ angular.module('ihframework')
 					}
 					val = val.substr(1);
 
-				} else { // single select 
+				} else { // single select
 					var display = typeof scope.truncate != 'undefined' && scope.truncate != '' ? name.substr(0,parseInt(scope.truncate)) : name;
 					scope.name = scope.origName + " | " + display;
 				}

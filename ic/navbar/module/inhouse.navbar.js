@@ -1,14 +1,17 @@
 angular.module('ihframework')
 .directive('ihNavbar', ['$rootScope', '$window', function($rootScope, $window) {
 	return {
-		templateUrl : function(el, attrs) {
-			return 'ic/navbar/template/' + ($window.storySettings.navbarConfig || attrs.config || 's1') + '-inhouse.navbar.htm';
-		},
+		template: '<ng-include src="theUrl()"><ng-include>',
 		scope: {
 			classes: "@classes"
 		},
 		restrict: 'E',
 		controller: function($scope, $filter) {
+			$scope.theUrl = function(config){
+				config = 's1';
+				return 'build/templates/ic/navbar/template/' + config + '-inhouse.navbar.htm';
+			};
+
 			$scope.$on('viewChanged', function(event, args) {
 				$scope.controller = args;
 			});
