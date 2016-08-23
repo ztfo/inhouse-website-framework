@@ -17,7 +17,7 @@ angular.module('ihframework')
 
 			scope.pF = $filter('currency');
 
-			$http.get('ic/listing-map/template/inhouse.gmap-popup.htm').then(function(response) {
+			$templateCache.get('templates/ic/listing-map/template/inhouse.gmap-popup.htm').then(function(response) {
 				scope.contentTemplate = response.data;
 			});
 

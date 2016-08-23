@@ -44,7 +44,7 @@ angular.module('ihframework')
 						}
 					}
 					if(typeof scope.multiSelectList !== 'undefined') {
-						keys = Object.keys(scope.multiSelectList);
+						var keys = Object.keys(scope.multiSelectList);
 						if(keys.length > 1) {
 							scope.name = scope.origName + " | " + 'Multiple';
 						} else {
@@ -68,7 +68,7 @@ angular.module('ihframework')
 					}
 
 					val = '';
-					keys = Object.keys(scope.multiSelectList);
+					var keys = Object.keys(scope.multiSelectList);
 					for (var i = 0; i < keys.length; i++) {
 						val += ';' + keys[i];
 					}
@@ -105,7 +105,7 @@ angular.module('ihframework')
 							}
 						}
 						if(typeof scope.multiSelectList !== 'undefined' && scope.multiSelect == 'true') {
-							keys = Object.keys(scope.multiSelectList);
+							var keys = Object.keys(scope.multiSelectList);
 							if(keys.length > 1) {
 								scope.name = scope.origName + " | " + 'Multiple';
 							} else {
