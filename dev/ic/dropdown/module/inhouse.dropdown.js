@@ -38,7 +38,7 @@ angular.module('ihframework')
 				scope.name = scope.origName;
 				if(typeof newVal != 'undefined') {
 					if(newVal.indexOf(';') !== -1) {
-						var vals = newVal.split(';');
+						var vals = scope.$parent.filters[attrs.id].split(';')
 						for (var i = 0; i < vals.length; i++) {
 							scope.multiSelectList[vals[i]] = true;
 						}
@@ -90,6 +90,7 @@ angular.module('ihframework')
 
 			$timeout((function(scope, element, attrs) {
 				return function() {
+					var newval = ngModelCtrl.$modelValue;
 					if(scope.multiSelect == 'true') {
 						element.find('a').click(function(e) {
 							e.stopPropagation;
@@ -99,7 +100,7 @@ angular.module('ihframework')
 					}
 					if(typeof scope.$parent.filters !== 'undefined' && typeof scope.$parent.filters[attrs.id] !== 'undefined') {
 						if(scope.$parent.filters[attrs.id].indexOf(';') !== -1) {
-							var vals = newVal.split(';');
+							var vals = scope.$parent.filters[attrs.id].split(';')
 							for (var i = 0; i < vals.length; i++) {
 								scope.multiSelectList[vals[i]] = true;
 							}
@@ -107,7 +108,7 @@ angular.module('ihframework')
 						if(typeof scope.multiSelectList !== 'undefined' && scope.multiSelect == 'true') {
 							var keys = Object.keys(scope.multiSelectList);
 							if(keys.length > 1) {
-								scope.name = scope.origName + " | " + 'Multiple';
+								scope.name = scope.origName + " | " + 'Multiples';
 							} else {
 								var display = typeof scope.truncate != 'undefined' && scope.truncate != '' ? newVal.substr(0,parseInt(scope.truncate)) : newVal;
 								scope.name += ' | ' + display;

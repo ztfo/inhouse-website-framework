@@ -46,6 +46,7 @@ angular.module('ihframework')
 						}
 					}
 					$timeout(function() {
+						console.log(element.find('.owl-carousel').length);
 						if(element.find('.owl-carousel').length > 0) {
 							var params = {};
 							if(typeof scope.max !== 'undefined' && scope.max != '') {
@@ -63,12 +64,14 @@ angular.module('ihframework')
 							if(scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive) {
 								params.responsive = scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive;
 							}
+							console.log('2',element);
 							element.find('.owl-carousel').owlCarousel(params);
 						} else {
 							var params = {
 								pause: "true",
 								interval: 9999
 							};
+							console.log(element);
 							element.carousel(params);
 						}
 					});

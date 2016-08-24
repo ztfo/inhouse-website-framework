@@ -40,7 +40,7 @@ gulp.task('concat-vendor', function() {
         babel({ presets: ['es2015']}),
         ngAnnotate(),
         uglify(),
-        gulp.dest('./')
+        gulp.dest('./build/')
      ],
      function(err){ console.log('vendor finished: ', err || 'no errors');}
    );
@@ -90,4 +90,4 @@ gulp.task('watch', function(){
   gulp.watch(['./dev/ic/**/*.js'], ['concat']);
 });
 
-gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-css', 'watch']);
+gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-vendor', 'concat-css', 'watch']);
