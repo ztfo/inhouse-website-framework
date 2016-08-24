@@ -1,10 +1,5 @@
 angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData', 'templates'])
 .run(function($http, $rootScope, userDataService){
-	// $http.post('https://inhouse-api.herokuapp.com/auth/login?email=josh@getinhouse.io&password=Test').success(
-  //   function(res){
-  //     // console.log('mainCtrl res: ', res);
-  //   }
-  // );
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
 

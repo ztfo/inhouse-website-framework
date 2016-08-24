@@ -87,7 +87,7 @@ gulp.task('watch', function(){
   gulp.watch([paths.pugTemplates], ['pugTemplates']);
   gulp.watch([paths.allCSS], ['css-concat']);
   gulp.watch(['./dev/**/*.html', paths.frameworkTemplates], ['templatecache']);
-  gulp.watch(['./dev/ic/**/*.js'], ['concat']);
+  gulp.watch(['./dev/ic/**/*.js', './dev/is/**/*.js'], ['concat']);
 });
 
 gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-vendor', 'concat-css', 'watch']);
