@@ -34,14 +34,12 @@ angular.module('ihframework')
                     if (typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
                         scope.testimonials = $rootScope.theWebsiteData.testimonials;
                     }
-                    console.log('nothing');
                 }
                 if (typeof scope.source === 'undefined' || scope.source == 'hybrid' || scope.source == 'zillow') {
                     scope.showZillow = true;
                     scope.$on('storyLoaded', function(event, args) {
                         scope.testimonials = [];
                         scope.testimonials = args[scope.testimonial].testimonials;
-                        console.log(scope.testimonials);
 
                         if ((typeof scope.source === 'undefined' || scope.source == 'hybrid') && typeof scope.$root.theWebsiteData.testimonials === 'object') {
                             for (var i = 0; i < scope.$root.theWebsiteData.testimonials.length; i++) {
@@ -49,7 +47,6 @@ angular.module('ihframework')
                             }
                         }
                         $timeout(function() {
-                            console.log(element.find('.owl-carousel').length);
                             if (element.find('.owl-carousel').length > 0) {
                                 var params = {};
                                 if (typeof scope.max !== 'undefined' && scope.max != '') {
@@ -67,14 +64,12 @@ angular.module('ihframework')
                                 if (scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive) {
                                     params.responsive = scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive;
                                 }
-                                console.log('2', element);
                                 element.find('.owl-carousel').owlCarousel(params);
                             } else {
                                 var params = {
                                     pause: "true",
                                     interval: 9999
                                 };
-                                console.log(element);
                                 element.carousel(params);
                             }
                         });
