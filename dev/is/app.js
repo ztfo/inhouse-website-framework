@@ -1,10 +1,11 @@
-angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData', 'templates'])
+angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'templates'])
 .run(function($http, $rootScope, userDataService){
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
 
 })
-.config(function($routeProvider, $locationProvider, $httpProvider) {
+.config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider) {
+	console.log('config: ', userDataServiceProvider);
 
 	$httpProvider.defaults.withCredentials = true;
 
@@ -13,35 +14,35 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'userData', 'templates
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'build/templates/ip/results/' + ( /*$rootScope.theWebsiteData.resultsConfig ||*/ 's1') + '-results.htm',
+		templateUrl: 'build/templates/ip/results/' + ( userDataServiceProvider.storyJson.resultsConfig || 's1') + '-results.htm',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'build/templates/ip/listing/' + (/*$rootScope.theWebsiteData.listingConfig ||*/ 's1') + '-listing.htm',
+		templateUrl: 'build/templates/ip/listing/' + (userDataServiceProvider.storyJson.listingConfig || 's1') + '-listing.htm',
 		controller: 'listingController'
 	})
 	.when('/privacy', {
-		templateUrl: 'build/templates/ip/system/' + (/*$rootScope.theWebsiteData.privacyConfig ||*/ 's1') + '-visitor-privacy.htm',
+		templateUrl: 'build/templates/ip/system/' + (userDataServiceProvider.storyJson.privacyConfig || 's1') + '-visitor-privacy.htm',
 		controller: 'privacyController'
 	})
 	.when('/missing', {
 		templateUrl: 'build/templates/ip/system/404.htm'
 	})
 	.when('/:content', {
-		templateUrl: 'build/templates/ip/content/' + (/*$rootScope.theWebsiteData.contentConfig  ||*/ 's1') + '-content.htm',
+		templateUrl: 'build/templates/ip/content/' + (userDataServiceProvider.storyJson.contentConfig  || 's1') + '-content.htm',
 		controller: 'contentController'
 	})
 	.when('/bio/:agent/', {
-		templateUrl: 'build/templates/ip/bios/' + (/*$rootScope.theWebsiteData.bioConfig ||*/ 's1') + '-bios.htm',
+		templateUrl: 'build/templates/ip/bios/' + (userDataServiceProvider.storyJson.bioConfig || 's1') + '-bios.htm',
 		controller: 'bioController'
 	})
 	.when('/subdivision/:sub', {
-		templateUrl: 'build/templates/ip/subdivisions/' + (/*$rootScope.theWebsiteData.subdivConfig ||*/ 's1') + '-subdivision.inhouse.htm',
+		templateUrl: 'build/templates/ip/subdivisions/' + (userDataServiceProvider.storyJson.subdivConfig || 's1') + '-subdivision.inhouse.htm',
 		controller: 'subdivisionController'
 	})
 	.when('/subdivision/:sub/floorplan/:floorplan', {
-		templateUrl: 'build/templates/ip/subdivisions/' + (/*$rootScope.theWebsiteData.subdivConfig ||*/ 's1') + '-subfloorplan.inhouse.htm',
+		templateUrl: 'build/templates/ip/subdivisions/' + (userDataServiceProvider.storyJson.subdivConfig || 's1') + '-subfloorplan.inhouse.htm',
 		controller: 'subfloorplanController'
 	})
 	.otherwise({
