@@ -1,4 +1,5 @@
 module.exports = {
+  frameworkJS: ['!dev/vendor.min.js','!dev/templates.js', '!dev/ua/data/user-data.js', 'dev/is/app.js', 'dev/ic/**/*.js', 'dev/is/**/*.js'],
   allJS: './dev/**/*.js',
   allCSS: [
     // "dev/ia/css/bootstrap-slider.min.css",

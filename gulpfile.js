@@ -20,7 +20,7 @@ gulp.task('concat-css', function () {
 
 gulp.task('concat', function() {
     pump([
-        gulp.src(['!dev/vendor.min.js','!dev/templates.js', '!dev/ua/data/user-data.js', paths.frameworkMain, paths.allJS]),
+        gulp.src(paths.frameworkJS),
         // sourcemaps.init(),
         concat('all.min.js'),
         babel({ presets: ['es2015']}),
