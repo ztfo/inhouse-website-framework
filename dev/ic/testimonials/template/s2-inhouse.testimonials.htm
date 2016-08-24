@@ -5,8 +5,11 @@
       <div class="ih-md-divider bk-gd"></div>
     </div>
     <div class="row">
+      <div owl-carousel="testimonials">
+        <div class="item">{{ testimonial }}</div>
+      </div>
       <div class="owl-carousel tst-carousel">
-        <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
+        <div class="theThing item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
           <blockquote itemprop="review" class="testimonial">
             <div class="ih-sm-header"></div>
             <div class="ih-ratings" itemprop="rating">
