@@ -17,7 +17,6 @@ angular.module('ihframework').service('listingService', function($http, $q){
       $http({
         url: 'https://inhouse-api.herokuapp.com/api/v1/listing/21613406'
       }).then(function(res){
-        console.log('svc res: ', res);
         defer.resolve(res)
       }, function(err){
         console.log('svc err: ', err);

@@ -10,7 +10,7 @@ angular.module('ihframework')
 		},
 		controller: function($scope) {
 			$scope.likeButton = function($event) {
-				data = {};
+				var data = {};
 				var button = $($event.target).parent();
 				data.mls = $scope.mls;
 				data.address = data.address = $scope.address;
