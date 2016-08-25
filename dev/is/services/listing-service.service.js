@@ -15,7 +15,7 @@ angular.module('ihframework').service('listingService', function($http, $q){
     getListings: function(){
       var defer = $q.defer();
       $http({
-        url: 'https://inhouse-api.herokuapp.com/api/v1/listing/21613406'
+        url: 'api/v1/listing/21613406'
       }).then(function(res){
         defer.resolve(res)
       }, function(err){

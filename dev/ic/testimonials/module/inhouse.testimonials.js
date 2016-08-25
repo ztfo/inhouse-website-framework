@@ -13,10 +13,10 @@ angular.module('ihframework')
                 max: '@'
             },
             controller: function($rootScope, $scope, userDataService) {
-                $scope.config = userDataService.testimonialsConfig;
-                $scope.theUrl = function() {
-                    return 'build/templates/ic/testimonials/template/' + $scope.config + '-inhouse.testimonials.htm';
-                };
+                // $scope.config = userDataService.testimonialsConfig;
+                // $scope.theUrl = function() {
+                //     return 'build/templates/ic/testimonials/template/' + $scope.config + '-inhouse.testimonials.htm';
+                // };
 
                 $scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
                 $scope.agent = $rootScope.theUserData;

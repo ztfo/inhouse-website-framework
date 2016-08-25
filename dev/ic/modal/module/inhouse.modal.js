@@ -7,11 +7,8 @@ angular.module('ihframework')
 			id: '@',
 			confirm: '@'
 		},
-		template: "<div ng-include='templateUrl()'></div>",
+		templateUrl: 'build/templates/ic/modal/template/s1-modal.inhouse.htm',
 		link: function(scope, element, attrs) {
-			scope.templateUrl = function() {
-				return 'build/templates/ic/modal/template/' + (scope.config || 's1') + '-modal.inhouse.htm';
-			}
 			scope.$on('showModal', function(event, args) {
 				scope.modal = args.modal;
 				if(scope.id == args.id) {
