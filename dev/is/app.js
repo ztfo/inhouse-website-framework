@@ -5,6 +5,7 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates'])
 
 })
 .config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider) {
+	userDataServiceProvider.blah = true;
 
 	$httpProvider.defaults.withCredentials = true;
 
