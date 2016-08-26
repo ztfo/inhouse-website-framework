@@ -8,7 +8,7 @@ angular.module('ihframework')
 		restrict: 'E',
 		controller: function($rootScope, $scope) {
 			$scope.theUrl = function(config){
-				config = 's1';
+				config = 'p1';
 				return 'build/templates/ic/amenities/template/' + config + '-inhouse.amenities.htm';
 			};
 			$scope.agent = $rootScope.theUserData;
