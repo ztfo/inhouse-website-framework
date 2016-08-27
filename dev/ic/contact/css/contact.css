@@ -23,6 +23,7 @@
 .ih-form-input {
     padding: 20px 15px;
     border-radius: 0;
+    border: 0;
 }
 .ih-contact-form .form-group>label {
     text-transform: uppercase;
@@ -59,6 +60,43 @@
   border: 1px solid #ddd;
   margin-top: 34px;
   margin-bottom: 15px;
+}
+
+/* p1 */
+
+.p1.ih-contact {
+  border: 0 !important;
+  padding-bottom: 0;
+}
+
+.p1.ih-contact .contact-footer {
+  padding: 25px 0;
+  margin-top: 70px;
+}
+
+.p1.ih-contact .contact-info-box {
+  padding: 25px;
+}
+
+.p1.ih-contact .contact-form-box {
+  padding: 25px;
+}
+
+.p1.ih-contact .contact-map {
+  height: 250px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.p1.ih-contact .contact-info {
+  padding: 25px 0;
+}
+
+.p1.ih-contact .contact-info>div {
+  padding: 0 25px;
+}
+
+.p1.ih-contact .contact-info>div:first-child {
+  border-right: 2px solid rgba(255,255,255,0.5);
 }
 
 /* responsive */

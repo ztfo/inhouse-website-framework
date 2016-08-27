@@ -1,3 +1,47 @@
+/* p1 */
+
+.p1.ih-nearby .nearby-toggle {
+    margin: 25px 0 55px 0;
+}
+.p1.ih-nearby .nearby-map {
+    height: 500px;
+    background-color: #eee;
+}
+.p1.ih-nearby .nearby-list {
+    padding: 0 25px 15px 25px;
+    overflow-x: auto;
+    max-height: 500px;
+}
+.p1.ih-nearby .round-icon {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+.p1.ih-nearby .nearby-place {
+    padding: 30px 0px;
+    font-size: .9em;
+}
+.p1.ih-nearby .nearby-place h5 {
+    font-weight: 800;
+    letter-spacing: 1px;
+    opacity: .8;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    max-width: 350px;
+}
+.p1.ih-nearby .nearby-list h3 {
+    text-transform: uppercase;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin: 0;
+}
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}

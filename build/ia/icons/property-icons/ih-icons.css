@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'inhouse-property-icons-01';
-  src:  url('fonts/inhouse-property-icons-01.eot?54thqm');
-  src:  url('fonts/inhouse-property-icons-01.eot?54thqm#iefix') format('embedded-opentype'),
-    url('fonts/inhouse-property-icons-01.ttf?54thqm') format('truetype'),
-    url('fonts/inhouse-property-icons-01.woff?54thqm') format('woff'),
-    url('fonts/inhouse-property-icons-01.svg?54thqm#inhouse-property-icons-01') format('svg');
+  src:  url('fonts/inhouse-property-icons-01.eot?gxwwdk');
+  src:  url('fonts/inhouse-property-icons-01.eot?gxwwdk#iefix') format('embedded-opentype'),
+    url('fonts/inhouse-property-icons-01.ttf?gxwwdk') format('truetype'),
+    url('fonts/inhouse-property-icons-01.woff?gxwwdk') format('woff'),
+    url('fonts/inhouse-property-icons-01.svg?gxwwdk#inhouse-property-icons-01') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,6 +29,17 @@
   padding: .5em;
 }
 
+.ih-sm-icon {
+  font-size: 1em;
+  padding: 0 .5em;
+}
+
+.ih-icon-inhouse-emblem:before {
+  content: "\e973";
+}
+.ih-icon-built-in-az:before {
+  content: "\e972";
+}
 .ih-icon-agreement:before {
   content: "\e940";
 }

@@ -1,60 +1,69 @@
-<section class="p1 ih-about container-fluid">
+<section class="p1 ih-about-listing container-fluid">
     <div class="container">
         <h1 class="ih-header text-center fc-02">About {{listing.streetAddress}}</h1>
         <div class="row">
             <p class="fs text-center col-md-6 col-md-offset-3">
-                {{listing.editableText}}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.
+                {{listing.editableText}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.
             </p>
         </div>
-        <div class="row text-center">
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-icon ih-icon-real-estate fc-02"></div>
-                <div class="fact-label">
-                    Bedroom
-                </div>
-                <div class="fact-value">
-                    {{listing.beds_total}}
-                </div>
-            </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-icon ih-icon-bathtub fc-02"></div>
-                <div class="fact-label">
-                    Baths
-                </div>
-                <div class="fact-value">
-                    {{listing.baths_total}}
+        <div class="row text-center fact-row">
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15 ">
+                <div class="fact-box">
+                    <div class="ih-icon ih-icon-houses fc-02"></div>
+                    <div class="fact-value fc-01">
+                        5{{listing.beds_total}}
+                    </div>
+                    <div class="fact-label">
+                        Bedrooms
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-icon ih-icon-house fc-02"></div>
-                <div class="fact-label">
-                    {{listing.sizeUnit}}
-                </div>
-                <div class="fact-value">
-                    {{listing.sq_total}}
-                </div>
-            </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-icon ih-icon-investment fc-02"></div>
-                <div class="fact-label">
-                    Stories
-                </div>
-                <div class="fact-value">
-                    {{listing.stories}}
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15 ">
+                <div class="fact-box">
+                    <div class="ih-icon ih-icon-bathtub fc-02"></div>
+                    <div class="fact-value fc-01">
+                        5{{listing.baths_total}}
+                    </div>
+                    <div class="fact-label">
+                        Baths
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
-                <div class="ih-icon ih-icon-fence fc-02"></div>
-                <div class="fact-label">
-                    Acreage
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15 ">
+                <div class="fact-box">
+                    <div class="ih-icon ih-icon-house fc-02"></div>
+                    <div class="fact-value fc-01">
+                        5,155{{listing.sq_total}}
+                    </div>
+                    <div class="fact-label">
+                        sqft{{listing.sizeUnit}}
+                    </div>
                 </div>
-                <div class="fact-value">
-                    {{listing.lotSize}}
+            </div>
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15 ">
+                <div class="fact-box">
+                    <div class="ih-icon ih-icon-investment fc-02"></div>
+                    <div class="fact-value fc-01">
+                        2{{listing.stories}}
+                    </div>
+                    <div class="fact-label">
+                        Stories
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15 ">
+                <div class="fact-box">
+                    <div class="ih-icon ih-icon-fence fc-02"></div>
+                    <div class="fact-value fc-01">
+                        2{{listing.lotSize}}
+                    </div>
+                    <div class="fact-label">
+                        Acres
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row text-center">
+        <div class="row text-center btn-row">
             <a href="#/map" class="btn btn-default">View On Map</a>
             <a href="#/map" class="btn btn-primary">Schedule Visit</a>
         </div>

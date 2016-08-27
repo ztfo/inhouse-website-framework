@@ -205,7 +205,50 @@
     margin-bottom: 20px;
 }
 
+/* p1 */
+
+.p1 .ih-about-inner {
+    padding: 75px 0;
+}
+.p1.ih-about {
+    background-color: #f5f5f5;
+}
+.p1.ih-about .img-circle {
+    border: 10px solid #fff;
+}
+.p1.ih-about .ih-about-text h2 {
+    margin: 0;
+}
+.p1.ih-about .about-social {
+  float: right;
+  font-size: 10px;
+  color: #fff;
+}
+.p1.ih-about .ih-social-icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 50%;
+}
+.p1.ih-about .bio {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 25px;
+}
+
+.p1.ih-about h4 {
+  font-size: 16px;
+}
 /* s10 carol */
+
+
+/*** if this only apply' to carol's website please only include it inside her ih-brand.css ***/
+
+
+/*** *** *** ***/
+
 .s10.ih-about {
     position: relative;
     margin-top: 130px;

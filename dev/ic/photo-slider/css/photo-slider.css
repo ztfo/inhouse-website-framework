@@ -1,3 +1,55 @@
+/* p1 */
+
+.p1.ih-photo-slider .photo-slider {
+    margin: 30px 0;
+}
+.p1.ih-photo-slider .listing-pic-block {
+    display: inline-block;
+    padding: 0 5px;
+}
+.p1.ih-photo-slider .listing-pic {
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 200px;
+    padding: 10px;
+}
+.p1.ih-photo-slider .listing-pic a:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+.p1.ih-photo-slider .listing-pic a {
+    opacity: 0;
+    transition: .3s;
+}
+.p1.ih-photo-slider .listing-pic a:hover {
+    opacity: .75;
+    color: #fff;
+    font-size: 2em;
+}
+.p1.ih-photo-slider .owl-controls {
+    display: block !important;
+}
+.p1.ih-photo-slider .owl-buttons {
+  text-align: center;
+  font-size: 1.5em;
+  color: #707070;
+}
+.p1.ih-photo-slider .owl-buttons>div:hover {
+  color: #2ba8de;
+}
+.p1.ih-photo-slider .owl-buttons>div {
+  display: inline-block;
+  padding: 0px 10px;
+}
+.p1.ih-photo-slider .owl-prev {
+  border-right: 2px solid #ddd;
+}
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}

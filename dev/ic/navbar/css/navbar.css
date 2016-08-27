@@ -139,11 +139,13 @@
     background-color: #f5f5f5;
     border-bottom: 1px solid #eee;
 }
-.p1 .navbar-nav>li:first-child {
-  padding-right: 15px;
-  padding-top: 5px;
+.p1 .navbar-right>li:first-child {
+    padding-right: 15px;
+    padding-top: 5px;
 }
-
+.p1.ih-nav .listing-brokerage {
+  line-height: 40px;
+}
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}

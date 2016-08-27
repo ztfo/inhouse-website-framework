@@ -2,7 +2,6 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates'])
 .run(function($http, $rootScope, userDataService){
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
-
 })
 .config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider) {
 	userDataServiceProvider.blah = true;
