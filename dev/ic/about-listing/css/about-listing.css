@@ -1,28 +1,55 @@
 /* p1 */
 
+.p1.ih-about-listing .fact-box {
+    padding: 15px;
+    border: 2px solid #eee;
+    background-color: #fff;
+}
+.p1.ih-about-listing .fact-row {
+    margin: 25px 0;
+}
+.p1.ih-about-listing .fact-label {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: .7;
+    margin-bottom: 5px;
+}
+.p1.ih-about-listing .fact-value {
+    font-weight: 600;
+    font-size: 2.5em;
+}
+.p1.ih-about-listing .ih-icon {
+    border-bottom: 2px solid #eee;
+}
+
 /* p2 */
-.p2.ih-about .ih-about-text {
-	padding: 0;
+
+.p2.ih-about-listing .ih-about-text {
+    padding: 0;
 }
 .p2 .ih-about-inner {
-	margin: 60px auto;
-	text-transform: uppercase;
+    margin: 60px auto;
+    text-transform: uppercase;
 }
 .p2 .ih-about-inner h2 {
-	letter-spacing: 2px;
+    letter-spacing: 2px;
 }
 .p2 .ih-about-inner .bio {
-	text-transform: none;
+    text-transform: none;
 }
-.p2.ih-about .about-social {
-	margin-top: 20px;
-	margin-bottom: 10px;
+.p2.ih-about-listing .about-social {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-.p2.ih-about p {
-	-webkit-column-count: 2; /* chrome, safari, opera */
-	-moz-column-count: 2; /* firefox */
-	column-count: 2;
+.p2.ih-about-listing p {
+    -webkit-column-count: 2;
+    /* chrome, safari, opera */
+    -moz-column-count: 2;
+    /* firefox */
+    column-count: 2;
 }
+
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}

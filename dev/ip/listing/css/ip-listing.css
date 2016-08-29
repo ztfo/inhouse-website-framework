@@ -23,6 +23,7 @@
 .ih-listing .owl-carousel .owl-item {
     margin-right: 0 !important;
     border-right: 2px solid #171717;
+    width: auto !important;
 }
 .ih-listing .ih-owl-thumbnail::after {
     content: "";

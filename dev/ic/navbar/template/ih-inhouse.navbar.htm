@@ -1,0 +1,48 @@
+<nav class="ih-nav navbar navbar-default {{classes}} {{controller}}" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
+    <div class="ih-cta fs">
+        <div class="container">
+            <div class="row text-right">
+                <a href="tel:{{agent.contactPhone | tel}}" class="clean-link text-uppercase text-muted">
+                    {{agent.contactPhone | tel}} |
+                    <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <nav class="ih-mainnav" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a itemprop="url" class="navbar-brand" href="#/">
+                    <img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo" />
+                </a>
+            </div>
+            <div class="navbar-collapse" ng-class="{collapse: isCollapsed}" id="mainNav">
+                <ul class="nav navbar-nav navbar-right" role="menubar">
+                    <li>
+                        <a class="text-uppercase" role="menuitem" itemprop="url" href="#/" <span itemprop="name">home</span></a>
+                    </li>
+                    <li>
+                        <!-- scrollspy down and switch -->
+                        <a class="text-uppercase" role="menuitem" itemprop="url" <span itemprop="name">agents</span></a>
+                    </li>
+                    <li>
+                        <!-- scrollspy down and switch -->
+                        <a class="text-uppercase" role="menuitem" itemprop="url"<span itemprop="name">lenders</span></a>
+                    </li>
+                    <li>
+                        <a class="text-uppercase" role="menuitem" itemprop="url" href="https://app.getinhouse.io" <span itemprop="name">sign-up</span></a>
+                    </li>
+                    <li>
+                        <a class="text-uppercase" role="menuitem" itemprop="url" href="https://app.getinhouse.io" <span itemprop="name">log-in</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>
