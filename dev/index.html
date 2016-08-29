@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html ng-app="ihframework" ng-controller="mainView" prefix="og: http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage">
+<!-- PROPERTY OF INHOUSE REAL ESTATE MARKETING, LLC. -->
+
+<head>
+    <ignore>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    </ignore>
+    <!-- io -->
+    <any ng-non-bindable>
+        <title ng-model="windowTitle">{{@story['websiteTitle']}}</title>
+        <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+        <link rel="canonical" href="http://{{@story['websiteUrl']}}" />
+        <link rel="image_src" href="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+        <meta itemprop="name" content="{{@story['websiteTitle']}}" />
+        <meta itemprop="url" content="http://{{@story['websiteUrl']}}" />
+        <meta itemprop="thumbnailUrl" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+        <meta itemprop="image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+        <meta name="twitter:title" content="{{@story['websiteTitle']}}" />
+        <meta name="twitter:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+        <meta name="twitter:url" content="http://{{@story['websiteUrl']}}" />
+        <meta name="description" content="{{@story['bio1']}}" />
+    </any>
+    <ignore>
+        <meta name="twitter:card" content="summary" />
+        <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited."/>
+        <!-- ui -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap-tpls.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="bundle.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="ia/css/owl.carousel.css" media="screen" title="no title" charset="utf-8">
+
+        <!-- fs -->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+    </ignore>
+    <!-- og -->
+    <any ng-non-bindable>
+        <meta property="fb:app_id" content="1471637189804874" />
+        <meta property="og:title" content="{{@story['websiteTitle']}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://{{@story['websiteUrl']}}" />
+        <meta property="og:image" content="http://{{@story['websiteUrl']}}/ua/images/og-image.jpg" />
+        <meta property="fb:admins" content="{{@story['facebookID']}}" />
+        <meta property="og:site_name" content="{{@story['websiteTitle']}}" />
+        <meta property="og:description" content="{{@story['bio1']}}" />
+    </any>
+    <!-- fb -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '{{agent.pixelID}}');
+        fbq('track', "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{agent.pixelID}}&ev=PageView&noscript=1" /></noscript>
+    <!-- ua -->
+    <link href="ua/css/ih-brand.css?{{microtime()}}" rel="stylesheet" type="text/css" />
+    <!-- <script src="ua/data/user-data.js"></script> -->
+</head>
+<ignore>
+
+    <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
+
+        <ih-navbar></ih-navbar>
+        <div class="ih-view-container">
+            <div ng-view autoscroll="true" class="" id='main-view'></div>
+        </div>
+        <ih-footer></ih-footer>
+
+        <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+        <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content fp">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="modal-title text-center" id="accountLabel" ng-hide="showRegister">Login</h2>
+                        <h2 class="modal-title text-center" id="accountLabel" ng-show="showRegister">Register</h2>
+                    </div>
+                    <div class="modal-body fs">
+                        <form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
+                            <p class="lead text-center">
+                                Create an account to save your favorite listings, searches, and continue to view properties.
+                            </p>
+                            <p class="lead text-center">
+                                Fill out the information below to create an account.
+                            </p>
+                            <div class="form-group">
+                                <label for="messageName">Your Name</label>
+                                <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="email">
+                                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="accountPassword">Phone Number</label>
+                                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="phone" placeholder="This will be your password">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-default inline-block" id="inhouseAgentUserCreate">Login</button>
+                            </div>
+                        </form>
+                        <form name="login" ng-submit="login.$valid && submitLogin()" ng-hide="showRegister">
+                            <h2 class="text-center">
+                                Welcome back!
+                              </h2>
+                            <p class="text-center">
+                                Sign-in below.
+                            </p>
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="email">
+                                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="accountPassword">Phone Number</label>
+                                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="phone">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-default inline-block" id="inhouseAgentUserCreate">Login</button>
+                            </div>
+                        </form>
+                        <p class="text-center reg-divider">
+                            <small ng-hide="showRegister">Don't have an account?</small>
+                            <small ng-show="showRegister">Already have an account?</small>
+                        </p>
+                        <div class="text-center reg-btns">
+                            <a href="" ng-click="showRegister=false" ng-show="showRegister">Login</a>
+                            <a href="" ng-click="showRegister=true" ng-hide="showRegister">Register</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer fo text-uppercase">
+                        <p class="text-center">
+                            <small>
+                Your information is not sold to anyone. All your information is kept confidential.
+                <a href="#/privacy" class="block privacy-link clean-link" target="_blank">View Privacy Policy</a>
+              </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ia -->
+        <script src="templates.js" charset="utf-8"></script>
+        <script src="ia/js/angular-owl.carousel.js"></script>
+        <script src="all.min.js" charset="utf-8"></script>
+        <script src="ua/data/user-service.js"></script>
+        <!-- ga -->
+        <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
+        <!-- <script src="vendor.min.js" charset="utf-8"></script> -->
+        <script src="ia/js/uikit.min.js"></script>
+        <script src="ia/js/smooth-scroll.min.js"></script>
+        <script src="ia/js/core.min.js"></script>
+        <script src="ia/js/modal.min.js"></script>
+        <script src="ia/js/parallax.min.js"></script>
+        <script src="ia/js/lightbox.min.js"></script>
+        <script src="ia/js/sticky.min.js"></script>
+        <script src="ia/js/owl.carousel.js"></script>
+        <script src="ia/js/bootstrap-slider.js"></script>
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', '{{agent.gaKey}}', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</ignore>
+<!-- (c) 2016 - All Rights Reserved - InHouse Real Estate Marketing, LLC. -->
+
+</html>
