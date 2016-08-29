@@ -1,4 +1,4 @@
-angular.module('ihframework').factory('userData', function($http, $q, $window){
+angular.module('ihframework').factory('userData', function($http, $q, $rootScope){
 
   var theUserData = '',
       theWebsiteData = '',
@@ -13,75 +13,33 @@ angular.module('ihframework').factory('userData', function($http, $q, $window){
 
 			for(var key in item){
 				attributes += key + '=\"' + item[key] + '\" ';
-			}			templateArray.push('<ih-' + item.component + others + attributes + '></ih-' + item.component + `>`);
+			}
+			// console.log(templateArray);
+			templateArray.push('<ih-' + item.component + others + attributes + '></ih-' + item.component + `>`);
 		});
 		return templateArray;
 	}
 
   return {
     selectedComponent: '',
-    theUserData: '',
-    theWebsiteData: '',
-    getUserData: function(){
-      var defer = $q.defer();
-
-      if(!this.theUserData){
-        $http({
-          url: 'api/v1/user-settings',
-          method: 'GET'
-        }).then(function(res_one){
-          defer.resolve(res_one.data);
-        },function(err){
-          console.log("svc err:, ", err);
-        });
-        this.theUserData = defer.promise;
-      }
-      return this.theUserData;
-
-
-    },
-    getWebsiteData: function(){
-
-      var defer = $q.defer();
-
-      if(!this.theWebsiteData){
-        $http({
-          url: 'api/v1/story-settings',
-          method: 'GET'
-        }).then(function(res_two){
-          defer.resolve(res_two.data);
-        },function(err){
-          console.log("svc err:, ", err);
-        });
-        this.theWebsiteData = defer.promise;
-      }
-      return this.theWebsiteData;
-    },
     getWebsiteTemplate: function(){
-
-      var defer = $q.defer();
-
-      $http({
-        url: 'api/v1/story-settings',
-        method: 'GET'
-      }).then(function(res_three){
-        var theTemplateOne = templateBuilder(res_three.data.data).join(',').replace(/,/g, '');
-        defer.resolve(theTemplateOne);
-      },function(err){
-        console.log("svc err:, ", err);
-      });
-      return defer.promise;
+        return templateBuilder($rootScope.theWebsiteData).join(',').replace(/,/g, '');
     },
     saveWebsiteChanges: function(website){
-
-      var defer = $q.defer();      $http({
+      var defer = $q.defer();
+      console.log('the website: ', website);
+      $http({
         url: 'api/v1/story-settings',
         method: 'PUT',
         data: {data: website}
       }).then(function(confirmSave){
+        console.log(('confirm save: ', confirmSave));
       },function(err){
         console.log("svc err:, ", err);
       });
+    },
+    getTestimonials: function(){
+      return $http.get('https://inhouse-api.herokuapp.com/api/v1/web/user/1/testimonials/screenname=carol nigut');
     }
   };
 
