@@ -23,7 +23,7 @@ gulp.task('concat', function() {
         gulp.src(paths.frameworkJS),
         // sourcemaps.init(),
         concat('all.min.js'),
-        babel({ presets: ['es2015']}),
+        // babel({ presets: ['es2015']}),
         ngAnnotate(),
         // uglify(),
         // sourcemaps.write(),
@@ -37,7 +37,7 @@ gulp.task('concat-vendor', function() {
     pump([
         gulp.src(paths.vendorFiles),
         concat('vendor.min.js'),
-        babel({ presets: ['es2015']}),
+        // babel({ presets: ['es2015']}),
         ngAnnotate(),
         uglify(),
         gulp.dest('./build/')
