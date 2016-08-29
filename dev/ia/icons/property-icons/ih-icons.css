@@ -24,6 +24,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ih-icon {
+  font-size: 2.5em;
+  padding: .5em;
+}
+
 .ih-icon-agreement:before {
   content: "\e940";
 }
@@ -342,4 +347,3 @@
 .ih-icon-truck:before {
   content: "\e927";
 }
-

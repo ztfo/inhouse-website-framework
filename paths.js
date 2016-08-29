@@ -9,6 +9,7 @@ module.exports = {
     "dev/ia/css/slidenav.css",
     "dev/ia/css/inhouse.css",
     "dev/ia/icons/property-icons/ih-icons.css",
+    "dev/ia/icons/ui-icons/ih-ui.css",
     "dev/ic/about/css/about.css",
     "dev/ic/featured-listings/css/featured-listings.css",
     "dev/ic/landing-search/css/search.css",
