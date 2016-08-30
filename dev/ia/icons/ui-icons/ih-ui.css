@@ -1,4 +1,4 @@
-gul@font-face {
+@font-face {
   font-family: 'inhouse-ui';
   src:  url('fonts/inhouse-ui.eot?108786');
   src:  url('fonts/inhouse-ui.eot?108786#iefix') format('embedded-opentype'),
@@ -78,3 +78,4 @@ gul@font-face {
 .ih-ui-built-in-az:before {
   content: "\e972";
 }
+
