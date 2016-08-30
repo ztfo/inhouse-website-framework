@@ -39,7 +39,11 @@ angular.module('ihframework').factory('userData', function($http, $q, $rootScope
       });
     },
     getTestimonials: function(){
-      return $http.get('https://inhouse-api.herokuapp.com/api/v1/web/user/1/testimonials/screenname=carol nigut');
+      if($rootScope.theWebsiteData.testimonialSource.hasOwnProperty('screenname')){
+        return $http.get('https://inhouse-api.herokuapp.com/api/v1/web/user/1/testimonials/screenname=' + $rootScope.theWebsiteData.testimonialSource.screenname);
+      } else if($rootScope.theWebsiteData.testimonialSource.hasOwnProperty('email')){
+        return $http.get('https://inhouse-api.herokuapp.com/api/v1/web/user/1/testimonials/email=' + $rootScope.theWebsiteData.testimonialSource.email);
+      }
     }
   };
 
