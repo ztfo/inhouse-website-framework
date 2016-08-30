@@ -24,7 +24,7 @@ angular.module('ihframework')
                     }
                     return input;
                 };
-                
+
                 if (typeof $scope.source !== 'undefined' && $scope.source == 'storySettings') {
                     if (typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
                         $scope.testimonials = $rootScope.theWebsiteData.testimonials;
@@ -55,7 +55,8 @@ angular.module('ihframework')
                       } else {
                           var params = {
                               pause: "true",
-                              interval: 9999
+                              interval: 9999,
+                              navigation: true
                           };
                           element.carousel(params);
                       }
@@ -72,7 +73,7 @@ angular.module('ihframework')
                                 scope.testimonials.unshift(scope.$root.theWebsiteData.testimonials[i]);
                             }
                         }
-                        
+
                         scope.renderOwl();
                     });
                 } else if(scope.testimonials != undefined && scope.testimonials.length > 0) {
