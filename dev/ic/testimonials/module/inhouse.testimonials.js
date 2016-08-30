@@ -24,18 +24,46 @@ angular.module('ihframework')
                     }
                     return input;
                 };
-            },
-            link: function(scope, element, attrs) {
-
-                if (typeof scope.source !== 'undefined' && scope.source == 'storySettings') {
+                
+                if (typeof $scope.source !== 'undefined' && $scope.source == 'storySettings') {
                     if (typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
-                        scope.testimonials = $rootScope.theWebsiteData.testimonials;
+                        $scope.testimonials = $rootScope.theWebsiteData.testimonials;
                     }
                 }
+            },
+            link: function(scope, element, attrs) {
+                scope.renderOwl = function() {
+                  $timeout(function() {
+                      if (element.find('.owl-carousel').length > 0) {
+                          var params = {};
+                          if (typeof scope.max !== 'undefined' && scope.max != '') {
+                              scope.max = parseInt(scope.max);
+                              params.items = scope.max;
+                          }
+
+                          var testimonialsIndex = 0;
+                          scope.$root.theWebsiteData.landingLayout.map(function(item, index, arr) {
+                              if (item.responsive) {
+                                  testimonialsIndex = index;
+                              }
+                          });
+
+                          if (scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive) {
+                              params.responsive = scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive;
+                          }
+                          element.find('.owl-carousel').owlCarousel(params);
+                      } else {
+                          var params = {
+                              pause: "true",
+                              interval: 9999
+                          };
+                          element.carousel(params);
+                      }
+                  });
+                };
                 if (typeof scope.source === 'undefined' || scope.source == 'hybrid' || scope.source == 'zillow') {
                     scope.showZillow = true;
                     userData.getTestimonials().success(function(args){
-                        console.log('args', args);
                         scope.testimonials = [];
                         scope.testimonials = args.testimonials;
 
@@ -44,34 +72,11 @@ angular.module('ihframework')
                                 scope.testimonials.unshift(scope.$root.theWebsiteData.testimonials[i]);
                             }
                         }
-                        $timeout(function() {
-                            if (element.find('.owl-carousel').length > 0) {
-                                var params = {};
-                                if (typeof scope.max !== 'undefined' && scope.max != '') {
-                                    scope.max = parseInt(scope.max);
-                                    params.items = scope.max;
-                                }
-
-                                var testimonialsIndex = 0;
-                                scope.$root.theWebsiteData.landingLayout.map(function(item, index, arr) {
-                                    if (item.responsive) {
-                                        testimonialsIndex = index;
-                                    }
-                                });
-
-                                if (scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive) {
-                                    params.responsive = scope.$root.theWebsiteData.landingLayout[testimonialsIndex].responsive;
-                                }
-                                element.find('.owl-carousel').owlCarousel(params);
-                            } else {
-                                var params = {
-                                    pause: "true",
-                                    interval: 9999
-                                };
-                                element.carousel(params);
-                            }
-                        });
+                        
+                        scope.renderOwl();
                     });
+                } else if(scope.testimonials != undefined && scope.testimonials.length > 0) {
+                  scope.renderOwl();
                 }
             }
         };
