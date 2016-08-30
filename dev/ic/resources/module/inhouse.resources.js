@@ -7,12 +7,12 @@ angular.module('ihframework')
 		},
 		restrict: 'E',
 		controller: function($rootScope, $scope, userDataService){
-			$scope.config = userDataService.resourcesConfig
 			$scope.theUrl = function(){
 				return 'build/templates/ic/resources/template/' + $scope.config + '-inhouse.resources.htm';
 			};
 		},
 		link: function(scope, el, attrs) {
+			scope.config = attrs.config;
 			scope.limit = attrs.limit || 3;
 			var resources = [];
 			var featured = [];
