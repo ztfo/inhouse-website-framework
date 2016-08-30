@@ -20,27 +20,10 @@
     </div>
     <div class="ih-slider-row row">
         <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
-          <div uib-carousel active="active" interval="5000" no-wrap="false" style="height:1000px;">
-            <div uib-slide ng-repeat="slide in slides" index="$index">
-              <img ng-src="{{slide.image}}" style="margin:auto;width:100%;">
-              <div class="carousel-caption">
-                <h4>Slide {{slide.id}}</h4>
-                <p>{{slide.text}}</p>
-              </div>
+            <div uib-carousel active="active" no-wrap="false">
+                <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
+                </div>
             </div>
-          </div>
-
-            <!-- <div class="carousel-inner" role="listbox">
-                <div class="item active" ng-if="LandingComponent.defaultSliderImage !== undefined">
-                    <div class="full-screen-image" ng-style="{'background-image':'url(' + LandingComponent.defaultSliderImage + ')'}"></div>
-                </div>
-                <div class="item {{$index == 0 && LandingComponent.defaultSliderImage === undefined ? 'active' : ''}}" ng-repeat="slide in slides">
-                    <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.image + ')'}"></div>
-                    <div class="carousel-caption hidden">
-                        {{slide.caption}}
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>

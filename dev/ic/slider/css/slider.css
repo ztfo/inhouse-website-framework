@@ -29,6 +29,15 @@
     z-index: 10;
     font-size: 20px;
 }
+.ih-slider-row .carousel {
+  height: 100%;
+}
+.ih-slider .carousel-control {
+  display: none;
+}
+.ih-slider .carousel-indicators {
+  display: none;
+}
 
 /* s1 */
 
