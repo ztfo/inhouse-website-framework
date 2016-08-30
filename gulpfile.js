@@ -78,7 +78,7 @@ gulp.task ('pugTemplates', function() {
 /////////////////
 gulp.task('templatecache', function() {
   gulp.src(['!./dev/index.html', '.dev/**/*.html', paths.frameworkTemplates])
-  .pipe(templateCache({standalone: true, base: function(file) {
+  .pipe(templateCache({module: 'frameworkTemplates', standalone: true, base: function(file) {
     return 'build/templates/' + file.relative;
   }}))
   .pipe(gulp.dest('./build'));

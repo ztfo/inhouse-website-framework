@@ -1,4 +1,4 @@
-angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'templates'])
+angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates'])
 .run(function($http, $rootScope, userDataService){
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
