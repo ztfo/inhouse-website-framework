@@ -8,7 +8,7 @@ angular.module('ihframework')
 			classes: "@classes"
 		},
 		controller: function($rootScope, $scope, userDataService) {
-			$scope.config = userDataService.landingSearchConfig;
+			console.log($scope.attrs);
 
 			$scope.theUrl = function(){
 				return 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
@@ -94,6 +94,7 @@ angular.module('ihframework')
 			};
 		},
 		link: function(scope, element, attrs) {
+			scope.config = attrs.config;
 			scope.$on('storyLoaded', function(event, args) {
 				scope.LandingSearch = args.LandingSearch;
 			});
