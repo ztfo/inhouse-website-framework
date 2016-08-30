@@ -1,5 +1,5 @@
 angular.module('ihframework')
-    .directive('ihTestimonials', ['$timeout', function($timeout) {
+    .directive('ihTestimonials', ['$timeout', 'userData', function($timeout, userData) {
         return {
             templateUrl: function(el, attrs) {
                 return 'build/templates/ic/testimonials/template/' + (attrs.config || 's1') + '-inhouse.testimonials.htm';
@@ -12,11 +12,7 @@ angular.module('ihframework')
                 source: '@',
                 max: '@'
             },
-            controller: function($rootScope, $scope, userDataService) {
-                // $scope.config = userDataService.testimonialsConfig;
-                // $scope.theUrl = function() {
-                //     return 'build/templates/ic/testimonials/template/' + $scope.config + '-inhouse.testimonials.htm';
-                // };
+            controller: function($rootScope, $scope, $http, userDataService, userData) {
 
                 $scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
                 $scope.agent = $rootScope.theUserData;
@@ -30,6 +26,7 @@ angular.module('ihframework')
                 };
             },
             link: function(scope, element, attrs) {
+
                 if (typeof scope.source !== 'undefined' && scope.source == 'storySettings') {
                     if (typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
                         scope.testimonials = $rootScope.theWebsiteData.testimonials;
@@ -37,9 +34,10 @@ angular.module('ihframework')
                 }
                 if (typeof scope.source === 'undefined' || scope.source == 'hybrid' || scope.source == 'zillow') {
                     scope.showZillow = true;
-                    scope.$on('storyLoaded', function(event, args) {
+                    userData.getTestimonials().success(function(args){
+                        console.log('args', args);
                         scope.testimonials = [];
-                        scope.testimonials = args[scope.testimonial].testimonials;
+                        scope.testimonials = args.testimonials;
 
                         if ((typeof scope.source === 'undefined' || scope.source == 'hybrid') && typeof scope.$root.theWebsiteData.testimonials === 'object') {
                             for (var i = 0; i < scope.$root.theWebsiteData.testimonials.length; i++) {

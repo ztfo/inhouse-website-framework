@@ -12,6 +12,21 @@ var concatCss = require('gulp-concat-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var paths = require('./paths');
 
+gulp.task('move-ua', function(){
+  return gulp.src(['dev/ua/**/*'])
+    .pipe(gulp.dest('./build/ua'));
+});
+
+gulp.task('move-ia', function(){
+  return gulp.src(['dev/ia/**/*'])
+    .pipe(gulp.dest('./build/ia'));
+});
+
+gulp.task('move-index', function(){
+  return gulp.src(['dev/index.html'])
+    .pipe(gulp.dest('./build'));
+});
+
 gulp.task('concat-css', function () {
   return gulp.src(paths.allCSS)
     .pipe(concatCss('bundle.css'))
@@ -88,6 +103,9 @@ gulp.task('watch', function(){
   gulp.watch([paths.allCSS], ['css-concat']);
   gulp.watch(['./dev/**/*.html', paths.frameworkTemplates], ['templatecache']);
   gulp.watch(['./dev/ic/**/*.js', './dev/is/**/*.js'], ['concat']);
+  gulp.watch(['dev/index.html'], ['move-index']);
+  gulp.watch(['dev/ia/'], ['move-ia']);
+  gulp.watch(['dev/ua/'], ['move-ua']);
 });
 
-gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-vendor', 'concat-css', 'watch']);
+gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-vendor', 'concat-css', 'move-index', 'move-ia', 'move-ua', 'watch']);

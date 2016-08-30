@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'inhouse-property-icons-01';
-  src:  url('fonts/inhouse-property-icons-01.eot?knnfve');
-  src:  url('fonts/inhouse-property-icons-01.eot?knnfve#iefix') format('embedded-opentype'),
-    url('fonts/inhouse-property-icons-01.ttf?knnfve') format('truetype'),
-    url('fonts/inhouse-property-icons-01.woff?knnfve') format('woff'),
-    url('fonts/inhouse-property-icons-01.svg?knnfve#inhouse-property-icons-01') format('svg');
+  src:  url('fonts/inhouse-property-icons-01.eot?gxwwdk');
+  src:  url('fonts/inhouse-property-icons-01.eot?gxwwdk#iefix') format('embedded-opentype'),
+    url('fonts/inhouse-property-icons-01.ttf?gxwwdk') format('truetype'),
+    url('fonts/inhouse-property-icons-01.woff?gxwwdk') format('woff'),
+    url('fonts/inhouse-property-icons-01.svg?gxwwdk#inhouse-property-icons-01') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,6 +29,17 @@
   padding: .5em;
 }
 
+.ih-sm-icon {
+  font-size: 1em;
+  padding: 0 .5em;
+}
+
+.ih-icon-inhouse-emblem:before {
+  content: "\e973";
+}
+.ih-icon-built-in-az:before {
+  content: "\e972";
+}
 .ih-icon-agreement:before {
   content: "\e940";
 }
@@ -182,14 +193,23 @@
 .ih-icon-flat-plan:before {
   content: "\e900";
 }
+.ih-icon-flat-plan-1:before {
+  content: "\e901";
+}
 .ih-icon-garden-fence:before {
   content: "\e902";
+}
+.ih-icon-garden-fence-1:before {
+  content: "\e903";
 }
 .ih-icon-home-location-marker:before {
   content: "\e904";
 }
 .ih-icon-house-door:before {
   content: "\e905";
+}
+.ih-icon-house-door-1:before {
+  content: "\e906";
 }
 .ih-icon-house-front-view:before {
   content: "\e907";
@@ -215,17 +235,32 @@
 .ih-icon-house-key:before {
   content: "\e90e";
 }
+.ih-icon-house-key-1:before {
+  content: "\e90f";
+}
 .ih-icon-house-location-marker:before {
   content: "\e910";
 }
 .ih-icon-house-mailbox:before {
   content: "\e911";
 }
+.ih-icon-house-mailbox-1:before {
+  content: "\e912";
+}
 .ih-icon-sold-sign:before {
   content: "\e913";
 }
 .ih-icon-sold-sign-1:before {
   content: "\e914";
+}
+.ih-icon-sold-sign-2:before {
+  content: "\e915";
+}
+.ih-icon-sold-sign-3:before {
+  content: "\e916";
+}
+.ih-icon-two-storey-house-front-view:before {
+  content: "\e917";
 }
 .ih-icon-air-conditioner:before {
   content: "\e918";
