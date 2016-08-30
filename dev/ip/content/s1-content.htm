@@ -12,7 +12,7 @@
           <div ng-bind-html="content.content | to_trusted"></div>
         </div>
         <div ng-if="content.contentUrl !== undefined">
-          <ng-include src="'build/templates/' + content.contentUrl"></ng-include>
+          <ng-include src="content.contentUrl"></ng-include>
         </div>
         <div class="ih-accent-divider clear"></div>
       </div>

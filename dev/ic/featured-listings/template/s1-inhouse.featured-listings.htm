@@ -1,13 +1,13 @@
 <section class="s1 ih-featured-slider">
   <div class="container">
-    
+
     <h1 class="ih-header text-center">Featured Homes</h1>
     <div class="ih-md-divider"></div>
-    
-    <div class="ih-ft-carousel">
-      
+
+    <div class="ih-ft-carousel owl-carousel">
+
       <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
-      
+
       <div class="item" ng-repeat="home in homes">
         <div class="ih-ft-listing" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
           <div class="ih-ft-listing-img">
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
 
   </div>
