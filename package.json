@@ -38,6 +38,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gulp-clean-css": "^2.0.12",
     "gulp-typescript": "^2.13.6",
     "requirejs": "^2.2.0",
     "semantic-ui": "^2.2.2"

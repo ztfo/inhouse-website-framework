@@ -16,7 +16,6 @@ angular.module('ihframework')
 			//$scope.config = userDataService.sliderConfig;
 			
 			$scope.$watch('config', function(newVal) {
-				console.log('slider config: ' + newVal);
 				if(newVal !== undefined) {
 					$scope.templateUrl = 'build/templates/ic/slider/template/' + $scope.config + '-inhouse.slider.htm';
 				} else {
@@ -32,11 +31,13 @@ angular.module('ihframework')
 
 			$scope.active = 0;
 			$scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
+			
 			if(typeof $scope.LandingComponent.defaultSliderImages === 'object') {
 				var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));
 				$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];
 			}
 
+			$scope.slides = [$scope.LandingComponent.defaultSliderImage];
 			$scope.agent = $rootScope.theUserData;
 
 			$scope.landingLayout = $rootScope.theWebsiteData.landingLayout[0];
