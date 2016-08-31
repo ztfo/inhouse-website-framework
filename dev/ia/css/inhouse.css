@@ -191,12 +191,11 @@ input[type="radio"] {
 }
 /* bs resets end*/
 
-/* uk resets */
-.uk-sticky-placeholder {
-  height: auto !important;
-  margin: 0 !important;
+/* owl styles */
+.owl-nav>div {
+  cursor: pointer;
 }
-/* uk ends */
+/* owl end */
 
 /* new bootstrap */
 .col-xs-15,
