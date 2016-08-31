@@ -11,12 +11,6 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
         photos: []
       };
       $scope.theUrl = 'ic/photo-slider/template/p1-inhouse.photo-slider.htm';
-      listingService.getListings().then(function(res){
-        $scope.listing.listingDescription = res.data.listing.publicRemarks;
-        res.data.listing.photos.map(function(item, index, arr){
-          $scope.listing.photos.push(item.thumb);
-        });
-      });
     }
   };
 });
