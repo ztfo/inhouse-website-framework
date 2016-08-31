@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'inhouse-ui';
-  src:  url('fonts/inhouse-ui.eot?108786');
-  src:  url('fonts/inhouse-ui.eot?108786#iefix') format('embedded-opentype'),
-    url('fonts/inhouse-ui.ttf?108786') format('truetype'),
-    url('fonts/inhouse-ui.woff?108786') format('woff'),
-    url('fonts/inhouse-ui.svg?108786#inhouse-ui') format('svg');
+  src:  url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.eot?108786');
+  src:  url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.eot?108786#iefix') format('embedded-opentype'),
+    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.ttf?108786') format('truetype'),
+    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.woff?108786') format('woff'),
+    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.svg?108786#inhouse-ui') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -78,4 +78,3 @@
 .ih-ui-built-in-az:before {
   content: "\e972";
 }
-
