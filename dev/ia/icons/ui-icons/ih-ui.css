@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'inhouse-ui';
-  src:  url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.eot?108786');
-  src:  url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.eot?108786#iefix') format('embedded-opentype'),
-    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.ttf?108786') format('truetype'),
-    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.woff?108786') format('woff'),
-    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.svg?108786#inhouse-ui') format('svg');
+  src:  url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.eot?34olou');
+  src:  url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.eot?34olou#iefix') format('embedded-opentype'),
+    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.ttf?34olou') format('truetype'),
+    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.woff?34olou') format('woff'),
+    url('../../build/ia/icons/ui-icons/fonts/inhouse-ui.svg?34olou#inhouse-ui') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,12 +24,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ih-ui-fairhousing:before {
-  content: "\e90e";
-}
-.ih-ui-realtor:before {
-  content: "\e90f";
-}
 .ih-ui-back:before {
   content: "\e900";
 }
@@ -71,6 +65,12 @@
 }
 .ih-ui-users:before {
   content: "\e90d";
+}
+.ih-ui-fairhousing:before {
+  content: "\e90e";
+}
+.ih-ui-realtor:before {
+  content: "\e90f";
 }
 .ih-ui-inhouse-emblem:before {
   content: "\e973";
