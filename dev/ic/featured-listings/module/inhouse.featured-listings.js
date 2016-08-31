@@ -1,7 +1,9 @@
 angular.module('ihframework')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
-		template: '<ng-include src="theUrl()"><ng-include>',
+		templateUrl: function(el, attrs) {
+				return 'build/templates/ic/featured-listings/template/' + (attrs.config || 's1') + '-inhouse.featured-listings.htm';
+		},
 		restrict: 'E',
 		replace: true,
 		scope: {
@@ -99,6 +101,29 @@ angular.module('ihframework')
 						element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
 					}
 					$timeout(function() {
+						console.log(element.find('.ih-ft-carousel').owlCarousel({
+							mouseDrag: false,
+							items: 4,
+							nav: true,
+							margin: 10,
+							autoplay: false,
+							autoplayHoverPause: true,
+							responsiveClass: true,
+							responsive: {
+								0: {
+									items: 1
+								},
+								480: {
+									items: 1
+								},
+								768: {
+									items: 2
+								},
+								1024: {
+									items: 4
+								}
+							}
+						}));
 						element.find('.ih-ft-carousel').owlCarousel({
 							mouseDrag: false,
 							items: 4,
