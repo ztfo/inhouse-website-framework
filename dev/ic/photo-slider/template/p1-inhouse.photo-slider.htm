@@ -9,26 +9,26 @@
         <div id="photoSlider" class="photo-slider owl-carousel">
             <!--ng-repeat into 2 rows -->
             <div class="listing-pic-block full">
-              <!-- ng-style="{'background-image':'url(' + listing.image + ')'}" -->
+                <!-- ng-style="{'background-image':'url(' + listing.image + ')'}" -->
                 <div class="listing-pic" style="background-image: url('https://cdn.photos.sparkplatform.com/tar/20160805163303454223000000-o.jpg');">
-                  <a href="#/lightbox" class="block full bkc-03 fw">
-                    <span class="fa fa-camera"></span>
-                  </a>
+                    <a href="#/lightbox" class="block full bkc-03 fw">
+                        <span class="fa fa-camera"></span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
-  $("#photoSlider").owlCarousel({
-    lazyLoad : true,
-    lazyEffect : "fade",
-    navigation: true,
-    navigationText : ["<i class='fa fa-caret-left'></i>","<i class='fa fa-caret-right'></i>"],
-    responsive: true
-  });
+        $("#photoSlider").owlCarousel({
+            lazyLoad: true,
+            lazyEffect: "fade",
+            navigation: true,
+            navigationText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
+            responsive: true
+        });
 
-});
+    });
 </script>

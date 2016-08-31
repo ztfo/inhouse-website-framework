@@ -1,16 +1,14 @@
 <section class="s7 ih-slider container-fluid">
-    <div class="ih-search">
-
+    <div class="iha ih-search">
+      <ih-landing-search config="s6"></ih-landing-search>
     </div>
     <div class="bottom-btn fw">
         <i class="fa fa-angle-down"></i>
     </div>
     <div class="ih-slider-row s6 row">
-        <div class="container">
-            <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
-                <div uib-carousel active="active" no-wrap="false">
-                  <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
-                  </div>
+        <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
+            <div uib-carousel active="active" no-wrap="false">
+                <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
                 </div>
             </div>
         </div>
