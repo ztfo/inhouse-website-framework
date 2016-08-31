@@ -2,15 +2,20 @@ angular.module('ihframework')
 .directive('ihNearby', function() {
 	return {
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			listing: '=',
+			config: '='
 		},
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="templateUrl"><ng-include>',
 		restrict: 'E',
 		controller: function($rootScope, $scope) {
-			$scope.theUrl = function(config){
-				config = 'p1';
-				return 'build/templates/ic/nearby/template/' + config + '-inhouse.nearby.htm';
-			};
+			$scope.$watch('config', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.templateUrl = 'build/templates/ic/nearby/template/' + newVal + '-inhouse.nearby.htm';
+				} else {
+					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
+				}
+			});
 			$scope.agent = $rootScope.theUserData;
 		}
 	};

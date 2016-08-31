@@ -1,13 +1,12 @@
 <section class="p1 ih-amenities container-fluid">
     <div class="flex-grid">
-        <!-- ng-style="{'background-image':'url(' + listing.mainImage + ')'}" -->
-        <div class="flex-5 image-fit" style="background-image: url('http://leslieheros.com/ua/backgrounds/mainimage.jpg')">
+        <div class="flex-5 image-fit" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
             <div class="ih afull fullh bkc-01 tpt amenities-accent fw">
                 <h1>
-                1234 N EnCasa Drive{{listing.listingAddress}}<br />
-                <small class="fw text-uppercase">Tucson, AZ 85701{{listing.city}} {{listing.state}} {{listing.zipcode}}</small>
+                {{listing.address}}<br />
+                <small class="fw text-uppercase">{{listing.city}} {{listing.state}} {{listing.zipcode}}</small>
               </h1>
-              <h2 class="fc-01"><strong>$25,000,000{{listing.price}}</strong></h2>
+              <h2 class="fc-01"><strong>{{listing.price | currency}}</strong></h2>
               <blockquote>
                 "Call to action here please. A one line description of the home"
               </blockquote>
@@ -19,7 +18,7 @@
             </div>
         </div>
         <div class="flex-7 amenities-box">
-            <h1 class="ih-subheader fc-02">Amenities at <strong>InHouse HQ{{listing.community}}</strong></h1>
+            <h1 class="ih-subheader fc-02">Amenities at <strong>{{listing.community}}</strong></h1>
             <p>
                 {{listing.editableText}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.
             </p>

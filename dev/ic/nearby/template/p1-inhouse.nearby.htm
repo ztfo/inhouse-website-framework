@@ -18,14 +18,44 @@
         <div class="container">
             <div class="flex-grid">
                 <div class="nearby-list flex-6">
-                    <h3 class="fc-01">Schools{{listing.nearbyLabel}}</h3>
+                    <h3 class="fc-01">Schools</h3>
                     <!-- ng-repeat results -->
                     <div class="nearby-place clearfix">
                         <div class="pull-left round-icon bkc-04 fw">
                             <span class="ih-icon-location"></span>
                         </div>
                         <div class="pull-left">
-                            <h5 class="text-uppercase fc-01">InHouse High School{{googleplace}}</h5>
+                            <h5 class="text-uppercase fc-01">{{listing.elementarySchool}} | Elementary School</h5>
+                            <div class="g-rating">
+                                <i class="fa fa-star"></i> | 25 Reviews({{googlereviewcount}})
+                            </div>
+                            <div>
+                                23+5 S EnScuela Road, Tucson AZ 85715{{googleaddress}}
+                                <br> 8am - 1:30pm{{googlehours}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nearby-place clearfix">
+                        <div class="pull-left round-icon bkc-04 fw">
+                            <span class="ih-icon-location"></span>
+                        </div>
+                        <div class="pull-left">
+                            <h5 class="text-uppercase fc-01">{{listing.middleSchool}} | Middle School</h5>
+                            <div class="g-rating">
+                                <i class="fa fa-star"></i> | 25 Reviews({{googlereviewcount}})
+                            </div>
+                            <div>
+                                23+5 S EnScuela Road, Tucson AZ 85715{{googleaddress}}
+                                <br> 8am - 1:30pm{{googlehours}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nearby-place clearfix">
+                        <div class="pull-left round-icon bkc-04 fw">
+                            <span class="ih-icon-location"></span>
+                        </div>
+                        <div class="pull-left">
+                            <h5 class="text-uppercase fc-01">{{listing.highSchool}} | High School</h5>
                             <div class="g-rating">
                                 <i class="fa fa-star"></i> | 25 Reviews({{googlereviewcount}})
                             </div>
@@ -37,7 +67,7 @@
                     </div>
                 </div>
                 <div class="nearby-map flex-6">
-                    <ih-gmaps class="full"></ih-gmaps>
+                    <ih-gmaps class="full"></ih-gmaps> <!-- todo -->
                 </div>
             </div>
         </div>

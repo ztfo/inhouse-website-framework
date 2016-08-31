@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihContact', ['$timeout', function($timeout) {
 	return {
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="templateUrl"><ng-include>',
 		transclude: true,
 		scope: {
 			contactMessage: "@message",
@@ -9,13 +9,15 @@ angular.module('ihframework')
 			prefill: "@prefill",
 			prefillPrefix: "@",
 			classes: "@classes",
-			typeofcontact: '@typeofcontact'
+			typeofcontact: '@typeofcontact',
+			config: '=',
+			configname: '@',
+			message: '='
 		},
 		link: function(scope, element, attrs) {
 			if(typeof scope.contact == 'undefined') {
 				scope.contact = {};
 			}
-			scope.config = attrs.config;
 			scope.contact.typeofcontact = attrs.typeofcontact || "BuyAHome";
 			scope.element = element;
 			element.find('input[type="radio"]').each(function() {
@@ -26,16 +28,29 @@ angular.module('ihframework')
 			});
 		},
 		controller: ['$rootScope', '$scope', 'inhouseApi', 'userDataService', function($rootScope, $scope, inhouseApi, userDataService) {
-			$scope.theUrl = function(){
-				return 'build/templates/ic/contact/template/' + $scope.config + '-inhouse.contact.htm';
-			};
+			
+			//don't load dynamic if the static is set
+			if($scope.configname == undefined) {
+				$scope.$watch('config', function(newVal) {
+					if(newVal !== undefined) {
+						$scope.templateUrl = 'build/templates/ic/contact/template/' + $scope.config + '-inhouse.contact.htm';
+					} else {
+						$scope.templateUrl = 'build/templates/ic/contact/template/s1-inhouse.contact.htm';
+					}
+				});
+			} else {
+				$scope.templateUrl = 'build/templates/ic/contact/template/' + $scope.configname + '-inhouse.contact.htm';
+			}
+			
 			$timeout(function() {
 				$scope.$broadcast('listingLoaded', {address: $rootScope.theUserData.contactAddress, zipcode: $rootScope.theUserData.contactAddress2});
 			});
+			
 			$scope.navbar = $rootScope.theWebsiteData.NavBar;
 			$scope.agent = $rootScope.theUserData;
 			$scope.inhouseApi = inhouseApi;
 			$scope.scope = $scope;
+			
 			if(typeof $scope.contact == 'undefined') {
 				$scope.contact = {};
 			}

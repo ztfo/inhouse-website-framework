@@ -1,7 +1,7 @@
 <section class="p1 ih-about">
     <div class="container ih-about-inner">
         <div class="row">
-            <h1 class="ih-header text-center fc-02">About {{listing.streetAddress}}</h1>
+            <h1 class="ih-header text-center fc-02">About {{listing.address}}</h1>
         </div>
         <div class="listing-info row">
             <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
@@ -9,7 +9,7 @@
                     <img src="" class="img-responsive" alt="icon" />
                 </div>
                 <div class="pull-right">
-                    <h4>{{listing.beds_total}}</h4>
+                    <h4>{{listing.beds}}</h4>
                 </div>
             </div>
             <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
@@ -17,7 +17,7 @@
                     <img src="" class="img-responsive" alt="icon" />
                 </div>
                 <div class="pull-right">
-                    <h4>{{listing.baths_total}}</h4>
+                    <h4>{{listing.baths}}</h4>
                 </div>
             </div>
             <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
@@ -25,7 +25,7 @@
                     <img src="" class="img-responsive" alt="icon" />
                 </div>
                 <div class="pull-right">
-                    <h4>{{listing.sq_total | number}}</h4>
+                    <h4>{{listing.sqft | number}}</h4>
                     <h6>SQFT</h6>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <img src="" class="img-responsive" alt="icon" />
                 </div>
                 <div class="pull-right">
-                    <h4>{{listing.lot_size}}</h4>
+                    <h4>{{listing.lotsize}}</h4>
                     <h6>ACRES</h6>
                 </div>
             </div>
@@ -65,6 +65,6 @@
 
             </div>
         </div>
-        <ih-listing-details></ih-listing-details>
+        <ih-listing-details listing="listing"></ih-listing-details>
     </div>
 </section>

@@ -1,18 +1,22 @@
 angular.module('ihframework')
 .directive('ihLandingSearch', ['$location', function($location) {
 	return {
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="templateUrl"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			config: '='
 		},
 		controller: function($rootScope, $scope, userDataService) {
-			console.log($scope.attrs);
 
-			$scope.theUrl = function(){
-				return 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
-			};
+			$scope.$watch('config', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
+				} else {
+					$scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.htm';
+				}
+			});
 
 			$scope.agent = $rootScope.theUserData;
 			$scope.filters = {active: true};
@@ -93,11 +97,5 @@ angular.module('ihframework')
 				$location.path('search-mls').search(this.filters);
 			};
 		},
-		link: function(scope, element, attrs) {
-			scope.config = attrs.config;
-			scope.$on('storyLoaded', function(event, args) {
-				scope.LandingSearch = args.LandingSearch;
-			});
-		}
 	};
 }]);

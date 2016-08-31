@@ -1,23 +1,25 @@
 angular.module('ihframework')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
-		templateUrl: function(el, attrs) {
-				return 'build/templates/ic/featured-listings/template/' + (attrs.config || 's1') + '-inhouse.featured-listings.htm';
-		},
+		template: '<ng-include src="templateUrl"></ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {
 			classes: "@classes",
 			pull: '@',
-			slider: '='
+			slider: '=',
+			config: '='
 		},
 		controller: function ($rootScope, $scope, userDataService) {
-			$scope.config = userDataService.featuredListingsConfig;
-			$scope.theUrl = function(){
-				return 'build/templates/ic/featured-listings/template/' + $scope.config + '-inhouse.featured-listings.htm';
-			};
+			$scope.$watch('config', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.templateUrl = 'build/templates/ic/featured-listings/template/' + $scope.config + '-inhouse.featured-listings.htm';
+				} else {
+					$scope.templateUrl = 'build/templates/ic/featured-listings/template/s1-inhouse.featured-listings.htm';
+				}
+			});
 
-			$scope.maxFeaturedListings = $rootScope.theWebsiteData.maxFeaturedListings || 4;
+			$scope.maxFeaturedListings = $rootScope.theWebsiteData.maxFeaturedListings || 5;
 			$scope.LandingComponent = $rootScope.theWebsiteData.FeaturedListings;
 			$scope.agent = $rootScope.theUserData;
 			$scope.listingLoaders = 10;
@@ -101,7 +103,7 @@ angular.module('ihframework')
 						element.find('.ih-ft-carousel').removeClass('owl-carousel owl-loaded owl-text-select-on');
 					}
 					$timeout(function() {
-						console.log(element.find('.ih-ft-carousel').owlCarousel({
+						element.find('.ih-ft-carousel').owlCarousel({
 							mouseDrag: false,
 							items: 4,
 							nav: true,
@@ -123,7 +125,7 @@ angular.module('ihframework')
 									items: 4
 								}
 							}
-						}));
+						});
 						element.find('.ih-ft-carousel').owlCarousel({
 							mouseDrag: false,
 							items: 4,

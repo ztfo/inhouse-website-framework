@@ -6,10 +6,10 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates'])
 .config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider) {
 	userDataServiceProvider.blah = true;
 
-	$httpProvider.defaults.withCredentials = true;
+//	$httpProvider.defaults.withCredentials = true;
 
 	$routeProvider.when('/', {
-		template: '<ih-landing-layout></ih-landing-layout>',
+		template: '<ih-landing-layout-wrapper layout="layout"></ih-landing-layout-wrapper>',
 		controller: 'mainController'
 	})
 	.when('/search-mls', {

@@ -1,6 +1,8 @@
 angular.module('ihframework')
-.controller('mainController', ['$scope', 'inhouseApi', function($scope, inhouseApi) {
+.controller('mainController', ['$scope', 'inhouseApi', '$rootScope', function($scope, inhouseApi, $rootScope) {
 	$scope.filters = {};
+	$scope.layout = $rootScope.theWebsiteData.landingLayout;
+	
 	inhouseApi.getData({resource: 'agent-story'}).success(function(response) {
 		console.log(response);
 		$scope.$broadcast('storyLoaded', response.response);
