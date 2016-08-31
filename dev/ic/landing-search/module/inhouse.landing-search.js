@@ -6,17 +6,22 @@ angular.module('ihframework')
 		replace: true,
 		scope: {
 			classes: "@classes",
-			config: '='
+			config: '=',
+			configname: '@'
 		},
 		controller: function($rootScope, $scope, userDataService) {
 
-			$scope.$watch('config', function(newVal) {
-				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
-				} else {
-					$scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.htm';
-				}
-			});
+			if($scope.configname !== undefined) {
+				$scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.configname + '-inhouse.landing-search.htm';
+			} else {
+				$scope.$watch('config', function(newVal) {
+					if(newVal !== undefined) {
+						$scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
+					} else {
+						$scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.htm';
+					}
+				});
+			}
 
 			$scope.agent = $rootScope.theUserData;
 			$scope.filters = {active: true};
