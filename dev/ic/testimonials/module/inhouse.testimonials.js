@@ -19,6 +19,12 @@ angular.module('ihframework')
         }
       });  
       
+      $scope.next = function(id) {
+        $element.find('#' + id).carousel('next');
+      };
+      $scope.prev = function(id) {
+        $element.find('#' + id).carousel('prev');
+      };
       $scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
       $scope.agent = $rootScope.theUserData;
       $scope.range = function(min, max, step) {
@@ -34,7 +40,7 @@ angular.module('ihframework')
         $scope.showZillow = true;
         $qT = userData.getTestimonials();
         if($qT !== undefined) {
-          qT.success(function(args){
+          $qT.success(function(args){
             var testimonials = args.testimonials;
             
             if ((typeof $scope.source === 'undefined' || $scope.source == 'hybrid') && typeof $scope.$root.theWebsiteData.testimonials === 'object') {
