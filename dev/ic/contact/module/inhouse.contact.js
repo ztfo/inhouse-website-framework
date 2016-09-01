@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihContact', ['$timeout', function($timeout) {
 	return {
-		template: '<ng-include src="templateUrl"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
 		transclude: true,
 		scope: {
 			contactMessage: "@message",

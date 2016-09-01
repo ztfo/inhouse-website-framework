@@ -6,7 +6,7 @@ angular.module('ihframework')
 			config: '=',
 			listing: '='
 		},
-		template: '<ng-include src="templateUrl"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
 		restrict: 'E',
 		controller: function($rootScope, $scope) {
 			$scope.$watch('config', function(newVal) {
