@@ -24,7 +24,7 @@ angular.module('ihframework')
 								position: scope.center,
 								map: scope.map,
 								title: args.address,
-								icon: 'ia/icons/map-pin.png'
+								icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 							});
 						}
 					});
@@ -40,7 +40,7 @@ angular.module('ihframework')
 						position: scope.center,
 						map: scope.map,
 						title: args.address,
-						icon: 'ia/icons/map-pin.png'
+						icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 					});
 				}
 			});
