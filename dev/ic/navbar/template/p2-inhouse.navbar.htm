@@ -1,0 +1,42 @@
+<nav class="p2 ih-nav navbar navbar-default text-center {{classes}} {{controller}}" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+    <div class="container-fluid">
+        <div class="ih navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a itemprop="url" class="navbar-brand" href="#/">
+                <img itemprop="logo" ng-src="{{agent.teamLogo}}" alt="{{agent.teamName}} logo" />
+            </a>
+        </div>
+        <div class="ih navbar-collapse" ng-class="{collapse: isCollapsed}" id="mainNav">
+            <div class="navbar-center">
+                <ul class="nav navbar-nav" role="menubar">
+                    <li ng-repeat="link in navbar" ng-class="link.children !== undefined">
+                        <a role="menuitem" itemprop="url" href="{{link.href}}" ng-if="link.children === undefined" ng-attr-target="{{link.type == 'external' || ''}}" target="_blank" class="text-uppercase" ng-click="$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed"><span itemprop="name">{{link.display}}</span></a>
+                        <a ng-if="link.children !== undefined" href="" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.display}} <span class="caret"></span></a>
+                        <ul ng-if="link.children !== undefined" class="dropdown-menu">
+                            <li ng-repeat="sublink in link.children">
+                                <a role="menuitem" itemprop="url" href="{{sublink.href}}" ng-attr-target="{{sublink.type == 'external' || ''}}" target="_blank" ng-click="$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed"><span itemprop="name">{{sublink.display}}</span><i class="fa fa-caret-right"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul class="ih-cta nav navbar-nav navbar-right">
+                <li>
+                    <a href="tel:{{agent.contactPhone | tel}}" class="clean-link">
+                        {{agent.contactPhone | tel}}
+                      <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
+                    </a>
+                    <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in btn btn-primary" ng-if="!inhouseAgentUserLoggedIn">Sign-in</button>
+                    <a href="#/search-mls?page=1&my-listings" class="clean-link sign-in signed-in btn btn-primary" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
