@@ -4,7 +4,7 @@
     <h1 class="ih-header text-center">Featured Homes</h1>
     <div class="ih-md-divider"></div>
 
-    <div class="ih-ft-carousel owl-carousel">
+    <ih-owl class="ih-ft-carousel owl-carousel" items="homes" responsive="responsive" length="listingLoaders">
 
       <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
 

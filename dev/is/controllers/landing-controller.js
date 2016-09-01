@@ -4,7 +4,6 @@ angular.module('ihframework')
 	$scope.layout = $rootScope.theWebsiteData.landingLayout;
 	
 	inhouseApi.getData({resource: 'agent-story'}).success(function(response) {
-		console.log(response);
 		$scope.$broadcast('storyLoaded', response.response);
 	}).error(function() {
 		console.log('error loading plugins');

@@ -37,7 +37,7 @@ gulp.task('concat', function() {
         concat('all.min.js'),
         // babel({ presets: ['es2015']}),
         ngAnnotate(),
-        uglify(),
+//        uglify(),
         sourcemaps.write(),
         gulp.dest('./build/')
      ],
