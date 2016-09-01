@@ -9,15 +9,17 @@
           <div class="row">
             <div id="listingSlider" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
-                <div class="item active" ng-hide="listing.photos.length > 0">
-                  <div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
-                </div>
-                <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
-                  <div ng-click="showLightBox()" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}"></div>
-                  <div class="carousel-caption">
-                    {{slide.caption}}
+                  <div class="item active" ng-hide="listing.photos.length > 0">
+                      <div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
                   </div>
-                </div>
+                  <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
+                      <div ng-click="showLightBox()" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
+                          <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
+                      </div>
+                      <div class="carousel-caption">
+                          {{slide.caption}}
+                      </div>
+                  </div>
               </div>
               <a class="left carousel-control" href="#listingSlider" role="button" data-slide="prev" onClick="event.preventDefault()">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
