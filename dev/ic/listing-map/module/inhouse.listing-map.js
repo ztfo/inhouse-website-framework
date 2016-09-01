@@ -61,7 +61,7 @@ angular.module('ihframework')
 						position: {lat: parseFloat(args[i].latlong.split(',')[0]), lng: parseFloat(args[i].latlong.split(',')[1])},
 						map: scope.map,
 						title: args[i].address,
-						icon: 'ia/icons/map-pin.png'
+						icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 					});
 					marker.addListener('click', (function(map, marker, infoWindow) {
 						return function() {
