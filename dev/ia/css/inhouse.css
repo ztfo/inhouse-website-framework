@@ -13,8 +13,8 @@ input:active, input:focus { outline: none !important; }
 /* resets */
 
 /* font defaults */
-.fw { color: #f5f5f5; }
-.fb { color: #171717; }
+.fw, .fw h1, .fw h2, .fw h3 , .fw h4  { color: #f5f5f5 !important; }
+.fb, .fb h1, .fb h2, .fb h3 , .fb h4 { color: #171717 !important; }
 .fo { font-family: 'Open Sans' , sans-serif; }
 /* font ends */
 
