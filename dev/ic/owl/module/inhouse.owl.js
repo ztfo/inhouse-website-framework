@@ -33,6 +33,10 @@ angular.module('ihframework')
           });
           
           $scope.owl = $($element).data('owl.carousel');
+          $element.find('.owl-item').click(function() {
+            var index = $(this).index('.owl-item');
+            $scope.$emit('owlItemClicked', {index: index});
+          });
         });
       };
     }

@@ -37,11 +37,11 @@
     </div>
 
     <div class="ih-listing-images">
-      <div class="ih-nav-carousel ih-owl-carousel">
+      <ih-owl items="listing.photos" responsive="responsive" class="ih-nav-carousel owl-carousel ih-owl-carousel">
         <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
           <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="fit-image ih-owl-thumbnail">
         </div>
-      </div>
+      </ih-owl>
     </div>
 
     <div class="ih-listing-factbar row">
