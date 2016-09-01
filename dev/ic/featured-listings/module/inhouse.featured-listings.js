@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihFeaturedListings', ['inhouseApi', '$timeout', function (inhouseApi, $timeout) {
 	return {
-		template: '<ng-include src="templateUrl" onload="loaded()"></ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
 		restrict: 'E',
 		scope: {
 			classes: "@classes",

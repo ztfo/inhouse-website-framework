@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihResources', function() {
 	return {
-		template: '<ng-include src="templateUrl"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		scope: {
 			classes: "@classes",
 			config: '='

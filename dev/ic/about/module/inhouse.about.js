@@ -5,7 +5,7 @@ angular.module('ihframework')
 			classes: "@classes",
 			config: '='
 		},
-		template: '<ng-include src="templateUrl"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		restrict: 'E',
 		controller: function($scope, $rootScope, userDataService) {
 			$scope.$watch('config', function(newVal) {
