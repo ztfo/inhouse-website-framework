@@ -4,8 +4,7 @@ module.exports = {
   allCSS: [
     "dev/ia/css/bootstrap-slider.min.css",
     "dev/ia/css/owl.carousel.css",
-    "dev/ia/css/uikit.css",
-    "dev/ia/css/sticky.min.css",
+    "dev/ia/css/uikit.min.css",
     "dev/ia/css/slidenav.css",
     "dev/ia/css/inhouse.css",
     "dev/ia/icons/property-icons/ih-icons.css",

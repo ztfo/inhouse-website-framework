@@ -30,7 +30,7 @@
     right: 0;
     left: 0;
     text-align: center;
-    z-index: 10;
+    z-index: 11;
     font-size: 20px;
 }
 
@@ -296,7 +296,17 @@
     width: 100%;
 }
 
-
+/* s7*/
+.s7.ih-slider {
+  height: calc(100vh);
+}
+.s7.ih-slider .item {
+  height: 100%;
+}
+.s7.ih-slider .ih-search-container {
+  padding-top: 35%;
+  z-index: 11;
+}
 /* p1 */
 
 .p1.ih-slider, .p1 .ih-slider-row, .p1 #mainSlider, .p1.ih-slider .item {
