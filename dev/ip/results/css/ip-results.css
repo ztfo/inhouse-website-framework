@@ -13,6 +13,10 @@
     letter-spacing: 1px;
     color: #707070;
 }
+.no-results .ih-ui-no-listings {
+  font-size: 5em;
+  opacity: .5;
+}
 .ih-mls-legal {
     margin: 25px 0;
 }

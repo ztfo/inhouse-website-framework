@@ -1,4 +1,11 @@
 /* per-listing loader */
+.ih-loader-listing .ih-ui {
+  font-size: 5em;
+  opacity: .1;
+}
+.ih-loader-listing .ih-ft-listing-img {
+  padding: 50px 0;
+}
 
 .text-block {
     display: block;
@@ -28,7 +35,6 @@
 }
 .ih-loader-listing .ih-ft-listing-img {
     text-align: center;
-    line-height: 190px;
     -webkit-animation: loadingFade 2s ease infinite;
             animation: loadingFade 2s ease infinite;
 }

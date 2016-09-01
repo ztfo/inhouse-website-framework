@@ -102,7 +102,6 @@ section.ih404 {
 .ih-footer {
     position: relative;
     text-align: center;
-    margin-top: 40px;
     padding: 15px 0;
     background-color: #2ba8de;
     text-transform: uppercase;
@@ -121,7 +120,14 @@ section.ih404 {
 .ih-legal {
     margin: 15px 0;
 }
-
+.ih-footer .ih-ui-inhouse-emblem {
+  font-size: 5em;
+  opacity: .2;
+  transition: .3s;
+}
+.ih-footer .ih-ui-inhouse-emblem:hover {
+  opacity: .5;
+}
 /* footer ends */
 
 
