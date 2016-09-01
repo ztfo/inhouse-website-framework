@@ -125,7 +125,7 @@
                     </div>
                     <div class="ih-listing-block col-lg-4 col-md-6 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
                         <div class="ih-listing-card">
-                            <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
+                            <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');">
                                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
                                   View Home
                                 </a>
