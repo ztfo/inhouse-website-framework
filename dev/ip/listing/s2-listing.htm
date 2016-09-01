@@ -32,11 +32,11 @@
       </div>
 
       <div class="ih-listing-images">
-        <div class="ih-nav-carousel ih-owl-carousel">
+        <ih-owl items="listing.photos" responsive="responsive" class="ih-nav-carousel owl-carousel ih-owl-carousel">
           <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
             <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="img-responsive ih-owl-thumbnail">
           </div>
-        </div>
+        </ih-owl>
       </div>
 
       <div class="ih-listing-factbar container-fluid">
@@ -71,7 +71,7 @@
           <p class="small text-uppercase fs">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         </div>
         <div class="ih-sm-divider ih-ext-divider"></div>
-        <ih-listing-details></ih-listing-details>
+        <ih-listing-details listing="listing"></ih-listing-details>
       </div>
       <div class="container-fluid hidden-lg hidden-md mobile-map">
         <ih-gmaps class="full"></ih-gmaps>
@@ -80,7 +80,7 @@
 
         <div class="ih-listing-form col-lg-8 col-md-12 col-sm-12 col-xs-12">
           <h3>Questions about this listing?</h3>
-          <ih-contact config="f1" message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
+          <ih-contact configname="f1" message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
         </div>
 
         <div class="ih-listing-documents col-lg-4 col-md-12 col-sm-12 col-xs-12">

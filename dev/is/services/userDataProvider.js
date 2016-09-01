@@ -15,7 +15,7 @@ angular.module('ihframework').factory('userData', function($http, $q, $rootScope
 				attributes += key + '=\"' + item[key] + '\" ';
 			}
 			// console.log(templateArray);
-			templateArray.push('<ih-' + item.component + others + attributes + '></ih-' + item.component + `>`);
+			templateArray.push('<ih-' + item.component + others + attributes + '></ih-' + item.component + '>');
 		});
 		return templateArray;
 	}

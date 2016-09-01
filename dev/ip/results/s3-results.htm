@@ -99,14 +99,13 @@
 
       <div class="row listing-row">
         <div class="no-results hidden">
-          <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
-          <hr> Sorry, there are no listings that match your search criteria.
+            <span class="ih-ui-no-listings"></span>
+            <hr> Sorry, there are no listings that match your search criteria.
         </div>
-
         <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
           <div class="ih property-img col-lg-4 col-md-4 col-sm-6 col-xs-12 nopad">
             <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
-            <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
+            <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
           </div>
           <div class="property-data col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <header>
@@ -193,5 +192,5 @@
       </div>
     </div>
   </div>
-  <ih-divider config="logo"></ih-divider>
+  <ih-divider configname="logo"></ih-divider>
 </section>

@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihListingDetails', [function (inhouseApi, $timeout) {
 	return {
-		template: '<ng-include src="templateUrl"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		restrict: 'E',
 		replace: true,
 		scope: {

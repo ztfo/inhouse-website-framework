@@ -18,7 +18,14 @@
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.1);
 }
-
+.ih-legal>div {
+  padding: 0;
+  margin-bottom: 10px;
+}
+.legal-row .ih-ui,
+.ih-legal .ih-ui {
+  font-size: 3em;
+}
 /* s2 */
 
 .s2 .footer-col>div {

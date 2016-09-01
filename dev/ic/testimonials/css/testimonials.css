@@ -64,6 +64,7 @@
     font-weight: 800;
     letter-spacing: 2px;
     color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 .s2 .owl-nav>div:hover {
     background-color: rgba(0, 0, 0, 0.05);

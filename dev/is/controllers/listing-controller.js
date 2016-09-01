@@ -61,17 +61,8 @@ angular.module('ihframework')
 
 			$timeout(function() {
 				$scope.$broadcast('listingLoaded', $scope.listing);
-				$('.ih-owl-carousel').owlCarousel({
-					mouseDrag: true,
-					autoWidth: true,
-					nav: true,
-					margin: 10,
-					autoplay: false,
-					autoplayHoverPause: true
-				});
-				$('.ih-owl-carousel').find('.owl-item').click(function() {
-					var index = $(this).index('.owl-item');
-					$('#listingSlider').carousel(index);
+				$scope.$on('owlItemClicked', function(event, args) {
+					$('#listingSlider').carousel(args.index);
 				});
 
 				$('#main-view').removeClass('load-overlay');

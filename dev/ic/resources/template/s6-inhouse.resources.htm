@@ -11,7 +11,7 @@
 
         <!-- repeat limit:2 inside img-list and continue rest on new .img-list -->
         <div class="">
-          <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' open-tab>
+          <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl?'_blank':'_self'}}">
           <img class="img-border" ng-src="" alt="{{content.title}}" />
           <span class="overlay">{{content.title}}</span>
           <span class="text-content">

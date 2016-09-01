@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihContact', ['$timeout', function($timeout) {
 	return {
-		template: '<ng-include src="templateUrl"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
 		transclude: true,
 		scope: {
 			contactMessage: "@message",
@@ -12,7 +12,7 @@ angular.module('ihframework')
 			typeofcontact: '@typeofcontact',
 			config: '=',
 			configname: '@',
-			message: '='
+			message: '@'
 		},
 		link: function(scope, element, attrs) {
 			if(typeof scope.contact == 'undefined') {

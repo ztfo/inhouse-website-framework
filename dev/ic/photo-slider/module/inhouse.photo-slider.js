@@ -1,7 +1,7 @@
 angular.module('ihframework').directive('ihPhotoSlider', function(){
   return {
     restrict: 'E',
-    template: '<ng-include src="templateUrl"></ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
     scope: {
       'config': '=',
       'listing': '='

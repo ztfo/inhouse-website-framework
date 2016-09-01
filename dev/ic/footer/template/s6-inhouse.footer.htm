@@ -1,156 +1,49 @@
 <footer class="s6 footer {{classes}} {{controller}}" ng-hide="showFooter != undefined && showFooter == false">
-  <div class="container top-footer">
-    <div class="footer-col row">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-        <h6>Connect with Us</h6>
-        <div class="social-links">
-          <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
-          <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
-          <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
-          <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
-          <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
-        </div>
-        <address class="fs">
+    <div class="container top-footer">
+        <div class="footer-col row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <h6>Connect with Us</h6>
+                <div class="social-links">
+                    <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+                </div>
+                <address class="fs">
           <strong>{{agent.brokerage}}</strong><br>
           {{agent.contactAddress}}<br>
           {{agent.contactAddress2}}<br>
         </address>
-        <address class="fs">
+                <address class="fs">
           {{agent.contactPhone | tel}}<br>
           {{agent.contactEmail}}
         </address>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center broker-logo">
-        <img ng-src="{{agent.brokerageLogo}}" class="broker-footer" alt="{{agent.brokerage}}"/>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 headshot-footer">
-        <h6>{{agent.team[0].name}}</h6>
-        <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square img-responsive headshot-img">
-      </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center broker-logo">
+                <img ng-src="{{agent.brokerageLogo}}" class="broker-footer" alt="{{agent.brokerage}}" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 headshot-footer text-right">
+                <h6>{{agent.team[0].name}}</h6>
+                <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square headshot-img">
+            </div>
+        </div>
+        <div class="row legal-row">
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-left">
+                <span class="ih-ui ih-ui-fairhousing"></span>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center text-uppercase">
+                <a href="{{sitemap}}" class="sitemap fo text-uppercase"><small>sitemap</small></a>
+                <h6 class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</h6>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-right">
+                <span class="ih-ui ih-ui-realtor"></span>
+            </div>
+        </div>
     </div>
-    <div class="row legal-row">
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-left">
-        <svg version="1.1" id="fairhousingIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-             y="0px" width="45px" height="45px" viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
-        <g>
-            <polygon class="fl-02" points="5.442,35.921 3.714,35.921 3.714,36.605 5.303,36.605 5.303,37.189 3.714,37.189 3.714,38.027
-                5.522,38.027 5.522,38.607 3.045,38.607 3.045,35.348 5.442,35.348    "/>
-            <path class="fl-02" d="M7.636,37.719l0.329,0.311c-0.123,0.064-0.256,0.089-0.368,0.089c-0.369,0-0.889-0.228-0.889-1.142
-                c0-0.916,0.519-1.139,0.889-1.139c0.368,0,0.886,0.227,0.886,1.139c0,0.307-0.059,0.531-0.149,0.701l-0.347-0.32L7.636,37.719
-                L7.636,37.719z M9.177,38.477L8.82,38.143c0.201-0.258,0.343-0.629,0.343-1.166c0-1.533-1.137-1.717-1.566-1.717
-                c-0.433,0-1.57,0.188-1.57,1.717c0,1.532,1.138,1.719,1.57,1.719c0.188,0,0.525-0.038,0.834-0.221l0.389,0.367L9.177,38.477
-                L9.177,38.477z"/>
-            <path class="fl-02" d="M12.372,37.47c0,0.853-0.52,1.226-1.34,1.226c-0.302,0-0.747-0.073-1.039-0.396
-                c-0.179-0.197-0.246-0.464-0.256-0.791v-2.163h0.694v2.113c0,0.46,0.265,0.657,0.582,0.657c0.469,0,0.658-0.225,0.658-0.623v-2.147
-                h0.698L12.372,37.47L12.372,37.47z"/>
-            <path class="fl-02" d="M14.196,36.082h0.011l0.402,1.293h-0.833L14.196,36.082L14.196,36.082z M13.596,37.936h1.206l0.21,0.677
-                h0.74l-1.15-3.265h-0.786l-1.166,3.26h0.72L13.596,37.936L13.596,37.936z"/>
-            <polygon class="fl-02" points="16.965,38.02 18.588,38.02 18.588,38.607 16.284,38.607 16.284,35.348 16.965,35.348    "/>
-            <polygon class="fl-02" points="21.173,37.145 21.173,38.607 20.493,38.607 20.493,35.348 21.173,35.348 21.173,36.58
-                22.446,36.58 22.446,35.348 23.125,35.348 23.125,38.607 22.446,38.607 22.446,37.145  "/>
-            <path class="fl-02" d="M24.425,36.977c0-0.912,0.521-1.139,0.887-1.139c0.369,0,0.889,0.227,0.889,1.139
-                c0,0.916-0.52,1.14-0.889,1.14C24.944,38.115,24.425,37.893,24.425,36.977L24.425,36.977z M23.747,36.977
-                c0,1.532,1.133,1.721,1.564,1.721c0.436,0,1.571-0.188,1.571-1.721c0-1.53-1.136-1.717-1.571-1.717
-                C24.88,35.258,23.747,35.443,23.747,36.977L23.747,36.977z"/>
-            <path class="fl-02" d="M30.137,37.47c0,0.853-0.52,1.226-1.34,1.226c-0.299,0-0.744-0.073-1.038-0.396
-                c-0.177-0.197-0.244-0.464-0.252-0.791v-2.163h0.692v2.113c0,0.46,0.265,0.657,0.581,0.657c0.469,0,0.66-0.225,0.66-0.623v-2.147
-                h0.695L30.137,37.47L30.137,37.47z"/>
-            <path class="fl-02" d="M31.385,37.604c0.007,0.183,0.099,0.526,0.693,0.526c0.319,0,0.68-0.073,0.68-0.422
-                c0-0.255-0.245-0.322-0.589-0.404l-0.35-0.083c-0.529-0.121-1.037-0.236-1.037-0.955c0-0.365,0.193-1.007,1.253-1.007
-                c1.001,0,1.267,0.655,1.272,1.056h-0.654c-0.021-0.146-0.07-0.49-0.668-0.49c-0.26,0-0.569,0.095-0.569,0.393
-                c0,0.253,0.208,0.309,0.347,0.338l0.795,0.197c0.445,0.105,0.855,0.292,0.855,0.878c0,0.981-1.001,1.066-1.287,1.066
-                c-1.189,0-1.395-0.687-1.395-1.091L31.385,37.604L31.385,37.604z"/>
-            <polygon class="fl-02" points="34.653,38.607 33.976,38.607 33.976,35.348 34.653,35.348  "/>
-            <polygon class="fl-02" points="37.376,35.348 38.015,35.348 38.015,38.607 37.331,38.607 36.002,36.28 35.987,36.28
-                35.987,38.607 35.356,38.607 35.356,35.348 36.069,35.348 37.365,37.62 37.376,37.62   "/>
-            <path class="fl-02" d="M40.294,36.85h1.363v1.758h-0.453l-0.068-0.408c-0.174,0.201-0.426,0.496-1.019,0.496
-                c-0.787,0-1.501-0.563-1.501-1.711c0-0.89,0.496-1.729,1.595-1.727c0.999,0,1.397,0.649,1.429,1.102h-0.679
-                c0-0.129-0.231-0.538-0.714-0.538c-0.486,0-0.938,0.337-0.938,1.174c0,0.889,0.485,1.121,0.948,1.121
-                c0.153,0,0.653-0.058,0.793-0.716h-0.758L40.294,36.85L40.294,36.85L40.294,36.85z"/>
-            <path class="fl-02" d="M3.583,41.938c0-0.918,0.519-1.144,0.885-1.144c0.369,0,0.887,0.226,0.887,1.144
-                c0,0.912-0.519,1.138-0.887,1.138S3.583,42.848,3.583,41.938L3.583,41.938z M2.897,41.938c0,1.527,1.136,1.715,1.567,1.715
-                c0.433,0,1.567-0.188,1.567-1.715c0-1.533-1.135-1.72-1.567-1.72C4.035,40.218,2.897,40.402,2.897,41.938L2.897,41.938z"/>
-            <path class="fl-02" d="M7.903,41.826v-0.959h0.541c0.423,0,0.597,0.132,0.597,0.449c0,0.146,0,0.51-0.508,0.51H7.903L7.903,41.826
-                z M7.903,42.387h0.78c0.878,0,1.039-0.742,1.039-1.039c0-0.639-0.38-1.045-1.012-1.045h-1.49v3.266h0.682L7.903,42.387
-                L7.903,42.387z"/>
-            <path class="fl-02" d="M11.577,41.826v-0.959h0.539c0.423,0,0.6,0.132,0.6,0.449c0,0.146,0,0.51-0.509,0.51H11.577L11.577,41.826z
-                 M11.577,42.387h0.78c0.875,0,1.041-0.742,1.041-1.039c0-0.639-0.383-1.045-1.014-1.045h-1.493v3.266h0.684v-1.182H11.577z"/>
-            <path class="fl-02" d="M15.102,41.938c0-0.918,0.518-1.144,0.888-1.144c0.365,0,0.883,0.226,0.883,1.144
-                c0,0.912-0.518,1.138-0.883,1.138C15.619,43.074,15.102,42.848,15.102,41.938L15.102,41.938z M14.421,41.938
-                c0,1.527,1.135,1.715,1.569,1.715c0.433,0,1.565-0.188,1.565-1.715c0-1.533-1.133-1.72-1.565-1.72
-                C15.556,40.218,14.421,40.402,14.421,41.938L14.421,41.938z"/>
-            <path class="fl-02" d="M19.411,41.739v-0.874h0.848c0.399,0,0.479,0.253,0.479,0.428c0,0.324-0.172,0.446-0.528,0.446H19.411
-                L19.411,41.739z M18.742,43.566h0.669V42.29h0.704c0.506,0,0.532,0.172,0.532,0.618c0,0.335,0.024,0.503,0.069,0.658h0.759v-0.088
-                c-0.148-0.051-0.148-0.17-0.148-0.647c0-0.606-0.143-0.707-0.413-0.825c0.321-0.109,0.505-0.42,0.505-0.777
-                c0-0.281-0.157-0.924-1.025-0.924h-1.651V43.566L18.742,43.566z"/>
-            <polygon class="fl-02" points="23.958,43.566 23.276,43.566 23.276,40.881 22.293,40.881 22.293,40.301 24.944,40.301
-                24.944,40.881 23.958,40.881     "/>
-            <path class="fl-02" d="M28.606,42.425c0,0.854-0.521,1.228-1.342,1.228c-0.299,0-0.744-0.072-1.037-0.396
-                c-0.177-0.198-0.246-0.464-0.256-0.79v-2.165h0.696v2.12c0,0.453,0.265,0.653,0.581,0.653c0.47,0,0.656-0.224,0.656-0.622v-2.151
-                h0.699v2.123H28.606z"/>
-            <polygon class="fl-02" points="31.903,40.301 32.541,40.301 32.541,43.566 31.856,43.566 30.526,41.238 30.521,41.238
-                30.521,43.566 29.88,43.566 29.88,40.301 30.603,40.301 31.897,42.576 31.903,42.576   "/>
-            <polygon class="fl-02" points="34.464,43.566 33.782,43.566 33.782,40.301 34.464,40.301  "/>
-            <polygon class="fl-02" points="37.123,43.566 36.442,43.566 36.442,40.881 35.462,40.881 35.462,40.301 38.112,40.301
-                38.112,40.881 37.123,40.881     "/>
-            <polygon class="fl-02" points="40.687,43.566 40.008,43.566 40.008,42.334 38.884,40.301 39.685,40.301 40.36,41.723
-                41.009,40.301 41.778,40.301 40.687,42.342   "/>
-            <path class="fl-02" d="M22.336,1.348L0.363,12.169v5.084h2.459v15.251h38.862V17.253h2.952v-5.084L22.336,1.348L22.336,1.348z
-                 M36.933,27.909H7.58V13.973l14.755-7.544l14.594,7.544V27.91L36.933,27.909L36.933,27.909z"/>
-            <polygon class="fl-02" points="29.06,18.891 15.449,18.891 15.449,13.973 29.06,13.973    "/>
-            <polygon class="fl-02" points="29.06,25.946 15.449,25.946 15.449,21.023 29.06,21.023    "/>
-        </g>
-        </svg>
-      </div>
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center text-uppercase">
-        <a href="{{sitemap}}" class="sitemap fo text-uppercase"><small>sitemap</small></a>
-        <h6 class="copyright fs">&copy; 2016 All Rights Reserved - InHouse | {{agent.teamName}}</h6>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 text-right">
-        <svg version="1.1" id="realtorIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-             y="0px" width="45px" height="45px" viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
-        <g>
-            <path class="fl-02" d="M41.354,37.865c0-0.225-0.158-0.326-0.487-0.326h-0.438v1.188h0.18v-0.52h0.277l0.25,0.52h0.205
-                l-0.266-0.545C41.25,38.156,41.354,38.027,41.354,37.865z M40.832,38.086h-0.225v-0.43h0.225c0.236,0,0.338,0.066,0.338,0.221
-                C41.17,38.037,41.066,38.086,40.832,38.086z"/>
-            <path class="fl-02" d="M41.568,37.42c-0.196-0.195-0.451-0.303-0.734-0.303c-0.281,0-0.529,0.107-0.723,0.301
-                c-0.195,0.197-0.307,0.457-0.307,0.734c0,0.271,0.108,0.526,0.303,0.719c0.197,0.203,0.457,0.313,0.727,0.313
-                c0.271,0,0.532-0.108,0.734-0.315c0.195-0.188,0.296-0.438,0.296-0.72C41.864,37.868,41.764,37.607,41.568,37.42z M41.492,38.787
-                c-0.18,0.178-0.416,0.279-0.658,0.279c-0.243,0-0.473-0.103-0.646-0.271c-0.178-0.176-0.27-0.404-0.27-0.643
-                c0-0.244,0.096-0.476,0.275-0.652c0.168-0.174,0.394-0.266,0.64-0.266c0.251,0,0.481,0.092,0.659,0.27
-                c0.17,0.164,0.263,0.398,0.263,0.652C41.755,38.402,41.664,38.625,41.492,38.787z"/>
-            <g>
-                <g>
-                    <path class="fl-02" d="M7.038,40.586c0-0.639-0.304-1.244-0.792-1.584c-0.422-0.293-0.883-0.354-1.446-0.354H3.136v5.961h0.817
-                        v-5.144h0.694c0.516,0,0.888,0,1.162,0.244c0.246,0.229,0.367,0.521,0.367,0.885c0,0.603-0.438,1.005-1.09,1.005H4.317
-                        l1.851,3.01h0.974l-1.397-2.265C6.495,42.191,7.038,41.471,7.038,40.586z"/>
-                    <polygon class="fl-02" points="8.872,44.609 12.095,44.609 12.095,43.797 9.695,43.797 9.695,42.031 12.095,42.031
-                        12.095,41.203 9.695,41.203 9.695,39.469 12.095,39.469 12.095,38.648 8.872,38.648            "/>
-                    <path class="fl-02" d="M16.48,38.648h-0.854l-2.314,5.961h0.873l0.683-1.779h2.357l0.682,1.779h0.88l-2.272-5.875L16.48,38.648z
-                         M16.934,42.049h-1.774l0.88-2.363L16.934,42.049z"/>
-                    <polygon class="fl-02" points="20.919,38.648 20.096,38.648 20.096,44.609 22.924,44.609 22.924,43.797 20.919,43.797          "/>
-                    <polygon class="fl-02" points="23.784,39.469 24.923,39.469 24.923,44.609 25.746,44.609 25.746,39.469 26.887,39.469
-                        26.887,38.648 23.784,38.648             "/>
-                    <path class="fl-02" d="M30.852,38.533c-0.813,0-1.521,0.291-2.105,0.861c-0.598,0.594-0.928,1.373-0.928,2.194
-                        c0,1.789,1.301,3.138,3.023,3.138c0.895,0,1.659-0.339,2.273-1.007c0.521-0.577,0.785-1.293,0.785-2.133
-                        c0-0.842-0.314-1.596-0.914-2.185C32.4,38.826,31.684,38.533,30.852,38.533z M30.885,43.924c-1.267,0-2.219-1-2.219-2.324
-                        c0-0.653,0.314-1.328,0.827-1.758c0.385-0.328,0.853-0.5,1.349-0.5c1.225,0,2.223,1.004,2.223,2.238
-                        C33.064,42.893,32.105,43.924,30.885,43.924z"/>
-                    <path class="fl-02" d="M39.445,40.586c0-0.639-0.305-1.244-0.795-1.584c-0.42-0.293-0.881-0.354-1.447-0.354h-1.661v5.961h0.813
-                        v-5.144h0.697c0.516,0,0.887,0,1.162,0.244c0.247,0.231,0.368,0.522,0.368,0.885c0,0.603-0.44,1.005-1.093,1.005h-0.768
-                        l1.853,3.01h0.975l-1.399-2.265C38.902,42.191,39.445,41.471,39.445,40.586z"/>
-                </g>
-                <path class="fl-02" d="M39.385,0.273H3.196v36.182h36.188L39.385,0.273L39.385,0.273z M21.271,4.718h4.049
-                    c3.738,0.384,6.449,3.3,6.416,6.91c-0.033,3.577-2.715,6.413-6.416,6.791l-4.049-0.002V4.718z M17.346,32.113H7.104V4.675h10.242
-                    V32.113L17.346,32.113z M21.271,32.16V18.507L35.475,32.16H21.271L21.271,32.16z"/>
-            </g>
-        </g>
-        </svg>
-      </div>
+    <div class="ih-footer">
+      <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse" rel="noopener">
+          <span class="ih-ui-inhouse-emblem"></span>
+      </a>
     </div>
-  </div>
-  <div class="ih-footer">
-    <div class="text-center"><a href="https://www.getinhouse.io" title="Powered By InHouse" target="_blank" class="fo">Designed &amp; Powered By <span itemprop="creator">InHouse</span></a></div>
-    <a itemprop="significantLink" href="https://www.getinhouse.io" target="_blank" title="Powered By InHouse"><img src="ia/logos/inhouse.svg" alt="Powered By InHouse" /></a>
-  </div>
 </footer>
