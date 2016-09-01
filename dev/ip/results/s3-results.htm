@@ -99,10 +99,9 @@
 
       <div class="row listing-row">
         <div class="no-results hidden">
-          <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
-          <hr> Sorry, there are no listings that match your search criteria.
+            <span class="ih-ui-no-listings"></span>
+            <hr> Sorry, there are no listings that match your search criteria.
         </div>
-
         <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
           <div class="ih property-img col-lg-4 col-md-4 col-sm-6 col-xs-12 nopad">
             <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
