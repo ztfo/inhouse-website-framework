@@ -53,6 +53,7 @@ angular.module('ihframework')
 
 			for (var i = 0; i < $scope.listing.photos.length; i++) {
 				$scope.lightBox.push({
+					'index': i,
 					'source' : $scope.listing.photos[i].UriLarge,
 					'type' : 'image',
 					'caption' : $scope.listing.photos[i].Caption
@@ -73,8 +74,10 @@ angular.module('ihframework')
 
 	$scope.getData();
 
-	$scope.showLightBox = function() {
-		debugger;
-		UIkit.lightbox.create($scope.lightBox).show();
+	$scope.showLightBox = function(index) {
+		var firstHalf = $scope.lightBox.slice().slice(0, index - 1);
+		var secondHalf = $scope.lightBox.slice().slice(index);
+		
+		UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
 	};
 }]);
