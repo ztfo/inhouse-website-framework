@@ -1,4 +1,3 @@
-
 angular.module('ngGPlaces', []);
 angular.module('ngGPlaces').value('gPlaces',google.maps.places);
 angular.module('ngGPlaces').value('gMaps',google.maps);
