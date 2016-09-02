@@ -1,17 +1,17 @@
 <section class="s1 ih-featured-slider">
   <div class="container">
-    
+
     <h1 class="ih-header text-center">Featured Homes</h1>
     <div class="ih-md-divider"></div>
-    
+
     <ih-owl class="ih-ft-carousel owl-carousel" items="homes" responsive="responsive" length="listingLoaders">
-      
+
       <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
-      
+
       <div class="item" ng-repeat="home in homes">
         <div class="ih-ft-listing" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
           <div class="ih-ft-listing-img">
-            <img ng-src="{{home.photo || 'ia/images/noimage-placeholder.jpg'}}" alt="{{home.caption}}" class="fit-image" ng itemprop="photo">
+            <img ng-src="{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}" alt="{{home.caption}}" class="fit-image" ng itemprop="photo">
             <a itemprop="url" href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
               View Home
             </a>
@@ -37,6 +37,6 @@
         </div>
       </div>
     </ih-owl>
-    
+
   </div>
 </section>
