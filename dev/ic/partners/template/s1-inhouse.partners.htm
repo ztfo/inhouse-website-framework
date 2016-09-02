@@ -2,13 +2,22 @@
     <div class="container">
         <h1 class="ih-header text-center">our partners</h1>
         <div class="ih-md-divider bk-gd"></div>
-        <ih-owl class="owl-carousel tst-carousel" items="partners" responsive="responsive">
+        <ih-owl class="owl-carousel partner-carousel" items="partners" responsive="responsive">
             <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="partner in partners">
                 <a href="#/{{partner.link}}" class="partner-link">
-                    <img ng-src="{{partner.image}}" class="img-responsive" />
+                    <img ng-src="{{partner.image}}" />
                 </a>
             </div>
         </ih-owl>
     </div>
     </div>
 </section>
+<script>
+    $(document).ready(function() {
+
+        $(".partner-carousel").owlCarousel(
+            items: 7,
+        );
+
+    });
+</script>
