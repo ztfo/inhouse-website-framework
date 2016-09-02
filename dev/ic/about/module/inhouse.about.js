@@ -26,8 +26,6 @@ angular.module('ihframework')
 				$scope.lenderOnly = args.data;
 			});
 
-			console.log('lenderOnly', $scope.lenderOnly);
-
 			$scope.agent = $rootScope.theUserData;
 		}
 	};
