@@ -2,9 +2,11 @@ angular.module('ihframework')
 .directive('ihNearby', function() {
 	return {
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			listing: '=',
+			config: '='
 		},
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		restrict: 'E',
 		link: function(scope, elem, attrs){
 			scope.config = attrs.config;

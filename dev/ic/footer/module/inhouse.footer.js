@@ -1,7 +1,7 @@
 angular.module('ihframework')
 .directive('ihFooter', ['$window', function($window) {
 	return {
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="theUrl()" class="{{classes}}"><ng-include>',
 		scope: {
 			classes: "@classes",
 			maxNavColumns: "@navColumns"

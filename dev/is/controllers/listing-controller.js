@@ -53,6 +53,7 @@ angular.module('ihframework')
 
 			for (var i = 0; i < $scope.listing.photos.length; i++) {
 				$scope.lightBox.push({
+					'index': i,
 					'source' : $scope.listing.photos[i].UriLarge,
 					'type' : 'image',
 					'caption' : $scope.listing.photos[i].Caption
@@ -61,17 +62,8 @@ angular.module('ihframework')
 
 			$timeout(function() {
 				$scope.$broadcast('listingLoaded', $scope.listing);
-				$('.ih-owl-carousel').owlCarousel({
-					mouseDrag: true,
-					autoWidth: true,
-					nav: true,
-					margin: 10,
-					autoplay: false,
-					autoplayHoverPause: true
-				});
-				$('.ih-owl-carousel').find('.owl-item').click(function() {
-					var index = $(this).index('.owl-item');
-					$('#listingSlider').carousel(index);
+				$scope.$on('owlItemClicked', function(event, args) {
+					$('#listingSlider').carousel(args.index);
 				});
 
 				$('#main-view').removeClass('load-overlay');
@@ -82,7 +74,10 @@ angular.module('ihframework')
 
 	$scope.getData();
 
-	$scope.showLightBox = function() {
-		UIkit.lightbox.create($scope.lightBox).show();
+	$scope.showLightBox = function(index) {
+		var firstHalf = $scope.lightBox.slice().slice(0, index - 1);
+		var secondHalf = $scope.lightBox.slice().slice(index);
+		
+		UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
 	};
 }]);

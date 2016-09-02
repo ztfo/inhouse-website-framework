@@ -11,14 +11,16 @@
           <div class="row">
             <div id="listingSlider" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
-                <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
-                  <div class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}" ng-click="showLightBox()">
-                    <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
+                  <div class="item active" ng-hide="listing.photos.length > 0">
+                      <div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
                   </div>
-                  <div class="carousel-caption">
-                    {{slide.caption}}
+                  <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
+                      <div ng-click="showLightBox($index)" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
+                      </div>
+                      <div class="carousel-caption">
+                          {{slide.caption}}
+                      </div>
                   </div>
-                </div>
               </div>
               <a class="left carousel-control" href="#listingSlider" role="button" data-slide="prev" onClick="event.preventDefault()">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -32,13 +34,13 @@
           </div>
         </div>
         <div class="ih-listing-images">
-          <div class="ih-nav-carousel ih-owl-carousel">
+          <ih-owl items="listing.photos" responsive="responsive" class="ih-nav-carousel owl-carousel ih-owl-carousel">
             <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
               <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="img-responsive ih-owl-thumbnail">
             </div>
-          </div>
+          </ih-owl>
         </div>
-      </div>      
+      </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 listing-details bkc-02 fw">
         <header class="ih">
           <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
@@ -66,14 +68,14 @@
                 <div class="meta-item-label">Bathrooms</div>
                 <div>{{listing.baths_total}}</div>
             </div>
-          </div>              
+          </div>
           <div class="meta-item">
             <i class="fa fa-car"></i>
             <div class="meta-item-field">
                 <div class="meta-item-label">Garage</div>
                 <div>{{listing.garage}}</div>
             </div>
-          </div>                            
+          </div>
           <div class="meta-item">
             <i class="fa fa-home"></i>
             <div class="meta-item-field">
@@ -87,10 +89,10 @@
                 <div class="meta-item-label">Status</div>
                 <div>{{listing.status}}</div>
             </div>
-          </div>	
-        </div>      
-      </div>      
-    </div>    
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <h3>About Home</h3>
@@ -100,7 +102,7 @@
           <a href="https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
           <a href="https://twitter.com/home?status={{shareUrl|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-twitter"></i></a>
           <a href="https://plus.google.com/share?url={{shareUrl}|encode}" class="ih-social-icon" target="_blank"><i class="fa fa-google-plus"></i></a>
-        </div>  
+        </div>
         <p>{{listing.PublicRemarks | sentence}}</p>
         <p class="small text-uppercase">Listing Information Courtesy of: <strong>{{listing.brokerage}}</strong></p>
         <h3>Home Details</h3>
@@ -117,7 +119,7 @@
           <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
           <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
           <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
-          <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>          
+          <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
         </div>
         <div class="fs">
           <p><i class="fa fa-phone round-icon bkc-03 fw"></i> {{agent.contactPhone | tel}}</p>
@@ -125,8 +127,8 @@
         </div>
         <p>
           <strong class="text-uppercase">{{agent.agentTagline}}</strong>
-        </p>       
-        <ih-contact config="f1"></ih-contact>
+        </p>
+        <ih-contact configname="f1"></ih-contact>
       </div>
     </div>
   </div>

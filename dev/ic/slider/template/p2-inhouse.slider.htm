@@ -1,0 +1,14 @@
+<section class="p2 ih-slider container-fluid">
+
+    <div class="bottom-btn fw">
+        <a href="#/"><i class="fa fa-angle-down"></i></a>
+    </div>
+    <div class="ih-slider-row row">
+        <div class="ih-slider-inner carousel-inner carousel slide carousel-fade full" data-ride="carousel">
+            <div uib-carousel active="active" no-wrap="false" class="full fade in">
+                <div uib-slide ng-repeat="slide in slides" index="$index" ng-style="{'background-image':'url(' + slide.large + ')'}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

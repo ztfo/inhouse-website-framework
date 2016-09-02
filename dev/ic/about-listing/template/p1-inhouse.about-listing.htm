@@ -1,6 +1,6 @@
 <section class="p1 ih-about-listing container-fluid">
     <div class="container">
-        <h1 class="ih-header text-center fc-02">About {{listing.streetAddress}}</h1>
+        <h1 class="ih-header text-center fc-02">About {{listing.address}}</h1>
         <div class="row">
             <p class="fs text-center col-md-6 col-md-offset-3">
                 {{listing.editableText}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.
@@ -11,7 +11,7 @@
                 <div class="fact-box">
                     <div class="ih-icon ih-icon-houses fc-02"></div>
                     <div class="fact-value fc-01">
-                        5{{listing.beds_total}}
+                        {{listing.beds}}
                     </div>
                     <div class="fact-label">
                         Bedrooms
@@ -22,7 +22,7 @@
                 <div class="fact-box">
                     <div class="ih-icon ih-icon-bathtub fc-02"></div>
                     <div class="fact-value fc-01">
-                        5{{listing.baths_total}}
+                        {{listing.baths}}
                     </div>
                     <div class="fact-label">
                         Baths
@@ -33,10 +33,10 @@
                 <div class="fact-box">
                     <div class="ih-icon ih-icon-house fc-02"></div>
                     <div class="fact-value fc-01">
-                        5,155{{listing.sq_total}}
+                        {{listing.sqft}}
                     </div>
                     <div class="fact-label">
-                        sqft{{listing.sizeUnit}}
+                        {{listing.sizeUnit}}
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="fact-box">
                     <div class="ih-icon ih-icon-investment fc-02"></div>
                     <div class="fact-value fc-01">
-                        2{{listing.stories}}
+                        {{listing.stories}}
                     </div>
                     <div class="fact-label">
                         Stories
@@ -55,7 +55,7 @@
                 <div class="fact-box">
                     <div class="ih-icon ih-icon-fence fc-02"></div>
                     <div class="fact-value fc-01">
-                        2{{listing.lotSize}}
+                        {{listing.lotsize}}
                     </div>
                     <div class="fact-label">
                         Acres

@@ -1,18 +1,22 @@
 angular.module('ihframework')
 .directive('ihResources', function() {
 	return {
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			config: '='
 		},
 		restrict: 'E',
 		controller: function($rootScope, $scope, userDataService){
-			$scope.theUrl = function(){
-				return 'build/templates/ic/resources/template/' + $scope.config + '-inhouse.resources.htm';
-			};
+			$scope.$watch('config', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.templateUrl = 'build/templates/ic/resources/template/' + $scope.config + '-inhouse.resources.htm';
+				} else {
+					$scope.templateUrl = 'build/templates/ic/resources/template/s1-inhouse.resources.htm';
+				}
+			});
 		},
 		link: function(scope, el, attrs) {
-			scope.config = attrs.config;
 			scope.limit = attrs.limit || 3;
 			var resources = [];
 			var featured = [];

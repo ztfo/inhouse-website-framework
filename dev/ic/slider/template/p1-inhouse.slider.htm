@@ -4,16 +4,16 @@
             <div class="iha ih-banner">
                 <div class="container-fluid full nopad">
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 fullh bkc-04 fw banner-box">
-                        <h1>InHouse Headquarters{{listing.listingCommunity}}</h1>
-                        <h5 class="text-uppercase">33 S. 5th Ave, Tucson, AZ 85701 {{listing.listingAddress}}</h5>
+                        <h1>{{listing.community}}</h1>
+                        <h5 class="text-uppercase">{{listing.address}}, {{listing.city}} {{listing.zip}}</h5>
                         <div class="home-facts">
-                            <span class="fact">15{{listing.beds_total}} <small class="text-uppercase">Bedrooms</small></span>
-                            <span class="fact">2{{listing.baths_total}} <small class="text-uppercase">Baths</small></span>
-                            <span class="fact">5,213{{listing.sq_total}} <small class="text-uppercase">SQFT{{listing.sizeUnit}}</small></span>
+                            <span class="fact">{{listing.beds}} <small class="text-uppercase">Bedrooms</small></span>
+                            <span class="fact">{{listing.baths}} <small class="text-uppercase">Baths</small></span>
+                            <span class="fact">{{listing.sqft}} <small class="text-uppercase">SQFT{{listing.sizeUnit}}</small></span>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 fullh bkc-02 fw banner-box">
-                        <h1>$25,000,000{{listing.price}}</h1>
+                        <h1>{{listing.price | currency}}</h1>
                         <a href="#/" class="btn btn-primary">Schedule Visit</a>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
         <a href="#/"><i class="fa fa-angle-down"></i></a>
     </div>
     <div class="ih-slider-row row">
-        <div id="{{slider}}" class="ih-slider-inner carousel-inner carousel slide carousel-fade full" data-ride="carousel">
+        <div class="ih-slider-inner carousel-inner carousel slide carousel-fade full" data-ride="carousel">
             <div uib-carousel active="active" no-wrap="false" class="full fade in">
-                <div uib-slide ng-repeat="slide in slides" index="$index" ng-style="{'background-image':'url(' + slide.image + ')'}">
+                <div uib-slide ng-repeat="slide in slides" index="$index" ng-style="{'background-image':'url(' + slide.large + ')'}">
                 </div>
             </div>
         </div>

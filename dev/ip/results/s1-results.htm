@@ -90,7 +90,7 @@
 
         <!-- listing results -->
         <div class="ih-results-inner">
-            <div class="ih-listings-menu" data-uk-sticky>
+            <div class="ih-listings-menu">
                 <div class="ihmap-results" id="mapResults" ng-show="mapShown">
                     <ih-listing-map class="full"></ih-listing-map>
                 </div>
@@ -116,12 +116,12 @@
             <div class="ih-listings container-fluid">
                 <div class="ih-listings-grid row">
                     <div class="no-results hidden">
-                        <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
+                        <span class="ih-ui-no-listings"></span>
                         <hr> Sorry, there are no listings that match your search criteria.
                     </div>
                     <div class="ih-listing-block col-lg-3 col-md-4 col-sm-6 col-xs-12 ih-mls-status-{{home.status}}" ng-class="showListView ? 'ih-listview' : ''" ng-repeat="home in listings" ng-mouseover="focusListing($index)">
                         <div class="ih-listing-card">
-                            <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');">
+                            <div class="ih-listing-card-img" style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');">
                                 <a href="#/listing/{{home.mls}}" class="ih-ft-listing-link block full">
                   View Home
                 </a>

@@ -13,6 +13,10 @@
     letter-spacing: 1px;
     color: #707070;
 }
+.no-results .ih-ui-no-listings {
+  font-size: 5em;
+  opacity: .5;
+}
 .ih-mls-legal {
     margin: 25px 0;
 }
@@ -28,6 +32,9 @@
 }
 .ih-filter-row .btn-group .btn {
     width: 33.333333%;
+}
+.ih-filters.container-fluid .ih-slide {
+    padding: 8px 0px;
 }
 .ih-slide {
   margin: 10px 0;
@@ -55,7 +62,9 @@
 .gmap-popwindow a:hover {
     text-decoration: none;
 }
-
+.ih-listing-slider .item {
+  cursor: pointer;
+}
 /* list view swap */
 
 .ih-listview {

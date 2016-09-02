@@ -10,9 +10,6 @@
           <h4 class="result-count"><strong>{{totalListings | number}}</strong> Total Listings</h4>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 listing-btns">
-          <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last">
-            <i class="fa fa-globe"></i>
-          </button>
           <ih-dropdown class="dropdown pull-right" items='[{"name": "Lowest Price", "value": "+ListPrice"}, {"name": "Highest Price", "value": "-ListPrice"}, {"name": "Newest Listings", "value": "-OnMarketDate"}, {"name": "Oldest Listings", "value": "+OnMarketDate"}]' id="sort" name="Sort By" ng-model="filters.sort"></ih-dropdown>
           <a class="btn btn-default ih-adv-toggle pull-right" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
             <i class="fa fa-filter"></i> More Filters
@@ -99,14 +96,13 @@
 
       <div class="row listing-row">
         <div class="no-results hidden">
-          <img src="ia/icons/no-listings.svg" alt="Sorry, no listings found." />
-          <hr> Sorry, there are no listings that match your search criteria.
+            <span class="ih-ui-no-listings"></span>
+            <hr> Sorry, there are no listings that match your search criteria.
         </div>
-
         <article class="ih-listing-block ih-mls-status-{{home.status}} container-fluid" ng-repeat="home in listings" ng-class="showListView ? 'ih-listview' : ''" ng-mouseover="focusListing($index)">
           <div class="ih property-img col-lg-4 col-md-4 col-sm-6 col-xs-12 nopad">
             <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
-            <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
+            <a href="#/listing/{{home.mls}}" style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');" class="block full img-link"></a>
           </div>
           <div class="property-data col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <header>
@@ -193,5 +189,5 @@
       </div>
     </div>
   </div>
-  <ih-divider config="logo"></ih-divider>
+  <ih-divider configname="logo"></ih-divider>
 </section>

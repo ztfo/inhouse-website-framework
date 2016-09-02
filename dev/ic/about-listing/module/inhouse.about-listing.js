@@ -2,15 +2,20 @@ angular.module('ihframework')
 .directive('ihAboutListing', function() {
 	return {
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			listing: '=',
+			config: '='
 		},
-		template: '<ng-include src="theUrl()"><ng-include>',
+		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
 		restrict: 'E',
 		controller: function($rootScope, $scope) {
-			$scope.theUrl = function(config){
-				config = 'p1';
-				return 'build/templates/ic/about-listing/template/' + config + '-inhouse.about-listing.htm';
-			};
+			$scope.$watch('config', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.templateUrl = 'build/templates/ic/about-listing/template/' + $scope.config + '-inhouse.about-listing.htm';
+				} else {
+					$scope.templateUrl = 'build/templates/ic/about-listing/template/p1-inhouse.about-listing.htm';
+				}
+			});
 			$scope.agent = $rootScope.theUserData;
 		}
 	};

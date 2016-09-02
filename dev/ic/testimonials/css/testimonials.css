@@ -6,6 +6,23 @@
 .ih-testimonials-inner {
     position: relative;
 }
+.ih-ui-zillow {
+    font-size: 3em;
+    opacity: .5;
+}
+.ih-ui-testimonial-01 {
+    font-size: 12em;
+    padding: 15px;
+}
+.fw .ih-ui-testimonial-01,
+.fw .ih-ui-testimonial-01 span::before {
+    color: #fff !important;
+}
+
+.fb .ih-ui-testimonial-01,
+.fb .ih-ui-testimonial-01 span::before {
+    color: #1b1b1b !important;
+}
 
 /* s1 */
 
@@ -21,7 +38,12 @@
     font-size: 30px;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
-
+.s1.ih-testimonials blockquote {
+  margin-left: 20px;
+}
+.s1.ih-testimonials .ih-testimonials-inner {
+    min-height: 200px;
+}
 /* s2 */
 
 .s2.ih-testimonials blockquote {
@@ -32,12 +54,12 @@
     padding: 25px 40px !important;
     min-height: 300px;
 }
-.s2 .ih-ratings {
+.s2.ih-testimonials .ih-ratings {
     color: gold;
     letter-spacing: 6px;
     margin: 10px 0;
 }
-.s2 .testimonial footer {
+.s2.ih-testimonials .testimonial footer {
     position: absolute;
     bottom: 30px;
     right: 0;
@@ -53,10 +75,10 @@
     display: block;
     text-align: right;
 }
-.s2 .owl-nav {
+.s2.ih-testimonials .owl-nav {
     text-align: center;
 }
-.s2 .owl-nav>div {
+.s2.ih-testimonials .owl-nav>div {
     display: inline-block;
     margin-bottom: 20px;
     padding: 5px 20px;
@@ -64,11 +86,12 @@
     font-weight: 800;
     letter-spacing: 2px;
     color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
-.s2 .owl-nav>div:hover {
+.s2.ih-testimonials .owl-nav>div:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
-.s2 .owl-nav>div:first-child {
+.s2.ih-testimonials .owl-nav>div:first-child {
     border-right: 1px solid #ddd;
 }
 
@@ -86,7 +109,7 @@
     font-size: 14px;
     border-right: 2px solid rgba(255, 255, 255, 0.1);
 }
-.s3 .ih-ratings {
+.s3.ih-testimonials .ih-ratings {
     margin-bottom: 15px;
     font-size: 20px;
     letter-spacing: 22px;
@@ -111,6 +134,9 @@
 .s3.ih-testimonials .owl-nav {
     text-align: center;
     margin: 30px 0;
+}
+.s2.ih-testimonials .owl-item {
+    padding: 0 7px;
 }
 .s3.ih-testimonials .owl-nav>div {
     display: inline-block;

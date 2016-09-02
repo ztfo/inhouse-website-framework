@@ -11,6 +11,7 @@ var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var paths = require('./paths');
+var cleanCss = require('gulp-clean-css');
 
 gulp.task('move-ua', function(){
   return gulp.src(['dev/ua/**/*'])
@@ -22,14 +23,10 @@ gulp.task('move-ia', function(){
     .pipe(gulp.dest('./build/ia'));
 });
 
-gulp.task('move-index', function(){
-  return gulp.src(['dev/index.html'])
-    .pipe(gulp.dest('./build'));
-});
-
 gulp.task('concat-css', function () {
   return gulp.src(paths.allCSS)
     .pipe(concatCss('bundle.css'))
+    .pipe(cleanCss('bundle.css'))
     .pipe(gulp.dest('./build'));
 });
 
@@ -40,8 +37,8 @@ gulp.task('concat', function() {
         concat('all.min.js'),
         // babel({ presets: ['es2015']}),
         ngAnnotate(),
-        // uglify(),
-        // sourcemaps.write(),
+//        uglify(),
+        sourcemaps.write(),
         gulp.dest('./build/')
      ],
      function(err){ console.log('pipe finished: ', err || 'no errors');}
@@ -77,7 +74,7 @@ gulp.task ('pugTemplates', function() {
 // Template Caching
 /////////////////
 gulp.task('templatecache', function() {
-  gulp.src(['!./dev/index.html', '.dev/**/*.html', paths.frameworkTemplates])
+  gulp.src(['!./dev/index.html', '.dev/**/*.html', paths.frameworkTemplates, 'build/templates/**/*.html'])
   .pipe(templateCache({module: 'frameworkTemplates', standalone: true, base: function(file) {
     return 'build/templates/' + file.relative;
   }}))
@@ -103,9 +100,8 @@ gulp.task('watch', function(){
   gulp.watch([paths.allCSS], ['concat-css']);
   gulp.watch(['./dev/**/*.html', paths.frameworkTemplates], ['templatecache']);
   gulp.watch(['./dev/ic/**/*.js', './dev/is/**/*.js'], ['concat']);
-  gulp.watch(['dev/index.html'], ['move-index']);
   gulp.watch(['dev/ia/'], ['move-ia']);
   gulp.watch(['dev/ua/'], ['move-ua']);
 });
 
-gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-vendor', 'concat-css', 'move-index', 'move-ia', 'move-ua', 'watch']);
+gulp.task('default', ['pugTemplates', 'templatecache', 'concat', 'concat-vendor', 'concat-css', 'move-ia', 'move-ua', 'watch']);

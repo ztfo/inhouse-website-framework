@@ -1,4 +1,11 @@
 /* per-listing loader */
+.ih-loader-listing .ih-ui {
+  font-size: 5em;
+  opacity: .1;
+}
+.ih-loader-listing .ih-ft-listing-img {
+  padding: 50px 0;
+}
 
 .text-block {
     display: block;
@@ -28,7 +35,6 @@
 }
 .ih-loader-listing .ih-ft-listing-img {
     text-align: center;
-    line-height: 190px;
     -webkit-animation: loadingFade 2s ease infinite;
             animation: loadingFade 2s ease infinite;
 }
@@ -91,7 +97,7 @@
     overflow: hidden;
 }
 .load-overlay::before {
-    content: url('../../../ia/icons/ih-loader.svg');
+    content: url('https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/ih-loader.svg') !important;
     position: fixed;
     top: 0;
     bottom: 0;

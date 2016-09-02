@@ -102,11 +102,11 @@ section.ih404 {
 .ih-footer {
     position: relative;
     text-align: center;
-    margin-top: 40px;
     padding: 15px 0;
     background-color: #2ba8de;
     text-transform: uppercase;
     font-size: 11px;
+    margin-top: 15px;
 }
 .ih-footer>div {
     margin-top: -40px;
@@ -121,9 +121,30 @@ section.ih404 {
 .ih-legal {
     margin: 15px 0;
 }
-
+.ih-footer .ih-ui-inhouse-emblem {
+  font-size: 5em;
+  opacity: .2;
+  transition: .3s;
+  color: #fff;
+}
+.ih-footer .ih-ui-inhouse-emblem:hover {
+  opacity: .5;
+}
 /* footer ends */
 
+/* property styles */
+ul.share-btns {
+  list-style: none;
+  padding: 0;
+}
+ul.share-btns>li {
+  display: inline-block;
+}
+ul.share-btns>li>a {
+  display: inline-block;
+  padding: 15px;
+}
+/* propery ends*/
 
 /* responsive */
 

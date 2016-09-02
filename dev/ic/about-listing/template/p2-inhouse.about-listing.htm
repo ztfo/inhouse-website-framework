@@ -1,70 +1,87 @@
-<section class="p1 ih-about">
+<section class="p2 ih-about-listing">
     <div class="container ih-about-inner">
         <div class="row">
-            <h1 class="ih-header text-center fc-02">About {{listing.streetAddress}}</h1>
+            <h1 class="ih-header text-center fc-02">about {{listing.address}}</h1>
         </div>
         <div class="listing-info row">
-            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <div class="pull-left">
-                    <img src="" class="img-responsive" alt="icon" />
-                </div>
-                <div class="pull-right">
-                    <h4>{{listing.beds_total}}</h4>
-                </div>
-            </div>
-            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <div class="pull-left">
-                    <img src="" class="img-responsive" alt="icon" />
-                </div>
-                <div class="pull-right">
-                    <h4>{{listing.baths_total}}</h4>
+            <div class="fact-icon col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                <div class="full flex-grid">
+                    <div class="flex-4">
+                        <span class="ih-icon ih-icon-bed"></span>
+                    </div>
+                    <div class="flex-8 text-center">
+                        <h1 class="fc-03">13{{listing.beds}}</h1>
+                    </div>
                 </div>
             </div>
-            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <div class="pull-left">
-                    <img src="" class="img-responsive" alt="icon" />
-                </div>
-                <div class="pull-right">
-                    <h4>{{listing.sq_total | number}}</h4>
-                    <h6>SQFT</h6>
-                </div>
-            </div>
-            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <div class="pull-left">
-                    <img src="" class="img-responsive" alt="icon" />
-                </div>
-                <div class="pull-right">
-                    <h4>{{listing.stories}}</h4>
-                    <h6>STORIES</h6>
+            <div class="fact-icon col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                <div class="full flex-grid">
+                    <div class="flex-4">
+                        <span class="ih-icon ih-icon-bathtub2"></span>
+                    </div>
+                    <div class="flex-8 text-center">
+                        <h1 class="fc-03">13{{listing.baths}}</h1>
+                    </div>
                 </div>
             </div>
-            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <div class="pull-left">
-                    <img src="" class="img-responsive" alt="icon" />
-                </div>
-                <div class="pull-right">
-                    <h4>{{listing.lot_size}}</h4>
-                    <h6>ACRES</h6>
-                </div>
-            </div>
-            <div class="fact-icon col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                <div class="pull-left">
-                    <img src="" class="img-responsive" alt="icon" />
-                </div>
-                <div class="pull-right">
-                    <h6>listing Type</h6>
-                    <h4>{{listing.type}}</h4>
+            <div class="fact-icon col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                <div class="full flex-grid">
+                    <div class="flex-4">
+                        <span class="ih-icon ih-icon-house-size"></span>
+                    </div>
+                    <div class="flex-8">
+                        <h4 class="fc-03">12,345{{listing.sqft | number}}</h4>
+                        <h6>sqft{{listing.sizeUnit}}</h6>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="proerty-text row">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <h3>Agent Remarks</h3>
+            <div class="fact-icon col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                <div class="full flex-grid">
+                    <div class="flex-4">
+                        <span class="ih-icon ih-icon-house2"></span>
+                    </div>
+                    <div class="flex-8">
+                        <h1 class="fc-03">3{{listing.stories}}</h1>
+                        <h6>STORIES</h6>
+                    </div>
+                </div>
             </div>
-            <div class="share-social col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
-
+            <div class="fact-icon col-lg-15 col-md-15 col-sm-6 col-xs-12">
+                <div class="full flex-grid">
+                    <div class="flex-4">
+                        <span class="ih-icon ih-icon-family"></span>
+                    </div>
+                    <div class="flex-8">
+                        <h6>listing Type</h6>
+                        <h5 class="fc-03">Single-Family{{listing.type}}</h5>
+                    </div>
+                </div>
             </div>
         </div>
-        <ih-listing-details></ih-listing-details>
-    </div>
+        <div class="property-text container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <h3 class="text-uppercase">agent remarks</h3>
+                </div>
+                <div class="share-social col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
+                    <ul class="share-btns pull-right clearfix">
+                        <li class="text-uppercase text-muted">
+                            <small>Share on:</small>
+                        </li>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}" class="ih-social-icon facebook-hover" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}" class="ih-social-icon linkedin-hover" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://twitter.com/home?status={{shareUrl|encode}}" class="ih-social-icon twitter-hover" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://plus.google.com/share?url={{shareUrl|encode}}" class="ih-social-icon google-hover" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+              <p class="fs columns">
+                  {{listing.description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet arcu sed nunc auctor suscipit. Aliquam finibus arcu eu urna fermentum ultricies. Nam ipsum leo, viverra in mauris egestas, maximus rhoncus leo. Vivamus commodo tortor et accumsan gravida. Pellentesque nibh mauris, aliquet mattis ligula nec, elementum vestibulum ipsum. Quisque porta nisl non egestas eleifend. Vestibulum malesuada fermentum nisi eget accumsan. Ut finibus ipsum sed scelerisque pharetra. Nam rhoncus magna ante, ac interdum felis feugiat vel. Vivamus in nibh ut arcu rutrum dapibus sed at nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Suspendisse risus odio, feugiat non consequat non, facilisis vitae nisi.
+              </p>
+            </div>
+            <div class="row details-row">
+              <ih-listing-details listing="listing"></ih-listing-details>
+            </div>
+        </div>
 </section>
