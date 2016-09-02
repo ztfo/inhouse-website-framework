@@ -1,6 +1,6 @@
 /* global */
 
-.ih-listing .owl-controls>.owl-nav>div {
+.ih-listing .owl-nav>div {
     position: absolute;
     background: #171717;
     top: 0;
@@ -146,7 +146,7 @@
     border-top: 2px solid #313131;
 }
 .s2 .ih-listing-slider .item {
-    height: 420px !important;
+    height: 550px !important;
 }
 .s2 .ih-listing h2 {
     margin: 10px 0;
