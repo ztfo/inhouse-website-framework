@@ -28,18 +28,20 @@
                         <a class="text-uppercase" role="menuitem" itemprop="url" href="#/" <span itemprop="name">home</span></a>
                     </li>
                     <li>
-                        <!-- scrollspy down and switch -->
                         <a ng-click="scrollToAgent('scrollhook')" class="text-uppercase" role="menuitem" itemprop="url" <span itemprop="name">agents</span></a>
                     </li>
                     <li>
-                        <!-- scrollspy down and switch -->
-                        <a ng-click="scrollToLender('scrollhook')" class="text-uppercase" role="menuitem" itemprop="url"<span itemprop="name">lenders</span></a>
-                    </li>
-                    <li>
-                        <a class="text-uppercase" role="menuitem" itemprop="url" href="https://app.getinhouse.io" <span itemprop="name">sign-up</span></a>
+                        <a ng-click="scrollToLender('scrollhook')" class="text-uppercase" role="menuitem" itemprop="url" <span itemprop="name">lenders</span></a>
                     </li>
                     <li>
                         <a class="text-uppercase" role="menuitem" itemprop="url" href="https://app.getinhouse.io" <span itemprop="name">log-in</span></a>
+                    </li>
+                    <li>
+                        <a class="text-uppercase" role="menuitem" itemprop="url" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">sign-up</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://app.getinhouse.io/agent-signup">agents <i class="fa fa-caret-left text-muted"></i></a></li>
+                            <li><a href="https://app.getinhouse.io/lender-signup">lenders <i class="fa fa-caret-left text-muted"></i></a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
