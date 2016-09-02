@@ -108,7 +108,7 @@ angular.module('ihframework')
 
 
 			// Default coordinates on page load
-			$scope.centerCoordinates = "5870 E Broadway Blvd, Tucson, AZ 85711";
+			$scope.centerCoordinates = "Tucson, AZ";
 
 			$scope.selectSchoolsTab = function(e) {
 				$scope.markerCoordinates1 = $scope.schoolData[0].address;
