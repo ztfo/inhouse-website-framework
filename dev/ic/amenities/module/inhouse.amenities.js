@@ -3,6 +3,7 @@ angular.module('ihframework')
 	return {
 		scope: {
 			classes: "@classes",
+			amenities: '=',
 			config: '=',
 			listing: '='
 		},
