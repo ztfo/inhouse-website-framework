@@ -62,7 +62,9 @@
 .gmap-popwindow a:hover {
     text-decoration: none;
 }
-
+.ih-listing-slider .item {
+  cursor: pointer;
+}
 /* list view swap */
 
 .ih-listview {
