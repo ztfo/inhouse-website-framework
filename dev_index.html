@@ -66,15 +66,15 @@
   </head>
 
   <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
-    
+
     <ih-navbar></ih-navbar>
     <div class="ih-view-container">
       <div ng-view autoscroll="true" class="" id='main-view'></div>
     </div>
     <ih-footer></ih-footer>
-    
+
     <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
-    
+
     <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
       <div class="modal-dialog" role="document">
         <div class="modal-content fp">
@@ -148,10 +148,12 @@
         </div>
       </div>
     </div>
-    
+
     <!-- ia -->
     <script src="build/templates.js" charset="utf-8"></script>
     <script src="build/all.min.js" charset="utf-8"></script>
+    <script src="ia/js/ng-map.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="ua/data/user-service.js"></script>
     <!-- ga -->
     <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
@@ -167,7 +169,7 @@
       a.src = g;
       m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    
+
     ga('create', '{{agent.gaKey}}', 'auto');
     ga('send', 'pageview');
     </script>
