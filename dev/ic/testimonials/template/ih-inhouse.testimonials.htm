@@ -1,30 +1,26 @@
 <section class="ih-testimonials {{classes}}" ng-show="testimonials.length > 0">
-  <div class="container">
-    <div class="row">
-      <h1 class="ih-header text-center">What our clients say</h1>
-      <div class="ih-md-divider bk-gd"></div>
-    </div>
-    <div class="row">
-      <ih-owl class="owl-carousel tst-carousel" items="testimonials" responsive="responsive">
-        <div class="owl-carousel tst-carousel">
-          <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
-            <div itemprop="review" class="testimonial">
-              <div class="ih-sm-header"></div>
-              <div class="ih-ratings" itemprop="rating">
-                <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
-                <span class="sr-only">{{rating}}</span>
-              </div>
-              <p itemprop="review">{{slide.testimonial}}</p>
-            </div>
-            <div class="tt-author clearfix">
-              <img src="{{slide.reviewHeadshot}}" alt="{{slide.reviewer}} headshot" class="img-circle tt-headshot block pull-right" />
-              <div class="pull-left">
-                {{slide.reviewer}}
-                <small>{{slide.context}}</small>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="ih-header text-center">What our clients say</h1>
+            <div class="ih-md-divider bk-gd"></div>
         </div>
-      </ih-owl>
-    </div>
-  </section>
+        <div class="row">
+            <ih-owl class="owl-carousel tst-carousel" items="testimonials" responsive="responsive">
+                <div itemprop="review" class="testimonial">
+                    <div class="ih-sm-header"></div>
+                    <div class="ih-ratings" itemprop="rating">
+                        <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
+                        <span class="sr-only">{{rating}}</span>
+                    </div>
+                    <p itemprop="review">{{slide.testimonial}}</p>
+                    <div class="tst-footer">
+                        {{slide.reviewer}}<br />
+                        <small>{{slide.context}}</small>
+                    </div>
+                </div>
+                <div class="tst-headshot">
+                    <img src="{{slide.reviewHeadshot}}" class="img-circle" alt="Testimonial picture of {{slide.reviewer}}" />
+                </div>
+            </ih-owl>
+        </div>
+</section>
