@@ -1,13 +1,14 @@
 <section class="s1 ih-partners {{classes}}">
-  <div class="container">
-    <h1 class="ih-header text-center">We work with</h1>
-    <div class="ih-md-divider bk-gd"></div>
-    <div class="owl-carousel partner-carousel">
-      <div ng-repeat="partner in partners">
-        <a href="#/{{partner.link}}" class="partner-link">
-          <img ng-src="{{partner.image}}" class="img-responsive" />
-        </a>
-      </div>
+    <div class="container">
+        <h1 class="ih-header text-center">our partners</h1>
+        <div class="ih-md-divider bk-gd"></div>
+        <ih-owl class="owl-carousel tst-carousel" items="partners" responsive="responsive">
+            <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="partner in partners">
+                <a href="#/{{partner.link}}" class="partner-link">
+                    <img ng-src="{{partner.image}}" class="img-responsive" />
+                </a>
+            </div>
+        </ih-owl>
     </div>
-  </div>
+    </div>
 </section>
