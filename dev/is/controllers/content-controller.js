@@ -1,9 +1,16 @@
 angular.module('ihframework')
 .controller('contentController', ['$rootScope', '$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($rootScope, $compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
 
+	$scope.showTab = 'press-coverage';
+	$scope.showMLSTab = 'us';
+
 	$scope.togglePressTabs = function(tab){
 		console.log(tab);
 		$scope.showTab = tab;
+	};
+	$scope.toggleMLSTabs = function(tab){
+		console.log(tab);
+		$scope.showMLSTab = tab;
 	};
 
 	if(typeof $rootScope.theUserData.content[$route.content] === 'undefined') {
