@@ -26,10 +26,11 @@ angular.module('ihframework')
             $scope.owl.destroy();
           }
           $($element).owlCarousel({
+            autoPlay: "true",
             pause: "true",
-            interval: 9999,
-            navigation: true,
+            interval: 5000,
             responsive: $scope.responsive,
+            navigation: true,
             navigationText : ["<i class='fa fa-caret-right'></i>","<i class='fa fa-caret-right'></i>"]
           });
 
