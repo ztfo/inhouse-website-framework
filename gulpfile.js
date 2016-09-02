@@ -100,7 +100,7 @@ gulp.task('templatecache', function() {
 
 gulp.task('watch', function(){
   gulp.watch([paths.pugTemplates], ['pugTemplates']);
-  gulp.watch([paths.allCSS], ['css-concat']);
+  gulp.watch([paths.allCSS], ['concat-css']);
   gulp.watch(['./dev/**/*.html', paths.frameworkTemplates], ['templatecache']);
   gulp.watch(['./dev/ic/**/*.js', './dev/is/**/*.js'], ['concat']);
   gulp.watch(['dev/index.html'], ['move-index']);

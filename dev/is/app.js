@@ -1,10 +1,14 @@
-angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates'])
+angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 'ngMap', 'ngGPlaces'])
 .run(function($http, $rootScope, userDataService){
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
 })
-.config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider) {
-	userDataServiceProvider.blah = true;
+.config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider, ngGPlacesAPIProvider) {
+
+	ngGPlacesAPIProvider.setDefaults({
+    radius: 13200,
+		nearbySearchKeys: ['name','rating','vicinity', 'opening_hours'],
+  });
 
 	$httpProvider.defaults.withCredentials = true;
 
