@@ -13,6 +13,8 @@ angular.module('ihframework')
 		},
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI) {
 
+			// console.log('listing', $scope.listing);
+
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
 					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
@@ -23,7 +25,6 @@ angular.module('ihframework')
 
 			ngGPlacesAPI.nearbySearch({latitude:32.2216667, longitude:-110.9258333, type: 'school'}).then(function(schools){
 				$scope.schoolData = [];
-				console.log('schools', schools);
 				for(var i = 0; i < 5; i++){
 					var x = {};
 					x.name = schools[i].name;
@@ -40,7 +41,6 @@ angular.module('ihframework')
 
 			ngGPlacesAPI.nearbySearch({latitude:32.2216667, longitude:-110.9258333, type: 'shopping_mall'}).then(function(shopping){
 				$scope.shoppingData = [];
-				console.log('shopping', shopping);
 				for(var i = 0; i < 5; i++){
 					var x = {};
 					x.name = shopping[i].name;
@@ -57,7 +57,6 @@ angular.module('ihframework')
 
 			ngGPlacesAPI.nearbySearch({latitude:32.2216667, longitude:-110.9258333, type: 'restaurant'}).then(function(food){
 				$scope.foodData = [];
-				console.log('food', food);
 				for(var i = 0; i < 5; i++){
 					var x = {};
 					x.name = food[i].name;
@@ -74,7 +73,6 @@ angular.module('ihframework')
 
 			ngGPlacesAPI.nearbySearch({latitude:32.2216667, longitude:-110.9258333, type: 'night_club'}).then(function(fun){
 				$scope.funData = [];
-				console.log('fun', fun);
 				for(var i = 0; i < 5; i++){
 					var x = {};
 					x.name = fun[i].name;
@@ -91,7 +89,6 @@ angular.module('ihframework')
 
 			ngGPlacesAPI.nearbySearch({latitude:32.2216667, longitude:-110.9258333, type: 'park'}).then(function(parks){
 				$scope.parksData = [];
-				console.log('parks', parks);
 				for(var i = 0; i < 5; i++){
 					var x = {};
 					x.name = parks[i].name;
