@@ -13,6 +13,14 @@ angular.module('ihframework')
 		},
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI) {
 
+			$scope.$watch('config', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
+				} else {
+					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
+				}
+			});
+
 			ngGPlacesAPI.nearbySearch({latitude:32.2216667, longitude:-110.9258333, type: 'school'}).then(function(schools){
 				$scope.schoolData = [];
 				console.log('schools', schools);
@@ -139,9 +147,6 @@ angular.module('ihframework')
 				$scope.markerCoordinates5 = $scope.parksData[4].address;
 			};
 
-			$scope.theUrl = function(){
-				return 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
-			};
 			$scope.agent = $rootScope.theUserData;
 		}
 	};
