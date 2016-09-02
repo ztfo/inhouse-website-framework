@@ -17,12 +17,10 @@ angular.module('ihframework')
 			});
 
 			$scope.$on('agents clicked', function(event, args){
-				console.log(args);
 				$scope.lenderOnly = args.data;
 			});
 
 			$scope.$on('lenders clicked', function(event, args){
-				console.log(args);
 				$scope.lenderOnly = args.data;
 			});
 
