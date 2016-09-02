@@ -44,5 +44,5 @@ module.exports = {
   frameworkMain: 'dev/is/app.js',
   frameworkTemplates: './dev/**/*.htm',
   pugTemplates: './dev/**/*.pug',
-  vendorFiles: './build/ia/js/*.js'
+  vendorFiles: './build/ia/js/**/*.js'
 };

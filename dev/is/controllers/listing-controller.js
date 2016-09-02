@@ -74,6 +74,7 @@ angular.module('ihframework')
 	$scope.getData();
 
 	$scope.showLightBox = function() {
+		debugger;
 		UIkit.lightbox.create($scope.lightBox).show();
 	};
 }]);
