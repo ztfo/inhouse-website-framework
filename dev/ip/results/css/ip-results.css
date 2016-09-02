@@ -33,6 +33,9 @@
 .ih-filter-row .btn-group .btn {
     width: 33.333333%;
 }
+.ih-filters.container-fluid .ih-slide {
+    padding: 8px 0px;
+}
 .ih-slide {
   margin: 10px 0;
 }
