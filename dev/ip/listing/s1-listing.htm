@@ -10,7 +10,7 @@
                                     <div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
                                 </div>
                                 <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
-                                    <div ng-click="showLightBox()" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
+                                    <div ng-click="showLightBox($index)" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
                                         <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
                                     </div>
                                     <div class="carousel-caption">
