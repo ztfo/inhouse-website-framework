@@ -132,6 +132,19 @@ section.ih404 {
 }
 /* footer ends */
 
+/* property styles */
+ul.share-btns {
+  list-style: none;
+  padding: 0;
+}
+ul.share-btns>li {
+  display: inline-block;
+}
+ul.share-btns>li>a {
+  display: inline-block;
+  padding: 15px;
+}
+/* propery ends*/
 
 /* responsive */
 
