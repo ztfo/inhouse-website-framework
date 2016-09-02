@@ -10,9 +10,6 @@
           <h4 class="result-count"><strong>{{totalListings | number}}</strong> Total Listings</h4>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 listing-btns">
-          <button name="listingMap" id="listingMap" type="button" class="btn btn-default pull-right last">
-            <i class="fa fa-globe"></i>
-          </button>
           <ih-dropdown class="dropdown pull-right" items='[{"name": "Lowest Price", "value": "+ListPrice"}, {"name": "Highest Price", "value": "-ListPrice"}, {"name": "Newest Listings", "value": "-OnMarketDate"}, {"name": "Oldest Listings", "value": "+OnMarketDate"}]' id="sort" name="Sort By" ng-model="filters.sort"></ih-dropdown>
           <a class="btn btn-default ih-adv-toggle pull-right" role="button" data-toggle="collapse" href="#searchFilters" aria-expanded="false" aria-controls="searchFilters" onClick="event.preventDefault()">
             <i class="fa fa-filter"></i> More Filters

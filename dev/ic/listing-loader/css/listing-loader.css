@@ -97,7 +97,7 @@
     overflow: hidden;
 }
 .load-overlay::before {
-    content: url('https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/ih-loader.svg');
+    content: url('https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/ih-loader.svg') !important;
     position: fixed;
     top: 0;
     bottom: 0;
