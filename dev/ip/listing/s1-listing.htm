@@ -11,7 +11,6 @@
                                 </div>
                                 <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
                                     <div ng-click="showLightBox($index)" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
-                                        <a href="{{slide.UriLarge}}" class="block full" data-uk-lightbox ng-click="showLightBox()"></a>
                                     </div>
                                     <div class="carousel-caption">
                                         {{slide.caption}}
