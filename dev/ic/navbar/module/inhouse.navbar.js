@@ -6,7 +6,7 @@ angular.module('ihframework')
 			classes: "@classes"
 		},
 		restrict: 'E',
-		controller: function($rootScope, $scope, $filter) {
+		controller: function($rootScope, $scope, $filter, $document) {
 			$scope.config = $rootScope.theWebsiteData.navbarConfig;
 			$scope.theUrl = function(){
 				return 'build/templates/ic/navbar/template/' + $scope.config + '-inhouse.navbar.htm';
@@ -29,8 +29,17 @@ angular.module('ihframework')
 				$scope.classes = $rootScope.theWebsiteData.navbarClasses;
 			}
 			$scope.agent = $rootScope.theUserData;
-		}
 
+			$scope.scrollToAgent = function(id) {
+				$rootScope.$broadcast('agents clicked', {data: false});
+				$document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
+			};
+
+			$scope.scrollToLender = function(id) {
+				$rootScope.$broadcast('lenders clicked', {data: true});
+				$document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
+			};
+		}
 
 
 	};
