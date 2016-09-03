@@ -1,53 +1,39 @@
-<section class="p1 ih-nearby container-fluid">
-  <h1 class="ih-header text-center fc-02">Nearby Places</h1>
-  <div class="row">
-    <p class="fs text-center col-md-6 col-md-offset-3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.{{listing.listingDescription | limitTo: 250 }}
-    </p>
-  </div>
-  <div class="row">
-    <div class="container">
-      <div class="flex-grid">
-        <div class="flex-12">
-          <uib-tabset type="pills" active="activeJustified" justified="true">
+<section class="p2 ih-nearby container-fluid fp">
+    <h1 class="ih-header text-center fc-02">Nearby Places</h1>
+    <div class="row">
+        <uib-tabset type="pills" active="activeJustified" justified="true">
             <uib-tab heading="{{source.name}}" ng-click="selectTab($index)" ng-repeat="source in sources">
-              <div class="flex-grid">
-                <div class="nearby-list flex-6">
-                  <h3 class="fc-01">{{source.name}}</h3>
-                  <!-- ng-repeat results -->
-                  <div class="nearby-place clearfix" ng-repeat="place in source.data">
-                    <div class="pull-left round-icon bkc-04 fw">
-                      <span class="ih-icon-location"></span>
+                <div class="flex-grid">
+                    <div class="nearby-list flex-6">
+                        <h3 class="fc-01">{{source.name}}</h3>
+                        <div class="nearby-place clearfix" ng-repeat="place in source.data">
+                            <div class="pull-left round-icon bkc-04 fw">
+                                <span class="ih-icon-location"></span>
+                            </div>
+                            <div class="pull-left">
+                                <h5 class="text-uppercase fc-01">{{place.name}}</h5>
+                                <div class="g-rating" ng-if="place.rating">
+                                    {{place.rating}}
+                                    <i class="fa fa-star"></i> | ({{place.reviews}})
+                                </div>
+                                <div class="g-rating" ng-if="!place.rating">
+                                    No rating available
+                                </div>
+                                <div>
+                                    {{place.address}}
+                                    <br> {{place.hours.open_now ? 'Open now!' : 'Closed'}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pull-left">
-                      <h5 class="text-uppercase fc-01">{{place.name}}</h5>
-                      <div class="g-rating" ng-if="place.rating">
-                        {{place.rating}}
-                        <i class="fa fa-star"></i>
-                        | ({{place.reviews}})
-                      </div>
-                      <div class="g-rating" ng-if="!place.rating">
-                        No rating available
-                      </div>
-                      <div>
-                        {{place.address}}
-                        <br>
-                        {{place.hours.open_now ? 'Open now!' : 'Closed'}}
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </uib-tab>
-          </uib-tabset>
+        </uib-tabset>
+        <map center="{{centerCoordinates}}" zoom="12">
+          <marker ng-repeat="coord in markerCoordinates track by $index" position="{{coord}}"></marker>
+        </map>
+        <div class="container text-center btn-row">
+            <a href="#/" class="btn btn-primary">Text Me Directions</a>
         </div>
-      </div>
-      <map center="{{centerCoordinates}}" zoom="12">
-        <marker ng-repeat="coord in markerCoordinates track by $index" position="{{coord}}"></marker>
-      </map>
     </div>
-    <div class="container text-center btn-row">
-      <a href="#/" class="btn btn-primary">Text Me Directions</a>
-    </div>
-  </div>
 </section>

@@ -1,7 +1,10 @@
 <section class="p2 ih-about-listing fp">
     <div class="container ih-about-inner">
         <div class="row">
-            <h1 class="ih-header text-center fc-02">about {{listing.address}}</h1>
+            <h1 class="ih-header text-center fc-02 text-uppercase">
+              <small>about</small><br />
+              {{listing.address}}
+            </h1>
         </div>
         <div class="listing-info row">
             <div class="fact-icon col-lg-15 col-md-15 col-sm-6 col-xs-12">
@@ -82,6 +85,9 @@
             </div>
             <div class="row details-row">
               <ih-listing-details listing="listing"></ih-listing-details>
+            </div>
+            <div class="row btn-row text-center">
+              <a href="#/" class="btn btn-primary">schedule visit</a>
             </div>
         </div>
 </section>

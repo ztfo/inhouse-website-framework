@@ -1,18 +1,25 @@
 <section class="p2 ih-photo-slider container-fluid fp">
-  <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div class="ih row slider-row">
+        <div class="image-grid clearfix">
+            <div class="slider-image first-image">
+              <div class="listing-pic full" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
+                  <a href="#/lightbox" class="block full bkc-03 fw">
+                      <span class="fa fa-camera"></span>
+                  </a>
+              </div>
+            </div>
 
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-12  col-xs-12">
-      <ih-owl class="owl-carousel tst-carousel" items="listing.photos" responsive="responsive">
-        <div class="listing-pic-block full" ng-repeat="photo in listing.photos">
-          <div class="listing-pic" ng-style="{'background-image': 'url(' + photo.large + ')'}">
-            <a href="#/lightbox" class="block full bkc-03 fw">
-              <span class="fa fa-camera"></span>
-            </a>
-          </div>
+            <!-- repeat rest of images --->
+            <div class="slider-image grid-image" ng-repeat="photo in listing.photos">
+                <div class="listing-pic full" ng-style="{'background-image': 'url(' + photo.large + ')'}">
+                    <a href="#/lightbox" class="block full bkc-03 fw">
+                        <span class="fa fa-camera"></span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </ih-owl>
+        <!-- controls -->
+        <a href="" class="ps-control lt-control"><i class="fa fa-angle-left"></i></a>
+        <a href="" class="ps-control rt-control"><i class="fa fa-angle-right"></i></a>
     </div>
-  </div>
 </section>

@@ -1,3 +1,41 @@
+/* global */
+
+.ps-control, .ps-control:visited, .ps-control:focus, .ps-control:active {
+    display: block;
+    position: absolute;
+    height: 100%;
+    min-width: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+    opacity: .7;
+    transition: .3s;
+}
+
+.ps-control:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.ps-control:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.lt-control {
+    top: 0;
+    left: 0;
+}
+
+.rt-control {
+    top: 0;
+    right: 0;
+}
+
+
 /* p1 */
 
 .p1.ih-photo-slider .photo-slider {
@@ -62,12 +100,86 @@
 }
 
 
+/* p2 */
+
+.p2.ih-photo-slider {
+    padding: 80px 0;
+}
+
+.p2.ih-photo-slider .image-grid {
+    height: 100%;
+    /* set by js? */
+    width: 1500px;
+    max-height: 410px;
+}
+
+.p2.ih-photo-slider .image-grid>div {
+    float: left;
+}
+
+.p2.ih-photo-slider .listing-pic {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.p2.ih-photo-slider .first-image {
+    width: 600px;
+    height: 400px;
+}
+
+.p2.ih-photo-slider .grid-image {
+    width: 200px;
+    height: 130px;
+}
+
+.p2.ih-photo-slider .slider-row {
+    max-height: 410px;
+    overflow: hidden;
+}
+
+.p2.ih-photo-slider .grid-image {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.p2.ih-photo-slider .first-image {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.p2.ih-photo-slider .listing-pic a {
+    text-align: center;
+    opacity: 0;
+    transition: .3s;
+}
+
+.p2.ih-photo-slider .listing-pic a:hover {
+    opacity: .75;
+    font-size: 2em;
+}
+
+.p2.ih-photo-slider .listing-pic>a:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}

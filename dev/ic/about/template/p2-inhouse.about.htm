@@ -1,0 +1,52 @@
+<section class="p2 ih-about container-fluid fp">
+    <div class="container">
+        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 agent-panel">
+            <img ng-src="{{agent.team[0].photo}}" align="left" alt="{{agent.team[0].name}}" class="img-square inlineblock">
+            <h2 class="inlinblock fc-01">{{agent.agentName}}</h2>
+            <h5 class="inlineblock text-muted"><em>{{agent.title}} {{agent.designations}}</em></h5>
+            <div itemprop="description" class="bio fs inlineblock" ng-bind-html="agent.bio | to_trusted">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contact-panel">
+                <ih-contact configname="f1"></ih-contact>
+            </div>
+        </div>
+</section>
+
+
+
+
+<div class="hidden">
+    <div class="row">
+        <h1 class="ih-header fc-02 text-center">Meet Your Agent</h1>
+    </div>
+    <div class="ih-about-inner row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nopad-l">
+            <a href="{{agent.agentWebsite}}" class="text-center agent-pic-link">
+                <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-circle img-responsive">
+            </a>
+        </div>
+        <div class="ih-about-text col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <h2 class="ih fc-01">
+        <span itemprop="name">{{agent.agentName}}</span>
+        <div class="about-social">
+          <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon bkc-02" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
+          <a href="{{agent.facebook}}" class="ih-social-icon bkc-02" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="{{agent.linkedin}}" class="ih-social-icon bkc-02" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="{{agent.twitter}}" class="ih-social-ico bkc-02n" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="{{agent.instagram}}" class="ih-social-icon bkc-02" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="{{agent.pinterest}}" class="ih-social-icon bkc-02" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+        </div>
+      </h2>
+            <h4 class="text-muted fs"><strong>{{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}</strong></h4>
+            <div itemprop="description" class="bio fs" ng-bind-html="agent.bio1 | to_trusted">
+            </div>
+            <p class="fp">
+                <strong>
+          <span class="ih-icon ih-sm-icon ih-icon-house-mailbox"></span><small class="text-uppercase text-muted"><a class="clean-link" href="mailto:{{agent.contactEmail}}">{{agent.contactEmail}}</a><br />
+          <span class="ih-icon ih-sm-icon ih-icon-mobile-phone"></span><a href="tel:{{agent.contactPhone | tel}}" class="clean-link">{{agent.contactPhone | tel}}</a></small>
+        </strong>
+            </p>
+            <a href="#/" class="btn btn-primary">Contact Me</a>
+        </div>
+    </div>
+</div>
