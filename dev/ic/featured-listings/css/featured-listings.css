@@ -4,37 +4,47 @@
     position: relative;
     padding: 30px 0;
 }
+
 .s1.ih-featured-slider .owl-stage-outer {
     overflow: initial;
 }
+
 .s1.ih-featured-slider .hide-carousel {
     display: none;
 }
-.s1 .ih-ft-carousel {
+
+.s1.ih-featured-slider .ih-ft-carousel {
     overflow: hidden;
 }
+
 .s1.ih-featured-slider .owl-item {
     padding: 0 7px;
 }
-.s1 .ih-ft-listing {
+
+.s1.ih-featured-slider .ih-ft-listing {
     position: relative;
     border: 1px solid #eee;
     min-height: 430px;
     overflow: hidden;
+    -webkit-transition: .3s;
     transition: .3s;
 }
-.s1 .ih-ft-listing:hover {
+
+.s1.ih-featured-slider .ih-ft-listing:hover {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
-.s1 .ih-ft-listing-img {
+
+.s1.ih-featured-slider .ih-ft-listing-img {
     height: 200px;
     position: relative;
     background-size: cover;
 }
-.s1 .ih-ft-listing-link {
+
+.s1.ih-featured-slider .ih-ft-listing-link {
     position: absolute;
     top: 0;
     right: 0;
+    -webkit-transition: .3s;
     transition: .3s;
     opacity: 0;
     text-align: center;
@@ -46,22 +56,28 @@
     line-height: 200px;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
-.s1 .ih-ft-listing-link:hover {
+
+.s1.ih-featured-slider .ih-ft-listing-link:hover {
     background-color: rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
-.s1 .ih-ft-listing-img>a:first-child {
+
+.s1.ih-featured-slider .ih-ft-listing-img>a:first-child {
     min-height: 200px;
 }
-.s1 .ih-ft-listing-desc {
+
+.s1.ih-featured-slider .ih-ft-listing-desc {
     position: relative;
     padding: 15px;
 }
-.s1 .fit-image {
+
+.s1.ih-featured-slider .fit-image {
     height: 200px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
-.ih-featured-slider .owl-nav {
+
+.s1.ih-featured-slider .owl-nav {
     margin-top: 25px;
     text-align: center;
     text-transform: uppercase;
@@ -69,7 +85,8 @@
     font-size: 12px;
     letter-spacing: 1px;
 }
-.ih-ft-carousel .owl-prev {
+
+.s1.ih-featured-slider .ih-ft-carousel .owl-prev {
     width: auto;
     padding: 5px 15px;
     margin: 0;
@@ -77,26 +94,32 @@
     border-right: 1px solid #ddd;
     border-radius: 100px 0 0 100px;
 }
-.ih-ft-carousel .owl-next {
+
+.s1.ih-featured-slider .ih-ft-carousel .owl-next {
     width: auto;
     padding: 5px 15px;
     margin: 0;
     display: inline-block;
     border-radius: 0 100px 100px 0;
 }
-.ih-ft-carousel .owl-nav div {
+
+.s1.ih-featured-slider .ih-ft-carousel .owl-nav div {
+    -webkit-transition: .3s;
     transition: .3s;
 }
-.ih-ft-carousel .owl-nav div:hover {
+
+.s1.ih-featured-slider .ih-ft-carousel .owl-nav div:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+
 /* s2 - grid carousel 15 listings per page  */
 
-.ih-grid-carousel {
+.s2.ih-featured-slider .ih-grid-carousel {
     padding: 25px 0;
 }
-.ih-grid-carousel .ih-ft-listing {
+
+.s2.ih-featured-slider .ih-grid-carousel .ih-ft-listing {
     min-height: 220px;
     border: 1px solid #fff;
     background-size: cover;
@@ -104,12 +127,14 @@
     background-position: 50%;
     padding: 0;
 }
-.ih-grid-carousel>a:first-child {
+
+.s2.ih-featured-slider .ih-grid-carousel>a:first-child {
     display: block;
     width: 100%;
     height: 100%;
 }
-.ih-grid-carousel .ih-ft-listing>a:first-child {
+
+.s2.ih-featured-slider .ih-grid-carousel .ih-ft-listing>a:first-child {
     position: absolute;
     top: 0;
     right: 0;
@@ -119,18 +144,22 @@
     font-size: 1.3em;
     padding: 20px;
     opacity: 0;
+    -webkit-transition: .3s;
     transition: .3s;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
 }
-.ih-grid-carousel .ih-ft-listing small {
+
+.s2.ih-featured-slider .ih-grid-carousel .ih-ft-listing small {
     text-transform: uppercase;
     font-size: 12px;
 }
-.ih-grid-carousel .ih-ft-listing>a:first-child:hover {
+
+.s2.ih-featured-slider .ih-grid-carousel .ih-ft-listing>a:first-child:hover {
     opacity: 1;
     text-decoration: none;
 }
+
 
 /* s3 - grid carousel 8 listings per page */
 
@@ -139,10 +168,12 @@
     padding-bottom: 0;
     margin: 0;
 }
-.s3 .ih-grid-carousel .ih-ft-listing {
+
+.s3.ih-featured-slider .ih-grid-carousel .ih-ft-listing {
     border: 0;
     min-height: 320px;
 }
+
 
 /* s4 */
 
@@ -151,55 +182,68 @@
     padding-bottom: 100px;
     border-bottom: 1px solid #eee;
 }
-.s4 .listing-row {
+
+.s4.ih-featured-slider .listing-row {
     margin: 20px 0;
 }
-.s4 .ft-listing {
+
+.s4.ih-featured-slider .ft-listing {
     height: 250px;
     margin-bottom: 25px;
 }
-.s4 .ft-listing>a {
+
+.s4.ih-featured-slider .ft-listing>a {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    -webkit-transition: .3s;
     transition: .3s;
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
 }
-.s4 .ft-listing>a:hover {
+
+.s4.ih-featured-slider .ft-listing>a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
-.s4 .listing-hover {
+
+.s4.ih-featured-slider .listing-hover {
     padding: 10px;
     opacity: 0;
+    -webkit-transition: .3s;
     transition: .3s;
 }
-.s4 .listing-hover:hover {
+
+.s4.ih-featured-slider .listing-hover:hover {
     opacity: 1;
     top: 13px;
     bottom: 13px;
     left: 13px;
     right: 13px;
 }
-.s4 .ih-addr {
+
+.s4.ih-featured-slider .ih-addr {
     position: absolute;
     bottom: 10px;
     left: 10px;
 }
-.s4 .ih-addr strong {
+
+.s4.ih-featured-slider .ih-addr strong {
     padding-bottom: 3px;
     margin-bottom: 3px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
-.s4 .listing-hover .badge {
+
+.s4.ih-featured-slider .listing-hover .badge {
     font-size: 13px;
     padding: 5px 10px;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
+
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     .ih-ft-listing-details .lead {
         font-size: 15px;
@@ -208,6 +252,7 @@
         font-weight: 600;
     }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .ih-grid-carousel .ih-ft-listing {
         min-height: 150px;
@@ -219,10 +264,13 @@
         font-size: 10px;
     }
 }
+
 @media screen and (min-width: 375px) and (max-width: 768px) {}
+
 @media screen and (max-width: 768px) {
     .ih-grid-carousel .ih-ft-listing {
         min-height: 220px;
     }
 }
+
 @media screen and (min-width: 375px) {}

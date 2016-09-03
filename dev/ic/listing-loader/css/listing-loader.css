@@ -1,10 +1,12 @@
 /* per-listing loader */
+
 .ih-loader-listing .ih-ui {
-  font-size: 5em;
-  opacity: .1;
+    font-size: 5em;
+    opacity: .1;
 }
+
 .ih-loader-listing .ih-ft-listing-img {
-  padding: 50px 0;
+    padding: 50px 0;
 }
 
 .text-block {
@@ -13,42 +15,51 @@
     height: 15px;
     margin-bottom: 10px;
     -webkit-animation: gradientLoad 2s ease infinite;
-            animation: gradientLoad 2s ease infinite;
+    animation: gradientLoad 2s ease infinite;
     background: -webkit-radial-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
     background: radial-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
     background-size: 400% 400%;
 }
+
 .text-block:nth-child(2) {
     width: 55%;
 }
+
 .ih-loader-listing {
     border: 1px solid #eee;
     border-radius: 2px;
     margin-bottom: 15px;
 }
+
 .ih-loader-listing .ih-ft-listing-desc {
     margin: 20px 0;
 }
+
 .ih-listings .ih-loader-listing {
     min-height: 535px;
     margin-bottom: 25px;
 }
+
 .ih-loader-listing .ih-ft-listing-img {
     text-align: center;
     -webkit-animation: loadingFade 2s ease infinite;
-            animation: loadingFade 2s ease infinite;
+    animation: loadingFade 2s ease infinite;
 }
+
 .ih-loader-listing .ih-ft-listing-img img {
     display: inline !important;
 }
+
 .ih-loader-listing .ih-ft-listing:hover {
     box-shadow: none;
 }
+
 .ih-loader-listing .ih-ft-listing {
     border-bottom: 1px solid #eee;
     border: 1px solid #E2E2E2;
     border-radius: 2px;
 }
+
 @-webkit-keyframes loadingFade {
     0%, 100% {
         background-color: rgba(0, 0, 0, 0.1);
@@ -57,6 +68,7 @@
         background-color: rgba(255, 255, 255, 0.1);
     }
 }
+
 @keyframes loadingFade {
     0%, 100% {
         background-color: rgba(0, 0, 0, 0.1);
@@ -65,6 +77,7 @@
         background-color: rgba(255, 255, 255, 0.1);
     }
 }
+
 @-webkit-keyframes gradientLoad {
     0% {
         background-position: 0% 50%;
@@ -73,6 +86,7 @@
         background-position: 300% 50%;
     }
 }
+
 @keyframes gradientLoad {
     0% {
         background-position: 0% 50%;
@@ -82,11 +96,13 @@
     }
 }
 
+
 /* listing grid */
 
 .listing-grid-carousel .ih-loader-listing .ih-ft-listing-desc {
     display: none;
 }
+
 
 /* listing page loader */
 
@@ -96,6 +112,7 @@
     pointer-events: all;
     overflow: hidden;
 }
+
 .load-overlay::before {
     content: url('https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/ih-loader.svg') !important;
     position: fixed;
@@ -113,8 +130,9 @@
     -webkit-animation: loadOverlay .1s ease infinite;
     animation: loadOverlay .1s ease infinite;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+    animation-iteration-count: 1;
 }
+
 .load-overlay::after {
     content: "";
     position: fixed;
@@ -130,6 +148,7 @@
     -webkit-animation: loadingBar 5s ease infinite;
     animation: loadingBar 5s ease infinite;
 }
+
 @-webkit-keyframes loadOverlay {
     0% {
         opacity: 0;
@@ -138,6 +157,7 @@
         opacity: 1;
     }
 }
+
 @keyframes loadOverlay {
     0% {
         opacity: 0;
@@ -146,6 +166,7 @@
         opacity: 1;
     }
 }
+
 @-webkit-keyframes loadingBar {
     0% {
         background-position: 400% 50%
@@ -154,6 +175,7 @@
         background-position: 0% 50%
     }
 }
+
 @keyframes loadingBar {
     0% {
         background-position: 400% 50%
@@ -163,12 +185,19 @@
     }
 }
 
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}

@@ -1,47 +1,60 @@
 /* p1 */
+
 .p1.ih-amenities {
-  padding: 0;
+    padding: 0;
 }
-.p1.ih-amenities .amenities-accent,
-.p1.ih-amenities .amenities-box {
-  padding: 35px;
+
+.p1.ih-amenities .amenities-accent, .p1.ih-amenities .amenities-box {
+    padding: 35px;
 }
+
 .p1.ih-amenities .amenity-item {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
-  color: #eee;
-  border: 2px solid #eee;
-  margin-right: 15px;
-  margin-bottom: 5px;
-  font-size: 2.5em;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #eee;
+    border: 2px solid #eee;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    font-size: 2.5em;
 }
+
 .p1.ih-amenities .amenity-label {
-  max-width: 80px;
-  line-height: initial;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 15px;
+    max-width: 80px;
+    line-height: initial;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
+
 .p1.ih-amenities h2 {
-  background-color: rgba(255,255,255,0.9);
-  display: inline-block;
-  padding: 7px 20px;
-  border-radius: 50px;
-  font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 50px;
+    font-size: 1.5em;
 }
+
 .p1.ih-amenities blockquote {
-  margin: 25px 0;
-  border-left: 5px solid rgba(255,255,255,0.5);
+    margin: 25px 0;
+    border-left: 5px solid rgba(255, 255, 255, 0.5);
 }
+
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}

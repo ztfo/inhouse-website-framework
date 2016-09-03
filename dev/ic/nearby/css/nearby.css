@@ -1,22 +1,27 @@
 /* globals */
+
 map {
-  height: 500px;
+    height: 500px;
 }
+
 
 /* p1 */
 
 .p1.ih-nearby .nearby-toggle {
     margin: 25px 0 55px 0;
 }
+
 .p1.ih-nearby .nearby-map {
     height: 500px;
     background-color: #eee;
 }
+
 .p1.ih-nearby .nearby-list {
     padding: 0 25px 15px 25px;
     overflow-x: auto;
     max-height: 500px;
 }
+
 .p1.ih-nearby .round-icon {
     width: 50px;
     height: 50px;
@@ -27,10 +32,12 @@ map {
     margin-right: 15px;
     margin-top: 10px;
 }
+
 .p1.ih-nearby .nearby-place {
     padding: 30px 0px;
     font-size: .9em;
 }
+
 .p1.ih-nearby .nearby-place h5 {
     font-weight: 800;
     letter-spacing: 1px;
@@ -40,6 +47,7 @@ map {
     font-size: 1.2em;
     max-width: 350px;
 }
+
 .p1.ih-nearby .nearby-list h3 {
     text-transform: uppercase;
     border-bottom: 2px solid #eee;
@@ -47,12 +55,19 @@ map {
     margin: 0;
 }
 
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}

@@ -9,6 +9,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+
 /* privacy ends */
 
 
@@ -23,6 +24,7 @@
     top: 10px;
     background-color: #ab0520;
 }
+
 .ih-mls-status-Pending::before {
     content: "PENDING LISTING";
     position: absolute;
@@ -32,6 +34,7 @@
     top: 10px;
     background-color: #002147;
 }
+
 
 /* listing tags end */
 
@@ -46,26 +49,32 @@
     background-color: rgba(0, 0, 0, 0.2);
     padding-top: 20px;
 }
+
 section.ih404 {
     min-height: 800px;
 }
+
 .ih404 h1 {
     font-size: 175px;
 }
+
 .ih404 h4 {
     text-transform: uppercase;
     font-size: 31px;
     margin: 25px;
 }
+
 .ih404 span {
     font-size: 18px;
     margin: 25px 0;
     display: block;
 }
+
 .ih404 .btn-primary {
     font-size: 20px;
     margin-top: 25px;
 }
+
 
 /* 404 ends */
 
@@ -89,10 +98,12 @@ section.ih404 {
     line-height: 50px;
     font-size: 15px;
 }
+
 .ih-scroll-up:hover, .ih-scroll-up:active, .ih-scroll-up:visited, .ih-scroll-up:focus {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
 
 /* back-to-top ends */
 
@@ -108,55 +119,74 @@ section.ih404 {
     font-size: 11px;
     margin-top: 15px;
 }
+
 .ih-footer>div {
     margin-top: -40px;
     margin-bottom: 20px;
 }
+
 .ih-footer>div>a {
     color: #3277b2;
 }
+
 .ih-footer>div>a:hover {
     text-decoration: none;
 }
+
 .ih-legal {
     margin: 15px 0;
 }
+
 .ih-footer .ih-ui-inhouse-emblem {
-  font-size: 5em;
-  opacity: .2;
-  transition: .3s;
-  color: #fff;
+    font-size: 5em;
+    opacity: .2;
+    transition: .3s;
+    color: #fff;
 }
+
 .ih-footer .ih-ui-inhouse-emblem:hover {
-  opacity: .5;
+    opacity: .5;
 }
+
+
 /* footer ends */
 
+
 /* property styles */
+
 ul.share-btns {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
+
 ul.share-btns>li {
-  display: inline-block;
+    display: inline-block;
 }
+
 ul.share-btns>li>a {
-  display: inline-block;
-  padding: 15px;
+    display: inline-block;
+    padding: 15px;
 }
+
+
 /* propery ends*/
+
 
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {
     .ih-scroll-up {
         right: 20px;
         background-color: rgba(0, 0, 0, 0.5);
     }
 }
+
 @media screen and (max-width: 767px) {
     /* 404 */
     .sq-404 {
@@ -175,5 +205,7 @@ ul.share-btns>li>a {
     }
     /* 404 ends */
 }
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}
