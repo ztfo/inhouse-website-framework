@@ -14,7 +14,7 @@ angular.module('ihframework')
 		},
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
 			$scope.$watch('config', function(newVal) {
-				if(newVal !== undefined) {
+				if(newVal == undefined) {
 					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
 				} else {
 					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
