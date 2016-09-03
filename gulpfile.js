@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var sourcemaps = require('gulp-sourcemaps');
 var stylus = require('gulp-stylus');
 var pug = require ('gulp-pug');
-var babel = require('gulp-babel');
 var ext_replace = require('gulp-ext-replace');
 var templateCache = require('gulp-angular-templatecache');
 var uglify = require('gulp-uglify');
