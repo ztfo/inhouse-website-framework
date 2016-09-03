@@ -206,8 +206,7 @@
     z-index: 1;
 }
 
-.s2.ih-listing .map-pane,
-.s2.ih-results .map-pane {
+.s2.ih-listing .map-pane, .s2.ih-results .map-pane {
     padding: 0;
 }
 
