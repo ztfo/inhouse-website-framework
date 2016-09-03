@@ -32,7 +32,7 @@
                       <div>
                         {{place.address}}
                         <br>
-                        {{place.hours}}
+                        {{place.hours.open_now ? 'Open now!' : 'Closed'}}
                       </div>
                     </div>
                   </div>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <map center="{{centerCoordinates}}" zoom="12">
-        <marker ng-repeat="coord in markerCoordinates" position="{{coord}}"></marker>
+        <marker ng-repeat="coord in markerCoordinates track by $index" position="{{coord}}"></marker>
       </map>
     </div>
     <div class="container text-center btn-row">

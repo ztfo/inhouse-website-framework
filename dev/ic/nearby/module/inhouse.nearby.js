@@ -8,7 +8,7 @@ angular.module('ihframework')
 		},
 		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		restrict: 'E',
-		link: function(scope, elem, attrs){
+		link: function(scope, elem, attrs) {
 			scope.config = attrs.config;
 		},
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
@@ -41,7 +41,8 @@ angular.module('ihframework')
 				},
 				{
 					source: 'park',
-					name: 'Parks'
+					name: 'Parks',
+					radius: 15000
 				},
 			];
 
@@ -56,19 +57,25 @@ angular.module('ihframework')
 			});
 			
 			$scope.fetchNearbyData = function(nearby) {
-				ngGPlacesAPI.nearbySearch({latitude: $scope.listing.latlong[0], longitude: $scope.listing.latlong[1], type: nearby}).then((function(nearby) {
+				ngGPlacesAPI.nearbySearch({
+					latitude: $scope.listing.latlong[0], 
+					longitude: $scope.listing.latlong[1], 
+					type: nearby.source,
+					radius: nearby.radius || 10000
+				}).then((function(nearby) {
 					return function(data) {
 						var returnData = [];
 						for (var i = 0; i < Math.min(data.length, (data.max || 5)); i++) {
 							returnData.push({
 								name: data[i].name,
 								rating: data[i].rating,
-								address: data[i].vicinity
+								address: data[i].vicinity,
+								hours: data[i].opening_hours
 							});
 						}
 						
 						for (var i = 0; i < $scope.sources.length; i++) {
-							if($scope.sources[i].source == nearby) {
+							if($scope.sources[i].source == nearby.source) {
 								$scope.sources[i].data = returnData;
 							}
 						}
@@ -84,7 +91,7 @@ angular.module('ihframework')
 			$scope.loadNearby = function() {
 				$scope.defaultTab = $scope.sources[0].source;
 				$scope.sources.forEach(function(source) {
-					$scope.fetchNearbyData(source.source);
+					$scope.fetchNearbyData(source);
 				});
 			};
 			
