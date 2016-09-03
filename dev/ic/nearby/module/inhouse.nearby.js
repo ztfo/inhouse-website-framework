@@ -4,7 +4,8 @@ angular.module('ihframework')
 		scope: {
 			classes: "@classes",
 			listing: '=',
-			config: '='
+			config: '=',
+			sources: '='
 		},
 		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		restrict: 'E',
@@ -22,29 +23,31 @@ angular.module('ihframework')
 			
 			$scope.nearbyData = {};
 			
-			$scope.sources = [
-				{
-					source: 'school',
-					name: 'Schools'
-				},
-				{
-					source: 'shopping_mall',
-					name: 'Shopping'
-				},
-				{
-					source: 'restaurant',
-					name: 'Dining'
-				},
-				{
-					source: 'night_club',
-					name: 'Entertainment'
-				},
-				{
-					source: 'park',
-					name: 'Parks',
-					radius: 15000
-				},
-			];
+			if($scope.sources == undefined) {
+				$scope.sources = [
+						{
+							source: 'school',
+							name: 'Schools'
+						},
+						{
+							source: 'shopping_mall',
+							name: 'Shopping'
+						},
+						{
+							source: 'restaurant',
+							name: 'Dining'
+						},
+						{
+							source: 'night_club',
+							name: 'Entertainment'
+						},
+						{
+							source: 'park',
+							name: 'Parks',
+							radius: 15000
+						},
+					];
+				}
 
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
@@ -53,7 +56,9 @@ angular.module('ihframework')
 							$scope.listing.latlong = $scope.listing.latlong.split(',');
 						}
 						$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
-						$scope.loadNearby();
+						if(typeof $scope.sources !== 'undefined' && $scope.sources.length > 0) {
+							$scope.loadNearby();
+						}
 					}
 				}
 			});
