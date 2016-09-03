@@ -1,19 +1,18 @@
 <section class="p2 ih-photo-slider container-fluid fp">
-  <h1 class="ih-header text-center fc-02">Photo Gallery</h1>
   <div class="row">
-    <p class="fs text-center col-md-6 col-md-offset-3">
-      {{listing.listingDescription | limitTo: 250 }}
-    </p>
-  </div>
-  <div class="row">
-    <ih-owl class="owl-carousel tst-carousel" items="listing.photos" responsive="responsive">
-      <div class="listing-pic-block full" ng-repeat="photo in listing.photos">
-        <div class="listing-pic" ng-style="{'background-image': 'url(' + photo.large + ')'}">
-          <a href="#/lightbox" class="block full bkc-03 fw">
-            <span class="fa fa-camera"></span>
-          </a>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-12  col-xs-12">
+      <ih-owl class="owl-carousel tst-carousel" items="listing.photos" responsive="responsive">
+        <div class="listing-pic-block full" ng-repeat="photo in listing.photos">
+          <div class="listing-pic" ng-style="{'background-image': 'url(' + photo.large + ')'}">
+            <a href="#/lightbox" class="block full bkc-03 fw">
+              <span class="fa fa-camera"></span>
+            </a>
+          </div>
         </div>
-      </div>
-    </ih-owl>
+      </ih-owl>
+    </div>
   </div>
 </section>
