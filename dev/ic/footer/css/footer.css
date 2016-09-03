@@ -22,7 +22,9 @@
   margin-bottom: 10px;
 }
 .legal-row .ih-ui,
-.ih-legal .ih-ui {
+.ih-legal .ih-ui,
+.ih-ui.ih-ui-fairhousing,
+.ih-ui.ih-ui-realtor {
   font-size: 3em;
 }
 /* s2 */
