@@ -24,7 +24,7 @@ angular.module('ihframework')
 			
 			$scope.sources = [
 				{
-					source: 'schools',
+					source: 'school',
 					name: 'Schools'
 				},
 				{
@@ -60,8 +60,7 @@ angular.module('ihframework')
 				ngGPlacesAPI.nearbySearch({
 					latitude: $scope.listing.latlong[0], 
 					longitude: $scope.listing.latlong[1], 
-					type: nearby.source,
-					radius: nearby.radius || 10000
+					type: nearby.source
 				}).then((function(nearby) {
 					return function(data) {
 						var returnData = [];
