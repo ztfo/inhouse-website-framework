@@ -13,95 +13,122 @@
     letter-spacing: 1px;
     color: #707070;
 }
+
 .no-results .ih-ui-no-listings {
-  font-size: 5em;
-  opacity: .5;
+    font-size: 5em;
+    opacity: .5;
 }
+
 .ih-mls-legal {
     margin: 25px 0;
 }
+
 .slider.slider-horizontal {
     width: 70%;
     margin-left: 25px;
 }
+
 .ih-filter-row .btn-group {
     width: 100%;
 }
+
 .ih-filter-row input[type=checkbox] {
     display: none;
 }
+
 .ih-filter-row .btn-group .btn {
     width: 33.333333%;
 }
+
 .ih-filters.container-fluid .ih-slide {
     padding: 8px 0px;
 }
+
 .ih-slide {
-  margin: 10px 0;
+    margin: 10px 0;
 }
+
 .ih-slide label {
-  min-width: 100px;
+    min-width: 100px;
 }
+
 .ih-slide .tooltip {
     margin-top: -23px !important;
 }
+
 .ih-slide .tooltip-arrow {
     display: none;
 }
+
 .ih-slide .tooltip-inner {
     background-color: rgba(0, 0, 0, 0.1);
     color: #171717;
     border-radius: 0;
 }
+
 .gmap-popwindow a {
     font-size: 20px;
     font-weight: 600;
     padding: 0;
     color: #303030;
 }
+
 .gmap-popwindow a:hover {
     text-decoration: none;
 }
+
 .ih-listing-slider .item {
-  cursor: pointer;
+    cursor: pointer;
 }
+
+
 /* list view swap */
 
 .ih-listview {
     width: 100% !important;
     margin-bottom: 25px;
 }
+
 .ih-listview .ih-listing-card-img {
     float: left;
     height: 275px;
     width: 35%;
 }
+
 .ih-listview .ih-listing-card-desc {
     float: right;
     width: 65%;
     padding: 10px 20px;
 }
+
 .ih-listview .ih-listing-card {
     min-height: initial;
 }
+
 .ih-listview .fit-image {
     height: 275px;
 }
+
 .ih-listview .ih-ft-listing-link {
     line-height: 275px;
 }
+
 .ih-listview .ih-ft-listing-addr {
     text-align: left;
 }
+
 .ih-listview h4 {
     font-size: 25px;
 }
+
 .ih-listview .lead {
     font-size: 30px;
 }
+
 .ih-listview .ih-listing-card-desc>p {
     min-height: auto;
 }
+
 
 /* filter breadcrumd defaults */
 
@@ -116,11 +143,13 @@
     padding: 2px 7px;
     border-radius: 3px;
 }
+
 .ih-breadcrumb:hover {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.5);
 }
+
 
 /* s1 - vertical center page configuration with map toggle */
 
@@ -128,24 +157,30 @@
     position: relative;
     padding: 30px 0;
 }
+
 .s1 .ih-results-inner {
     min-height: 250px;
 }
+
 .s1.ih-results .map-pane>div {
     width: 100%;
     height: 100%;
 }
+
 .s1 .ihmap-results {
     height: 300px;
     margin-bottom: 35px;
     border-top: 10px solid #fff;
 }
+
 .s1 .ih-listings-menu {
     padding-top: 10px;
 }
+
 .s1 .gmap-popwindow {
     color: black;
 }
+
 .s1 .ih-listing-card {
     position: relative;
     border: 1px solid #eee;
@@ -154,9 +189,11 @@
     -webkit-transition: .3s;
     transition: .3s;
 }
+
 .s1 .ih-listing-card:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
+
 .s1 .ih-listing-card-img {
     position: relative;
     min-height: 200px;
@@ -164,6 +201,7 @@
     background-size: cover;
     background-position: 50%;
 }
+
 .s1 .ih-listing-card-img>a:first-child {
     display: block;
     height: 100%;
@@ -180,51 +218,63 @@
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
 .s1 .ih-listing-card-img>a:first-child:hover {
     opacity: 1;
     text-decoration: none;
 }
+
 .s1 .ih-listing-card-desc {
     position: relative;
     padding: 15px;
 }
+
 .s1 .ih-listings {
     padding: 30px 0;
 }
+
 .s1 .ih-slide {
     margin: 10px 0;
 }
+
 .s1 .ih-slide label {
     min-width: 100px;
     text-align: right;
     padding-right: 10px;
 }
+
 .s1 .ih-filters {
     padding: 15px;
     margin-bottom: 15px;
     border: 1px solid #eee;
     border-radius: 2px;
 }
+
 .s1 .ih-filter-row {
     position: relative;
     margin: 10px 0;
 }
+
 .s1 .ih-listings-map {
     height: 750px;
     margin-bottom: 25px;
 }
+
 .s1 .ih-listings-map>div {
     height: 100%;
 }
+
 .s1 .ih-more-listings {
     clear: both;
 }
+
 .s1 .ih-map-results {
     min-height: 400px;
     background-color: #eee;
     border-bottom: 15px solid #fff;
     margin-bottom: 25px;
 }
+
 
 /* s2 */
 
@@ -234,15 +284,18 @@
     padding-bottom: 85px;
     overflow: auto;
 }
+
 .s2.ih-results>.container-fluid {
     padding: 0;
 }
+
 .s2 .ih-filters {
     margin: 0;
     border: 0;
     background-color: rgba(255, 255, 255, 0.15);
     padding: 0;
 }
+
 .s2.ih-results {
     position: fixed;
     top: 0;
@@ -252,25 +305,32 @@
     padding-bottom: 0;
     background-color: #fff;
 }
+
 .s2 .ih-ft-listing-details {
     padding: 10px 15px;
 }
+
 .s2 .ih-listings {
     padding: 0;
 }
+
 .s2 .ih-filters .ih-adv-toggle {
     margin: 0;
 }
+
 .s2 .ih-filters>.container {
     padding: 15px 15px;
     background-color: rgba(255, 255, 255, 0.02);
 }
+
 .s2 .ih-listing-block {
     padding: 0 7px;
 }
+
 .s2 .ih-listing-block hr {
     display: none;
 }
+
 .s2 .ih-listing-card {
     min-height: 550px;
     margin-bottom: 30px;
@@ -279,9 +339,11 @@
     overflow: hidden;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
 }
+
 .s2 .ih-ft-listing-addr h4 {
     font-size: 16px;
 }
+
 .s2 .ih-listing-card .read-more {
     display: block;
     text-align: right;
@@ -291,6 +353,7 @@
     margin-top: 5px;
     margin-bottom: -15px;
 }
+
 .s2 .ih-listing-card-img {
     position: relative;
     min-height: 250px;
@@ -298,6 +361,7 @@
     background-repeat: no-repeat;
     background-position: 50%;
 }
+
 .s2 .ih-ft-listing-link {
     line-height: 250px !important;
     text-align: center;
@@ -305,23 +369,29 @@
     font-weight: 600;
     font-size: 20px;
     opacity: 0;
+    -webkit-transition: .3s;
     transition: .3s;
     background-color: rgba(0, 0, 0, 0.65);
     color: #fff;
 }
+
 .s2 .ih-listing-card-desc {
     padding: 20px 15px;
 }
+
 .s2 .ih-ft-listing-link:hover {
     opacity: 1;
 }
+
 .s2 .ih-ft-listing-addr {
     text-align: left;
 }
+
 .s2 .ih-listview .ih-listing-card {
     min-height: 220px;
     margin-bottom: 0;
 }
+
 .s2 .ih-listview .ih-listing-card-img {
     width: 33% !important;
     height: 220px !important;
@@ -329,38 +399,47 @@
     background-position: 50%;
     z-index: 0;
 }
+
 .s2 .ih-listview .ih-listing-card-desc {
     width: 67%;
 }
+
 .s2 .ih-listview h4 {
     font-size: 30px;
     margin-top: 20px;
 }
+
 .s2 .ih-listview h6 {
     font-size: 15px;
     margin-top: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .s2 .ih-listview .ih-ft-listing-details {
     padding: 20px 0;
 }
+
 .s2 .ih-listview small {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
 }
+
 .s2 .ih-listview .ih-like-btn {
     bottom: initial !important;
     top: 10px !important;
     right: 10px !important;
     left: initial !important;
 }
+
 .s2 .ih-advanced-filters {
     padding-top: 15px;
 }
+
 .s2 .ih-advanced-filters .row {
     margin-bottom: 15px;
 }
+
 
 /* s3 */
 
@@ -372,23 +451,29 @@
     height: auto;
     overflow: hidden;
 }
+
 .s3 .ih-listing-block>div {
     height: 100%;
 }
+
 .s3 .ih.property-img {
-  height: 285px !important;
+    height: 285px !important;
 }
+
 .s3 .property-img>a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
 }
+
 .s3 .meta-item {
     width: 50%;
 }
+
 .s3.ih-results #map-results {
     height: 400px;
 }
+
 
 /* results end */
 
@@ -396,6 +481,7 @@
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /* global */
     .ih-listing-description {
@@ -437,6 +523,7 @@
         line-height: 175px !important;
     }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     /* s2 */
     .s2 .ih-listing-card-img {
@@ -446,6 +533,7 @@
         min-height: 550px !important;
     }
 }
+
 @media screen and (min-width: 376px) and (max-width: 768px) {
     /* global */
     .ih-more-listings button {
@@ -492,6 +580,7 @@
         height: 300px !important;
     }
 }
+
 @media screen and (max-width: 767px) {
     /* global */
     .ih-filters .row>div:first-child {
@@ -530,6 +619,7 @@
         padding-top: 116px;
     }
 }
+
 @media screen and (max-width: 426px) {
     .s1 .ih-filter-row .btn-group .btn {
         font-size: 9px;
@@ -539,4 +629,5 @@
         padding-bottom: 10px;
     }
 }
+
 @media screen and (max-width: 374px) {}

@@ -1,20 +1,15 @@
 /*** INHOUSE Style Framework v.1.0 ***/
 /*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-}
 
 /* element resets */
-body { overflow-x: hidden !important; }
-button, button:active, button:focus { outline: 0 !important; }
-input:active, input:focus { outline: none !important; }
+body.ihweb { overflow-x: hidden !important; }
+.ihweb button, .ihweb button:active, .ihweb button:focus { outline: 0 !important; }
+.ihweb input:active, .ihweb input:focus { outline: none !important; }
 /* resets */
 
 /* font defaults */
-.fw, .fw h1, .fw h2, .fw h3 , .fw h4  { color: #f5f5f5 !important; }
-.fb, .fb h1, .fb h2, .fb h3 , .fb h4 { color: #171717 !important; }
+.fw,.fw h1,.fw h2,.fw h3 ,.fw h4  { color: #f5f5f5 !important; }
+.fb,.fb h1,.fb h2,.fb h3 ,.fb h4 { color: #171717 !important; }
 .fo { font-family: 'Open Sans' , sans-serif; }
 /* font ends */
 
@@ -30,7 +25,7 @@ input:active, input:focus { outline: none !important; }
 .bt70 { background-color: rgba(0,0,0,0.7); }
 .bt80 { background-color: rgba(0,0,0,0.8); }
 
-.tpt { opacity: .85 !important; }
+.ihweb .tpt { opacity: .85 !important; }
 
 /* background ends */
 
@@ -87,10 +82,10 @@ input:active, input:focus { outline: none !important; }
 /* image end */
 
 /* frames */
-.b35 { border: 35px solid #fff; }
-.b25 { border: 25px solid #fff; }
-.b15 { border: 15px solid #fff; }
-.b10 { border: 10px solid #fff; }
+.ihweb .b35 { border: 35px solid #fff; }
+.ihweb .b25 { border: 25px solid #fff; }
+.ihweb .b15 { border: 15px solid #fff; }
+.ihweb .b10 { border: 10px solid #fff; }
 /* frames end */
 
 /* link resets */
@@ -155,44 +150,44 @@ a:focus { text-decoration: none; color: inherit; }
 /* hovers end */
 
 /* empty states */
-#main-view,
-.ih-view-container {
+.ihweb #main-view,
+.ihweb .ih-view-container {
   overflow: hidden !important;
   min-height: calc(100vh);
 }
 /* empty end */
 
 /* bootstrap resets */
-.carousel-control {
+.ihweb .carousel-control {
   background-color: transparent !important;
   background: transparent !important;
   width: 50px;
 }
-.tooltip {
+.ihweb .tooltip {
   pointer-events: none;
 }
 .lead {
   font-size: 20px;
   font-weight: 400;
 }
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:focus,
-.navbar-default .navbar-nav>.open>a:hover {
+.ihweb .navbar-default .navbar-nav>.open>a,
+.ihweb .navbar-default .navbar-nav>.open>a:focus,
+.ihweb .navbar-default .navbar-nav>.open>a:hover {
   background-color: transparent;
 }
-input[type="radio"] {
+.ihweb input[type="radio"] {
 	display:none;
 }
-.dropdown-menu {
+.ihweb .dropdown-menu {
   padding-bottom: 0;
 }
-.modal {
+.ihweb .modal {
   z-index: 1080;
 }
 /* bs resets end*/
 
 /* owl styles */
-.owl-nav>div {
+.ihweb .owl-nav>div {
   cursor: pointer;
 }
 /* owl end */

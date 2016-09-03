@@ -4,34 +4,42 @@
     position: relative;
     min-height: 500px;
 }
-.s1 .ih-team {
+
+.s1.ih-about .ih-team {
     position: relative;
     margin: 50px 0;
 }
+
 .s1.ih-about .ih-header {
     position: relative;
     width: 50%;
     margin: 0 auto;
 }
-.s1 .ih-headshot img {
+
+.s1.ih-about .ih-headshot img {
     width: 225px;
     margin-bottom: 35px;
+    -webkit-transition: .3s;
     transition: .3s;
     text-align: center;
     display: inline-block;
     border: 5px solid #fff;
 }
-.s1 .ih-headshot img:hover {
+
+.s1.ih-about .ih-headshot img:hover {
     border: 10px solid #fff;
 }
-.s1 .ih-headshot a:hover, .s1 .ih-headshot a:active, .s1 .ih-headshot a:focus {
+
+.s1.ih-about .ih-headshot a:hover, .s1.ih-about .ih-headshot a:active, .s1.ih-about .ih-headshot a:focus {
     text-decoration: none;
 }
-.s1 .ih-teammate-name {
+
+.s1.ih-about .ih-teammate-name {
     text-transform: uppercase;
     font-size: 20px;
     margin-bottom: 35px;
 }
+
 
 /* s2 */
 
@@ -41,15 +49,18 @@
     min-height: 300px;
     padding-bottom: 70px;
 }
+
 .s2.ih-about .img-square {
     border: 10px solid rgba(0, 0, 0, 0.2);
 }
+
 .s2.ih-about h2 {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
 }
+
 .s2.ih-about .about-social {
     position: absolute;
     top: 10px;
@@ -57,25 +68,32 @@
     font-size: 15px;
 }
 
+
 /* s3 */
 
 .s3.ih-about {
     margin: 150px auto;
 }
+
 .s3.ih-about .container {
     width: 950px;
 }
-.s3 .ih-about-inner p {
+
+.s3.ih-about .ih-about-inner p {
     margin-top: 50px;
     -webkit-column-count: 2;
-    column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
     -webkit-column-gap: 35px;
-    column-gap: 35px;
+    -moz-column-gap: 35px;
+         column-gap: 35px;
 }
+
 .s3.ih-about .tagline {
     margin-top: 0;
     font-size: 30px;
 }
+
 .s3.ih-about .ih-headshot>a {
     display: block;
     min-height: 200px;
@@ -83,13 +101,15 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-.s3 .ih-teammate-name {
+
+.s3.ih-about .ih-teammate-name {
     font-size: 16px;
     position: absolute;
     bottom: -40px;
     right: 0;
     left: 0;
 }
+
 
 /* s5 */
 
@@ -99,18 +119,21 @@
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
-.s5 .agent-card {
+
+.s5.ih-about .agent-card {
     display: block;
     height: 260px;
     margin-bottom: 20px;
 }
-.s5 .agent-card>a {
+
+.s5.ih-about .agent-card>a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
     background-color: #eee;
 }
-.s5 .agent-hover {
+
+.s5.ih-about .agent-hover {
     position: absolute;
     padding: 10px;
     top: 0px;
@@ -118,16 +141,19 @@
     left: 0px;
     bottom: 0px;
     opacity: 0;
+    -webkit-transition: .3s;
     transition: .3s;
 }
-.s5 .agent-hover:hover {
+
+.s5.ih-about .agent-hover:hover {
     top: 13px;
     left: 13px;
     right: 13px;
     bottom: 13px;
     opacity: 1;
 }
-.s5 .agent-icon {
+
+.s5.ih-about .agent-icon {
     bottom: 10px;
     right: 15px;
     text-align: center;
@@ -136,15 +162,18 @@
     padding: 0;
     margin: 0;
 }
-.s5 .agent-hover>strong {
+
+.s5.ih-about .agent-hover>strong {
     display: block;
     padding-bottom: 2px;
     margin-bottom: 2px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-.s5 .agent-row {
+
+.s5.ih-about .agent-row {
     margin-top: 25px;
 }
+
 
 /* s6 */
 
@@ -152,23 +181,29 @@
     margin: 100px 0;
     padding: 50px 0;
 }
+
 .s6.ih-about .ih-md-divider {
     display: none;
 }
+
 .s6.ih-about .tab-content {
     border: 0;
     padding: 0;
     margin-top: 25px;
 }
+
 .s6.ih-about .nav-justified {
     margin: 30px 0;
 }
+
 .s6.ih-about .tab-pane {
     padding: 0;
 }
+
 .s6.ih-about .ih-bio-img {
     margin-top: 30px;
 }
+
 
 /* s8 */
 
@@ -176,78 +211,88 @@
     position: relative;
     min-height: 500px;
 }
-.s8 .ih-team {
+
+.s8.ih-about .ih-team {
     position: relative;
     margin: 50px 0;
 }
+
 .s8.ih-about .ih-header {
     position: relative;
     width: 50%;
     margin: 0 auto;
 }
-.s8 .ih-headshot img {
+
+.s8.ih-about .ih-headshot img {
     width: 225px;
     margin-bottom: 35px;
+    -webkit-transition: .3s;
     transition: .3s;
     text-align: center;
     display: inline-block;
     border: 5px solid #fff;
 }
-.s8 .ih-headshot img:hover {
+
+.s8.ih-about .ih-headshot img:hover {
     border: 10px solid #fff;
 }
-.s8 .ih-headshot a:hover, .s8 .ih-headshot a:active, .s8 .ih-headshot a:focus {
+
+.s8.ih-about .ih-headshot a:hover, .s8.ih-about .ih-headshot a:active, .s8.ih-about .ih-headshot a:focus {
     text-decoration: none;
 }
-.s8 .ih-teammate-name {
+
+.s8.ih-about .ih-teammate-name {
     text-transform: uppercase;
     font-size: 20px;
     margin-bottom: 20px;
 }
 
+
 /* p1 */
 
-.p1 .ih-about-inner {
+.p1.ih-about .ih-about-inner {
     padding: 75px 0;
 }
+
 .p1.ih-about {
     background-color: #f5f5f5;
 }
+
 .p1.ih-about .img-circle {
     border: 10px solid #fff;
 }
+
 .p1.ih-about .ih-about-text h2 {
     margin: 0;
 }
+
 .p1.ih-about .about-social {
-  float: right;
-  font-size: 10px;
-  color: #fff;
+    float: right;
+    font-size: 10px;
+    color: #fff;
 }
+
 .p1.ih-about .ih-social-icon {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
 }
+
 .p1.ih-about .bio {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 25px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px;
 }
 
 .p1.ih-about h4 {
-  font-size: 16px;
+    font-size: 16px;
 }
-/* s10 carol */
 
 
-/*** if this only apply' to carol's website please only include it inside her ih-brand.css ***/
-
-
-/*** *** *** ***/
+/* s10 */
 
 .s10.ih-about {
     position: relative;
@@ -255,15 +300,18 @@
     min-height: 300px;
     padding-bottom: 70px;
 }
+
 .s10.ih-about .img-square {
     border: 10px solid rgba(0, 0, 0, 0.2);
 }
+
 .s10.ih-about h2 {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
 }
+
 .s10.ih-about .about-social {
     position: absolute;
     top: 10px;
@@ -271,11 +319,15 @@
     font-size: 15px;
 }
 
+
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {
     .ih-about .ih-header {
         width: 95%;
@@ -296,9 +348,11 @@
         text-align: center;
     }
 }
+
 @media screen and (max-width: 768px) {
     .ih-about-header {
         clear: both;
     }
 }
+
 @media screen and (max-width: 375px) {}

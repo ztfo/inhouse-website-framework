@@ -1,27 +1,32 @@
 .contact-page {
-  padding: 50px 0;
+    padding: 50px 0;
 }
 
 .ih-contact-page h1.ih-header {
     display: none;
 }
+
 .ih-contact-page .ih-md-divider {
     display: none;
 }
+
 .ih-contact-page .ih-content-inner {
     padding: 50px 0;
 }
+
 .contact-info-pane h3 {
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .contact-info-pane address {
     padding: 10px;
     margin: 20px 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.05);
 }
+
 .space-icon {
     display: inline-block;
     margin-right: 10px;
@@ -29,18 +34,26 @@
     border-right: 2px solid rgba(255, 255, 255, 0.5);
     width: 20px;
 }
+
 .contact-map-pane {
     min-height: 300px;
     background-color: rgba(0, 0, 0, 0.1);
     margin-top: 60px;
 }
 
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}
