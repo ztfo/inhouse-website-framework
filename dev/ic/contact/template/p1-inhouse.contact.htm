@@ -1,4 +1,4 @@
-<section class="p1 ih-contact bkbf-01 fw{{classes}}" style=" background-image: url('http://leslieheros.com/ua/backgrounds/mainimage.jpg')">
+<section class="p1 ih-contact bkbf-01 fw fp {{classes}}" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
     <h1 class="ih-header text-center fc-02">Get In Touch</h1>
     <div class="container flex-grid container-sm">
         <div class="flex-8 wt80 contact-info-box">
@@ -9,9 +9,9 @@
                 <div class="flex-6">
                     <strong><span>Presented by: {{agent.agentName}}</span></strong>
                     <address>
-            33 S 5th Ave{{listing.address}}<br />
-            Tucson, AZ 85701{{listing.city}} {{listing.state}} {{listing.zipcode}}
-          </address>
+                      {{listing.address}}<br />
+                      {{listing.city}} {{listing.state}} {{listing.zipcode}}
+                    </address>
                     <address>
             <h6><small><strong class="text-uppercase">Phone:</strong></small> {{agent.contactPhone | tel}}</h6>
             <h6><small><strong class="text-uppercase">Email:</strong></small> {{agent.contactEmail}}</h6>

@@ -1,4 +1,4 @@
-<section class="p1 ih-about container-fluid">
+<section class="p1 ih-about container-fluid fp">
   <div class="container">
     <div class="row">
       <h1 class="ih-header fc-02 text-center">Meet Your Agent</h1>
@@ -21,8 +21,8 @@
             <a href="{{agent.pinterest}}" class="ih-social-icon bkc-02" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
           </div>
         </h2>
-        <h4 class="text-muted"><strong>{{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}</strong></h4>
-        <div itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted">
+        <h4 class="text-muted fs"><strong>{{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}</strong></h4>
+        <div itemprop="description" class="bio fs" ng-bind-html="agent.bio1 | to_trusted">
         </div>
         <p class="fp">
           <strong>

@@ -1,4 +1,4 @@
-<section class="p2 ih-about-listing">
+<section class="p2 ih-about-listing fp">
     <div class="container ih-about-inner">
         <div class="row">
             <h1 class="ih-header text-center fc-02">about {{listing.address}}</h1>
@@ -10,7 +10,7 @@
                         <span class="ih-icon ih-icon-bed"></span>
                     </div>
                     <div class="flex-8 text-center">
-                        <h1 class="fc-03">13{{listing.beds}}</h1>
+                        <h1 class="fc-03">{{listing.beds}}</h1>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                         <span class="ih-icon ih-icon-bathtub2"></span>
                     </div>
                     <div class="flex-8 text-center">
-                        <h1 class="fc-03">13{{listing.baths}}</h1>
+                        <h1 class="fc-03">{{listing.baths}}</h1>
                     </div>
                 </div>
             </div>
@@ -30,8 +30,8 @@
                         <span class="ih-icon ih-icon-house-size"></span>
                     </div>
                     <div class="flex-8">
-                        <h4 class="fc-03">12,345{{listing.sqft | number}}</h4>
-                        <h6>sqft{{listing.sizeUnit}}</h6>
+                        <h4 class="fc-03">{{listing.sqft | number}}</h4>
+                        <h6>{{listing.sizeUnit}}</h6>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                         <span class="ih-icon ih-icon-house2"></span>
                     </div>
                     <div class="flex-8">
-                        <h1 class="fc-03">3{{listing.stories}}</h1>
+                        <h1 class="fc-03">{{listing.stories}}</h1>
                         <h6>STORIES</h6>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="flex-8">
                         <h6>listing Type</h6>
-                        <h5 class="fc-03">Single-Family{{listing.type}}</h5>
+                        <h5 class="fc-03">{{listing.type}}</h5>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="row">
               <p class="fs columns">
-                  {{listing.description}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet arcu sed nunc auctor suscipit. Aliquam finibus arcu eu urna fermentum ultricies. Nam ipsum leo, viverra in mauris egestas, maximus rhoncus leo. Vivamus commodo tortor et accumsan gravida. Pellentesque nibh mauris, aliquet mattis ligula nec, elementum vestibulum ipsum. Quisque porta nisl non egestas eleifend. Vestibulum malesuada fermentum nisi eget accumsan. Ut finibus ipsum sed scelerisque pharetra. Nam rhoncus magna ante, ac interdum felis feugiat vel. Vivamus in nibh ut arcu rutrum dapibus sed at nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Suspendisse risus odio, feugiat non consequat non, facilisis vitae nisi.
+                  {{listing.description}}
               </p>
             </div>
             <div class="row details-row">

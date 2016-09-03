@@ -1,8 +1,8 @@
-<section class="p1 ih-nearby container-fluid">
+<section class="p1 ih-nearby container-fluid fp">
   <h1 class="ih-header text-center fc-02">Nearby Places</h1>
   <div class="row">
     <p class="fs text-center col-md-6 col-md-offset-3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.{{listing.listingDescription | limitTo: 250 }}
+      {{listing.listingDescription | limitTo: 250 }}
     </p>
   </div>
   <div class="row">
@@ -14,7 +14,6 @@
               <div class="flex-grid">
                 <div class="nearby-list flex-6">
                   <h3 class="fc-01">{{source.name}}</h3>
-                  <!-- ng-repeat results -->
                   <div class="nearby-place clearfix" ng-repeat="place in source.data">
                     <div class="pull-left round-icon bkc-04 fw">
                       <span class="ih-icon-location"></span>
@@ -29,7 +28,7 @@
                       <div class="g-rating" ng-if="!place.rating">
                         No rating available
                       </div>
-                      <div>
+                      <div class="fs">
                         {{place.address}}
                         <br>
                         {{place.hours.open_now ? 'Open now!' : 'Closed'}}

@@ -1,35 +1,35 @@
-<section class="p1 ih-amenities container-fluid">
-  <div class="flex-grid">
-    <div class="flex-5 image-fit" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
-      <div class="ih afull fullh bkc-01 tpt amenities-accent fw">
-        <h1>
+<section class="p1 ih-amenities container-fluid fp">
+    <div class="flex-grid">
+        <div class="flex-5 image-fit" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
+            <div class="ih afull fullh bkc-01 tpt amenities-accent fw">
+                <h1>
           {{listing.address}}<br />
           <small class="fw text-uppercase">{{listing.city}} {{listing.state}} {{listing.zipcode}}</small>
         </h1>
-        <h2 class="fc-01"><strong>{{listing.price | currency}}</strong></h2>
-        <blockquote>
-          "Call to action here please. A one line description of the home"
-        </blockquote>
-        <div class="btn-row">
-          <a href="#/" class="btn btn-primary">
-            Schedule Visit
-          </a>
+                <h2 class="fc-01"><strong>{{listing.price | currency}}</strong></h2>
+                <blockquote class="fs">
+                    "Call to action here please. A one line description of the home"
+                </blockquote>
+                <div class="btn-row">
+                    <a href="#/" class="btn btn-primary">
+                      Schedule Visit
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="flex-7 amenities-box">
-      <h1 class="ih-subheader fc-02">Amenities at <strong>{{listing.community}}</strong></h1>
-      <p>
-        {{listing.editableText}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius sem vel quam facilisis, semper eleifend ipsum facilisis.
-      </p>
-      <div class="amenity-grid flex-grid">
-        <div class="amenity-container float-left" ng-repeat="amenity in amenities">
-          <div class="amenity-item">
-            <span class="ih-icon-{{amenity.icon}}"></span>
-          </div>
-          <div class="amenity-label text-uppercase text-muted text-center"><small>{{amenity.name}}</small></div>
+        <div class="flex-7 amenities-box">
+            <h1 class="ih-subheader fc-02">Amenities at <strong>{{listing.community}}</strong></h1>
+            <p class="fs">
+                {{listing.editableText}}
+            </p>
+            <div class="amenity-grid flex-grid">
+                <div class="amenity-container float-left" ng-repeat="amenity in amenities">
+                    <div class="amenity-item">
+                        <span class="ih-icon-{{amenity.icon}}"></span>
+                    </div>
+                    <div class="amenity-label text-uppercase text-muted text-center"><small>{{amenity.name}}</small></div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
