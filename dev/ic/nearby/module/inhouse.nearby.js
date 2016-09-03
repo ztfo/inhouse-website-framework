@@ -37,7 +37,7 @@ angular.module('ihframework')
 				},
 				{
 					source: 'night_club',
-					name: 'Fun'
+					name: 'Entertainment'
 				},
 				{
 					source: 'park',
