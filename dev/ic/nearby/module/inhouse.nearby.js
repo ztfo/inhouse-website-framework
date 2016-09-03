@@ -48,7 +48,7 @@ angular.module('ihframework')
 
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
-					if(typeof $scope.listing.latlong != undefined) {
+					if($scope.listing.latlong != undefined) {
 						$scope.listing.latlong = $scope.listing.latlong.split(',');
 						$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
 						$scope.loadNearby();
@@ -96,7 +96,7 @@ angular.module('ihframework')
 			};
 			
 			$scope.selectTab = function(index) {
-				if(typeof $scope.sources[index].data !== 'undefined') {
+				if($scope.sources[index].data !== undefined) {
 					$scope.markerCoordinates = $scope.sources[index].data.map(function(source) {
 						return source.address;
 					});
