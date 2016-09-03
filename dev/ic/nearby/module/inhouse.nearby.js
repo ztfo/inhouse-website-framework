@@ -49,7 +49,9 @@ angular.module('ihframework')
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
 					if($scope.listing.latlong != undefined) {
-						$scope.listing.latlong = $scope.listing.latlong.split(',');
+						if(typeof $scope.listing.latlong == 'string') {
+							$scope.listing.latlong = $scope.listing.latlong.split(',');
+						}
 						$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
 						$scope.loadNearby();
 					}
@@ -60,7 +62,8 @@ angular.module('ihframework')
 				ngGPlacesAPI.nearbySearch({
 					latitude: $scope.listing.latlong[0], 
 					longitude: $scope.listing.latlong[1], 
-					type: nearby.source
+					type: nearby.source,
+					radius: nearby.radius || 10000
 				}).then((function(nearby) {
 					return function(data) {
 						var returnData = [];
