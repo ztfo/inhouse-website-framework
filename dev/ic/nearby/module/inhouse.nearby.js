@@ -11,7 +11,7 @@ angular.module('ihframework')
 		link: function(scope, elem, attrs){
 			scope.config = attrs.config;
 		},
-		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI) {
+		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
 					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
@@ -19,139 +19,83 @@ angular.module('ihframework')
 					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
 				}
 			});
+			
+			$scope.nearbyData = {};
+			
+			$scope.sources = [
+				{
+					source: 'schools',
+					name: 'Schools'
+				},
+				{
+					source: 'shopping_mall',
+					name: 'Shopping'
+				},
+				{
+					source: 'restaurant',
+					name: 'Dining'
+				},
+				{
+					source: 'night_club',
+					name: 'Fun'
+				},
+				{
+					source: 'park',
+					name: 'Parks'
+				},
+			];
 
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
-					var latlong = $scope.listing.latlong.split(',');
 					if(typeof $scope.listing.latlong != undefined) {
-						$scope.loadNearby(latlong);
+						$scope.listing.latlong = $scope.listing.latlong.split(',');
+						$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
+						$scope.loadNearby();
 					}
 				}
 			});
 			
-			$scope.loadNearby = function(latlong) {
-				ngGPlacesAPI.nearbySearch({latitude: latlong[0], longitude: latlong[1], type: 'school'}).then(function(schools){
-					$scope.schoolData = [];
-					for(var i = 0; i < 5; i++){
-						var x = {};
-						x.name = schools[i].name;
-						x.rating = schools[i].rating;
-						x.address = schools[i].vicinity;
-						$scope.schoolData.push(x);
-					}
-					$scope.markerCoordinates1 = $scope.schoolData[0].address;
-					$scope.markerCoordinates2 = $scope.schoolData[1].address;
-					$scope.markerCoordinates3 = $scope.schoolData[2].address;
-					$scope.markerCoordinates4 = $scope.schoolData[3].address;
-					$scope.markerCoordinates5 = $scope.schoolData[4].address;
-			  });
-
-				ngGPlacesAPI.nearbySearch({latitude: latlong[0], longitude: latlong[1], type: 'shopping_mall'}).then(function(shopping){
-					$scope.shoppingData = [];
-					for(var i = 0; i < 5; i++){
-						var x = {};
-						x.name = shopping[i].name;
-						x.rating = shopping[i].rating;
-						x.address = shopping[i].vicinity;
-						$scope.shoppingData.push(x);
-					}
-					$scope.markerCoordinates1 = $scope.shoppingData[0].address;
-					$scope.markerCoordinates2 = $scope.shoppingData[1].address;
-					$scope.markerCoordinates3 = $scope.shoppingData[2].address;
-					$scope.markerCoordinates4 = $scope.shoppingData[3].address;
-					$scope.markerCoordinates5 = $scope.shoppingData[4].address;
-			  });
-
-				ngGPlacesAPI.nearbySearch({latitude: latlong[0], longitude: latlong[1], type: 'restaurant'}).then(function(food){
-					$scope.foodData = [];
-					for(var i = 0; i < 5; i++){
-						var x = {};
-						x.name = food[i].name;
-						x.rating = food[i].rating;
-						x.address = food[i].vicinity;
-						$scope.foodData.push(x);
-					}
-					$scope.markerCoordinates1 = $scope.foodData[0].address;
-					$scope.markerCoordinates2 = $scope.foodData[1].address;
-					$scope.markerCoordinates3 = $scope.foodData[2].address;
-					$scope.markerCoordinates4 = $scope.foodData[3].address;
-					$scope.markerCoordinates5 = $scope.foodData[4].address;
-			  });
-
-				ngGPlacesAPI.nearbySearch({latitude: latlong[0], longitude: latlong[1], type: 'night_club'}).then(function(fun){
-					$scope.funData = [];
-					for(var i = 0; i < 5; i++){
-						var x = {};
-						x.name = fun[i].name;
-						x.rating = fun[i].rating;
-						x.address = fun[i].vicinity;
-						$scope.funData.push(x);
-					}
-					$scope.markerCoordinates1 = $scope.funData[0].address;
-					$scope.markerCoordinates2 = $scope.funData[1].address;
-					$scope.markerCoordinates3 = $scope.funData[2].address;
-					$scope.markerCoordinates4 = $scope.funData[3].address;
-					$scope.markerCoordinates5 = $scope.funData[4].address;
-			  });
-
-				ngGPlacesAPI.nearbySearch({latitude: latlong[0], longitude: latlong[1], type: 'park'}).then(function(parks){
-					$scope.parksData = [];
-					for(var i = 0; i < 5; i++){
-						var x = {};
-						x.name = parks[i].name;
-						x.rating = parks[i].rating;
-						x.address = parks[i].vicinity;
-						$scope.parksData.push(x);
-					}
-					$scope.markerCoordinates1 = $scope.parksData[0].address;
-					$scope.markerCoordinates2 = $scope.parksData[1].address;
-					$scope.markerCoordinates3 = $scope.parksData[2].address;
-					$scope.markerCoordinates4 = $scope.parksData[3].address;
-					$scope.markerCoordinates5 = $scope.parksData[4].address;
-			  });
-
-
-				// Default coordinates on page load
-				$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
-
-				$scope.selectSchoolsTab = function(e) {
-					$scope.markerCoordinates1 = $scope.schoolData[0].address;
-					$scope.markerCoordinates2 = $scope.schoolData[1].address;
-					$scope.markerCoordinates3 = $scope.schoolData[2].address;
-					$scope.markerCoordinates4 = $scope.schoolData[3].address;
-					$scope.markerCoordinates5 = $scope.schoolData[4].address;
-					$scope.apply();
-				};
-				$scope.selectShoppingTab = function(e) {
-					$scope.markerCoordinates1 = $scope.shoppingData[0].address;
-					$scope.markerCoordinates2 = $scope.shoppingData[1].address;
-					$scope.markerCoordinates3 = $scope.shoppingData[2].address;
-					$scope.markerCoordinates4 = $scope.shoppingData[3].address;
-					$scope.markerCoordinates5 = $scope.shoppingData[4].address;
-				};
-				$scope.selectFoodTab = function(e) {
-					$scope.markerCoordinates1 = $scope.foodData[0].address;
-					$scope.markerCoordinates2 = $scope.foodData[1].address;
-					$scope.markerCoordinates3 = $scope.foodData[2].address;
-					$scope.markerCoordinates4 = $scope.foodData[3].address;
-					$scope.markerCoordinates5 = $scope.foodData[4].address;
-				};
-				$scope.selectFunTab = function(e) {
-					$scope.markerCoordinates1 = $scope.funData[0].address;
-					$scope.markerCoordinates2 = $scope.funData[1].address;
-					$scope.markerCoordinates3 = $scope.funData[2].address;
-					$scope.markerCoordinates4 = $scope.funData[3].address;
-					$scope.markerCoordinates5 = $scope.funData[4].address;
-				};
-				$scope.selectParksTab = function(e) {
-					$scope.markerCoordinates1 = $scope.parksData[0].address;
-					$scope.markerCoordinates2 = $scope.parksData[1].address;
-					$scope.markerCoordinates3 = $scope.parksData[2].address;
-					$scope.markerCoordinates4 = $scope.parksData[3].address;
-					$scope.markerCoordinates5 = $scope.parksData[4].address;
-				};
+			$scope.fetchNearbyData = function(nearby) {
+				ngGPlacesAPI.nearbySearch({latitude: $scope.listing.latlong[0], longitude: $scope.listing.latlong[1], type: nearby}).then((function(nearby) {
+					return function(data) {
+						var returnData = [];
+						for (var i = 0; i < Math.min(data.length, (data.max || 5)); i++) {
+							returnData.push({
+								name: data[i].name,
+								rating: data[i].rating,
+								address: data[i].vicinity
+							});
+						}
+						
+						for (var i = 0; i < $scope.sources.length; i++) {
+							if($scope.sources[i].source == nearby) {
+								$scope.sources[i].data = returnData;
+							}
+						}
+						if(nearby == $scope.defaultTab) {
+							$timeout(function() {
+								$scope.selectTab(0);
+							});
+						}
+				  };
+				})(nearby));
 			};
-
+			
+			$scope.loadNearby = function() {
+				$scope.defaultTab = $scope.sources[0].source;
+				$scope.sources.forEach(function(source) {
+					$scope.fetchNearbyData(source.source);
+				});
+			};
+			
+			$scope.selectTab = function(index) {
+				if(typeof $scope.sources[index].data !== 'undefined') {
+					$scope.markerCoordinates = $scope.sources[index].data.map(function(source) {
+						return source.address;
+					});
+				}
+			};
+			
 			$scope.agent = $rootScope.theUserData;
 		}
 	};
