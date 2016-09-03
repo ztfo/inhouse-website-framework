@@ -134,7 +134,8 @@ section.ih404 {
 }
 
 .ih-legal {
-    margin: 15px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .ih-footer .ih-ui-inhouse-emblem {
