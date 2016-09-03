@@ -12,9 +12,14 @@ angular.module('ihframework')
 			scope.config = attrs.config;
 		},
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
+			$scope.loaded = false;
+			
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
 					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
+					if($scope.loaded) {
+						$scope.loadNearby();
+					}
 				} else {
 					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
 				}
@@ -49,7 +54,10 @@ angular.module('ihframework')
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
 					if($scope.listing.latlong != undefined) {
-						$scope.listing.latlong = $scope.listing.latlong.split(',');
+						$scope.loaded = true;
+						if(typeof $scope.listing.latlong == 'string') {
+							$scope.listing.latlong = $scope.listing.latlong.split(',');
+						}
 						$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
 						$scope.loadNearby();
 					}
