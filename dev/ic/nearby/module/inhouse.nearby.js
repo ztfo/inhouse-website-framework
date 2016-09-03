@@ -9,9 +9,6 @@ angular.module('ihframework')
 		},
 		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
 		restrict: 'E',
-		link: function(scope, elem, attrs) {
-			scope.config = attrs.config;
-		},
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal == undefined) {
