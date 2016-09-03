@@ -7,7 +7,7 @@
                         <div id="listingSlider" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active" ng-hide="listing.photos.length > 0">
-                                    <div class="full-screen-image" style="background-image: url('ia/images/noimage-placeholder-slider.jpg')"></div>
+                                    <div class="full-screen-image" style="background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder-slider.jpg')"></div>
                                 </div>
                                 <div class="item {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in listing.photos">
                                     <div ng-click="showLightBox($index)" class="full-screen-image" ng-style="{'background-image':'url(' + slide.UriLarge + ')'}" data-image="{{slide.UriLarge}}" data-caption="{{slide.Caption}}">
