@@ -62,7 +62,8 @@ angular.module('ihframework')
 				ngGPlacesAPI.nearbySearch({
 					latitude: $scope.listing.latlong[0], 
 					longitude: $scope.listing.latlong[1], 
-					type: nearby.source
+					type: nearby.source,
+					radius: nearby.radius || 10000
 				}).then((function(nearby) {
 					return function(data) {
 						var returnData = [];
