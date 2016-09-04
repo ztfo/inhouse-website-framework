@@ -4,7 +4,7 @@
             <img ng-src="{{agent.team[0].photo}}" align="left" alt="{{agent.team[0].name}}" class="img-square inlineblock">
             <h2 class="inlinblock fc-01">{{agent.agentName}}</h2>
             <h5 class="inlineblock text-muted"><em>{{agent.title}} {{agent.designations}}</em></h5>
-            <div itemprop="description" class="bio fs inlineblock" ng-bind-html="agent.bio | to_trusted">
+            <div itemprop="description" class="bio fs inlineblock" ng-bind-html="agent.team[0].bio | to_trusted">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contact-panel">
                 <ih-contact configname="f1"></ih-contact>
