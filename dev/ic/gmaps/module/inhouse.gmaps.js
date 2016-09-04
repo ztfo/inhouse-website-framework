@@ -18,7 +18,6 @@ angular.module('ihframework')
 							scope.map = new google.maps.Map(element[0], {
 								center: scope.center,
 								mapTypeId: google.maps.MapTypeId.HYBRID,
-								scrollwheel: false,
 								zoom: 19
 							});
 							scope.marker = new google.maps.Marker({
@@ -35,11 +34,11 @@ angular.module('ihframework')
 					scope.map = new google.maps.Map(element[0], {
 						center: scope.center,
 						mapTypeId: google.maps.MapTypeId.SATELLITE,
+						crollwheel: false,
 						zoom: 19
 					});
 					scope.marker = new google.maps.Marker({
 						position: scope.center,
-						map: scope.map,
 						title: args.address,
 						icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 					});

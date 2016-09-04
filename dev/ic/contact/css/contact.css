@@ -78,7 +78,11 @@
 
 .p1.ih-contact {
     border: 0 !important;
-    padding-bottom: 0;
+    padding: 0;
+}
+
+.p1.ih-contact>div {
+  padding: 70px 0 0 0; 
 }
 
 .p1.ih-contact .contact-footer {
