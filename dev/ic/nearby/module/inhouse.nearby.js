@@ -17,9 +17,13 @@ angular.module('ihframework')
 					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
 				}
 			});
-			
+
 			$scope.nearbyData = {};
-			
+
+			$scope.toggleNearbyTabs = function(tab){
+				$scope.showTab = tab;
+			};
+
 			if($scope.sources == undefined) {
 				$scope.sources = [
 						{
@@ -46,6 +50,11 @@ angular.module('ihframework')
 					];
 				}
 
+				if($scope.sources.length > 0){
+					$scope.showTab = $scope.sources[0].source;
+				}
+
+
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
 					if($scope.listing.latlong != undefined) {
@@ -59,11 +68,11 @@ angular.module('ihframework')
 					}
 				}
 			});
-			
+
 			$scope.fetchNearbyData = function(nearby) {
 				ngGPlacesAPI.nearbySearch({
-					latitude: $scope.listing.latlong[0], 
-					longitude: $scope.listing.latlong[1], 
+					latitude: $scope.listing.latlong[0],
+					longitude: $scope.listing.latlong[1],
 					type: nearby.source,
 					radius: nearby.radius || 10000
 				}).then((function(nearby) {
@@ -77,7 +86,7 @@ angular.module('ihframework')
 								hours: data[i].opening_hours
 							});
 						}
-						
+
 						for (var i = 0; i < $scope.sources.length; i++) {
 							if($scope.sources[i].source == nearby.source) {
 								$scope.sources[i].data = returnData;
@@ -91,14 +100,14 @@ angular.module('ihframework')
 				  };
 				})(nearby));
 			};
-			
+
 			$scope.loadNearby = function() {
 				$scope.defaultTab = $scope.sources[0].source;
 				$scope.sources.forEach(function(source) {
 					$scope.fetchNearbyData(source);
 				});
 			};
-			
+
 			$scope.selectTab = function(index) {
 				if($scope.sources[index].data !== undefined) {
 					$scope.markerCoordinates = $scope.sources[index].data.map(function(source) {
@@ -106,7 +115,7 @@ angular.module('ihframework')
 					});
 				}
 			};
-			
+
 			$scope.agent = $rootScope.theUserData;
 		}
 	};

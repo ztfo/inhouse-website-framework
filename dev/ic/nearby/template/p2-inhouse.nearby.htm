@@ -1,13 +1,13 @@
 <section class="p2 ih-nearby container-fluid fp">
     <h1 class="ih-header text-center fc-02">Nearby Places</h1>
-    <ul class="btn-group">
+    <ul class="nav nav-pills nav-justified">
         <li ng-repeat="source in sources">
-          <a class="pointer" ng-click="showTab('{{source.name | lowercase}}')">{{source.name}}</a>
+          <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
         </li>
     </ul>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nearby-list">
-        <div class="nearby-list-panel" ng-repeat="source in sources" ng-if="showTab === '{{source.name | lowercase}}'">
+        <div class="nearby-list-panel" ng-repeat="source in sources" ng-if="showTab == source.source">
           <h3 class="fc-01">{{source.name}}</h3>
           <div class="nearby-place clearfix" ng-repeat="place in source.data">
               <div class="pull-left round-icon bkc-04 fw">
