@@ -1,20 +1,23 @@
 <section class="p2 ih-slider container-fluid fp">
-    <div class="iha afull property-greeting z1 fw">
-      <div class="container container-md text-center">
-        <div class="row">
-          <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square">
+    <div class="iha afull property-greeting z3 fw">
+        <div class="container container-md text-center">
+            <div class="row">
+                <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square bd-04">
+            </div>
+            <div class="row text-uppercase">
+                <h4>welcome to</h4>
+                <h1>{{listing.address}}</h1>
+                <h3><small class="fw text-uppercase">{{listing.city}} {{listing.state}} {{listing.zipcode}}</small></h3>
+            </div>
+            <div class="row fs">
+                <p class="listing-desc col-md-6 col-md-offset-3">
+                    {{listing.description | limitTo: 250}}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus metus at turpis feugiat, eu bibendum nulla feugiat. Nunc eu libero volutpat, sodales est ut, fermentum nisi. Cras blandit nisi eros, eget congue
+                    metus elementum quis. Fusce convallis libero et purus aliquet, sed finibus augue condimentum.
+                    <br /><br />
+                    <small><strong class="text-uppercase">presented by: {{agent.agentName}}</strong></small>
+                </p>
+            </div>
         </div>
-        <div class="row text-uppercase">
-          <h4>welcome to</h4>
-          <h1>{{listing.address}}</h1>
-          <h3><small class="fw text-uppercase">{{listing.city}} {{listing.state}} {{listing.zipcode}}</small></h3>
-        </div>
-        <div class="row fs">
-          <p>
-            {{listing.description | limitTo: 250}}
-          </p>
-        </div>
-      </div>
     </div>
     <div class="bottom-btn fw">
         <a href="#/"><i class="fa fa-angle-down"></i></a>

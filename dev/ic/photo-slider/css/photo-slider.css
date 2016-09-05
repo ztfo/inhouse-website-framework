@@ -108,9 +108,12 @@
 
 .p2.ih-photo-slider .image-grid {
     height: 100%;
-    /* set by js? */
-    width: 1500px;
     max-height: 410px;
+
+    /* set by js? */
+    width: calc(100vw);
+    min-width: 1920px;
+
 }
 
 .p2.ih-photo-slider .image-grid>div {

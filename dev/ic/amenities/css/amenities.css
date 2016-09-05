@@ -43,6 +43,9 @@
 }
 
 /* p2 */
+.p2.ih-amenities .amenity-grid {
+  margin-top: 25px;
+}
 
 .p2.ih-amenities .amenity-item {
     min-height: 220px;
@@ -50,7 +53,12 @@
     border: 2px solid #ddd;
     margin-top: 15px;
 }
-
+.p2.ih-amenities .icon-box {
+  padding: 45px 0;
+}
+.p2.ih-amenities .ih-icon {
+  font-size: 4em;
+}
 
 /* responsive */
 

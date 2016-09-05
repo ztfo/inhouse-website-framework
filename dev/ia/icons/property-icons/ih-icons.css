@@ -26,12 +26,10 @@
 
 .ih-icon {
   font-size: 2.5em;
-  padding: .5em;
 }
 
 .ih-sm-icon {
   font-size: 1em;
-  padding: 0 .5em;
 }
 
 .ih-icon-inhouse-emblem:before {
@@ -39,6 +37,75 @@
 }
 .ih-icon-built-in-az:before {
   content: "\e972";
+}
+.ih-icon-air-conditioning:before {
+  content: "\e900";
+}
+.ih-icon-basketball:before {
+  content: "\e901";
+}
+.ih-icon-beach-view:before {
+  content: "\e902";
+}
+.ih-icon-exercise-facility:before {
+  content: "\e903";
+}
+.ih-icon-fireplace:before {
+  content: "\e904";
+}
+.ih-icon-garage3:before {
+  content: "\e905";
+}
+.ih-icon-garden:before {
+  content: "\e906";
+}
+.ih-icon-general-amenities:before {
+  content: "\e907";
+}
+.ih-icon-golf-community:before {
+  content: "\e908";
+}
+.ih-icon-great-schools:before {
+  content: "\e909";
+}
+.ih-icon-home-theater:before {
+  content: "\e90a";
+}
+.ih-icon-horse-property:before {
+  content: "\e90b";
+}
+.ih-icon-mountain-view:before {
+  content: "\e90c";
+}
+.ih-icon-open-floor-plan:before {
+  content: "\e90d";
+}
+.ih-icon-pool-pool-spa:before {
+  content: "\e90e";
+}
+.ih-icon-putting-green:before {
+  content: "\e90f";
+}
+.ih-icon-rv-parking:before {
+  content: "\e910";
+}
+.ih-icon-security-camera:before {
+  content: "\e911";
+}
+.ih-icon-shopping-nearby:before {
+  content: "\e912";
+}
+.ih-icon-solar-panels:before {
+  content: "\e913";
+}
+.ih-icon-tennis-court:before {
+  content: "\e914";
+}
+.ih-icon-walk-in-closet:before {
+  content: "\e915";
+}
+.ih-icon-wine-cellar:before {
+  content: "\e916";
 }
 .ih-icon-agreement:before {
   content: "\e940";
@@ -191,118 +258,94 @@
   content: "\e971";
 }
 .ih-icon-flat-plan:before {
-  content: "\e900";
-}
-.ih-icon-flat-plan-1:before {
-  content: "\e901";
-}
-.ih-icon-garden-fence:before {
-  content: "\e902";
-}
-.ih-icon-garden-fence-1:before {
-  content: "\e903";
-}
-.ih-icon-home-location-marker:before {
-  content: "\e904";
-}
-.ih-icon-house-door:before {
-  content: "\e905";
-}
-.ih-icon-house-door-1:before {
-  content: "\e906";
-}
-.ih-icon-house-front-view:before {
-  content: "\e907";
-}
-.ih-icon-house-front-view-1:before {
-  content: "\e908";
-}
-.ih-icon-house-front-view-2:before {
-  content: "\e909";
-}
-.ih-icon-house-front-view-3:before {
-  content: "\e90a";
-}
-.ih-icon-house-front-view-4:before {
-  content: "\e90b";
-}
-.ih-icon-house-front-view-5:before {
-  content: "\e90c";
-}
-.ih-icon-house-front-view-6:before {
-  content: "\e90d";
-}
-.ih-icon-house-key:before {
-  content: "\e90e";
-}
-.ih-icon-house-key-1:before {
-  content: "\e90f";
-}
-.ih-icon-house-location-marker:before {
-  content: "\e910";
-}
-.ih-icon-house-mailbox:before {
-  content: "\e911";
-}
-.ih-icon-house-mailbox-1:before {
-  content: "\e912";
-}
-.ih-icon-sold-sign:before {
-  content: "\e913";
-}
-.ih-icon-sold-sign-1:before {
-  content: "\e914";
-}
-.ih-icon-sold-sign-2:before {
-  content: "\e915";
-}
-.ih-icon-sold-sign-3:before {
-  content: "\e916";
-}
-.ih-icon-two-storey-house-front-view:before {
-  content: "\e917";
-}
-.ih-icon-air-conditioner:before {
-  content: "\e918";
-}
-.ih-icon-amount:before {
   content: "\e91a";
 }
-.ih-icon-bathtub:before {
+.ih-icon-garden-fence:before {
   content: "\e91b";
 }
-.ih-icon-blueprint:before {
+.ih-icon-home-location-marker:before {
   content: "\e91c";
 }
-.ih-icon-box:before {
+.ih-icon-house-door:before {
+  content: "\e91d";
+}
+.ih-icon-house-front-view:before {
+  content: "\e91e";
+}
+.ih-icon-house-front-view-1:before {
+  content: "\e91f";
+}
+.ih-icon-house-front-view-2:before {
+  content: "\e920";
+}
+.ih-icon-house-front-view-3:before {
   content: "\e921";
 }
-.ih-icon-briefcase:before {
+.ih-icon-house-front-view-4:before {
   content: "\e922";
 }
-.ih-icon-calculator:before {
+.ih-icon-house-front-view-5:before {
+  content: "\e923";
+}
+.ih-icon-house-front-view-6:before {
+  content: "\e924";
+}
+.ih-icon-house-key:before {
+  content: "\e925";
+}
+.ih-icon-house-location-marker:before {
+  content: "\e926";
+}
+.ih-icon-house-mailbox:before {
+  content: "\e927";
+}
+.ih-icon-sold-sign:before {
+  content: "\e928";
+}
+.ih-icon-sold-sign-1:before {
   content: "\e929";
 }
-.ih-icon-camera:before {
+.ih-icon-air-conditioner:before {
   content: "\e92a";
 }
-.ih-icon-check:before {
+.ih-icon-amount:before {
+  content: "\e92b";
+}
+.ih-icon-bathtub:before {
   content: "\e92c";
 }
-.ih-icon-coin:before {
+.ih-icon-blueprint:before {
+  content: "\e92d";
+}
+.ih-icon-box:before {
   content: "\e92e";
 }
-.ih-icon-contract:before {
+.ih-icon-briefcase:before {
+  content: "\e92f";
+}
+.ih-icon-calculator:before {
   content: "\e930";
 }
-.ih-icon-directions:before {
+.ih-icon-camera2:before {
+  content: "\e931";
+}
+.ih-icon-check:before {
   content: "\e932";
 }
-.ih-icon-duplex:before {
+.ih-icon-coin:before {
+  content: "\e933";
+}
+.ih-icon-contract:before {
   content: "\e934";
 }
-.ih-icon-fall:before {
+.ih-icon-directions:before {
+  content: "\e935";
+}
+.ih-icon-duplex:before {
   content: "\e936";
+}
+.ih-icon-fall:before {
+  content: "\e937";
 }
 .ih-icon-fence:before {
   content: "\e938";
@@ -316,69 +359,69 @@
 .ih-icon-hammer:before {
   content: "\e93e";
 }
-.ih-icon-home:before {
-  content: "\e919";
-}
-.ih-icon-house:before {
-  content: "\e91f";
-}
-.ih-icon-house-1:before {
-  content: "\e91e";
-}
-.ih-icon-house-2:before {
-  content: "\e91d";
-}
-.ih-icon-house-3:before {
-  content: "\e920";
-}
-.ih-icon-house-4:before {
-  content: "\e923";
-}
-.ih-icon-house-5:before {
-  content: "\e928";
-}
-.ih-icon-houses:before {
-  content: "\e92b";
-}
-.ih-icon-investment:before {
-  content: "\e92d";
-}
-.ih-icon-key:before {
-  content: "\e92f";
-}
-.ih-icon-location:before {
-  content: "\e931";
-}
-.ih-icon-mansion:before {
-  content: "\e933";
-}
-.ih-icon-mobile-phone:before {
-  content: "\e935";
-}
-.ih-icon-new:before {
-  content: "\e937";
-}
-.ih-icon-prize:before {
+.ih-icon-home2:before {
   content: "\e939";
 }
-.ih-icon-real-estate:before {
+.ih-icon-house:before {
   content: "\e93b";
 }
-.ih-icon-real-estate-1:before {
+.ih-icon-house-1:before {
   content: "\e93d";
 }
+.ih-icon-house-2:before {
+  content: "\e974";
+}
+.ih-icon-house-3:before {
+  content: "\e975";
+}
+.ih-icon-house-4:before {
+  content: "\e976";
+}
+.ih-icon-house-5:before {
+  content: "\e977";
+}
+.ih-icon-houses:before {
+  content: "\e978";
+}
+.ih-icon-investment:before {
+  content: "\e979";
+}
+.ih-icon-key:before {
+  content: "\e97a";
+}
+.ih-icon-location3:before {
+  content: "\e97b";
+}
+.ih-icon-mansion:before {
+  content: "\e97c";
+}
+.ih-icon-mobile-phone:before {
+  content: "\e97d";
+}
+.ih-icon-new:before {
+  content: "\e97e";
+}
+.ih-icon-prize:before {
+  content: "\e97f";
+}
+.ih-icon-real-estate:before {
+  content: "\e980";
+}
+.ih-icon-real-estate-1:before {
+  content: "\e981";
+}
 .ih-icon-rent:before {
-  content: "\e93f";
+  content: "\e982";
 }
 .ih-icon-screen:before {
-  content: "\e924";
+  content: "\e985";
 }
 .ih-icon-signature:before {
-  content: "\e925";
+  content: "\e984";
 }
 .ih-icon-sold:before {
-  content: "\e926";
+  content: "\e983";
 }
 .ih-icon-truck:before {
-  content: "\e927";
+  content: "\e93f";
 }

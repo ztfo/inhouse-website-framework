@@ -72,6 +72,10 @@
     padding: 0;
 }
 
+.p2.ih-about-listing .ih-icon {
+  padding: 0 15px;
+}
+
 .p2.ih-about-listing .fact-icon h1 {
     font-size: 4em;
     margin: 0;
@@ -81,6 +85,10 @@
     font-size: 2.5em;
     font-weight: 600;
     opacity: .7;
+}
+
+.p2.ih-about-listing .fact-icon:last-child h6 {
+    margin-top: 10px;
 }
 
 .p2.ih-about-listing .fact-icon .flex-8 {
@@ -93,13 +101,16 @@
 }
 
 .p2.ih-about-listing .fact-icon h6 {
+    margin-top: 0;
     font-weight: 800;
     opacity: .5;
 }
 
 .p2.ih-about-listing .fact-icon h5 {
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: .8em;
+    text-align: right;
+    padding-right: 15px;
 }
 
 .p2.ih-about-listing .listing-info {
@@ -108,6 +119,7 @@
 
 .p2.ih-about-listing .property-text h3 {
     letter-spacing: 2px;
+    margin: 0;
 }
 
 .p2.ih-about-listing .columns {
@@ -120,6 +132,25 @@
     column-gap: 25px;
 }
 
+.p2.ih-about-listing .ih-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+  line-height: 40px;
+  background-color: #eee;
+  margin-left: 5px;
+}
+
+.p2.ih-about-listing .ih-listing-table {
+  margin-bottom: 45px;
+  margin-top: 20px;
+}
+
+.p2.ih-about-listing .property-text {
+  margin-top: 40px;
+}
 
 /*** *** responsive *** ***/
 
