@@ -103,7 +103,21 @@
 /* p2 */
 
 .p2.ih-photo-slider {
-    padding: 80px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f8f8;
+  padding: 30px 0
+}
+
+.p2.ih-photo-slider::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 95px;
+  background-color: #eee;
+  top: -95px;
+  right: 50%;
 }
 
 .p2.ih-photo-slider .image-grid {

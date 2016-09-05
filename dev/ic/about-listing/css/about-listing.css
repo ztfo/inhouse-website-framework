@@ -152,6 +152,23 @@
   margin-top: 40px;
 }
 
+.p2.ih-about-listing .ih-about-inner {
+  padding: 45px;
+  border: 1px solid #eee;
+}
+
+.p2.ih-about-listing::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 145px;
+  position: absolute;
+  background-color: #eee;
+  top: -50px;
+  right: 50%;
+  z-index: 1000;
+}
+
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}

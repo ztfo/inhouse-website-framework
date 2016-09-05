@@ -1,40 +1,42 @@
 <section class="p2 ih-nearby container-fluid fp">
     <h1 class="ih-header text-center fc-02">Nearby Places</h1>
-    <ul class="nav nav-pills nav-justified">
-        <li ng-repeat="source in sources">
-          <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
-        </li>
-    </ul>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nearby-list">
-        <div class="nearby-list-panel" ng-repeat="source in sources" ng-if="showTab == source.source">
-          <h3 class="fc-01">{{source.name}}</h3>
-          <div class="nearby-place clearfix" ng-repeat="place in source.data">
-              <div class="pull-left round-icon bkc-04 fw">
-                  <span class="ih-icon-location"></span>
-              </div>
-              <div class="pull-left">
-                  <h5 class="text-uppercase fc-01">{{place.name}}</h5>
-                  <div class="g-rating" ng-if="place.rating">
-                      {{place.rating}}
-                      <i class="fa fa-star"></i> | ({{place.reviews}})
-                  </div>
-                  <div class="g-rating" ng-if="!place.rating">
-                      No rating available
-                  </div>
-                  <div>
-                      {{place.address}}
-                      <br> {{place.hours.open_now ? 'Open now!' : 'Closed'}}
-                  </div>
-              </div>
-          </div>
+    <div class="row btn-row">
+        <ul class="nav nav-pills nav-justified nearby-tabs">
+            <li ng-repeat="source in sources">
+                <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row flex-grid">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 nearby-list">
+            <div class="nearby-list-panel" ng-repeat="source in sources" ng-if="showTab == source.source">
+                <h3 class="fc-01">{{source.name}}</h3>
+                <div class="nearby-place clearfix" ng-repeat="place in source.data">
+                    <div class="pull-left round-icon bkc-04 fw">
+                        <span class="ih-icon-location3"></span>
+                    </div>
+                    <div class="pull-left">
+                        <h5 class="text-uppercase fc-01">{{place.name}}</h5>
+                        <div class="g-rating" ng-if="place.rating">
+                            {{place.rating}}
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="g-rating" ng-if="!place.rating">
+                            No rating available
+                        </div>
+                        <div class="loc-address">
+                            {{place.address}}
+                            <br> <em>{{place.hours.open_now ? 'Open now!' : 'Closed'}}</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nearby-map">
-        <map center="{{centerCoordinates}}" zoom="12" scrollWheel="false">
+        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 nearby-map">
+            <map center="{{centerCoordinates}}" zoom="12" scrollWheel="false">
           <marker ng-repeat="coord in markerCoordinates track by $index" position="{{coord}}"></marker>
         </map>
-      </div>
+        </div>
     </div>
     <div class="container text-center btn-row">
         <a href="#/" class="btn btn-primary">Text Me Directions</a>

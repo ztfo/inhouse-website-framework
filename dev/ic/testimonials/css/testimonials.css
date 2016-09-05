@@ -196,7 +196,6 @@
 /* p2 */
 
 .p2.ih-testimonials {
-  min-height: 500px;
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -205,7 +204,12 @@
 .p2.ih-testimonials>div>.container {
   padding: 50px 0;
 }
-
+.p2.ih-testimonials .footer {
+  padding: 40px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .9em;
+}
 
 /* responsive */
 

@@ -1,37 +1,44 @@
 <section class="p2 ih-about container-fluid fp">
     <div class="container">
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 agent-panel">
-            <div class="agent-box clearfix">
-                <img ng-src="{{agent.team[0].photo}}" align="left" alt="{{agent.team[0].name}}" class="img-square inlineblock" />
-                <h2 class="inlinblock fc-01">{{agent.agentName}}</h2>
-                <h5 class="inlineblock text-muted"><em>{{agent.title}} {{agent.designations}}</em></h5>
-                <div itemprop="description" class="bio fs" ng-bind-html="agent.bio1 | to_trusted"></div>
-            </div>
-            <div class="contact-info">
-                <div>
-                    <i class="fa fa-phone inlineblock left ih-icon fc-04"></i>
-                    <span class="inlineblock">
-                      <small class="text-muted text-uppercase">phone</small><br /> {{agent.contactPhone | tel}}
-                    </span>
-                </div>
-                <div>
-                    <i class="fa fa-envelope inlineblock left ih-icon fc-04"></i>
-                    <span class="inlineblock">
-                      <small class="text-muted text-uppercase">email</small><br /> {{agent.contactEmail}}
-                    </span>
-                </div>
-            </div>
-            <div class="about-social text-muted">
-                <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
-                <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
-            </div>
+        <div class="row">
+            <h1 class="ih-header fc-02 text-center">Meet Your Agent</h1>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contact-panel">
-            <ih-contact configname="f1"></ih-contact>
+        <div class="row about-row">
+          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 agent-panel">
+              <div class="agent-box clearfix">
+                  <img ng-src="{{agent.team[0].photo}}" align="left" alt="{{agent.team[0].name}}" class="img-square inlineblock" />
+                  <h2 class="inlinblock fc-01">{{agent.agentName}}</h2>
+                  <h5 class="inlineblock text-muted"><em>{{agent.title}} {{agent.designations}}</em></h5>
+                  <div itemprop="description" class="bio fs" ng-bind-html="agent.bio1 | to_trusted"></div>
+              </div>
+              <div class="contact-info container-fluid">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <i class="fa fa-phone inlineblock left ih-icon fc-04"></i>
+                      <span class="inlineblock">
+                        <small class="text-muted text-uppercase">phone</small><br /> {{agent.contactPhone | tel}}
+                      </span>
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope inlineblock left ih-icon fc-04"></i>
+                        <span class="inlineblock">
+                          <small class="text-muted text-uppercase">email</small><br /> {{agent.contactEmail}}
+                        </span>
+                    </div>
+                  </div>
+              </div>
+              <div class="about-social text-muted">
+                  <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
+                  <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+                  <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+              </div>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12 contact-panel">
+              <ih-contact configname="f1"></ih-contact>
+          </div>
         </div>
     </div>
 </section>
