@@ -180,19 +180,39 @@
     border-radius: 0 50px 50px 0;
 }
 
+/* p1 */
+.p1.ih-testimonials {
+  min-height: 500px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.p1.ih-testimonials .container {
+  padding: 50px 0;
+}
+
+/* p2 */
+
+.p2.ih-testimonials {
+  min-height: 500px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+.p2.ih-testimonials>div>.container {
+  padding: 50px 0;
+}
+
 
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
-
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-
 @media screen and (min-width: 376px) and (max-width: 768px) {}
-
 @media screen and (max-width: 767px) {}
-
 @media screen and (max-width: 426px) {}
-
 @media screen and (max-width: 374px) {}

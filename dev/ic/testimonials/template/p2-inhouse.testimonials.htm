@@ -1,10 +1,8 @@
-<section class="p1 ih-testimonials ih z0 fp fw {{classes}}" ng-show="testimonials.length > 0" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
-    <div class="iha afull bkc-01 tpt">
+<section class="p2 ih-testimonials ih z0 fp fw {{classes}}" ng-show="testimonials.length > 0" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
+    <div class="iha afull z1 bkc-01 tpt">
         <div class="container fullh">
             <div class="row">
                 <h1 class="ih-header text-center">What our clients say</h1>
-            </div>
-            <div class="row">
                 <ih-owl class="owl-carousel tst-carousel" items="testimonials" responsive="responsive">
                     <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
                         <blockquote itemprop="review" class="testimonial">
@@ -17,12 +15,12 @@
                             <a href="{{slide.reviewURL}}" target="_blank" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
                             <footer>{{slide.reviewer}} | {{slide.context}}</footer>
                         </blockquote>
-                    </div>
                 </ih-owl>
                 <div class="ih text-center" ng-hide="!showZillow">
                     <span class="ih-ui ih-ui-zillow"></span>
                 </div>
+                </div>
             </div>
         </div>
-    </div>
+      </div>
 </section>

@@ -5,11 +5,9 @@ angular.module('ihframework')
 	$scope.showMLSTab = 'us';
 
 	$scope.togglePressTabs = function(tab){
-		console.log(tab);
 		$scope.showTab = tab;
 	};
 	$scope.toggleMLSTabs = function(tab){
-		console.log(tab);
 		$scope.showMLSTab = tab;
 	};
 

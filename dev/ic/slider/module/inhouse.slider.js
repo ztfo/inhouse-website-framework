@@ -32,15 +32,16 @@ angular.module('ihframework')
 			$scope.active = 0;
 			$scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
 			
-			if(typeof $scope.LandingComponent.defaultSliderImages === 'object') {
-				var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));
-				$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];
+			if(typeof $scope.LandingComponent !== 'undefined') {
+				if( typeof $scope.LandingComponent.defaultSliderImages === 'object') {
+					var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));
+					$scope.LandingComponent.defaultSliderImage = $scope.LandingComponent.defaultSliderImages[rIndex];
+				} else {
+					$scope.slides = [$scope.LandingComponent.defaultSliderImage];
+				}
 			}
 
-			$scope.slides = [$scope.LandingComponent.defaultSliderImage];
 			$scope.agent = $rootScope.theUserData;
-
-			$scope.landingLayout = $rootScope.theWebsiteData.landingLayout[0];
 		},
 		link: function(scope, element, attrs) {
 
