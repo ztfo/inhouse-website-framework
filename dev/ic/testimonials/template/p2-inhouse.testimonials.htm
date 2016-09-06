@@ -10,8 +10,7 @@
                             <span class="sr-only">{{rating}}</span>
                         </div>
                         <p itemprop="review fs">{{slide.testimonial}}</p>
-                        <a href="{{slide.reviewURL}}" target="_blank" class="read-more" ng-show="slide.reviewURL != ''">Read More</a>
-                        <footer>{{slide.reviewer}} | {{slide.context}}</footer>
+                        <h5>- {{slide.reviewer}}</h5>
                     </blockquote>
                 </div>
             </ih-owl>
@@ -22,7 +21,7 @@
         <div class="footer bt70">
             <div class="container">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <small>&copy; {{year}} - {{agent.agentName}} | {{listing.MLS}}</small>
+                    <span class="ih-ui-fairhousing"></span> <span class="ih-ui-realtor"></span> <small>&copy; {{year}} - {{agent.agentName}} | {{listing.MLS}}</small>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
                     <small>Powered by <a href="https://www.getinhouse.io">InHouse</a></small> <span class="ih-icon ih-sm-icon ih-icon-inhouse-emblem"></span>

@@ -26,6 +26,34 @@
     color: #1b1b1b !important;
 }
 
+.ih-testimonials .owl-nav {
+  margin: 25px;
+  text-align: center;
+}
+
+.ih-testimonials .owl-nav div {
+  display: inline-block;
+  padding: 7px 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .8em;
+  background-color: rgba(255,255,255,0.9);
+  color: #303030;
+  cursor: pointer;
+}
+
+.ih-testimonials .owl-nav div:hover {
+  background-color: rgba(255,255,255,0.7);
+}
+
+.ih-testimonials .owl-nav .owl-prev {
+  border-radius: 50px 0 0 50px;
+  border-right: 1px solid rgba(0,0,0,0.3);
+}
+.ih-testimonials .owl-nav .owl-next {
+  border-radius: 0 50px 50px 0;
+}
+
 
 /* s1 */
 
@@ -180,54 +208,105 @@
     border-radius: 0 50px 50px 0;
 }
 
+
 /* p1 */
+
 .p1.ih-testimonials {
-  min-height: 500px;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  padding: 0;
+    min-height: 500px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    padding: 0;
 }
 
 .p1.ih-testimonials .container {
-  padding: 50px 0;
+    padding: 50px 0;
 }
+
 
 /* p2 */
 
 .p2.ih-testimonials {
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  padding: 0;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    padding: 0;
 }
+
 .p2.ih-testimonials>div>.container {
-  padding: 50px 0;
+    padding: 50px 0;
 }
+
 .p2.ih-testimonials .footer {
-  padding: 40px 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: .9em;
+    padding: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .9em;
 }
+
 .p2.ih-testimonials>div::before {
-  content: "";
-  display: block;
-  height: 250px;
-  width: 100%;
-  /***  NEEDS ABSOLUTE LINK ***/
-  background-image: url('/new-api/public/inhouse-website-framework/build/ia/images/triangle-bottom.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50%;
+    content: "";
+    display: block;
+    height: 250px;
+    width: 100%;
+    /***  NEEDS ABSOLUTE LINK ***/
+    background-image: url('/new-api/public/inhouse-website-framework/build/ia/images/triangle-bottom.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
+
+.p2.ih-testimonials .tst-carousel {
+    margin: 65px 0;
+}
+
+.p2.ih-testimonials h1.ih-header {
+    margin-top: 20px;
+}
+
+.p2.ih-testimonials .item {
+    padding: 15px;
+    min-height: 250px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.p2.ih-testimonials .owl-item {
+    padding: 0 10px;
+}
+
+.p2.ih-testimonials blockquote {
+    border: 0;
+    padding: 0;
+}
+
+.p2.ih-testimonials .ih-ratings {
+    margin: 15px 0;
+    letter-spacing: 10px;
+    color: gold;
+}
+
+.p2.ih-testimonials p {
+    margin: 25px 0;
+    padding-top: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 100px;
+}
+
 
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
+
 @media screen and (min-width: 376px) and (max-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media screen and (max-width: 426px) {}
+
 @media screen and (max-width: 374px) {}
