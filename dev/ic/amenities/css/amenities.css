@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.p2.ih-amenities .amenity-grid {
+  margin-top: 45px;
+}
+
 .p1.ih-amenities .amenities-accent, .p1.ih-amenities .amenities-box {
     padding: 35px;
 }
@@ -40,6 +44,12 @@
 .p1.ih-amenities blockquote {
     margin: 25px 0;
     border-left: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.p1.ih-amenities .ih-icon {
+  font-size: 1.2em;
+  padding: 0;
+  line-height: 80px;
 }
 
 
