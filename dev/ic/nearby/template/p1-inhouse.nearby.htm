@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nearby-map">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nearby-map nopad">
                 <map center="{{centerCoordinates}}" zoom="12" scrollwheel="false">
                   <marker ng-repeat="coord in markerCoordinates track by $index" position="{{coord}}"></marker>
                 </map>

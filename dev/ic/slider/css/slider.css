@@ -317,6 +317,7 @@
 
 .p1.ih-slider, .p1 .ih-slider-row, .p1 #mainSlider, .p1.ih-slider .item {
     height: calc(100vh);
+    padding: 0 !important;
 }
 
 .p1 .ih-greeting {
