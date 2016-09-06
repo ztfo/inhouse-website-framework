@@ -393,7 +393,17 @@
   top: -80px;
   right: 50%
 }
-
+.l2.ih-lender::after {
+  content: "";
+  background-color: #eee;
+  width: 1px;
+  height: 275px;
+  display: block;
+  position: absolute;
+  right: 50%;
+  bottom: -195px;
+  z-index: 1000;
+}
 
 /*** *** responsive *** ***/
 
