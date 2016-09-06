@@ -210,6 +210,17 @@
   letter-spacing: 1px;
   font-size: .9em;
 }
+.p2.ih-testimonials>div::before {
+  content: "";
+  display: block;
+  height: 250px;
+  width: 100%;
+  /***  NEEDS ABSOLUTE LINK ***/
+  background-image: url('/new-api/public/inhouse-website-framework/build/ia/images/triangle-bottom.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
 
 /* responsive */
 

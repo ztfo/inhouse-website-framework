@@ -81,6 +81,34 @@ map {
 
 /* p2 */
 
+.p2.ih-nearby {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f8f8;
+}
+
+.p2.ih-nearby::before {
+  content: "";
+  width: 1px;
+  height: 95px;
+  display: block;
+  background-color: #eee;
+  position: absolute;
+  top: -95px;
+  right: 50%;
+}
+
+.p2.ih-nearby::after {
+  content: "";
+  width: 1px;
+  height: 80px;
+  display: block;
+  background-color: #eee;
+  position: absolute;
+  bottom: -80px;
+  right: 50%;
+}
+
 .p2.ih-nearby h3 {
   margin-top: 0;
   margin-bottom: 0;

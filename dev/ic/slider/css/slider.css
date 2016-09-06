@@ -416,6 +416,10 @@
 
 .p2.ih-slider .property-greeting {
     padding-top: 10em;
+    pointer-events: none;
+}
+.p2.ih-slider .property-greeting>* {
+  pointer-events: all;
 }
 
 .p2.ih-slider .property-greeting::before {

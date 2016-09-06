@@ -377,6 +377,23 @@
   border: 1px solid #eee;
 }
 
+/* l2 */
+
+.l2.ih-lender {
+  padding-top: 0;
+}
+
+.l2.ih-lender::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 80px;
+  background-color: #eee;
+  position: absolute;
+  top: -80px;
+  right: 50%
+}
+
 
 /*** *** responsive *** ***/
 
