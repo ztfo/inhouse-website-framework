@@ -41,9 +41,7 @@ map {
 }
 
 .p1.ih-nearby .nearby-list {
-    padding: 0 25px 15px 25px;
-    overflow-x: auto;
-    max-height: 500px;
+    padding: 0 25px 15px 0;
 }
 
 .p1.ih-nearby .round-icon {

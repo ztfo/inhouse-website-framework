@@ -341,8 +341,8 @@
 }
 
 .p2.ih-about .ih-icon {
-  padding: 0 15px;
-  font-size: 1.5em;
+    padding: 0 15px;
+    font-size: 1.5em;
 }
 
 .p2.ih-about .about-social .ih-social-icon {
@@ -369,41 +369,50 @@
 }
 
 .p2.ih-about .agent-box {
-  min-height: 250px;
+    min-height: 250px;
 }
 
 .p2.ih-about .about-row {
-  padding: 45px;
-  border: 1px solid #eee;
+    padding: 45px;
+    border: 1px solid #eee;
 }
+
+.p2.ih-about .bio {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
 
 /* l2 */
 
 .l2.ih-lender {
-  padding-top: 0;
+    padding-top: 0;
 }
 
 .l2.ih-lender::before {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 80px;
-  background-color: #eee;
-  position: absolute;
-  top: -80px;
-  right: 50%
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80px;
+    background-color: #eee;
+    position: absolute;
+    top: -80px;
+    right: 50%
 }
+
 .l2.ih-lender::after {
-  content: "";
-  background-color: #eee;
-  width: 1px;
-  height: 275px;
-  display: block;
-  position: absolute;
-  right: 50%;
-  bottom: -195px;
-  z-index: 1000;
+    content: "";
+    background-color: #eee;
+    width: 1px;
+    height: 275px;
+    display: block;
+    position: absolute;
+    right: 50%;
+    bottom: -195px;
+    z-index: 1000;
 }
+
 
 /*** *** responsive *** ***/
 

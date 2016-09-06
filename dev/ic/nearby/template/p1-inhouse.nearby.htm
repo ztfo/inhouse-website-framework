@@ -6,14 +6,16 @@
         </p>
     </div>
     <div class="row btn-row">
-      <ul class="nav nav-pills nav-justified nearby-tabs">
-          <li ng-repeat="source in sources">
-              <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
-          </li>
-      </ul>
+        <div class="container">
+            <ul class="nav nav-pills nav-justified nearby-tabs">
+                <li ng-repeat="source in sources">
+                    <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="row">
-        <div class="container">
+        <div class="container flex-grid">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nearby-list">
                 <div class="nearby-list-panel" ng-repeat="source in sources" ng-if="showTab == source.source">
                     <h3 class="fc-01">{{source.name}}</h3>

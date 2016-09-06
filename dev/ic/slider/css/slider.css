@@ -315,12 +315,12 @@
 
 /* p1 */
 
-.p1.ih-slider, .p1 .ih-slider-row, .p1 #mainSlider, .p1.ih-slider .item {
+.p1.ih-slider, .p1.ih-slider .ih-slider-row, .p1.ih-slider #mainSlider, .p1.ih-slider .item {
     height: calc(100vh);
     padding: 0 !important;
 }
 
-.p1 .ih-greeting {
+.p1.ih-slider .ih-greeting {
     z-index: 10;
     position: absolute;
     top: 0;
@@ -330,34 +330,42 @@
     padding-top: 15em;
 }
 
-.p1 .carousel-control, .p1 .carousel-indicators {
+.p1.ih-slider .carousel-control, .p1.ih-slider .carousel-indicators {
     display: none;
 }
 
 .p1.ih-slider .ih-banner {
     bottom: 10%;
     left: 0;
-    width: 750px;
-    height: 160px;
+    width: 850px;
+    height: 200px;
     opacity: .95;
     z-index: 50;
 }
 
-.p1 .banner-box {
+.p1.ih-slider .banner-box {
     padding: 30px 25px;
 }
 
-.p1 .ih-banner h1 {
+.p1.ih-slider .ih-banner h1 {
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 2em;
     margin-top: 0;
     padding-top: 0;
 }
 
-.p1 .ih-banner h5 {
+.p1.ih-slider .ih-banner h5 {
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    font-size: 1.5em;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+.p1.ih-slider .home-facts {
+    font-size: 1.5em;
 }
 
 .p1.ih-slider .fact {
@@ -383,9 +391,18 @@
 }
 
 .p1.ih-slider .banner-box:last-child h1 {
-    font-size: 2.5em !important;
+    font-size: 3em!important;
     font-weight: 600;
     margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.p1.ih-slider .top-banner {
+    bottom: 8%;
+    left: 2%;
+    z-index: 1000;
+    padding: 15px 25px;
+    font-size: 1.5em;
 }
 
 
@@ -418,8 +435,9 @@
     padding-top: 10em;
     pointer-events: none;
 }
+
 .p2.ih-slider .property-greeting>* {
-  pointer-events: all;
+    pointer-events: all;
 }
 
 .p2.ih-slider .property-greeting::before {
@@ -430,7 +448,7 @@
     right: 0;
     left: 0;
     /*** NEEDS ABSOLUTE LINK ***/
-    background-image: url('/new-api/public/inhouse-website-framework/build/ia/images/triangle.svg');
+    background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/framework/ia/images/triangle.svg');
     height: 50%;
     background-size: cover;
     background-repeat: no-repeat;

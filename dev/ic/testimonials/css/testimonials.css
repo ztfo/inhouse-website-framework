@@ -250,7 +250,7 @@
     height: 250px;
     width: 100%;
     /***  NEEDS ABSOLUTE LINK ***/
-    background-image: url('/new-api/public/inhouse-website-framework/build/ia/images/triangle-bottom.svg');
+    background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/framework/ia/images/triangle-bottom.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;

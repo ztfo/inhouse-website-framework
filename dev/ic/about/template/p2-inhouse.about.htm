@@ -4,17 +4,14 @@
             <h1 class="ih-header fc-02 text-center">Meet Your Agent</h1>
         </div>
         <div class="row">
-            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 agent-panel">
-                <div class="agent-box clearfix">
-                    <div class="text-center">
-                        <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square inlineblock" />
-                    </div>
-                    <h2 class="inlinblock fc-01 text-center">{{agent.agentName}}</h2>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="agent-box">
+                    <h2 class="inlinblock fc-01">{{agent.agentName}}</h2>
                     <h5 class="inlineblock text-muted"><em>Team Leader{{agent.title}} GBRE, ABCD, FGJi, PuTo{{agent.designations}}</em></h5>
                     <div itemprop="description" class="bio fs" ng-bind-html="agent.bio1 | to_trusted"></div>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dapibus condimentum. Cras feugiat nisi vel lectus lacinia, nec ultrices nisi scelerisque. Maecenas volutpat mattis lectus, laoreet elementum urna tincidunt eu. Cras euismod neque dui,
-                      vel mattis ante efficitur non. Duis ac orci vitae nibh commodo mattis.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dapibus condimentum. Cras feugiat nisi vel lectus lacinia, nec ultrices nisi scelerisque. Maecenas volutpat mattis lectus, laoreet elementum urna tincidunt eu. Cras euismod neque dui,
+                        vel mattis ante efficitur non. Duis ac orci vitae nibh commodo mattis.
                     </p>
                 </div>
                 <div class="contact-info container-fluid">
@@ -22,16 +19,21 @@
                         <div class="col-sm-6">
                             <i class="fa fa-phone inlineblock left ih-icon fc-04"></i>
                             <span class="inlineblock">
-                        <small class="text-muted text-uppercase">phone</small><br /> {{agent.contactPhone | tel}}
-                      </span>
+                      <small class="text-muted text-uppercase">phone</small><br /> {{agent.contactPhone | tel}}
+                    </span>
                         </div>
                         <div class="col-sm-6">
                             <i class="fa fa-envelope inlineblock left ih-icon fc-04"></i>
                             <span class="inlineblock">
-                          <small class="text-muted text-uppercase">email</small><br /> {{agent.contactEmail}}
-                        </span>
+                        <small class="text-muted text-uppercase">email</small><br /> {{agent.contactEmail}}
+                      </span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                <div>
+                    <img ng-src="{{agent.team[0].photo}}" alt="{{agent.team[0].name}}" class="img-square inlineblock" />
                 </div>
                 <div class="about-social text-muted">
                     <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined" target="_blank"><i class="fa fa-envelope"></i></a>
@@ -41,12 +43,6 @@
                     <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
                     <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
                 </div>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12 contact-panel">
-                <ih-contact configname="f1"></ih-contact>
-            </div>
-            <div class="text-center">
-                <img src="{{agent.brokerageLogo}}" alt="{{agent.brokerage}}" / />
             </div>
         </div>
     </div>
