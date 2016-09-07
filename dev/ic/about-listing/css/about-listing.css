@@ -166,7 +166,7 @@
   background-color: #eee;
   top: -50px;
   right: 50%;
-  z-index: 1000;
+  z-index: 10;
 }
 
 /*** *** responsive *** ***/
