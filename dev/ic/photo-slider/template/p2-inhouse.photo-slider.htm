@@ -12,7 +12,7 @@
             <!-- repeat rest of images --->
             <div class="slider-image grid-image" ng-repeat="photo in listing.photos">
                 <div class="listing-pic full" ng-style="{'background-image': 'url(' + photo.large + ')'}">
-                    <a href="#/lightbox" class="block full bkc-03 fw">
+                    <a class="block full bkc-03 fw" ng-click="showLightBox($index)">
                         <span class="fa fa-camera"></span>
                     </a>
                 </div>

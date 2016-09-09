@@ -9,7 +9,7 @@
         <ih-owl class="owl-carousel tst-carousel" items="listing.photos" responsive="responsive">
             <div class="listing-pic-block full" ng-repeat="photo in listing.photos">
                 <div class="listing-pic" ng-style="{'background-image': 'url(' + photo.large + ')'}">
-                    <a href="#/lightbox" class="block full bkc-03 fw">
+                    <a class="block full bkc-03 fw" ng-click="showLightBox($index)">
                         <span class="fa fa-camera"></span>
                     </a>
                 </div>
