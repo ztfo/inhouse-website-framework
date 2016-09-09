@@ -169,7 +169,13 @@ map {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 
-@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+
+  /* p2 */
+  .p2.ih-nearby h5 {
+    max-width: 250px;
+  }
+}
 
 @media screen and (max-width: 767px) {
     /* p2 */
@@ -204,6 +210,18 @@ map {
     }
 }
 
-@media screen and (max-width: 426px) {}
+@media screen and (max-width: 426px) {
+
+  /* p2 */
+  .p2.ih-nearby .pull-left:last-child {
+    width: 100%;
+    float: none !important;
+    text-align: center;
+  }
+  .p2.ih-nearby .loc-address, .p2.ih-nearby h5 {
+    max-width: 100% !important;
+  }
+
+}
 
 @media screen and (max-width: 374px) {}

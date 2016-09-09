@@ -680,6 +680,13 @@
     .s1.ih-slider .ih-slider-inner .item {
         height: 220px !important;
     }
+
+    /* p2 */
+    .p2.ih-slider .btn-row {
+      display: flex;
+      margin: 0 auto;
+      max-width: 340px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -691,6 +698,14 @@
   .p2.ih-slider .btn:first-child {
     margin-bottom: 10px;
   }
+}
+
+@media screen and (max-width: 426px) {
+    .p2.ih-slider .btn {
+        display: block;
+        max-width: 250px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 375px) {
