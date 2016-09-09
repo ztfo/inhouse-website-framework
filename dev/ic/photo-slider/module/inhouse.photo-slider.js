@@ -21,6 +21,22 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
         }
       });
       
+    	$scope.showLightBox = function(index) {
+        var listing = $scope.listing.photos;
+        
+        var photos = [];
+        var i = 0; 
+        listing.map(function(listing) {
+          photos[i] = listing.large;
+          i++;
+        });
+        
+    		var firstHalf = photos.slice().slice(0, index - 1);
+    		var secondHalf = photos.slice().slice(index);
+    		
+    		UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
+    	};
+      
       $scope.loadOwl = function() {
         $timeout(function() {
           $element.find('.owl-carousel').owlCarousel({
