@@ -8,7 +8,8 @@ angular.module('ihframework')
       classes: '@',
       source: '@',
       max: '@',
-      config: '='
+      config: '=',
+      responsive: '='
     },
     controller: function($rootScope, $scope, $http, userDataService, userData, $element) {
       $scope.$watch('config', function(newVal) {
