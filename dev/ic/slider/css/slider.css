@@ -682,7 +682,16 @@
     }
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  /* p2 */
+  .p2.ih-slider .container-sm {
+    width: 100% !important;
+    padding: 0 15px;
+  }
+  .p2.ih-slider .btn:first-child {
+    margin-bottom: 10px;
+  }
+}
 
 @media screen and (max-width: 375px) {
     /* s1 */
@@ -699,5 +708,10 @@
     }
     .s1.ih-slider .ih-slider-inner .item {
         height: 220px !important;
+    }
+
+    /* p2 */
+    .p2.ih-slider .container-sm {
+      padding: 0;
     }
 }

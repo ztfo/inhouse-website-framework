@@ -311,7 +311,14 @@
 
 @media screen and (min-width: 376px) and (max-width: 768px) {}
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+
+  /* p2 */
+  .p2.ih-testimonials h1.ih-header {
+    padding: 0 25px;
+  }
+
+}
 
 @media screen and (max-width: 426px) {}
 
