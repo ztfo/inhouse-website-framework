@@ -1,13 +1,13 @@
-<section class="p2 ih-nearby container-fluid fp">
+<section class="p2 ih-nearby fp">
     <h1 class="ih-header text-center fc-02">Nearby Places</h1>
-    <div class="row btn-row">
+    <div class="container-fluid btn-row">
         <ul class="nav nav-pills nav-justified nearby-tabs">
             <li ng-repeat="source in sources">
                 <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
             </li>
         </ul>
     </div>
-    <div class="row flex-grid">
+    <div class="container-fluid flex-grid">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 nearby-list">
             <div class="nearby-list-panel" ng-repeat="source in sources" ng-if="showTab == source.source">
                 <h3 class="fc-01">{{source.name}}</h3>
@@ -32,13 +32,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 nearby-map nopad bkc-01">
+        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 hidden-xs nearby-map nopad bkc-01">
             <map center="{{centerCoordinates}}" zoom="12" scrollWheel="false">
               <marker ng-repeat="coord in markerCoordinates track by $index" position="{{coord}}"></marker>
             </map>
         </div>
     </div>
-    <div class="container text-center btn-row">
+    <div class="container text-center btn-row hidden-xs">
         <a href="#/" class="btn btn-primary">Text Me Directions</a>
     </div>
 </section>

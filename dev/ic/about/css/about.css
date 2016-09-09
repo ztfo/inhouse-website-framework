@@ -368,10 +368,6 @@
     margin-right: 15px;
 }
 
-.p2.ih-about .agent-box {
-    min-height: 250px;
-}
-
 .p2.ih-about .about-row {
     padding: 45px;
     border: 1px solid #eee;
@@ -381,6 +377,10 @@
     font-size: 1em;
     line-height: 1.5em;
     text-align: justify;
+}
+
+.p2.ih-about .about-social {
+  margin: 25px 0;
 }
 
 
@@ -434,6 +434,16 @@
 @media screen and (max-width: 768px) {
     .ih-about-header {
         clear: both;
+    }
+    /* p2 */
+    .p2.ih-about .about-social {
+      margin: 25px 0;
+    }
+
+    /* l2 */
+    .l2.ih-lender .btn {
+      margin-bottom: 15px;
+      width: 100%;
     }
 }
 

@@ -10,11 +10,13 @@ angular.module('ihframework')
 			pull: '@',
 			nodefault: '@nodefault',
 			config: '=',
-			listing: '='
+			listing: '=',
+			savedslides: '='
 		},
-		controller: function($rootScope, $scope, userDataService, $element) {
+		controller: function($rootScope, $scope, userDataService, $element, $timeout) {
 			//$scope.config = userDataService.sliderConfig;
 			
+			$scope.active = 0;
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
 					$scope.templateUrl = 'build/templates/ic/slider/template/' + $scope.config + '-inhouse.slider.htm';
@@ -24,12 +26,17 @@ angular.module('ihframework')
 			});
 			
 			$scope.$watch('listing', function(newVal) {
-				if(newVal !== undefined) {
+				if(newVal !== undefined && ($scope.slides == undefined || $scope.slides.length == 0)) {
 					$scope.slides = newVal.photos;
 				}
 			});
 
-			$scope.active = 0;
+			$scope.$watch('savedslides',function(newVal) {
+				if(newVal !== undefined && newVal.length > 0) {
+					$scope.slides = newVal;
+				}
+			}, true);
+			
 			$scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
 			
 			if(typeof $scope.LandingComponent !== 'undefined') {
