@@ -9,7 +9,7 @@
         <div class="container">
             <ul class="nav nav-pills nav-justified nearby-tabs">
                 <li ng-repeat="source in sources">
-                    <a class="pointer" ng-click="toggleNearbyTabs(source.source)">{{source.name}}</a>
+                    <a class="pointer" ng-click="selectTab($index)">{{source.name}}</a>
                 </li>
             </ul>
         </div>

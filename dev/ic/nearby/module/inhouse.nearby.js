@@ -17,44 +17,41 @@ angular.module('ihframework')
 					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
 				}
 			});
-
+			
 			$scope.nearbyData = {};
-
-			$scope.toggleNearbyTabs = function(tab){
-				$scope.showTab = tab;
-			};
-
+			
 			if($scope.sources == undefined) {
 				$scope.sources = [
-						{
-							source: 'school',
-							name: 'Schools'
-						},
-						{
-							source: 'shopping_mall',
-							name: 'Shopping'
-						},
-						{
-							source: 'restaurant',
-							name: 'Dining'
-						},
-						{
-							source: 'night_club',
-							name: 'Entertainment'
-						},
-						{
-							source: 'park',
-							name: 'Parks',
-							radius: 15000
-						},
-					];
-				}
-
-				if($scope.sources.length > 0){
-					$scope.showTab = $scope.sources[0].source;
-				}
-
-
+					{
+						source: 'school',
+						name: 'Schools'
+					},
+					{
+						source: 'shopping_mall',
+						name: 'Shopping'
+					},
+					{
+						source: 'restaurant',
+						name: 'Dining'
+					},
+					{
+						source: 'night_club',
+						name: 'Entertainment'
+					},
+					{
+						source: 'park',
+						name: 'Parks',
+						radius: 15000
+					},
+				];
+			}
+			
+			if($scope.sources.length > 0) {
+				$scope.defaultTab = $scope.sources[0];
+			}
+			
+			
+			
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
 					if($scope.listing.latlong != undefined) {
@@ -68,7 +65,7 @@ angular.module('ihframework')
 					}
 				}
 			});
-
+			
 			$scope.fetchNearbyData = function(nearby) {
 				ngGPlacesAPI.nearbySearch({
 					latitude: $scope.listing.latlong[0],
@@ -86,7 +83,7 @@ angular.module('ihframework')
 								hours: data[i].opening_hours
 							});
 						}
-
+						
 						for (var i = 0; i < $scope.sources.length; i++) {
 							if($scope.sources[i].source == nearby.source) {
 								$scope.sources[i].data = returnData;
@@ -97,25 +94,25 @@ angular.module('ihframework')
 								$scope.selectTab(0);
 							});
 						}
-				  };
+					};
 				})(nearby));
 			};
-
+			
 			$scope.loadNearby = function() {
-				$scope.defaultTab = $scope.sources[0].source;
 				$scope.sources.forEach(function(source) {
 					$scope.fetchNearbyData(source);
 				});
 			};
-
+			
 			$scope.selectTab = function(index) {
+				$scope.showTab = $scope.sources[index].source;
 				if($scope.sources[index].data !== undefined) {
 					$scope.markerCoordinates = $scope.sources[index].data.map(function(source) {
 						return source.address;
 					});
 				}
 			};
-
+			
 			$scope.agent = $rootScope.theUserData;
 		}
 	};
