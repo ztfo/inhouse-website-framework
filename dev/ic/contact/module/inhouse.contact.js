@@ -12,7 +12,8 @@ angular.module('ihframework')
 			typeofcontact: '@typeofcontact',
 			config: '=',
 			configname: '@',
-			message: '@'
+			message: '@',
+			listing: '='
 		},
 		link: function(scope, element, attrs) {
 			if(typeof scope.contact == 'undefined') {
