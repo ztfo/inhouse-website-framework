@@ -307,7 +307,15 @@
 
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* p2 */
+  .p2.ih-testimonials .item {
+    min-height: 280px;
+  }
+  .p2.ih-testimonials p {
+    padding-bottom: 10px;
+  }
+}
 
 @media screen and (min-width: 376px) and (max-width: 768px) {
 
@@ -319,6 +327,7 @@
     margin: 15px 0;
     padding-bottom: 15px;
   }
+
 }
 
 @media screen and (max-width: 767px) {
