@@ -9,7 +9,8 @@ angular.module('ihframework')
       source: '@',
       max: '@',
       config: '=',
-      responsive: '='
+      responsive: '=',
+      listing: '='
     },
     controller: function($rootScope, $scope, $http, userDataService, userData, $element) {
       $scope.$watch('config', function(newVal) {
