@@ -69,12 +69,12 @@ body.ihweb { overflow-x: hidden !important; }
 .fullw { width: 100%;  }
 .full { position: relative; width: 100%; height: 100%; }
 .afull { top: 0; right: 0; bottom: 0; left: 0; }
-.nopad { padding: 0; }
-.nopad-l { padding-left: 0; }
-.nopad-r { padding-right: 0; }
-.nomar { margin: 0; }
-.nomar-r { margin-right: 0; }
-.nomar-l { margin-left: 0; }
+.nopad { padding: 0 !important; }
+.nopad-l { padding-left: 0 !important; }
+.nopad-r { padding-right: 0 !important; }
+.nomar { margin: 0 !important; }
+.nomar-r { margin-right: 0 !important; }
+.nomar-l { margin-left: 0 !important; }
 /* format end */
 
 /* image fit */
@@ -241,7 +241,7 @@ a:focus { text-decoration: none; color: inherit; }
 
 @media screen and (max-width: 767px) {
   .container-sm {
-    width: 100% !important; 
+    width: 100% !important;
   }
   .xs-block {
     display: block;
