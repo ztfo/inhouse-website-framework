@@ -22,7 +22,7 @@ body.ihweb { overflow-x: hidden !important; }
 .bt50 { background-color: rgba(0,0,0,0.5); }
 .bt70 { background-color: rgba(0,0,0,0.7); }
 .bt80 { background-color: rgba(0,0,0,0.8); }
-.tpt { opacity: .85 !important; }
+/*.tpt { opacity: .85 !important; }*/
 
 /* z-index */
 .z0 { z-index: 0; }
