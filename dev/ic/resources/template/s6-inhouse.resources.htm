@@ -7,9 +7,7 @@
     <div id="s6Resources" class="owl-carousel">
 
       <!-- repeat -->
-      <div class="img-list">
-
-        <!-- repeat limit:2 inside img-list and continue rest on new .img-list -->
+      <div class="img-list" ng-repeat="(key, content) in resources | limitTo: 2">
         <div class="">
           <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl?'_blank':'_self'}}">
           <img class="img-border" ng-src="" alt="{{content.title}}" />
