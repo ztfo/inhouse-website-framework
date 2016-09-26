@@ -55,6 +55,13 @@ angular.module('ihframework')
 		}
 	};
 
+	$scope.searchTab = 'find';
+
+	$scope.toggleSearchTabs = function(tab){
+    debugger;
+		$scope.searchTab = tab;
+	};
+
 	//some logic to prevent double loading
 	$scope.noWipe = false;
 	$scope.firstLoad = true;

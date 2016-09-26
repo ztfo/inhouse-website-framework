@@ -93,6 +93,7 @@ body.ihweb { overflow-x: hidden !important; }
 /* frames end */
 
 /* link resets */
+.pointer { cursor: pointer; }
 .clean-link, a { color: inherit; }
 .clean-link:hover,
 .clean-link:active,
