@@ -220,23 +220,30 @@ a:focus { text-decoration: none; color: inherit; }
   padding: 15px 0;
 }
 
+@media (min-width: 500px ) {
+  .text-center-xs { text-align: center; }
+}
+
 @media (min-width: 768px) {
   .col-sm-15 {
     width: 20%;
     float: left;
   }
+  .text-center-sm { text-align: center; }
 }
 @media (min-width: 992px) {
   .col-md-15 {
     width: 20%;
     float: left;
   }
+  .text-center-md { text-align: center; }
 }
 @media (min-width: 1200px) {
   .col-lg-15 {
     width: 20%;
     float: left;
   }
+  .text-center-lg { text-align: center; }
 }
 /* 5-column ends */
 

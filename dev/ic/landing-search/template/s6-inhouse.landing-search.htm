@@ -1,19 +1,22 @@
 <div class="ih-search s6 container">
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 search-toggle">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 search-toggle">
             <ul class="search-toggle-btns text-uppercase">
                 <li>
-                    <a data-toggle="" class="toggle-btn pointer" ng-click="toggleSearchTabs('find')"><span class="ih-ui-icon ih-ui-search"></span> find a home</a>
+                    <a data-toggle="" class="toggle-btn pointer hidden-xs hidden-sm" ng-click="toggleSearchTabs('find')"><span class="ih-ui-icon ih-ui-search"></span> find a home</a>
+                    <a href="#/search-mls?active" class="toggle-btn pointer hidden-md hidden-lg"><span class="ih-ui-icon ih-ui-search"></span> find a home</a>
                 </li>
                 <li>
-                    <a data-toggle="" class="toggle-btn pointer" ng-click="toggleSearchTabs('list')"><span class="ih-ui-icon ih-ui-home"></span> list a home</a>
+                    <a data-toggle="" class="toggle-btn pointer hidden-xs hidden-sm" ng-click="toggleSearchTabs('list')"><span class="ih-ui-icon ih-ui-home"></span> list a home</a>
+                    <a href="#/sell" class="toggle-btn pointer hidden-lg hidden-md" ng-click="toggleSearchTabs('list')"><span class="ih-ui-icon ih-ui-home"></span> list a home</a>
                 </li>
                 <li>
-                    <a data-toggle="" class="toggle-btn pointer" ng-click="toggleSearchTabs('contact')"><span class="ih-ui-icon ih-ui-mail"></span> contact us</a>
+                    <a data-toggle="" class="toggle-btn pointer hidden-xs hidden-sm" ng-click="toggleSearchTabs('contact')"><span class="ih-ui-icon ih-ui-mail"></span> contact us</a>
+                    <a href="#/contact" class="toggle-btn pointer hidden-md hidden-lg"><span class="ih-ui-icon ih-ui-mail"></span> contact us</a>
                 </li>
             </ul>
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 search-toggle">
+        <div class="col-lg-9 col-md-9 hidden-xs hidden-sm search-toggle">
             <div class="tab-content">
                 <div class="tab-pane search-pane" ng-if="searchTab == 'find'">
                     <h2 class="ih-subheader fw text-uppercase">start your search</h2>
