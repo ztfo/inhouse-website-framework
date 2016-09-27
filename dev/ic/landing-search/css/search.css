@@ -131,6 +131,11 @@
     font-size: 1.5em;
     letter-spacing: 2px;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: .3s;
+}
+
+.s6.ih-search .toggle-btn:hover {
+  transform: scale(1.05);
 }
 
 .s6.ih-search .search-toggle-btns>li {
@@ -151,6 +156,8 @@
     min-height: 240px !important;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 
 
 /*** responsive ***/
