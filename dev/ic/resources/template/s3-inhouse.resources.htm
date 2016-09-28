@@ -7,14 +7,14 @@
   </div>
   <div id="s3Resources" class="owl-carousel">
     <!-- repeat -->
-    <div class="item">
+    <div class="item" ng-repeat="(key, content) in resources | limitTo: 4">
       <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl? '_blank' : '_self'}}">
         <img class="img-border" src="http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A" alt="" />
       </a>
       <div class="">
         <h2>
           <i class="fa fa-square small-font" aria-hidden="true"></i>
-          <a href="{{content.externalUrl ? content.externalUrl : '#/' + (content.key || key)}}" 
+          <a href="{{content.externalUrl ? content.externalUrl : '#/' + (content.key || key)}}"
             target="{{content.externalUrl? '_blank' : '_self'}}">{{content.title}}</a>
         </h2>
         <div class="divider-lg"></div>

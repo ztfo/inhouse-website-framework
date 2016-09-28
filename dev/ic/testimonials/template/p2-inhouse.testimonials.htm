@@ -1,6 +1,6 @@
-<section class="p2 ih-testimonials ih z0 fp fw {{classes}}" ng-show="testimonials.length > 0" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
+<section class="p2 ih-testimonials ih z0 fp fw {{classes}}" ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}">
     <div class="bkc-01 tpt">
-        <div class="container">
+        <div class="container" ng-show="testimonials.length > 0">
             <h1 class="ih-header text-center">What our clients say</h1>
             <ih-owl class="owl-carousel tst-carousel" items="testimonials" responsive="responsive">
                 <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">

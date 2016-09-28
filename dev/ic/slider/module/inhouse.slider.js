@@ -15,7 +15,7 @@ angular.module('ihframework')
 		},
 		controller: function($rootScope, $scope, userDataService, $element, $timeout) {
 			//$scope.config = userDataService.sliderConfig;
-			
+
 			$scope.active = 0;
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
@@ -24,7 +24,7 @@ angular.module('ihframework')
 					$scope.templateUrl = 'build/templates/ic/slider/template/s1-inhouse.slider.htm';
 				}
 			});
-			
+
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined && ($scope.slides == undefined || $scope.slides.length == 0)) {
 					$scope.slides = newVal.photos;
@@ -36,9 +36,9 @@ angular.module('ihframework')
 					$scope.slides = newVal;
 				}
 			}, true);
-			
+
 			$scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
-			
+
 			if(typeof $scope.LandingComponent !== 'undefined') {
 				if( typeof $scope.LandingComponent.defaultSliderImages === 'object') {
 					var rIndex = Math.floor(Math.random() * ($scope.LandingComponent.defaultSliderImages.length));

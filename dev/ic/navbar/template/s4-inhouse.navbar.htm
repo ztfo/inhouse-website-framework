@@ -28,13 +28,15 @@
             <ul class="ih-cta nav navbar-nav navbar-right">
                 <li>
                     <a href="tel:{{agent.contactPhone | tel}}" class="clean-link">
-              {{agent.contactPhone | tel}}
-            <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
-          </a>
-                    <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in btn btn-primary" ng-if="!inhouseAgentUserLoggedIn">Sign-in</button>
-                    <a href="#/search-mls?page=1&my-listings" class="clean-link sign-in signed-in btn btn-primary" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
-                        <i class="fa fa-home"></i>
+                        {{agent.contactPhone | tel}}
+                      <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
                     </a>
+                </li>
+                <li>
+                  <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in btn btn-primary" ng-if="!inhouseAgentUserLoggedIn">Sign-in</button>
+                  <a href="#/search-mls?page=1&my-listings" class="clean-link sign-in signed-in btn btn-primary" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
+                      <i class="fa fa-home"></i>
+                  </a>
                 </li>
             </ul>
         </div>

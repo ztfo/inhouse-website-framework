@@ -36,7 +36,7 @@ map {
 }
 
 .p1.ih-nearby .nearby-map {
-    height: 500px;
+    height: 600px;
     background-color: #eee;
 }
 
@@ -56,7 +56,7 @@ map {
 }
 
 .p1.ih-nearby .nearby-place {
-    padding: 30px 0px;
+    padding: 15px 0px;
     font-size: .9em;
 }
 
