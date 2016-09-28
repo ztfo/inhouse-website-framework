@@ -4,6 +4,9 @@
     min-height: 200px;
     background-color: #f5f5f5;
     border-bottom: 1px solid #e7e7e7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
 .s1.ih-content .ih-content-header>div {
