@@ -4,10 +4,17 @@
     </div>
     <div class="ih-slider-row">
         <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
-          <div uib-carousel active="active" no-wrap="false">
-            <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
+            <div uib-carousel active="active" no-wrap="false">
+                <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
+                    <div class="carousel-caption">
+                        <h4>{{slide.header}}</h4>
+                        <p>{{slide.sub}}</p>
+                        <p>
+                          <small>{{slide.text}}</small>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
     </div>
 </section>
