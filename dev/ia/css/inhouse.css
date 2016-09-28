@@ -220,7 +220,7 @@ a:focus { text-decoration: none; color: inherit; }
   padding: 15px 0;
 }
 
-@media (min-width: 500px ) {
+@media (max-width: 500px ) {
   .text-center-xs { text-align: center; }
 }
 

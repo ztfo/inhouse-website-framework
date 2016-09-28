@@ -131,7 +131,7 @@
     font-size: 1.5em;
     letter-spacing: 2px;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: .3s;
+    transition: .1s;
 }
 
 .s6.ih-search .toggle-btn:hover {
