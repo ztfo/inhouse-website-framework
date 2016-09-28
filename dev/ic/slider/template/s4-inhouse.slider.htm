@@ -8,10 +8,11 @@
                 <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
                     <div class="carousel-caption">
                         <h4>{{slide.header}}</h4>
-                        <p>{{slide.sub}}</p>
+                        <h5>{{slide.caption}}</h5>
                         <p>
                           <small>{{slide.text}}</small>
                         </p>
+                        <a class="btn btn-primary" href="{{slide.link}}">{{slide.linkText}}</a>
                     </div>
                 </div>
             </div>
