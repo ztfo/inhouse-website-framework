@@ -73,6 +73,9 @@
     margin-bottom: 15px;
 }
 
+.s4.ih-contact .brokerage-logo {
+    width: 150px;
+}
 
 /* p1 */
 
@@ -82,7 +85,7 @@
 }
 
 .p1.ih-contact>div {
-  padding: 70px 0 0 0; 
+  padding: 70px 0 0 0;
 }
 
 .p1.ih-contact .contact-footer {
