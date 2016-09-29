@@ -47,19 +47,26 @@
     margin-bottom: 15px;
 }
 
+/* s8 */
+
+.rc-block {
+  height: 280px;
+  background-color: #eee;
+  margin-bottom: 25px;
+  transition: .3s;
+}
+
+.rc-block:hover {
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+}
+
 
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
-
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-
 @media screen and (min-width: 376px) and (max-width: 768px) {}
-
 @media screen and (max-width: 767px) {}
-
 @media screen and (max-width: 426px) {}
-
 @media screen and (max-width: 374px) {}
