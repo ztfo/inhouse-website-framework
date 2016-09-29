@@ -50,10 +50,13 @@
 /* s8 */
 
 .rc-block {
-  height: 280px;
+  height: 210px;
   background-color: #eee;
   margin-bottom: 25px;
   transition: .3s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 .rc-block:hover {
