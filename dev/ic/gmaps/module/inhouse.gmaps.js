@@ -40,6 +40,7 @@ angular.module('ihframework')
 					scope.marker = new google.maps.Marker({
 						position: scope.center,
 						title: args.address,
+						map: scope.map,
 						icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 					});
 				}
