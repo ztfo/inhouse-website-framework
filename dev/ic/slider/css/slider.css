@@ -312,6 +312,21 @@
     z-index: 11;
 }
 
+/* s7*/
+
+.s8.ih-slider {
+    height: calc(100vh);
+}
+
+.s8.ih-slider .item {
+    height: 100%;
+}
+
+.s8.ih-slider .ih-search-container {
+    padding-top: 35%;
+    z-index: 11;
+}
+
 
 /* p1 */
 
