@@ -1,25 +1,24 @@
 <section class="s3 ih-resources {{classes}}">
-  <div class="container">
-    <div class="row text-center">
-      <h1 class="uppercase">Resources</h1>
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="uppercase">Resources</h1>
+        </div>
+        <div class="divider text-center"></div>
     </div>
-    <div class="divider text-center"></div>
-  </div>
-  <div id="s3Resources" class="owl-carousel">
-    <!-- repeat -->
-    <div class="item" ng-repeat="(key, content) in resources | limitTo: 4">
-      <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl? '_blank' : '_self'}}">
-        <img class="img-border" src="http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A" alt="" />
-      </a>
-      <div class="">
-        <h2>
+    <div id="s3Resources" class="owl-carousel">
+        <div class="item" ng-repeat="(key, content) in resources | limitTo: 4">
+            <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl? '_blank' : '_self'}}">
+                <img class="img-border" src="http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A" alt="" />
+            </a>
+            <div class="">
+                <h2>
           <i class="fa fa-square small-font" aria-hidden="true"></i>
           <a href="{{content.externalUrl ? content.externalUrl : '#/' + (content.key || key)}}"
             target="{{content.externalUrl? '_blank' : '_self'}}">{{content.title}}</a>
         </h2>
-        <div class="divider-lg"></div>
-        <p>{{content.sub}}</p>
-      </div>
-	</div>
-  </div>
+                <div class="divider-lg"></div>
+                <p>{{content.sub}}</p>
+            </div>
+        </div>
+    </div>
 </section>

@@ -1,35 +1,11 @@
-/* s1 */
-
-.s1.ih-partners {
-    min-height: 400px;
-    margin: 50px 0;
-    padding: 25px 0;
-    background-color: #f5f5f5;
-}
-
-.s1.ih-partners h1::before {
-    content: "";
-}
-
-/* s2 */
-.s2.ih-partners {
-    min-height: 400px;
-    margin: 25px auto;
-    padding: 25px 0;
-}
+/* global */
 
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
-
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-
 @media screen and (min-width: 376px) and (max-width: 768px) {}
-
 @media screen and (max-width: 767px) {}
-
 @media screen and (max-width: 426px) {}
-
 @media screen and (max-width: 374px) {}

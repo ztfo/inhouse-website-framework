@@ -172,6 +172,29 @@
 .s3.ih-featured-slider .ih-grid-carousel .ih-ft-listing {
     border: 0;
     min-height: 320px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.s3.ih-featured-slider .ft-link {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: .3s;
+  color: #fff;
+  opacity: 0;
+}
+
+.s3.ih-featured-slider .ft-link:hover {
+  opacity: 1;
+  color: #fff;
+  font-size: 1.3em;
 }
 
 

@@ -6,9 +6,9 @@
 
     <ih-owl class="ih-ft-carousel owl-carousel" items="homes" responsive="responsive" length="listingLoaders">
 
-      <ih-listing-loader ng-repeat="n in range(0,listingLoaders)" class="item"></ih-listing-loader>
+      <ih-listing-loader ng-repeat="n in range(0,listingLoaders) | limitTo:12" class="item"></ih-listing-loader>
 
-      <div class="item" ng-repeat="home in homes">
+      <div class="item" ng-repeat="home in homes | limitTo:15">
         <div class="ih-ft-listing" itemscope itemtype="http://schema.org/Product" itemprop="additionalProperty">
           <div class="ih-ft-listing-img">
             <img ng-src="{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}" alt="{{home.caption}}" class="fit-image" ng itemprop="photo">
