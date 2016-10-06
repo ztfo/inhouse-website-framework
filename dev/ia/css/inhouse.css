@@ -151,6 +151,11 @@ a:focus { text-decoration: none; color: inherit; }
   background-color: #cb2027;
   color: #fff !important;
 }
+.youtube-hover:hover {
+  opacity: .9;
+  background-color: #bb0000;
+  color: #fff !important;
+}
 
 /* hovers end */
 
