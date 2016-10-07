@@ -16,7 +16,7 @@
                       <span itemprop="telephone" class="cta-phone">{{agent.contactPhone | tel}}</span> <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
                     </span>
                     <a class="ih-email-icon" href="mailto:{{agent.contactEmail}}"><i class="fa fa-envelope"></i></a>
-                    <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in  btn btn-primary" ng-if="!inhouseAgentUserLoggedIn"><span class="hidden-xs">Sign-in</span><i class="fa fa-home hidden-lg- hidden-md hidden-sm"></i></button>
+                    <button type="button" ng-click="signIn()" data-toggle="modal" class="sign-in  btn btn-primary" ng-if="!inhouseAgentUserLoggedIn"><span class="hidden-xs">Sign-in</span><i class="fa fa-home hidden-lg hidden-md hidden-sm"></i></button>
                     <a href="#/search-mls?page=1&my-listings" class="clean-link sign-in signed-in  btn btn-primary" ng-if="inhouseAgentUserLoggedIn" data-toggle="tooltip" data-placement="left" title="Click here to view all your favorite listings">
                       <span class="hidden-xs">My Account</span>
                       <span class="hidden-lg hidden-md hidden-sm"><i class="fa fa-home"></i></span>
