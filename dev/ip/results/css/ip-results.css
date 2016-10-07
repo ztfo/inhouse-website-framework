@@ -444,6 +444,7 @@
 /* s3 */
 
 .s3 .ih-listing-block {
+    position: relative;
     border: 1px solid #ddd;
     border-radius: 3px;
     margin-bottom: 20px;
