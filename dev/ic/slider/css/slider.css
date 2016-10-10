@@ -535,9 +535,13 @@
         -webkit-transform: scale(1) translate(, 50%);
         transform: scale(1) translate(, 50%);
     }
-    100% {
+    50% {
         -webkit-transform: scale(5) translate(0, 90%);
         transform: scale(5) translate(0, 90%);
+    }
+    0% {
+        -webkit-transform: scale(1) translate(, 50%);
+        transform: scale(1) translate(, 50%);
     }
 }
 
