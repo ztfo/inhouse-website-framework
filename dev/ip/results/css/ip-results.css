@@ -131,17 +131,13 @@
 
 
 /* filter breadcrumd defaults */
-
 .ih-breadcrumb {
-    text-transform: uppercase;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.5);
+    padding: 5px 20px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: .8em;
+    font-weight: 800;
     letter-spacing: 1px;
-    font-size: 13px;
-    margin: 0 5px;
-    display: inline-block;
-    padding: 2px 7px;
-    border-radius: 3px;
 }
 
 .ih-breadcrumb:hover {
@@ -149,8 +145,6 @@
     background-color: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.5);
 }
-
-
 /* s1 - vertical center page configuration with map toggle */
 
 .s1.ih-results {
