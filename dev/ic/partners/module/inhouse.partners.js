@@ -5,8 +5,9 @@ angular.module('ihframework')
 		restrict: 'E',
 		replace: true,
 		scope: {
-			classes: "@class",
-			config: '='
+			classes: "@classes",
+			config: '=',
+			header: '@'
 		},
 		controller: function($rootScope, $scope){
 			$scope.$watch('config', function(newVal) {
@@ -16,7 +17,7 @@ angular.module('ihframework')
 					$scope.templateUrl = 'build/templates/ic/partners/template/s1-inhouse.partners.htm';
 				}
 			});
-			
+
 			$scope.partners = $rootScope.theWebsiteData.partners;
 		},
 		link: function (scope, element, attrs) {
