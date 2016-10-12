@@ -131,6 +131,7 @@
 
 
 /* filter breadcrumd defaults */
+
 .ih-breadcrumb {
     padding: 5px 20px;
     border: 2px solid #ddd;
@@ -138,6 +139,8 @@
     font-size: .8em;
     font-weight: 800;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
 }
 
 .ih-breadcrumb:hover {
@@ -145,6 +148,8 @@
     background-color: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.5);
 }
+
+
 /* s1 - vertical center page configuration with map toggle */
 
 .s1.ih-results {
@@ -612,6 +617,12 @@
     }
     .s2.ih-listing, .s2.ih-results {
         padding-top: 116px;
+    }
+    .s2.ih-listing .ih-listing-slider .item {
+        height: 250px !important;
+    }
+    .s2.ih-listing .listing-pane {
+        border-left: 0;
     }
 }
 
