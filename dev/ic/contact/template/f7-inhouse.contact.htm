@@ -34,11 +34,29 @@
         <input type="text" class="form-control" id="sellerAddress" placeholder="Property Address" name="Property Address" ng-model="contact.PropertyAddress">
       </div>
       <div class="row">
+        <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <label for="sellerAddress">Number of Beds</label>
+          <input type="text" class="form-control" id="sellerAddress" placeholder="Number of Beds" name="Number of Beds" ng-model="contact.Beds">
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <label for="sellerAddress">Number of Baths</label>
+          <input type="text" class="form-control" id="sellerAddress" placeholder="Number of Baths" name="Number of Baths" ng-model="contact.Baths">
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <label for="sellerAddress">Square Footage</label>
+          <input type="text" class="form-control" id="sellerAddress" placeholder="Square Footage" name="Square Footage" ng-model="contact.Sqft">
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <label for="sellerAddress">Number of Car Garage</label>
+          <input type="text" class="form-control" id="sellerAddress" placeholder="Number of Car Garage" name="Number of Car Garage" ng-model="contact.Garage">
+        </div>
+      </div>
+      <div class="row">
         <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <ih-dropdown items='[{"name": "Owner", "value": "Owner"}, {"name": "Relative", "value": "Relative"}, {"name": "Neighbor", "value": "Neighbor"}, {"name": "Advisor", "value": "Advisor"}]' name="Relationship to Property" ng-model="contact.RelationshipToHome"></ih-dropdown>
         </div>
         <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <ih-dropdown items='[{"name": "Immediately", "value": "Immediately"}, {"name": "30-days", "value": "30-days"}, {"name": "60-days", "value": "60-days"}, {"name": "4 months +", "value": "4 months +"}]' name="How soon?" ng-model="contact.Urgency"></ih-dropdown>
+          <ih-dropdown items='[{"name": "Immediately", "value": "Immediately"}, {"name": "30-days", "value": "30-days"}, {"name": "60-days", "value": "60-days"}, {"name": "4 months +", "value": "4 months +"}]' name="When do you plan to sell?" ng-model="contact.Urgency"></ih-dropdown>
         </div>
       </div>
       <div class="row">
@@ -48,7 +66,7 @@
       </div>
       <div class="form-group">
         <label for="sellerMessage">Additional Details</label>
-        <textarea class="form-control ih-textarea" id="sellerMessage" name="Additional Details" placeholder="Please provide a description of your home and/or reason for selling" required></textarea>
+        <textarea class="form-control ih-textarea" id="sellerMessage" name="Additional Details" placeholder="Please provide a description of your home and/or reason for selling." required></textarea>
       </div>
       <div class="text-center submit-btn">
         <button type="submit" class="btn btn-primary">Submit</button>
