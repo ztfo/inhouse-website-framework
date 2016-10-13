@@ -105,6 +105,9 @@ angular.module('ihframework')
 
                     $location.path('search-mls').search(this.filters);
                 };
+                $scope.scrollToValue = function(id) {
+                  $document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
+                };
             },
         };
     }]);
