@@ -15,7 +15,7 @@ angular.module('ihframework')
         },
         controller: function($rootScope, $scope, userDataService, $element, $timeout) {
             //$scope.config = userDataService.sliderConfig;
-            $scope.myInterval = 3000;
+            $scope.myInterval = 2000;
             $scope.active = 0;
             $scope.$watch('config', function(newVal) {
                 if (newVal !== undefined) {
