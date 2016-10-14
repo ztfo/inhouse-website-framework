@@ -22,7 +22,7 @@
     </div>
     <div class="ih-slider-row row tpt">
         <div class="ih-slider-inner carousel-inner carousel slide carousel-fade full" data-ride="carousel">
-            <div uib-carousel active="active" no-wrap="false" class="full fade in" interval="5000">
+            <div uib-carousel active="active" no-wrap="false" class="full fade in" no-pause="true">
                 <div uib-slide ng-repeat="slide in slides track by $index" index="$index" ng-style="{'background-image':'url(' + slide.large + ')'}">
                 </div>
             </div>

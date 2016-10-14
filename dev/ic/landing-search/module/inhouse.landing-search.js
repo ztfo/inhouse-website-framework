@@ -1,5 +1,5 @@
 angular.module('ihframework')
-    .directive('ihLandingSearch', ['$location', function($location) {
+    .directive('ihLandingSearch', ['$location', '$document', function($location, $document) {
         return {
             template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
             restrict: 'E',
@@ -104,6 +104,9 @@ angular.module('ihframework')
                     delete this.filters.min_acres;
 
                     $location.path('search-mls').search(this.filters);
+                };
+                $scope.scrollToValue = function(id) {
+                    $document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
                 };
             },
         };

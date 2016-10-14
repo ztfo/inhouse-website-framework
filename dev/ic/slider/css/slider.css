@@ -463,7 +463,6 @@
     bottom: 0;
     right: 0;
     left: 0;
-    /*** NEEDS ABSOLUTE LINK ***/
     background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/framework/ia/images/triangle.svg');
     height: 50%;
     background-size: cover;
@@ -535,9 +534,13 @@
         -webkit-transform: scale(1) translate(, 50%);
         transform: scale(1) translate(, 50%);
     }
-    100% {
+    50% {
         -webkit-transform: scale(5) translate(0, 90%);
         transform: scale(5) translate(0, 90%);
+    }
+    0% {
+        -webkit-transform: scale(1) translate(, 50%);
+        transform: scale(1) translate(, 50%);
     }
 }
 

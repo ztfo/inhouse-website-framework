@@ -12,7 +12,7 @@
         <p>
           <strong class="text-uppercase">{{agent.agentTagline}}</strong>
         </p>
-        <div itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></div>
+        <div class="fs" itemprop="description" ng-bind-html="agent.bio1 | to_trusted"></div>
       </div>
     </div>
 
@@ -25,6 +25,8 @@
         </a>
       </figure>
     </div>
+
+    <ih-divider configname="logo"></ih-divider>
 
 
   </div>
