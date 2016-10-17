@@ -601,6 +601,10 @@
 
 .carousel-fade .carousel-inner .item {
     opacity: 0;
+    -webkit-animation-delay: 2s !important;
+    animation-delay: 2s !important;
+    -webkit-transition: 2s;
+    transition: 2s;
     -webkit-transition-property: opacity;
     transition-property: opacity;
 }
