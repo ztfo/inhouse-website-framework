@@ -2,7 +2,7 @@
 /*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
 
 /* element resets */
-body.ihweb { overflow-x: hidden !important; }
+body { overflow-x: hidden !important; }
 .ihweb button, .ihweb button:active, .ihweb button:focus { outline: 0 !important; }
 .ihweb input:active, .ihweb input:focus { outline: none !important; }
 /* resets */
