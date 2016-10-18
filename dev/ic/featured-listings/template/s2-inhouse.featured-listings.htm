@@ -16,7 +16,8 @@
             <a href="#/listing/{{home.mls}}" class="ft-link">
               <span>
                 <strong><i class="fa fa-caret-right ft-caret"></i> {{home.address}}<br></strong>
-                <small class="fs" itemprop="description">{{home.price | currency}} | {{home.beds}} BEDS - {{home.baths}} BATHS</small>
+                <small class="fs" itemprop="description">{{home.price | currency}}<span ng-show="home.beds > 0"> | {{home.beds}} BEDS - {{home.baths}} BATHS</span></small>
+                <small ng-show="home.beds < 0">{{home.acres}}</small>
               </span>
               <ih-like-button mls="{{home.mls}}" address="{{home.address}}"></ih-like-button>
             </a>

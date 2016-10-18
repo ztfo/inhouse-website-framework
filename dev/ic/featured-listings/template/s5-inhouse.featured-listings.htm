@@ -14,7 +14,9 @@
                             <div class="listing-info">
                                 <strong>{{home.address}}</strong><br>
                                 <small><em>{{home.city}} {{home.state}} {{home.zipcode}}</em></small><br />
-                                <span>{{home.price | currency}}</span><br> {{home.beds}} BEDS - {{home.baths}} BATHS
+                                <span>{{home.price | currency}}</span>
+                                <span ng-show="home.beds > 0"><br> {{home.beds}} BEDS - {{home.baths}} BATHS</span>
+                                <small ng-show="home.beds < 0">{{home.acres}}</small>
                             </div>
                         </div>
                     </a>
