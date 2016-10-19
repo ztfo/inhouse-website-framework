@@ -25,34 +25,32 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="ih-listing-map col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs">
                     <div class="ih-gmap full">
                         <ih-gmaps class="full"></ih-gmaps>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="ih-listing-images">
-            <ih-owl items="listing.photos" responsive="responsive" class="ih-nav-carousel owl-carousel ih-owl-carousel">
-                <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
-                    <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="fit-image ih-owl-thumbnail">
-                </div>
-            </ih-owl>
-        </div>
-
-        <div class="ih-listing-factbar row">
-            <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <ih-like-button mls="{{listing.mls}}" address="{{listing['Building Address']}}" class="pull-left"></ih-like-button>
-                <div class="pull-left">
-                    <h2 class="fs">{{listing['Building Address']}}</h2>
-                    <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
-                </div>
+            <div class="ih-listing-images row">
+                <ih-owl items="listing.photos" responsive="responsive" class="ih-nav-carousel owl-carousel ih-owl-carousel">
+                    <div class="item ih-owl-thumbnail" ng-repeat="home in listing.photos">
+                        <img ng-src="{{home.Uri640}}" alt="{{home.Caption}}" class="fit-image ih-owl-thumbnail">
+                    </div>
+                </ih-owl>
             </div>
-            <div class="ih-listing-dets col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-                <h2 class="fs">{{listing.price | currency:"$":0}}</h2>
-                <h4 class="fs">{{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT</h4>
+
+            <div class="ih-listing-factbar row">
+                <div class="ih-listing-addr col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <ih-like-button mls="{{listing.mls}}" address="{{listing['Building Address']}}" class="pull-left"></ih-like-button>
+                    <div class="pull-left">
+                        <h2 class="fs">{{listing['Building Address']}}</h2>
+                        <h4 class="fs">{{listing.city}} {{listing.state}} {{listing.zipcode}}</h4>
+                    </div>
+                </div>
+                <div class="ih-listing-dets col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                    <h2 class="fs">{{listing.price | currency:"$":0}}</h2>
+                    <h4 class="fs">{{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT</h4>
+                </div>
             </div>
         </div>
         <div class="ih-sm-divider ih-ext-divider"></div>
