@@ -4,10 +4,10 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h2 class="modal-title text-center" id="accountLabel" ng-hide="showRegister">Login</h2>
-                <h2 class="modal-title text-center" id="accountLabel" ng-show="showRegister">Register</h2>
+                <h2 class="modal-title text-center" id="accountLabel" ng-show="!showRegister">Register</h2>
             </div>
             <div class="modal-body fs">
-                <form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
+                <form name="register" ng-submit="register.$valid && submitRegister()" ng-show="!showRegister">
                     <p class="lead text-center">
                         Create an account to save your favorite listings, searches, and continue to view properties.
                     </p>
@@ -63,9 +63,9 @@
             <div class="modal-footer fo text-uppercase">
                 <p class="text-center">
                     <small>
-        Your information is not sold to anyone. All your information is kept confidential.
-        <a href="#/privacy" class="block privacy-link clean-link" target="_blank">View Privacy Policy</a>
-      </small>
+                      Your information is not sold to anyone. All your information is kept confidential.
+                      <a href="#/privacy" class="block privacy-link clean-link" target="_blank">View Privacy Policy</a>
+                    </small>
                 </p>
             </div>
         </div>
