@@ -451,13 +451,19 @@
 		</tbody>
 	</table>
 	<div class="container-fluid">
-		<strong>Appliances</strong>
-		<ul class="accent-list">
-			<li ng-repeat="(appliance,v) in listing.appliances">{{appliance}}</li>
-		</ul>
-		<strong>Room Types</strong>
-		<ul class="accent-list">
-			<li ng-repeat="room in listing.rooms">{{room}}</li>
-		</ul>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<strong>Appliances</strong>
+				<ul class="accent-list">
+					<li ng-repeat="(appliance,v) in listing.appliances">{{appliance}}</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<strong>Room Types</strong>
+				<ul class="accent-list">
+					<li ng-repeat="room in listing.rooms">{{room}}</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>

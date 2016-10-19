@@ -57,13 +57,13 @@
         </div>
         <div class="ih-sm-divider ih-ext-divider"></div>
 
-        <div class="ih-listing-details row">
-            <div class="ih-listing-description">
+        <div class="ih-listing-details">
+            <div class="ih-listing-description container-fluid">
                 <div class="row">
-                    <div class="ih col-lg-6">
+                    <div class="ih col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <p><strong class="text-uppercase">About this listing:</strong></p>
                     </div>
-                    <div class="ih col-lg-6 text-right">
+                    <div class="ih col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
                         <div class="share-btns">
                             <strong><span class="text-muted text-uppercase">Share on: </span></strong>
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}" class="ih-social-icon" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -80,29 +80,28 @@
             <ih-listing-details></ih-listing-details>
         </div>
 
-        <div class="ih-listing-contact row">
-
-            <div class="ih-listing-form col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <ih-contact configname="f1" message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
-            </div>
-
-            <div class="ih-listing-documents col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <h3>Listing Documents/Downloads</h3>
-                <div class="ih-docs">
-                    <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li role="presentation" class="active"><a href="#mlsDocs" aria-controls="mlsDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Listing Documents</a></li>
-                        <li role="presentation"><a href="#canvasDocs" aria-controls="canvasDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Agent Attachments</a></li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="mlsDocs">
-                            <div ng-repeat="doc in listing.documents">
-                                <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+        <div class="ih-listing-contact">
+            <div class="row">
+                <div class="ih-listing-form col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <ih-contact configname="f1" message="Questions about this listing?" noButtons="true" prefill="mls" prefillPrefix="I'd like more information about MLS #"></ih-contact>
+                </div>
+                <div class="ih-listing-documents col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h3>Listing Documents/Downloads</h3>
+                    <div class="ih-docs">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active"><a href="#mlsDocs" aria-controls="mlsDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Listing Documents</a></li>
+                            <li role="presentation"><a href="#canvasDocs" aria-controls="canvasDocs" role="tab" data-toggle="tab" onClick="event.preventDefault()">Agent Attachments</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="mlsDocs">
+                                <div ng-repeat="doc in listing.documents">
+                                    <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+                                </div>
                             </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="canvasDocs">
-                            <div ng-repeat="doc in listing.canvasDocuments">
-                                <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+                            <div role="tabpanel" class="tab-pane" id="canvasDocs">
+                                <div ng-repeat="doc in listing.canvasDocuments">
+                                    <a class="ih-doc" href="{{doc.Uri}}" target="_blank"><i class="fa fa-file-o"></i> {{doc.Name}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
