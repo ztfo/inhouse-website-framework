@@ -11,6 +11,12 @@
     content: "";
 }
 
+/* s2 */
+.s2.ih-partners {
+    min-height: 400px;
+    margin: 25px auto;
+    padding: 25px 0;
+}
 
 /* responsive */
 

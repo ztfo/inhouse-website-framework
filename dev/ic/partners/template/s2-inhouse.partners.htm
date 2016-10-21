@@ -1,0 +1,14 @@
+<section class="s2 ih-partners {{classes}}">
+    <div class="container">
+        <h1 class="ih-header text-center">{{header}}</h1>
+        <div class="ih-md-divider bk-gd"></div>
+        <ih-owl class="owl-carousel partner-carousel" items="partners" responsive="responsive">
+            <div class="item text-center {{$index == 0 ? 'active' : ''}}" ng-repeat="partner in partners">
+                <a href="{{partner.link}}" class="partner-link">
+                    <img ng-src="{{partner.image}}" />
+                </a>
+            </div>
+        </ih-owl>
+    </div>
+    </div>
+</section>

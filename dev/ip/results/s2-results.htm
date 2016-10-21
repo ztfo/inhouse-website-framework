@@ -1,5 +1,6 @@
 <section class="s2 ih-results">
     <div class="container-fluid full">
+
         <div class="ih-filters row fs bee">
             <div class="container">
                 <div class="row">
@@ -79,19 +80,20 @@
                             <div class="ih-filter-row col-lg-12">
                                 <div class="btn-group">
                                     <label class="btn btn-default {{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}">
-                                        <input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
-                                    </label>
+                												<input type="checkbox" autocomplete="off" checked ng-model="filters.active"> Active
+                										</label>
                                     <label class="btn btn-default {{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}">
-                                        <input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
-                                    </label>
+                												<input type="checkbox" autocomplete="off" ng-model="filters.sold"> Sold
+                										</label>
                                     <label class="btn btn-default {{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}">
-                                        <input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
-                                    </label>
+                												<input type="checkbox" autocomplete="off" ng-model="filters.pending" ng-true-value="true" ng-false-value="false"> Pending
+                										</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="col-lg-5 col-md-5 hidden-sm hidden-xs fullh map-pane">

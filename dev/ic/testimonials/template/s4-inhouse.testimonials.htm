@@ -8,7 +8,7 @@
                         <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>
                         <span class="sr-only">{{rating}}</span>
                     </div>
-                    <p itemprop="review fs">{{slide.testimonial}}</p>
+                    <p itemprop="review" class="fs">{{slide.testimonial}}</p>
                     <h5>- {{slide.reviewer}}</h5>
                 </blockquote>
             </div>
@@ -17,10 +17,38 @@
             <span class="ih-ui ih-ui-zillow"></span>
         </div>
     </div>
-    <div class="footer">
-        <div class="container">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center-xs">
-                <span class="ih-ui-fairhousing"></span> <span class="ih-ui-realtor"></span> <small>&copy; {{year}} - {{agent.agentName}} | {{agent.brokerage}}</small>
+    <div class="footer fs">
+        <div class="container text-uppercase">
+            <div class="ih-legal row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <span class="ih-ui ih-ui-fairhousing"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                    <span class="ih-ui ih-ui-realtor"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <span itemprop="branchCode">{{agent.brokerage}}</span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">{{agent.contactAddress}}</span> {{agent.contactAddress2}}
+                </div>
+            </div>
+            <div class="ih-sm-divider ih-ext-divider"></div>
+            <div class="row">
+                <div class="ih-copyright col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    &copy; <span itemprop="copyrightYear">2016</span> All Rights Reserved - <span itemprop="copyrightHolder">InHouse</span> | {{agent.teamName}}
+                </div>
+                <div class="ih-breadcrumbs col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right" itemprop="breadcrumbList">
+                    Follow us on:
+                    <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="{{agent.twitter}}" class="ih-social-icon" ng-if="agent.twitter !== undefined" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined" target="_blank"><i class="fa fa-pinterest"></i></a>
+                    <a href="{{agent.youtube}}" class="ih-social-icon" ng-if="agent.youtube !== undefined" target="_blank"><i class="fa fa-youtube"></i></a>
+                </div>
             </div>
         </div>
     </div>

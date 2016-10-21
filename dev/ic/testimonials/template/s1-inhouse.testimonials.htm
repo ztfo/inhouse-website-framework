@@ -6,10 +6,10 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item ih-testimonial {{$index == 0 ? 'active' : ''}}" ng-repeat="slide in testimonials">
                     <div class="container-fluid">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 text-center-sm text-center-xs">
                             <span class="ih-ui testimonials-icon ih-ui-testimonial-01"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
                         </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
                             <blockquote class="ih fs">
                                 <div class="ih-ratings" itemprop="rating">
                                     <i class="fa fa-star" ng-repeat="i in range(1, slide.stars)"></i>

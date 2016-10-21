@@ -20,7 +20,7 @@
     </div>
     <div class="ih-slider-row row">
         <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
-            <div uib-carousel active="active" no-wrap="false">
+            <div uib-carousel active="active" no-wrap="false" no-pause="true">
                 <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
                 </div>
             </div>

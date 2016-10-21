@@ -13,7 +13,8 @@
             <div class="ft-facts text-right">
               <small class="fs" itemprop="description">
                 <span class="badge">{{home.price | currency}}</span><br>
-                {{home.beds}} BEDS - {{home.baths}} BATHS
+                <span ng-show="home.beds > 0">{{home.beds}} BEDS - {{home.baths}} BATHS</span>
+                <small ng-show="home.beds < 0">{{home.acres}}</small>
               </small>
             </div>
             <div class="ih-addr">

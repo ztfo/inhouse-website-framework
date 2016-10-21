@@ -1,0 +1,16 @@
+<section class="s8 ih-slider container-fluid">
+    <div class="iha afull ih-search-container">
+        <ih-landing-search configname="s6"></ih-landing-search>
+    </div>
+    <div class="bottom-btn fw">
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div class="ih-slider-row row" no-pause="true">
+        <div id="{{slider}}" class="ih-slider-inner carousel slide carousel-fade" data-ride="carousel">
+            <div uib-carousel active="active" no-wrap="false" no-pause="true">
+                <div uib-slide ng-repeat="slide in slides" index="$index" style="background-image: url('{{slide.image}}');">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

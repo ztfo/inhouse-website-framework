@@ -1,0 +1,60 @@
+<section class="s5 ih ih-featured-slider {{classes}}">
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="ih-header text-center">Featured Homes</h1>
+            <div class="ih-md-divider bk-gd"></div>
+        </div>
+        <div class="flex-grid ft-listing-grid reverse-hover">
+            <div class="flex-col resize">
+                <div class="flex-item offset resize-item" ng-repeat="home in homes | limitTo:3">
+                    <a href="#/listing/{{home.mls}}" class="ih block full listing-link" href="" style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product"
+                        itemprop="additionalProperty">
+                        <div class="listing-hover iha afull">
+                            <ih-like-button></ih-like-button>
+                            <div class="listing-info">
+                                <strong>{{home.address}}</strong><br>
+                                <small><em>{{home.city}} {{home.state}} {{home.zipcode}}</em></small><br />
+                                <span>{{home.price | currency}}</span>
+                                <span ng-show="home.beds > 0"><br> {{home.beds}} BEDS - {{home.baths}} BATHS</span>
+                                <small ng-show="home.beds < 0">{{home.acres}}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-col resize">
+                <div class="flex-item offset resize-item" ng-repeat="home in homes | startFrom:4 | limitTo: 2">
+                    <a href="#/listing/{{home.mls}}" class="ih block full listing-link" href="" style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product"
+                        itemprop="additionalProperty">
+                        <div class="listing-hover iha afull">
+                            <ih-like-button></ih-like-button>
+                            <div class="listing-info">
+                                <strong>{{home.address}}</strong><br>
+                                <small><em>{{home.city}} {{home.state}} {{home.zipcode}}</em></small><br />
+                                <span>{{home.price | currency}}</span><br> {{home.beds}} BEDS - {{home.baths}} BATHS
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-col resize">
+                <div class="flex-item offset resize-item" ng-repeat="home in homes | startFrom:7 | limitTo: 3">
+                    <a href="#/listing/{{home.mls}}" class="ih block full listing-link" href="" style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')" itemscope itemtype="http://schema.org/Product"
+                        itemprop="additionalProperty">
+                        <div class="listing-hover iha afull">
+                            <ih-like-button></ih-like-button>
+                            <div class="listing-info">
+                                <strong>{{home.address}}</strong><br>
+                                <small><em>{{home.city}} {{home.state}} {{home.zipcode}}</em></small><br />
+                                <span>{{home.price | currency}}</span><br> {{home.beds}} BEDS - {{home.baths}} BATHS
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center btn-row">
+            <a href="#/search-mls?{{query}}" class="btn btn-primary btn-lg">View More Listings</a>
+        </div>
+    </div>
+</section>

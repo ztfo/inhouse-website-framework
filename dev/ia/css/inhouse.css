@@ -2,7 +2,7 @@
 /*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
 
 /* element resets */
-body.ihweb { overflow-x: hidden !important; }
+body { overflow-x: hidden !important; }
 .ihweb button, .ihweb button:active, .ihweb button:focus { outline: 0 !important; }
 .ihweb input:active, .ihweb input:focus { outline: none !important; }
 /* resets */
@@ -36,9 +36,12 @@ body.ihweb { overflow-x: hidden !important; }
 /* flex-box grids */
 .flex-grid {
     position: relative;
-    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 .flex-1 { position: relative; width: 8.3333%;}
 .flex-2 { position: relative; width: 16.6666%;}
@@ -53,6 +56,62 @@ body.ihweb { overflow-x: hidden !important; }
 .flex-11 { position: relative; width: 91.6666%;}
 .flex-12 { position: relative; width: 100%;}
 .flex-20 { position: relative; width: 20%;}
+
+.flex-col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-transition: all .5s cubic-bezier(.77, 0, .175, 1);
+    transition: all .5s cubic-bezier(.77, 0, .175, 1);
+}
+
+.flex-col.resize:hover {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+}
+
+.flex-col.resize:hover .flex-item, .flex-col:nth-child(1) .offset {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.flex-col .flex-item {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 4px;
+    min-height: 80px;
+    background: center center no-repeat #afafaf;
+    background-size: cover;
+    cursor: pointer;
+    -webkit-transition: all .5s cubic-bezier(.77, 0, .175, 1);
+    transition: all .5s cubic-bezier(.77, 0, .175, 1);
+}
+
+.flex-col .flex-item.resize-item:hover {
+  -webkit-box-flex: 2!important;
+  -webkit-flex: 2!important;
+  -ms-flex: 2!important;
+  flex: 2!important;
+}
+
+
 /* flex ends*/
 
 /* format styles */
@@ -151,6 +210,11 @@ a:focus { text-decoration: none; color: inherit; }
   background-color: #cb2027;
   color: #fff !important;
 }
+.youtube-hover:hover {
+  opacity: .9;
+  background-color: #bb0000;
+  color: #fff !important;
+}
 
 /* hovers end */
 
@@ -220,8 +284,9 @@ a:focus { text-decoration: none; color: inherit; }
   padding: 15px 0;
 }
 
-@media (min-width: 500px ) {
+@media (max-width: 500px ) {
   .text-center-xs { text-align: center; }
+  .block-xs { display: block !important; }
 }
 
 @media (min-width: 768px) {

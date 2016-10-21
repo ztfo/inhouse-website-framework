@@ -28,7 +28,7 @@
         <img class="bio-image img-responsive" align="left" ng-src="{{bioAgent.headshot}}" alt="{{bioAgent.name}}" />
         <div class="ih ih-about-header">
           <h2 itemprop="name">{{bioAgent.name}}</h2>
-          <h6>{{bioAgent.title}}</h6>
+          <h6 class="text-uppercase">{{bioAgent.title}} | {{bioAgent.contactEmail}}</h6>
           <div class="ih-social about-social text-center">
             <a href="mailto:{{bioAgent.contactEmail}}" class="ih-social-icon" ng-if="bioAgent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
             <a href="{{bioAgent.facebook}}" class="ih-social-icon" ng-if="bioAgent.facebook !== undefined"><i class="fa fa-facebook"></i></a>

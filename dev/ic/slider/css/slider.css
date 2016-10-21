@@ -312,6 +312,28 @@
     z-index: 11;
 }
 
+/* s8 */
+
+.s8.ih-slider {
+    height: calc(100vh);
+}
+
+.s8.ih-slider .item {
+    height: 100%;
+}
+
+.s8.ih-slider .ih-search-container {
+    padding-top: 35%;
+    z-index: 11;
+}
+
+/* s9 */
+
+.static-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 /* p1 */
 
@@ -448,7 +470,6 @@
     bottom: 0;
     right: 0;
     left: 0;
-    /*** NEEDS ABSOLUTE LINK ***/
     background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/framework/ia/images/triangle.svg');
     height: 50%;
     background-size: cover;
@@ -520,9 +541,13 @@
         -webkit-transform: scale(1) translate(, 50%);
         transform: scale(1) translate(, 50%);
     }
-    100% {
+    50% {
         -webkit-transform: scale(5) translate(0, 90%);
         transform: scale(5) translate(0, 90%);
+    }
+    0% {
+        -webkit-transform: scale(1) translate(, 50%);
+        transform: scale(1) translate(, 50%);
     }
 }
 
@@ -583,6 +608,10 @@
 
 .carousel-fade .carousel-inner .item {
     opacity: 0;
+    -webkit-animation-delay: 3s !important;
+    animation-delay: 3s !important;
+    -webkit-transition: 3s;
+    transition: 3s;
     -webkit-transition-property: opacity;
     transition-property: opacity;
 }

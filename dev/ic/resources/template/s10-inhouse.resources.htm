@@ -1,0 +1,18 @@
+<section class="s10 ih-resources {{classes}}">
+  <h1 class="ih-header text-center">Helpful Resources</h1>
+  <div class="ih-md-divider"></div>
+  <div class="container">
+    <div class="col-lg-15 col-md-15 col-sm-6 col-xs-12" ng-repeat="(key, content) in resources | limitTo: 5">
+      <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl? '_blank' : '_self'}}" class="rc-link" style="background-image: url('{{content.thumb}}')"></a>
+      <div class="rc-label">
+        <h4>
+          <a ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}' target="{{content.externalUrl? '_blank' : '_self'}}">
+          <i class="fa fa-caret-right"></i> {{content.title}}</a>
+        </h4>
+        <p>
+          {{content.sub}}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
