@@ -7,7 +7,9 @@ angular.module('ihframework')
 		scope: {
 			classes: "@classes",
 			config: '=',
-			header: '@'
+			header: '@',
+			max: '@',
+      responsive: '='			
 		},
 		controller: function($rootScope, $scope){
 			$scope.$watch('config', function(newVal) {
