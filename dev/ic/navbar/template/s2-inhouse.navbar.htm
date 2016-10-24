@@ -2,7 +2,7 @@
     <div class="ih-cta fs">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 social-cta">
                     <a href="mailto:{{agent.contactEmail}}" class="ih-social-icon" ng-if="agent.contactEmail !== undefined"><i class="fa fa-envelope"></i></a>
                     <a href="{{agent.facebook}}" class="ih-social-icon" ng-if="agent.facebook !== undefined"><i class="fa fa-facebook"></i></a>
                     <a href="{{agent.linkedin}}" class="ih-social-icon" ng-if="agent.linkedin !== undefined"><i class="fa fa-linkedin"></i></a>
@@ -10,7 +10,7 @@
                     <a href="{{agent.instagram}}" class="ih-social-icon" ng-if="agent.instagram !== undefined"><i class="fa fa-instagram"></i></a>
                     <a href="{{agent.pinterest}}" class="ih-social-icon" ng-if="agent.pinterest !== undefined"><i class="fa fa-pinterest"></i></a>
                 </div>
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-right">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-right contact-cta">
                     <span class="block-xs">
                       <span itemprop="telephone" class="cta-phone">{{agent.tollFree}}</span> &#8226;
                       <span itemprop="telephone" class="cta-phone">{{agent.contactPhone | tel}}</span> <span class="ih-social-icon"><i class="fa fa-phone"></i></span>
