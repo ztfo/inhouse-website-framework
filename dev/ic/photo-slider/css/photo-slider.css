@@ -175,6 +175,7 @@
     text-align: center;
     opacity: 0;
     transition: .3s;
+    cursor: pointer;
 }
 
 .p2.ih-photo-slider .listing-pic a:hover {
