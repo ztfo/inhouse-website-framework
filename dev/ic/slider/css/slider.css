@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+.ih-slider-inner {
+  background-color: #000;
+}
+
 .ih-slider .item {
     height: 750px;
     background-size: cover;
