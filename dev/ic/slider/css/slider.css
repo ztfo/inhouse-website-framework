@@ -8,7 +8,8 @@
     padding: 0;
 }
 
-.ih-slider-inner {
+.ih-slider-inner,
+.ih-slider-row {
   background-color: #000;
 }
 
