@@ -1,0 +1,7 @@
+.ih-dropdown(class='{{classes}}')
+  button.btn.btn-default.dropdown-toggle(type='button', id='{{dropdownId}}', ng-click='dropdownOpen = !dropdownOpen', data-toggle='dropdown')
+    | {{name}}
+    span.caret
+  ul.dropdown-menu
+    li(ng-repeat='item in menuItems', ng-class="multiSelectList[item.value] == true ? 'active' : ''")
+      a(ng-click='selectAttribute(item.value, item.name, $event)') {{item.name}}

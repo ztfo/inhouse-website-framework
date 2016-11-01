@@ -1,0 +1,24 @@
+section.ih-content.s1
+  header.ih-content-header.fw(style="background-image: url('{{content.thumb}}');")
+    .container
+      h1.inlineblock(itemprop='headline') {{content.title}}
+      .clear
+      h3.inlineblock.clear.fs.text-uppercase {{content.sub}}
+  .ih-content-inner.container
+    .row
+      .ih-content-body(ng-class="!content.disableSidebar ? 'col-lg-8 col-md-8 col-sm-12 col-xs-12' : ''")
+        div(ng-if='content.content !== undefined')
+          div(ng-bind-html='content.content | to_trusted')
+        div(ng-if='content.contentUrl !== undefined')
+          ng-include(src='content.contentUrl')
+        .ih-accent-divider.clear
+      .ih-side-panel.col-lg-4.col-md-4.col-sm-12.col-xs-12(ng-hide='content.disableSidebar')
+        #sideAccordion.panel-group(role='tablist', aria-multiselectable='true')
+          .panel.panel-default
+            #sideHeadingOne.panel-heading(role='tab')
+              h4.panel-title
+                a(role='button', data-toggle='collapse', data-parent='#sideAccordion', href='#sideCollapseOne', aria-expanded='true', aria-controls='sideCollapseOne', onclick='event.preventDefault()')
+                  | Contact {{agent.teamName}}
+            #sideCollapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='sideHeadingOne')
+              .panel-body
+                ih-contact(configname='f1')

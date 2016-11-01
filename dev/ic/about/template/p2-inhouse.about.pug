@@ -1,0 +1,45 @@
+//- NEEDS WORK
+section.p2.ih-about.container-fluid.fp
+  .about-row.container
+    .row
+      h1.ih-header.fc-02.text-center Meet Your Agent
+    .row
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12
+        .agent-box
+          h2.inlinblock.fc-01 {{agent.agentName}}
+          h5.inlineblock.text-muted
+            em Team Leader{{agent.title}} GBRE, ABCD, FGJi, PuTo{{agent.designations}}
+          .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dapibus condimentum. Cras feugiat nisi vel lectus lacinia, nec ultrices nisi scelerisque. Maecenas volutpat mattis lectus, laoreet elementum urna tincidunt eu. Cras euismod neque dui,
+            | vel mattis ante efficitur non. Duis ac orci vitae nibh commodo mattis.
+        .contact-info.container-fluid
+          .row
+            .col-sm-6
+              i.fa.fa-phone.inlineblock.left.ih-icon.fc-04
+              span.inlineblock
+                small.text-muted.text-uppercase phone
+                br
+                |  {{agent.contactPhone | tel}}
+            .col-sm-6
+              i.fa.fa-envelope.inlineblock.left.ih-icon.fc-04
+              span.inlineblock
+                small.text-muted.text-uppercase email
+                br
+                |  {{agent.contactEmail}}
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.text-center
+        div
+          img.img-square.inlineblock(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+        .about-social.text-muted
+          a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+            i.fa.fa-envelope
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest

@@ -18,7 +18,7 @@ angular.module('ihframework')
 			scope.pF = $filter('currency');
 
 
-			scope.contentTemplate = $templateCache.get('build/templates/ic/listing-map/template/inhouse.gmap-popup.htm');
+			scope.contentTemplate = $templateCache.get('build/templates/ic/listing-map/template/inhouse.gmap-popup.html');
 
 			scope.$on('refreshMap', function(event, args) {
 				google.maps.event.trigger(scope.map, 'resize');

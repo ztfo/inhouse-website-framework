@@ -12,9 +12,9 @@ angular.module('ihframework')
 		controller: function ($scope) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/listing-details/template/' + $scope.config + '-inhouse.listing-details.htm';
+					$scope.templateUrl = 'build/templates/ic/listing-details/template/' + $scope.config + '-inhouse.listing-details.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/listing-details/template/s1-inhouse.listing-details.htm';
+					$scope.templateUrl = 'build/templates/ic/listing-details/template/s1-inhouse.listing-details.html';
 				}
 			});
 		},

@@ -1,0 +1,11 @@
+section.s3.ih-search
+  h2.ih-subheader.text-center.fw Quick Search
+  .ih-search-inner
+    form(ng-submit='searchMLS()')
+      fieldset
+        .container-fluid
+          .row
+            .ih-input-box.mini-search
+              input.ih-search-input.full(type='text', placeholder='Search by MLS # or Address', name='propertyMLS', ng-model='filters.mlsOrAddress')
+          .ih-search-btns.text-center
+            button.btn.btn-primary.text-uppercase(type='submit') Search

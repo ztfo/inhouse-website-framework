@@ -11,9 +11,9 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/about-listing/template/' + $scope.config + '-inhouse.about-listing.htm';
+					$scope.templateUrl = 'build/templates/ic/about-listing/template/' + $scope.config + '-inhouse.about-listing.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/about-listing/template/p1-inhouse.about-listing.htm';
+					$scope.templateUrl = 'build/templates/ic/about-listing/template/p1-inhouse.about-listing.html';
 				}
 			});
 			$scope.agent = $rootScope.theUserData;

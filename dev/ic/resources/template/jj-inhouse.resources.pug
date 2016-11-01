@@ -1,0 +1,47 @@
+section.jj.ih-resources.resources(class='{{classes}}')
+    .container
+        h1.ih-header.text-center New Homes
+        .row.subs
+          #wildcat.ih.sub-link.col-lg-6.col-md-6.col-sm-6.col-xs-12
+            a.bk-gd(href='#/subdivision/wildcat-pass')
+              h3.sub-title.fp
+                | Wildcat Pass
+              .ih-sm-divider
+              p.text-center.fs
+                | 2,420 to 3,229 sqft. from the low $500&apos;s
+              span.badge
+                | View New Homes
+          #merlita.ih.sub-link.col-lg-6.col-md-6.col-sm-6.col-xs-12
+            a.bk-gd(href='#/subdivision/rancho-merlita')
+              h3.sub-title.fp
+                | Rancho Merlita
+              .ih-sm-divider
+              p.text-center.fs
+                | 2,387 to 2,606 sqft. from the low $500&apos;s
+              span.badge
+                | View New Homes
+          #boulder.ih.sub-link.col-lg-6.col-md-6.col-sm-6.col-xs-12
+            a.bk-gd(href='#/subdivision/boulder-pass')
+              h3.sub-title.fp
+                | Boulder Pass
+              .ih-sm-divider
+              p.text-center.fs
+                | 2,165 to 3,127 sqft. starting at $399,000
+              span.badge
+                | View New Homes
+        .row.val
+          .val-form
+            h1.ih-header.text-center Find Your Home&apos;s Value
+            p.text-center
+              | Get three different value estimates for your home instantly.
+            .value-input
+              form(method='get', action='http://www.longrealty.com/pages/automated-home-value-estimates')
+                fieldset
+                  input#valueTool.ih-input(type='text', name='address', placeholder='i.e. 123 Your Street, City, State Zipcode')
+                  input.hidden(type='hidden', name='c', value='Long')
+                  input.hidden(type='hidden', name='src', value='cweb')
+                  input.hidden(type='hidden', name='s', value='1')
+                  input.hidden(type='hidden', name='h', value='0')
+                  input.hidden(type='hidden', name='agtnam', value='Janell%20Jellison')
+                  input.hidden(type='hidden', name='lem', value='janell@janelljellison.com')
+                  button#valueSubmit.ih-btn(type='submit', formtarget='_blank') GET ESTIMATE

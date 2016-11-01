@@ -1,0 +1,11 @@
+section.s7.ih-about(class='{{classes}}')
+  .about-frame
+    h1.ih-header.text-center About Me
+    .about-inner
+      .about-img.text-center
+        img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+      .about-bio
+        h3.text-center {{agent.agentName}}
+        .fs.bio-text(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+        .text-center.bio-more
+          a.btn.btn-primary(href="#/bio/{{agent.agentName | split: ' ':0 | lowercase}}") Read More

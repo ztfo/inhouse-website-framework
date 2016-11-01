@@ -1,0 +1,28 @@
+section.s1.ih-testimonials(class='{{classes}}', ng-show='testimonials.length > 0')
+  .container
+    h1.ih-header.text-center What Our Clients Say
+    .ih-md-divider
+    #mainTestimonials.ih-testimonials-inner.carousel.slide.carousel-fade(data-ride='carousel')
+      .carousel-inner(role='listbox')
+        .item.ih-testimonial(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
+          .container-fluid
+            .col-lg-2.col-md-2.col-sm-3.col-xs-12.text-center-sm.text-center-xs
+              span.ih-ui.testimonials-icon.ih-ui-testimonial-01
+                span.path1
+                span.path2
+                span.path3
+            .col-lg-10.col-md-10.col-sm-9.col-xs-12
+              blockquote.ih.fs
+                .ih-ratings(itemprop='rating')
+                  i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
+                p(itemprop='review') {{slide.testimonial}}
+                a.read-more(href='{{slide.reviewUrl}}', ng-show="slide.reviewURL != ''") Read More
+                footer {{slide.reviewer}} | {{slide.context}}
+          .ih.text-center(ng-hide='!showZillow')
+            span.ih-ui.ih-ui-zillow
+      a.left.carousel-control(role='button', data-slide='prev', ng-click="prev('mainTestimonials')")
+        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        span.sr-only Previous
+      a.right.carousel-control(role='button', data-slide='next', ng-click="next('mainTestimonials')")
+        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        span.sr-only Next

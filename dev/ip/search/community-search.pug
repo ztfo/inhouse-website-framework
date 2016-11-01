@@ -1,0 +1,9 @@
+section.container-fluid
+  .ih-md-divider
+  .row.community-grid
+    .comm.col-lg-4.col-md-6.col-sm-6.col-xs-12(ng-repeat='comm in featuredCommunities')
+      .comm-block.full.text-center
+        a.block.full(href='#/search-mls?community={{comm.value}}&active')
+          h4 {{comm.name}}
+          p.text-center
+            | View all {{comm.name}} Active Listings

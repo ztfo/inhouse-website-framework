@@ -1,0 +1,94 @@
+section.cr.ih-resources.resources(class='{{classes}}')
+    .container.text-center
+        h1.ih-header Marketing Strategies
+        div(class-='')
+        p.text-center
+          | We take our marketing to a higher level. From virtual reality website promos to beautiful full-color magazine advertisements, color brochures and much more. We make sure that your home is represented to its fullest potential. The marketing strategy may
+          | vary depending on the price of your home and length of time on the market.
+        .container-fluid
+          .row
+            #brochures.col-lg-4.col-md-4.col-sm-12.col-xs-12.cr-link
+              h4 BROCHURES
+              .cr-block
+                p
+                  | Your listing will come alive in a beautiful, full-color brochure, designed by award-winning designer Bettina Mills, owner of BKM Creative Services.
+                p#more1.collapse
+                  | The photos are taken by highly accredited photographer Ray Allbright. These brochures are an impressive sales piece, sure to catch buyers&apos; eyes. There are three styles of brochures that are used.
+              .row.text-center.cr-more-btn
+                a.btn.btn-primary(role='button', data-toggle='collapse', href='#more1', aria-expanded='false', aria-controls='more1', onclick='event.preventDefault()') More
+            #internet.col-lg-4.col-md-4.col-sm-12.col-xs-12.cr-link
+              h4 INTERNET
+              .cr-block
+                p
+                  | All homes listed will be on our website. Each listing will offer color photography, floor plans, listing information, school district, and a virtual reality tour.
+                p#more2.collapse
+                  | Our personal website always has one specially featured listing. We take our marketing to a higher level. From virtual reality website promos to beautiful, full-color magazine advertisements, color brochures and much more, we make
+                  | sure that your home is represented to its fullest potential.
+              .row.text-center.cr-more-btn
+                a.btn.btn-primary(role='button', data-toggle='collapse', href='#more2', aria-expanded='false', aria-controls='more2', onclick='event.preventDefault()') More
+            #newspaper.col-lg-4.col-md-4.col-sm-12.col-xs-12.cr-link
+              h4 NEWSPAPER ADS
+              .cr-block
+                p
+                  | Full-color newspaper ads are featured in such prominent publications as Arizona Daily Star, Tucson Citizen and The Desert Leaf.
+                p#more3.collapse
+                  | The Desert Leaf is mailed out to residents in the foothills, northeast and also to Saddlebrooke, Sun City and Oro Valley. In addition, it is also available in libraries and bookstores.
+              .row.text-center.cr-more-btn
+                a.btn.btn-primary(role='button', data-toggle='collapse', href='#more3', aria-expanded='false', aria-controls='more3', onclick='event.preventDefault()') More
+          .row
+            #mag-ads.col-lg-4.col-md-4.col-sm-12.col-xs-12.cr-link
+              h4 MAGAZINE ADS
+              .cr-block
+                p
+                  | Full-color magazine ads are featured in such prominent publications as Tucson Lifestyle, Tucson Guide, Homes &amp; Land and Home Buyers Guide of Southern Arizona.
+                p#more4.collapse
+                  | Long Realty Company&apos;s publication. Tucson Lifestyle publishes 34,000 copies every month. In addition to their 22,000 subscribers, they send copies to newsstands, hotels and resorts and corporate relocation agents at real estate
+                  | offices. Tucson Guide Quarterly prints 40,000 every quarter and also mails copies out to residents in the foothills, as well as places copies in local hotels and resorts.
+              .row.text-center.cr-more-btn
+                a.btn.btn-primary(role='button', data-toggle='collapse', href='#more4', aria-expanded='false', aria-controls='more4', onclick='event.preventDefault()') More
+            #mag-covers.col-lg-4.col-md-4.col-sm-12.col-xs-12.cr-link
+              h4 MAGAZINE COVERS
+              .cr-block
+                p
+                  | Homes may be chosen to be placed on the covers of Homes &amp; Land magazine or Home Buyers Guide of Southern Arizona and the Luxury &amp; Significant Properties Insert.
+                p#more5.collapse
+                  | What better and more effective way to promote your home than to be on the cover of Tucson&apos;s #1 real estate company&apos;s magazine, Home Buyers Guide of Southern Arizona!
+              .row.text-center.cr-more-btn
+                a.btn.btn-primary(role='button', data-toggle='collapse', href='#more5', aria-expanded='false', aria-controls='more5', onclick='event.preventDefault()') More
+            #mailers.col-lg-4.col-md-4.col-sm-12.col-xs-12.cr-link
+              h4 MAILERS
+              .cr-block
+                p
+                  | When we take a new listing, we always send out a just listed card to surrounding neighbors. When the property sells, we send out a just sold card.
+                p#more6.collapse
+              .row.text-center.cr-more-btn
+                a.btn.btn-primary(role='button', data-toggle='collapse', href='#more6', aria-expanded='false', aria-controls='more6', onclick='event.preventDefault()') More
+    section#scrollhook.lh.ih-resources.resources
+      .container
+        .row.val
+          .val-form
+            h1.ih-header.text-center Find Your Home&apos;s Value
+            .ih-md-divider
+            p.text-center
+              | Get three different value estimates for your home instantly. Please contact Russell long for a complete market analysis of your home.
+            .value-input
+              form(method='get', action='http://www.longrealty.com/pages/automated-home-value-estimates')
+                fieldset
+                  input#valueTool.ih-input(type='text', name='address', placeholder='i.e. 123 Your Street, City, State Zipcode')
+                  input.hidden(type='hidden', name='c', value='Long')
+                  input.hidden(type='hidden', name='src', value='cweb')
+                  input.hidden(type='hidden', name='s', value='1')
+                  input.hidden(type='hidden', name='h', value='0')
+                  input.hidden(type='hidden', name='agtnam', value='Russel%20Long')
+                  input.hidden(type='hidden', name='lem', value='longs@longsrealty.com')
+                  button#valueSubmit.ih-btn(type='submit', formtarget='_blank') GET ESTIMATE
+    section.long-app
+      .container
+        .ih.col-lg-6.col-md-6.col-sm-6.col-xs-12.app-block
+          a.block.full(href='http://longrealtyapp.com/russelllong', target='_blank', rel='noopener')
+            h1.fc-04 Long Realty App
+            p.fw
+              | Search active listings, pending sales and recently sold properties across the greater Tucson area.
+            span.fw.btn.btn-primary.pointer Download App
+        .ih.col-lg-6.col-md-6.col-sm-6.hidden-xs.app-block
+          img.img.img-responsive(src='ua/images/longfamily.jpg')

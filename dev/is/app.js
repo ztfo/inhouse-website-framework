@@ -17,42 +17,42 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 		controller: 'mainController'
 	})
 	.when('/search-mls', {
-		templateUrl: 'build/templates/ip/results/' + ( userDataServiceProvider.storyJson.resultsConfig || 's1') + '-results.htm',
+		templateUrl: 'build/templates/ip/results/' + ( userDataServiceProvider.storyJson.resultsConfig || 's1') + '-results.html',
 		controller: 'searchController',
 		reloadOnSearch: false
 	})
 	.when('/listing/:mls', {
-		templateUrl: 'build/templates/ip/listing/' + (userDataServiceProvider.storyJson.listingConfig || 's1') + '-listing.htm',
+		templateUrl: 'build/templates/ip/listing/' + (userDataServiceProvider.storyJson.listingConfig || 's1') + '-listing.html',
 		controller: 'listingController'
 	})
 	.when('/privacy', {
-		templateUrl: 'build/templates/ip/system/' + (userDataServiceProvider.storyJson.privacyConfig || 's1') + '-visitor-privacy.htm',
+		templateUrl: 'build/templates/ip/system/' + (userDataServiceProvider.storyJson.privacyConfig || 's1') + '-visitor-privacy.html',
 		controller: 'privacyController'
 	})
 	.when('/missing', {
-		templateUrl: 'build/templates/ip/system/404.htm'
+		templateUrl: 'build/templates/ip/system/404.html'
 	})
 	.when('/:content', {
-		templateUrl: 'build/templates/ip/content/' + (userDataServiceProvider.storyJson.contentConfig  || 's1') + '-content.htm',
+		templateUrl: 'build/templates/ip/content/' + (userDataServiceProvider.storyJson.contentConfig  || 's1') + '-content.html',
 		controller: 'contentController'
 	})
 	.when('/bio/:agent/', {
-		templateUrl: 'build/templates/ip/bios/' + (userDataServiceProvider.storyJson.bioConfig || 's1') + '-bios.htm',
+		templateUrl: 'build/templates/ip/bios/' + (userDataServiceProvider.storyJson.bioConfig || 's1') + '-bios.html',
 		controller: 'bioController'
 	})
 	.when('/subdivision/:sub', {
-		templateUrl: 'build/templates/ip/subdivisions/' + (userDataServiceProvider.storyJson.subdivConfig || 's1') + '-subdivision.inhouse.htm',
+		templateUrl: 'build/templates/ip/subdivisions/' + (userDataServiceProvider.storyJson.subdivConfig || 's1') + '-subdivision.inhouse.html',
 		controller: 'subdivisionController'
 	})
 	.when('/subdivision/:sub/floorplan/:floorplan', {
-		templateUrl: 'build/templates/ip/subdivisions/' + (userDataServiceProvider.storyJson.subdivConfig || 's1') + '-subfloorplan.inhouse.htm',
+		templateUrl: 'build/templates/ip/subdivisions/' + (userDataServiceProvider.storyJson.subdivConfig || 's1') + '-subfloorplan.inhouse.html',
 		controller: 'subfloorplanController'
 	})
 	.otherwise({
-		templateUrl: 'build/templates/ip/system/404.htm'
+		templateUrl: 'build/templates/ip/system/404.html'
 	});
 
-//	$locationProvider.html5Mode(true);
+//	$locationProvider.htmll5Mode(true);
 })
 .controller('mainView', ['$rootScope', 'inhouseApi', '$scope', function($rootScope, inhouseApi, $scope) {
 	$rootScope.$on("$routeChangeSuccess", function(e, data) {

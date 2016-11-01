@@ -10,7 +10,7 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope) {
 			$scope.config = $rootScope.theWebsiteData.footerConfig;
 			$scope.theUrl = function(){
-				return 'build/templates/ic/footer/template/' + $scope.config + '-inhouse.footer.htm';
+				return 'build/templates/ic/footer/template/' + $scope.config + '-inhouse.footer.html';
 			};
 
 			$scope.NavBar = $rootScope.theWebsiteData.NavBar;

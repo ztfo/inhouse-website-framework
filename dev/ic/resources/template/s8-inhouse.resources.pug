@@ -1,0 +1,13 @@
+section.s8.ih-resources(class='{{classes}}')
+  h1.ih-header.text-center Helpful Resources
+  .ih-md-divider
+  .container
+    .col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='(key, content) in resources | limitTo: 8')
+      a.rc-link(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl? '_blank' : '_self'}}", style="background-image: url('{{content.thumb}}')")
+      .rc-label
+        h4
+          a(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl? '_blank' : '_self'}}")
+            i.fa.fa-caret-right
+            |  {{content.title}}
+        p
+          | {{content.sub}}

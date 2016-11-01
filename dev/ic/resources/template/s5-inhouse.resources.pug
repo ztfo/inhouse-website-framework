@@ -1,0 +1,14 @@
+section.s5.ih-resources(class='{{classes}}')
+  .container
+    .row.text-center
+      h1.uppercase Resources
+    .divider.text-center
+    #s5Resources.owl-carousel
+      .img-list
+        a(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl? '_blank' : '_self'}}")
+          img.img-border(ng-src='', alt='{{content.title}}')
+          span.overlay2 {{content.title}}
+          span.text-content
+            span
+              | {{content.title}}
+              p {{content.sub}}

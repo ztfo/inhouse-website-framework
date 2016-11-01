@@ -1,0 +1,26 @@
+section.s6.ih-slider.container-fluid
+  .ih-greeting.container(ng-if='LandingComponent.showGreeting')
+    .ih-greeting-picture.text-center
+      img(ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')
+    h1.text-center.fs.fw.text-capitalize {{LandingComponent.welcomeText}}
+    .ih-md-divider
+    p.text-center.col-md-6.col-md-offset-3
+      | {{LandingComponent.greetingText}}
+    .ih-narrative.text-center.row
+      span.dborder
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12(ng-if='LandingComponent.showBuyAHome')
+        a.ih-nar-btn.btn.btn-primary.text-uppercase(href='{{LandingComponent.buyLink}}')
+          | {{LandingComponent.buyAHomeText}}
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12(ng-if='LandingComponent.showJustAdvice')
+        a.ih-nar-btn.btn.btn-primary.text-uppercase(href='{{LandingComponent.adviceLink}}')
+          | {{LandingComponent.adviceText}}
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12(ng-if='LandingComponent.showSellAHome')
+        a.ih-nar-btn.btn.btn-primary.text-uppercase(href='{{LandingComponent.sellLink}}')
+          | {{LandingComponent.sellAHomeText}}
+  .bottom-btn.fw
+    i.fa.fa-angle-down
+  .ih-slider-row.s6.row
+    .container
+      .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel')
+        div(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+          div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.image}}');")

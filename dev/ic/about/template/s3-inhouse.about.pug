@@ -1,0 +1,17 @@
+section.s3.ih-about
+  .container
+    h1.ih-header.text-center(itemprop='name') Who We Are
+    .about-emblem.text-center
+      img(ng-src='{{agent.emblem}}', alt='{{agent.brokerage}}')
+    .row.ih-about-inner
+      h1.tagline.fs.text-center.fc-01
+        em {{agent.agentTagline}}
+      p.columns.text-justify(itemprop='description')
+        | {{agent.bio1}}
+    .ih-md-divider
+    h2.ih-subheader.text-center.fs Agents
+    .row
+      figure.ih-headshot.col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='member in agent.team')
+        a.text-center(href="#/bio/{{ member.name | split: ' ':0 | lowercase}}", style="background-image: url('{{member.photo}}');")
+          span.ih-teammate-name.text-center.block.text-uppercase(itemprop='name')
+            | {{member.name | split: ' ':0}}

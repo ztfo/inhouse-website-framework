@@ -9,7 +9,7 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope, $filter, $document) {
 			$scope.config = $rootScope.theWebsiteData.navbarConfig;
 			$scope.theUrl = function(){
-				return 'build/templates/ic/navbar/template/' + $scope.config + '-inhouse.navbar.htm';
+				return 'build/templates/ic/navbar/template/' + $scope.config + '-inhouse.navbar.html';
 			};
 
 			$scope.$on('viewChanged', function(event, args) {

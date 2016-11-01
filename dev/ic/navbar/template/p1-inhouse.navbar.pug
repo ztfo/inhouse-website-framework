@@ -1,0 +1,51 @@
+nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', itemscope='', itemtype='http://schema.org/SiteNavigationElement', role='navigation')
+  .ih-cta
+    .container.nopad
+      .col-lg-5.col-md-5.col-sm-5.col-sm-12
+        small.text-uppercase.listing-brokerage.text-muted
+          | Listing Courtesy of {{agent.brokerage}}
+      .col-lg-7.col-md-7.col-sm-7.col-sm-12
+        ul.share-btns.pull-right.clearfix
+          li.text-uppercase.text-muted
+            small Share on:
+          li
+            a.ih-social-icon.facebook-hover(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank')
+              i.fa.fa-facebook
+          li
+            a.ih-social-icon.linkedin-hover(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank')
+              i.fa.fa-linkedin
+          li
+            a.ih-social-icon.twitter-hover(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank')
+              i.fa.fa-twitter
+          li
+            a.ih-social-icon.google-hover(href='https://plus.google.com/share?url={{shareUrl|encode}}', target='_blank')
+              i.fa.fa-google-plus
+  .container.nopad
+    .navbar-header
+      button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(itemprop='url', href='#/')
+        img.img-responsive(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+    #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
+      ul.nav.navbar-nav.navbar-left(role='menubar')
+        li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
+          a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
+            span(itemprop='name') {{link.display}}
+          a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+            | {{link.display}}
+            span.caret
+          ul.dropdown-menu(ng-if='link.children !== undefined')
+            li(ng-repeat='sublink in link.children')
+              a.text-uppercase(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
+                i.fa.fa-caret-right.fc-03
+                span(itemprop='name') {{sublink.display}}
+      ul.nav.navbar-nav.navbar-right.text-right(role='menubar')
+        li
+          h6.nomar
+            small.text-mited.text-uppercase Call us today:
+          h3.fc-02.nomar.nopad {{agent.contactPhone | tel}}
+        li
+          a.btn.btn-primary(href='#/') Schedule Visit

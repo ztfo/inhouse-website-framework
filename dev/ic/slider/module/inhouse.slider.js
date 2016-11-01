@@ -19,9 +19,9 @@ angular.module('ihframework')
             $scope.active = 0;
             $scope.$watch('config', function(newVal) {
                 if (newVal !== undefined) {
-                    $scope.templateUrl = 'build/templates/ic/slider/template/' + $scope.config + '-inhouse.slider.htm';
+                    $scope.templateUrl = 'build/templates/ic/slider/template/' + $scope.config + '-inhouse.slider.html';
                 } else {
-                    $scope.templateUrl = 'build/templates/ic/slider/template/s1-inhouse.slider.htm';
+                    $scope.templateUrl = 'build/templates/ic/slider/template/s1-inhouse.slider.html';
                 }
             });
 
