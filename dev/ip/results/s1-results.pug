@@ -1,9 +1,9 @@
 section.ih-results.s1
   .container
-    // results filter
+    //- results filter
     #mapResults.ihmap-results(ng-show='mapShown')
       ih-listing-map.full
-    // listing results
+    //- listing results
     .ih-results-inner
       .ih-listings-menu
         .container-fluid
@@ -73,13 +73,13 @@ section.ih-results.s1
                   ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
               .ih-filter-row.col-lg-12
                 .btn-group
-                  label.btn.btn-default.undefined(class="{{filters.active != && filters.active != 'false' ? 'active' : ''}}")
+                  label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")
                     input(type='checkbox', autocomplete='off', checked='', ng-model='filters.active')
                     |  Active
-                  label.btn.btn-default.undefined(class="{{filters.sold != && filters.sold != 'false' ? 'active' : ''}}")
+                  label.btn.btn-default(class="{{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}")
                     input(type='checkbox', autocomplete='off', ng-model='filters.sold')
                     |  Sold
-                  label.btn.btn-default.undefined(class="{{filters.pending != && filters.pending != 'false' ? 'active' : ''}}")
+                  label.btn.btn-default(class="{{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}")
                     input(type='checkbox', autocomplete='off', ng-model='filters.pending', ng-true-value='true', ng-false-value='false')
                     |  Pending
       .ih-listings.container-fluid
@@ -90,7 +90,7 @@ section.ih-results.s1
             |  Sorry, there are no listings that match your search criteria.
           .ih-listing-block.col-lg-3.col-md-4.col-sm-6.col-xs-12(class='ih-mls-status-{{home.status}}', ng-class="showListView ? 'ih-listview' : ''", ng-repeat='home in listings', ng-mouseover='focusListing($index)')
             .ih-listing-card
-              .ih-listing-card-img(style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
+              .ih-listing-card-img(style="background-image: url('{{home.thumb_url || 'https://-s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
                 a.ih-ft-listing-link.block.full(href='#/listing/{{home.mls}}')
                   | View Home
                 ih-like-button(mls='{{home.mls}}', address='{{address}}')
@@ -114,7 +114,7 @@ section.ih-results.s1
                       strong.lead.fs {{home.price | currency:"$":0}}
           .ih-listing-block.col-lg-3.col-md-4.col-sm-6.col-xs-12(ng-class="showListView ? 'ih-listview' : ''", ng-repeat='n in range(0,listingLoaders)')
             ih-listing-loader
-        // more listing scrollspy/button
+        //- more listing scrollspy/button
         .ih-more-listings
           .ih-listing-count.lead.text-center
             strong

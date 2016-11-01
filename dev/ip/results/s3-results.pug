@@ -57,13 +57,13 @@ section.s3.ih-results
                 ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
             .ih-filter-row.col-lg-12
               .btn-group
-                label.btn.btn-default.undefined(class="{{filters.active != && filters.active != 'false' ? 'active' : ''}}")
+                label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")
                   input(type='checkbox', autocomplete='off', checked='', ng-model='filters.active')
                   |  Active
-                label.btn.btn-default.undefined(class="{{filters.sold != && filters.sold != 'false' ? 'active' : ''}}")
+                label.btn.btn-default(class="{{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}")
                   input(type='checkbox', autocomplete='off', ng-model='filters.sold')
                   |  Sold
-                label.btn.btn-default.undefined(class="{{filters.pending != && filters.pending != 'false' ? 'active' : ''}}")
+                label.btn.btn-default(class="{{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}")
                   input(type='checkbox', autocomplete='off', ng-model='filters.pending', ng-true-value='true', ng-false-value='false')
                   |  Pending
       .row.listing-row
