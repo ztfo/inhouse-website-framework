@@ -1,0 +1,31 @@
+section.ih-content.ih-bio.s3(itemscope='', itemtype='http://schema.org/RealEstateAgent')
+  header
+    .container
+      h1.fs.inlineblock.fw(itemprop='name') {{bioAgent.name}}
+      .clear
+      h4.fp.inlineblock.fw {{bioAgent.title}}
+  .container
+    .row.mb-flex
+      .col-lg-7.col-md-7.col-sm-12.col-xs-12.about-pane.ih
+        h3.text-uppercase.fc-01
+          span.fc-03 ◆
+          |  About {{bioAgent.name | split: ' ':0}}
+        .ih-social.about-social.text-center.iha.tp.rt
+          a.ih-social-icon(href='mailto:{{bioAgent.contactEmail}}', ng-if='bioAgent.contactEmail !== undefined')
+            i.fa.fa-envelope
+          a.ih-social-icon(href='{{bioAgent.facebook}}', ng-if='bioAgent.facebook !== undefined')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{bioAgent.linkedin}}', ng-if='bioAgent.linkedin !== undefined')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{bioAgent.twitter}}', ng-if='bioAgent.twitter !== undefined')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{bioAgent.instagram}}', ng-if='bioAgent.instagram !== undefined')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{bioAgent.pinterest}}', ng-if='bioAgent.pinterest !== undefined')
+            i.fa.fa-pinterest
+        .agent-bio.fo(itemprop='about', ng-bind-html='bioAgent.bio | to_trusted')
+        a.btn.btn-default(href='mailto:{{bioAgent.contactEmail}}') Contact Me
+      .col-lg-5.col-md-5.col-sm-12.col-xs-12.image-pane.ih
+        .agent-image(style="background-image: url('{{bioAgent.headshot}}')")
+          span.sr-only {{bioAgent.name}} Picture
+  ih-divider(configname='logo')

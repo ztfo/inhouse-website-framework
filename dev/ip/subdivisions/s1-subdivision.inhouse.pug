@@ -1,0 +1,43 @@
+section.s1.ih-content.subdivision
+  header.ih-content-header.fw(style="background-image: url('{{subdivision.backdrop}}');")
+    .container
+      h1.inlineblock(itemprop='headline') {{subdivision.name}}
+  .container
+    .sub-desc(ng-bind-html='subdivision.description | to_trusted')
+      | {{subdivision.description}}
+    .row.sub-btns
+      // dynamic modals?
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.nh-link
+        a.block.full.btn-primary.btn.text-center(ng-click="showModal('platMap')") Plat Map
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.nh-link
+        a.block.full.btn-primary.btn.text-center(ng-click="showModal('standardFeatures')") Standard Features
+      // if available
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.nhdefault-link
+        a.block.full.btn-primary.btn.text-center(href='{{subdivision.brochure}}', target='_blank') Brochure
+    h3.text-center Available Homes
+    .ih-sm-divider
+    ih-featured-listings(slider='subdivision.key', pull='', nodefault='')
+    h3.text-center Available Floorplans
+    .ih-sm-divider
+    .floor-desc(ng-bind-html='subdivision.floorplanText | to_trusted')
+    .row.floorplans
+      // repeat per flooplan
+      .col-lg-4.col-md-6.col-sm-12.col-xs-12.floor-link(ng-repeat='floorplan in subdivision.floorplans')
+        a.block.full(href='#/subdivision/{{subdivision.key}}/floorplan/{{floorplan.name}}', style="background-image: url('{{floorplan.mainimage}}');")
+          .link-hover
+            h4 {{floorplan.name}}
+            .ih-sm-divider
+            |             {{floorplan.beds}} Beds | {{floorplan.baths}} Baths
+            br
+            |             Price from: {{floorplan.priceFrom | currency}}
+            br
+            span.link-btn
+              i.fa.fa-caret-right
+              |  View Plan & Elevation
+    .developer.well
+      .dev-logo.text-center
+        a.clean-link(href='{{subdivision.developer.website}}', target='_blank')
+          img.inlineblock(ng-src='{{subdivision.developer.logo}}', alt='{{subdivision.developer.name}}')
+        h3 {{subdivision.developer.name}}
+      div(ng-bind-html='subdivision.developer.description | to_trusted')
+ih-modal#subdivModal

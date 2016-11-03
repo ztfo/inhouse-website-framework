@@ -1,0 +1,39 @@
+nav.ih-nav.navbar.navbar-default(class='{{classes}} {{controller}}')
+  .ih-cta.fs
+    .container
+      .row.text-right
+        a.clean-link.text-uppercase.text-muted(href='tel:{{agent.contactPhone | tel}}')
+          | {{agent.contactPhone | tel}} |
+          span.ih-social-icon
+            i.fa.fa-phone
+  nav.ih-mainnav(itemscope='', itemtype='http://schema.org/SiteNavigationElement', role='navigation')
+    .container
+      .navbar-header
+        button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(itemprop='url', href='#/')
+          img(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+      #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
+        ul.nav.navbar-nav.navbar-right(role='menubar')
+          li
+            a.text-uppercase(role='menuitem', itemprop='url', href='#/', <span='') home
+          li
+            a.text-uppercase(ng-click="scrollToAgent('scrollhook')", role='menuitem', itemprop='url', <span='') agents
+          li
+            a.text-uppercase(ng-click="scrollToLender('scrollhook')", role='menuitem', itemprop='url', <span='') lenders
+          li
+            a.text-uppercase(role='menuitem', itemprop='url', href='https://www.getinhouse.io/login', <span='') log-in
+          li
+            a.text-uppercase(role='menuitem', itemprop='url', type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') sign-up
+            ul.dropdown-menu
+              li
+                a(href='https://www.getinhouse.io/login')
+                  | for agents
+                  i.fa.fa-caret-left.text-muted
+              li
+                a(href='#/signup')
+                  | for lenders
+                  i.fa.fa-caret-left.text-muted

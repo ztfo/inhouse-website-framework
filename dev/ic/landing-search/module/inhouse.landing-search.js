@@ -1,5 +1,5 @@
 angular.module('ihframework')
-    .directive('ihLandingSearch', ['$location', function($location) {
+    .directive('ihLandingSearch', ['$location', '$document', function($location, $document) {
         return {
             template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
             restrict: 'E',
@@ -14,13 +14,13 @@ angular.module('ihframework')
                     $scope.searchTab = tab;
                 };
                 if ($scope.configname !== undefined) {
-                    $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.configname + '-inhouse.landing-search.htm';
+                    $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.configname + '-inhouse.landing-search.html';
                 } else {
                     $scope.$watch('config', function(newVal) {
                         if (newVal !== undefined) {
-                            $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
+                            $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.html';
                         } else {
-                            $scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.htm';
+                            $scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.html';
                         }
                     });
                 }
@@ -104,6 +104,9 @@ angular.module('ihframework')
                     delete this.filters.min_acres;
 
                     $location.path('search-mls').search(this.filters);
+                };
+                $scope.scrollToValue = function(id) {
+                    $document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
                 };
             },
         };

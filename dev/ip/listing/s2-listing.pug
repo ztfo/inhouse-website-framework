@@ -1,0 +1,83 @@
+section.s2.ih-listing
+  .container-fluid
+    .col-lg-5.col-md-5.hidden-sm.hidden-xs.fullh.map-pane
+      ih-gmaps.full
+    .col-lg-7.col-md-7.col-sm-12.col-xs-12.fullh.listing-pane
+      .container-fluid
+        .ih-listing-slider
+          .row
+            #listingSlider.carousel.slide(data-ride='carousel')
+              .carousel-inner(role='listbox')
+                .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
+                  .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.UriLarge + ')'}", data-image='{{slide.UriLarge}}', data-caption='{{slide.Caption}}')
+                  .carousel-caption
+                    | {{slide.caption}}
+              a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
+                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                span.sr-only Previous
+              a.right.carousel-control(href='#listingSlider', role='button', data-slide='next', onclick='event.preventDefault()')
+                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                span.sr-only Next
+      .ih-listing-images
+        ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
+          .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')
+            img.img-responsive.ih-owl-thumbnail(ng-src='{{home.Uri640}}', alt='{{home.Caption}}')
+      .ih-listing-factbar.container-fluid
+        .ih-listing-addr.col-lg-6.col-md-6.col-sm-12.col-xs-12
+          ih-like-button.pull-left.bkc-02.fw(mls='{{listing.mls}}', address="{{listing['Building Address']}}")
+          .pull-left
+            h2.fp {{listing['Building Address']}}
+            h4.fs.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
+        .ih-listing-dets.col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
+          h2.fp {{listing.price | currency:"$":0}}
+          h4.fs
+            | {{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT
+      .ih-listing-details.container-fluid
+        .ih-listing-description.fs
+          .row
+            .ih.col-lg-6
+              p
+                strong.text-uppercase.fp About this listing:
+            .ih.col-lg-6.text-right
+              .share-btns
+                strong
+                  span.text-muted.text-uppercase Share on:
+                a.ih-social-icon(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank')
+                  i.fa.fa-facebook
+                a.ih-social-icon(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank')
+                  i.fa.fa-linkedin
+                a.ih-social-icon(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank')
+                  i.fa.fa-twitter
+                a.ih-social-icon(href='https://plus.google.com/share?url={{shareUrl}|encode}', target='_blank')
+                  i.fa.fa-google-plus
+          p.fs {{listing.PublicRemarks | sentence}}
+          p.small.text-uppercase.fs
+            | Listing Information Courtesy of:
+            strong {{listing.brokerage}}
+        .ih-sm-divider.ih-ext-divider
+        ih-listing-details(listing='listing')
+      .container-fluid.hidden-lg.hidden-md.mobile-map
+        ih-gmaps.full
+      .ih-listing-contact.container-fluid
+        .ih-listing-form.col-lg-8.col-md-12.col-sm-12.col-xs-12
+          h3 Questions about this listing?
+          ih-contact(configname='f1', message='Questions about this listing?', nobuttons='true', prefill='mls', prefillprefix="I'd like more information about MLS #")
+        .ih-listing-documents.col-lg-4.col-md-12.col-sm-12.col-xs-12
+          h3 Listing Documents
+          .ih-docs
+            ul.nav.nav-tabs.nav-justified(role='tablist')
+              li.active(role='presentation')
+                a(href='#mlsDocs', aria-controls='mlsDocs', role='tab', data-toggle='tab', onclick='event.preventDefault()') Listing Documents
+              li(role='presentation')
+                a(href='#canvasDocs', aria-controls='canvasDocs', role='tab', data-toggle='tab', onclick='event.preventDefault()') Agent Attachments
+            .tab-content
+              #mlsDocs.tab-pane.active(role='tabpanel')
+                div(ng-repeat='doc in listing.documents')
+                  a.ih-doc(href='{{doc.Uri}}', target='_blank')
+                    i.fa.fa-file-o
+                    |  {{doc.Name}}
+              #canvasDocs.tab-pane(role='tabpanel')
+                div(ng-repeat='doc in listing.canvasDocuments')
+                  a.ih-doc(href='{{doc.Uri}}', target='_blank')
+                    i.fa.fa-file-o
+                    |  {{doc.Name}}

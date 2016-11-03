@@ -1,0 +1,16 @@
+section.s5.ih-slider.container-fluid
+  .iha.ih-greeting.container(ng-if='LandingComponent.showGreeting')
+    .ih.container.ih-narrative.text-center.bf-gd-tp
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12(ng-if='LandingComponent.showBuyAHome')
+        a.ih-nar-btn.btn.btn-primary.fullw(href='{{LandingComponent.buyLink}}')
+          | {{LandingComponent.buyAHomeText}}
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12(ng-if='LandingComponent.showSellAHome')
+        a.ih-nar-btn.btn.btn-primary.fullw(href='{{LandingComponent.sellLink}}')
+          | {{LandingComponent.sellAHomeText}}
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12(ng-if='LandingComponent.showJustAdvice')
+        a.ih-nar-btn.btn.btn-primary.fullw(href='{{LandingComponent.adviceLink}}')
+          | {{LandingComponent.adviceText}}
+  .ih-slider-row.row
+    .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel')
+      div(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+        div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.image}}');")

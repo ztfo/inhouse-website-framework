@@ -5,18 +5,21 @@ angular.module('ihframework')
 		restrict: 'E',
 		replace: true,
 		scope: {
-			classes: "@class",
-			config: '='
+			classes: "@classes",
+			config: '=',
+			header: '@',
+			max: '@',
+      responsive: '='
 		},
 		controller: function($rootScope, $scope){
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/partners/template/' + $scope.config + '-inhouse.partners.htm';
+					$scope.templateUrl = 'build/templates/ic/partners/template/' + $scope.config + '-inhouse.partners.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/partners/template/s1-inhouse.partners.htm';
+					$scope.templateUrl = 'build/templates/ic/partners/template/s1-inhouse.partners.html';
 				}
 			});
-			
+
 			$scope.partners = $rootScope.theWebsiteData.partners;
 		},
 		link: function (scope, element, attrs) {

@@ -1,0 +1,29 @@
+section.p2.ih-testimonials.ih.z0.fp.fw(class='{{classes}}', ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+  .bkc-01
+    .container(ng-show='testimonials.length > 0')
+      h1.ih-header.text-center What our clients say
+      ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
+        .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
+          blockquote.testimonial(itemprop='review')
+            .ih-ratings(itemprop='rating')
+              i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
+              span.sr-only {{rating}}
+            p(itemprop='review fs') {{slide.testimonial}}
+            h5 - {{slide.reviewer}}
+      .ih.text-center(ng-hide='!showZillow')
+        span.ih-ui.ih-ui-zillow
+    .footer.bt70
+      .container
+        .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
+          span.ih-ui-fairhousing
+          span.ih-ui-realtor
+          small © {{year}} - {{agent.agentName}} | {{listing.MLS}}
+        .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
+          small.text-uppercase
+            | inspired by:
+            a(href='https://html5up.net/', target='_blank', rel='noopener') html5up
+          br
+          small
+            | Powered by
+            a(href='https://www.getinhouse.io') InHouse
+          span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem

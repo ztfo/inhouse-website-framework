@@ -7,24 +7,25 @@ angular.module('ihframework')
 			classes: "@classes",
 			pull: '@',
 			slider: '=',
-			config: '='
+			config: '=',
+			header: '@'
 		},
 		controller: function ($rootScope, $scope, userDataService, $element) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/featured-listings/template/' + $scope.config + '-inhouse.featured-listings.htm';
+					$scope.templateUrl = 'build/templates/ic/featured-listings/template/' + $scope.config + '-inhouse.featured-listings.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/featured-listings/template/s1-inhouse.featured-listings.htm';
+					$scope.templateUrl = 'build/templates/ic/featured-listings/template/s1-inhouse.featured-listings.html';
 				}
 			});
-			
+
 			$scope.maxFeaturedListings = $rootScope.theWebsiteData.maxFeaturedListings || 5;
 			$scope.LandingComponent = $rootScope.theWebsiteData.FeaturedListings;
 			$scope.agent = $rootScope.theUserData;
 			$scope.listingLoaders = 10;
-			
+
 			//default responsive for the owl
-			$scope.responsive = 
+			$scope.responsive =
         {
             0: {
                 items: 1
@@ -48,20 +49,20 @@ angular.module('ihframework')
 				}
 				return input;
 			};
-			
+
 			$scope.$on('storyLoaded', function (event, args) {
 				$scope.listingLoaders = 0;
 				$scope.query = args.featuredListings.query;
 				$scope.homes = args.featuredListings.listings;
 			});
-			
+
 			if(typeof $scope.pull !== 'undefined') {
 				inhouseApi.getData({resource: 'featured-listings', 'featured-listings': $scope.slider + '-featured'}).success(function(response) {
 					$scope.listingLoaders = 0;
 					$scope.homes = response.response.listings;
 				});
 			}
-			
+
 		}
 	};
 }]);

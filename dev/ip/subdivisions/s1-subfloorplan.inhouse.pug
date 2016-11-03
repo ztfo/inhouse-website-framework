@@ -1,0 +1,27 @@
+section.s1.ih-content.floorplan
+  header.ih-content-header.fw
+    .container
+      h1.inlineblock(itemprop='headline') {{floorplan.name}}
+  .container
+    h1.text-center Plan & Elevation
+    .container-fluid.floorplan-table
+      table.table.table-responsive
+        tbody
+          tr
+            th Price
+            th Sqft.
+            th Beds
+            th Baths
+            th Garage
+            th Stories
+          tr
+            td {{floorplan.priceFrom}}
+            td {{floorplan.sqft}}
+            td {{floorplan.beds}}
+            td {{floorplan.baths}}
+            td {{floorplan.garage}}
+            td {{floorplan.stories}}
+    .container-fluid
+      ih-slider(slider='floorplans', nodefault='')
+    .row
+      img.img-responsive(ng-src='{{floorplan.layout}}', alt='{{floorplan.name}}')

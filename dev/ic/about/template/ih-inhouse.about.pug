@@ -1,0 +1,233 @@
+section.visitor-toggle.container-fluid.text-center
+  h1.ih-header.text-center
+    | Why did we build InHouse?
+  .ih-sm-divider
+  p
+    | At InHouse we want to help you make strong and loyal relationships with your clients and business partners.
+  p
+    em Who are you?
+  .btn-group
+    a(ng-class="{'active' : !lenderOnly}", ng-click='lenderOnly = false') Agent
+    a(ng-class="{'active' : lenderOnly}", ng-click='lenderOnly = true') Lender
+  .down.text-center.text-muted.text-uppercase
+    small.block scroll down
+    i.fa.fa-angle-down
+section#scrollhook.page-content.container-fluid
+  .row.agent-only(ng-show='!lenderOnly')
+    .container
+      .row.agent-only
+        h1.ih-header.text-center How it works
+        .ih-sm-divider
+        .col-lg-4.col-md-4.col-sm-4.col-xs-12.card
+          .text-center
+            img(src='ua/images/connect-agent.svg', alt='Connect Icon')
+          h2.text-center.fc-03 Connect
+          .ih-md-divider
+          p
+            | Integrate your MLS. InHouse pulls listings data and photographs directly from your MLS so you never have to re-upload listing information again.
+        .col-lg-4.col-md-4.col-sm-4.col-xs-12.card
+          .text-center
+            img(src='ua/images/design-agent.svg', alt='Design Icon')
+          h2.text-center.fc-03 Design
+          .ih-md-divider
+          p
+            | Customize your brand style. Our beautiful designs ensure that your brand looks consistent and polished everywhere.
+        .col-lg-4.col-md-4.col-sm-4.col-xs-12.card
+          .text-center
+            img(src='ua/images/relax-agent.svg', alt='Relax Icon')
+          h2.text-center.fc-03 Relax
+          .ih-md-divider
+          p
+            | Sit back and let us do the work. InHouse will have all listing promo materials ready in your inbox automatically for every new and sold listing.
+        .btn-row.text-center
+          a.btn.btn-primary(href='#/signup') sign-up today
+      .row.agent-only
+        h1.ih-header.text-center What you get
+        .ih-sm-divider
+        .container-fluid.agent-how
+          .row
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12
+              img.img-responsive.hidden-lg.hidden-md.hidden-sm(src='ua/images/listing-sites.svg')
+              h2.fc-03 Listing Landing Pages
+              h5 Tell a home's story with a beautiful website.
+              p
+                | Instantly launch and host interactive, mobile-optimized listing websites that provide your clients with all the information they need about a home and surrounding area.
+              p
+                em
+                  small.hidden *Only available with Lender Partner
+              a.btn.btn-default.hidden(href='https://-listing.getinhouse.io', target='_blank', rel='noopener') view example
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+              img.img-responsive.hidden-xs(src='ua/images/listing-sites.svg')
+          .row
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+              img.img-responsive(src='ua/images/listing-socialmedia.svg')
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-right
+              h2.fc-03 Social Media Posts & Ads
+              h5 Reach beyond your friends and followers.
+              p
+                | Launch 2, 5, or 10 day ad campaigns for your new listings and open houses with beautiful branded ads and posts. Drive leads back to your listing pages or website.
+              p
+                em
+                  small.hidden *Only available with Lender Partner
+              a.btn.btn-default.hidden(href='ua/samples/inhouse-socialmedia.pdf', target='_blank', rel='noopener') view example
+          .row
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12
+              img.hidden-lg.hidden-md.hidden-sm.img-responsive(src='ua/images/listing-print.svg')
+              h2.fc-03 Listing Presentations & Flyers
+              h5 The easiest way to make stunning real estate flyers. Period.
+              p
+                | Create beautiful, branded listing and open house flyers and listing presentations in minutes. Print them right at your office or send them straight to your preferred print shop.
+              a.btn.btn-default.hidden(href='ua/samples/inhouse-print.pdf', target='_blank', rel='noopener') view example
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+              img.img-responsive.hidden-xs(src='ua/images/listing-print.svg')
+    section.pricing.bkc-03.fw
+      .container.text-center.agent-only
+        h1.ih-lg-header agents start free
+        a.btn.btn-default(href='#/signup') sign-up today
+  .row(ng-show='lenderOnly')
+    .container
+      //- show for lenders only
+      .row.lender-only
+        h1.ih-header.text-center How it works
+        .ih-sm-divider
+        .col-lg-4.col-md-4.col-sm-4.col-xs-12.card
+          .text-center
+            img(src='ua/images/connect-lender.svg', alt='Connect Icon')
+          h2.text-center.fc-03 Connect
+          .ih-md-divider
+          p
+            | Invite agents by email to create beautiful listing based marketing materials. Once they connect to MLS , we’ll take care of the rest.
+        .col-lg-4.col-md-4.col-sm-4.col-xs-12.card
+          .text-center
+            img(src='ua/images/engage-lender.svg', alt='Engage Icon')
+          h2.text-center.fc-03 Engage
+          .ih-md-divider
+          p
+            | Have everything your agent partners need to market their listings waiting in their inbox as soon as their listings hit MLS
+        .col-lg-4.col-md-4.col-sm-4.col-xs-12.card
+          .text-center
+            img(src='ua/images/grow-lender.svg', alt='Grow Icon')
+          h2.text-center.fc-03 Grow
+          .ih-md-divider
+          p
+            | Strengthen agent relationships and increase your presence and value offering to attract new partnerships.
+        .btn-row.text-center
+          a.btn.btn-primary(href='#/signup') sign-up today
+      //- show for lenders only
+      .row.lender-only
+        h1.ih-header.text-center What you get
+        .ih-sm-divider
+        .container-fluid.lender-how
+          .row
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12
+              img.img-responsive.hidden-lg.hidden-md.hidden-sm(src='ua/images/lender-agents.svg')
+              h2.fc-03
+                | Manage all your agent relationships
+                br
+                | from one easy-to-use dashboard
+              ul.bullets
+                li
+                  i.fa.fa-caret-right.text-muted
+                  |  Invite as many agents as you'd like, whenever, wherever
+                li
+                  i.fa.fa-caret-right.text-muted
+                  |  Keep track of leads generated per agent
+                li
+                  i.fa.fa-caret-right.text-muted
+                  |  Receive email notifications for your partners' new and sold listings
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+              img.img-responsive.hidden-xs(src='ua/images/lender-agents.svg')
+          .row
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+              img.img-responsive(src='ua/images/lender-listings.svg')
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-right
+              h2.fc-03
+                | View your partners' up-to-date
+                br
+                | current active and sold listings.
+              ul.bullets
+                li
+                  i.fa.fa-caret-right.hidden-lg.hidden-md.hidden-sm.text-muted
+                  |  All listing data pulled directly from MLS
+                  i.fa.fa-caret-left.hidden-xs
+                li
+                  i.fa.fa-caret-right.hidden-lg.hidden-md.hidden-sm.text-muted
+                  |  Leave listing specifc notes for your agent partners
+                  i.fa.fa-caret-left.hidden-xs
+                li
+                  i.fa.fa-caret-right.hidden-lg.hidden-md.hidden-sm.text-muted
+                  |  View individual materials used and analytics
+                  i.fa.fa-caret-left.hidden-xs
+          .row
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12
+              img.hidden-lg.hidden-md.hidden-sm.img-responsive(src='ua/images/lender-materials.svg')
+              h2.fc-03 Automatically send cobranded promotional materials to your partners.
+              ul.bullets
+                li
+                  i.fa.fa-caret-right.text-muted
+                  |  No creation time or manual upload necessary
+                li
+                  i.fa.fa-caret-right.text-muted
+                  |  Increase your online presence and generate leads
+                li
+                  i.fa.fa-caret-right.text-muted
+                  |  Launch a listing site, post to social media, or download PDFs with one click
+            .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
+              img.img-responsive.hidden-xs(src='ua/images/lender-materials.svg')
+    section.pricing.bkc-03.fw
+      .container.lender-only
+        h1.ih-header.text-center Pricing
+        .ih-sm-divider
+        .row.text-center
+          .btn-group
+            a(ng-class="{'active' : monthlyPrice}", ng-click='monthlyPrice = true') Monthly
+            a(ng-class="{'active' : !monthlyPrice}", ng-click='monthlyPrice = false') Annual
+        .row.price-row
+          .col-lg-6.col-md-6.col-sm-6.col-xs-12
+            .price-card
+              h2.text-center Individual
+              .ih-sm-divider
+              h1
+                span.annual(ng-show='monthlyPrice')
+                  sup $
+                  | 99
+                span.monthly(ng-show='!monthlyPrice')
+                  sup $
+                  | 79
+              strong.subtext.text-center.text-uppercase.block / month
+              ul.bullets
+                li
+                  i.fa.fa-caret-right
+                  |  Invite unlimited agent partners
+                li
+                  i.fa.fa-caret-right
+                  |  Create Unlimited Materials
+                li
+                  i.fa.fa-caret-right
+                  |  Automatic Material Creation
+              a.btn.btn-default(href='#/signup') sign-up today
+          .col-lg-6.col-md-6.col-sm-6.col-xs-12
+            .price-card
+              h2.text-center Office
+              .ih-sm-divider
+              h1
+                span.annual(ng-show='monthlyPrice')
+                  sup $
+                  | 499
+                span.monthly(ng-show='!monthlyPrice')
+                  sup $
+                  | 399
+              strong.subtext.text-center.text-uppercase.block / month
+              ul.bullets
+                li
+                  i.fa.fa-caret-right
+                  |  Up to 7 active MLOs
+                li
+                  i.fa.fa-caret-right
+                  |  Invite unlimited agent partners
+                li
+                  i.fa.fa-caret-right
+                  |  Create unlimited materials
+              a.btn.btn-default(href='#/signup') sign-up today
+        .row.text-center
+          h2.ih-lg-header sign-up for a free trial today!

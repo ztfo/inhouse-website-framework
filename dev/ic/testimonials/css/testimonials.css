@@ -244,6 +244,7 @@
 .p1.ih-testimonials .item {
     background-color: rgba(255, 255, 255, .2);
     padding: 15px;
+    min-height: 250px;
 }
 
 .p1.ih-testimonials .ih-ratings {
@@ -347,6 +348,10 @@
 .p2.ih-testimonials h5 {
     color: #ffe0a0;
     font-size: 1em;
+}
+
+.p2.ih-testimonials .bkc-01 {
+  background-color: rgba(48,48,48,.9) !important;
 }
 
 

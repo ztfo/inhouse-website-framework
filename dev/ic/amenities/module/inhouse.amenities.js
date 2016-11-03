@@ -12,12 +12,12 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal == undefined) {
-					$scope.templateUrl = 'build/templates/ic/amenities/template/p1-inhouse.amenities.htm';
+					$scope.templateUrl = 'build/templates/ic/amenities/template/p1-inhouse.amenities.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/amenities/template/' + $scope.config + '-inhouse.amenities.htm';
+					$scope.templateUrl = 'build/templates/ic/amenities/template/' + $scope.config + '-inhouse.amenities.html';
 				}
 			});
-			
+
 			$scope.agent = $rootScope.theUserData;
 		}
 	};

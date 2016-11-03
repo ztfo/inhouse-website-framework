@@ -1,0 +1,11 @@
+section.p2.ih-amenities.fp
+  .container
+    .row
+      h1.ih-header.text-center.fc-02.text-uppercase home amenities
+    .row.amenity-grid.clearfix
+      .amenity-container.pull-left.col-lg-15.col-md-15.col-sm-4.col-xs-12(ng-repeat='amenity in amenities')
+        .amenity-item
+          .icon-box.text-center.fc-03
+            span.ih-icon(class='{{amenity.icon}}')
+          .amenity-label.fs.text-uppercase.text-muted.text-center
+            small {{amenity.name}}

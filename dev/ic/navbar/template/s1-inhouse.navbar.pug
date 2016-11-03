@@ -1,0 +1,51 @@
+nav.s1.ih-nav.navbar.navbar-default(class='{{classes}} {{controller}}')
+    .ih-cta.fs
+        .container
+            .row
+                .col-lg-3.col-md-3.col-sm-3.col-xs-12.social-cta
+                    a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+                        i.fa.fa-facebook
+                    a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+                        i.fa.fa-linkedin
+                    a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+                        i.fa.fa-twitter
+                    a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+                        i.fa.fa-instagram
+                    a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+                        i.fa.fa-pinterest
+                    a.ih-social-icon(href='{{agent.youtube}}', ng-if='agent.youtube !== undefined', target='_blank')
+                        i.fa.fa-youtube
+                .col-lg-9.col-md-9.col-sm-9.col-xs-12.text-right.tel-cta
+                    span.cta-span(itemprop='telephone')
+                        a.clean-link(href='tel:{{agent.contactPhone | tel}}')
+                            | Call us today: {{agent.contactPhone | tel}}
+                            span.ih-social-icon
+                                i.fa.fa-phone
+                    a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
+                        i.fa.fa-envelope-o
+                    button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn') Sign-in
+                    a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
+                        | My Account
+    nav.ih-mainnav(itemscope='', itemtype='http://schema.org/SiteNavigationElement', role='navigation')
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(itemprop='url', href='#/')
+                    img(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+            #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
+                ul.nav.navbar-nav.navbar-right(role='menubar')
+                    li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
+                        a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
+                            span(itemprop='name') {{link.display}}
+                        a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                            | {{link.display}}
+                            span.caret
+                        ul.dropdown-menu(ng-if='link.children !== undefined')
+                            li(ng-repeat='sublink in link.children')
+                                a.text-uppercase(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
+                                    i.fa.fa-caret-right.fc-03
+                                    span(itemprop='name') {{sublink.display}}

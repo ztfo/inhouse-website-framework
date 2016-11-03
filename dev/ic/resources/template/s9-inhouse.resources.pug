@@ -1,0 +1,12 @@
+section.s9.ih-resources(class='{{classes}}')
+  h1.ih-header.text-center Helpful Resources
+  .ih-md-divider
+  .container
+    .col-lg-4.col-md-4.col-sm-6.col-xs-12(ng-repeat='(key, content) in resources | limitTo: 6')
+      .rc-block.full(style="background-image: url('{{content.thumb}}')")
+        a.ih.block.full(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl? '_blank' : '_self'}}")
+          .rc-caption
+            h4.fw.fs
+              i.fa.fa-angle-right
+              |  {{content.title}}
+            h6.fw.fs  {{content.sub}}

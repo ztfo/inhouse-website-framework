@@ -15,13 +15,13 @@ angular.module('ihframework')
         },
         controller: function($rootScope, $scope, userDataService, $element, $timeout) {
             //$scope.config = userDataService.sliderConfig;
-
+            $scope.myInterval = 2000;
             $scope.active = 0;
             $scope.$watch('config', function(newVal) {
                 if (newVal !== undefined) {
-                    $scope.templateUrl = 'build/templates/ic/slider/template/' + $scope.config + '-inhouse.slider.htm';
+                    $scope.templateUrl = 'build/templates/ic/slider/template/' + $scope.config + '-inhouse.slider.html';
                 } else {
-                    $scope.templateUrl = 'build/templates/ic/slider/template/s1-inhouse.slider.htm';
+                    $scope.templateUrl = 'build/templates/ic/slider/template/s1-inhouse.slider.html';
                 }
             });
 

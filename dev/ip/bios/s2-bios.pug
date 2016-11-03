@@ -1,0 +1,41 @@
+section.ih-content.ih-bio.s2
+  .container
+    .ih.ih-about-header
+      h2(itemprop='name') {{bioAgent.name}}
+      h6 {{bioAgent.title}}
+      .ih-social.about-social.text-center
+        a.ih-social-icon(href='mailto:{{bioAgent.contactEmail}}', ng-if='bioAgent.contactEmail !== undefined')
+          i.fa.fa-envelope
+        a.ih-social-icon(href='{{bioAgent.facebook}}', ng-if='bioAgent.facebook !== undefined')
+          i.fa.fa-facebook
+        a.ih-social-icon(href='{{bioAgent.linkedin}}', ng-if='bioAgent.linkedin !== undefined')
+          i.fa.fa-linkedin
+        a.ih-social-icon(href='{{bioAgent.twitter}}', ng-if='bioAgent.twitter !== undefined')
+          i.fa.fa-twitter
+        a.ih-social-icon(href='{{bioAgent.instagram}}', ng-if='bioAgent.instagram !== undefined')
+          i.fa.fa-instagram
+        a.ih-social-icon(href='{{bioAgent.pinterest}}', ng-if='bioAgent.pinterest !== undefined')
+          i.fa.fa-pinterest
+    .bio-wide-img(style="background-image: url('{{bioAgent.headshot}}')")
+    .row
+      .col-lg-7.col-md-7.col-sm-6.col-xs-12
+        div(itemprop='about', ng-bind-html='bioAgent.bio | to_trusted')
+      .col-lg-5.col-md-5.col-sm-6.col-xs-12.bio-contact
+        h2
+          i.fa.fa-phone
+          |  {{bioAgent.contactPhone | tel}}
+        h3
+          i.fa.fa-envelope
+          a(href='mailto:{{bioAgent.contactEmail}}') {{bioAgent.contactEmail}}
+        h3
+          address
+            | {{agent.teamName}}
+            br
+            |           {{agent.contactAddress}}
+            br
+            |           {{agent.contactAddress2}}
+    .ih-accent-divider.clear
+    .ih-about-listings.hidden
+      // this will house a sold/active/featured listing slider for bioAgent
+      h1.ih-header.text-center  Listings
+      .ih-md-divider

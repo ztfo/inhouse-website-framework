@@ -53,6 +53,18 @@
     font-weight: 300;
 }
 
+/* s3 */
+
+.s3.ih-content header {
+  position: relative;
+  min-height: 500px;
+  background-color: #eee;
+  margin-bottom: 30px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
 
 /* responsive */
 

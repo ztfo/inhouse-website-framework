@@ -1,0 +1,19 @@
+section.lh.ih-resources.resources(class='{{classes}}')
+    .container
+        .row.val
+          .val-form
+            h1.ih-header.text-center Find Your Home&apos;s Value
+            .ih-md-divider
+            p.text-center
+              | Get three different value estimates for your home instantly.
+            .value-input
+              form(method='get', action='http://www.longrealty.com/pages/automated-home-value-estimates')
+                fieldset
+                  input#valueTool.ih-input(type='text', name='address', placeholder='i.e. 123 Your Street, City, State Zipcode')
+                  input.hidden(type='hidden', name='c', value='Long')
+                  input.hidden(type='hidden', name='src', value='cweb')
+                  input.hidden(type='hidden', name='s', value='1')
+                  input.hidden(type='hidden', name='h', value='0')
+                  input.hidden(type='hidden', name='agtnam', value='{{agent.agentName}}')
+                  input.hidden(type='hidden', name='lem', value='{{agent.agentEmail}}')
+                  button#valueSubmit.ih-btn(type='submit', formtarget='_blank') GET ESTIMATE

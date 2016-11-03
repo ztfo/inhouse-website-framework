@@ -1,0 +1,17 @@
+section.s4.ih-resources(class='{{classes}}')
+  .container-small
+    .row.text-center
+      h1 Resources
+    .divider.text-center
+    #s4Resources.owl-carousel
+      .item(ng-repeat='(key, content) in resources | limitTo: 2')
+        div
+          a(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl? '_blank': '_self'}}")
+            img.img-border(src='http://placehold.it/200x200/42bdc2/FFFFFF&text=1st Row A', alt='')
+          div
+            h2
+              i.fa.fa-square.small-font(aria-hidden='true')
+              a(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl?'_blank':'_self'}}")
+                | {{content.title}}
+            .divider-sm
+            p {{content.sub}}
