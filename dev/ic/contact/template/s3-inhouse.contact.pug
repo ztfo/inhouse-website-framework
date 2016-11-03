@@ -1,0 +1,24 @@
+section.s3.ih-contact(class='{{classes}}')
+  .container
+    .row
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        h1.text-center How can we help?
+        .divider
+        ih-contact(configname='f1')
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        .text-center.space-top.vertical
+          img.img-square.img-responsive.center-block(src='http://placehold.it/200x200/42bdc2/FFFFFF&text=2nd Row D', alt='headshot')
+          h3 {{agent.agentName}}
+          h3 {{agent.contactPhone}}
+          h3 {{agent.contactEmail}}
+          .social
+            a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+              i.fa.fa-facebook
+            a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+              i.fa.fa-linkedin
+            a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+              i.fa.fa-twitter
+            a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+              i.fa.fa-instagram
+            a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+              i.fa.fa-pinterest

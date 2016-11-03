@@ -1,0 +1,28 @@
+section.ih-testimonials(class='{{classes}}', ng-show='testimonials.length > 0')
+  .container
+    .row
+      h1.ih-header.text-center What our clients say
+      .ih-md-divider.bk-gd
+    .row
+      ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
+        .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
+          .testimonial(itemprop='review')
+            .ih-sm-header
+            .ih-ratings(itemprop='rating')
+              i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
+              span.sr-only {{rating}}
+            p(itemprop='review') {{slide.testimonial}}
+          .tst-footer
+            .tst-headshot
+              img.img-circle(src='{{slide.reviewHeadshot}}', alt='testimonial picture {{slide.reviewHeadshot}}')
+            .tst-author
+              | {{slide.reviewer}}
+              br
+              small
+                | {{slide.reviewCompany}}
+                br
+              strong
+                small.text-uppercase
+                  a(href='http://{{slide.context}}', target='_blank', rel='noopener') {{slide.context}}
+      .ih.text-center(ng-hide='!showZillow')
+        span.ih-ui.ih-ui-zillow

@@ -1,0 +1,38 @@
+.contact-page
+  .row
+    .col-lg-6.col-md-6.col-sm-12.col-xs-12.contact-info-pane.fs
+      .contact-card
+        h3 Contact Information
+        .ih-md-divider.bk-gd
+        p
+          | {{agent.contactMessage}}
+        address
+          strong {{agent.agentName}}
+          br
+          strong {{agent.brokerage}}
+          br
+          |           {{agent.contactAddress}}
+          br
+          |           {{agent.contactAddress2}}
+          br
+        address
+          span.space-icon
+            i.fa.fa-envelope
+          |  {{agent.contactEmail}}
+          br
+          span.space-icon
+            i.fa.fa-phone
+          |  {{agent.contactPhone | tel}}
+        .contact-hours.hidden
+          div
+            span.space-icon
+              i.fa.fa-clock-o
+            |  Monday - Friday | 9AM to 5PM
+          div
+            span.space-icon
+              i.fa.fa-clock-o
+            |  Saturday - Sunday | Closed
+    .col-lg-6.col-md-6.col-sm-12.col-xs-12.contact-form-pane
+      ih-contact(configname='f1', message='How can We help?')
+  .row
+    ih-gmaps.contact-map-pane

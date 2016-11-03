@@ -12,14 +12,14 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal == undefined) {
-					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.htm';
+					$scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.htm';
+					$scope.templateUrl = 'build/templates/ic/nearby/template/' + $scope.config + '-inhouse.nearby.html';
 				}
 			});
-			
+
 			$scope.nearbyData = {};
-			
+
 			if($scope.sources == undefined) {
 				$scope.sources = [
 					{
@@ -45,13 +45,13 @@ angular.module('ihframework')
 					},
 				];
 			}
-			
+
 			if($scope.sources.length > 0) {
 				$scope.defaultTab = $scope.sources[0];
 			}
-			
-			
-			
+
+
+
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
 					if($scope.listing.latlong != undefined) {
@@ -65,7 +65,7 @@ angular.module('ihframework')
 					}
 				}
 			});
-			
+
 			$scope.fetchNearbyData = function(nearby) {
 				ngGPlacesAPI.nearbySearch({
 					latitude: $scope.listing.latlong[0],
@@ -83,7 +83,7 @@ angular.module('ihframework')
 								hours: data[i].opening_hours
 							});
 						}
-						
+
 						for (var i = 0; i < $scope.sources.length; i++) {
 							if($scope.sources[i].source == nearby.source) {
 								$scope.sources[i].data = returnData;
@@ -97,13 +97,13 @@ angular.module('ihframework')
 					};
 				})(nearby));
 			};
-			
+
 			$scope.loadNearby = function() {
 				$scope.sources.forEach(function(source) {
 					$scope.fetchNearbyData(source);
 				});
 			};
-			
+
 			$scope.selectTab = function(index) {
 				$scope.showTab = $scope.sources[index].source;
 				if($scope.sources[index].data !== undefined) {
@@ -112,7 +112,7 @@ angular.module('ihframework')
 					});
 				}
 			};
-			
+
 			$scope.agent = $rootScope.theUserData;
 		}
 	};

@@ -2,7 +2,7 @@ angular.module('ihframework')
 .directive('ihLikeButton', ['inhouseApi', function(inhouseApi) {
 	return {
 		replace: true,
-		templateUrl : 'build/templates/ic/like-button/template/s1-inhouse.like-button.htm',
+		templateUrl : 'build/templates/ic/like-button/template/s1-inhouse.like-button.html',
 		restrict: 'E',
 		scope: {
 			mls: '@mls',

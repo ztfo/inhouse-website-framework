@@ -9,14 +9,14 @@ angular.module('ihframework')
 			config: '=',
 			header: '@',
 			max: '@',
-      responsive: '='			
+      responsive: '='
 		},
 		controller: function($rootScope, $scope){
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/partners/template/' + $scope.config + '-inhouse.partners.htm';
+					$scope.templateUrl = 'build/templates/ic/partners/template/' + $scope.config + '-inhouse.partners.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/partners/template/s1-inhouse.partners.htm';
+					$scope.templateUrl = 'build/templates/ic/partners/template/s1-inhouse.partners.html';
 				}
 			});
 

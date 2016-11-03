@@ -1,0 +1,16 @@
+section.s6.ih-resources(class='{{classes}}')
+  .container-small
+    .row.text-center
+      h1 Resources
+    .divider.text-center
+    #s6Resources.owl-carousel
+      // repeat
+      .img-list(ng-repeat='(key, content) in resources | limitTo: 2')
+        div
+          a(ng-href='{{content.externalUrl ? content.externalUrl : "#/" + (content.key || key)}}', target="{{content.externalUrl?'_blank':'_self'}}")
+            img.img-border(ng-src='', alt='{{content.title}}')
+            span.overlay {{content.title}}
+            span.text-content
+              span
+                | {{content.title}}
+                p {{content.sub}}

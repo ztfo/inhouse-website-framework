@@ -1,0 +1,41 @@
+// there should be a way to link the email and this form to make sure it is an approved testimonial to begin, we should also first allow the agent to approve before posting
+section.ih-testimonial-form
+  .container
+    p.lead
+      | {{agent.testimonialText}}
+    form(ng-submit='Review.$valid && submitReview()', name='Testimonial')
+      .text-center.alert.alert-success.fade.in(ng-show='reviewSent')
+        h3
+          strong Thank You!
+        hr
+        |           Your Feedback is truly appreciate it! Your testimonial will appear on {{agent.agentName | split ' ':0}}'s website as soon as he approves it.
+      .text-center.alert.alert-info.fade.in(ng-show='reviewSending')
+        h3
+          strong Please wait..
+        hr
+        |  We're submitting your testimonial...
+      .text-center.alert.alert-danger.fade.in(ng-show='reviewSendFailed')
+        h3
+          strong We're sorry...
+        hr
+        |  There was an issue submitting your testimonial. Please try again.
+      .row
+        .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
+          label(for='messageName') Full Name
+          input#messageName.ih-form-input.form-control(type='name', ng-model='review.name', required='')
+        .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
+          label(for='phoneNumber') Date of Transaction
+          input#reviewDate.ih-form-input.form-control(type='phone', ng-model='review.date')
+      .row
+        .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
+          label(for='transaction') How did {{agent.agentName | split: ' ':0}} help you?
+          ih-dropdown#transaction(items='[{"name": "Sold a Home", "value": "Sell a Home"}, {"name": "Buy a Home", "value": "Buy a Home"}, {"name": "Just Advice", "value": "Just Advice"}]', name='Help helped me...', ng-model='filters.type')
+        .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
+          label(for='transaction') What star rating would you give to {{agent.agentName | split: ' ':0}}?
+          ih-dropdown#transaction(items='[{"name": "1 star", "value": "1 star"}, {"name": "2 stars", "value": "2 stars"}, {"name": "3 stars", "value": "3 stars"}, {"name": "4 stars", "value": "4 stars"}, {"name": "5 stars", "value": "5 stars"}]', name='Help helped me...', ng-model='filters.type')
+        input.hidden(type='text', ng-model='contact.confirmEmail', name='confirmEmail')
+      .form-group
+        label(for='textMessage') Your Testimonial
+        textarea#textMessage.ih-form-input.ih-textarea.form-control(type='text', required='', ng-model='contact.message')
+      .text-center
+        button.btn.btn-primary(type='submit') Submit

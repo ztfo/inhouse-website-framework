@@ -29,29 +29,29 @@ angular.module('ihframework')
 			});
 		},
 		controller: ['$rootScope', '$scope', 'inhouseApi', 'userDataService', function($rootScope, $scope, inhouseApi, userDataService) {
-			
+
 			//don't load dynamic if the static is set
 			if($scope.configname == undefined) {
 				$scope.$watch('config', function(newVal) {
 					if(newVal !== undefined) {
-						$scope.templateUrl = 'build/templates/ic/contact/template/' + $scope.config + '-inhouse.contact.htm';
+						$scope.templateUrl = 'build/templates/ic/contact/template/' + $scope.config + '-inhouse.contact.html';
 					} else {
-						$scope.templateUrl = 'build/templates/ic/contact/template/s1-inhouse.contact.htm';
+						$scope.templateUrl = 'build/templates/ic/contact/template/s1-inhouse.contact.html';
 					}
 				});
 			} else {
-				$scope.templateUrl = 'build/templates/ic/contact/template/' + $scope.configname + '-inhouse.contact.htm';
+				$scope.templateUrl = 'build/templates/ic/contact/template/' + $scope.configname + '-inhouse.contact.html';
 			}
-			
+
 			$timeout(function() {
 				$scope.$broadcast('listingLoaded', {address: $rootScope.theUserData.contactAddress, zipcode: $rootScope.theUserData.contactAddress2});
 			});
-			
+
 			$scope.navbar = $rootScope.theWebsiteData.NavBar;
 			$scope.agent = $rootScope.theUserData;
 			$scope.inhouseApi = inhouseApi;
 			$scope.scope = $scope;
-			
+
 			if(typeof $scope.contact == 'undefined') {
 				$scope.contact = {};
 			}

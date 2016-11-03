@@ -1,0 +1,28 @@
+section.s1.ih-featured-slider
+  .container
+    h1.ih-header.text-center Featured Homes
+    .ih-md-divider
+    ih-owl.ih-ft-carousel.owl-carousel(items='homes', responsive='responsive', length='listingLoaders')
+      ih-listing-loader.item(ng-repeat='n in range(0,listingLoaders) | limitTo:12')
+      .item(ng-repeat='home in homes | limitTo:15')
+        .ih-ft-listing(itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+          .ih-ft-listing-img
+            img.fit-image(ng-src="{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}", alt='{{home.caption}}', ng='', itemprop='photo')
+            a.ih-ft-listing-link.block.full(itemprop='url', href='#/listing/{{home.mls}}')
+              | View Home
+            ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+          .ih-ft-listing-desc.container-fluid
+            .ih-ft-listing-addr.text-center
+              h4 {{home.address}}
+              h6.text-uppercase.text-muted
+                strong {{home.city}} {{home.state}}, {{home.zip}}
+            hr
+            .ih-ft-listing-details.row
+              .col-lg-6
+                small(ng-show='home.beds > 0') {{home.beds}} BEDS | {{home.baths}} BATHS
+                br
+                small(ng-show='home.beds > 0') {{home.sqft}} SQFT
+                small(ng-show='home.beds < 0') {{home.acres}}
+              .col-lg-6.text-right
+                small
+                  strong.lead.fs {{home.price | currency:"$":0}}

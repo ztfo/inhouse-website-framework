@@ -1,0 +1,8 @@
+section.s1.ih-partners(class='{{classes}}')
+    .container
+        h1.ih-header.text-center our clients
+        .ih-md-divider.bk-gd
+        ih-owl.owl-carousel.partner-carousel(items='partners', responsive='responsive')
+          .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='partner in partners')
+            a.partner-link(href='#/{{partner.link}}')
+              img(ng-src='{{partner.image}}')

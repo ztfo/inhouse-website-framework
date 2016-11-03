@@ -88,15 +88,10 @@
 
 
 /* s4 */
-
+.s4.ih-search .ih-main-search,
 .s4.ih-search .ih-search-inner {
     padding: 0;
 }
-
-.s4.ih-search .ih-main-search {
-    padding: 0;
-}
-
 .s4.ih-search {
     padding: 20px 0;
 }
@@ -157,7 +152,15 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* s7 */
 
+.s7.ih-search {
+    padding: 20px 0;
+}
+.s7.ih-search .ih-search-inner,
+.s7.ih-search .ih-main-search {
+    padding: 0;
+}
 
 
 /*** responsive ***/

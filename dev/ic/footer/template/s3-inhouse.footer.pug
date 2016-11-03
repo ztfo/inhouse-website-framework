@@ -1,0 +1,44 @@
+footer.s3.footer(class='{{classes}} {{controller}}', ng-hide='showFooter != undefined && showFooter == false')
+  .container-fluid.top-footer
+    .row
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12
+        h4.fp About {{agent.teamName}}
+        p.text-justify.footer-bio.fo(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+        address
+          strong {{agent.brokerage}}
+          br
+          |           {{agent.contactAddress}}
+          br
+          |           {{agent.contactAddress2}}
+          br
+        address
+          | {{agent.contactPhone | tel}}
+          br
+          |           {{agent.contactEmail}}
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.text-center.brokerage-brand
+        img(ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12
+        h4 Connect
+        .social-links
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+    .row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12.text-left
+        span.ih-ui.ih-ui-fairhousing
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12.text-center.text-uppercase
+        a.sitemap.fo.text-uppercase(href='{{sitemap}}')
+          small sitemap
+        .copyright.fs © 2016 All Rights Reserved - InHouse | {{agent.teamName}}
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12.text-right
+        span.ih-ui.ih-ui-realtor
+  .ih-footer
+    a(itemprop='significantLink', href='https://www.getinhouse.io', target='_blank', title='Powered By InHouse')
+      span.ih-ui-inhouse-emblem

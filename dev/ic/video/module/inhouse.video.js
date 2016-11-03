@@ -10,9 +10,9 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope, userDataService){
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-					$scope.templateUrl = 'build/templates/ic/video/template/' + $scope.config + '-inhouse.video.htm';
+					$scope.templateUrl = 'build/templates/ic/video/template/' + $scope.config + '-inhouse.video.html';
 				} else {
-					$scope.templateUrl = 'build/templates/ic/video/template/s1-inhouse.video.htm';
+					$scope.templateUrl = 'build/templates/ic/video/template/s1-inhouse.video.html';
 				}
 			});
 		},

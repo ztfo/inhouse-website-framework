@@ -10,9 +10,9 @@ angular.module('ihframework')
 		controller: function($rootScope, $scope) {
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
-				 	$scope.templateUrl = 'build/templates/ic/divider/template/' + $scope.config + '-inhouse.divider.htm';
+				 	$scope.templateUrl = 'build/templates/ic/divider/template/' + $scope.config + '-inhouse.divider.html';
 				} else {
-				 	$scope.templateUrl = 'build/templates/ic/divider/template/s1-inhouse.divider.htm';
+				 	$scope.templateUrl = 'build/templates/ic/divider/template/s1-inhouse.divider.html';
 				}
 			});
 			$scope.agent = $rootScope.theUserData;

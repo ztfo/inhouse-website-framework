@@ -1,0 +1,16 @@
+section.s5.ih-about(class='{{classes}}')
+  .container
+    .row
+      h1.ih-header.text-center Our Team
+      .ih-md-divider.bk-gd
+      p.col-md-6.col-md-offset-3.text-center(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+    .row.agent-row
+      figure.col-lg-3.col-md-3.col-sm-6.col-xs-12.agent-card(ng-repeat='member in agent.team')
+        a.ih.block.full(href="#/bio/{{ member.name | split: ' ':0 | lowercase}}", style="background-image: url('{{member.photo}}');")
+          .agent-hover.block(itemprop='name')
+            strong.text-uppercase {{member.name}}
+            .clear
+            small
+              em {{member.title}}
+            span.agent-icon.iha
+              i.fa.fa-caret-right

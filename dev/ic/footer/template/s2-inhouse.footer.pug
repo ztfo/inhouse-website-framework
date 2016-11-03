@@ -1,0 +1,48 @@
+footer.s2.footer(class='{{classes}} {{controller}}', ng-hide='showFooter != undefined && showFooter == false')
+  .container.top-footer
+    .footer-col.row
+      .col-lg-3.col-md-3.col-sm-6.col-xs-12
+        h6 About {{agent.teamName}}
+        p.text-justify.footer-bio(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+        address
+          strong {{agent.brokerage}}
+          br
+          |           {{agent.contactAddress}}
+          br
+          |           {{agent.contactAddress2}}
+          br
+        address
+          | {{agent.contactPhone | tel}}
+          br
+          |           {{agent.contactEmail}}
+      .col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='column in footerColumns | limitTo:maxNavColumns')
+        h6 {{column.display}}
+        ul.footer-list
+          li(ng-repeat='item in column.children')
+            a(itemprop='url', href='{{item.href}}', ng-if='item.children === undefined', ng-attr-target="{{item.type == 'external' || ''}}", target='_blank')
+              span(itemprop='name') {{item.display}}
+      .col-lg-3.col-md-3.col-sm-6.col-xs-12
+        h6 Connect with Us
+        .social-links
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+    .row.legal-row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12.text-left
+        span.ih-ui.ih-ui-fairhousing
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12.text-center.text-uppercase
+        a.sitemap.fo.text-uppercase(href='{{sitemap}}')
+          small sitemap
+        h6.copyright.fs © 2016 All Rights Reserved - InHouse | {{agent.teamName}}
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12.text-right
+        span.ih-ui.ih-ui-realtor
+  .ih-footer
+    a(itemprop='significantLink', href='https://www.getinhouse.io', target='_blank', title='Powered By InHouse')
+      span.ih-ui-inhouse-emblem

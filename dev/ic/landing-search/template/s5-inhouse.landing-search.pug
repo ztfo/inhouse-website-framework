@@ -1,0 +1,79 @@
+section.s5.ih-search
+  .container
+    .ih-search-inner
+      h1.ih-header.text-center
+        | Find Your
+        strong Home
+      h3.ih-subheader.text-center.fs Search all {{LandingSearch.totalListings}} listings in the {{agent.city}} area.
+      .ih-md-divider
+      form(ng-submit='searchMLS()')
+        fieldset
+          .container-fluid
+            .ih-main-search.row
+              .ih-input-box.col-lg-15.col-md-15.col-sm-4.col-xs-12
+                ih-dropdown#type(items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type', multi='true')
+              .ih-input-box.col-lg-15.col-md-15.col-sm-4.col-xs-12
+                ih-dropdown#community(items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]', name='Community', ng-model='filters.community', truncate='4')
+              .ih-input-box.col-lg-15.col-md-15.col-sm-4.col-xs-12
+                ih-dropdown#area(items='[{"name": "Central", "value": "Central"}, {"name": "North", "value": "North"}, {"name": "Northwest", "value": "Northwest"}, {"name": "Northeast", "value": "Northeast"}, {"name": "East", "value": "East"}, {"name": "West", "value": "West"}, {"name": "South", "value": "South"}, {"name": "Southwest", "value": "Southwest"}, {"name": "Southeast", "value": "Southeast"}, {"name": "Extended Northeast", "value": "Extended Northwest"}, {"name": "Extended Northwest", "value": "Extended Northeast"}, {"name": "Extended South", "value": "Extended South"}, {"name": "Extended Southwest", "value": "Extended Southwest"},  {"name": "Extended West", "value": "Extended West"}, {"name": "Pima East", "value": "Pima East"},  {"name": "Pima Far West", "value": "Pima Far West"}, {"name": "Pima Northwest", "value": "Pima Northwest"}, {"name": "Pima South", "value": "Pima South"}, {"name": "Pima Southwest", "value": "Pima Southwest"}]', name='Area', multi='true', ng-model='filters.area')
+              .ih-input-box.col-lg-15.col-md-15.col-sm-6.col-xs-12
+                input.ih-search-input.full(type='text', placeholder='$ Min Price', name='propertyMinPrice', ng-model='filters.price_from')
+              .ih-input-box.col-lg-15.col-md-15.col-sm-6.col-xs-12
+                input.ih-search-input.full(type='text', placeholder='$ Max Price', name='propertyMaxPrice', ng-model='filters.price_to')
+            .row
+              #advancedSearch.ih-advanced-search.collapse
+                .container-fluid
+                  .row
+                    .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                      .ih-slide
+                        label(for='#bedsFilter') Bedrooms
+                        bootstrap-slider(name='bedsFilter', ng-model='filters.bedsRange', type='text', data-slider-min='1', data-slider-max='10', data-slider-step='1', data-slider-value='[1,10]', data-filter='bedsRange')
+                    .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                      .ih-slide
+                        label(for='#bathsFilter') Baths
+                        bootstrap-slider#bathsFilter(name='bathsFilter', ng-model='filters.bathsRange', type='text', data-slider-min='1', data-slider-max='15', data-slider-step='1', data-slider-value='[1,15]', data-filter='bathsRange')
+                  .row
+                    .ih-input-box.col-lg-6.col-md-6.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='Address', name='propertyAddress', ng-model='filters.address')
+                    .ih-input-box.col-lg-3.col-md-3.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='Zip-code', name='propertyZip', ng-model='filters.zipcode')
+                    .ih-input-box.col-lg-3.col-md-3.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='MLS #', name='propertyMLS', ng-model='filters.mls')
+                  .row
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='Subdivision', name='propertySubdivision', ng-model='filters.subdivision')
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='Min Sqft', name='propertyMinSF', ng-model='filters.min_sqft')
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='Max Sqft', name='propertyMaxSF', ng-model='filters.max_sqft')
+                  .row
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                      input.ih-search-input.full(type='text', placeholder='Min Lot Size (Acres)', name='propertyMinLot', ng-model='filters.min_acres')
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                      ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                      ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
+                  .row
+                    .ih-filter-box.col-lg-3.col-md-6.col-sm-12.col-xs-12
+                      button.btn.btn-primary.full(type='button', data-toggle='button', aria-pressed='false', autocomplete='off', value='', name='propertyPool', ng-click="toggleButton($event, 'pool')")
+                        | Pool
+                    .ih-filter-box.col-lg-3.col-md-6.col-sm-12.col-xs-12
+                      button.btn.btn-primary.full(type='button', data-toggle='button', aria-pressed='false', autocomplete='off', value='', name='propertyGated', ng-click="toggleButton($event, 'gated')")
+                        | Gated
+                    .ih-filter-row.col-lg-6.col-md-12.col-sm-12.col-xs-12
+                      .btn-group
+                        label.btn.btn-default(ng-class="filters.active != undefined && filters.active == true ? 'active' : ''")
+                          input(type='checkbox', autocomplete='off', ng-model='filters.active')
+                          |  Active
+                        label.btn.btn-default(ng-class="filters.sold != undefined && filters.sold == true ? 'active' : ''")
+                          input(type='checkbox', autocomplete='off', ng-model='filters.sold')
+                          |  Sold
+                        label.btn.btn-default(ng-class="filters.pending != undefined && filters.pending == true ? 'active' : ''")
+                          input(type='checkbox', autocomplete='off', ng-model='filters.pending', ng-true-value='true', ng-false-value='false')
+                          |  Pending
+            .ih-search-btns.text-center
+              button.btn.btn-primary(type='submit') Search
+              .space
+              a.btn.btn-default.ih-adv-toggle(role='button', data-toggle='collapse', href='#advancedSearch', aria-expanded='false', aria-controls='advancedSearch', onclick='event.preventDefault()')
+                i.fa.fa-search
+                |  Advanced Search
