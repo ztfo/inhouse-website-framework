@@ -1,0 +1,67 @@
+section.ih-content.ih-bio.s1
+  header.ih-content-header
+    .container.fw
+      h1.inlineblock(itemprop='name') About {{bioAgent.name}}
+      .clear
+      h3.inlineblock.fs.text-uppercase(itemprop='organization')
+        small.fw {{agent.brokerage}}
+  .ih-content-inner.container
+    .row
+      .ih.content-loader.col-lg-9.col-md-9.col-sm-12.col-xs-12
+        .bio-image
+          .image-loader
+        span.text-block
+        span.text-block
+        hr
+        span.text-block
+        span.text-block
+        span.text-block
+        .ih-accent-divider.clear
+      .ih-content-body.col-lg-9.col-md-9.col-sm-12.col-xs-12.hidden
+        img.bio-image.img-responsive(align='left', ng-src='{{bioAgent.headshot}}', alt='{{bioAgent.name}}')
+        .ih.ih-about-header
+          h2(itemprop='name') {{bioAgent.name}}
+          h6.text-uppercase {{bioAgent.title}} | {{bioAgent.contactEmail}}
+          .ih-social.about-social.text-center
+            a.ih-social-icon(href='mailto:{{bioAgent.contactEmail}}', ng-if='bioAgent.contactEmail !== undefined')
+              i.fa.fa-envelope
+            a.ih-social-icon(href='{{bioAgent.facebook}}', ng-if='bioAgent.facebook !== undefined')
+              i.fa.fa-facebook
+            a.ih-social-icon(href='{{bioAgent.linkedin}}', ng-if='bioAgent.linkedin !== undefined')
+              i.fa.fa-linkedin
+            a.ih-social-icon(href='{{bioAgent.twitter}}', ng-if='bioAgent.twitter !== undefined')
+              i.fa.fa-twitter
+            a.ih-social-icon(href='{{bioAgent.instagram}}', ng-if='bioAgent.instagram !== undefined')
+              i.fa.fa-instagram
+            a.ih-social-icon(href='{{bioAgent.pinterest}}', ng-if='bioAgent.pinterest !== undefined')
+              i.fa.fa-pinterest
+        span(itemprop='about', ng-bind-html='bioAgent.bio | to_trusted')
+        .ih-accent-divider.clear
+        .ih-about-listings.hidden
+          // this will house a sold/active/featured listing slider for bioAgent
+          h1.ih-header.text-center  Listings
+          .ih-md-divider
+      .ih-side-panel.col-lg-3.col-md-3.col-sm-12.col-xs-12
+        #sideAccordion.panel-group(role='tablist', aria-multiselectable='true')
+          .panel.panel-default
+            #headingOne.panel-heading(role='tab')
+              h4.panel-title
+                a(role='button', data-toggle='collapse', data-parent='#sideAccordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne', onclick='event.preventDefault()')
+                  | Contact {{bioAgent.name}}
+            #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
+              .panel-body
+                ih-contact(configname='f1')
+          .panel.panel-default
+            #headingTwo.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#sideAccordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo', onclick='event.preventDefault()')
+                  | {{bioAgent.name}}'s Recommendations
+            #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+              .panel-body
+          .panel.panel-default
+            #headingThree.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#sideAccordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree', onclick='event.preventDefault()')
+                  | Resources
+            #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
+              .panel-body

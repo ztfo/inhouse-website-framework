@@ -3,12 +3,16 @@ angular.module('ihframework')
 
 	$scope.showTab = 'press-coverage';
 	$scope.showMLSTab = 'us';
+	$scope.showOrderTab = 'landing';
 
 	$scope.togglePressTabs = function(tab){
 		$scope.showTab = tab;
 	};
 	$scope.toggleMLSTabs = function(tab){
 		$scope.showMLSTab = tab;
+	};
+	$scope.toggleOrderTabs = function(tab){
+		$scope.showOrderTab = tab;
 	};
 
 	if(typeof $rootScope.theUserData.content[$route.content] === 'undefined') {

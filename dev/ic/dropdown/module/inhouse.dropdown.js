@@ -3,7 +3,7 @@ angular.module('ihframework')
 	return {
 		restrict: 'E',
 		templateUrl : function(el, attrs) {
-			return 'build/templates/ic/dropdown/template/' + (attrs.config || 's1') + '-inhouse.dropdown.htm';
+			return 'build/templates/ic/dropdown/template/' + (attrs.config || 's1') + '-inhouse.dropdown.html';
 		},
 		require: 'ngModel',
 		transclude: true,

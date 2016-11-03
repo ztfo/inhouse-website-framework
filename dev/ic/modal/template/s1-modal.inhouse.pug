@@ -1,0 +1,10 @@
+.ih-modal.modal.fade(tabindex='-1', role='dialog')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='close')
+          span(aria-hidden='true') ×
+        h4.modal-title {{modal.title}}
+      .modal-body(ng-bind-html='modal.body | to_trusted')
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') Close

@@ -1,0 +1,23 @@
+section.s2.ih-featured-slider
+  h1.ih-header.text-center Featured Homes
+  .ih-md-divider
+  .ih-grid-carousel
+    #gridCarousel.carousel.slide.listing-grid-carousel(data-ride='carousel')
+      .carousel-inner(role='listbox')
+        .item.active
+          .ih-ft-carousel.hidden
+          ih-listing-loader.item.ih-ft-listing.col-lg-15.col-md-4.col-sm-4.col-xs-12(ng-repeat='n in range(0,listingLoaders) | limitTo:10')
+          .ih-ft-listing.col-lg-15.col-md-4.col-sm-4.col-xs-12(ng-repeat='home in homes | limitTo:10', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+            a.ft-link(href='#/listing/{{home.mls}}')
+              span
+                strong
+                  i.fa.fa-caret-right.ft-caret
+                  |  {{home.address}}
+                  br
+                small.fs(itemprop='description')
+                  | {{home.price | currency}}
+                  span(ng-show='home.beds > 0')  | {{home.beds}} BEDS - {{home.baths}} BATHS
+                small(ng-show='home.beds < 0') {{home.acres}}
+              ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+      .row.text-center.ft-more-btn
+        a.btn.btn-primary(href='#/search-mls?{{query}}') View More

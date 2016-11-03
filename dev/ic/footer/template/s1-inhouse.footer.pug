@@ -1,0 +1,41 @@
+footer.s1.footer(class='{{classes}} {{controller}}', ng-show='showFooter == undefined || showFooter == true')
+  .container.text-uppercase
+    .row.text-center.broker-logo
+      img(ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')
+    .ih-legal.row
+      .col-lg-6.col-md-6.col-sm-6.col-xs-6
+        span.ih-ui.ih-ui-fairhousing
+      .col-lg-6.col-md-6.col-sm-6.col-xs-6.text-right
+        span.ih-ui.ih-ui-realtor
+    .row
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12
+        span(itemprop='branchCode') {{agent.brokerage}}
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-right(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+        span(itemprop='streetAddress') {{agent.contactAddress}}
+        |  {{agent.contactAddress2}}
+    .ih-sm-divider.ih-ext-divider
+    .row
+      .ih-copyright.col-lg-6.col-md-6.col-sm-12.col-xs-12
+        | ©
+        span(itemprop='copyrightYear') 2016
+        |  All Rights Reserved -
+        span(itemprop='copyrightHolder') InHouse
+        |  | {{agent.teamName}}
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
+        .social-icons
+          | Follow us on:
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+        .hidden.footer-email
+          | {{agent.contactEmail}}
+  .ih-footer
+    a(itemprop='significantLink', href='https://www.getinhouse.io', target='_blank', title='Powered By InHouse')
+      span.ih-ui-inhouse-emblem

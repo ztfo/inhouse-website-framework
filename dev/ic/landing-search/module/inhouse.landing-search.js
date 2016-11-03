@@ -14,13 +14,13 @@ angular.module('ihframework')
                     $scope.searchTab = tab;
                 };
                 if ($scope.configname !== undefined) {
-                    $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.configname + '-inhouse.landing-search.htm';
+                    $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.configname + '-inhouse.landing-search.html';
                 } else {
                     $scope.$watch('config', function(newVal) {
                         if (newVal !== undefined) {
-                            $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.htm';
+                            $scope.templateUrl = 'build/templates/ic/landing-search/template/' + $scope.config + '-inhouse.landing-search.html';
                         } else {
-                            $scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.htm';
+                            $scope.templateUrl = 'build/templates/ic/landing-search/template/s1-inhouse.landing-search.html';
                         }
                     });
                 }

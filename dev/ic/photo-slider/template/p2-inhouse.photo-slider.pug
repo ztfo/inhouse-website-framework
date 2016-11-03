@@ -1,0 +1,17 @@
+section.p2.ih-photo-slider.fp
+    .ih.slider-row
+        .image-grid.clearfix
+          .slider-image.first-image
+            .listing-pic.full(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+              a.block.full.bkc-03.fw(ng-click='showLightBox(0)')
+                span.fa.fa-camera
+          //- repeat rest of images -
+          .slider-image.grid-image(ng-repeat='photo in listing.photos')
+            .listing-pic.full(ng-style="{'background-image': 'url(' + photo.large + ')'}")
+              a.block.full.bkc-03.fw(ng-click='showLightBox($index)')
+                span.fa.fa-camera
+        //- controls
+        a.ps-control.lt-control(href='')
+          i.fa.fa-angle-left
+        a.ps-control.rt-control(href='')
+          i.fa.fa-angle-right

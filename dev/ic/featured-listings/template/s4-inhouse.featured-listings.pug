@@ -1,0 +1,24 @@
+section.s4.ih.ih-featured-slider(class='{{classes}}')
+  .container
+    .row
+      h1.ih-header.text-center Featured Homes
+      .ih-md-divider.bk-gd
+      h2.ih-subheader.fc-01.text-center.fs {{section.header}}
+    .row.listing-row
+      .ft-listing.col-lg-4.col-md-4.col-sm-6.col-xs-12(ng-repeat='home in homes | limitTo:6')
+        a.ih.block.full(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+          .listing-hover.iha.afull
+            ih-like-button
+            .ft-facts.text-right
+              small.fs(itemprop='description')
+                span.badge {{home.price | currency}}
+                br
+                span(ng-show='home.beds > 0') {{home.beds}} BEDS - {{home.baths}} BATHS
+                small(ng-show='home.beds < 0') {{home.acres}}
+            .ih-addr
+              strong {{home.address}}
+              br
+              small
+                em {{home.city}} {{home.state}} {{home.zipcode}}
+    .row.text-center
+      a.btn.btn-primary(href='#/search-mls?{{query}}') View More

@@ -2,7 +2,7 @@
 /*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
 
 /* element resets */
-body.ihweb { overflow-x: hidden !important; }
+body { overflow-x: hidden !important; }
 .ihweb button, .ihweb button:active, .ihweb button:focus { outline: 0 !important; }
 .ihweb input:active, .ihweb input:focus { outline: none !important; }
 /* resets */
@@ -22,7 +22,7 @@ body.ihweb { overflow-x: hidden !important; }
 .bt50 { background-color: rgba(0,0,0,0.5); }
 .bt70 { background-color: rgba(0,0,0,0.7); }
 .bt80 { background-color: rgba(0,0,0,0.8); }
-/*.tpt { opacity: .85 !important; }*/
+.tpt { opacity: .85 !important; }
 
 /* z-index */
 .z0 { z-index: 0; }
@@ -320,4 +320,43 @@ a:focus { text-decoration: none; color: inherit; }
     display: block;
     margin: 5px 0;
   }
+}
+
+/*** TEMP STYLES ***/
+
+.p1.ih-about .img-circle {
+  display: none;
+}
+
+.agent-pic-link {
+  display: block;
+  min-height: 270px;
+  background-image: url('https://www.getinhouse.io/ua/headshots/josh-headshot.jpg');
+  background-size: cover;
+  background-position: 50%;
+  border: 3px solid #234c6c;
+}
+
+.lender-picture {
+  min-height: 400px;
+  background-image: url('https://www.getinhouse.io/ua/headshots/cooper-headshot.jpg');
+  background-position: 50%;
+  background-size: cover;
+  border: 10px solid #ddd;
+}
+
+.contact-map {
+  background-color: initial !important;
+  background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/images/placeholders/map-placeholder.jpg') !important;
+  background-size: cover;
+  background-position: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+.p2.ih-about.ih-lender .img-square {
+  height: 180px;
+  background-image: url('https://www.getinhouse.io/ua/headshots/luis-headshot.jpg');
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }

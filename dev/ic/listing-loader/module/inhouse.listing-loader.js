@@ -7,7 +7,7 @@ angular.module('ihframework')
 		},
 		replace: true,
 		templateUrl : function(el, attrs) {
-			return 'build/templates/ic/listing-loader/template/' + (attrs.config || 's1') + '-inhouse.listing-loader.htm';
+			return 'build/templates/ic/listing-loader/template/' + (attrs.config || 's1') + '-inhouse.listing-loader.html';
 		},
 		controller: function($rootScope, $scope){
 			$scope.agent = $rootScope.theUserData;

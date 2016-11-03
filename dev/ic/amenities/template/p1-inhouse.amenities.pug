@@ -1,0 +1,26 @@
+section.p1.ih-amenities.flex-grid.fp
+  .flex-5.image-fit(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+    .ih.afull.fullh.bkc-01.tpt.amenities-accent.fw
+      h1
+        | {{listing.address}}
+        br
+        small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
+      .price-badge.fc-01
+        strong {{listing.price | currency}}
+      blockquote.fs
+        | "Call to action here please. A one line description of the home"
+      .btn-row
+        a.btn.btn-primary(href='#/')
+          | Schedule Visit
+  .flex-7.amenities-box
+    h1.ih-subheader.fc-02
+      | Amenities at
+      strong {{listing.community}}
+    p.fs
+      | {{listing.editableText}}
+    .amenity-grid.flex-grid
+      .amenity-container.pull-left(ng-repeat='amenity in amenities')
+        .amenity-item
+          span.ih-icon.fc-03(class='{{amenity.icon}}')
+        .amenity-label.text-uppercase.text-muted.text-center
+          small {{amenity.name}}

@@ -1,0 +1,52 @@
+section.s5.ih.ih-featured-slider(class='{{classes}}')
+  .container-fluid
+    .row
+      h1.ih-header.text-center Featured Homes
+      .ih-md-divider.bk-gd
+    .flex-grid.ft-listing-grid.reverse-hover
+      .flex-col.resize
+        .flex-item.offset.resize-item(ng-repeat='home in homes | limitTo:3')
+          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+            .listing-hover.iha.afull
+              ih-like-button
+              .listing-info
+                strong {{home.address}}
+                br
+                small
+                  em {{home.city}} {{home.state}} {{home.zipcode}}
+                br
+                span {{home.price | currency}}
+                span(ng-show='home.beds > 0')
+                  br
+                  |  {{home.beds}} BEDS - {{home.baths}} BATHS
+                small(ng-show='home.beds < 0') {{home.acres}}
+      .flex-col.resize
+        .flex-item.offset.resize-item(ng-repeat='home in homes | startFrom:4 | limitTo: 2')
+          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+            .listing-hover.iha.afull
+              ih-like-button
+              .listing-info
+                strong {{home.address}}
+                br
+                small
+                  em {{home.city}} {{home.state}} {{home.zipcode}}
+                br
+                span {{home.price | currency}}
+                br
+                |  {{home.beds}} BEDS - {{home.baths}} BATHS
+      .flex-col.resize
+        .flex-item.offset.resize-item(ng-repeat='home in homes | startFrom:7 | limitTo: 3')
+          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+            .listing-hover.iha.afull
+              ih-like-button
+              .listing-info
+                strong {{home.address}}
+                br
+                small
+                  em {{home.city}} {{home.state}} {{home.zipcode}}
+                br
+                span {{home.price | currency}}
+                br
+                |  {{home.beds}} BEDS - {{home.baths}} BATHS
+    .row.text-center.btn-row
+      a.btn.btn-primary.btn-lg(href='#/search-mls?{{query}}') View More Listings

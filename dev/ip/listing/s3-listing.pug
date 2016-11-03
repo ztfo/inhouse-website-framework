@@ -1,0 +1,111 @@
+section.s3.ih-listing
+  header.text-center.fw
+    h1 {{listing['Building Address']}}
+    h4.fs.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
+  .ih-md-divider
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-8.col-lg-8.nopad
+        .ih-listing-slider
+          .row
+            #listingSlider.carousel.slide(data-ride='carousel')
+              .carousel-inner(role='listbox')
+                .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
+                  .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.UriLarge + ')'}", data-image='{{slide.UriLarge}}', data-caption='{{slide.Caption}}')
+                  .carousel-caption
+                    | {{slide.caption}}
+              a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
+                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                span.sr-only Previous
+              a.right.carousel-control(href='#listingSlider', role='button', data-slide='next', onclick='event.preventDefault()')
+                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                span.sr-only Next
+        .ih-listing-images
+          ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
+            .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')
+              img.img-responsive.ih-owl-thumbnail(ng-src='{{home.Uri640}}', alt='{{home.Caption}}')
+      .col-xs-12.col-sm-12.col-md-4.col-lg-4.listing-details.bkc-02.fw
+        header.ih
+          ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+          h3.nomar Price
+          h1.nomar {{listing.price | currency:"$":0}}
+        .item-list
+          .meta-item
+            i.fa.fa-object-group
+            .meta-item-field
+              .meta-item-label Size
+              div
+                | {{listing.sq_total}}
+                small SQFT
+          .meta-item
+            i.fa.fa-bed
+            .meta-item-field
+              .meta-item-label Bedrooms
+              div {{listing.beds_total}}
+          .meta-item
+            i.fa.fa-tint
+            .meta-item-field
+              .meta-item-label Bathrooms
+              div {{listing.baths_total}}
+          .meta-item
+            i.fa.fa-car
+            .meta-item-field
+              .meta-item-label Garage
+              div {{listing.garage}}
+          .meta-item
+            i.fa.fa-home
+            .meta-item-field
+              .meta-item-label Type
+              div {{listing.type}}
+          .meta-item
+            i.fa.fa-tag
+            .meta-item-field
+              .meta-item-label Status
+              div {{listing.status}}
+    .row
+      .col-xs-12.col-sm-12.col-md-8.col-lg-8
+        h3 About Home
+        .share-btns
+          strong
+            span.text-muted.text-uppercase Share on:
+          a.ih-social-icon(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='https://plus.google.com/share?url={{shareUrl}|encode}', target='_blank')
+            i.fa.fa-google-plus
+        p {{listing.PublicRemarks | sentence}}
+        p.small.text-uppercase
+          | Listing Information Courtesy of:
+          strong {{listing.brokerage}}
+        h3 Home Details
+        ih-listing-details
+        .listing-map
+          ih-gmaps.full
+      .col-xs-12.col-sm-12.col-md-4.col-lg-4.bkc-01.fw.contact-panel
+        .text-center
+          img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+        h3.text-center Contact {{agent.agentName}}
+        .social-icons.text-center
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+        .fs
+          p
+            i.fa.fa-phone.round-icon.bkc-03.fw
+            |  {{agent.contactPhone | tel}}
+          p
+            i.fa.fa-map-marker.round-icon.bkc-03.fw
+            |  {{agent.contactAddress}} {{agent.contactAddress2}}
+        p
+          strong.text-uppercase {{agent.agentTagline}}
+        ih-contact(configname='f1')

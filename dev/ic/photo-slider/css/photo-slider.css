@@ -68,6 +68,7 @@
     opacity: 0;
     -webkit-transition: .3s;
     transition: .3s;
+    cursor: pointer;
 }
 
 .p1.ih-photo-slider .listing-pic a:hover {
@@ -174,6 +175,7 @@
     text-align: center;
     opacity: 0;
     transition: .3s;
+    cursor: pointer;
 }
 
 .p2.ih-photo-slider .listing-pic a:hover {

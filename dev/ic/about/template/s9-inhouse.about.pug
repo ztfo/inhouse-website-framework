@@ -1,0 +1,24 @@
+section.s9.ih-about(class='{{classes}}')
+  .about-frame
+    .about-inner
+      .about-img.text-center
+        img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+      .about-bio
+        h1.ih-header.text-center {{agent.agentName}}
+        .about-social.text-center
+          a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+            i.fa.fa-envelope
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+        .ih-md-divider
+        .fs.bio-text(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+        .text-center.bio-more
+          a.btn.btn-primary(href="#/bio/{{agent.agentName | split: ' ':0 | lowercase}}") Read More

@@ -1,0 +1,20 @@
+section.s4.ih-contact(class='{{classes}}')
+  .container
+    h1.text-center.ih-header Get In Touch
+    .divider
+    .row
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        ih-contact.fs(configname='f1')
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.vertical.fs
+        .map-box
+          ih-gmaps.full
+        .clearfix
+          address.pull-left
+            | {{agent.brokerage}}
+            br
+            small.text-muted
+              | {{agent.contactAddress}}
+              br
+              |                       {{agent.contactAddress2}}
+          .pull-right
+            img.brokerage-logo(src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')

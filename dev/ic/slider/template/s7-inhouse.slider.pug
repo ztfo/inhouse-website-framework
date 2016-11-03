@@ -1,0 +1,9 @@
+section.s7.ih-slider.container-fluid
+  .iha.afull.ih-search-container
+    ih-landing-search(configname='s6')
+  .bottom-btn.fw
+    i.fa.fa-angle-down
+  .ih-slider-row.row
+    .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel')
+      div(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+        div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.image}}');")

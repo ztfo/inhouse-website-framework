@@ -1,0 +1,68 @@
+section.p2.ih-about-listing.fp
+  .container.ih-about-inner
+    .row
+      h1.ih-header.text-center.fc-02.text-uppercase
+        small about
+        br
+        |               {{listing.address}}
+    .listing-info.row
+      .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
+        .full.flex-grid
+          .flex-4
+            span.ih-icon.ih-icon-bed
+          .flex-8.text-center
+            h1.fc-03 {{listing.beds}}
+      .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
+        .full.flex-grid
+          .flex-4
+            span.ih-icon.ih-icon-bathtub2
+          .flex-8.text-center
+            h1.fc-03 {{listing.baths}}
+      .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
+        .full.flex-grid
+          .flex-4
+            span.ih-icon.ih-icon-house-size
+          .flex-8
+            h4.fc-03 {{listing.sqft | number}}
+            h6 {{listing.sizeUnit}}
+      .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
+        .full.flex-grid
+          .flex-4
+            span.ih-icon.ih-icon-house2
+          .flex-8
+            h1.fc-03 {{listing.stories}}
+            h6 STORIES
+      .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
+        .full.flex-grid
+          .flex-4
+            span.ih-icon.ih-icon-family
+          .flex-8
+            h6 listing Type
+            h5.fc-03 {{listing.type}}
+    .property-text.container-fluid
+      .row
+        .col-lg-8.col-md-8.col-sm-6.col-xs-12
+          h3.text-uppercase agent remarks
+        .share-social.col-lg-4.col-md-4.col-sm-6.col-xs-12.text-right
+          ul.share-btns.pull-right.clearfix
+            li.text-uppercase.text-muted
+              small Share on:
+            li
+              a.ih-social-icon.facebook-hover(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank')
+                i.fa.fa-facebook
+            li
+              a.ih-social-icon.linkedin-hover(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank')
+                i.fa.fa-linkedin
+            li
+              a.ih-social-icon.twitter-hover(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank')
+                i.fa.fa-twitter
+            li
+              a.ih-social-icon.google-hover(href='https://plus.google.com/share?url={{shareUrl|encode}}', target='_blank')
+                i.fa.fa-google-plus
+      .row
+        p.fs.columns
+          | {{listing.description}}
+      .row.details-row
+        ih-listing-details(listing='listing')
+      .row.btn-row.text-center
+        a.btn.btn-primary(href='#/') schedule visit

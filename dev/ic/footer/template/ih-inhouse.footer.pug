@@ -1,0 +1,84 @@
+footer.footer.container-fluid
+  .container.top-footer
+    .row.footer-row
+      .col-lg-3.col-md-3.col-sm-3.col-xs-6
+        h3.footer-header company
+        ul.ih-list
+          li
+            a.clean-link(href='#/about') about
+          li
+            a.clean-link(href='#/careers') careers
+          li
+            a.clean-link(href='#/press') press
+          li
+            a.clean-link(href='#/legal') legal
+          li
+            a.clean-link(href='http://blog.getinhouse.io', target='_blank') blog
+      .col-lg-3.col-md-3.col-sm-3.col-xs-6
+        h3.footer-header services
+        ul.ih-list
+          li
+            a.clean-link(href='#/agents') agents
+          li
+            a.clean-link(href='#/lenders') lenders
+          li
+            a.clean-link(href='#/enterprise') brokerages
+          li
+            a.clean-link(href='#/websites') websites
+          li
+            a.clean-link(href='#/') support
+            // toggle intercom chat buttble
+      .col-lg-3.col-md-3.col-sm-3.col-xs-6
+        h3.footer-header resources
+        ul.ih-list
+          li
+            a.clean-link(href='#/affiliate') affiliates
+          li
+            a.clean-link(href='#/faq') FAQ
+          li
+            a.clean-link(href='#/tutorials') tutorials
+          li
+            a.clean-link(href='#/mls-coverage') MLS coverage
+          li
+            i.fa.fa-circle.fc-02
+            a.clean-link(href='http://status.getinhouse.io', target='_blank') status
+      .col-lg-3.col-md-3.col-sm-3.col-xs-6
+        .footer-contact.text-uppercase.pull-left
+          address
+            span.fc-03 inhouse
+            br
+            |                       {{agent.contactAddress}}
+            br
+            |                       {{agent.contactAddress2}}
+            br
+            small
+              a(href='mailto:team@getinhouse.io', target='_blank') team@getinhouse.io
+              br
+          address
+            | call or text us at:
+            h1 {{agent.contactPhone | tel}}
+        .footer-logo.pull-left.hidden-md.hidden-sm.hidden-xs
+          img.img-responsive(src='{{agent.brokerageLogo}}', alt='InHouse Real Estate Marketing, LLC. Logo')
+      .row.text-center.hidden-lg.hidden-md.hidden-sm
+        img.mobile-logo(src='{{agent.brokerageLogo}}', alt='InHouse Real Estate Marketing, LLC. Logo')
+    .row.legal-row.text-uppercase
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12
+        small © 2016 - {{agent.brokerage}}
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-right
+        small
+          | built in arizona, late one night
+          span.ih-ui-built-in-az
+        span.xs-block
+          a.ih-social-icon.facebook-hover(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon.linkedin-hover(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon.twitter-hover(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon.instagram-hover(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon.pinterest-hover(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+  .ih-footer.row
+    a(itemprop='significantLink', href='https://www.getinhouse.io', target='_blank', title='Powered By InHouse')
+      span.ih-ui-inhouse-emblem
