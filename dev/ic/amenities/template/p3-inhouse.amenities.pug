@@ -1,0 +1,7 @@
+section.p3.ih-amenities
+  div.container-fluid.ammenities-inner.flex-grid
+    div.flex-block.amenity(ng-repeat='amenity in amenities')
+      div.icon-box
+        span.ih-icon(class="'{{amenity.icon}}'")
+      div.amenity-label
+        small {{amenity.name}}

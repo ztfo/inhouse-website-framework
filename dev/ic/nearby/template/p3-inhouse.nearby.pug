@@ -1,0 +1,5 @@
+section.p3.ih-nearby
+  div.container-fluid.nearby-inner.flex-grid
+    div.flex-8
+      map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
+        marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
