@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.controller('contentController', ['$rootScope', '$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($rootScope, $compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
+.controller('contentController', ['$http', '$rootScope', '$compile', '$templateRequest', '$scope', '$routeParams', 'inhouseApi', '$timeout', '$sce', '$location', function($http, $rootScope, $compile, $templateRequest, $scope, $route, inhouseApi, $timeout, $sce, $location) {
 
 	$scope.showTab = 'press-coverage';
 	$scope.showMLSTab = 'us';
@@ -14,7 +14,48 @@ angular.module('ihframework')
 	$scope.toggleOrderTabs = function(tab){
 		$scope.showOrderTab = tab;
 	};
+	
+	//stripe checkout functions
+	$scope.stripeHandler = StripeCheckout.configure({
+		key: 'pk_live_BkoKtrkTnUTgYUGXnMAZBY6Q',
+		key: 'pk_test_BxiHKsC5YWi8C59M3QAYcIix',
+		image: 'https://s3.amazonaws.com/stripe-uploads/acct_16nvhMFOqbCIiYPomerchant-icon-1442977590567-stripe-icon.jpg',
+		locale: 'auto',
+		closed: function() {
+		},
+		token: function(token) {
+			$http.put('http://localhost/inhouse-api/inhouse-api/public/api/v1/me/card', {token: token})
+			.success(function(response) {
+			})
+			.error(function(response) {
+			});
+		}
+	});
 
+	$scope.subscription = {};
+	$scope.purchasePropertyWebsite = function() {
+		$scope.subscriptions = {
+			'single-story': {
+				description: "Single Property Story",
+				amount: 2900
+			},
+			'agent-pro': {
+				description: "Agent Pro Property Stories",
+				amount: 6900
+			},
+			'agent-unlimited': {
+				description: "Agent Unlimited Property Stories",
+				amount: 9900
+			}
+		};
+		$scope.stripeHandler.open({
+			name: 'INHOUSE REAL ESTATE MARKETING',
+	    description: $scope.subscriptions[$scope.subscription.subscriptionType].description,
+	    zipCode: true,
+	    amount: $scope.subscriptions[$scope.subscription.subscriptionType].amount
+		});
+	};
+	
 	if(typeof $rootScope.theUserData.content[$route.content] === 'undefined') {
 		var content = $rootScope.theUserData.content;
 		for (var i = 0; i < content.length; i++) {

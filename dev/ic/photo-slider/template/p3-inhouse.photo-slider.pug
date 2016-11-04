@@ -1,0 +1,16 @@
+section.p3.ih-photo-slider
+  div.flex-grid
+    div.listing-photo(ng-repeat="photo in listing.photo | limitTo:8")
+      a.ih.block.full.listing-pic(ng-click='showLightBox($index)', ng-style="{'background-image': 'url(' + photo.large + ')'}")
+
+section.p3.ih-photo-slider.hidden
+  div.flex-grid.ft-listing-grid.reverse-hover
+    div.flex-col.resize
+      div.flex-item.offset.resize-item(ng-repeat='photo in listing.photos | limitTo:3')
+        a.ih.block.full.listing-link(ng-click='showLightBox($index)', ng-style="{'background-image': 'url(' + photo.large + ')'}", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+    div.flex-col.resize
+      div.flex-item.offset.resize-item(ng-repeat='photo in listing.photos | startFrom:4 | limitTo: 2')
+        a.ih.block.full.listing-link(ng-click='showLightBox($index)', ng-style="{'background-image': 'url(' + photo.large + ')'}", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+    div.flex-col.resize
+      div.flex-item.offset.resize-item(ng-repeat='photo in listing.photos | startFrom:7 | limitTo: 3')
+        a.ih.block.full.listing-link(ng-click='showLightBox($index)', ng-style="{'background-image': 'url(' + photo.large + ')'}", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
