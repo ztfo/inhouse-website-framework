@@ -1,0 +1,7 @@
+section.p3.ih-about.container-fluid
+  div.container-fluid.about-inner.flex-grid
+    div.flex-9.agent-bio
+      h3 {{agent.agentName}}
+      div.ih-sm-divider
+      div.bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+    div.flex-3.agent-image

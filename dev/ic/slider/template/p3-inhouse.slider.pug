@@ -1,4 +1,4 @@
-section.p3.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}', ng-style="{'background-image':'url(' + slide.large + ')'}")
+section.p3.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
   div.container-fluid.inner-slider
     h1 {{listing.address}}
     div.ih-lg-divider
@@ -7,3 +7,7 @@ section.p3.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}', ng-style="{'
         p {{cta}}
       div.flex-6
         a.pointer.btn.btn-primary get started
+  div.ih-slider-row
+    div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+      div.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+        div(uib-slide='', ng-repeat='slide in slides track by $index', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
