@@ -41,7 +41,6 @@ body { overflow-x: hidden !important; }
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
 }
 .flex-1 { position: relative; width: 8.3333%;}
 .flex-2 { position: relative; width: 16.6666%;}

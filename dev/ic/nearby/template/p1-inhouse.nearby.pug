@@ -23,7 +23,7 @@ section.p1.ih-nearby.container-fluid.fp
                   i.fa.fa-star
                 .g-rating(ng-if='!place.rating')
                   | No rating available
-                div
+                div.loc-address
                   | {{place.address}}
                   br
                   |  {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
