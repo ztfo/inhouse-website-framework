@@ -1,30 +1,24 @@
 section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
   div.iha.afull
-    div.ih.container.fullh
-      div.iha.top-banner.bkc-01.fw
-        small.text-uppercase
-          span.ih-icon-sign
-          |  presented by: {{agent.agentName}} of {{agent.brokerage}}
-      div.iha.ih-banner
-        div.container-fluid.full.nopad
-          div.col-lg-7.col-md-7.col-sm-7.col-xs-7.fullh.bkc-04.fw.banner-box
-            h1 {{listing.community}}
-            h5.text-uppercase.fs {{listing.address}}, {{listing.city}} {{listing.zip}}
-            div.home-facts
-              span.fact
-                | {{listing.beds}}
-                small.text-uppercase Bedrooms
-              span.fact
-                | {{listing.baths}}
-                small.text-uppercase Baths
-              span.fact
-                | {{listing.sqft}}
-                small.text-uppercase SQFT{{listing.sizeUnit}}
-          div.col-lg-5.col-md-5.col-sm-5.col-xs-5.fullh.bkc-02.fw.banner-box
-            h1 {{listing.price | currency}}
-            a.btn.btn-primary(href='#/') Schedule Visit
+    div.ih.container.container-sm.fullh
+      div.row.text-center
+        img.img-circle(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+      div.text-uppercase
+        h4 welcome to
+        h1 {{listing.address}}
+        h3
+          small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
+        p.listing-desc
+        | {{listing.editableText | limitTo: 140}}
+        br
+        br
+        small
+          strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
+      div.btn-row
+        a.btn.btn-default(href='#/') view on map
+        a.btn.btn-primary(href='#/') schedule visit
   div.bottom-btn.fw
-    a(href='#/')
+    a.pointer(href='#/')
       i.fa.fa-angle-down
   div.ih-slider-row.row
     div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')

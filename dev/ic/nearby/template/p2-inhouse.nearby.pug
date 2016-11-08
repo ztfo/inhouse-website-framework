@@ -1,29 +1,29 @@
 section.p2.ih-nearby.fp
     h1.ih-header.text-center.fc-02 Nearby Places
-      .container-fluid.btn-row
-        ul.nav.nav-pills.nav-justified.nearby-tabs
-          li(ng-repeat='source in sources')
-            a.pointer(ng-click='selectTab($index)') {{source.name}}
-      .container-fluid.flex-grid
-        .col-lg-4.col-md-4.col-sm-6.col-xs-12.nearby-list
-          .nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
-            h3.fc-01 {{source.name}}
-            .nearby-place.clearfix(ng-repeat='place in source.data')
-              .pull-left.round-icon.bkc-04.fw
-                span.ih-icon-location3
-              .pull-left
-                h5.text-uppercase.fc-01 {{place.name}}
-                .g-rating(ng-if='place.rating')
-                  | {{place.rating}}
-                  i.fa.fa-star
-                .g-rating(ng-if='!place.rating')
-                  | No rating available
-                .loc-address
-                  | {{place.address}}
-                  br
-                  em {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
-        .col-lg-8.col-md-8.col-sm-6.col-xs-12.hidden-xs.nearby-map.nopad.bkc-01
-          map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
-            marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+    .container-fluid.btn-row
+      ul.nav.nav-pills.nav-justified.nearby-tabs
+        li(ng-repeat='source in sources')
+          a.pointer(ng-click='selectTab($index)') {{source.name}}
+    .container-fluid.flex-grid
+      .col-lg-4.col-md-4.col-sm-6.col-xs-12.nearby-list
+        .nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
+          h3.fc-01 {{source.name}}
+          .nearby-place.clearfix(ng-repeat='place in source.data')
+            .pull-left.round-icon.bkc-04.fw
+              span.ih-icon-location3
+            .pull-left
+              h5.text-uppercase.fc-01 {{place.name}}
+              .g-rating(ng-if='place.rating')
+                | {{place.rating}}
+                i.fa.fa-star
+              .g-rating(ng-if='!place.rating')
+                | No rating available
+              .loc-address
+                | {{place.address}}
+                br
+                em {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
+      .col-lg-8.col-md-8.col-sm-6.col-xs-12.hidden-xs.nearby-map.nopad.bkc-01
+        map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
+          marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
       .container.text-center.btn-row.hidden-xs
         a.btn.btn-primary(href='#/') Text Me Directions
