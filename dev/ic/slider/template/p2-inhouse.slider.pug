@@ -9,7 +9,7 @@ section.p2.ih-slider.container-fluid.fp.bkc-01
         h3
           small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
       p.listing-desc
-        | {{listing.editableText | limitTo: 140}} Short call to action here, probably announcing an open house data and time etc?
+        | {{data.cta || listing.publicRemarks}}
         br
         br
         small
