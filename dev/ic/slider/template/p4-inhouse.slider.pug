@@ -9,7 +9,7 @@ section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
         h3
           small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
         p.listing-desc
-        | {{listing.editableText | limitTo: 140}}
+          | {{data.cta || listing.publicRemarks}}
         br
         br
         small
