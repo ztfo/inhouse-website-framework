@@ -8,6 +8,11 @@ angular.module('ihframework')
 
 	inhouseApi.newApi = {};
 	
+	inhouseApi.newApi.postContactLead = function(contact) {
+		if(contact.note == undefined && contact.message != undefined) contact.note = contact.message;
+		url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK' + $.param(contact);
+		return $http.jsonp(url);
+	};
 	
 	inhouseApi.newApi.getTestimonials = function() {
 		
