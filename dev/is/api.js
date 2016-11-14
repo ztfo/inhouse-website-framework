@@ -1,10 +1,97 @@
 angular.module('ihframework')
 .factory('inhouseApi', function($http, $rootScope) {
 	var urlBase = 'https://www.getinhouse.io/api/v1/';
+	var newApi = 'https://app.getinhouse.io/api/v1/web/';
 	var inhouseApi = {};
 	var userId = $rootScope.theUserData.userId;
 	var userHash = $rootScope.theUserData.userHash;
 
+	inhouseApi.newApi = {};
+	
+	inhouseApi.newApi.searchMls = function(data) {
+		
+		data.callback = 'JSON_CALLBACK';
+		
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+			}
+		}
+		if(typeof window.geolocation !== 'undefined') {
+			if(typeof data.params === 'undefined') {
+				data.params = {};
+			}
+			data.params.geolocation = window.geolocation;
+		}
+		
+		url = newApi + 'user/' + userId + '/search?' + $.param(data);
+		
+		return $http.jsonp(url);
+	};
+	inhouseApi.newApi.getSliderImages = function(key) {
+		data = {};
+		
+		data.callback = 'JSON_CALLBACK';
+		
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+			}
+		}
+		if(typeof window.geolocation !== 'undefined') {
+			if(typeof data.params === 'undefined') {
+				data.params = {};
+			}
+			data.params.geolocation = window.geolocation;
+		}
+		
+		url = newApi + 'user/' + userId + '/slider-images/' + JSON.stringify(key) + '?' + $.param(data);
+		
+		return $http.jsonp(url);
+	};
+	inhouseApi.newApi.getListingDetails = function(key) {
+		data = {};
+		
+		data.callback = 'JSON_CALLBACK';
+		
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+			}
+		}
+		if(typeof window.geolocation !== 'undefined') {
+			if(typeof data.params === 'undefined') {
+				data.params = {};
+			}
+			data.params.geolocation = window.geolocation;
+		}
+		
+		url = newApi + 'user/' + userId + '/listing/' + mls + '?' + $.param(data);
+		
+		return $http.jsonp(url);
+	};
+	inhouseApi.newApi.featuredListings = function(key) {
+		data = {};
+		
+		data.callback = 'JSON_CALLBACK';
+		
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+			}
+		}
+		if(typeof window.geolocation !== 'undefined') {
+			if(typeof data.params === 'undefined') {
+				data.params = {};
+			}
+			data.params.geolocation = window.geolocation;
+		}
+		
+		url = newApi + 'user/' + userId + '/featured-listings/' + key + '?' + $.param(data);
+		
+		return $http.jsonp(url);
+	};
+	
 	inhouseApi.getData = function(data) {
 		data.userId = userId;
 		data.userHash = userHash;

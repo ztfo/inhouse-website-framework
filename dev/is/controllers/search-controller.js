@@ -144,13 +144,13 @@ angular.module('ihframework')
 			$scope.listingLoaders = 15;
 			var params = $scope.filters;
 
-			inhouseApi.getData({resource: 'search-mls', params: params}).success(function(response) {
-				if(typeof response.response != 'undefined' && response.response.length > 0) {
-					$scope.totalListings = response.response[0].total_results;
-					if(response.response.length == 15) {
-						$scope.displayListings = response.response.length * ($scope.filters.page || 1);
+			inhouseApi.newApi.searchMls(params).success(function(response) {
+				if(typeof response.listings != 'undefined' && response.listings.length > 0) {
+					$scope.totalListings = response.pagination.last_count;
+					if(response.pagination.page_size == 10) {
+						$scope.displayListings = response.pagination.page_size * ($scope.filters.page || 1);
 					} else {
-						$scope.displayListings = response.response[0].total_results;
+						$scope.displayListings = response.pagination.last_count;
 					}
 				} else {
 					$scope.totalListings = 0;
@@ -167,8 +167,8 @@ angular.module('ihframework')
 					$scope.listings = [];
 				}
 
-				for (var i = 0; i < response.response.length; i++) {
-					$scope.listings.push(response.response[i]);
+				for (var i = 0; i < response.listings.length; i++) {
+					$scope.listings.push(response.listings[i]);
 				}
 
 				$scope.$broadcast('resultsLoaded', $scope.listings);

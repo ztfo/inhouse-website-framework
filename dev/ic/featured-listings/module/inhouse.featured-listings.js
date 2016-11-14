@@ -56,13 +56,16 @@ angular.module('ihframework')
 				$scope.homes = args.featuredListings.listings;
 			});
 
-			if(typeof $scope.pull !== 'undefined') {
-				inhouseApi.getData({resource: 'featured-listings', 'featured-listings': $scope.slider + '-featured'}).success(function(response) {
-					$scope.listingLoaders = 0;
-					$scope.homes = response.response.listings;
-				});
-			}
-
+			inhouseApi.newApi.featuredListings('{}').success(function(response) {
+				$scope.listingLoaders = 0;
+				$scope.homes = response.listings;
+			});
+//			if(typeof $scope.pull !== 'undefined') {
+//				inhouseApi.getData({resource: 'featured-listings', 'featured-listings': $scope.slider + '-featured'}).success(function(response) {
+//					$scope.listingLoaders = 0;
+//					$scope.homes = response.response.listings;
+//				});
+//			}
 		}
 	};
 }]);

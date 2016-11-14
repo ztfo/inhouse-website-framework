@@ -74,7 +74,7 @@ section.s3.ih-results
         article.ih-listing-block.container-fluid(class='ih-mls-status-{{home.status}}', ng-repeat='home in listings', ng-class="showListView ? 'ih-listview' : ''", ng-mouseover='focusListing($index)')
           .ih.property-img.col-lg-4.col-md-4.col-sm-6.col-xs-12.nopad
             ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
-            a.block.full.img-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
+            a.block.full.img-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
           .property-data.col-lg-4.col-md-4.col-sm-6.col-xs-12
             header
               h3 {{home.address}}
@@ -88,18 +88,18 @@ section.s3.ih-results
                 span.meta-item-field
                   span.meta-item-label Size
                   span
-                    | {{home.sq_total | number}}
+                    | {{home.sqft | number}}
                     small SQFT
               .meta-item.pull-left
                 i.fa.fa-bed
                 span.meta-item-field
                   span.meta-item-label Bedrooms
-                  span {{home.beds_total}}
+                  span {{home.beds}}
               .meta-item.pull-left
                 i.fa.fa-tint
                 span.meta-item-field
                   span.meta-item-label Bathrooms
-                  span {{home.baths_total}}
+                  span {{home.baths}}
               .meta-item.pull-left
                 i.fa.fa-car
                 span.meta-item-field
@@ -118,7 +118,7 @@ section.s3.ih-results
           .col-lg-4.col-md-4.col-sm-12.col-xs-12.property-description.bkc-02.fw.hidden-xs
             h4 About Home
             p.fs
-              | {{home.PublicRemarks|limitTo:130:0|words|sentence}}..
+              | {{home.publicRemarks|limitTo:130:0|words|sentence}}..
             .listing-price
               h6.text-uppercase Price
               h3.nomar {{home.price | currency:"$":0}}

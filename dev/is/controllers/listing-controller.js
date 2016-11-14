@@ -46,17 +46,18 @@ angular.module('ihframework')
 			}
 		}
 
-		inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
-			$scope.listing = response.response.listing[0];
+		inhouseApi.newApi.getListingDetails($scope.mls).success(function(response) {
+//		inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
+			$scope.listing = response.listing;
 			$scope.url = window.location.href;
 			$scope.lightBox = [];
 
 			for (var i = 0; i < $scope.listing.photos.length; i++) {
 				$scope.lightBox.push({
 					'index': i,
-					'source' : $scope.listing.photos[i].UriLarge,
+					'source' : $scope.listing.photos[i].large,
 					'type' : 'image',
-					'caption' : $scope.listing.photos[i].Caption
+					'caption' : $scope.listing.photos[i].caption
 				});
 			}
 

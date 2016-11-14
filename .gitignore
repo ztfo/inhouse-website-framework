@@ -14,7 +14,7 @@ vendor
 .inhouse.assets.changelog.txt
 scratch.htm
 scratch.css
-ua/
 scratch/
 scratch.styl
 build/
+ua/

@@ -4,7 +4,7 @@ section.s4.ih-slider.container-fluid
   .ih-slider-row
     .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel')
       div(uib-carousel='', active='active', no-wrap='false')
-        div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.image}}');")
+        div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.large}}');")
           .carousel-caption
             h4 {{slide.header}}
             h5 {{slide.caption}}

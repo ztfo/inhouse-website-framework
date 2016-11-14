@@ -8,7 +8,7 @@ section.s3.ih-featured-slider(class='{{classes}}')
         .item.active
           .ih-ft-carousel.hidden
           ih-listing-loader.col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='n in range(0,listingLoaders) | limitTo:12')
-          .ih-ft-listing.col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='home in homes | limitTo:12', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+          .ih-ft-listing.col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='home in homes | limitTo:12', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             a.ft-link(href='#/listing/{{home.mls}}')
               span
                 strong

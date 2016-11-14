@@ -6,4 +6,4 @@ section.s1.ih-slider.container-fluid
     .container
       .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel', no-pause='true')
         div(uib-carousel='', active='active', no-wrap='false')
-          div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.image}}');")
+          div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.large}}');")

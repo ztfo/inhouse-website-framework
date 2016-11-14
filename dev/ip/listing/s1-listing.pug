@@ -7,7 +7,7 @@ section.s1.ih-listing
             #listingSlider.carousel.slide(data-ride='carousel')
               .carousel-inner(role='listbox')
                 .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
-                  .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.UriLarge + ')'}", data-image='{{slide.UriLarge}}', data-caption='{{slide.Caption}}')
+                  .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.large + ')'}", data-image='{{slide.large}}', data-caption='{{slide.caption}}')
                   .carousel-caption
                     | {{slide.caption}}
               a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
@@ -22,17 +22,17 @@ section.s1.ih-listing
       .ih-listing-images.row
         ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
           .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')
-            img.fit-image.ih-owl-thumbnail(ng-src='{{home.Uri640}}', alt='{{home.Caption}}')
+            img.fit-image.ih-owl-thumbnail(ng-src='{{home.thumb}}', alt='{{home.caption}}')
       .ih-listing-factbar.row
         .ih-listing-addr.col-lg-6.col-md-6.col-sm-12.col-xs-12
           ih-like-button.pull-left(mls='{{listing.mls}}', address="{{listing['Building Address']}}")
           .pull-left
-            h2.fs {{listing['Building Address']}}
+            h2.fs {{listing.address}}
             h4.fs {{listing.city}} {{listing.state}} {{listing.zipcode}}
         .ih-listing-dets.col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
           h2.fs {{listing.price | currency:"$":0}}
           h4.fs
-            | {{listing.beds_total}} BEDS | {{listing.baths_total}} BATHS | {{listing.sq_total | number}} SQFT
+            | {{listing.beds}} BEDS | {{listing.baths}} BATHS | {{listing.sqft | number}} SQFT
     .ih-sm-divider.ih-ext-divider
     .ih-listing-details
       .ih-listing-description.container-fluid

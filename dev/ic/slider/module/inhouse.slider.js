@@ -12,7 +12,7 @@ angular.module('ihframework')
       config: '=',
       listing: '=',
       savedslides: '=',
-      data: '='
+      data: '=',
     },
     controller: function($rootScope, $scope, userDataService, $element, $timeout) {
       //$scope.config = userDataService.sliderConfig;
@@ -57,7 +57,7 @@ angular.module('ihframework')
       $scope.agent = $rootScope.theUserData;
     },
     link: function(scope, element, attrs) {
-      
+/*      
       if (scope.pull !== undefined) {
         inhouseApi.getData({
           resource: 'slider',
@@ -70,6 +70,11 @@ angular.module('ihframework')
           scope.slides = args[scope.slider].slides;
         });
       }
+      */
+      console.log(scope.filters);
+      inhouseApi.newApi.getSliderImages(scope.data.filters).success(function(response) {
+        scope.slides = response.images;
+      });
       scope.$emit('sliderLoaded', {
         slider: scope.slider
       });

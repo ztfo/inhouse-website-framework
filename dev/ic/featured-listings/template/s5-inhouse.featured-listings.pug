@@ -6,7 +6,7 @@ section.s5.ih.ih-featured-slider(class='{{classes}}')
     .flex-grid.ft-listing-grid.reverse-hover
       .flex-col.resize
         .flex-item.offset.resize-item(ng-repeat='home in homes | limitTo:3')
-          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             .listing-hover.iha.afull
               ih-like-button
               .listing-info
@@ -22,7 +22,7 @@ section.s5.ih.ih-featured-slider(class='{{classes}}')
                 small(ng-show='home.beds < 0') {{home.acres}}
       .flex-col.resize
         .flex-item.offset.resize-item(ng-repeat='home in homes | startFrom:4 | limitTo: 2')
-          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             .listing-hover.iha.afull
               ih-like-button
               .listing-info
@@ -36,7 +36,7 @@ section.s5.ih.ih-featured-slider(class='{{classes}}')
                 |  {{home.beds}} BEDS - {{home.baths}} BATHS
       .flex-col.resize
         .flex-item.offset.resize-item(ng-repeat='home in homes | startFrom:7 | limitTo: 3')
-          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.photo || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
+          a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             .listing-hover.iha.afull
               ih-like-button
               .listing-info
