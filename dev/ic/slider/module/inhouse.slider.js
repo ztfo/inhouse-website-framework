@@ -71,7 +71,6 @@ angular.module('ihframework')
         });
       }
       */
-      console.log(scope.filters);
       inhouseApi.newApi.getSliderImages(scope.data.filters).success(function(response) {
         scope.slides = response.images;
       });

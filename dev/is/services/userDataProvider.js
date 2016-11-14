@@ -14,7 +14,6 @@ angular.module('ihframework').factory('userData', function($http, $q, $rootScope
   			for(var key in item){
   				attributes += key + '=\"' + item[key] + '\" ';
   			}
-  			// console.log(templateArray);
   			templateArray.push('<ih-' + item.component + others + attributes + '></ih-' + item.component + '>');
   		});
   		return templateArray;
@@ -27,15 +26,12 @@ angular.module('ihframework').factory('userData', function($http, $q, $rootScope
     },
     saveWebsiteChanges: function(website){
       var defer = $q.defer();
-      console.log('the website: ', website);
       $http({
         url: 'api/v1/story-settings',
         method: 'PUT',
         data: {data: website}
       }).then(function(confirmSave){
-        console.log(('confirm save: ', confirmSave));
       },function(err){
-        console.log("svc err:, ", err);
       });
     },
     getTestimonials: function(){
