@@ -2,7 +2,7 @@ angular.module('ihframework')
     .controller('mainController', ['$scope', 'inhouseApi', '$rootScope', function($scope, inhouseApi, $rootScope) {
         $scope.filters = {};
         $scope.layout = $rootScope.theWebsiteData.landingLayout;
-
+/*
         inhouseApi.getData({
             resource: 'agent-story'
         }).success(function(response) {
@@ -10,6 +10,7 @@ angular.module('ihframework')
         }).error(function() {
             console.log('error loading plugins');
         });
+        */
 
         $scope.searchTab = 'find';
         $scope.toggleSearchTabs = function(tab) {

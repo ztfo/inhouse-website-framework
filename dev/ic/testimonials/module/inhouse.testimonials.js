@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.directive('ihTestimonials', ['$timeout', 'userData', function($timeout, userData) {
+.directive('ihTestimonials', ['inhouseApi', '$timeout', 'userData', function(inhouseApi, $timeout, userData) {
   return {
     template: '<ng-include src="templateUrl"></ng-include>',
     restrict: 'E',
@@ -37,33 +37,10 @@ angular.module('ihframework')
         }
         return input;
       };
-
-      if (typeof $scope.source === 'undefined' || $scope.source == 'hybrid' || $scope.source == 'zillow' || $scope.source == '') {
-        $scope.showZillow = true;
-        $qT = userData.getTestimonials();
-        if($qT !== undefined) {
-          $qT.success(function(args){
-            var testimonials = args.testimonials;
-
-            if ((typeof $scope.source === 'undefined' || $scope.source == 'hybrid') && typeof $scope.$root.theWebsiteData.testimonials === 'object') {
-              for (var i = 0; i < $scope.$root.theWebsiteData.testimonials.length; i++) {
-                testimonials.unshift($scope.$root.theWebsiteData.testimonials[i]);
-              }
-            }
-
-            $scope.testimonials = testimonials;
-          });
-        } else {
-          if (typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
-            $scope.showZillow = false;
-            $scope.testimonials = $rootScope.theWebsiteData.testimonials;
-          }
-        }
-      } else {
-        if (typeof $rootScope.theWebsiteData.testimonials !== 'undefined') {
-          $scope.testimonials = $rootScope.theWebsiteData.testimonials;
-        }
-      }
+      
+      inhouseApi.newApi.getTestimonials().success(function(response) {
+        $scope.testimonials = response.data;
+      });
     },
     link: function(scope, element, attrs) {
     }

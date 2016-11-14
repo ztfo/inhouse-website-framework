@@ -8,6 +8,13 @@ angular.module('ihframework')
 
 	inhouseApi.newApi = {};
 	
+	
+	inhouseApi.newApi.getTestimonials = function() {
+		
+		url = newApi + 'user/' + userId + '/testimonials?callback=JSON_CALLBACK';
+		
+		return $http.jsonp(url);
+	};
 	inhouseApi.newApi.searchMls = function(data) {
 		
 		data.callback = 'JSON_CALLBACK';
@@ -32,18 +39,6 @@ angular.module('ihframework')
 		data = {};
 		
 		data.callback = 'JSON_CALLBACK';
-		
-		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.inhouseAgentUser = localStorage.inhouseAgentUser;
-			}
-		}
-		if(typeof window.geolocation !== 'undefined') {
-			if(typeof data.params === 'undefined') {
-				data.params = {};
-			}
-			data.params.geolocation = window.geolocation;
-		}
 		
 		url = newApi + 'user/' + userId + '/slider-images/' + JSON.stringify(key) + '?' + $.param(data);
 		
