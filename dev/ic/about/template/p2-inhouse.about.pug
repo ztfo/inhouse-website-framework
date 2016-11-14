@@ -8,11 +8,8 @@ section.p2.ih-about.container-fluid.fp
         .agent-box
           h2.inlinblock.fc-01 {{agent.agentName}}
           h5.inlineblock.text-muted
-            em Team Leader{{agent.title}} GBRE, ABCD, FGJi, PuTo{{agent.designations}}
+            em {{agent.title}} | {{agent.designations}}
           .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dapibus condimentum. Cras feugiat nisi vel lectus lacinia, nec ultrices nisi scelerisque. Maecenas volutpat mattis lectus, laoreet elementum urna tincidunt eu. Cras euismod neque dui,
-            | vel mattis ante efficitur non. Duis ac orci vitae nibh commodo mattis.
         .contact-info.container-fluid
           .row
             .col-sm-6

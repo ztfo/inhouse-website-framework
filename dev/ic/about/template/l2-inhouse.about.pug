@@ -8,28 +8,24 @@ section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}')
         div
           img.img-square.inlineblock(ng-src='{{lender.team[0].photo}}', alt='{{lender.team[0].name}}')
         .about-social.text-muted
-          a.ih-social-icon(href='mailto:{{lender.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+          a.ih-social-icon(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
             i.fa.fa-envelope
-          a.ih-social-icon(href='{{lender.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.facebook}}', ng-if='lender.facebook !== undefined', target='_blank')
             i.fa.fa-facebook
-          a.ih-social-icon(href='{{lender.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.linkedin}}', ng-if='lender.linkedin !== undefined', target='_blank')
             i.fa.fa-linkedin
-          a.ih-social-icon(href='{{lender.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.twitter}}', ng-if='lender.twitter !== undefined', target='_blank')
             i.fa.fa-twitter
-          a.ih-social-icon(href='{{lender.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.instagram}}', ng-if='lender.instagram !== undefined', target='_blank')
             i.fa.fa-instagram
-          a.ih-social-icon(href='{{lender.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.pinterest}}', ng-if='lender.pinterest !== undefined', target='_blank')
             i.fa.fa-pinterest
       .col-lg-8.col-md-8.col-sm-12.col-xs-12
-        .agent-box
+        .lender-box
           h2.inlinblock.fc-01 {{lender.lenderName}}
           h5.inlineblock.text-muted
-            em {{lender.title}} GBRE, ABCD, FGJi, PuTo{{lender.designations}}
-          // ng-bind-html="lender.bio1 | to_trusted"
-          .bio.fs(itemprop='description')
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dapibus condimentum. Cras feugiat nisi vel lectus lacinia, nec ultrices nisi scelerisque. Maecenas volutpat mattis lectus, laoreet elementum urna tincidunt eu. Cras euismod neque dui,
-            | vel mattis ante efficitur non. Duis ac orci vitae nibh commodo mattis.
+            em {{lender.title}} | {{lender.designations}}
+          .bio.fs(itemprop='description', ng-bind-html="lender.bio1 | to_trusted")
         .contact-info.container-fluid
           .row
             .col-sm-6
