@@ -152,7 +152,7 @@ map {
 .p2.ih-nearby map {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
-    opacity: .75;
+    opacity: .95;
 }
 
 .p2.nearby .nearby-map {
