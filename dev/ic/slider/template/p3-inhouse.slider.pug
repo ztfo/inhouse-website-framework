@@ -1,12 +1,21 @@
-section.p3.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
-  div.container-fluid.inner-slider
-    h1 {{listing.address}}
-    div.ih-lg-divider
-    div.flex-grid
-      div.flex-6
-        p {{cta}}
-      div.flex-6
-        a.pointer.btn.btn-primary get started
+section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
+  div.iha.afull.z3.fw
+    div.ih.container.fullh
+      div.container-fluid.inner-slider
+        h1 {{listing.address}}
+        div.ih-lg-divider
+        div.flex-grid
+          div.flex-4
+            div.home-facts
+              span {{listing.beds}}
+                small.text-uppercase Bedrooms
+              span {{listing.baths}}
+                small.text-uppercase Baths
+              span {{listing.sqft}}
+                small.text-uppercase SQFT{{listing.sizeUnit}}
+              span.text-uppercase {{listing.price | currency}}
+          div.flex-8
+            a.pointer.btn.btn-primary Schedule Visit
   div.ih-slider-row
     div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
       div.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')

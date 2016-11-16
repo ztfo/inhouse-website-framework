@@ -30,6 +30,9 @@ angular.module('ihframework')
 			}
 			$scope.agent = $rootScope.theUserData;
 
+			$scope.scrollToElement = function(id) {
+				$document.scrollToElement(angular.element(document.getElementById('ih-component-' + id)), 0, 1000);
+			};
 			$scope.scrollToAgent = function(id) {
 				$rootScope.$broadcast('agents clicked', {data: false});
 				$document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
