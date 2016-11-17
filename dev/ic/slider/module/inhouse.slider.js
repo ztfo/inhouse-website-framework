@@ -19,6 +19,11 @@ angular.module('ihframework')
       $scope.myInterval = 2000;
       $scope.active = 0;
       
+      $scope.$watch('slides', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.slides = newVal;
+        }
+      });
       $scope.$watch('data', function(newVal) {
         if(newVal !== undefined) {
           $scope.data = newVal;
@@ -57,23 +62,13 @@ angular.module('ihframework')
       $scope.agent = $rootScope.theUserData;
     },
     link: function(scope, element, attrs) {
-/*      
-      if (scope.pull !== undefined) {
-        inhouseApi.getData({
-          resource: 'slider',
-          slider: scope.slider
-        }).success(function(response) {
-          scope.slides = response.response.slides;
-        });
-      } else {
-        scope.$on('storyLoaded', function(event, args) {
-          scope.slides = args[scope.slider].slides;
+
+      if(scope.data == undefined) scope.data = {};
+      if((scope.data.slides == undefined || scope.data.slides.length == 0) && scope.data.filters != undefined) {
+        inhouseApi.newApi.getSliderImages(scope.data.filters).success(function(response) {
+          scope.slides = response.images;
         });
       }
-      */
-      inhouseApi.newApi.getSliderImages(scope.data.filters).success(function(response) {
-        scope.slides = response.images;
-      });
       scope.$emit('sliderLoaded', {
         slider: scope.slider
       });

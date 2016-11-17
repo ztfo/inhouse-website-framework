@@ -8,11 +8,8 @@ section.p2.ih-about.container-fluid.fp
         .agent-box
           h2.inlinblock.fc-01 {{agent.agentName}}
           h5.inlineblock.text-muted
-            em Team Leader{{agent.title}} GBRE, ABCD, FGJi, PuTo{{agent.designations}}
-          .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dapibus condimentum. Cras feugiat nisi vel lectus lacinia, nec ultrices nisi scelerisque. Maecenas volutpat mattis lectus, laoreet elementum urna tincidunt eu. Cras euismod neque dui,
-            | vel mattis ante efficitur non. Duis ac orci vitae nibh commodo mattis.
+            em {{agent.title}} {{agent.designations}}
+          p.bio.fs(itemprop='description', ng-bind-html='agent.bio | to_trusted')
         .contact-info.container-fluid
           .row
             .col-sm-6
@@ -29,7 +26,7 @@ section.p2.ih-about.container-fluid.fp
                 |  {{agent.contactEmail}}
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.text-center
         div
-          img.img-square.inlineblock(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+          img.img-square.inlineblock(ng-src='{{agent.avatar}}', alt='{{agent.name}}')
         .about-social.text-muted
           a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
             i.fa.fa-envelope

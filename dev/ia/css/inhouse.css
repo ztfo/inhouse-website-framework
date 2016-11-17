@@ -327,15 +327,6 @@ a:focus { text-decoration: none; color: inherit; }
   display: none;
 }
 
-.agent-pic-link {
-  display: block;
-  min-height: 270px;
-  background-image: url('https://www.getinhouse.io/ua/headshots/josh-headshot.jpg');
-  background-size: cover;
-  background-position: 50%;
-  border: 3px solid #234c6c;
-}
-
 .lender-picture {
   min-height: 400px;
   background-image: url('https://www.getinhouse.io/ua/headshots/cooper-headshot.jpg');
