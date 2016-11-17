@@ -1,7 +1,10 @@
 section.p3.ih-amenities.fw
+  div.row
+    h2.ih-header.text-center home amenities
+    div.ih-sm-divider
   div.container-fluid.amenities-inner.flex-grid
     div.flex-block.amenity(ng-repeat='amenity in amenities')
       div.icon-box
-        span.ih-icon(class="'{{amenity.icon}}'")
+        span.ih-icon(class='{{amenity.icon}}')
       div.amenity-label
         small {{amenity.name}}
