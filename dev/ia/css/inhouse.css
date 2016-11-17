@@ -346,9 +346,6 @@ a:focus { text-decoration: none; color: inherit; }
 
 .contact-map {
   background-color: initial !important;
-  background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/images/placeholders/map-placeholder.jpg') !important;
-  background-size: cover;
-  background-position: 50%;
   border: 1px solid rgba(0,0,0,0.15);
 }
 
