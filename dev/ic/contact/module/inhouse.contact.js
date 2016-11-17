@@ -30,6 +30,8 @@ angular.module('ihframework')
 		},
 		controller: ['$rootScope', '$scope', 'inhouseApi', 'userDataService', function($rootScope, $scope, inhouseApi, userDataService) {
 
+			$scope.story_type = $rootScope.theWebsiteData.story_type;
+			
 			//don't load dynamic if the static is set
 			if($scope.configname == undefined) {
 				$scope.$watch('config', function(newVal) {
@@ -67,17 +69,12 @@ angular.module('ihframework')
 				contact.form = this.scope.contactMessage;
 				var api = this.scope.inhouseApi;
 				$scope.contactSending = true;
+				contact.story_type = $scope.story_type;
 				api.newApi.postContactLead(contact).success((function($scope) {
 //				api.getData({resource: 'submit-contact', contact: contact}).success((function($scope) {
 					return function(response) {
 						delete $scope.contactSending;
-						if(response.result == 'success') {
-							//tell user it worked
-							$scope.contactSent = true;
-						} else {
-							//notify user it didn't work
-							$scope.contactSendFailed = true;
-						}
+						$scope.contactSent = true;
 					};
 				})($scope));
 			};

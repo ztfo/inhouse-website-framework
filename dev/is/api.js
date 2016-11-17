@@ -10,7 +10,8 @@ angular.module('ihframework')
 	
 	inhouseApi.newApi.postContactLead = function(contact) {
 		if(contact.note == undefined && contact.message != undefined) contact.note = contact.message;
-		url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK' + $.param(contact);
+		contact.callback = 'JSON_CALLBACK';
+		url = newApi + 'user/' + userId + '/lead?' + $.param(contact);
 		return $http.jsonp(url);
 	};
 	

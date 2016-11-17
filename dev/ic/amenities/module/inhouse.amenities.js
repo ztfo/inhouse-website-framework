@@ -5,11 +5,17 @@ angular.module('ihframework')
 			classes: "@classes",
 			amenities: '=',
 			config: '=',
-			listing: '='
+			listing: '=',
+      data: '='
 		},
 		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
 		restrict: 'E',
 		controller: function($rootScope, $scope) {
+			$scope.$watch('data', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.data = newVal;
+				}
+			});
 			$scope.$watch('config', function(newVal) {
 				if(newVal == undefined) {
 					$scope.templateUrl = 'build/templates/ic/amenities/template/p1-inhouse.amenities.html';
