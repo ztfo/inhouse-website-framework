@@ -1,1 +1,10 @@
-section.p5.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
+section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
+  header.ih-slider-text.text-center
+    img.img-circle(ng-src="{agent.team[0].logo}}', alt='{{agent.team[0].name}}")
+    h1 {{listing.address}}
+    p {{listing.city}} {{listing.zip}}
+    p
+      small.text-uppercase presented by: {{agent.agentName}}
+	div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+		div.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+			div(uib-slide='', ng-repeat='slide in slides track by $index', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")

@@ -1,0 +1,12 @@
+section.p4.ih-about-listing
+  div.container
+    div.col-lg-8.col-md-8.col-sm-8.col-xs-12
+      div.row.details
+        h2 About {{listing.address}}
+        div.ih-sm-divider
+        p.description
+        | {{listing.description}}
+      div.row.details-table
+        ih-listing-details(listing='listing')
+    div.col-lg-4.col-md-4.col-sm-4.col-xs-12
+      img.img-responsive.img-circle(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')

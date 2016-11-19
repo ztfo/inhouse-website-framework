@@ -1,32 +1,32 @@
 section.p1.ih-slider.container-fluid.fp
-  .iha.afull
-    .ih.container.fullh
-      .iha.top-banner.bkc-01.fw
-        small.text-uppercase
-          span.ih-icon-sign
-          |  presented by: {{agent.agentName}} of {{agent.brokerage}}
-      .iha.ih-banner
-        .container-fluid.full.nopad
-          .col-lg-7.col-md-7.col-sm-7.col-xs-7.fullh.bkc-04.fw.banner-box
-            h1 {{listing.community}}
-            h5.text-uppercase.fs {{listing.address}}, {{listing.city}} {{listing.zip}}
-            .home-facts
-              span.fact
-                | {{listing.beds}}
-                small.text-uppercase Bedrooms
-              span.fact
-                | {{listing.baths}}
-                small.text-uppercase Baths
-              span.fact
-                | {{listing.sqft}}
-                small.text-uppercase SQFT{{listing.sizeUnit}}
-          .col-lg-5.col-md-5.col-sm-5.col-xs-5.fullh.bkc-02.fw.banner-box
-            h1 {{listing.price | currency}}
-            a.btn.btn-primary(href='#/') Schedule Visit
-  .bottom-btn.fw
-    a(href='#/')
-      i.fa.fa-angle-down
-  .ih-slider-row.row
-    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      .full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
-        div(uib-slide='', ng-repeat='slide in slides', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
+	.iha.afull
+		.ih.container.fullh
+			.iha.top-banner.bkc-01.fw
+				small.text-uppercase
+					span.ih-icon-sign
+					|  presented by: {{agent.agentName}} of {{agent.brokerage}}
+			.iha.ih-banner
+				.container-fluid.full.nopad
+					.col-lg-7.col-md-7.col-sm-7.col-xs-7.fullh.bkc-04.fw.banner-box
+						h1 {{listing.community}}
+						h5.text-uppercase.fs {{listing.address}}, {{listing.city}} {{listing.zip}}
+						.home-facts
+							span.fact
+								| {{listing.beds}}
+								small.text-uppercase Bedrooms
+							span.fact
+								| {{listing.baths}}
+								small.text-uppercase Baths
+							span.fact
+								| {{listing.sqft}}
+								small.text-uppercase SQFT{{listing.sizeUnit}}
+					.col-lg-5.col-md-5.col-sm-5.col-xs-5.fullh.bkc-02.fw.banner-box
+						h1 {{listing.price | currency}}
+						a.btn.btn-primary(href='#/') Schedule Visit
+	.bottom-btn.fw
+		a(href='#/')
+			i.fa.fa-angle-down
+	.ih-slider-row.row
+		.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+			.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+				div(uib-slide='', ng-repeat='slide in slides', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
