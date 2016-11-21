@@ -2,13 +2,16 @@ section.s10.ih-slider.container-fluid
   .greeting-right.iha.rt
     .round-btn(ng-if='LandingComponent.showBuyAHome')
       a.ih-nar-btn.btn.btn-primary.text-uppercase(href='{{LandingComponent.buyLink}}')
-        | {{LandingComponent.buyAHomeText}}
+        span buy
+        span a home
     .round-btn(ng-if='LandingComponent.showSellAHome')
       a.ih-nar-btn.btn.btn-primary.text-uppercase(href='{{LandingComponent.sellLink}}')
-        | {{LandingComponent.sellAHomeText}}
+        span buy
+        span a home
     .round-btn(ng-if='LandingComponent.showJustAdvice')
       a.ih-nar-btn.btn.btn-primary.text-uppercase(href='{{LandingComponent.adviceLink}}')
-        | {{LandingComponent.adviceText}}
+        span buy
+        span a home
   .bottom-btn.fw
     i.fa.fa-angle-down
   .ih-slider-row
