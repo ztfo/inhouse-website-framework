@@ -521,44 +521,7 @@
 }
 
 /* p4 */
-.p4.ih-slider {
-  min-height: 750px;
-  height: calc(100vh);
-}
-.p4.ih-slider .item {
-  height: 100%;
-}
-.p4.ih-slider .iha.afull {
-  z-index: 1;
-  background-color: rgba(0,0,0,0.35);
-}
-.p4.ih-slider .container-sm {
-  padding-top: 15em;
-  color: #fff;
-  text-align: center;
-}
-.p4.ih-slider img.img-circle {
-  border: 5px solid #fff;
-  width: 200px;
-  margin-bottom: 15px;
-}
-.p4.ih-slider h1 {
-  margin-bottom: 0;
-}
-.p4.ih-slider h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  font-size: 3em;
-  letter-spacing: 1px;
-}
-.p4.ih-slider p.listing-desc {
-  padding: 15px;
-  background-color: rgba(255,255,255,.3);
-}
-.p4.ih-slider .btn-row {
-  margin: 25px 0;
-}
+
 
 /*** slider effects ***/
 
