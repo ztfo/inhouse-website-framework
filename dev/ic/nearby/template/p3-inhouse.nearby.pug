@@ -1,5 +1,8 @@
-section.p3.ih-nearby
-  div.container-fluid.nearby-inner.flex-grid
+section.p3.ih-nearby.fw
+  div.container-fluid.nearby-inner
+    h2.ih-header What our clients say
+    div.ih-sm-divider
+  div.container-fluid.flex-grid
     div.flex-8
       map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
         marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')

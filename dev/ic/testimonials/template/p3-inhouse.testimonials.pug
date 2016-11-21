@@ -1,6 +1,7 @@
-section.p3.ih-testimonials.ih(class='{{classes}}')
-    .container(ng-show='testimonials.length > 0')
-      h1.ih-header.text-center.fw What our clients say
+section.p3.ih-testimonials.ih.fw(class='{{classes}}')
+    div.container-fluid.testimonials-inner(ng-show='testimonials.length > 0')
+      h2.ih-header What our clients say
+      div.ih-sm-divider
       ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
         .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
           blockquote.testimonial(itemprop='review')
