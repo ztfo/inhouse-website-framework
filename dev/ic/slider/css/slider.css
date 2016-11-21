@@ -339,7 +339,16 @@
   background-repeat: no-repeat;
 }
 
+/* s10 */
 
+.s10.ih-slider .ih-slider-row {
+    height: calc(100vh);
+    padding: 0 !important;
+    min-height: 750px;
+}
+.s10.ih-slider .item {
+    height: 100%;
+}
 /* p1 */
 
 .p1.ih-slider, .p1.ih-slider .ih-slider-row, .p1.ih-slider #mainSlider, .p1.ih-slider .item {
