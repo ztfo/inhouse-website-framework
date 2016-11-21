@@ -1,12 +1,12 @@
 section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
-  div.iha.afull.z3.fw
-    div.ih.container.fullh
-      div.container-fluid.inner-slider
+  .iha.afull.z3.fw
+    .ih.container.fullh
+      .container-fluid.inner-slider
         h1 {{listing.address}}
-        div.ih-lg-divider
-        div.flex-grid
-          div.flex-4
-            div.home-facts
+        .ih-lg-divider
+        .flex-grid
+          .flex-4
+            .home-facts
               span {{listing.beds}}
                 small.text-uppercase Bedrooms
               span {{listing.baths}}
@@ -14,9 +14,17 @@ section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
               span {{listing.sqft}}
                 small.text-uppercase SQFT{{listing.sizeUnit}}
               span.text-uppercase {{listing.price | currency}}
-          div.flex-8
+          .flex-8
             a.pointer.btn.btn-primary Schedule Visit
-  div.ih-slider-row
-    div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      div.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
-        div(uib-slide='', ng-repeat='slide in slides track by $index', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
+  .ih-slider-row
+    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides track by $index',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")
