@@ -1,6 +1,9 @@
 section.p4.ih-photo-slider
-  ih-owl.owl-carousel.tst-carousel(items='listing.photos', responsive='responsive')
-    .listing-pic-block.full(ng-repeat='photo in listing.photos')
-      .listing-pic(ng-style="{'background-image': 'url(' + photo.large + ')'}")
-        a.block.full.bkc-03.fw(ng-click='showLightBox($index)')
-          span.fa.fa-camera
+  .container
+    ih-owl.owl-carousel.tst-carousel(
+      items='listing.photos',
+      responsive='responsive')
+      .listing-pic-block.full(ng-repeat='photo in listing.photos')
+        .listing-pic(ng-style="{'background-image': 'url(' + photo.large + ')'}")
+          a.block.full.bkc-03.fw(ng-click='showLightBox($index)')
+            span.fa.fa-camera
