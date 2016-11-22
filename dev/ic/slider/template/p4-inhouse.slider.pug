@@ -7,14 +7,3 @@ section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
     p
       small.text-uppercase presented by: {{agent.agentName}}
   .navbar.container test test test
-  .ih-slider-row.container
-    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      .full.fade.in(
-        uib-carousel='',
-          active='active',
-          no-wrap='false',
-          no-pause='true')
-        div(uib-slide='',
-          ng-repeat='slide in slides',
-          index='$index',
-          ng-style="{'background-image':'url(' + slide.large + ')'}")
