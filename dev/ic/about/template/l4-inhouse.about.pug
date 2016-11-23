@@ -1,0 +1,10 @@
+section.p4.l4.ih-about.container-fluid.fw
+  .container.about-inner.flex-grid
+    .flex-9.agent-bio
+      h3 {{agent.agentName}}
+      .ih-sm-divider
+      .bio.fs(ng-bind-html="lender.bio1 | to_trusted")
+      a.btn.btn-default(href='#/') Contact Me
+      a.btn.btn-primary(href='#/') Apply Today
+    .flex-3.agent-image
+      img.img-square.img-responsive(ng-src='{{lender.team[0].photo}}', alt='{{lender.team[0].name}}')
