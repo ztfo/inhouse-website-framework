@@ -349,6 +349,14 @@
 .s10.ih-slider .item {
     height: 100%;
 }
+/* s11 */
+
+.s11.ih-slider .ih-greeting {
+    z-index: 10;
+    bottom: 5%;
+    width: 100%;
+}
+
 /* p1 */
 
 .p1.ih-slider, .p1.ih-slider .ih-slider-row, .p1.ih-slider #mainSlider, .p1.ih-slider .item {
