@@ -36,20 +36,37 @@ section.p3.ih-contact.fw(class='{{classes}}')
         .text-center
           button.btn.btn-primary.block.form-submit(type='submit') Submit
     div.flex-5.contact-social
+      .social-block
         a.ih-social-icon(ng-if='agent.contactEmail !== undefined')
           i.fa.fa-envelope
-        strong Email
+        h3 Email
         br
-        |{{agent.contactEmail}}
+        a {{agent.contactEmail}}
+      .social-block
         a.ih-social-icon(itemprop='telephone')
           i.fa.fa-phone
-        strong Telephone
+        h3 Telephone
         br
-        |{{agent.contactPhone | tel}}
+        span {{agent.contactPhone | tel}}
+      .social-block
         a.ih-social-icon(itemprop='address')
           i.fa.fa-home
-        strong Address
+        h3 Address
         br
-        |{{agent.contactAddress}}
+        span {{agent.contactAddress}}
         br
-        |{{agent.contactAddress2}}
+        span {{agent.contactAddress2}}
+  div.footer.bt70
+    .container-fluid
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
+        span.ih-ui-fairhousing
+        span.ih-ui-realtor
+        small.ng-binding
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
+        small.text-uppercase
+          |"inspired by:"
+          a(href="https://html5up.net/" target="_blank" rel="noopener") html5up
+        br
+        small "Powered by"
+          a(href="http://www.getinhouse.io") InHouse
+        span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
