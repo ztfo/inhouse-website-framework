@@ -1,9 +1,7 @@
 section.l5.ih-about.container-fluid.fw
-  div.row
-    h2.ih-header Meet Your Lender
   div.container-fluid.about-inner.flex-grid
     div.flex-9.agent-bio
-      h3(itemprop='name') {{lender.lenderName}}
+      h1.ih-header(itemprop='name') {{lender.lenderName}}
       div.ih-sm-divider
       div.about-social
         a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
@@ -23,4 +21,4 @@ section.l5.ih-about.container-fluid.fw
             | {{lender.lenderTitle}} | {{lender.teamName}} {{lender.lenderBrokerage}}
         .text-justify.bio(itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
     div.flex-3.agent-image
-      img.img-square.inlineblock(ng-src='{{lender.team[0].photo}}', alt='{{lender.team[0].name}}')
+      img.img-circle.inlineblock(ng-src='{{lender.team[0].photo}}', alt='{{lender.team[0].name}}')
