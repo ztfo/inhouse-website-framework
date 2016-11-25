@@ -1,10 +1,11 @@
 section.p5.ih-amenities.fw
-  div.container-fluid.header-inner
-    h1.ih-header Home Amenities
-    div.ih-sm-divider
-  div.container-fluid.amenities-inner.flex-grid
-    div.flex-block.amenity(ng-repeat='amenity in amenities')
-      div.icon-box
-        span.ih-icon(class='{{amenity.icon}}')
-      div.amenity-label
-        small {{amenity.name}}
+  div.container-fluid.section-inner
+    div.header-inner
+      h1.ih-header Home Amenities
+      div.ih-sm-divider
+    div.amenities-inner.flex-grid
+      div.flex-block.amenity(ng-repeat='amenity in amenities')
+        div.icon-box
+          span.ih-icon(class='{{amenity.icon}}')
+        div.amenity-label
+          small {{amenity.name}}
