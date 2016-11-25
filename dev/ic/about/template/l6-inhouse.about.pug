@@ -1,0 +1,24 @@
+section.l6.ih-about.container-fluid.fw
+  div.container-fluid.about-inner.flex-grid
+    div.flex-9.agent-bio
+      h1.ih-header(itemprop='name') {{lender.lenderName}}
+      div.ih-sm-divider
+      div.about-social
+        a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
+          i.fa.fa-envelope
+        a.ih-social-icon.bkc-02(href='{{lender.facebook}}', ng-if='lender.facebook !== undefined', target='_blank')
+          i.fa.fa-facebook
+        a.ih-social-icon.bkc-02(href='{{lender.linkedin}}', ng-if='lender.linkedin !== undefined', target='_blank')
+          i.fa.fa-linkedin
+        a.ih-social-ico.bkc-02n(href='{{lender.twitter}}', ng-if='lender.twitter !== undefined', target='_blank')
+          i.fa.fa-twitter
+        a.ih-social-icon.bkc-02(href='{{lender.instagram}}', ng-if='lender.instagram !== undefined', target='_blank')
+          i.fa.fa-instagram
+        a.ih-social-icon.bkc-02(href='{{lender.pinterest}}', ng-if='lender.pinterest !== undefined', target='_blank')
+          i.fa.fa-pinterest
+        h4.text-muted
+          strong
+            | {{lender.lenderTitle}} | {{lender.teamName}} {{lender.lenderBrokerage}}
+        .text-justify.bio(itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
+    div.flex-3.agent-image
+      img.img-circle.inlineblock(ng-src='{{lender.team[0].photo}}', alt='{{lender.team[0].name}}')
