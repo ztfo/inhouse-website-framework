@@ -19,75 +19,75 @@ var config = {
 };
 
 var paths = {
-    scripts: ['dev/is/app.js','dev/**/*.js','!dev/ia/**/*.js'],
-    vendorScripts: 'dev/ia/js/**/*.js',
-    styles: 'dev/**/*.css',
-    images: ['dev/**/*.jpg', 'dev/**/*.svg'],
-    srcTemplates: ['dev/**/*.pug','dev/**/*.pug'],
-    buildTemplates: 'build/templates/**/*.html',
+  scripts: ['dev/is/app.js', 'dev/**/*.js', '!dev/ia/**/*.js'],
+  vendorScripts: 'dev/ia/js/**/*.js',
+  styles: 'dev/**/*.css',
+  images: ['dev/**/*.jpg', 'dev/**/*.svg'],
+  srcTemplates: ['dev/**/*.pug', 'dev/**/*.pug'],
+  buildTemplates: 'build/templates/**/*.html',
 };
 
 
 // Scripts
-gulp.task('scripts', function(){
+gulp.task('scripts', function() {
   return gulp
-  .src(paths.scripts)
-  .pipe(order([
-    'dev/is/app.js',
-    'dev/**/*.js'
-  ]))
-  .pipe(concat('all.min.js'))
-  .pipe(ngAnnotate())
-  .pipe(gulp.dest('build/'));
+    .src(paths.scripts)
+    .pipe(order([
+      'dev/is/app.js',
+      'dev/**/*.js'
+    ]))
+    .pipe(concat('all.min.js'))
+    .pipe(ngAnnotate())
+    .pipe(gulp.dest('build/'));
 });
 
 // CSS
-gulp.task('css', function(){
+gulp.task('css', function() {
   return gulp
-  .src(paths.styles)
-  .pipe(concat('bundle.css'))
-  .pipe(uglifycss({
-    "maxLineLen": 80,
-    "uglyComments": true
-  }))
-  .pipe(gulp.dest('build/'));
+    .src(paths.styles)
+    .pipe(concat('bundle.css'))
+    .pipe(uglifycss({
+      "maxLineLen": 80,
+      "uglyComments": true
+    }))
+    .pipe(gulp.dest('build/'));
 });
 
 // Images
-gulp.task('images', function(){
+gulp.task('images', function() {
   return gulp
-  .src(paths.images)
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('build/'));
+    .src(paths.images)
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('build/'));
 });
 
 // Include vendor scripts
 // incomplete bower
-gulp.task('bower', function(){
+gulp.task('bower', function() {
   return bower()
-  .pipe()
+    .pipe()
 });
 
-gulp.task('vendor-files',function(){
+gulp.task('vendor-files', function() {
   return gulp
-  .src(paths.vendorScripts)
-  .pipe(concat('vendor.min.js'))
-  .pipe(gulp.dest('build/'));
+    .src(paths.vendorScripts)
+    .pipe(concat('vendor.min.js'))
+    .pipe(gulp.dest('build/'));
 });
 
 // Render templates
-gulp.task('templates', function(){
+gulp.task('templates', function() {
   gulp.src(paths.srcTemplates)
-  .pipe(pug())
-  .on('error', function(e){
-    console.log('PUG ERROR >>>> ', e.message)
-    this.emit('end')
-  })
-  .pipe(gulp.dest('build/templates'));
+    .pipe(pug())
+    .on('error', function(e) {
+      console.log('PUG ERROR >>>> ', e.message)
+      this.emit('end')
+    })
+    .pipe(gulp.dest('build/templates'));
 });
 
 // Watchers
-gulp.task('watch', function(){
+gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.styles, ['css']);
@@ -98,9 +98,13 @@ gulp.task('watch', function(){
 // Template Caching
 gulp.task('templatecache', function() {
   gulp.src(paths.buildTemplates)
-    .pipe(templateCache({module: 'frameworkTemplates', standalone: true, base: function(file) {
-      return 'build/' + file.relative;
-    }}))
+    .pipe(templateCache({
+      module: 'frameworkTemplates',
+      standalone: true,
+      base: function(file) {
+        return 'build/' + file.relative;
+      }
+    }))
     .pipe(gulp.dest('build/'));
 });
 
