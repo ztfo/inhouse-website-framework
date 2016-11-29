@@ -8,6 +8,7 @@ commits.php
 *GruntFile.js
 *README.md
 *node_modules/
+*bower_components/
 vendor
 .env
 *.phar
