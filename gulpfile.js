@@ -12,8 +12,7 @@ var stylus = require('gulp-stylus');
 var Filter = require('gulp-filter');
 
 var paths = {
-    mainApp: 'dev/is/app.js',
-    scripts: ['!dev/is/app.js','dev/**/*.js','!dev/ia/**/*.js'],
+    scripts: ['dev/is/app.js','dev/**/*.js','!dev/ia/**/*.js'],
     vendorScripts: 'dev/ia/js/**/*.js',
     styles: 'dev/**/*.css',
     images: ['dev/**/*.jpg', 'dev/**/*.svg'],
@@ -25,10 +24,11 @@ var paths = {
 gulp.task('scripts', function(){
   return gulp
   .src(paths.scripts)
-  .pipe(order([]))
-  .pipe(sourcemaps.init())
+  .pipe(order([
+    'dev/is/app.js',
+    'dev/**/*.js'
+  ]))
   .pipe(concat('all.min.js'))
-  .pipe(sourcemaps.write())
   .pipe(gulp.dest('build/'));
 });
 
@@ -56,10 +56,7 @@ gulp.task('images', function(){
 gulp.task('vendor-files',function(){
   return gulp
   .src(paths.vendorScripts)
-  .pipe(order([]))
-  .pipe(sourcemaps.init())
   .pipe(concat('vendor.min.js'))
-  .pipe(sourcemaps.write())
   .pipe(gulp.dest('build/'));
 });
 
@@ -86,7 +83,7 @@ gulp.task('watch', function(){
 // Template Caching
 gulp.task('templatecache', function() {
   gulp.src(paths.buildTemplates)
-    .pipe(templateCache({module: 'templates', standalone: true, base: function(file) {
+    .pipe(templateCache({module: 'frameworkTemplates', standalone: true, base: function(file) {
       return 'build/' + file.relative;
     }}))
     .pipe(gulp.dest('build/'));
