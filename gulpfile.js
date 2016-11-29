@@ -12,6 +12,7 @@ var stylus = require('gulp-stylus');
 var Filter = require('gulp-filter');
 var bower = require('gulp-bower');
 var version = require('./package.json');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var config = {
   bowerDir: './bower_components'
@@ -36,6 +37,7 @@ gulp.task('scripts', function(){
     'dev/**/*.js'
   ]))
   .pipe(concat('all.min.js'))
+  .pipe(ngAnnotate())
   .pipe(gulp.dest('build/'));
 });
 
