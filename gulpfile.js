@@ -10,6 +10,12 @@ var uglifycss = require('gulp-uglifycss');
 var order = require('gulp-order');
 var stylus = require('gulp-stylus');
 var Filter = require('gulp-filter');
+var bower = require('gulp-bower');
+var version = require('./package.json');
+
+var config = {
+  bowerDir: './bower_components'
+};
 
 var paths = {
     scripts: ['dev/is/app.js','dev/**/*.js','!dev/ia/**/*.js'],
@@ -19,6 +25,7 @@ var paths = {
     srcTemplates: ['dev/**/*.pug','dev/**/*.pug'],
     buildTemplates: 'build/templates/**/*.html',
 };
+
 
 // Scripts
 gulp.task('scripts', function(){
@@ -53,6 +60,12 @@ gulp.task('images', function(){
 });
 
 // Include vendor scripts
+// incomplete bower
+gulp.task('bower', function(){
+  return bower()
+  .pipe()
+});
+
 gulp.task('vendor-files',function(){
   return gulp
   .src(paths.vendorScripts)
