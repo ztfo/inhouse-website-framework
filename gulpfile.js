@@ -24,7 +24,7 @@ var paths = {
   styles: 'dev/**/*.css',
   images: ['dev/**/*.jpg', 'dev/**/*.svg'],
   srcTemplates: ['dev/**/*.pug', 'dev/**/*.pug'],
-  buildTemplates: 'build/templates/**/*.html',
+  buildTemplates: './build/templates/**/*.html',
 };
 
 
@@ -38,7 +38,7 @@ gulp.task('scripts', function() {
     ]))
     .pipe(concat('all.min.js'))
     .pipe(ngAnnotate())
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('./build/'));
 });
 
 // CSS
@@ -50,7 +50,7 @@ gulp.task('css', function() {
       "maxLineLen": 80,
       "uglyComments": true
     }))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('./build/'));
 });
 
 // Images
@@ -58,7 +58,7 @@ gulp.task('images', function() {
   return gulp
     .src(paths.images)
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('./build/'));
 });
 
 // Include vendor scripts
@@ -72,7 +72,7 @@ gulp.task('vendor-files', function() {
   return gulp
     .src(paths.vendorScripts)
     .pipe(concat('vendor.min.js'))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('./build/'));
 });
 
 // Render templates
@@ -83,7 +83,7 @@ gulp.task('templates', function() {
       console.log('PUG ERROR >>>> ', e.message)
       this.emit('end')
     })
-    .pipe(gulp.dest('build/templates'));
+    .pipe(gulp.dest('./build/templates'));
 });
 
 // Watchers
@@ -102,10 +102,10 @@ gulp.task('templatecache', function() {
       module: 'frameworkTemplates',
       standalone: true,
       base: function(file) {
-        return 'build/' + file.relative;
+        return './build/' + file.relative;
       }
     }))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files', 'templatecache']);
