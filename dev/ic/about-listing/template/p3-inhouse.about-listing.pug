@@ -1,9 +1,9 @@
-section.p3.ih-about-listing.fp.fw
-  div.container-fluid.about-inner
+section.p3.ih-about-listing.flex-grid.fp.fw
+  div.flex-3.about-inner
     h2 About {{listing.address}}
     div.ih-sm-divider
     p.description
     | {{listing.description}}
     a.pointer.btn.btn-primary schedule visit
-  div.container-fluid.details
+  div.flex-9.details
     ih-listing-details(listing='listing')
