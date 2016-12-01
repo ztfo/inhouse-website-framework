@@ -3,6 +3,9 @@ section.p5.ih-nearby.fw
     div.nearby-inner
       h1.ih-header Nearby Places
       div.ih-sm-divider
+      ul.nav.nav-pills.nav-justified.nearby-tabs
+        li(ng-repeat='source in sources')
+          a.pointer(ng-click='selectTab($index)') {{source.name}}        
     div.flex-grid
       div.flex-8
         map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
