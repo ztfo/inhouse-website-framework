@@ -1,58 +1,58 @@
 nav.s3.ih-nav.navbar.navbar-default.text-center(class='{{classes}} {{controller}}', itemscope='', itemtype='http://schema.org/SiteNavigationElement', role='navigation')
-    .ih-cta.container-fluid.fo
-        .col-lg-3.col-md-3.col-sm-6.col-xs-12.social-cta.text-left
-            a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
-                i.fa.fa-envelope
-            a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined')
-                i.fa.fa-facebook
-            a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined')
-                i.fa.fa-linkedin
-            a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined')
-                i.fa.fa-twitter
-            a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined')
-                i.fa.fa-instagram
-            a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined')
-                i.fa.fa-pinterest
-        .col-lg-9.col-md-9.col-sm-6.col-xs-12.text-right.tel-cta
-            a.clean-link(href='tel:{{agent.contactPhone}}')
-                span(itemprop='telephone')
-                    | {{agent.contactPhone | tel}}
-                    span.ih-social-icon
-                        i.fa.fa-phone
-            button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn') Sign-in
-            a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
-                | My Account
-    .navbar-header.inlineblock
-        button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-        a.navbar-brand.hidden-lg(href='#/')
-            img(itemprop='logo', ng-src='{{agent.teamLogo}}')
-    .container
-        #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
-            ul.nav.navbar-nav(role='menubar')
-                li(ng-repeat='link in navbar | limitTo: halfway', ng-class='link.children !== undefined')
-                    a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
-                        span(itemprop='name') {{link.display}}
-                    a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                        | {{link.display}}
-                        span.caret
-                    ul.dropdown-menu(ng-if='link.children !== undefined')
-                        li(ng-repeat='sublink in link.children')
-                            a(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
-                                span(itemprop='name') {{sublink.display}}
-            a.navbar-logo.hidden-sm.hidden-md.hidden-xs(href='#/')
-                img.img-responsive(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
-            ul.nav.navbar-nav.navbar-right(role='menubar')
-                li(ng-repeat='link in navbar | startFrom: halfway', ng-class='link.children !== undefined')
-                    a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank')
-                        span(itemprop='name') {{link.display}}
-                    a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                        | {{link.display}}
-                        span.caret
-                    ul.dropdown-menu(ng-if='link.children !== undefined')
-                        li(ng-repeat='sublink in link.children')
-                            a(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank')
-                                span(itemprop='name') {{sublink.display}}
+  .ih-cta.container-fluid.fo
+    .col-lg-3.col-md-3.col-sm-6.col-xs-12.social-cta.text-left
+      a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
+        i.fa.fa-envelope
+      a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined')
+        i.fa.fa-facebook
+      a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined')
+        i.fa.fa-linkedin
+      a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined')
+        i.fa.fa-twitter
+      a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined')
+        i.fa.fa-instagram
+      a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined')
+        i.fa.fa-pinterest
+    .col-lg-9.col-md-9.col-sm-6.col-xs-12.text-right.tel-cta
+      a.clean-link(href='tel:{{agent.contactPhone}}')
+        span(itemprop='telephone')
+          | {{agent.contactPhone | tel}}
+          span.ih-social-icon
+            i.fa.fa-phone
+      button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn') Sign-in
+      a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
+        | My Account
+  .navbar-header.inlineblock
+    button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand.hidden-lg(href='#/')
+      img(itemprop='logo', ng-src='{{agent.teamLogo}}')
+  .container
+    #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
+      ul.nav.navbar-nav(role='menubar')
+        li(ng-repeat='link in navbar | limitTo: halfway', ng-class='link.children !== undefined')
+          a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
+            span(itemprop='name') {{link.display}}
+          a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+            | {{link.display}}
+            span.caret
+          ul.dropdown-menu(ng-if='link.children !== undefined')
+            li(ng-repeat='sublink in link.children')
+              a(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
+                span(itemprop='name') {{sublink.display}}
+      a.navbar-logo.hidden-sm.hidden-md.hidden-xs(href='#/')
+        img.img-responsive(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+      ul.nav.navbar-nav.navbar-right(role='menubar')
+        li(ng-repeat='link in navbar | startFrom: halfway', ng-class='link.children !== undefined')
+          a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank')
+            span(itemprop='name') {{link.display}}
+          a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+            | {{link.display}}
+            span.caret
+          ul.dropdown-menu(ng-if='link.children !== undefined')
+            li(ng-repeat='sublink in link.children')
+              a(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank')
+                span(itemprop='name') {{sublink.display}}
