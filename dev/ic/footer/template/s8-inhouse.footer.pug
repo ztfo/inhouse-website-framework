@@ -2,11 +2,11 @@ footer.s8.footer(class='{{classes}} {{controller}}', ng-hide='showFooter != unde
   .container.top-footer
     .footer-col.row
       .col-lg-4.col-md-4.col-sm-4.col-xs-12
-        h6 
-        .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted | LimitTo: 200')
+        h6 {{agent.team[0].name}}
+        .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
       .col-lg-4.col-md-4.col-sm-4.col-xs-12.text-center.broker-logo
         img.broker-footer(ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')
-        address.fs
+        div.fs
           strong {{agent.brokerage}}
           br
           | {{agent.contactAddress}}
@@ -14,9 +14,9 @@ footer.s8.footer(class='{{classes}} {{controller}}', ng-hide='showFooter != unde
           | {{agent.contactAddress2}}
           br
       .col-lg-4.col-md-4.col-sm-4.col-xs-12.headshot-footer.text-right
-        h6 {{agent.team[0].name}}
         img.img-square.headshot-img(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
-        div.text-center.fs {{agent.contactPhone | tel}}
+        div.fs
+        | {{agent.contactPhone | tel}}
         br
         | {{agent.contactEmail}}
     .row.legal-row
