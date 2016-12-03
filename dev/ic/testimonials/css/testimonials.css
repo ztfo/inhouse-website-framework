@@ -1,5 +1,10 @@
 /* global */
 
+.owl-nav,
+.owl-nav>div {
+  cursor: pointer;
+}
+
 .ih-testimonials {
     position: relative;
 }
