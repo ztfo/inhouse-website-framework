@@ -1,8 +1,9 @@
 section.p6.ih-amenities.fw
   div.container-fluid.amenities-inner.flex-grid
     h1.ih-header Home Amenities
-    div.flex-block.amenity(ng-repeat='amenity in amenities')
-      div.icon-box
-        span.ih-icon(class='{{amenity.icon}}')
-      div.amenity-label
-        small {{amenity.name}}
+    div.amenities-list
+      div.flex-block.amenity(ng-repeat='amenity in amenities')
+        div.icon-box
+          span.ih-icon(class='{{amenity.icon}}')
+        div.amenity-label
+          small {{amenity.name}}
