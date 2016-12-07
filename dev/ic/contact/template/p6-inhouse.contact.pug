@@ -1,9 +1,9 @@
 section.p6.ih-contact.fw(class='{{classes}}')
-  div.container-fluid
+  div.container
     div.contact-inner.flex-grid
       div.flex-12.contact-header
         h1.ih-header.text-center Get In Touch
-        div.ih-sm-divider  
+        div.ih-sm-divider
       div.flex-12.contact-form-inner
         form(ng-submit='Contact.$valid && submitContact()', name='Contact')
           .text-center.alert.alert-success.fade.in(ng-show='contactSent')
@@ -69,8 +69,8 @@ section.p6.ih-contact.fw(class='{{classes}}')
           span {{agent.instagram}}
         .social-block
           a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
-            i.fa.fa-pinterest   
-          span {{agent.pinterest}}     
+            i.fa.fa-pinterest
+          span {{agent.pinterest}}
   div.footer.bt70
     .container-fluid
       div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
@@ -82,6 +82,6 @@ section.p6.ih-contact.fw(class='{{classes}}')
           |inspired by:
           a(href="https://html5up.net/" target="_blank" rel="noopener") html5up
         br
-        small Powered by 
+        small Powered by
           a(href="http://www.getinhouse.io") InHouse
         span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
