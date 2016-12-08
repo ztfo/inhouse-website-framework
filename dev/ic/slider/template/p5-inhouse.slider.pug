@@ -5,7 +5,7 @@ section.p5.ih-slider.container-fluid.fp(class='{{classes}}')
         .logo
           span.icon
             i.fa.fa-diamond
-        h1 {{listing.address}}
+        h2 {{listing.address}}
         .ih-sm-divider
         .flex-grid
           .flex-4
@@ -15,8 +15,8 @@ section.p5.ih-slider.container-fluid.fp(class='{{classes}}')
               span {{listing.baths}}
                 span.text-uppercase Baths
               span {{listing.sqft}}
-                span.text-uppercase SQFT{{listing.sizeUnit}}
-              span.text-uppercase {{listing.price | currency}}
+                span.text-uppercase SQFT {{listing.sizeUnit}}
+              span.text-uppercase  {{listing.price | currency}}
           .flex-8
             a.pointer.btn.btn-primary Schedule Visit
   .ih-slider-row
