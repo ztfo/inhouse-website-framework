@@ -12,12 +12,12 @@ section.p5.ih-nearby.fw
           marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
       div.flex-4.nearby-list
         div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
-          h3.fc-01 {{source.name}}
+          h3 {{source.name}}
           div.nearby-place.clearfix(ng-repeat='place in source.data')
             div.pull-left.round-icon.bkc-04.fw
               span.ih-icon-location3
             div.pull-left
-              h5.text-uppercase.fc-01 {{place.name}}
+              h5.text-uppercase {{place.name}}
               div.g-rating(ng-if='place.rating')
                 | {{place.rating}}
                 i.fa.fa-star
