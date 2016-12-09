@@ -43,7 +43,10 @@
   "license": "ISC",
   "dependencies": {
     "angular-google-maps": "^2.3.4",
+    "gulp-filter": "^4.0.0",
+    "gulp-order": "^1.1.1",
     "gulp-typescript": "^2.13.6",
+    "gulp-uglifycss": "^1.0.6",
     "requirejs": "^2.2.0"
   }
 }
