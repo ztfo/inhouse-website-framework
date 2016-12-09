@@ -16,6 +16,7 @@ body { overflow-x: hidden !important; }
 /* background color defaults */
 .bw { background-color: #fff !important; }
 .bf5 { background-color: #f5f5f5 !important; }
+.bf7 { background-color: #f7f7f7 !important; }
 .bee { background-color: #eee !important; }
 .bdd { background-color: #ddd !important; }
 .wt80 { background-color: rgba(255,255,255,0.8); }
@@ -41,7 +42,6 @@ body { overflow-x: hidden !important; }
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
 }
 .flex-1 { position: relative; width: 8.3333%;}
 .flex-2 { position: relative; width: 16.6666%;}
@@ -320,43 +320,4 @@ a:focus { text-decoration: none; color: inherit; }
     display: block;
     margin: 5px 0;
   }
-}
-
-/*** TEMP STYLES ***/
-
-.p1.ih-about .img-circle {
-  display: none;
-}
-
-.agent-pic-link {
-  display: block;
-  min-height: 270px;
-  background-image: url('https://www.getinhouse.io/ua/headshots/josh-headshot.jpg');
-  background-size: cover;
-  background-position: 50%;
-  border: 3px solid #234c6c;
-}
-
-.lender-picture {
-  min-height: 400px;
-  background-image: url('https://www.getinhouse.io/ua/headshots/cooper-headshot.jpg');
-  background-position: 50%;
-  background-size: cover;
-  border: 10px solid #ddd;
-}
-
-.contact-map {
-  background-color: initial !important;
-  background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/images/placeholders/map-placeholder.jpg') !important;
-  background-size: cover;
-  background-position: 50%;
-  border: 1px solid rgba(0,0,0,0.15);
-}
-
-.p2.ih-about.ih-lender .img-square {
-  height: 180px;
-  background-image: url('https://www.getinhouse.io/ua/headshots/luis-headshot.jpg');
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
 }

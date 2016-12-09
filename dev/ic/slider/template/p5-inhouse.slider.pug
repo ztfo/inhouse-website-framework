@@ -1,0 +1,33 @@
+section.p5.ih-slider.container-fluid.fp(class='{{classes}}')
+  .iha.afull.z3.fw
+    .ih.container.fullh
+      .container-fluid.inner-slider
+        .logo
+          span.icon
+            i.fa.fa-diamond
+        h2 {{listing.address}}
+        .ih-sm-divider
+        .flex-grid
+          .flex-4
+            .home-facts
+              span {{listing.beds}}
+                span.text-uppercase Bedrooms
+              span {{listing.baths}}
+                span.text-uppercase Baths
+              span {{listing.sqft}}
+                span.text-uppercase SQFT {{listing.sizeUnit}}
+              span.text-uppercase  {{listing.price | currency}}
+          .flex-8
+            a.pointer.btn.btn-primary Schedule Visit
+  .ih-slider-row
+    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides track by $index',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")

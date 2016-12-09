@@ -1,0 +1,33 @@
+footer.s8.footer(class='{{classes}} {{controller}}', ng-hide='showFooter != undefined && showFooter == false')
+  .container.top-footer
+    .footer-col.row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        h6 {{agent.team[0].name}}
+        .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12.text-center.broker-logo
+        img.broker-footer(ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')
+        div.fs
+          strong {{agent.brokerage}}
+          br
+          | {{agent.contactAddress}}
+          br
+          | {{agent.contactAddress2}}
+          br
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12.headshot-footer.text-right
+        img.img-square.headshot-img(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+        div.fs
+        | {{agent.contactPhone | tel}}
+        br
+        | {{agent.contactEmail}}
+    .row.legal-row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12.text-left
+        span.ih-ui.ih-ui-fairhousing
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12.text-center.text-uppercase
+        a.sitemap.fo.text-uppercase(href='{{sitemap}}')
+          small sitemap
+        h6.copyright.fs © 2016 All Rights Reserved - InHouse | {{agent.teamName}}
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12.text-right
+        span.ih-ui.ih-ui-realtor
+  .ih-footer
+    a(itemprop='significantLink', href='https://www.getinhouse.io', target='_blank', title='Powered By InHouse', rel='noopener')
+      span.ih-ui-inhouse-emblem

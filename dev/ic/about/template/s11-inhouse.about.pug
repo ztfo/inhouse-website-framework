@@ -1,0 +1,28 @@
+section.s11.ih-about(class='{{classes}}')
+  .container
+    h1.ih-header.text-center All Seasons Properties
+    .ih-md-divider
+    .teambio(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+    h1.ih-header.text-center Meet Our Team
+    ul.nav.nav-pills.nav-justified
+      li(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+        a(data-toggle='pill', data-target="#{{member.name | split: ' ':0}}") {{member.name}}
+    .tab-content.row
+      .tab-pane(ng-repeat='member in agent.team', id="{{member.name | split: ' ':0}}", ng-class="$index == 0 ? 'active' : ''")
+        .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
+          img.img-responsive.ih-img.img-square(ng-src='{{member.photo}}')
+        .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
+          .row.agent-header
+            h2.col-lg-8.col-md-8.col-sm-8.col-xs-8 {{member.name}}
+            .ih-bio-links.col-lg-4.col-md-4.col-md-4.col-xs-4.text-right
+              a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+                i.fa.fa-facebook
+              a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+                i.fa.fa-linkedin
+              a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+                i.fa.fa-twitter
+              a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+                i.fa.fa-instagram
+              a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+                i.fa.fa-pinterest
+          .bio(itemprop='description', ng-bind-html='member.bio | to_trusted')

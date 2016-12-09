@@ -28,5 +28,13 @@ section.p1.ih-slider.container-fluid.fp
       i.fa.fa-angle-down
   .ih-slider-row.row
     .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      .full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
-        div(uib-slide='', ng-repeat='slide in slides', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")

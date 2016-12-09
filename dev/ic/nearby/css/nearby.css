@@ -36,7 +36,6 @@ map {
 }
 
 .p1.ih-nearby .nearby-map {
-    height: 600px;
     background-color: #eee;
 }
 
@@ -153,7 +152,7 @@ map {
 .p2.ih-nearby map {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
-    opacity: .45;
+    opacity: .95;
 }
 
 .p2.nearby .nearby-map {
@@ -164,11 +163,8 @@ map {
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
-
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-
 @media screen and (min-width: 376px) and (max-width: 768px) {
 
   /* p2 */

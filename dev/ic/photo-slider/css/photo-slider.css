@@ -89,13 +89,17 @@
 .p1.ih-photo-slider .owl-nav>div:hover {
     color: #2ba8de;
 }
-
 .p1.ih-photo-slider .owl-nav>div {
     display: inline-block;
     background-color: #f8f8f8;
     border: 1px solid #ddd;
-    padding: 7px 15px;
+    padding: 15px 25px;
     font-weight: 700;
+    font-size: 12px;
+}
+
+.p1.ih-photo-slider .owl-prev {
+  border-right: 0 !important;
 }
 
 .p1.ih-photo-slider .owl-prev {

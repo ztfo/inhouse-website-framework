@@ -2,22 +2,32 @@ section.p2.ih-slider.container-fluid.fp.bkc-01
   .iha.afull.property-greeting.z3.fw
     .container.container-sm.text-center
       .row
-        img.img-circle(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+        img.img-circle(
+          ng-src='{{agent.team[0].photo}}',
+          alt='{{agent.team[0].name}}')
       .text-uppercase
         h4 welcome to
         h1 {{listing.address}}
         h3
           small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
       p.listing-desc
-        | {{listing.editableText | limitTo: 140}} Short call to action here, probably announcing an open house data and time etc?
+        | {{data.cta || listing.publicRemarks}}
         br
         br
         small
           strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
       .btn-row
         a.btn.btn-default(href='#/') view on map
-        a.btn.btn-primary(href='#/') scedule visit
+        a.btn.btn-primary(href='#/') schedule visit
   .ih-slider-row.row.tpt
     .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      .full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
-        div(uib-slide='', ng-repeat='slide in slides track by $index', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides track by $index',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")

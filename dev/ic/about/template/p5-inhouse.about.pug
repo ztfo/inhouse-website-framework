@@ -1,0 +1,8 @@
+section.p5.ih-about.fw
+	div.container-fluid.section-inner
+		div.agent-image
+			img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+		div.agent-bio
+			h1.ih-header {{agent.agentName}}
+			div.ih-sm-divider
+			div.bio.fs(ng-bind-html="agent.bio1 | to_trusted")

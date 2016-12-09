@@ -1,0 +1,10 @@
+section.p5.ih-about-listing.fp.fw
+  div.container-fluid.section-inner
+    div.listing-inner
+      h1.ih-header About {{listing.address}}
+      div.ih-sm-divider
+      p.description
+      | {{listing.description}}
+      a.pointer.btn.btn-primary schedule visit
+    div.details
+      ih-listing-details(listing='listing')
