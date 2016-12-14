@@ -1,8 +1,10 @@
 section.p6.ih-about.fw
-	div.container-fluid
-		div.agent-image
-			img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+	span.image-div
+		img(src='https://cdn.photos.sparkplatform.com/tar/20161203230341216805000000-o.jpg')
+	div.container-fluid.section-inner
 		div.agent-bio
 			h1.ih-header {{agent.agentName}}
 			div.ih-sm-divider
-			div.bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+			div.bio.fs(ng-bind-html='agent.bio1 | to_trusted')
+		div.agent-image
+			img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
