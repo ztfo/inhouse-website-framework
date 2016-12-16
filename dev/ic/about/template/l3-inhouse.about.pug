@@ -1,6 +1,7 @@
-section.l3.ih-about.container-fluid.fw
-  div.container-fluid.about-inner.flex-grid
-    div.flex-9.agent-bio
+section.l3.ih-about.flex-grid.fw
+    div.flex-4.agent-image
+      img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+    div.flex-8.agent-bio
       h3(itemprop='name') {{agent.agentName}}
       div.ih-sm-divider
       div.about-social
@@ -20,5 +21,3 @@ section.l3.ih-about.container-fluid.fw
           strong
             | {{agent.agentTitle}} | {{agent.teamName}} {{agent.agentBrokerage}}
         .text-justify.bio.fs(itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted")
-    div.flex-3.agent-image
-      img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
