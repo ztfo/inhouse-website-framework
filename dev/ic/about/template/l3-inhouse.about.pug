@@ -1,7 +1,7 @@
 section.l3.ih-about.flex-grid.fw
     div.flex-4.agent-image
       div.about-overlay
-        h1.ih-header Meet Your Lender
+        h2.ih-header Meet Your Lender
         div.ih-sm-divider
       img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
     div.flex-8.agent-bio
@@ -20,9 +20,9 @@ section.l3.ih-about.flex-grid.fw
            i.fa.fa-instagram
           a.ih-social-icon.bkc-02(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
            i.fa.fa-pinterest
-        h4.text-muted      
+        h4.text-muted
       div.about-social
-        div.ih-sm-divider      
+        div.ih-sm-divider
         strong
           | {{agent.agentTitle}} | {{agent.teamName}} {{agent.agentBrokerage}}
         .text-justify.bio.fs(itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted")
