@@ -1,19 +1,15 @@
-section.p3.ih-nearby.fw
-  div.container-fluid.nearby-inner
-    h2.ih-header Nearby Places
-    div.ih-sm-divider
-  div.flex-grid
-    div.flex-8.map-box
-      map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
-        marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+section.p3.ih-nearby.flex-grid.fw
     div.flex-4.nearby-list
+      div.nearby-overlay
+        h2.ih-header Nearby Places
+        div.ih-sm-divider
       div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
-        h3.fc-01 {{source.name}}
+        h3 {{source.name}}
         div.nearby-place.clearfix(ng-repeat='place in source.data')
           div.pull-left.round-icon.bkc-04.fw
             span.ih-icon-location3
           div.pull-left
-            h5.text-uppercase.fc-01 {{place.name}}
+            h5.text-uppercase {{place.name}}
             div.g-rating(ng-if='place.rating')
               | {{place.rating}}
               i.fa.fa-star
@@ -23,3 +19,9 @@ section.p3.ih-nearby.fw
               | {{place.address}}
               br
               em {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
+    div.flex-8.map-box
+      ul.nav.nav-pills.nav-justified.nearby-tabs
+        li(ng-repeat='source in sources')
+          a.pointer(ng-click='selectTab($index)') {{source.name}}
+      map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
+        marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')

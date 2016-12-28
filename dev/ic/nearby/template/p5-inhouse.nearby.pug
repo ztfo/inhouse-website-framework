@@ -7,7 +7,7 @@ section.p5.ih-nearby.fw
         li(ng-repeat='source in sources')
           a.pointer(ng-click='selectTab($index)') {{source.name}}
     div.flex-grid
-      div.flex-8.map-box
+      div.flex-8.map-box.hidden-xs.hidden-sm
         map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
           marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
       div.flex-4.nearby-list
