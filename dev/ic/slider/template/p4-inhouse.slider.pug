@@ -15,10 +15,10 @@ section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
         small
           strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
       div.btn-row
-        a.btn.btn-default(href='#/') view on map
-        a.btn.btn-primary(href='#/') schedule visit
+        a.btn.btn-default view on map
+        ih-schedule-visit(listing="listing")
   div.bottom-btn.fw
-    a.pointer(href='#/')
+    a.pointer
       i.fa.fa-angle-down
   div.ih-slider-row.row
     div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')

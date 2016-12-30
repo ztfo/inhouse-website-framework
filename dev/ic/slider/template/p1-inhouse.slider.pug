@@ -22,7 +22,7 @@ section.p1.ih-slider.container-fluid.fp
                 small.text-uppercase SQFT{{listing.sizeUnit}}
           .col-lg-5.col-md-5.col-sm-5.col-xs-5.fullh.bkc-02.fw.banner-box
             h1 {{listing.price | currency}}
-            a.btn.btn-primary(href='#/') Schedule Visit
+            ih-schedule-visit(listing="listing")
   .bottom-btn.fw
     a(href='#/')
       i.fa.fa-angle-down
