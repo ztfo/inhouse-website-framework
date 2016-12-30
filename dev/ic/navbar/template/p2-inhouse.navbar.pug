@@ -7,24 +7,27 @@ nav.p2.ih-nav.navbar.navbar-default.text-center.bkc-01.tpt.fw.fp(class='{{classe
         span.icon-bar
         span.icon-bar
       a.navbar-brand(itemprop='url', href='#/')
-        img(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
-    #mainNav.ih.navbar-collapse(ng-class='{collapse: isCollapsed}')
-      ul.nav.navbar-nav.navbar-right
+        div.brand-contain(style="background-image: url('{{agent.teamLogo}}');")
+        img.hidden(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+    #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
+      ul.nav.navbar-nav.navbar-right(role='menubar')
         li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
-          a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if='link.children === undefined', ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
+          a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if="link.type != 'relative' && link.children === undefined", ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
+            span(itemprop='name') {{link.display}}
+          a.text-uppercase(ng-if="link.type == 'relative'" ng-click="scrollToElement(link.href)")
             span(itemprop='name') {{link.display}}
           a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
             | {{link.display}}
             span.caret
           ul.dropdown-menu(ng-if='link.children !== undefined')
             li(ng-repeat='sublink in link.children')
-              a(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
+              a.text-uppercase(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
+                i.fa.fa-caret-right.fc-03
                 span(itemprop='name') {{sublink.display}}
-                i.fa.fa-caret-right
         li
           .hidden
             //- leadcap not implemented for pstories yet
             button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn') Sign-in
             a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
               i.fa.fa-home
-          a.btn.btn-primary(href='#/') schedule visit
+          ih-schedule-visit(listing="listing")

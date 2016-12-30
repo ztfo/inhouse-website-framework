@@ -5,14 +5,14 @@ section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
         h1 {{listing.address}}
         .ih-lg-divider
         .flex-grid
-          .flex-4
+          .flex-6
             .home-facts.text-uppercase
               span {{listing.beds}} Bedrooms |
               span {{listing.baths}} Baths |
               span {{listing.sqft | number}} SQFT{{listing.sizeUnit}}
               div.text-uppercase.lead
                 strong {{listing.price | currency:undefined:0}}
-          .flex-8
+          .flex-6
             ih-schedule-visit(listing="listing")
   .ih-slider-row
     .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')

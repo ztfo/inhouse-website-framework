@@ -28,7 +28,8 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
         span.icon-bar
         span.icon-bar
       a.navbar-brand(itemprop='url', href='#/')
-        img.img-responsive(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+        div.brand-contain(style="background-image: url('{{agent.teamLogo}}');")
+        img.hidden(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
     #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
       ul.nav.navbar-nav.navbar-left(role='menubar')
         li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
@@ -50,4 +51,4 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
             small.text-mited.text-uppercase Call us today:
           h3.fc-02.nomar.nopad {{agent.contactPhone | tel}}
         li
-          a.btn.btn-primary(href='#/') Schedule Visit
+          ih-schedule-visit(listing="listing")

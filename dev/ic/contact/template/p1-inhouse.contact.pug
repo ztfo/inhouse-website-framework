@@ -28,7 +28,7 @@ section.p1.ih-contact.ih.fw.fp.z0(class='{{classes}}', ng-style="{'background-im
               | {{agent.contactAddress}}
               br
               | {{agent.contactAddress2}}
-            a.btn.btn-primary(href='#/') Schedule Visit
+            ih-schedule-visit(listing="listing")
       .flex-4.bkc-04.contact-form-box.tpt
         ih-contact(configname='f1')
     .container-fluid.contact-footer.bt80.fw.text-uppercase
@@ -36,9 +36,7 @@ section.p1.ih-contact.ih.fw.fp.z0(class='{{classes}}', ng-style="{'background-im
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           span.ih-ui-fairhousing
           span.ih-ui-realtor
-          small
-            | ©
-            small © {{year}} - {{agent.agentName}} | {{listing.MLS}}
+          small © {{year}} - {{agent.agentName}} | {{listing.MLS}}
         .col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
           small
             | Powered by

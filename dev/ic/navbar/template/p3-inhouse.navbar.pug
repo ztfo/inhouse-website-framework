@@ -7,7 +7,8 @@ nav.p3.ih-nav.navbar.navbar-fixed-top(class='{{classes}} {{controller}}', itemsc
         span.icon-bar
         span.icon-bar
       a.navbar-brand(itemprop='url', href='#/')
-        img.img-responsive(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+        div.brand-contain(style="background-image: url('{{agent.teamLogo}}');")
+        img.hidden(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
     #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
       ul.nav.navbar-nav.navbar-right(role='menubar')
         li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
