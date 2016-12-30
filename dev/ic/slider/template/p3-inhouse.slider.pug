@@ -6,14 +6,12 @@ section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
         .ih-lg-divider
         .flex-grid
           .flex-4
-            .home-facts
-              span {{listing.beds}}
-                small.text-uppercase Bedrooms
-              span {{listing.baths}}
-                small.text-uppercase Baths
-              span {{listing.sqft}}
-                small.text-uppercase SQFT{{listing.sizeUnit}}
-              span.text-uppercase {{listing.price | currency}}
+            .home-facts.text-uppercase
+              span {{listing.beds}} Bedrooms |
+              span {{listing.baths}} Baths |
+              span {{listing.sqft | number}} SQFT{{listing.sizeUnit}}
+              div.text-uppercase.lead
+                strong {{listing.price | currency:undefined:0}}
           .flex-8
             ih-schedule-visit(listing="listing")
   .ih-slider-row

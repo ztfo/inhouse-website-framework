@@ -1,6 +1,5 @@
 section.p6.ih-about.fw
-	span.image-div
-		img(src='https://cdn.photos.sparkplatform.com/tar/20161203230341216805000000-o.jpg')
+	span.image-div(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
 	div.container-fluid.section-inner
 		div.agent-bio
 			h1.ih-header {{agent.agentName}}
