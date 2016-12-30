@@ -1,31 +1,4 @@
 section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
-<<<<<<< HEAD
-  div.iha.afull
-    div.ih.container.container-sm.fullh
-      div.row.text-center
-        img.img-circle(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
-      div.text-uppercase
-        h4 welcome to
-        h1 {{listing.address}}
-        h3
-          small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
-        p.listing-desc
-          | {{data.cta || listing.publicRemarks}}
-        br
-        br
-        small
-          strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
-      div.btn-row
-        a.btn.btn-default view on map
-        ih-schedule-visit(listing="listing")
-  div.bottom-btn.fw
-    a.pointer
-      i.fa.fa-angle-down
-  div.ih-slider-row.row
-    div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      div.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
-        div(uib-slide='', ng-repeat='slide in slides', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
-=======
   .greeting.container.text-center.fw.z2
     div
       img.img-circle(ng-src="{{agent.agentLogo}}", alt="{{agent.agentName}}")
@@ -34,4 +7,3 @@ section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
     p
       small.text-uppercase presented by: {{agent.agentName}}
   .navbar.container test test test
->>>>>>> develop

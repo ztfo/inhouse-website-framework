@@ -97,36 +97,6 @@ gulp.task('watch', function() {
 
 // Template Caching
 gulp.task('templatecache', function() {
-<<<<<<< HEAD
-  return gulp.src(['build/templates/**/*.html', 'build/templates/**/**/*.html'])
-  .pipe(templateCache({module: 'frameworkTemplates', standalone: true, base: function(file) {
-    return 'build/templates/' + file.relative;
-  }}))
-  .pipe(gulp.dest('./build'));
-});
-
-// //////////////////
-// // Stylus Tasks
-// /////////////////
-// gulp.task('styles', function() {
-//   gulp.src(['src/**/*.styl'])
-//       .pipe(stylus())
-//       .pipe(gulp.dest('src'))
-// });
-
-
-//////////////////
-// Watch Tasks
-/////////////////
-
-gulp.task('watch', function(){
-  gulp.watch([paths.pugTemplates], ['pugTemplates']);
-  gulp.watch([paths.allCSS], ['concat-css']);
-  gulp.watch(['./dev/**/*.html', paths.frameworkTemplates], ['templatecache']);
-  gulp.watch(['./dev/ic/**/*.js', './dev/is/**/*.js'], ['concat']);
-  gulp.watch(['dev/ia/'], ['move-ia']);
-  gulp.watch(['dev/ua/'], ['move-ua']);
-=======
   gulp.src(paths.buildTemplates)
     .pipe(templateCache({
       module: 'frameworkTemplates',
@@ -136,7 +106,6 @@ gulp.task('watch', function(){
       }
     }))
     .pipe(gulp.dest('build/'));
->>>>>>> develop
 });
 
 gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files', 'templatecache']);
