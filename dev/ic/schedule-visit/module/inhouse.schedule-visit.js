@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.directive('ihScheduleVisit', ['inhouseApi', function(inhouseApi) {
+.directive('ihScheduleVisit', ['inhouseApi', '$uibModal', function(inhouseApi, $uibModal) {
 	return {
 		replace: true,
 		templateUrl : 'build/templates/ic/schedule-visit/template/s1-inhouse.schedule-visit.html',
@@ -9,7 +9,16 @@ angular.module('ihframework')
 		},
 		controller: function($scope) {
 			$scope.scheduleVisit = function() {
-				console.log($scope.listing);
+				$uibModal.open({
+					ariaLabelledBy: 'modal-title',
+					ariaDescribedBy: 'modal-body',
+					templateUrl: 'build/templates/ic/modal/template/s2-modal.inhouse.html',
+					resolve: {
+						items: function () {
+							return $scope.listing;
+						}
+					}
+				});
 			};
 		}
 	};
