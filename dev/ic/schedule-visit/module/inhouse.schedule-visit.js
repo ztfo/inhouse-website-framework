@@ -10,11 +10,15 @@ angular.module('ihframework')
 		controller: function($scope) {
 			$scope.scheduleVisit = function() {
 				$uibModal.open({
-					ariaLabelledBy: 'modal-title',
-					ariaDescribedBy: 'modal-body',
 					templateUrl: 'build/templates/ic/modal/template/s2-modal.inhouse.html',
+					controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+						$scope.listing = $scope.$resolve.listing;
+						$scope.cancel = function() {
+					    $uibModalInstance.dismiss('cancel');
+						};
+					}],
 					resolve: {
-						items: function () {
+						listing: function () {
 							return $scope.listing;
 						}
 					}
