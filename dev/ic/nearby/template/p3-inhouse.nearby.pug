@@ -20,6 +20,9 @@ section.p3.ih-nearby.flex-grid.fw
               br
               em {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
     div.flex-8.map-box
+      div.nearby-inner
+        h2.ih-header Nearby Places
+        div.ih-sm-divider
       ul.nav.nav-pills.nav-justified.nearby-tabs
         li(ng-repeat='source in sources')
           a.pointer(ng-click='selectTab($index)') {{source.name}}
