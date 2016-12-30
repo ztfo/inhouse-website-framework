@@ -13,7 +13,7 @@ section.ih-results.s1
                 strong {{totalListings | number}}
                 |  Total Listings
               |  /
-              span(ng-repeat='(filter,val) in filters', ng-if="filter != 'page' && filter != 'geolocation'")
+              span(ng-repeat='(filter,val) in filters', ng-if="filter != 'page' && filter != 'geolocation' && filter != 'callback'")
                 a.ih-breadcrumb(href='', ng-click='removeFilter(filter)')
                   | {{filter}}{{val == true ? '' : ': ' + val}}
                   i.fa.fa-times

@@ -4,7 +4,7 @@ section.s2.ih-results
       .container
         .row
           .col-lg-10.col-md-10.col-sm-9.col-xs-12.filter-crumbs
-            span(ng-repeat='(filter,val) in filters', ng-if="filter != 'page' && filter != 'geolocation'")
+            span(ng-repeat='(filter,val) in filters', ng-if="filter != 'page' && filter != 'geolocation' && filter != 'callback'")
               a.ih-breadcrumb(href='', ng-click='removeFilter(filter)')
                 | {{filter}}{{val == true ? '' : ': ' + val}}
                 i.fa.fa-times
