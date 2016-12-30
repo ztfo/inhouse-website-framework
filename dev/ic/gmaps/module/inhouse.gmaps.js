@@ -18,6 +18,7 @@ angular.module('ihframework')
 							scope.map = new google.maps.Map(element[0], {
 								center: scope.center,
 								mapTypeId: google.maps.MapTypeId.HYBRID,
+								crollwheel: false,
 								zoom: 18
 							});
 							scope.marker = new google.maps.Marker({

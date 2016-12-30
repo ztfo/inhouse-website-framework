@@ -12,7 +12,7 @@ angular.module('ihframework')
 			typeofcontact: '@typeofcontact',
 			config: '=',
 			configname: '@',
-			message: '@',
+			message: '=',
 			listing: '='
 		},
 		link: function(scope, element, attrs) {
@@ -30,8 +30,15 @@ angular.module('ihframework')
 		},
 		controller: ['$rootScope', '$scope', 'inhouseApi', 'userDataService', function($rootScope, $scope, inhouseApi, userDataService) {
 
+<<<<<<< HEAD
 			$scope.story_type = $rootScope.theWebsiteData.story_type;
 			
+=======
+			if($scope.message != undefined) {
+				if($scope.contact == undefined) $scope.contact = {};
+				$scope.contact.message = $scope.message;
+			}
+>>>>>>> develop
 			//don't load dynamic if the static is set
 			if($scope.configname == undefined) {
 				$scope.$watch('config', function(newVal) {

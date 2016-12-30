@@ -1,11 +1,13 @@
-section.p3.ih-testimonials.ih(class='{{classes}}')
-    .container(ng-show='testimonials.length > 0')
-      h1.ih-header.text-center What our clients say
-      ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
-        .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
-          blockquote.testimonial(itemprop='review')
-            .ih-ratings(itemprop='rating')
-              i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
-              span.sr-only {{rating}}
-            p(itemprop='review fs') {{slide.testimonial}}
-            h5 - {{slide.reviewer}}
+section.p3.ih-testimonials.flex-grid.fw(class='{{classes}}')
+  .flex-4.testimonials-header
+    h2.ih-header What Our Clients Say
+    .ih-sm-divider
+  .flex-8.testimonials-inner(ng-show='testimonials.length > 0')
+    ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
+      .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
+        blockquote.testimonial(itemprop='review')
+          .ih-ratings(itemprop='rating')
+            i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
+            span.sr-only {{rating}}
+          p.fs(itemprop='review fs') {{slide.testimonial}}
+          h5 - {{slide.reviewer}}

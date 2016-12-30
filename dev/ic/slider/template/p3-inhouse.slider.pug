@@ -1,13 +1,28 @@
-section.p3.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
-  div.container-fluid.inner-slider
-    h1 {{listing.address}}
-    div.ih-lg-divider
-    div.flex-grid
-      div.flex-6
-        p {{cta}}
-      div.flex-6
-        a.pointer.btn.btn-primary get started
-  div.ih-slider-row
-    div.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      div.full.fade.in(uib-carousel='', active='active', no-wrap='false', no-pause='true')
-        div(uib-slide='', ng-repeat='slide in slides track by $index', index='$index', ng-style="{'background-image':'url(' + slide.large + ')'}")
+section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
+  .iha.afull.z3.fw
+    .ih.container.fullh
+      .container-fluid.inner-slider
+        h1 {{listing.address}}
+        .ih-lg-divider
+        .flex-grid
+          .flex-4
+            .home-facts.text-uppercase
+              span {{listing.beds}} Bedrooms |
+              span {{listing.baths}} Baths |
+              span {{listing.sqft | number}} SQFT{{listing.sizeUnit}}
+              div.text-uppercase.lead
+                strong {{listing.price | currency:undefined:0}}
+          .flex-8
+            ih-schedule-visit(listing="listing")
+  .ih-slider-row
+    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides track by $index',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")

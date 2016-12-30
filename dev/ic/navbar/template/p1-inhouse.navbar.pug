@@ -1,10 +1,10 @@
 nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', itemscope='', itemtype='http://schema.org/SiteNavigationElement', role='navigation')
   .ih-cta
     .container.nopad
-      .col-lg-5.col-md-5.col-sm-5.col-sm-12
+      .col-lg-5.col-md-7.col-sm-7.col-sm-12
         small.text-uppercase.listing-brokerage.text-muted
           | Listing Courtesy of {{agent.brokerage}}
-      .col-lg-7.col-md-7.col-sm-7.col-sm-12
+      .col-lg-7.col-md-5.col-sm-5.col-sm-12
         ul.share-btns.pull-right.clearfix
           li.text-uppercase.text-muted
             small Share on:
@@ -20,7 +20,7 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
           li
             a.ih-social-icon.google-hover(href='https://plus.google.com/share?url={{shareUrl|encode}}', target='_blank')
               i.fa.fa-google-plus
-  .container.nopad
+  .container
     .navbar-header
       button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
         span.sr-only Toggle navigation

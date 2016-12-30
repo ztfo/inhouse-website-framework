@@ -6,7 +6,7 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp
     .ih-about-inner.row
       .col-lg-8.col-md-8.col-sm-12.col-xs-12.lender-info.text-right
         h2.ih.fc-01
-          span(itemprop='name') InHouse Lender{{lender.lenderName}}
+          span(itemprop='name') {{lender.lenderName}}
           .about-social
             a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
               i.fa.fa-envelope
@@ -22,23 +22,17 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp
               i.fa.fa-pinterest
         h4.text-muted
           strong
-            | Chief Lender{{lender.lenderTitle}} | {{lender.teamName}} InHouse Home Lending{{lender.lenderBrokerage}}
-        // itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted"
-        .text-justify.bio
-          p
-            | Phasellus consectetur mollis ante eget sagittis. Mauris eu arcu lobortis, pulvinar nunc ac, venenatis quam. Mauris convallis imperdiet lectus, quis condimentum odio cursus vitae.
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida, felis eget suscipit venenatis, ligula mauris cursus nibh, in lobortis risus ex id mi.
+            | {{lender.lenderTitle}} | {{lender.teamName}} {{lender.lenderBrokerage}}
+        .text-justify.bio(itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
         p.fp
           strong
             small.text-uppercase.text-muted
-              a.clean-link(href='mailto:{{lender.contactEmail}}') lender@inhouselending.com{{lender.contactEmail}}
+              a.clean-link(href='mailto:{{lender.contactEmail}}') {{lender.contactEmail}}
               span.ih-icon.ih-sm-icon.ih-icon-house-mailbox
               br
-              a.clean-link(href='tel:{{lender.contactPhone | tel}}') 800.123.4567{{lender.contactPhone | tel}}
+              a.clean-link(href='tel:{{lender.contactPhone | tel}}') {{lender.contactPhone | tel}}
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
         a.btn.btn-default(href='#/') Contact Me
-        a.btn.btn-primary(href='#/') Apply Today
+        a.btn.btn-primary(href='{{lender.applyLink}}') Apply Today
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.lender-picture
-        // ng-src="{{lender.photo}}" alt="{{lender.name}}"
-        img.img-circle.img-responsive(src='{{lender.headshot}}')
+        img.img-circle.img-responsive(src="{{lender.headshot}}", alt="{{lender.name}}")

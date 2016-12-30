@@ -8,8 +8,13 @@ section.p2.ih-about.container-fluid.fp
         .agent-box
           h2.inlinblock.fc-01 {{agent.agentName}}
           h5.inlineblock.text-muted
+<<<<<<< HEAD
             em {{agent.title}} {{agent.designations}}
           p.bio.fs(itemprop='description', ng-bind-html='agent.bio | to_trusted')
+=======
+            em {{agent.title}} | {{agent.designations}}
+          .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+>>>>>>> develop
         .contact-info.container-fluid
           .row
             .col-sm-6

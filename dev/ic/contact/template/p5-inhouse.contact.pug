@@ -1,0 +1,87 @@
+section.p5.ih-contact.fw(class='{{classes}}')
+  div.container-fluid.section-inner
+    div.contact-inner.flex-grid
+      div.flex-12.contact-header
+        h1.ih-header.uppercase Get In Touch
+        div.ih-sm-divider
+      div.flex-6.contact-form-inner
+        form(ng-submit='Contact.$valid && submitContact()', name='Contact')
+          .text-center.alert.alert-success.fade.in(ng-show='contactSent')
+            h3
+              strong Thank You!
+            |  We will be in touch with you shortly. You can also call
+            strong {{agent.contactPhone | tel}}
+            | .
+          .text-center.alert.alert-info.fade.in(ng-show='contactSending')
+            h3
+              strong Please wait..
+            h4  We're sending your message...
+          .text-center.alert.alert-danger.fade.in(ng-show='contactSendFailed')
+            h3
+              strong We're sorry...
+            |  There was an issue sending your message. Please make sure you have entered a valid name and email address and try again. If this problem continues, please call us at {{agent.contactPhone | tel}}. Sorry for the inconvenience.
+          .form-group
+            label(for='messageName') Full Name
+            input#messageName.ih-form-input.form-control(type='name', ng-model='contact.name', required='')
+          .row
+            .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label(for='emailAddress') Email
+              input#emailAddress.ih-form-input.form-control(type='email', ng-model='contact.email', required='')
+            .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label(for='phoneNumber') Phone
+              input#phoneNumber.ih-form-input.form-control(type='phone', ng-model='contact.phone')
+            input.hidden(type='text', ng-model='contact.confirmEmail', name='confirmEmail')
+          .form-group
+            label(for='textMessage') Message
+            textarea#textMessage.ih-form-input.ih-textarea.form-control(type='text', required='', ng-model='contact.message')
+          .text-center
+            button.btn.btn-primary.block.form-submit(type='submit') Submit
+      div.flex-6.contact-social
+        .social-block
+          a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
+            i.fa.fa-envelope
+          a {{agent.contactEmail}}
+        .social-block
+          a.ih-social-icon(itemprop='telephone')
+            i.fa.fa-phone
+          span {{agent.contactPhone | tel}}
+        .social-block
+          a.ih-social-icon(itemprop='address')
+            i.fa.fa-home
+          span {{agent.contactAddress}}
+          br
+          span {{agent.contactAddress2}}
+        .social-block
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          span {{agent.facebook}}
+        .social-block
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          span {{agent.linkedin}}
+        .social-block
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          span {{agent.twitter}}
+        .social-block
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          span {{agent.instagram}}
+        .social-block
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
+          span {{agent.pinterest}}
+  div.footer.bt70
+    .container-fluid.footer-inner
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
+        span.ih-ui-fairhousing
+        span.ih-ui-realtor
+        small.ng-binding
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
+        small.text-uppercase
+          |inspired by:
+          a(href="https://html5up.net/" target="_blank" rel="noopener") html5up
+        br
+        small Powered by
+          a(href="http://www.getinhouse.io") InHouse
+        span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem

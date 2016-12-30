@@ -16,6 +16,7 @@ body { overflow-x: hidden !important; }
 /* background color defaults */
 .bw { background-color: #fff !important; }
 .bf5 { background-color: #f5f5f5 !important; }
+.bf7 { background-color: #f7f7f7 !important; }
 .bee { background-color: #eee !important; }
 .bdd { background-color: #ddd !important; }
 .wt80 { background-color: rgba(255,255,255,0.8); }

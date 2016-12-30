@@ -1,0 +1,10 @@
+section.p4.ih-amenities
+  .container.header-inner
+    h2.ih-header Home Amenities
+    .ih-sm-divider
+    .row.amenities-inner
+      .col-lg-3.col-md-3.col-sm-3.col-xs-6.amenity(ng-repeat='amenity in amenities')
+        .icon-box
+          span.ih-icon(class='{{amenity.icon}}')
+        .amenity-label
+          small {{amenity.name}}

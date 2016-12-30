@@ -1,0 +1,13 @@
+section.p6.ih-photo-slider.fp.fw
+ div.container-fluid.photo-slider-inner
+  h1.ih-header.text-center Photo Gallery
+  div.ih-md-divider
+  div.row
+   p.fs.text-center.col-md-6.col-md-offset-3
+   |	{{listing.listingDescription | limitTo: 250 }}
+  div.row
+   ih-owl.owl-carousel.tst-carousel(items='listing.photos', responsive='responsive')
+    div.listing-pic-block.full(ng-repeat='photo in listing.photos')
+     div.listing-pic(ng-style="{'background-image': 'url(' + photo.large + ')'}")
+      a.block.full.fw(ng-click='showLightBox($index)')
+       span.fa.fa-camera

@@ -1,0 +1,35 @@
+section.jj.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
+  .iha.afull
+    .ih.container.container-sm.fullh
+      .row.text-center
+        img.img-circle(
+          ng-src='{{agent.team[0].photo}}',
+          alt='{{agent.team[0].name}}')
+      .text-uppercase
+        h4 welcome to
+        h1 {{listing.address}}
+        h3
+          small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
+        p.listing-desc
+          | {{data.cta || listing.publicRemarks | limitTo: 200}}
+        br
+        br
+        small
+          strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
+      .btn-row
+        a.btn.btn-primary(href='#/') schedule visit
+  .bottom-btn.fw
+    a.pointer(href='#/')
+      i.fa.fa-angle-down
+  .ih-slider-row.row
+    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")

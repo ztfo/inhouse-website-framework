@@ -1,0 +1,12 @@
+section.p6.ih-amenities.fw
+  span.image-div
+    img(src='https://cdn.photos.sparkplatform.com/tar/20161203230336417190000000-o.jpg')
+  div.container-fluid.flex-grid.section-inner
+    h1.ih-header Home Amenities
+    div.ih-sm-divider
+    div.amenities-list
+      div.flex-block.amenity(ng-repeat='amenity in amenities')
+        div.icon-box
+          span.ih-icon(class='{{amenity.icon}}')
+        div.amenity-label
+          small {{amenity.name}}
