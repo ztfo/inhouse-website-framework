@@ -15,7 +15,7 @@ section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
                 small.text-uppercase SQFT{{listing.sizeUnit}}
               span.text-uppercase {{listing.price | currency}}
           .flex-8
-            a.pointer.btn.btn-primary Schedule Visit
+            ih-schedule-visit(listing="listing")
   .ih-slider-row
     .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
       .full.fade.in(
