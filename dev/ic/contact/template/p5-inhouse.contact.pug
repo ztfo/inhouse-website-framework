@@ -18,12 +18,6 @@ section.p5.ih-contact.fw(
             i.fa.fa-phone
           span {{agent.contactPhone | tel}}
         .social-block
-          a.ih-social-icon(itemprop='address')
-            i.fa.fa-home
-          span {{agent.contactAddress}}
-          br
-          span {{agent.contactAddress2}}
-        .social-block
           a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
             i.fa.fa-facebook
           span {{agent.facebook}}
@@ -43,8 +37,8 @@ section.p5.ih-contact.fw(
           a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
             i.fa.fa-pinterest
           span {{agent.pinterest}}
-  .footer.bt70
-    .container-fluid.footer-inner
+  .footer
+    .container
       .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
         span.ih-ui-fairhousing
         span.ih-ui-realtor
