@@ -1,42 +1,37 @@
 section.p4.ih-about-listing
   .container
     p.lead.text-center Editable text here
-    .row
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-houses.fc-02
-          .fact-value.fc-01
-            | {{listing.beds}}
-          .fact-label
-            | Bedrooms
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-bathtub.fc-02
-          .fact-value.fc-01
-            | {{listing.baths}}
-          .fact-label
-            | Baths
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-house.fc-02
-          .fact-value.fc-01
-            | {{listing.sqft | number}}
-          .fact-label
-            | {{listing.sizeUnit}}
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-investment.fc-02
-          .fact-value.fc-01
-            | {{listing.stories}}
-          .fact-label
-            | Stories
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-fence.fc-02
-          .fact-value.fc-01
-            | {{listing.lotsize}}
-          .fact-label
-            | Acres
+    .row.fact-list
+      .fact-box.style1
+        .ih-icon.ih-icon-houses.fc-02
+        .fact-value.fc-01
+          | {{listing.beds}}
+        .fact-label
+          | Bedrooms
+      .fact-box.style2
+        .ih-icon.ih-icon-bathtub.fc-02
+        .fact-value.fc-01
+          | {{listing.baths}}
+        .fact-label
+          | Baths
+      .fact-box.style3
+        .ih-icon.ih-icon-house.fc-02
+        .fact-value.fc-01
+          | {{listing.sqft | number}}
+        .fact-label
+          | {{listing.sizeUnit}}
+      .fact-box.style4
+        .ih-icon.ih-icon-investment.fc-02
+        .fact-value.fc-01
+          | {{listing.stories}}
+        .fact-label
+          | Stories
+      .fact-box.style5
+        .ih-icon.ih-icon-fence.fc-02
+        .fact-value.fc-01
+          | {{listing.lotsize}}
+        .fact-label
+          | Acres
     .row
       p.columns.text-justify {{listing.description}}
     .row.text-center

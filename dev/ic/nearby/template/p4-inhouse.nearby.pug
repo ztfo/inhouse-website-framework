@@ -1,12 +1,15 @@
 section.p4.ih-nearby
   div.container
-    h2.ih-header What our clients say
+    h2.ih-header Nearby places
     div.ih-sm-divider
     div.row.flex-grid
       div.flex-8
         map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
           marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
       div.flex-4.nearby-list
+        ul.nav.nav-pills.nav-justified.nearby-tabs
+          li(ng-repeat='source in sources')
+            a.pointer(ng-click='selectTab($index)') {{source.name}}      
         div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
           h3.fc-01 {{source.name}}
           div.nearby-place.clearfix(ng-repeat='place in source.data')

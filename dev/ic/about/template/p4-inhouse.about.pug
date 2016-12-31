@@ -1,8 +1,8 @@
-section.p4.ih-about.container-fluid.fw
-  div.container.about-inner.flex-grid
-    div.flex-3.agent-image
-      img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
-    div.flex-9.agent-bio
-      h3 {{agent.agentName}}
-      div.ih-sm-divider
-      div.bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+section.p4.ih-about.container-fluid
+  .container.about-inner.flex-grid
+    .agent-bio
+      h2.ih-header {{agent.agentName}}
+      .ih-sm-divider
+      .bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+    .agent-image
+      img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
