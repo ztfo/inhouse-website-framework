@@ -27,6 +27,12 @@ angular.module('ihframework')
         }
       });
 
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.responsive = newVal;
+        }
+      });
+
       $scope.next = function(id) {
         $element.find('#' + id).carousel('next');
       };

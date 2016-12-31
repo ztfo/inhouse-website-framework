@@ -1,8 +1,22 @@
 section.p5.ih-about.fw
-	div.container-fluid.section-inner
-		div.agent-image
-			img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
-		div.agent-bio
-			h1.ih-header {{agent.agentName}}
-			div.ih-sm-divider
-			div.bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+  .container.flex-grid
+    .agent-image.flex-3
+      img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+    .agent-bio.flex-9
+      h1.ih-header {{agent.agentName}}
+      p.strong {{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}
+      .ih-sm-divider
+      .bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+      .about-social
+        a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+          i.fa.fa-envelope
+        a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+          i.fa.fa-facebook
+        a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+          i.fa.fa-linkedin
+        a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+          i.fa.fa-twitter
+        a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+          i.fa.fa-instagram
+        a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+          i.fa.fa-pinterest

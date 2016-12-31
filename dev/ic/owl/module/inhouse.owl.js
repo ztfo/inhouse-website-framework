@@ -26,6 +26,12 @@ angular.module('ihframework')
         }
       });
 
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.renderOwl();
+        }
+      });
+
       $scope.renderOwl = function() {
         $timeout(function() {
           if($scope.owl != undefined) {
