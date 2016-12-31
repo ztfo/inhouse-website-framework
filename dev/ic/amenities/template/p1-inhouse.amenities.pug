@@ -6,7 +6,7 @@ section.p1.ih-amenities.flex-grid.fp
         br
         small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
       .price-badge.fc-01
-        strong {{listing.price | currency}}
+        strong {{listing.price | currency:undefined:0}}
       blockquote.fs
         | "Call to action here please. A one line description of the home"
       .btn-row

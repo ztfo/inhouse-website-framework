@@ -33,6 +33,6 @@ section.p4.ih-about-listing
         .fact-label
           | Acres
     .row
-      p.columns.text-justify {{listing.description}}
+      p.columns.text-justify {{data.cta || listing.publicRemarks}}
     .row.text-center
       ih-schedule-visit(listing="listing")

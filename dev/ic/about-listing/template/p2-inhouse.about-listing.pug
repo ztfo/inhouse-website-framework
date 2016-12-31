@@ -61,6 +61,6 @@ section.p2.ih-about-listing.fp
                 i.fa.fa-google-plus
       .row
         p.fs.columns
-          | {{listing.description}}
+          | {{data.cta || listing.publicRemarks}}
       .row.btn-row.text-center
         ih-schedule-visit(listing="listing")

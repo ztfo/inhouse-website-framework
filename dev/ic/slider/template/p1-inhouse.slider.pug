@@ -18,7 +18,7 @@ section.p1.ih-slider.container-fluid.fp
                 | {{listing.baths}}
                 small.text-uppercase Baths
               span.fact
-                | {{listing.sqft}}
+                | {{listing.sqft | number}}
                 small.text-uppercase SQFT{{listing.sizeUnit}}
           .col-lg-5.col-md-5.col-sm-5.col-xs-5.fullh.bkc-02.fw.banner-box
             h1 {{listing.price | currency:undefined:0}}
