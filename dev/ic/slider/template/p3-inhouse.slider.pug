@@ -10,7 +10,7 @@ section.p3.ih-slider.container-fluid.fp(class='{{classes}}')
               span {{listing.beds}} Bedrooms |
               span {{listing.baths}} Baths |
               span {{listing.sqft | number}} SQFT{{listing.sizeUnit}}
-              div.text-uppercase.lead
+              .text-uppercase.lead
                 strong {{listing.price | currency:undefined:0}}
           .flex-6
             ih-schedule-visit(listing="listing")
