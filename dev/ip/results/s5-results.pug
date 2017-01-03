@@ -1,9 +1,9 @@
 section.ih-results.s1
   .container
-    // results filter
+    //- results filter
     #mapResults.ihmap-results(ng-show='mapShown')
       ih-listing-map.full
-    // listing results
+    //- listing results
     .ih-results-inner
       .ih-listings-menu
         .container-fluid
@@ -18,10 +18,10 @@ section.ih-results.s1
                   | {{filter}}{{val == true ? '' : ': ' + val}}
                   i.fa.fa-times
                 span(ng-if='!$last') /
-            .col-lg-4.col-md-4.col-sm-12.col-sm-12.clearfix.filter-btns
+            .col-lg-4.col-md-4.col-sm-12.col-sm-12
               button#listingMap.btn.btn-default.pull-right.last(name='listingMap', type='button', ng-click='toggleMaps()')
                 i.fa.fa-globe
-              a.btn.btn-default.pull-right(role='button', data-toggle='collapse', href='#searchFilters', aria-expanded='false', aria-controls='searchFilters', onclick='event.preventDefault()')
+              a.btn.btn-default.pull-right(role='button', data-toggle='collapse', href='#searchFilters', aria-expanded='true', aria-controls='searchFilters', onclick='event.preventDefault()')
                 i.fa.fa-filter
                 |  More Filters
               button.btn.btn-default.pull-right.hidden(name='listingDisplay', type='button', ng-click='toggleListView()')
@@ -29,7 +29,7 @@ section.ih-results.s1
                 i.fa.fa-th-large(ng-show='showListView')
               ih-dropdown#sort.dropdown.pull-right(items='[{"name": "Lowest Price", "value": "+ListPrice"}, {"name": "Highest Price", "value": "-ListPrice"}, {"name": "Newest Listings", "value": "-OnMarketDate"}, {"name": "Oldest Listings", "value": "+OnMarketDate"}]', name='Sort By', ng-model='filters.sort')
       .ih-filters.container-fluid
-        #searchFilters.ih-advanced-filters.collapse.container-fluid
+        #searchFilters.ih-advanced-filters.collapse.in.container-fluid(aria-expanded='true', data-toggle='true')
           .row
             .ih-input-box.col-lg-6.col-md-6.col-sm-4.col-xs-12
               input.ih-search-input.full(type='text', placeholder='Address', name='propertyAddress', ng-model='filters.address')
@@ -38,34 +38,40 @@ section.ih-results.s1
             .ih-input-box.col-lg-3.col-md-3.col-sm-4.col-xs-12
               input.ih-search-input.full(type='text', placeholder='MLS #', name='propertyMLS', ng-model='filters.mls')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Min Price', name='propertyMinPrice', ng-model='filters.min_price')
+              ih-dropdown#community(items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]', name='Community', ng-model='filters.community', truncate='4', multi='true')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Max Price', name='propertyMaxPrice', ng-model='filters.max_price')
+              ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Min Sqft', name='propertyMinSF', ng-model='filters.min_sqft')
-            .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Max Sqft', name='propertyMaxSF', ng-model='filters.max_sqft')
-            .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Min Beds', name='propertyMinBeds', ng-model='filters.min_beds')
-            .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Max Baths', name='propertyMaxBeds', ng-model='filters.max_beds')
+              ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
+          .row
             .col-lg-6.col-md-6.col-sm-12.col-xs-12
-              .row.ih-filter-row
-                ih-dropdown#community(items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]', name='Community', ng-model='filters.community', truncate='4', multi='true')
-              .row.ih-filter-row
-                ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
-              .row.ih-filter-row
-                ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
+              .ih-slide
+                label(for='#priceFilter') Price Range
+                bootstrap-slider(name='priceFilter', ng-model='filters.price', type='text', data-slider-min='50000', data-slider-max='2000000', data-slider-step='1000', data-slider-value='[50000,5000000]', data-filter='price')
+              .ih-slide
+                label(for='#bedsFilter') Bedrooms
+                bootstrap-slider(name='bedsFilter', ng-model='filters.bedsRange', type='text', data-slider-min='1', data-slider-max='10', data-slider-step='1', data-slider-value='[1,10]', data-filter='bedsRange')
+              .ih-slide
+                label(for='#bathsFilter') Baths
+                bootstrap-slider#bathsFilter(name='bathsFilter', ng-model='filters.bathsRange', type='text', data-slider-min='1', data-slider-max='15', data-slider-step='1', data-slider-value='[1,15]', data-filter='bathsRange')
+              .ih-slide
+                label(for='#sqft') Sqft Range
+                bootstrap-slider(name='sqft', ng-model='filters.sqft', type='text', data-slider-min='1', data-slider-max='20000', data-slider-step='1000', data-slider-value='[1,20000]', data-filter='sqft')
+              .ih-slide
+                label(for='#yearRange') Year Built
+                bootstrap-slider#yearRange(name='yearRange', ng-model='filters.yearRange', type='text', data-slider-min='1900', data-slider-max='2017', data-slider-step='1', data-slider-value='[1900,2017]', data-filter='yearRange')
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
               .ih-filter-row.row
-                ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
-            .col-lg-6.col-md-6.col-sm-12.col-xs-12
-              .row.ih-filter-row
-                ih-dropdown#type(multi='true', items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type')
-              .row.ih-filter-row
-                ih-dropdown#pool(items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]', name='Pool', ng-model='filters.pool')
-              .row.ih-filter-row
-                ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
-              .row.ih-filter-row
+                .ih-filter-box.col-lg-6
+                  ih-dropdown#type(multi='true', items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type')
+                .ih-filter-box.col-lg-6
+                  ih-dropdown#pool(items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]', name='Pool', ng-model='filters.pool')
+              .ih-filter-row.row
+                .ih-filter-box.col-lg-6
+                  ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
+                .ih-filter-box.col-lg-6
+                  ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
+              .ih-filter-row.col-lg-12
                 .btn-group
                   label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")
                     input(type='checkbox', autocomplete='off', checked='', ng-model='filters.active')
@@ -84,7 +90,7 @@ section.ih-results.s1
             |  Sorry, there are no listings that match your search criteria.
           .ih-listing-block.col-lg-3.col-md-4.col-sm-6.col-xs-12(class='ih-mls-status-{{home.status}}', ng-class="showListView ? 'ih-listview' : ''", ng-repeat='home in listings', ng-mouseover='focusListing($index)')
             .ih-listing-card
-              .ih-listing-card-img(style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
+              .ih-listing-card-img(style="background-image: url('{{home.thumb_url || 'https://-s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
                 a.ih-ft-listing-link.block.full(href='#/listing/{{home.mls}}')
                   | View Home
                 ih-like-button(mls='{{home.mls}}', address='{{address}}')
@@ -108,7 +114,7 @@ section.ih-results.s1
                       strong.lead.fs {{home.price | currency:"$":0}}
           .ih-listing-block.col-lg-3.col-md-4.col-sm-6.col-xs-12(ng-class="showListView ? 'ih-listview' : ''", ng-repeat='n in range(0,listingLoaders)')
             ih-listing-loader
-        // more listing scrollspy/button
+        //- more listing scrollspy/button
         .ih-more-listings
           .ih-listing-count.lead.text-center
             strong

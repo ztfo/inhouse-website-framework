@@ -1,24 +1,28 @@
-section.l3.ih-about.container-fluid.fw
-  div.container-fluid.about-inner.flex-grid
-    div.flex-9.agent-bio
-      h3(itemprop='name') {{agent.agentName}}
-      div.ih-sm-divider
-      div.about-social
-        a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
-          i.fa.fa-envelope
-        a.ih-social-icon.bkc-02(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
-          i.fa.fa-facebook
-        a.ih-social-icon.bkc-02(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
-          i.fa.fa-linkedin
-        a.ih-social-icon.bkc-02(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
-          i.fa.fa-twitter
-        a.ih-social-icon.bkc-02(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
-          i.fa.fa-instagram
-        a.ih-social-icon.bkc-02(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
-          i.fa.fa-pinterest
-        h4.text-muted
-          strong
-            | {{agent.agentTitle}} | {{agent.teamName}} {{agent.agentBrokerage}}
-        .text-justify.bio.fs(itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted")
-    div.flex-3.agent-image
+section.l3.ih-about.ih-lender.flex-grid.fw
+    div.flex-4.agent-image
+      div.about-overlay
+        h2.ih-header Meet Your Lender
+        div.ih-sm-divider
       img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+    div.flex-8.agent-bio
+      div.agent-header
+        h3(itemprop='name') {{agent.agentName}}
+        div.agent-icons
+          a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+            i.fa.fa-envelope
+          a.ih-social-icon.bkc-02(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+           i.fa.fa-facebook
+          a.ih-social-icon.bkc-02(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+           i.fa.fa-linkedin
+          a.ih-social-icon.bkc-02(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+           i.fa.fa-twitter
+          a.ih-social-icon.bkc-02(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+           i.fa.fa-instagram
+          a.ih-social-icon.bkc-02(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+           i.fa.fa-pinterest
+        h4.text-muted
+      div.about-social
+        div.ih-sm-divider
+        strong
+          | {{agent.agentTitle}} | {{agent.teamName}} {{agent.agentBrokerage}}
+        .text-justify.bio.fs(itemprop="description" class="bio" ng-bind-html="agent.bio1 | to_trusted")

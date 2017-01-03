@@ -1,6 +1,9 @@
-section.p6.ih-amenities.fw
-  div.container-fluid.amenities-inner.flex-grid
+section.p6.ih-amenities.fw(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+  span.image-div
+    img(ng-src="{{listing.primaryPhoto.large}}")
+  div.container-fluid.section-inner
     h1.ih-header Home Amenities
+    div.ih-sm-divider
     div.amenities-list
       div.flex-block.amenity(ng-repeat='amenity in amenities')
         div.icon-box
