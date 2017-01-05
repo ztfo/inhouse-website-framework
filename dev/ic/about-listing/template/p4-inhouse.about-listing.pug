@@ -1,6 +1,6 @@
 section#about.p4.ih-about-listing
   .container
-    p.lead.text-center Editable text here
+    h2.ih-header About {{listing.address}}
     .row.fact-list
       .fact-box.style1
         .ih-icon.ih-icon-houses.fc-02
@@ -32,7 +32,7 @@ section#about.p4.ih-about-listing
           | {{listing.lotsize}}
         .fact-label
           | Acres
-    .row
+    .row.remarks
       p.columns.text-justify {{data.cta || listing.publicRemarks}}
     .row.text-center
       ih-schedule-visit(listing="listing")
