@@ -1,16 +1,16 @@
 section#nearby.p4.ih-nearby
-  div.container
+  div.container-fluid
     h2.ih-header Nearby places
     div.ih-sm-divider
     div.row.flex-grid
       div.flex-12
         ul.nav.nav-pills.nav-justified.nearby-tabs
           li(ng-repeat='source in sources')
-            a.pointer(ng-click='selectTab($index)') {{source.name}}       
+            a.pointer(ng-click='selectTab($index)') {{source.name}}
       div.flex-8
         map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
           marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
-      div.flex-4.nearby-list   
+      div.flex-4.nearby-list
         div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
           h3.fc-01 {{source.name}}
           div.nearby-place.clearfix(ng-repeat='place in source.data')

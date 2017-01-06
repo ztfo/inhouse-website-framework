@@ -1,12 +1,12 @@
-section.p4.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
-  .greeting.container.text-center.fw.z2
+section.p4.ih-slider.fp.bkc-01(class='{{classes}}')
+  .greeting.container-fluid.text-center.fw.z2
     div
-      img.img-circle(ng-src="{{agent.agentLogo}}", alt="{{agent.agentName}}")
+      img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
     h1 {{listing.address}}
     p.lead {{listing.description}}
     p
       small.text-uppercase presented by: {{agent.agentName}}
-  #nav.container.alt
+  #nav.container-fluid.alt
     ul
       li
         a(href="#about") About Listing

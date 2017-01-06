@@ -1,5 +1,5 @@
 section#about.p4.ih-about-listing
-  .container
+  .container-fluid
     h2.ih-header About {{listing.address}}
     .row.fact-list
       .fact-box.style1
@@ -33,6 +33,6 @@ section#about.p4.ih-about-listing
         .fact-label
           | Acres
     .row.remarks
-      p.columns.text-justify {{data.cta || listing.publicRemarks}}
+      p.columns.text-center {{data.cta || listing.publicRemarks}}
     .row.text-center
       ih-schedule-visit(listing="listing")
