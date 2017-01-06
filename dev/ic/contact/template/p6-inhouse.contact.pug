@@ -1,10 +1,10 @@
 section.p6.ih-contact.fw(class='{{classes}}')
-  div.container
-    div.contact-inner.flex-grid
-      div.flex-12.contact-header
+  .container
+    .contact-inner.flex-grid
+      .flex-12.contact-header
         h1.ih-header.text-center Get In Touch
-        div.ih-sm-divider
-      div.flex-12.contact-form-inner
+        .ih-sm-divider
+      .flex-12.contact-form-inner
         form(ng-submit='Contact.$valid && submitContact()', name='Contact')
           .text-center.alert.alert-success.fade.in(ng-show='contactSent')
             h3
@@ -36,7 +36,7 @@ section.p6.ih-contact.fw(class='{{classes}}')
             textarea#textMessage.ih-form-input.ih-textarea.form-control(type='text', required='', ng-model='contact.message')
           .text-center
             button.btn.btn-primary.block.form-submit(type='submit') Submit
-      div.flex-12.contact-social
+      .flex-12.contact-social
         .social-block
           a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
             i.fa.fa-envelope
@@ -71,17 +71,20 @@ section.p6.ih-contact.fw(class='{{classes}}')
           a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
             i.fa.fa-pinterest
           span {{agent.pinterest}}
-  div.footer.bt70
+  .footer.bt70
     .container-fluid
-      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
         span.ih-ui-fairhousing
         span.ih-ui-realtor
-        small.ng-binding
-      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
-        small.text-uppercase
-          |inspired by:
-          a(href="https://html5up.net/" target="_blank" rel="noopener") html5up
-        br
-        small Powered by
-          a(href="http://www.getinhouse.io") InHouse
-        span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
+        small © {{year}} - {{agent.agentName}} | {{listing.MLS}}
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
+        .pull-right
+          a(href="https://www.getinhouse.io", target="_blank", rel="noopener")
+            span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
+        .pull-right.text-uppercase
+          small
+            | inspired by &nbsp;
+            a(href="https://html5up.net/", target="_blank", rel="noopener") html5up
+          br
+          small powered by &nbsp;
+            a(href="http://www.getinhouse.io") InHouse

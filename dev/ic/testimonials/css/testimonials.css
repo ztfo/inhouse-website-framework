@@ -5,29 +5,29 @@
   cursor: pointer;
 }
 
-.ih-testimonials {
+.ihag .ih-testimonials {
     position: relative;
 }
 
-.ih-testimonials-inner {
+.ihag .ih-testimonials-inner {
     position: relative;
 }
 
-.ih-ui-zillow {
+.ihag .ih-ui-zillow {
     font-size: 3em;
     opacity: .5;
 }
 
-.ih-ui-testimonial-01 {
+.ihag .ih-ui-testimonial-01 {
     font-size: 12em;
     padding: 15px;
 }
 
-.fw .ih-ui-testimonial-01, .fw .ih-ui-testimonial-01 span::before {
+.ihag .fw .ih-ui-testimonial-01, .fw .ih-ui-testimonial-01 span::before {
     color: #fff !important;
 }
 
-.fb .ih-ui-testimonial-01, .fb .ih-ui-testimonial-01 span::before {
+.ihag .fb .ih-ui-testimonial-01, .fb .ih-ui-testimonial-01 span::before {
     color: #1b1b1b !important;
 }
 
@@ -47,16 +47,16 @@
     cursor: pointer;
 }
 
-.ih-testimonials .owl-nav div:hover {
+.ihag .ih-testimonials .owl-nav div:hover {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.ih-testimonials .owl-nav .owl-prev {
+.ihag .ih-testimonials .owl-nav .owl-prev {
     border-radius: 50px 0 0 50px;
     border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.ih-testimonials .owl-nav .owl-next {
+.ihag .ih-testimonials .owl-nav .owl-next {
     border-radius: 0 50px 50px 0;
 }
 

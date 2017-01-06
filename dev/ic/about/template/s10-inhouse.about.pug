@@ -32,5 +32,12 @@ section.s10.ih-about
               span |
               a.clean-link(href='tel:{{agent.contactPhone | tel}}') {{agent.contactPhone | tel}}
         .bio(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
+    .row.carol-logos
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12
+        span.brokerage
+        a.logo-link(href="http://www.meetmeatmaynards.com/")      
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item(src="https://www.youtube.com/embed/tKCwJrjlN8M")
     .row.text-center
       a.btn.btn-primary.about-btn.inlineblock(href="#/{{agent.agentName | split: ' ':0 | lowercase}}") More about {{agent.agentName | split: ' ':0}}

@@ -12,12 +12,10 @@ section.jj.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
           small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
         p.listing-desc
           | {{data.cta || listing.publicRemarks | limitTo: 200}}
-        br
-        br
         small
           strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
       .btn-row
-        a.btn.btn-primary(href='#/') schedule visit
+        ih-schedule-visit(listing="listing")
   .bottom-btn.fw
     a.pointer(href='#/')
       i.fa.fa-angle-down
