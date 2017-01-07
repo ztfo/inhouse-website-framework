@@ -9,7 +9,7 @@ section.s9.ih-search
           .container-fluid
             .ih-main-search.row
               .ih-input-box.col-lg-15.col-md-15.col-sm-4.col-xs-12
-                ih-dropdown#type(items='[{"name": "Site Built", "value": "Site Built"}, {"name": "Condo/Townhome", "value": "Condo/Townhome"} {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type', multi='true')
+                ih-dropdown#type(items='[{"name": "Site Built", "value": "Site Built"}, {"name": "Condo/Townhome", "value": "Condo/Townhome"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type', multi='true')
               .ih-input-box.col-lg-15.col-md-15.col-sm-4.col-xs-12
                 ih-dropdown#county(items='[{"name": "Apache", "value": "Apache"}, {"name": "Navajo", "value": "Navajo"}]', name='County', multi='true', ng-model='filters.county')
               .ih-input-box.col-lg-15.col-md-15.col-sm-6.col-xs-12
@@ -48,10 +48,10 @@ section.s9.ih-search
                       input.ih-search-input.full(type='text', placeholder='Min Lot Size (Acres)', name='propertyMinLot', ng-model='filters.min_acres')
                     .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
                       ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
-                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden
                       ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
                   .row
-                    .ih-filter-box.col-lg-3.col-md-6.col-sm-12.col-xs-12
+                    .ih-filter-box.col-lg-3.col-md-6.col-sm-12.col-xs-12.hidden
                       button.btn.btn-primary.full(type='button', data-toggle='button', aria-pressed='false', autocomplete='off', value='', name='propertyPool', ng-click="toggleButton($event, 'pool')")
                         | Pool
                     .ih-filter-box.col-lg-3.col-md-6.col-sm-12.col-xs-12
