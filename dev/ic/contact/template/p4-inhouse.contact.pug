@@ -7,7 +7,7 @@ section#contact.p4.ih-contact.fw(class='{{classes}}')
         h3 Address
         span {{agent.contactAddress}}  {{agent.contactAddress2}}
       .social-block
-        h3 Telephone
+        h3 Phone
         span {{agent.contactPhone | tel}}
       .social-block
         h3 Email
@@ -24,13 +24,13 @@ section#contact.p4.ih-contact.fw(class='{{classes}}')
           i.fa.fa-instagram
         a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
           i.fa.fa-pinterest
-  div.flex-12.footer.bt70
-    .container-fluid
-      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
+  div.flex-12.footer
+    .container-fluid.footer-inner
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.no-padding
         span.ih-ui-fairhousing
         span.ih-ui-realtor
         small © {{year}} - {{agent.agentName}} | {{listing.MLS}}
-      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right.no-padding
         div.pull-right
           a(href="https://www.getinhouse.io", target="_blank", rel="noopener")
             span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
