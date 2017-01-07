@@ -71,7 +71,7 @@ section.ih-results.s1
                   ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
                 .ih-filter-box.col-lg-6
                   ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
-              .ih-filter-row.col-lg-12
+              //- .ih-filter-row.col-lg-12
                 .btn-group
                   label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")
                     input(type='checkbox', autocomplete='off', checked='', ng-model='filters.active')
