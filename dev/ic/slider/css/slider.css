@@ -732,13 +732,6 @@
     .s1.ih-slider .ih-slider-inner .item {
         height: 220px !important;
     }
-
-    /* p2 */
-    .p2.ih-slider .btn-row {
-      display: flex;
-      margin: 0 auto;
-      max-width: 340px;
-    }
 }
 
 @media screen and (max-width: 768px) {
