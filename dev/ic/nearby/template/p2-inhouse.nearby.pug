@@ -8,10 +8,10 @@ section.p2.ih-nearby.fp
       .col-lg-4.col-md-4.col-sm-6.col-xs-12.nearby-list
         .nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
           h3.fc-01 {{source.name}}
-          .nearby-place.clearfix(ng-repeat='place in source.data')
-            .pull-left.round-icon.bkc-04.fw
+          .nearby-place.flex-grid(ng-repeat='place in source.data')
+            .flex-2.nearby-icon.fw
               span.ih-icon-location3
-            .pull-left
+            .flex-10
               h5.text-uppercase.fc-01 {{place.name}}
               .g-rating(ng-if='place.rating')
                 | {{place.rating}}
