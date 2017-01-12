@@ -73,8 +73,14 @@ angular.module('ihframework')
   })
   .filter('split', function() {
     return function(input, splitChar, splitIndex) {
-      // do some bounds checking here to ensure it has that index
-      return input.split(splitChar)[splitIndex];
+      if(input != undefined) {
+        var split = input.split(splitChar);
+        if(split.length > splitIndex) {
+          return input.split(splitChar)[splitIndex];
+        }
+        
+        return split[0];
+      }
     }
   })
   .filter('to_trusted', ['$sce', function($sce) {
