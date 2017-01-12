@@ -11,14 +11,14 @@ section.p2.ih-slider.container-fluid.fp.bkc-01
         h3
           small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
       p.listing-desc
-        | {{data.cta || listing.publicRemarks}}
+        | {{data.cta || listing.publicRemarks | limitTo: 140}}...
         br
         br
         small
           strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
       .btn-row
         ih-schedule-visit(listing="listing")
-  .ih-slider-row.row.tpt
+  .ih-slider-row.row
     .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
       .full.fade.in(
         uib-carousel='',

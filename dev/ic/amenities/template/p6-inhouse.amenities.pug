@@ -1,7 +1,7 @@
-section.p6.ih-amenities.fw
+section.p6.ih-amenities.fw(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
   span.image-div
-    img(src='https://cdn.photos.sparkplatform.com/tar/20161203230336417190000000-o.jpg')
-  div.container-fluid.flex-grid.section-inner
+    img(ng-src="{{listing.primaryPhoto.large}}")
+  div.container-fluid.section-inner
     h1.ih-header Home Amenities
     div.ih-sm-divider
     div.amenities-list

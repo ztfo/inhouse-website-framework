@@ -20,6 +20,18 @@ angular.module('ihframework')
           $scope.templateUrl = 'build/templates/ic/testimonials/template/s1-inhouse.testimonials.html';
         }
       });
+      
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.responsive = newVal;
+        }
+      });
+
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.responsive = newVal;
+        }
+      });
 
       $scope.next = function(id) {
         $element.find('#' + id).carousel('next');

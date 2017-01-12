@@ -3,11 +3,15 @@ angular.module('ihframework')
 	return {
 		template: '<ng-include src="theUrl()" class="{{classes}}"><ng-include>',
 		scope: {
-			classes: "@classes"
+			classes: "@classes",
+			config: '@'
 		},
 		restrict: 'E',
 		controller: function($rootScope, $scope, $filter, $document) {
-			$scope.config = $rootScope.theWebsiteData.navbarConfig;
+			if($scope.config == undefined) {
+				$scope.config = $rootScope.theWebsiteData.navbarConfig;
+			}
+			
 			$scope.theUrl = function(){
 				return 'build/templates/ic/navbar/template/' + $scope.config + '-inhouse.navbar.html';
 			};

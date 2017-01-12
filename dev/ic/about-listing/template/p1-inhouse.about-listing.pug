@@ -5,8 +5,8 @@ section.p1.ih-about-listing.container-fluid.fp
       br
       | {{listing.address}}
     .row
-      p.fs.text-center.col-md-6.col-md-offset-3
-        | {{listing.editableText}}
+      p.fs.columns
+        | {{data.cta || listing.publicRemarks}}
     .row.text-center.fact-row.fs
       .col-lg-15.col-md-15.col-sm-6.col-sm-12
         .fact-box
@@ -44,5 +44,4 @@ section.p1.ih-about-listing.container-fluid.fp
           .fact-label
             | Acres
     .row.text-center.btn-row
-      a.btn.btn-default(href='#/') View On Map
-      a.btn.btn-primary(href='#/') Schedule Visit
+      ih-schedule-visit(listing="listing")

@@ -275,7 +275,9 @@
     font-size: 15px;
 }
 
+
 /* s11 */
+
 .s11.ih-about {
     margin: 100px 0;
     padding: 50px 0;
@@ -302,6 +304,7 @@
 .s11.ih-about .ih-bio-img {
     margin-top: 30px;
 }
+
 
 /* p1 */
 
@@ -334,6 +337,8 @@
     text-align: center;
     line-height: 25px;
     border-radius: 50%;
+    background-color: #3277b2;
+    margin: 0 5px;
 }
 
 .p1.ih-about .bio {
@@ -407,7 +412,7 @@
 }
 
 .p2.ih-about .about-social {
-  margin: 25px 0;
+    margin: 25px 0;
 }
 
 
@@ -464,13 +469,12 @@
     }
     /* p2 */
     .p2.ih-about .about-social {
-      margin: 25px 0;
+        margin: 25px 0;
     }
-
     /* l2 */
     .l2.ih-lender .btn {
-      margin-bottom: 15px;
-      width: 100%;
+        margin-bottom: 15px;
+        width: 100%;
     }
 }
 

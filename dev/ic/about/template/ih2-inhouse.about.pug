@@ -38,10 +38,10 @@ section#scrollhook.page-content.container-fluid
           h2.text-center.fc-03 Relax
           .ih-md-divider
           p
-            | Sit back and let us do the work. InHouse will have your Property Stories ready in your inbox automatically for every new and sold listing.
+            | Sit back and let us do the work. InHouse will have your Property Story ready in your inbox automatically for every new and sold listing.
         .btn-row.text-center
           a.btn.btn-primary(href='#/signup') sign-up today
-      .row.agent-only
+      .row.agent-only.whatyouget
         h1.ih-header.text-center What you get
         .ih-sm-divider
         .container-fluid.agent-how
@@ -81,9 +81,85 @@ section#scrollhook.page-content.container-fluid
             .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center
               img.img-responsive.hidden-xs(src='ua/images/listing-print.svg')
     section.pricing.bkc-03.fw
-      .container.text-center.agent-only
-        h1.ih-lg-header agents start free
-        a.btn.btn-default(href='#/signup') sign-up today
+      .container.agent-only
+        h1.ih-header.text-center Pricing
+        .ih-sm-divider
+        .row.text-center
+          .btn-group
+            a(ng-class="{'active' : monthlyPrice}", ng-click='monthlyPrice = true') Monthly
+            a(ng-class="{'active' : !monthlyPrice}", ng-click='monthlyPrice = false') Annual
+        .row.price-row
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12
+            .price-card
+              h2.text-center Starter
+              .ih-sm-divider
+              h1
+                span.annual(ng-show='!monthlyPrice')
+                  sup $
+                  | 23
+                span.monthly(ng-show='monthlyPrice')
+                  sup $
+                  | 29
+              strong.subtext.text-center.text-uppercase.block / month
+              ul.bullets
+                li
+                  i.fa.fa-caret-right
+                  |  1 Listing
+                li
+                  i.fa.fa-caret-right
+                  |  
+                li
+                  i.fa.fa-caret-right
+                  |  
+              a.btn.btn-default(href='#/signup') sign-up today        
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12
+            .price-card
+              h2.text-center Prime
+              .ih-sm-divider
+              h1
+                span.annual(ng-show='!monthlyPrice')
+                  sup $
+                  | 55
+                span.monthly(ng-show='monthlyPrice')
+                  sup $
+                  | 69
+              strong.subtext.text-center.text-uppercase.block / month
+              ul.bullets
+                li
+                  i.fa.fa-caret-right
+                  |  2-5 Listings
+                li
+                  i.fa.fa-caret-right
+                  |  
+                li
+                  i.fa.fa-caret-right
+                  |  
+              a.btn.btn-default(href='#/signup') sign-up today
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12
+            .price-card
+              h2.text-center Expert
+              .ih-sm-divider
+              h1
+                span.annual(ng-show='!monthlyPrice')
+                  sup $
+                  | 79
+                span.monthly(ng-show='monthlyPrice')
+                  sup $
+                  | 99
+              strong.subtext.text-center.text-uppercase.block / month
+              ul.bullets
+                li
+                  i.fa.fa-caret-right
+                  |  Unlimited Listings
+                li
+                  i.fa.fa-caret-right
+                  |  
+                li
+                  i.fa.fa-caret-right
+                  |  
+              a.btn.btn-default(href='#/signup') sign-up today
+        .row.text-center
+          h2.ih-lg-header sign-up for a free trial today!
   .row(ng-show='lenderOnly')
     .container
       //- show for lenders only

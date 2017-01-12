@@ -11,7 +11,7 @@ section.s11.ih-slider.container-fluid
         a.ih-nar-btn.btn.btn-primary.fullw(href='{{LandingComponent.adviceLink}}')
           | {{LandingComponent.adviceText}}
       .col-lg-3.col-md-3.col-sm-3.col-xs-12.nopad(ng-if='LandingComponent.showAdditional')
-        a.ih-nar-btn.btn.btn-primary.fullw(href='{{LandingComponent.additionalLink}}')
+        a.ih-nar-btn.btn.btn-primary.fullw(href='{{LandingComponent.additionalLink}}', target="_blank")
           | {{LandingComponent.additionalText}}
   .ih-slider-row.row
     .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel')

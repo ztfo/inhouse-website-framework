@@ -19,6 +19,18 @@ angular.module('ihframework')
           $scope.renderOwl();
         }
       });
+      
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.renderOwl();
+        }
+      });
+
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.renderOwl();
+        }
+      });
 
       $scope.renderOwl = function() {
         $timeout(function() {
