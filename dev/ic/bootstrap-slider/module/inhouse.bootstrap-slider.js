@@ -38,7 +38,9 @@ angular.module('ihframework')
 					if(typeof scope.filters[attrs.filter] !== 'undefined') {
 						var val = scope.filters[attrs.filter];
 						var range = val.split(';');
-						$(element).slider('setValue', [parseInt(range[0].replace(/[^0-9]/, '')), parseInt(range[1].replace(/[^0-9]/, ''))]); //todo: check if this has 1 or no parameters!
+						if(range.length > 1) {
+							$(element).slider('setValue', [parseInt(range[0].replace(/[^0-9]/, '')), parseInt(range[1].replace(/[^0-9]/, ''))]); //todo: check if this has 1 or no parameters!
+						}
 					}
 				};
 			})(scope, element, attrs));
