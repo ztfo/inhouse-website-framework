@@ -93,6 +93,8 @@ angular.module('ihframework')
   })
 	.filter('spaceless', function() {
 		return function(input) {
-			return input.replace(/ /g, '');
+      if(input != undefined) {
+  			return input.replace(/ /g, '');
+      }
 		};
 	});
