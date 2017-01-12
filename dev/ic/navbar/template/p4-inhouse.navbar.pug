@@ -1,0 +1,26 @@
+nav.p4.ih-nav.navbar.navbar-fixed-top(class='{{classes}} {{controller}}', itemscope='', itemtype='http://schema.org/SiteNavigationElement')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(itemprop='url', href='#/')
+        .brand-contain(style="background-image: url('{{agent.teamLogo}}');")
+        img.hidden(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
+    #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
+      ul.nav.navbar-nav.navbar-right(role='menubar')
+        li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
+          a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if="link.type != 'relative' && link.children === undefined", ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
+            span(itemprop='name') {{link.display}}
+          a.text-uppercase(ng-if="link.type == 'relative'" ng-click="scrollToElement(link.href)")
+            span(itemprop='name') {{link.display}}
+          a.dropdown-toggle.text-uppercase(ng-if='link.children !== undefined', href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+            | {{link.display}}
+            span.caret
+          ul.dropdown-menu(ng-if='link.children !== undefined')
+            li(ng-repeat='sublink in link.children')
+              a.text-uppercase(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
+                i.fa.fa-caret-right.fc-03
+                span(itemprop='name') {{sublink.display}}

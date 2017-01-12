@@ -148,17 +148,6 @@ map {
 
 /* p4 */
 
-.p4.ih-nearby::before {
-    content: "";
-    width: 1px;
-    height: 95px;
-    display: block;
-    background-color: #eee;
-    position: absolute;
-    top: -95px;
-    right: 50%;
-}
-
 .p4.ih-nearby::after {
     content: "";
     width: 1px;
