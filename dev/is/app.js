@@ -88,7 +88,23 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 	};
 	$scope.submitRegister = (function($scope) {
 			return function() {
-			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
+			inhouseApi.newApi.leadLogin({name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
+				if(typeof Storage !== 'undefined') {
+					if(typeof result.data.lead.uuid === 'undefined') {
+						$scope.inhouseAgentUserLoggedIn = false;
+						delete localStorage.inhouseAgentUser;
+						$('#accountModal').attr('data-success-register', 'false');
+					} else {
+						$scope.inhouseAgentUserLoggedIn = true;
+						$scope.$broadcast('loginChanged', true);
+						localStorage.inhouseAgentUser = result.data.lead.uuid;
+						window.inhouseAgentUser = result.data.lead.uuid;
+						$('#accountModal').attr('data-success-register', 'true');
+						$('#accountModal').modal('hide');
+					}
+				}
+			});
+/*			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
 						$scope.inhouseAgentUserLoggedIn = false;
@@ -105,11 +121,15 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 					}
 				}
 			});
+			*/
 		};
 	})($scope);
 	$scope.submitLogin = (function($scope) {
 			return function() {
-			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
+			inhouseApi.newApi.leadLogin({name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
+				
+			});
+/*			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
 						$scope.inhouseAgentUserLoggedIn = false;
@@ -126,6 +146,7 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 					}
 				}
 			});
+			*/
 		};
 	})($scope);
 }])

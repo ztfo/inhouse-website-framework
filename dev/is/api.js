@@ -10,6 +10,7 @@ angular.module('ihframework')
 	inhouseApi.newApi = {};
 	
 	inhouseApi.newApi.postContactLead = function(contact) {
+		data = $.extend({}, data);
 		if(contact.note == undefined && contact.message != undefined) contact.note = contact.message;
 		contact.callback = 'JSON_CALLBACK';
 		url = newApi + 'user/' + userId + '/lead?' + $.param(contact);
@@ -22,15 +23,45 @@ angular.module('ihframework')
 		
 		return $http.jsonp(url);
 	};
-	inhouseApi.newApi.searchMls = function(data) {
+	
+	inhouseApi.newApi.leadLogin = function(data) {
+		url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK&' + $.param(data);
+		return $http.jsonp(url);
+	};
+	
+	inhouseApi.newApi.leadLikeListing = function(data) {
 		
+		data = $.extend({}, data);
 		data.callback = 'JSON_CALLBACK';
 		
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+				data.lead = localStorage.inhouseAgentUser;
 			}
 		}
+		
+		if(typeof window.geolocation !== 'undefined') {
+			if(typeof data.params === 'undefined') {
+				data.params = {};
+			}
+			data.params.geolocation = window.geolocation;
+		}
+		
+		url = newApi + 'lead/' + data.lead + '/like?' + $.param(data);
+		
+		return $http.jsonp(url);
+	};
+	inhouseApi.newApi.searchMls = function(data) {
+		
+		data = $.extend({}, data);
+		data.callback = 'JSON_CALLBACK';
+		
+		if(typeof Storage !== 'undefined') {
+			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+				data.lead = localStorage.inhouseAgentUser;
+			}
+		}
+		
 		if(typeof window.geolocation !== 'undefined') {
 			if(typeof data.params === 'undefined') {
 				data.params = {};
@@ -58,14 +89,8 @@ angular.module('ihframework')
 		
 		if(typeof Storage !== 'undefined') {
 			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+				data.lead = localStorage.inhouseAgentUser;
 			}
-		}
-		if(typeof window.geolocation !== 'undefined') {
-			if(typeof data.params === 'undefined') {
-				data.params = {};
-			}
-			data.params.geolocation = window.geolocation;
 		}
 		
 		url = newApi + 'user/' + userId + '/listing/' + mls + '?' + $.param(data);
@@ -77,19 +102,7 @@ angular.module('ihframework')
 		
 		data.callback = 'JSON_CALLBACK';
 		
-		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.inhouseAgentUser = localStorage.inhouseAgentUser;
-			}
-		}
-		if(typeof window.geolocation !== 'undefined') {
-			if(typeof data.params === 'undefined') {
-				data.params = {};
-			}
-			data.params.geolocation = window.geolocation;
-		}
-		
-		url = newApi + 'user/' + userId + '/featured-listings/' + key + '?' + $.param(data);
+		url = newApi + 'user/' + userId + '/featured-listings/' + JSON.stringify(key) + '?' + $.param(data);
 		
 		return $http.jsonp(url);
 	};

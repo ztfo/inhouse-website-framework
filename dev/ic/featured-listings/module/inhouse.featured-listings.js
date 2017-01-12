@@ -8,9 +8,15 @@ angular.module('ihframework')
 			pull: '@',
 			slider: '=',
 			config: '=',
-			header: '@'
+			header: '@',
+			filters: '='
 		},
 		controller: function ($rootScope, $scope, userDataService, $element) {
+			$scope.$watch('filters', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.viewMore = $.param(newVal);
+				}
+			});
 			$scope.$watch('config', function(newVal) {
 				if(newVal !== undefined) {
 					$scope.templateUrl = 'build/templates/ic/featured-listings/template/' + $scope.config + '-inhouse.featured-listings.html';
@@ -56,7 +62,7 @@ angular.module('ihframework')
 				$scope.homes = args.featuredListings.listings;
 			});
 
-			inhouseApi.newApi.featuredListings('{}').success(function(response) {
+			inhouseApi.newApi.featuredListings($scope.filters).success(function(response) {
 				$scope.listingLoaders = 0;
 				$scope.homes = response.listings;
 			});
