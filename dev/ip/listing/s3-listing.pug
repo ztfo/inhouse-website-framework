@@ -6,20 +6,7 @@ section.s3.ih-listing
   .container
     .row
       .col-xs-12.col-sm-12.col-md-8.col-lg-8.nopad
-        .ih-listing-slider
-          .row
-            #listingSlider.carousel.slide(data-ride='carousel')
-              .carousel-inner(role='listbox')
-                .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
-                  .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.UriLarge + ')'}", data-image='{{slide.UriLarge}}', data-caption='{{slide.Caption}}')
-                  .carousel-caption
-                    | {{slide.caption}}
-              a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
-                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-                span.sr-only Previous
-              a.right.carousel-control(href='#listingSlider', role='button', data-slide='next', onclick='event.preventDefault()')
-                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-                span.sr-only Next
+        ih-listing-slider(config='f1')
         .ih-listing-images
           ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
             .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')

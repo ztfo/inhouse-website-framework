@@ -1,0 +1,14 @@
+.ih-listing-slider.f1
+  .row
+    #listingSlider.carousel.slide(data-ride='carousel')
+      .carousel-inner(role='listbox')
+        .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
+          .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.UriLarge + ')'}", data-image='{{slide.UriLarge}}', data-caption='{{slide.Caption}}')
+          .carousel-caption
+            | {{slide.caption}}
+      a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
+        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        span.sr-only Previous
+      a.right.carousel-control(href='#listingSlider', role='button', data-slide='next', onclick='event.preventDefault()')
+        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        span.sr-only Next

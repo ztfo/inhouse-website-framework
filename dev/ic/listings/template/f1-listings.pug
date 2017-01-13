@@ -1,0 +1,43 @@
+.ih-listings.f1.container-fluid
+  .ih-listings-grid.row
+    .no-results.hidden
+      span.ih-ui-no-listings
+      hr
+      |  Sorry, there are no listings that match your search criteria.
+    .ih-listing-block.col-lg-3.col-md-4.col-sm-6.col-xs-12(class='ih-mls-status-{{home.status}}', ng-class="showListView ? 'ih-listview' : ''", ng-repeat='home in listings', ng-mouseover='focusListing($index)')
+      .ih-listing-card
+        .ih-listing-card-img(style="background-image: url('{{home.thumb_url || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
+          a.ih-ft-listing-link.block.full(href='#/listing/{{home.mls}}')
+            | View Home
+          ih-like-button(mls='{{home.mls}}', address='{{address}}')
+        .ih-listing-card-desc.container-fluid
+          .ih-ft-listing-addr.text-center
+            h4 {{home.address}}
+            h6.text-uppercase.text-muted
+              strong {{home.city}} {{home.state}}, {{home.zipcode}}
+          hr
+          p.text-muted
+            | {{home.PublicRemarks|limitTo:130:0|words|sentence}}...
+            a.read-more(href='#/listing/{{home.mls}}') Read More
+          hr
+          .ih-ft-listing-details.row
+            .col-lg-6.col-mg-6.col-sm-6.col-xs-6
+              small(ng-if="home.beds_total != '' && home.baths_total != ''") {{home.beds_total}} BEDS | {{home.baths_total}} BATHS
+              br(ng-if="home.beds_total != '' && home.baths_total != ''")
+              small(ng-if="home.sq_total != ''") {{home.sq_total | number}} SQFT
+            .col-lg-6.col-mg-6.col-sm-6.col-xs-6.text-right
+              small
+                strong.lead.fs {{home.price | currency:"$":0}}
+    .ih-listing-block.col-lg-3.col-md-4.col-sm-6.col-xs-12(ng-class="showListView ? 'ih-listview' : ''", ng-repeat='n in range(0,listingLoaders)')
+      ih-listing-loader
+  //- more listing scrollspy/button
+  .ih-more-listings
+    .ih-listing-count.lead.text-center
+      strong
+        | {{displayListings * (filters.page ? filters.page : 1) | number}} / {{totalListings | number}}
+    button.btn.btn-primary.btn-block(type='button', ng-click='moreListings()')
+      | Load More Listings
+  .ih-mls-legal
+    | © 2016 - All Rights Reserved - Tucson Association of Realtors. All information deemed reliable, but not guaranteed. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than
+    | to identify prospective properties consumers may be interested in purchasing.
+  .ih-accent-divider
