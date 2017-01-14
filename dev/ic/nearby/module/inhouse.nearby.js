@@ -20,6 +20,11 @@ angular.module('ihframework')
 
 			$scope.nearbyData = {};
 
+			$scope.$watch('sources', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.sources = newVal;
+				}
+			});
 			if($scope.sources == undefined) {
 				$scope.sources = [
 					{
