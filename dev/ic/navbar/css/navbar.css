@@ -296,6 +296,22 @@
     .s2.ih-nav .navbar-nav>li>a {
         text-align: center !important;
     }
+
+    /* property websites */
+    .ihli .ih-nav .navbar-nav>li>a {
+      padding: 20px 25px;
+      text-align: right;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .ihli .ih-nav .navbar-nav>li:last-child>a {
+      border-bottom: none;
+    }
+
+    .ihli .ih-nav .navbar-nav {
+      margin: 0;
+      padding: 0;
+    }
 }
 
 @media screen and (max-width: 425px) {
