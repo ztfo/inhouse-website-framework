@@ -2,20 +2,7 @@ section.s1.ih-listing
   .container
     .container-fluid
       .row
-        .ih-listing-slider.col-lg-8.col-md-8.col-sm-8.col-xs-12
-          .row
-            #listingSlider.carousel.slide(data-ride='carousel')
-              .carousel-inner(role='listbox')
-                .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
-                  .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.large + ')'}", data-image='{{slide.large}}', data-caption='{{slide.caption}}')
-                  .carousel-caption
-                    | {{slide.caption}}
-              a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
-                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-                span.sr-only Previous
-              a.right.carousel-control(href='#listingSlider', role='button', data-slide='next', onclick='event.preventDefault()')
-                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-                span.sr-only Next
+        ih-listing-slider.col-lg-8.col-md-8.col-sm-8.col-xs-12(config='f1')
         .ih-listing-map.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden-xs
           .ih-gmap.full
             ih-gmaps.full
