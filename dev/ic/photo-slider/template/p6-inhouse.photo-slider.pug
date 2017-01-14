@@ -1,10 +1,5 @@
 section.p6.ih-photo-slider.fp.fw
   .container-fluid.photo-slider-inner
-    h1.ih-header.text-center Photo Gallery
-    .ih-md-divider
-    .gallery-remarks
-      p.fs.text-center
-      | {{data.cta || listing.publicRemarks}}
     .gallery-carousel
       ih-owl.owl-carousel.tst-carousel(items='listing.photos', responsive='responsive')
         .listing-pic-block.full(ng-repeat='photo in listing.photos')
