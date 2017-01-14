@@ -4,7 +4,7 @@ section.p6.ih-about-listing.fp.fw
   div.container-fluid.about-inner
     h1.ih-header About {{listing.address}}
     div.ih-sm-divider
-    p.fs.text-center {{data.cta || listing.publicRemarks}}
+    p.listing-remarks.fs.text-center {{data.cta || listing.publicRemarks}}
     div.container-fluid.details
       ih-listing-details(listing='listing')
-    a.pointer.btn.btn-primary schedule visit
+    ih-schedule-visit(listing="listing")

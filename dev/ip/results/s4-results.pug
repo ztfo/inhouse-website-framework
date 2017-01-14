@@ -1,9 +1,9 @@
-section.ih-results.s1
+section.ih-results.s4
   .container
-    // results filter
+    //- results filter
     #mapResults.ihmap-results(ng-show='mapShown')
       ih-listing-map.full
-    // listing results
+    //- listing results
     .ih-results-inner
       .ih-listings-menu
         .container-fluid
@@ -56,15 +56,11 @@ section.ih-results.s1
                 ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
               .row.ih-filter-row
                 ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
-              .ih-filter-row.row
-                ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
             .col-lg-6.col-md-6.col-sm-12.col-xs-12
               .row.ih-filter-row
                 ih-dropdown#type(multi='true', items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type')
               .row.ih-filter-row
                 ih-dropdown#pool(items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]', name='Pool', ng-model='filters.pool')
-              .row.ih-filter-row
-                ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
               .row.ih-filter-row
                 .btn-group
                   label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")

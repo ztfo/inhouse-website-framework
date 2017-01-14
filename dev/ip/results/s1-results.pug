@@ -66,11 +66,6 @@ section.ih-results.s1
                   ih-dropdown#type(multi='true', items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type')
                 .ih-filter-box.col-lg-6
                   ih-dropdown#pool(items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]', name='Pool', ng-model='filters.pool')
-              .ih-filter-row.row
-                .ih-filter-box.col-lg-6
-                  ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
-                .ih-filter-box.col-lg-6
-                  ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
               .ih-filter-row.col-lg-12
                 .btn-group
                   label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")
