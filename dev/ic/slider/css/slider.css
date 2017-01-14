@@ -682,6 +682,13 @@
 
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /* global */
+    .ih-slider-inner,
+    .ih-slider-row {
+      height: 100% !important;
+    }
+    .ih-slider .item {
+        height: 900px;
+    }
     .ih-greeting {
         padding-top: 15em;
     }
