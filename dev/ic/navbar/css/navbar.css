@@ -181,6 +181,16 @@
         width: 280px;
     }
     /* s2 */
+
+    /* property websites */
+    .ihli .navbar-nav>li>a {
+        padding: 25px 45px;
+        text-align: right;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .ihli #mainNav {
+        max-height: initial;
+    }
 }
 
 @media screen and (min-width: 376px) and (max-width: 768px) {
