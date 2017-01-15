@@ -8,7 +8,7 @@ section.ih-results.s1
       .ih-listings-menu
         .container-fluid
           .row
-            .col-lg-8.col-md-8.col-sm-12.col-sm-12.fs.lead
+            .col-lg-7.col-md-7.col-sm-12.col-sm-12.fs.lead
               span
                 strong {{totalListings | number}}
                 |  Total Listings
@@ -18,7 +18,7 @@ section.ih-results.s1
                   | {{filter}}{{val == true ? '' : ': ' + val}}
                   i.fa.fa-times
                 span(ng-if='!$last') /
-            .col-lg-4.col-md-4.col-sm-12.col-sm-12
+            .col-lg-5.col-md-5.col-sm-12.col-sm-12
               button#listingMap.btn.btn-default.pull-right.last(name='listingMap', type='button', ng-click='toggleMaps()')
                 i.fa.fa-globe
               a.btn.btn-default.pull-right(role='button', data-toggle='collapse', href='#searchFilters', aria-expanded='false', aria-controls='searchFilters', onclick='event.preventDefault()')
