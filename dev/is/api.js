@@ -9,7 +9,11 @@ angular.module('ihframework')
 	inhouseApi.newApi = {};
 	
 	inhouseApi.newApi.postContactLead = function(contact) {
-		data = $.extend({}, data);
+		//store contact type
+		if($rootScope.theWebsiteData.story_type != undefined) {
+			contact.story_type = $rootScope.theWebsiteData.story_type;
+		}
+		
 		if(contact.note == undefined && contact.message != undefined) contact.note = contact.message;
 		contact.callback = 'JSON_CALLBACK';
 		url = newApi + 'user/' + userId + '/lead?' + $.param(contact);
@@ -17,14 +21,20 @@ angular.module('ihframework')
 	};
 	
 	inhouseApi.newApi.getTestimonials = function() {
-		
 		url = newApi + 'user/' + userId + '/testimonials?callback=JSON_CALLBACK';
 		
 		return $http.jsonp(url);
 	};
 	
 	inhouseApi.newApi.leadLogin = function(data) {
+		
+		//store contact type
+		if($rootScope.theWebsiteData.story_type != undefined) {
+			data.story_type = $rootScope.theWebsiteData.story_type;
+		}
+		
 		url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK&' + $.param(data);
+		
 		return $http.jsonp(url);
 	};
 	

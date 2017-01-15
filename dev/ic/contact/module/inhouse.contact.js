@@ -73,7 +73,6 @@ angular.module('ihframework')
 				contact.form = this.scope.contactMessage;
 				var api = this.scope.inhouseApi;
 				$scope.contactSending = true;
-				contact.story_type = $scope.story_type;
 				api.newApi.postContactLead(contact).success((function($scope) {
 //				api.getData({resource: 'submit-contact', contact: contact}).success((function($scope) {
 					return function(response) {
