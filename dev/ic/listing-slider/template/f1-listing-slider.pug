@@ -1,9 +1,9 @@
-.ih-listing-slider.f1
+.ih-listing-slider.f1.col-lg-8.col-md-8.col-sm-8.col-xs-12.nopad-l
   .row
     #listingSlider.carousel.slide(data-ride='carousel')
       .carousel-inner(role='listbox')
         .item(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in listing.photos')
-          .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.large + ')'}", data-image='{{slide.large}}', data-caption='{{slide.caption}}')
+          .full-screen-image(ng-click='showLightBox($index)', ng-style="{'background-image':'url(' + slide.UriLarge + ')'}", data-image='{{slide.large}}', data-caption='{{slide.Caption}}')
           .carousel-caption
             | {{slide.caption}}
       a.left.carousel-control(href='#listingSlider', role='button', data-slide='prev', onclick='event.preventDefault()')
