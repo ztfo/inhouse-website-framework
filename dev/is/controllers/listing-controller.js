@@ -75,10 +75,4 @@ angular.module('ihframework')
 
 	$scope.getData();
 
-	$scope.showLightBox = function(index) {
-		var firstHalf = $scope.lightBox.slice().slice(0, index - 1);
-		var secondHalf = $scope.lightBox.slice().slice(index);
-		
-		UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
-	};
 }]);
