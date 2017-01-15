@@ -489,7 +489,7 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     right: 0;
     left: 0;
     background-image: url('https://s3-us-west-2.amazonaws.com/inhouse-static-assets/framework/ia/images/triangle.svg');
@@ -738,13 +738,6 @@
     }
     .s1.ih-slider .ih-slider-inner .item {
         height: 220px !important;
-    }
-
-    /* p2 */
-    .p2.ih-slider .btn-row {
-      display: flex;
-      margin: 0 auto;
-      max-width: 340px;
     }
 }
 

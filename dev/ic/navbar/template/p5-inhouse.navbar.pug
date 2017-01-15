@@ -1,13 +1,13 @@
-nav.p2.ih-nav.navbar.navbar-default.text-center.fw.fp(class='{{classes}} {{controller}}', itemscope='', itemtype='http://schema.org/SiteNavigationElement', role='navigation')
-  .container-fluid
-    .ih.navbar-header
+nav.p5.ih-nav.navbar.navbar-fixed-top(class='{{classes}} {{controller}}', itemscope='', itemtype='http://schema.org/SiteNavigationElement')
+  .container
+    .navbar-header
       button.navbar-toggle(type='button', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed', aria-expanded='false')
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
       a.navbar-brand(itemprop='url', href='#/')
-        div.brand-contain(style="background-image: url('{{agent.teamLogo}}');")
+        .brand-contain(style="background-image: url('{{agent.teamLogo}}');")
         img.hidden(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
     #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
       ul.nav.navbar-nav.navbar-right(role='menubar')
@@ -24,10 +24,3 @@ nav.p2.ih-nav.navbar.navbar-default.text-center.fw.fp(class='{{classes}} {{contr
               a.text-uppercase(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
                 i.fa.fa-caret-right.fc-03
                 span(itemprop='name') {{sublink.display}}
-        li
-          .hidden
-            //- leadcap not implemented for pstories yet
-            button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn') Sign-in
-            a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
-              i.fa.fa-home
-          ih-schedule-visit(listing="listing")

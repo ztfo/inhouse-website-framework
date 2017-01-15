@@ -2,8 +2,7 @@ section.p3.ih-about-listing.flex-grid.fp.fw
   div.flex-4.about-inner
     h2.ih-header About {{listing.address}}
     div.ih-sm-divider
-    p.description
-    | {{data.cta || listing.publicRemarks}}
+    p.description {{data.cta || listing.publicRemarks}}
     div.btn-row
       a.pointer.btn.btn-primary schedule visit
   div.flex-8.details

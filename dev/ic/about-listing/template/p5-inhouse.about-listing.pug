@@ -3,8 +3,7 @@ section.p5.ih-about-listing.fp.fw
     .listing-inner
       h1.ih-header About {{listing.address}}
       .ih-sm-divider
-      p.description
-      | {{data.cta || listing.publicRemarks}}
+      p.listing-remarks.fs {{data.cta || listing.publicRemarks}}
     .details
       ih-listing-details(listing='listing')
     .btn-row
