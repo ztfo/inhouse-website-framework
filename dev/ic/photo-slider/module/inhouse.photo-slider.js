@@ -21,6 +21,15 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
         }
       });
 
+      $scope.rightPosition = 0;
+      
+      $scope.slideLeft = function() {
+        $scope.rightPosition = Math.max($scope.rightPosition - $element.find('.grid-image').width(), 0);
+      };
+      $scope.slideRight = function() {
+        $scope.rightPosition = Math.min($scope.rightPosition + $element.find('.grid-image').width(), $element.find('.image-grid').width() - $element.find('.ih.slider-row').width());
+      };
+      
     	$scope.showLightBox = function(index) {
         var listing = $scope.listing.photos;
 
