@@ -25,5 +25,6 @@ section.p2.ih-nearby.fp
       .col-lg-8.col-md-8.col-sm-6.col-xs-12.hidden-xs.nearby-map.nopad.bkc-01
         map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
           marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+          marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")
       .container.text-center.btn-row.hidden-xs
         ih-schedule-visit(listing="listing")

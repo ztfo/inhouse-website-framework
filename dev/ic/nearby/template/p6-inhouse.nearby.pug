@@ -2,6 +2,7 @@ section.p6.ih-nearby.fw.flex-grid
   div.map-pane.flex-8
     map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
       marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+      marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")
   div.places-pane.flex-4
     h1.ih-header Nearby Places
     div.ih-sm-divider

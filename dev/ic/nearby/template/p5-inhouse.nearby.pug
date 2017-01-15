@@ -10,6 +10,7 @@ section.p5.ih-nearby.fw
       div.flex-8.map-box.hidden-xs.hidden-sm
         map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
           marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+          marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")
       div.flex-4.nearby-list
         div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
           h3.fc-01 {{source.name}}

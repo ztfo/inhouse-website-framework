@@ -20,11 +20,6 @@ angular.module('ihframework')
 
 			$scope.nearbyData = {};
 
-			$scope.$watch('sources', function(newVal) {
-				if(newVal !== undefined) {
-					$scope.sources = newVal;
-				}
-			});
 			if($scope.sources == undefined) {
 				$scope.sources = [
 					{
@@ -50,6 +45,12 @@ angular.module('ihframework')
 					},
 				];
 			}
+			
+			$scope.$watch('sources', function(newVal) {
+				if(newVal !== undefined) {
+					$scope.sources = newVal;
+				}
+			});
 
 			if($scope.sources.length > 0) {
 				$scope.defaultTab = $scope.sources[0];
