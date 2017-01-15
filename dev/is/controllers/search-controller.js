@@ -198,28 +198,30 @@ angular.module('ihframework')
 	});
 
 	//trigger mls search on $scope.filter change
-	$scope.$watchCollection('filters', function(newFilters, oldFilters) {
-		$scope.$broadcast('filtersChanged', newFilters);
+	$scope.$watchCollection('filters', _.debounce(function(newFilters, oldFilters) {
 		if(newFilters == oldFilters) {
 			return;
 		}
-		if(!$scope.noWipe) {
-			if($scope.filters.page != 1 && !$scope.firstLoad) {
-				$scope.changedPage = true;
-				$scope.filters.page = 1;
+		$scope.$apply(function() {
+			$scope.$broadcast('filtersChanged', $scope.filters);
+			if(!$scope.noWipe) {
+				if($scope.filters.page != 1 && !$scope.firstLoad) {
+					$scope.changedPage = true;
+					$scope.filters.page = 1;
+				}
+				$scope.listings = [];
+				$scope.$broadcast('resultsCleared');
 			}
-			$scope.listings = [];
-			$scope.$broadcast('resultsCleared');
-		}
 
-		if(!$scope.changedPage) {
-			$scope.searchMLS();
-		} else {
-			$scope.changedPage = false;
-		}
+			if(!$scope.changedPage) {
+				$scope.searchMLS();
+			} else {
+				$scope.changedPage = false;
+			}
 
-		$location.search($scope.filters);
-	});
+			$location.search($scope.filters);
+		});
+	}, 800));
 
 	//search MLS
 	$scope.searchMLS();
