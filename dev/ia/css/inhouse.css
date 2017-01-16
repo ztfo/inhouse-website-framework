@@ -264,6 +264,10 @@ a:focus { text-decoration: none; color: inherit; }
 }
 /* owl end */
 
+.ihweb.ihag .ih-form-input {
+  padding: 0 15px !important;
+}
+
 /* new bootstrap */
 .col-xs-15,
 .col-sm-15,
