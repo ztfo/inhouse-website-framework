@@ -72,7 +72,7 @@ angular.module('ihframework')
 				$scope.contact.message = pre + window[$scope.prefill];
 			}
 			$scope.submitContact = function() {
-				var contact = this.scope.contact;
+				var contact = $.extend({}, this.scope.contact);
 				contact.form = this.scope.contactMessage;
 				var api = this.scope.inhouseApi;
 				$scope.contactSending = true;
