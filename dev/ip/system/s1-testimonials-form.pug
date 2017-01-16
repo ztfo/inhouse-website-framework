@@ -8,17 +8,17 @@ section.ih-testimonial-form
         h3
           strong Thank You!
         hr
-        |           Your Feedback is truly appreciate it! Your testimonial will appear on {{agent.agentName | split ' ':0}}'s website as soon as he approves it.
+        | Your Feedback is truly appreciate it! Your testimonial will appear on {{agent.agentName | split ' ':0}}'s website as soon as he approves it.
       .text-center.alert.alert-info.fade.in(ng-show='reviewSending')
         h3
           strong Please wait..
         hr
-        |  We're submitting your testimonial...
+        | We're submitting your testimonial...
       .text-center.alert.alert-danger.fade.in(ng-show='reviewSendFailed')
         h3
           strong We're sorry...
         hr
-        |  There was an issue submitting your testimonial. Please try again.
+        | There was an issue submitting your testimonial. Please try again.
       .row
         .form-group.col-lg-6.col-md-6.col-sm-12.col-xs-12
           label(for='messageName') Full Name

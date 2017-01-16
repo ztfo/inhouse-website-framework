@@ -1,101 +1,220 @@
+//- listing notification forms
+//- not currently used or implemented
 .ih-contact-form.f4
-  form.alert-form(ng-submit='submitContact()', name='propertyAlertSignup')
-    .text-center.alert.alert-success.fade.in(ng-show='contactSent')
+  form.alert-form(
+    ng-submit='submitContact()',
+    name='propertyAlertSignup')
+    .text-center.alert.alert-success.fade.in(
+      ng-show='contactSent')
       h3
         strong Thank You!
       hr
-      |  We will be in touch with you shortly. You can also call
-      strong {{agent.contactPhone | tel}}
-      | .
+      | We will be in touch with you shortly. You can also call&nbsp;
+      strong {{agent.contactPhone | tel}}.
     .text-center.alert.alert-info.fade.in(ng-show='contactSending')
       h3
         strong Please wait..
       hr
-      |  We're sending your message...
-    .text-center.alert.alert-danger.fade.in(ng-show='contactSendFailed')
+      | We're sending your message...
+    .text-center.alert.alert-danger.fade.in(
+      ng-show='contactSendFailed')
       h3
         strong We're sorry...
       hr
-      |  There was an issue sending your message. Please make sure you have entered a valid name and email address and try again. If this problem continues, please call us at {{agent.contactPhone | tel}}. Sorry for the inconvenience.
-    .container-fluid(ng-hide='contactSent || contactSending')
+      | There was an issue sending your message. Please make sure you have entered a valid name and email address and try again. If this problem continues, please call us at {{agent.contactPhone | tel}}. Sorry for the inconvenience.
+    .container-fluid(
+      ng-hide='contactSent || contactSending')
       .row
         h3.text-center Contact Info
       .form-group
         label(for='sellerName') Full Name
-        input#sellerName.ih-input.form-control(type='text', placeholder='Full Name', name='Full Name', ng-model='contact.FullName')
+        input#sellerName.ih-input.form-control(
+          type='text',
+          placeholder='Full Name',
+          name='Full Name',
+          ng-model='contact.name')
       .row
         .form-group.col-lg-6
           label(for='sellerPhone') Phone
-          input#sellerPhone.ih-input.form-control(type='text', name='Phone', placeholder='Phone', ng-model='contact.PhoneNumber')
+          input#sellerPhone.ih-input.form-control(
+            type='text',
+            name='Phone',
+            placeholder='Phone',
+            ng-model='contact.phone')
         .form-group.col-lg-6
           label(for='sellerEmail') Email
-          input#sellerEmail.ih-input.form-control(type='text', name='Email', placeholder='Email', required='', ng-model='contact.Email')
+          input#sellerEmail.ih-input.form-control(
+            type='text',
+            name='Email',
+            placeholder='Email',
+            required='',
+            ng-model='contact.email')
       h3.text-center Search Criteria
-      p.text-center.lead
-        | The broader your search criteria, the more property matches you will receive.
+      p.text-center.lead The broader your search criteria, the more property matches you will receive.
       .row.criteria
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          ih-dropdown#area(items='[{"name": "North", "value": "North"},{"name": "Northwest", "value": "Northwest"},{"name": "Northeast", "value": "Northeast"},{"name": "East", "value": "East"},{"name": "West", "value": "West"},{"name": "South", "value": "South"},{"name": "Southwest", "value": "Southwest"},{"name": "Southeast", "value": "Southeast"},{"name": "Extended Northeast", "value": "Extended Northwest"},{"name": "Extended Northwest", "value": "Extended Northeast"},{"name": "Extended South", "value": "Extended South"},{"name": "Extended Southwest", "value": "Extended Southwest"},{"name": "Extended West", "value": "Extended West"},{"name": "Pima East", "value": "Pima East"},{"name": "Pima Far West", "value": "Pima Far West"},{"name": "Pima Northwest", "value": "Pima Northwest"},{"name": "Pima South", "value": "Pima South"},{"name": "Pima Southwest", "value": "Pima Southwest"}]', name='Area', ng-model='contact.area')
+          ih-dropdown#area(
+            items='[{"name": "North", "value": "North"},{"name": "Northwest", "value": "Northwest"},{"name": "Northeast", "value": "Northeast"},{"name": "East", "value": "East"},{"name": "West", "value": "West"},{"name": "South", "value": "South"},{"name": "Southwest", "value": "Southwest"},{"name": "Southeast", "value": "Southeast"},{"name": "Extended Northeast", "value": "Extended Northwest"},{"name": "Extended Northwest", "value": "Extended Northeast"},{"name": "Extended South", "value": "Extended South"},{"name": "Extended Southwest", "value": "Extended Southwest"},{"name": "Extended West", "value": "Extended West"},{"name": "Pima East", "value": "Pima East"},{"name": "Pima Far West", "value": "Pima Far West"},{"name": "Pima Northwest", "value": "Pima Northwest"},{"name": "Pima South", "value": "Pima South"},{"name": "Pima Southwest", "value": "Pima Southwest"}]', name='Area',
+            ng-model='contact.note.area')
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          ih-dropdown#type(items='[{"name": "Single Family", "value": "Single Family"},{"name": "Townhouse", "value": "Townhouse"},{"name": "Condo", "value": "Condo"},{"name": "Manufactured", "value": "Manufactured"},{"name": "Land/Lot", "value": "Land/Lot"}]', name='Type', ng-model='contact.type')
+          ih-dropdown#type(
+            items='[{"name": "Single Family", "value": "Single Family"},{"name": "Townhouse", "value": "Townhouse"},{"name": "Condo", "value": "Condo"},{"name": "Manufactured", "value": "Manufactured"},{"name": "Land/Lot", "value": "Land/Lot"}]',
+            name='Type',
+            ng-model='contact.note.type')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-inputcd.form-control(name='Min $', type='text', placeholder='Min $', ng-model='contact.minprice')
+          input.ih-inputcd.form-control(
+            name='Min $',
+            type='text',
+            placeholder='Min $',
+            ng-model='contact.note.minprice')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Max $', type='text', placeholder='Max $', ng-model='contact.maxprice')
+          input.ih-input.form-control(
+            name='Max $',
+            type='text',
+            placeholder='Max $',
+            ng-model='contact.note.maxprice')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Min Beds', type='text', placeholder='Min Beds', ng-model='contact.minbeds')
+          input.ih-input.form-control(
+            name='Min Beds',
+            type='text',
+            placeholder='Min Beds',
+            ng-model='contact.note.minbeds')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Max Beds', type='text', placeholder='Max Beds', ng-model='contact.maxbeds')
+          input.ih-input.form-control(
+            name='Max Beds',
+            type='text',
+            placeholder='Max Beds',
+            ng-model='contact.note.maxbeds')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Sqaure Footage', type='text', placeholder='Square Footage', ng-model='contact.sqft')
+          input.ih-input.form-control(
+            name='Sqaure Footage',
+            type='text',
+            placeholder='Square Footage',
+            ng-model='contact.note.sqft')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Inc Pending Sales', type='text', placeholder='Inc. Pending Sales', ng-model='contact.pending')
+          input.ih-input.form-control(
+            name='Inc Pending Sales',
+            type='text',
+            placeholder='Inc. Pending Sales',
+            ng-model='contact.note.pending')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Inc Sold Properties', type='text', placeholder='Inc. Sold Properties', ng-model='contact.sold')
+          input.ih-input.form-control(
+            name='Inc Sold Properties',
+            type='text',
+            placeholder='Inc. Sold Properties',
+            ng-model='contact.note.sold')
         .col-lg-3.col-md-3.col-sm-12.col-xs-12
-          input.ih-input.form-control(name='Year Built', type='text', placeholder='Year Built', ng-model='contact.yearbuilt')
+          input.ih-input.form-control(
+            name='Year Built',
+            type='text',
+            placeholder='Year Built',
+            ng-model='contact.note.year')
         .form-group.container-fluid
-          textarea.ih-input.form-control(name='Additional Requirements', type='text', placeholder='Additional Requirements', ng-model='contact.additionalComments')
+          textarea.ih-input.form-control(
+            name='Additional Requirements',
+            type='text',
+            placeholder='Additional Requirements',
+            ng-model='contact.note.comments')
       .container-fluid.well
         .ih-checkbox.col-lg-4.col-md-4.col-sm-4.col-xs-12(data-group='new-stings')
-          input#new-listing(type='checkbox', data-field='New Listing', data-filter='mls', name='New Listing Check', ng-model='contact.newListings')
+          input#new-listing(
+            type='checkbox',
+            data-field='New Listing',
+            data-filter='mls',
+            name='New Listing Check',
+            ng-model='contact.note.newlistings')
           label.ih-font-primary(for='new-listing') New Listings
         .ih-checkbox.col-lg-4.col-md-4.col-sm-4.col-xs-12(data-group='price')
-          input#price-change(type='checkbox', data-field='Price Change', data-filter='mls', name='Price Change', ng-model='contact.priceChange')
+          input#price-change(
+            type='checkbox',
+            data-field='Price Change',
+            data-filter='mls',
+            name='Price Change',
+            ng-model='contact.note.pricechange')
           label.ih-font-primary(for='price-change') Price Change
         .ih-checkbox.col-lg-4.col-md-4.col-sm-4.col-xs-12
-          input#photos(type='checkbox', data-field='Photos', data-filter='mls', name='Photos', ng-model='contact.photos')
+          input#photos(
+            type='checkbox',
+            data-field='Photos',
+            data-filter='mls',
+            name='Photos',
+            ng-model='contact.note.photos')
           label.ih-font-primary(for='photos') Photos
         .ih-checkbox.col-lg-4.col-md-4.col-sm-4.col-xs-12
-          input#vtours(type='checkbox', data-field='Virtual Tours', data-filter='mls', name='Virtual Tours', ng-model='contact.virtualTours')
+          input#vtours(
+            type='checkbox',
+            data-field='Virtual Tours',
+            data-filter='mls',
+            name='Virtual Tours',
+            ng-model='contact.note.tours')
           label.ih-font-primary(for='vtours') Virtual Tours
         .ih-checkbox.col-lg-4.col-md-4.col-sm-4.col-xs-12
-          input#openhouse(type='checkbox', data-field='Open House Changes', data-filter='mls', name='Open House Changes', ng-model='contact.openHouses')
+          input#openhouse(
+            type='checkbox',Notifications
+            data-field='Open House Changes',
+            data-filter='mls',
+            name='Open House Changes',
+            ng-model='contact.note.openhouses')
           label.ih-font-primary(for='openhouse') Open House Changes
         .ih-checkbox.col-lg-4.col-md-4.col-sm-4.col-xs-12
-          input#status-change(type='checkbox', data-field='Status Changes', data-filter='mls', name='Status Changes', ng-model='contact.statusChange')
+          input#status-change(
+            type='checkbox',
+            data-field='Status Changes',
+            data-filter='mls',
+            name='Status Changes',
+            ng-model='contact.note.status')
           label.ih-font-primary(for='status-change') Status Changes (Pending/Sold)
       h3.text-center Frequency
       p.lead.text-center
         | You can also control the frequency of your email updates, as well as the updates you would like to receive.
       .container-fluid.well
         .ih-checkbox.col-lg-2.col-md-2.col-sm-2.col-xs-12
-          input#hourly(type='checkbox', data-field='Hourly', data-filter='mls', name='Hourly', ng-model='contact.hourly')
+          input#hourly(
+            type='checkbox',
+            data-field='Hourly',
+            data-filter='mls',
+            name='Hourly',
+            ng-model='contact.note.hourly')
           label.ih-font-primary(for='hourly') Hourly
         .ih-checkbox.col-lg-2.col-md-2.col-sm-2.col-xs-12
-          input#twoday(type='checkbox', data-field='Twice Daily', data-filter='mls', name='Twice Daily', ng-model='contact.twiceDaily')
+          input#twoday(
+            type='checkbox',
+            data-field='Twice Daily',
+            data-filter='mls',
+            name='Twice Daily',
+            ng-model='contact.note.twoday')
           label.ih-font-primary(for='twoday') Twice Daily
         .ih-checkbox.col-lg-2.col-md-2.col-sm-2.col-xs-12
-          input#daily(type='checkbox', data-field='Daily', data-filter='mls', name='Daily', ng-model='contact.daily')
+          input#daily(
+            type='checkbox',
+            data-field='Daily',
+            data-filter='mls',
+            name='Daily',
+            ng-model='contact.note.daily')
           label.ih-font-primary(for='daily') Daily
         .ih-checkbox.col-lg-2.col-md-2.col-sm-2.col-xs-12
-          input#weekly(type='checkbox', data-field='Weekly', data-filter='mls', name='Weekly', ng-model='contact.weekly')
+          input#weekly(
+            type='checkbox',
+            data-field='Weekly',
+            data-filter='mls',
+            name='Weekly',
+            ng-model='contact.note.weekly')
           label.ih-font-primary(for='weekly') Weekly
         .ih-checkbox.col-lg-2.col-md-2.col-sm-2.col-xs-12
-          input#monthly(type='checkbox', data-field='Monthly', data-filter='mls', name='Monthly', ng-model='contact.monthly')
+          input#monthly(
+            type='checkbox',
+            data-field='Monthly',
+            data-filter='mls',
+            name='Monthly',
+            ng-model='contact.note.monthly')
           label.ih-font-primary(for='monthly') Monthly
         .ih-checkbox.col-lg-2.col-md-2.col-sm-2.col-xs-12
-          input#no-notif(type='checkbox', data-field='No Notifications', data-filter='mls', name='No Notifications', ng-model='contact.noNotifications')
+          input#no-notif(
+            type='checkbox',
+            data-field='No Notifications',
+            data-filter='mls',
+            name='No Notifications',
+            ng-model='contact.note.nonotif')
           label.ih-font-primary(for='no-notif') No Notifications
       .container-fluid.text-center
-        button.btn.btn-primary.contact-form-submit(type='submit') SUBMIT
+        button.btn.btn-primary.contact-form-submit(type='submit') submit

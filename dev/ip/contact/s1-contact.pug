@@ -11,27 +11,27 @@
           br
           strong {{agent.brokerage}}
           br
-          |           {{agent.contactAddress}}
+          | {{agent.contactAddress}}
           br
-          |           {{agent.contactAddress2}}
+          | {{agent.contactAddress2}}
           br
         address
           span.space-icon
             i.fa.fa-envelope
-          |  {{agent.contactEmail}}
+          | {{agent.contactEmail}}
           br
           span.space-icon
             i.fa.fa-phone
-          |  {{agent.contactPhone | tel}}
+          | {{agent.contactPhone | tel}}
         .contact-hours.hidden
           div
             span.space-icon
               i.fa.fa-clock-o
-            |  Monday - Friday | 9AM to 5PM
+            | Monday - Friday | 9AM to 5PM
           div
             span.space-icon
               i.fa.fa-clock-o
-            |  Saturday - Sunday | Closed
+            | Saturday - Sunday | Closed
     .col-lg-6.col-md-6.col-sm-12.col-xs-12.contact-form-pane
       ih-contact(configname='f1', message='"How can We help?"')
   .row
