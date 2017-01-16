@@ -28,9 +28,12 @@ angular.module('ihframework')
 				});
 			});
 		},
-		controller: ['$rootScope', '$scope', 'inhouseApi', 'userDataService', function($rootScope, $scope, inhouseApi, userDataService) {
+		controller: ['$element', '$timeout', '$rootScope', '$scope', 'inhouseApi', 'userDataService', function($element, $timeout, $rootScope, $scope, inhouseApi, userDataService) {
 
 			$scope.story_type = $rootScope.theWebsiteData.story_type;
+			$timeout(function() {
+				$scope.context = $element.find('form').attr('name');
+			});
 			
 			if($scope.message != undefined) {
 				if($scope.contact == undefined) $scope.contact = {};
@@ -73,6 +76,13 @@ angular.module('ihframework')
 				contact.form = this.scope.contactMessage;
 				var api = this.scope.inhouseApi;
 				$scope.contactSending = true;
+				if(contact.note !== undefined) {
+					if(typeof contact.note !== 'object') {
+						contact.note = {note: contact.note};
+					}
+					
+					contact.note['Contact Type'] = $scope.context;
+				}
 				api.newApi.postContactLead(contact).success((function($scope) {
 					return function(response) {
 						delete $scope.contactSending;
