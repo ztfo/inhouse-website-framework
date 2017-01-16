@@ -74,7 +74,6 @@ angular.module('ihframework')
 				var api = this.scope.inhouseApi;
 				$scope.contactSending = true;
 				api.newApi.postContactLead(contact).success((function($scope) {
-//				api.getData({resource: 'submit-contact', contact: contact}).success((function($scope) {
 					return function(response) {
 						delete $scope.contactSending;
 						$scope.contactSent = true;
