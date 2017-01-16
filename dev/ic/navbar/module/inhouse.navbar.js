@@ -24,9 +24,9 @@ angular.module('ihframework')
 				$('#accountModal').modal('show');
 			};
 			$scope.$on('loginChanged', function(event, args) {
-				$scope.inhouseAgentUserLoggedIn = args;
+				$scope.inhouseAgentLeadLoggedIn = args;
 			});
-			$scope.inhouseAgentUserLoggedIn = $scope.$parent.inhouseAgentUserLoggedIn;
+			$scope.inhouseAgentLeadLoggedIn = $scope.$parent.inhouseAgentLeadLoggedIn;
 			$scope.navbar = $rootScope.theWebsiteData.NavBar;
 			$scope.halfway = Math.ceil($scope.navbar.length/2);
 			if(typeof $rootScope.theWebsiteData.navbarClasses !== 'undefined') {

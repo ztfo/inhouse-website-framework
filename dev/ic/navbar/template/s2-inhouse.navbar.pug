@@ -24,10 +24,10 @@ nav.s2.ih-nav.navbar.navbar-default(class='{{classes}} {{controller}}')
               i.fa.fa-phone
           a.ih-email-icon(href='mailto:{{agent.contactEmail}}')
             i.fa.fa-envelope
-          button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn')
+          button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentLeadLoggedIn')
             span.hidden-xs Sign-in
             i.fa.fa-home.hidden-lg.hidden-md.hidden-sm
-          a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
+          a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentLeadLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
             span.hidden-xs My Account
             span.hidden-lg.hidden-md.hidden-sm
               i.fa.fa-home

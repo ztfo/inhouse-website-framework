@@ -15,7 +15,7 @@ angular.module('ihframework')
 				data.mls = $scope.mls;
 				data.address = data.address = $scope.address;
 				if(typeof Storage !== 'undefined') {
-					if(typeof localStorage.inhouseAgentUser !== 'undefined') {
+					if(typeof localStorage.inhouseAgentLead !== 'undefined') {
 						inhouseApi.newApi.leadLikeListing({mls: data.mls, address: data.address}).success((function(button) {
 							return function(response) {
 								if(response.message == 'success') {
@@ -28,7 +28,7 @@ angular.module('ihframework')
 						$('#accountModal').modal('show');
 						$('#accountModal').on('hidden.bs.modal', (function(data, el) {
 							return function() {
-								if(typeof Storage !== 'undefined' && typeof localStorage.inhouseAgentUser !== 'undefined') {
+								if(typeof Storage !== 'undefined' && typeof localStorage.inhouseAgentLead !== 'undefined') {
 									inhouseApi.newApi.leadLikeListing({mls: data.mls, address: data.address}).success(function(response) {
 										if(response.message == 'success') {
 											button.addClass('ih-liked'); //todo: change this to whatever class marks it as liked!

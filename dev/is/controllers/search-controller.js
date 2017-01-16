@@ -114,7 +114,7 @@ angular.module('ihframework')
 		$scope.firstLoad = false;
 
 		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser === 'undefined') {
+			if(typeof localStorage.inhouseAgentLead === 'undefined') {
 				if(localStorage.inhouseSearchCount == 0 && localStorage.inhouseSearchFreebies == 'false') {
 					$scope.searchCount = 1;
 					localStorage.inhouseSearchCount = 1;

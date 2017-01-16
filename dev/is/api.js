@@ -44,8 +44,8 @@ angular.module('ihframework')
 		data.callback = 'JSON_CALLBACK';
 		
 		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.lead = localStorage.inhouseAgentUser;
+			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+				data.lead = localStorage.inhouseAgentLead;
 			}
 		}
 		
@@ -66,8 +66,8 @@ angular.module('ihframework')
 		data.callback = 'JSON_CALLBACK';
 		
 		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.lead = localStorage.inhouseAgentUser;
+			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+				data.lead = localStorage.inhouseAgentLead;
 			}
 		}
 		
@@ -97,8 +97,8 @@ angular.module('ihframework')
 		data.callback = 'JSON_CALLBACK';
 		
 		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.lead = localStorage.inhouseAgentUser;
+			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+				data.lead = localStorage.inhouseAgentLead;
 			}
 		}
 		
@@ -122,8 +122,8 @@ angular.module('ihframework')
 		data.callback = 'JSON_CALLBACK';
 
 		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-				data.inhouseAgentUser = localStorage.inhouseAgentUser;
+			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+				data.inhouseAgentLead = localStorage.inhouseAgentLead;
 			}
 		}
 		if(typeof window.geolocation !== 'undefined') {
