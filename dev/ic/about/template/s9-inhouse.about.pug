@@ -18,6 +18,8 @@ section.s9.ih-about(class='{{classes}}')
             i.fa.fa-instagram
           a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
             i.fa.fa-pinterest
+          a.ih-social-icon(href='{{agent.facebook2}}', ng-if='agent.facebook2 !== undefined', target='_blank')
+            i.fa.fa-facebook              
         .ih-md-divider
         .fs.bio-text(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
         .text-center.bio-more
