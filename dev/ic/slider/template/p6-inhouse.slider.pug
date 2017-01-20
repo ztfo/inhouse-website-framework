@@ -6,7 +6,7 @@ section.p6.ih-slider.container-fluid.fp(class='{{classes}}')
         .home-facts
           span {{listing.beds}} Bedrooms&nbsp
           span {{listing.baths}} Baths&nbsp
-          span {{listing.sqft | number}} SQFT{{listing.sizeUnit}}&nbsp
+          span {{listing.sqft | number}} {{listing.sizeUnit}}&nbsp
           span {{listing.price | currency:undefined:0}}
         span.text-uppercase Presented by {{agent.team[0].name}}
       .agent-image
