@@ -10,17 +10,17 @@ section.p1.ih-about.container-fluid.fp
         h2.ih.fc-01
           span(itemprop='name') {{agent.agentName}}
           .about-social
-            a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+            a.ih-social-icon.bkc-02(href='mailto:{{profile.email}}', ng-if='profile.email !== undefined', target='_blank')
               i.fa.fa-envelope
-            a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            a.ih-social-icon(href='{{profile.facebook}}', ng-if='profile.facebook !== undefined', target='_blank')
               i.fa.fa-facebook
-            a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            a.ih-social-icon(href='{{profile.linkedin}}', ng-if='profile.linkedin !== undefined', target='_blank')
               i.fa.fa-linkedin
-            a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            a.ih-social-icon(href='{{profile.twitter}}', ng-if='profile.twitter !== undefined', target='_blank')
               i.fa.fa-twitter
-            a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            a.ih-social-icon(href='{{profile.instagram}}', ng-if='profile.instagram !== undefined', target='_blank')
               i.fa.fa-instagram
-            a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            a.ih-social-icon(href='{{profile.pinterest}}', ng-if='profile.pinterest !== undefined', target='_blank')
               i.fa.fa-pinterest
         h4.text-muted.fs
           strong {{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}

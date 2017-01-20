@@ -1,6 +1,8 @@
 section#about.p4.ih-about-listing
   .container-fluid
     h2.ih-header About {{listing.address}}
+    .row.text-center.listing-price
+      h3 {{listing.price | currency:undefined:0}}
     .row.fact-list
       .fact-box.style1
         .ih-icon.ih-icon-houses.fc-02
