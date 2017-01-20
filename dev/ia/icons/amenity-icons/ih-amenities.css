@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'ih-amenities';
+  src:  url('fonts/ih-amenities.eot?dzj1ok');
+  src:  url('fonts/ih-amenities.eot?dzj1ok#iefix') format('embedded-opentype'),
+    url('fonts/ih-amenities.ttf?dzj1ok') format('truetype'),
+    url('fonts/ih-amenities.woff?dzj1ok') format('woff'),
+    url('fonts/ih-amenities.svg?dzj1ok#ih-amenities') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ih-amenity-"], [class*=" ih-amenity-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ih-amenities' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ih-amenity-bathrobe:before {
+  content: "\e93c";
+}
+.ih-amenity-cocktail-with-orange-slice:before {
+  content: "\e93d";
+}
+.ih-amenity-coffee-table:before {
+  content: "\e93e";
+}
+.ih-amenity-desk:before {
+  content: "\e93f";
+}
+.ih-amenity-dining-room-furniture-of-a-table-with-chairs:before {
+  content: "\e940";
+}
+.ih-amenity-dinner:before {
+  content: "\e941";
+}
+.ih-amenity-food:before {
+  content: "\e942";
+}
+.ih-amenity-garbage:before {
+  content: "\e943";
+}
+.ih-amenity-grill:before {
+  content: "\e944";
+}
+.ih-amenity-guest:before {
+  content: "\e945";
+}
+.ih-amenity-house-roof:before {
+  content: "\e946";
+}
+.ih-amenity-jacuzzi:before {
+  content: "\e947";
+}
+.ih-amenity-laundry:before {
+  content: "\e948";
+}
+.ih-amenity-lawn:before {
+  content: "\e949";
+}
+.ih-amenity-livingroom:before {
+  content: "\e94a";
+}
+.ih-amenity-living-room:before {
+  content: "\e94b";
+}
+.ih-amenity-paint-brush:before {
+  content: "\e94c";
+}
+.ih-amenity-stone-oven:before {
+  content: "\e94d";
+}
+.ih-amenity-table:before {
+  content: "\e94e";
+}
+.ih-amenity-waterfall:before {
+  content: "\e94f";
+}
+.ih-amenity-bar:before {
+  content: "\e950";
+}
+.ih-amenity-1:before {
+  content: "\e900";
+}
+.ih-amenity-2:before {
+  content: "\e901";
+}
+.ih-amenity-3:before {
+  content: "\e902";
+}
+.ih-amenity-4:before {
+  content: "\e903";
+}
+.ih-amenity-5:before {
+  content: "\e904";
+}
+.ih-amenity-6:before {
+  content: "\e905";
+}
+.ih-amenity-7:before {
+  content: "\e906";
+}
+.ih-amenity-8:before {
+  content: "\e907";
+}
+.ih-amenity-9:before {
+  content: "\e908";
+}
+.ih-amenity-10:before {
+  content: "\e909";
+}
+.ih-amenity-11:before {
+  content: "\e90a";
+}
+.ih-amenity-12:before {
+  content: "\e90b";
+}
+.ih-amenity-13:before {
+  content: "\e90c";
+}
+.ih-amenity-14:before {
+  content: "\e90d";
+}
+.ih-amenity-15:before {
+  content: "\e90e";
+}
+.ih-amenity-16:before {
+  content: "\e90f";
+}
+.ih-amenity-17:before {
+  content: "\e910";
+}
+.ih-amenity-18:before {
+  content: "\e911";
+}
+.ih-amenity-19:before {
+  content: "\e912";
+}
+.ih-amenity-20:before {
+  content: "\e913";
+}
+.ih-amenity-air-conditioning:before {
+  content: "\e914";
+}
+.ih-amenity-alarm-clock:before {
+  content: "\e915";
+}
+.ih-amenity-blender:before {
+  content: "\e916";
+}
+.ih-amenity-blender-1:before {
+  content: "\e917";
+}
+.ih-amenity-blender-2:before {
+  content: "\e918";
+}
+.ih-amenity-coffee-maker:before {
+  content: "\e919";
+}
+.ih-amenity-curler:before {
+  content: "\e91a";
+}
+.ih-amenity-dishwasher:before {
+  content: "\e91b";
+}
+.ih-amenity-epilator:before {
+  content: "\e91c";
+}
+.ih-amenity-extractor:before {
+  content: "\e91d";
+}
+.ih-amenity-fan:before {
+  content: "\e91e";
+}
+.ih-amenity-food-steamer:before {
+  content: "\e91f";
+}
+.ih-amenity-fridge:before {
+  content: "\e920";
+}
+.ih-amenity-hair-clipper:before {
+  content: "\e921";
+}
+.ih-amenity-hairdryer:before {
+  content: "\e922";
+}
+.ih-amenity-iron:before {
+  content: "\e923";
+}
+.ih-amenity-juicer:before {
+  content: "\e924";
+}
+.ih-amenity-kettle:before {
+  content: "\e925";
+}
+.ih-amenity-lamp:before {
+  content: "\e926";
+}
+.ih-amenity-meat-grinder:before {
+  content: "\e927";
+}
+.ih-amenity-microwave-oven:before {
+  content: "\e928";
+}
+.ih-amenity-mixer:before {
+  content: "\e929";
+}
+.ih-amenity-mixer-1:before {
+  content: "\e92a";
+}
+.ih-amenity-multicooker:before {
+  content: "\e92b";
+}
+.ih-amenity-music-player:before {
+  content: "\e92c";
+}
+.ih-amenity-music-speaker:before {
+  content: "\e92d";
+}
+.ih-amenity-oven:before {
+  content: "\e92e";
+}
+.ih-amenity-photo-camera:before {
+  content: "\e92f";
+}
+.ih-amenity-printer:before {
+  content: "\e930";
+}
+.ih-amenity-refrigerator:before {
+  content: "\e931";
+}
+.ih-amenity-sewing-machine:before {
+  content: "\e932";
+}
+.ih-amenity-shaver:before {
+  content: "\e933";
+}
+.ih-amenity-stove:before {
+  content: "\e934";
+}
+.ih-amenity-telephone:before {
+  content: "\e935";
+}
+.ih-amenity-television:before {
+  content: "\e936";
+}
+.ih-amenity-toaster:before {
+  content: "\e937";
+}
+.ih-amenity-toothbrush:before {
+  content: "\e938";
+}
+.ih-amenity-vacuum-cleaner:before {
+  content: "\e939";
+}
+.ih-amenity-vacuum-cleaner-1:before {
+  content: "\e93a";
+}
+.ih-amenity-washing-machine:before {
+  content: "\e93b";
+}
+
