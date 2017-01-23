@@ -25,7 +25,7 @@ section.p2.ih-about.container-fluid.fp
                 |  {{agent.contactEmail}}
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.text-center
         div
-          img.img-square.inlineblock(ng-src='{{agent.avatar}}', alt='{{agent.name}}')
+          img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
         .about-social.text-muted
           a.ih-social-icon(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
             i.fa.fa-envelope

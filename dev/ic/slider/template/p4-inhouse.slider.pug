@@ -1,7 +1,9 @@
 section.p4.ih-slider.fp.bkc-01(class='{{classes}}')
   .greeting.container-fluid.text-center.fw.z2
     div
-      img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+      img.img-circle.img-responsive(
+        ng-src='{{agent.team[0].photo}}',
+        alt='{{agent.team[0].name}}')
     h1 {{listing.address}}
     p.lead {{listing.description}}
     p

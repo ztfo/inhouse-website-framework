@@ -8,6 +8,6 @@ section.p6.ih-testimonials.ih.fw(class='{{classes}}')
           .ih-ratings(itemprop='rating')
             i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
             span.sr-only {{rating}}
-          h3(itemprop='review fs') {{slide.testimonial | limitTo:250}}
+          h3(itemprop='review fs') {{slide.testimonial | limitTo:300}}...
           a.read-more(href='{{slide.reviewUrl}}', ng-show="slide.reviewURL != ''") read more
           h5 - {{slide.reviewer}}
