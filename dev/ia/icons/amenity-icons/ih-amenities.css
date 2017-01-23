@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ih-amenity-elevator:before {
+  content: "\e951";
+}
 .ih-amenity-bathrobe:before {
   content: "\e93c";
 }
