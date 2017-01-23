@@ -20,19 +20,19 @@ section.p6.ih-contact.fw(class='{{classes}}')
               span {{agent.contactEmail}}
         .social-links
           .social-block
-            a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+            a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined && agent.facebook.length !== 0', target='_blank')
               i.fa.fa-facebook
           .social-block
-            a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+            a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined && agent.linkedin.length !== 0', target='_blank')
               i.fa.fa-linkedin
           .social-block
-            a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+            a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined && agent.twitter.length !== 0', target='_blank')
               i.fa.fa-twitter
           .social-block
-            a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+            a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined && agent.instagram.length !== 0', target='_blank')
               i.fa.fa-instagram
           .social-block
-            a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+            a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined && agent.pinterest.length !== 0', target='_blank')
               i.fa.fa-pinterest
   .footer.bt70
     .container-fluid

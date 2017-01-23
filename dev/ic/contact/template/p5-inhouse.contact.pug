@@ -17,24 +17,24 @@ section.p5.ih-contact.fw(
           a.ih-social-icon(itemprop='telephone')
             i.fa.fa-phone
           span {{agent.contactPhone | tel}}
-        .social-block
-          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+        .social-block      
+          a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined && agent.facebook.length !== 0', target='_blank')
             i.fa.fa-facebook
           span {{agent.facebook}}
         .social-block
-          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+          a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined && agent.linkedin.length !== 0', target='_blank')
             i.fa.fa-linkedin
           span {{agent.linkedin}}
         .social-block
-          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+          a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined && agent.twitter.length !== 0', target='_blank')
             i.fa.fa-twitter
           span {{agent.twitter}}
         .social-block
-          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+          a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined && agent.instagram.length !== 0', target='_blank')
             i.fa.fa-instagram
           span {{agent.instagram}}
         .social-block
-          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+          a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined && agent.pinterest.length !== 0', target='_blank')
             i.fa.fa-pinterest
           span {{agent.pinterest}}
   .footer
