@@ -195,6 +195,11 @@
     text-align: center;
 }
 
+.p2.ih-photo-slider .image-grid {
+  position: relative;
+  transition: .3s ease;
+}
+
 /* p4 */
 .p4.ih-photo-slider .photo-slider {
     margin: 30px 0;
