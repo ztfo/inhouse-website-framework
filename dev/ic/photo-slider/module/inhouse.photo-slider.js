@@ -3,8 +3,9 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
     restrict: 'E',
 		template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
     scope: {
-      'config': '=',
-      'listing': '='
+      config: '=',
+      responsive: '=',
+      listing: '='
     },
     controller: function($rootScope, $scope, listingService, $element, $timeout){
 			$scope.$watch('config', function(newVal) {
@@ -15,6 +16,14 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
 				}
 			});
 
+      /* took segment from inhouse.testimonials but newVal is undefined
+      $scope.$watch('responsive', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.responsive = newVal;
+        }
+      });
+      */
+
       $scope.$watch('listing', function(newVal) {
         if(newVal !== undefined) {
           $scope.loadOwl();
@@ -22,14 +31,14 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
       });
 
       $scope.rightPosition = 0;
-      
+
       $scope.slideLeft = function() {
         $scope.rightPosition = Math.max($scope.rightPosition - $element.find('.grid-image').width(), 0);
       };
       $scope.slideRight = function() {
         $scope.rightPosition = Math.min($scope.rightPosition + $element.find('.grid-image').width(), $element.find('.image-grid').width() - $element.find('.ih.slider-row').width());
       };
-      
+
     	$scope.showLightBox = function(index) {
         var listing = $scope.listing.photos;
 
@@ -53,6 +62,20 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
             lazyEffect : "fade",
             navigation: true,
             navigationText : ["<i class='fa fa-caret-left'></i>","<i class='fa fa-caret-right'></i>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                768: {
+                    items: 1
+                },
+                1024: {
+                    items: 3
+                }
+            }
           });
         });
       };
