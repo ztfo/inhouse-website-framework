@@ -9,9 +9,7 @@ section.jj.ih-slider.container-fluid.fp.bkc-01(class='{{classes}}')
         h4 welcome to
         h1 {{listing.address}}
         h3
-          small.fw.text-uppercase {{listing.city}}, {{listing.state}} {{listing.zipcode}}
-        p.listing-desc
-          | {{data.cta || listing.publicRemarks | limitTo: 200}}
+          small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
         p.listing-present
           small
             strong.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}

@@ -4,7 +4,7 @@ section.p5.ih-about.fw
       img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
     .agent-bio.flex-9
       h1.ih-header {{agent.agentName}}
-      p.strong {{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}
+      p.strong {{agent.designations}} | {{agent.brokerage}}
       .ih-sm-divider
       .bio.fs(ng-bind-html="agent.bio1 | to_trusted")
       .about-social

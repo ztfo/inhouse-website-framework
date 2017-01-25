@@ -8,5 +8,5 @@ section#testimonials.p4.ih-testimonials(class='{{classes}}')
           .ih-ratings(itemprop='rating')
             i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
             span.sr-only {{rating}}
-          p(itemprop='review fs') {{slide.testimonial}}
+          p(itemprop='review fs') {{slide.testimonial | limitTo:300}}...
           h5 - {{slide.reviewer}}

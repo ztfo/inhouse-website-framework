@@ -29,6 +29,6 @@ nav.s4.ih-nav.navbar.navbar-default.text-center(class='{{classes}} {{controller}
                         span.ih-social-icon
                             i.fa.fa-phone
                 li
-                    button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentUserLoggedIn') Sign-in
-                    a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentUserLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
+                    button.sign-in.btn.btn-primary(type='button', ng-click='signIn()', data-toggle='modal', ng-if='!inhouseAgentLeadLoggedIn') Sign-in
+                    a.clean-link.sign-in.signed-in.btn.btn-primary(href='#/search-mls?page=1&my-listings', ng-if='inhouseAgentLeadLoggedIn', data-toggle='tooltip', data-placement='left', title='Click here to view all your favorite listings')
                         i.fa.fa-home

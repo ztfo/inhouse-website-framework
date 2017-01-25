@@ -23,7 +23,7 @@
             label(for='accountPassword') Phone Number
             input#accountPassword.ih-form-input.form-control(type='text', required='', ng-model='phone', placeholder='This will be your password')
           .text-center
-            button#inhouseAgentUserCreate.btn.btn-default.inline-block(type='submit') Login
+            button#inhouseAgentLeadCreate.btn.btn-default.inline-block(type='submit') Login
         form(name='login', ng-submit='login.$valid && submitLogin()', ng-hide='showRegister')
           h2.text-center
             | Welcome back!
@@ -37,7 +37,7 @@
             label(for='accountPassword') Phone Number
             input#accountPassword.ih-form-input.form-control(type='text', required='', ng-model='phone')
           .text-center
-            button#inhouseAgentUserCreate.btn.btn-default.inline-block(type='submit') Login
+            button#inhouseAgentLeadCreate.btn.btn-default.inline-block(type='submit') Login
         p.text-center.reg-divider
           small(ng-hide='showRegister') Don't have an account?
           small(ng-show='showRegister') Already have an account?

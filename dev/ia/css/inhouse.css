@@ -1,6 +1,9 @@
 /*** INHOUSE Style Framework v.1.0 ***/
 /*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
 
+/* TODO - Add to asana/or other documentation
+
+
 /* element resets */
 body { overflow-x: hidden !important; }
 .ihweb button, .ihweb button:active, .ihweb button:focus { outline: 0 !important; }
@@ -264,9 +267,10 @@ a:focus { text-decoration: none; color: inherit; }
 }
 /* owl end */
 
-.ihweb.ihag .ih-form-input {
-  padding: 0 15px !important;
+.ihweb.ihag .modal .ih-form-input {
+  padding: 5px 15px !important;
 }
+
 
 /* new bootstrap */
 .col-xs-15,

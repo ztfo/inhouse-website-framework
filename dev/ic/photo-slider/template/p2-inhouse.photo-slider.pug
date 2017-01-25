@@ -1,7 +1,6 @@
 section.p2.ih-photo-slider.fp
     .ih.slider-row
-        //todo: fix inline style
-        .image-grid.clearfix(ng-style="{right: rightPosition}", style="position:relative;transition:.3s ease;")
+        .image-grid.clearfix(ng-style="{right: rightPosition}")
           .slider-image.first-image
             .listing-pic.full(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
               a.block.full.bkc-03.fw(ng-click='showLightBox(0)')

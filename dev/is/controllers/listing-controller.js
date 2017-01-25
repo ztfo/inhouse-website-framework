@@ -19,7 +19,7 @@ angular.module('ihframework')
 	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $scope.mls;
 	$scope.getData = function() {
 		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentUser !== 'undefined') { //user is signed in already, load the listing
+			if(typeof localStorage.inhouseAgentLead !== 'undefined') { //user is signed in already, load the listing
 			} else {
 				if(typeof localStorage.inhouseViewedListings !== 'undefined') { //user isn't signed in yet, and they have viewed listings already
 					if($rootScope.theWebsiteData.disableLeadSignup !== true) {

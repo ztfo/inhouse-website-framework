@@ -64,10 +64,10 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 	$scope.max = $rootScope.theUserData.maxSearchNoLead || 3;
 
 	if(typeof Storage !== 'undefined') {
-		if(typeof localStorage.inhouseAgentUser !== 'undefined') {
-			$scope.inhouseAgentUserLoggedIn = true;
+		if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+			$scope.inhouseAgentLeadLoggedIn = true;
 		} else {
-			$scope.inhouseAgentUserLoggedIn = false;
+			$scope.inhouseAgentLeadLoggedIn = false;
 		}
 	}
 
@@ -91,14 +91,14 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 			inhouseApi.newApi.leadLogin({name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.data.lead.uuid === 'undefined') {
-						$scope.inhouseAgentUserLoggedIn = false;
-						delete localStorage.inhouseAgentUser;
+						$scope.inhouseAgentLeadLoggedIn = false;
+						delete localStorage.inhouseAgentLead;
 						$('#accountModal').attr('data-success-register', 'false');
 					} else {
-						$scope.inhouseAgentUserLoggedIn = true;
+						$scope.inhouseAgentLeadLoggedIn = true;
 						$scope.$broadcast('loginChanged', true);
-						localStorage.inhouseAgentUser = result.data.lead.uuid;
-						window.inhouseAgentUser = result.data.lead.uuid;
+						localStorage.inhouseAgentLead = result.data.lead.uuid;
+						window.inhouseAgentLead = result.data.lead.uuid;
 						$('#accountModal').attr('data-success-register', 'true');
 						$('#accountModal').modal('hide');
 					}
@@ -107,15 +107,15 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 /*			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
-						$scope.inhouseAgentUserLoggedIn = false;
-						delete localStorage.inhouseAgentUser;
+						$scope.inhouseAgentLeadLoggedIn = false;
+						delete localStorage.inhouseAgentLead;
 						$('#accountModal').attr('data-success-register', 'false');
 						$scope.$broadcast('loginChanged', false);
 					} else {
-						$scope.inhouseAgentUserLoggedIn = true;
+						$scope.inhouseAgentLeadLoggedIn = true;
 						$scope.$broadcast('loginChanged', true);
-						localStorage.inhouseAgentUser = result.id;
-						window.inhouseAgentUser = result.id;
+						localStorage.inhouseAgentLead = result.id;
+						window.inhouseAgentLead = result.id;
 						$('#accountModal').attr('data-success-register', 'true');
 						$('#accountModal').modal('hide');
 					}
@@ -129,14 +129,14 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 			inhouseApi.newApi.leadLogin({name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.data.lead.uuid === 'undefined') {
-						$scope.inhouseAgentUserLoggedIn = false;
-						delete localStorage.inhouseAgentUser;
+						$scope.inhouseAgentLeadLoggedIn = false;
+						delete localStorage.inhouseAgentLead;
 						$('#accountModal').attr('data-success-register', 'false');
 					} else {
-						$scope.inhouseAgentUserLoggedIn = true;
+						$scope.inhouseAgentLeadLoggedIn = true;
 						$scope.$broadcast('loginChanged', true);
-						localStorage.inhouseAgentUser = result.data.lead.uuid;
-						window.inhouseAgentUser = result.data.lead.uuid;
+						localStorage.inhouseAgentLead = result.data.lead.uuid;
+						window.inhouseAgentLead = result.data.lead.uuid;
 						$('#accountModal').attr('data-success-register', 'true');
 						$('#accountModal').modal('hide');
 					}
@@ -145,14 +145,14 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 /*			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
 				if(typeof Storage !== 'undefined') {
 					if(typeof result.id === 'undefined') {
-						$scope.inhouseAgentUserLoggedIn = false;
-						delete localStorage.inhouseAgentUser;
+						$scope.inhouseAgentLeadLoggedIn = false;
+						delete localStorage.inhouseAgentLead;
 						$('#accountModal').attr('data-success-register', 'false');
 						$scope.$broadcast('loginChanged', false);
 					} else {
-						$scope.inhouseAgentUserLoggedIn = true;
-						localStorage.inhouseAgentUser = result.id;
-						window.inhouseAgentUser = result.id;
+						$scope.inhouseAgentLeadLoggedIn = true;
+						localStorage.inhouseAgentLead = result.id;
+						window.inhouseAgentLead = result.id;
 						$('#accountModal').attr('data-success-register', 'true');
 						$('#accountModal').modal('hide');
 						$scope.$broadcast('loginChanged', true);

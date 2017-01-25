@@ -6,8 +6,9 @@ section.p6.ih-slider.container-fluid.fp(class='{{classes}}')
         .home-facts
           span {{listing.beds}} Bedrooms&nbsp
           span {{listing.baths}} Baths&nbsp
-          span {{listing.sqft | number}} SQFT{{listing.sizeUnit}}&nbsp
-          span {{listing.price | currency:undefined:0}}
+          span {{listing.sqft | number}} {{listing.sizeUnit}}&nbsp
+        .lead
+          strong {{listing.price | currency:undefined:0}}
         span.text-uppercase Presented by {{agent.team[0].name}}
       .agent-image
         img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')

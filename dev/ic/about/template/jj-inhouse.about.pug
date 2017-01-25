@@ -1,26 +1,126 @@
-section.s6.jj.ih-about(class='{{classes}}')
-  .container
-    h1.ih-header.text-center Meet Our Team
-    .ih-md-divider
-    ul.nav.nav-pills.nav-justified
-      li(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
-        a(data-toggle='pill', data-target="#{{member.name | split: ' ':0}}") {{member.name}}
-    .tab-content
-      .tab-pane.container-fluid.no-padding(ng-repeat='member in agent.team', id="{{member.name | split: ' ':0}}", ng-class="$index == 0 ? 'active' : ''")
-        .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
-          img.img-responsive.ih-img.img-square(ng-src='{{member.photo}}')
-        .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
-          .row.agent-header
-            h2.col-lg-8.col-md-8.col-sm-12.col-xs-12 {{member.name}}
-            .ih-bio-links.col-lg-4.col-md-4.col-sm-12.col-xs-12.text-right
-              a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined && agent.facebook.length !== 0', target='_blank')
-                i.fa.fa-facebook
-              a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined && agent.linkedin.length !== 0', target='_blank')
-                i.fa.fa-linkedin
-              a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined && agent.twitter.length !== 0', target='_blank')
-                i.fa.fa-twitter
-              a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined && agent.instagram.length !== 0', target='_blank')
-                i.fa.fa-instagram
-              a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined && agent.pinterest.length !== 0', target='_blank')
-                i.fa.fa-pinterest
-          .bio(itemprop='description', ng-bind-html='member.bio | to_trusted')
+.container
+  h1.ih-header.text-center Meet Our Team
+  .ih-md-divider
+  ul.nav.nav-pills.nav-justified
+    // ngRepeat: member in agent.team
+    li.ng-scope.active(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      a.ng-binding(data-toggle='pill', data-target='#Janell') Janell Jellison
+    // end ngRepeat: member in agent.team
+    li.ng-scope(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      a.ng-binding(data-toggle='pill', data-target='#Paula') Paula Williams
+    // end ngRepeat: member in agent.team
+    li.ng-scope(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      a.ng-binding(data-toggle='pill', data-target='#Gabriela') Gabriela Robles
+    // end ngRepeat: member in agent.team
+    li.ng-scope(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      a.ng-binding(data-toggle='pill', data-target='#Melissa') Melissa Brown-Dominguez
+    // end ngRepeat: member in agent.team
+  .tab-content
+    // ngRepeat: member in agent.team
+    #Janell.tab-pane.container-fluid.no-padding.ng-scope.active(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
+        img.img-responsive.ih-img.img-square(ng-src='ua/headshots/janell-headshot.jpg', src='ua/headshots/janell-headshot.jpg')
+      .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
+        .row.agent-header
+          h2.col-lg-8.col-md-8.col-sm-12.col-xs-12.ng-binding Janell Jellison
+          .ih-bio-links.col-lg-4.col-md-4.col-sm-12.col-xs-12.text-right
+            // ngIf: agent.facebook !== undefined
+            a.ih-social-icon.ng-scope(href='https://www.facebook.com/janelljellisonrealtor', ng-if='agent.facebook !== undefined', target='_blank')
+              i.fa.fa-facebook
+            // end ngIf: agent.facebook !== undefined
+            // ngIf: agent.linkedin !== undefined
+            // ngIf: agent.twitter !== undefined
+            // ngIf: agent.instagram !== undefined
+            // ngIf: agent.pinterest !== undefined
+        .bio.ng-binding(itemprop='description', ng-bind-html='member.bio | to_trusted')
+          p
+            | Janell Jellison has spent the last 21 years living and working in the Catalina Foothills helping buyers and sellers with their Real Estate needs. She has been in the top 5 of Tucson Realtors since 1998 and the #1 Realtor for the last 5 years.
+            | She is committed to helping her sellers through the process by giving them her knowledgable and professional opinion on their home. This includes it’s condition, the current Tucson Real Estate market and what price the house should be listed
+            | at so that the seller can make correct informed decisions.
+          p
+            | Behind the scene, Janell has a highly capable team of 3 Realtors who have over 45 years of experience in the Tucson market. Paula Williams works with buyers to help them find the perfect home. Gabriela Robles works with Janell to coordinate
+            | all marketing and monitors all listing activity. Melissa Brown-Dominguez manages the escrows from the moment of acceptance thru a successful close of escrow.
+          p
+            | Janell believes in giving her listings a strong web presence thru social media and online marketing on many websites.
+          p
+            | Janell’s Real Estate experience and professionalism, along with attention to detail, gives her seller’s peace of mind and satisfaction that Janell has their best interest as her #1 priority!
+    // end ngRepeat: member in agent.team
+    #Paula.tab-pane.container-fluid.no-padding.ng-scope(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
+        img.img-responsive.ih-img.img-square(ng-src='ua/headshots/paula-headshot.jpg', src='ua/headshots/paula-headshot.jpg')
+      .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
+        .row.agent-header
+          h2.col-lg-8.col-md-8.col-sm-12.col-xs-12.ng-binding Paula Williams
+          .ih-bio-links.col-lg-4.col-md-4.col-sm-12.col-xs-12.text-right
+            // ngIf: agent.facebook !== undefined
+            a.ih-social-icon.ng-scope(href='https://www.facebook.com/janelljellisonrealtor', ng-if='agent.facebook !== undefined', target='_blank')
+              i.fa.fa-facebook
+            // end ngIf: agent.facebook !== undefined
+            // ngIf: agent.linkedin !== undefined
+            // ngIf: agent.twitter !== undefined
+            // ngIf: agent.instagram !== undefined
+            // ngIf: agent.pinterest !== undefined
+        .bio.ng-binding(itemprop='description', ng-bind-html='member.bio | to_trusted')
+          p
+            | Paula Williams is a Tucson Native with 16 years of real estate experience and a bachelor’s degree in business from the U of A.
+          p
+            | Her passion, commitment to client’s needs, and professional skill are reflected in her success and make her one of the best in her field.
+          p
+            | Experienced in all areas of the Tucson Market, from Luxury homes, golf communities, U of A area, first time home buyers, whether it’s your first or your last home, Paula can help you find just what you are looking for.
+    // end ngRepeat: member in agent.team
+    #Gabriela.tab-pane.container-fluid.no-padding.ng-scope(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
+        img.img-responsive.ih-img.img-square(ng-src='ua/headshots/gaby-headshot.jpg', src='ua/headshots/gaby-headshot.jpg')
+      .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
+        .row.agent-header
+          h2.col-lg-8.col-md-8.col-sm-12.col-xs-12.ng-binding Gabriela Robles
+          .ih-bio-links.col-lg-4.col-md-4.col-sm-12.col-xs-12.text-right
+            // ngIf: agent.facebook !== undefined
+            a.ih-social-icon.ng-scope(href='https://www.facebook.com/janelljellisonrealtor', ng-if='agent.facebook !== undefined', target='_blank')
+              i.fa.fa-facebook
+            // end ngIf: agent.facebook !== undefined
+            // ngIf: agent.linkedin !== undefined
+            // ngIf: agent.twitter !== undefined
+            // ngIf: agent.instagram !== undefined
+            // ngIf: agent.pinterest !== undefined
+        .bio.ng-binding(itemprop='description', ng-bind-html='member.bio | to_trusted')
+          p
+            | As Janell’s marketing coordinator I oversee the process of listing your home up to the point that we receive an accepted contract.
+          p My commitment and duties to our clients include:
+          ul.ih-accent-list
+            li
+              | Coordinating photography,website syndication, floorplans & your home marketing book to start the process.
+            li
+              | Give you timely feedback from other Realtors and their clients who have seen your home.
+            li
+              | Produce marketing advertisement that places your home in front of as many prospective buyers as possible.
+          p I strive to make the process of selling your home as stress free as possible.
+    // end ngRepeat: member in agent.team
+    #Melissa.tab-pane.container-fluid.no-padding.ng-scope(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
+      .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
+        img.img-responsive.ih-img.img-square(ng-src='ua/headshots/melissa-headshot.jpg', src='ua/headshots/melissa-headshot.jpg')
+      .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
+        .row.agent-header
+          h2.col-lg-8.col-md-8.col-sm-12.col-xs-12.ng-binding Melissa Brown-Dominguez
+          .ih-bio-links.col-lg-4.col-md-4.col-sm-12.col-xs-12.text-right
+            // ngIf: agent.facebook !== undefined
+            a.ih-social-icon.ng-scope(href='https://www.facebook.com/janelljellisonrealtor', ng-if='agent.facebook !== undefined', target='_blank')
+              i.fa.fa-facebook
+            // end ngIf: agent.facebook !== undefined
+            // ngIf: agent.linkedin !== undefined
+            // ngIf: agent.twitter !== undefined
+            // ngIf: agent.instagram !== undefined
+            // ngIf: agent.pinterest !== undefined
+        .bio.ng-binding(itemprop='description', ng-bind-html='member.bio | to_trusted')
+          p
+            | As Janell’s licensed real estate transaction coordinator I rely on my 15 years of experience in real estate to oversee all aspects of escrow transactions from accepted contract to closing.
+          p My commitment and duties to our clients include:
+          ul.ih-accent-list
+            li Coordinating title/escrow, mortgage loan and appraisal processes.
+            li
+              | Schedule inspections, assist in negotiations regarding repairs and coordinate completion of repairs.
+            li
+              | Regularly communicate with clients, agents, escrow officer and lender throughout the escrow period with results-oriented initiative.
+          p
+            | I look forward to a successful working relationship and effortless closing process.
+    // end ngRepeat: member in agent.team
