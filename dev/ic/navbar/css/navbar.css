@@ -130,11 +130,6 @@
 
 
 /* p1 */
-
-.p1.ih-nav .navbar-brand {
-    width: 220px;
-}
-
 .p1.ih-nav .navbar-nav {
     margin: 10px 0;
 }
@@ -152,16 +147,9 @@
     border-bottom: 1px solid #eee;
 }
 
-.p1.ih-nav .navbar-right>li:first-child {
-    padding-right: 15px;
-    padding-top: 5px;
-}
-
-.p1.ih-nav .listing-brokerage {
+.p1 .contact-phone {
     line-height: 40px;
 }
-
-
 /* p2 */
 
 .p2.ih-nav .navbar-brand>img {

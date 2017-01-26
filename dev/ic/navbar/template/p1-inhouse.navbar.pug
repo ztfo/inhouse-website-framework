@@ -2,8 +2,8 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
   .ih-cta
     .container.nopad
       .col-lg-5.col-md-7.col-sm-7.col-sm-12
-        small.text-uppercase.listing-brokerage.text-muted
-          | Listing Courtesy of {{agent.brokerage}}
+        small.text-uppercase.contact-phone.text-muted
+          | Call us today: {{agent.contactPhone | tel}}
       .col-lg-7.col-md-5.col-sm-5.col-sm-12
         ul.share-btns.pull-right.clearfix
           li.text-uppercase.text-muted
@@ -31,7 +31,7 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
         div.brand-contain(style="background-image: url('{{agent.teamLogo}}');")
         img.hidden(itemprop='logo', ng-src='{{agent.teamLogo}}', alt='{{agent.teamName}} logo')
     #mainNav.navbar-collapse(ng-class='{collapse: isCollapsed}')
-      ul.nav.navbar-nav.navbar-left(role='menubar')
+      ul.nav.navbar-nav.navbar-right(role='menubar')
         li(ng-repeat='link in navbar', ng-class='link.children !== undefined')
           a.text-uppercase(role='menuitem', itemprop='url', href='{{link.href}}', ng-if="link.type != 'relative' && link.children === undefined", ng-attr-target="{{link.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.isCollapsed = !$parent.$parent.isCollapsed')
             span(itemprop='name') {{link.display}}
@@ -45,10 +45,3 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
               a.text-uppercase(role='menuitem', itemprop='url', href='{{sublink.href}}', ng-attr-target="{{sublink.type == 'external' || ''}}", target='_blank', ng-click='$parent.$parent.$parent.isCollapsed = !$parent.$parent.$parent.isCollapsed')
                 i.fa.fa-caret-right.fc-03
                 span(itemprop='name') {{sublink.display}}
-      ul.nav.navbar-nav.navbar-right.text-right(role='menubar')
-        li
-          h6.nomar
-            small.text-mited.text-uppercase Call us today:
-          h3.fc-02.nomar.nopad {{agent.contactPhone | tel}}
-        li
-          ih-schedule-visit(listing="listing")
