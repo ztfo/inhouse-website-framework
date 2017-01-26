@@ -8,15 +8,16 @@ section.p6.ih-about.fw
 			.about-social
 				a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
 					i.fa.fa-envelope
-				a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined', target='_blank')
+				a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook', target='_blank')
 					i.fa.fa-facebook
-				a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined', target='_blank')
+				a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin', target='_blank')
 					i.fa.fa-linkedin
-				a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined', target='_blank')
+				a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter', target='_blank')
 					i.fa.fa-twitter
-				a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined', target='_blank')
+				a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram', target='_blank')
 					i.fa.fa-instagram
-				a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
+				a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest', target='_blank')
 					i.fa.fa-pinterest
+				a.btn.btn-primary(href='{{agent.websiteURL}}', ng-if='agent.websiteURL', target='_blank') Visit My Website
 		div.agent-image.flex-3
 			img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')

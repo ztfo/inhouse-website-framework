@@ -4,5 +4,6 @@ section#agent.p4.ih-about
       h2.ih-header {{agent.agentName}}
       .ih-sm-divider
       .bio.fs(ng-bind-html="agent.bio1 | to_trusted")
+      a.btn.btn-primary(href='{{agent.websiteURL}}', ng-if='agent.websiteURL', target='_blank') Visit My Website
     .agent-image
       img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
