@@ -147,7 +147,7 @@ angular.module('ihframework')
 			inhouseApi.newApi.searchMls(params).success(function(response) {
 				if(typeof response.listings != 'undefined' && response.listings.length > 0) {
 					$scope.totalListings = response.pagination.last_count;
-					if(response.pagination.page_size == 10) {
+					if(response.pagination.page_size == 15) {
 						$scope.displayListings = response.pagination.page_size * ($scope.filters.page || 1);
 					} else {
 						$scope.displayListings = response.pagination.last_count;
