@@ -1,0 +1,36 @@
+section.p5.ih-contact.fw(
+  class='{{classes}}',
+  ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+  .container
+    .contact-inner.flex-grid
+      .flex-12.contact-header
+        h1.ih-header.uppercase Get In Touch
+        .ih-sm-divider
+      .flex-6.contact-form-inner
+        ih-contact(configname="f1")
+      .flex-6.contact-social
+        .social-block
+          a.ih-social-icon(href='mailto:{{listing.listingAgentEmail}}', ng-if='agent.listingAgentEmail !== undefined')
+            i.fa.fa-envelope
+          a {{agent.listingAgentEmail}}
+        .social-block
+          a.ih-social-icon(itemprop='telephone')
+            i.fa.fa-phone
+          span {{agent.listingAgentPhone | tel}}
+  .footer
+    .container
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
+        span.ih-ui-fairhousing
+        span.ih-ui-realtor
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right
+        .pull-right
+          a(href="https://www.getinhouse.io", target="_blank", rel="noopener")
+            span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
+        .pull-right.text-uppercase
+          small
+            | presented by &nbsp;
+            a(href="https://listerpros.com", target="_blank", rel="noopener")
+             strong ListerPros
+          br
+          small powered by &nbsp;
+            a(href="http://www.getinhouse.io") InHouse
