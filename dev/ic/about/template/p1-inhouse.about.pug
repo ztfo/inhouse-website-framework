@@ -4,7 +4,7 @@ section.p1.ih-about.container-fluid.fp
       h1.ih-header.fc-02.text-center Meet Your Agent
     .ih-about-inner.row
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.nopad-l
-        a.text-center.agent-pic-link(href='{{agent.agentWebsite}}')
+        a.text-center.agent-pic-link(href='{{agent.website}}')
           img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
       .ih-about-text.col-lg-8.col-md-8.col-sm-12.col-xs-12
         h2.ih.fc-01
@@ -33,4 +33,4 @@ section.p1.ih-about.container-fluid.fp
               br
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
               a.clean-link(href='tel:{{agent.contactPhone | tel}}') {{agent.contactPhone | tel}}
-        a.btn.btn-primary(href='{{agent.websiteURL}}', ng-if='agent.websiteURL', target='_blank') Visit My Website
+        a.btn.btn-primary(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
