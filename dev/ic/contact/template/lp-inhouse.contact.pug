@@ -9,10 +9,13 @@ section.p5.ih-contact.fw(
       .flex-6.contact-form-inner
         ih-contact(configname="f1")
       .flex-6.contact-social
+        h4.text-uppercase Listed by:
+        h2.nomar {{listing.listingAgent}} Luis E. Palomares
+        p.text-uppercase {{listing.listingAgentBrokerage}} InHouse Real Estate
         .social-block
           a.ih-social-icon(href='mailto:{{listing.listingAgentEmail}}', ng-if='agent.listingAgentEmail !== undefined')
             i.fa.fa-envelope
-          a {{agent.listingAgentEmail}}
+          span {{agent.listingAgentEmail}}
         .social-block
           a.ih-social-icon(itemprop='telephone')
             i.fa.fa-phone
@@ -34,4 +37,4 @@ section.p5.ih-contact.fw(
           br
           small powered by &nbsp;
             a(href="http://www.getinhouse.io")
-            strong InHouse
+              strong InHouse
