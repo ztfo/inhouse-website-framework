@@ -14,16 +14,17 @@ angular.module('ihframework')
 		$('#accountModal').off('hidden.bs.modal');
 		$('#accountModal').modal('hide');
 	});
-	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $scope.mls;
-	
+	// not sure how to access shareUrl in components / possibly not needed here?; see inhouse.navbar.js
+	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $rootScope.theWebsiteData.mls;
+	console.log($scope.shareUrl);
 	inhouseApiFactory.getListing($rootScope.theWebsiteData.mls).success(function(response) {
 		$scope.listing = response.listing;
 	});
-	
+
 	$scope.showLightBox = function(index) {
 		var firstHalf = $scope.lightBox.slice().slice(0, index - 1);
 		var secondHalf = $scope.lightBox.slice().slice(index);
-		
+
 		UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
 	};
 }]);
