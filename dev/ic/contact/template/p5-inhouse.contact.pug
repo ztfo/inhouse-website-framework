@@ -17,6 +17,10 @@ section.p5.ih-contact.fw(
           a.ih-social-icon(itemprop='telephone')
             i.fa.fa-phone
           span {{agent.contactPhone | tel}}
+        .social-block
+          a.ih-social-icon(itemprop='address')
+            i.fa.fa-home
+          span {{agent.brokerage}} {{agent.contactAddress}} {{agent.contactAddress2}}
   .footer
     .container
       .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs

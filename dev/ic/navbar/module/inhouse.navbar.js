@@ -4,14 +4,20 @@ angular.module('ihframework')
 		template: '<ng-include src="theUrl()" class="{{classes}}"><ng-include>',
 		scope: {
 			classes: "@classes",
-			config: '@'
+			config: '@',
+			shareUrl: '='
 		},
 		restrict: 'E',
 		controller: function($rootScope, $scope, $filter, $document) {
 			if($scope.config == undefined) {
 				$scope.config = $rootScope.theWebsiteData.navbarConfig;
 			}
-			
+
+			// added shareUrl to scope so p1-inhouse.navbar can access it
+			if($scope.shareUrl == undefined) {
+				$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $rootScope.theWebsiteData.mls;
+			}
+
 			$scope.theUrl = function(){
 				return 'build/templates/ic/navbar/template/' + $scope.config + '-inhouse.navbar.html';
 			};

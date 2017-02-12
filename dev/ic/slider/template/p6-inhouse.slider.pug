@@ -9,7 +9,7 @@ section.p6.ih-slider.container-fluid.fp(class='{{classes}}')
           span {{listing.sqft | number}} {{listing.sizeUnit}}&nbsp
         .lead
           strong {{listing.price | currency:undefined:0}}
-        span.text-uppercase Presented by {{agent.team[0].name}}
+        span.text-uppercase Presented by {{agent.team[0].name}} of {{agent.brokerage}}
       .agent-image
         img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
   .ih-slider-row
