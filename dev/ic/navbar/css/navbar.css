@@ -23,7 +23,13 @@
     padding: 5px 0;
 }
 
+.ih-nav .share-btns {
+  margin: 0;
+}
 
+.ih-nav .share-btns small {
+  margin-right: 15px;
+}
 /** AGENT STORIES **/
 
 
@@ -187,8 +193,6 @@
 
 .p3.ih-nav .ih-cta {
     padding: 0;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #eee;
 }
 
 .p3 .contact-phone {
@@ -229,8 +233,6 @@
 
 .p5.ih-nav .ih-cta {
     padding: 0;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #eee;
 }
 
 .p5 .contact-phone {
@@ -249,8 +251,6 @@
 
 .p6.ih-nav .ih-cta {
     padding: 0;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #eee;
 }
 
 .p6 .contact-phone {
