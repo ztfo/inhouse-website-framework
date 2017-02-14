@@ -4,7 +4,7 @@ nav.p4.ih-nav.navbar.navbar-fixed-top(class='{{classes}} {{controller}}', itemsc
       .col-lg-5.col-md-7.col-sm-7.col-sm-12
         small.text-uppercase.contact-phone.text-muted
           | Call us today: {{agent.contactPhone | tel}}
-          a(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined') &nbsp {{agent.contactEmail}}
+          a(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined') &nbsp; &nbsp; &nbsp; {{agent.contactEmail}}
       .col-lg-7.col-md-5.col-sm-5.col-sm-12
         ul.share-btns.pull-right.clearfix
           li.text-uppercase.text-muted
