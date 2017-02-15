@@ -204,6 +204,10 @@ map {
     padding: 2px;
 }
 
+.p5.nearby map {
+  height: 550px;
+}
+
 /* responsive */
 
 @media screen and (min-width: 1921px) {}
