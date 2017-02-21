@@ -4,9 +4,9 @@ section.s6.ih-about(class='{{classes}}')
     .ih-md-divider
     ul.nav.nav-pills.nav-justified
       li(ng-repeat='member in agent.team', ng-class="$index == 0 ? 'active' : ''")
-        a(data-toggle='pill', data-target="#{{member.name | split: ' ':0}}") {{member.name}}
+        a(data-toggle='pill', data-target="#{{member.name | spaceless}}") {{member.name}}
     .tab-content
-      .tab-pane.container-fluid.no-padding(ng-repeat='member in agent.team', id="{{member.name | split: ' ':0}}", ng-class="$index == 0 ? 'active' : ''")
+      .tab-pane.container-fluid.no-padding(ng-repeat='member in agent.team', id="{{member.name | spaceless}}", ng-class="$index == 0 ? 'active' : ''")
         .ih-bio-img.col-lg-3.col-md-3.col-sm-5.col-xs-12.nopag
           img.img-responsive.ih-img.img-square(ng-src='{{member.photo}}')
         .ih-bio-text.col-lg-9.col-md-9.col-sm-7.col-xs-12.nopad-r
