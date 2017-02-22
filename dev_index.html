@@ -40,29 +40,10 @@
     <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
   </ignore>
   <!-- og -->
-  <script>
-  ! function(f, b, e, v, n, t, s) {
-    if (f.fbq) return;
-    n = f.fbq = function() {
-      n.callMethod ?
-      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-    };
-    if (!f._fbq) f._fbq = n;
-    n.push = n;
-    n.loaded = !0;
-    n.version = '2.0';
-    n.queue = [];
-    t = b.createElement(e);
-    t.async = !0;
-    t.src = v;
-    s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s)
-  }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  <script src="bower_components/angulartics-facebook-pixel/dist/angulartics-facebook-pixel.min.js"></script>
+  <script src="bower_components/angulartics/dist/angulartics.min.js"></script>
+  <script src="bower_components/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
 
-  fbq('init', '{{agent.pixelID}}');
-  fbq('track', "PageView");
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{agent.pixelID}}&ev=PageView&noscript=1" /></noscript>
   <link href="ua/css/ih-brand.css?{{microtime()}}" rel="stylesheet" type="text/css" />
   </head>
 
@@ -158,21 +139,7 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
     <!-- ga -->
-    <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', '{{agent.gaKey}}', 'auto');
-    ga('send', 'pageview');
-    </script>
+    <ih-analytics></ih-analytics>
   </body>
   <!-- (c) 2016 - All Rights Reserved - InHouse Real Estate Marketing, LLC. -->
 </html>
