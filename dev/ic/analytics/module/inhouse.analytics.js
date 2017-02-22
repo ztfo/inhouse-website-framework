@@ -5,7 +5,6 @@ angular.module('ihframework')
 			restrict: 'E',	
 			controller: function($rootScope, $scope, $element,  $attrs) {
 				$scope.agent = $rootScope.theUserData;
-				console.log('hello from app.js');
 				!function(f,b,e,v,n,t,s) {
 					if(f.fbq) return;
 					n=f.fbq=function(){
