@@ -91,12 +91,11 @@ gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.styles, ['css']);
-  gulp.watch(paths.srcTemplates, ['templates']);
-  gulp.watch(paths.buildTemplates, ['templatecache']);
+  gulp.watch(paths.srcTemplates, ['templatecache']);
 });
 
 // Template Caching
-gulp.task('templatecache', function() {
+gulp.task('templatecache', ['templates'], function() {
   gulp.src(paths.buildTemplates)
     .pipe(templateCache({
       module: 'frameworkTemplates',
@@ -108,4 +107,5 @@ gulp.task('templatecache', function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files', 'templatecache']);
+gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templatecache', 'vendor-files']);
+gulp.task('templatecache', ['templates']);
