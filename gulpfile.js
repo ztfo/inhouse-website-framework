@@ -78,6 +78,7 @@ gulp.task('vendor-files', function() {
   return gulp
     .src(paths.vendorScripts)
     .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('build/'));
 });
 
