@@ -27,6 +27,19 @@ var paths = {
   buildTemplates: 'build/templates/**/*.html',
 };
 
+// Scripts
+gulp.task('uglyscripts', function() {
+  return gulp
+    .src(paths.scripts)
+    .pipe(order([
+      'dev/is/app.js',
+      'dev/**/*.js'
+    ]))
+    .pipe(concat('all.min.js'))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(gulp.dest('build/'));
+});
 
 // Scripts
 gulp.task('scripts', function() {
@@ -98,4 +111,4 @@ gulp.task('watch', function() {
 
 
 gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files']);
-gulp.task('build', ['scripts', 'css', 'images', 'templates', 'vendor-files']);
+gulp.task('build', ['uglyscripts', 'css', 'images', 'templates', 'vendor-files']);
