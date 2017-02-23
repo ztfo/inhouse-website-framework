@@ -98,4 +98,4 @@ gulp.task('watch', function() {
 
 
 gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files']);
-gulp.task('build', ['scripts', 'css', 'images', 'templatecache', 'vendor-files']);
+gulp.task('build', ['scripts', 'css', 'images', 'templates', 'vendor-files']);
