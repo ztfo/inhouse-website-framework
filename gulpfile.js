@@ -61,13 +61,6 @@ gulp.task('images', function() {
     .pipe(gulp.dest('build/'));
 });
 
-// Include vendor scripts
-// incomplete bower
-gulp.task('bower', function() {
-  return bower()
-    .pipe()
-});
-
 gulp.task('vendor-files', function() {
   return gulp
     .src(paths.vendorScripts)
@@ -83,20 +76,6 @@ gulp.task('templates', function() {
       console.log('PUG ERROR >>>> ', e.message)
       this.emit('end')
     })
-    .pipe(gulp.dest('build/templates'));
-});
-
-// Watchers
-gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.images, ['images']);
-  gulp.watch(paths.styles, ['css']);
-  gulp.watch(paths.srcTemplates, ['templatecache']);
-});
-
-// Template Caching
-gulp.task('templatecache', ['templates'], function() {
-  gulp.src(paths.buildTemplates)
     .pipe(templateCache({
       module: 'frameworkTemplates',
       standalone: true,
@@ -107,5 +86,16 @@ gulp.task('templatecache', ['templates'], function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templatecache', 'vendor-files']);
-gulp.task('templatecache', ['templates']);
+// Watchers
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.styles, ['css']);
+  gulp.watch(paths.srcTemplates, ['templates']);
+  gulp.watch(paths.vendorScripts, ['vendor-files']);
+
+});
+
+
+gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files']);
+gulp.task('build', ['scripts', 'css', 'images', 'templatecache', 'vendor-files']);
