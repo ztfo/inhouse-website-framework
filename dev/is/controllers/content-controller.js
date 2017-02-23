@@ -15,8 +15,8 @@ angular.module('ihframework')
 		$scope.showOrderTab = tab;
 	};
 
-	if(typeof $rootScope.theUserData.content[$route.content] === 'undefined') {
-		var content = $rootScope.theUserData.content;
+	if(typeof $rootScope.theWebsiteData.content[$route.content] === 'undefined') {
+		var content = $rootScope.theWebsiteData.content;
 		for (var i = 0; i < content.length; i++) {
 			if(content[i].key == $route.content) {
 				$scope.content = content[i];
@@ -24,7 +24,7 @@ angular.module('ihframework')
 			}
 		}
 	} else {
-		$scope.content = $rootScope.theUserData.content[$route.content];
+		$scope.content = $rootScope.theWebsiteData.content[$route.content];
 	}
 	if(typeof $rootScope.theWebsiteData.featuredCommunities == 'object') {
 		$scope.featuredCommunities = $rootScope.theWebsiteData.featuredCommunities;

@@ -15,7 +15,7 @@ angular.module('ihframework')
 				 	$scope.templateUrl = 'build/templates/ic/divider/template/s1-inhouse.divider.html';
 				}
 			});
-			$scope.agent = $rootScope.theUserData;
+			$scope.site = $rootScope.theWebsiteData;
 		}
 	};
 });

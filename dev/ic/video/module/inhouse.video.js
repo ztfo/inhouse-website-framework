@@ -21,11 +21,11 @@ angular.module('ihframework')
 			var resources = [];
 			var featured = [];
 			//loop through resources to see if any are featured
-			for (var i = 0; i < scope.$root.theUserData.content.length; i++) {
-				if(typeof scope.$root.theUserData.content[i].featured !== 'undefined' && scope.$root.theUserData.content[i].featured === true) {
-					featured.push(scope.$root.theUserData.content[i]);
+			for (var i = 0; i < scope.$root.theWebsiteData.content.length; i++) {
+				if(typeof scope.$root.theWebsiteData.content[i].featured !== 'undefined' && scope.$root.theWebsiteData.content[i].featured === true) {
+					featured.push(scope.$root.theWebsiteData.content[i]);
 				} else {
-					resources.push(scope.$root.theUserData.content[i]);
+					resources.push(scope.$root.theWebsiteData.content[i]);
 				}
 			}
 			scope.resources = featured.concat(resources);
