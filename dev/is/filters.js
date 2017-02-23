@@ -78,7 +78,7 @@ angular.module('ihframework')
         if(split.length > splitIndex) {
           return input.split(splitChar)[splitIndex];
         }
-        
+
         return split[0];
       }
     }
@@ -103,4 +103,25 @@ angular.module('ihframework')
   			return input.replace(/ /g, '');
       }
 		};
-	});
+	})
+  .filter('chunk', function() {
+    return function(source, columns) {
+      var r = [];
+
+      var i = 0;
+      var j = 0;
+      for (item in source) {
+        if(r[j] == undefined) r[j] = [];
+
+        r[j].push(angular.copy(item));
+
+        if(i++ === columns) {
+          j++;
+          i = 0;
+        }
+      }
+      
+      return r;
+    };
+  })
+  ;

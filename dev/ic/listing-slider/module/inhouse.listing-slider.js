@@ -17,11 +17,11 @@ angular.module('ihframework')
 					$scope.templateUrl = 'build/templates/ic/listing-slider/template/f1-listing-slider.html';
 				}
 			});
-			
+
 			$scope.showLightBox = function(index) {
 				var firstHalf = $scope.lightBox.slice().slice(0, index - 1);
 				var secondHalf = $scope.lightBox.slice().slice(index);
-				
+
 				UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
 			};
 		},
@@ -29,16 +29,16 @@ angular.module('ihframework')
 			$scope.$on('listingLoaded', function (event, args) {
 				$scope.lightBox = [];
 				$scope.listing = args;
-				
-				for (var i = 0; i < $scope.listing.photos.length; i++) {
+
+				for (var i = 0; i < $scope.listing.Details.photos.length; i++) {
 					$scope.lightBox.push({
 						'index': i,
-						'source' : $scope.listing.photos[i].large,
+						'source' : $scope.listing.Details.photos[i].large,
 						'type' : 'image',
-						'caption' : $scope.listing.photos[i].caption
+						'caption' : $scope.listing.Details.photos[i].caption
 					});
 				}
-				
+
 			});
 		}
 	};
