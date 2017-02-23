@@ -4,33 +4,33 @@ section.p2.ih-about-listing.fp
       h1.ih-header.text-center.fc-02.text-uppercase
         small about
         br
-        | {{listing.address}}
+        | {{listing.Details.address}}
     .listing-info.row
       .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
         .full.flex-grid
           .flex-4
             span.ih-icon.ih-icon-bed
           .flex-8.text-center
-            h1.fc-03 {{listing.beds}}
+            h1.fc-03 {{listing.Details.beds}}
       .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
         .full.flex-grid
           .flex-4
             span.ih-icon.ih-icon-bathtub2
           .flex-8.text-center
-            h1.fc-03 {{listing.baths}}
+            h1.fc-03 {{listing.Details.baths}}
       .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
         .full.flex-grid
           .flex-4
             span.ih-icon.ih-icon-house-size
           .flex-8
-            h4.fc-03 {{listing.sqft | number}}
-            h6 {{listing.sizeUnit}}
+            h4.fc-03 {{listing.Details.sqft | number}}
+            h6 {{listing.Details.sizeUnit}}
       .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
         .full.flex-grid
           .flex-4
             span.ih-icon.ih-icon-house2
           .flex-8
-            h1.fc-03 {{listing.stories}}
+            h1.fc-03 {{listing.Details.stories}}
             h6 STORIES
       .fact-icon.col-lg-15.col-md-15.col-sm-6.col-xs-12
         .full.flex-grid
@@ -38,7 +38,7 @@ section.p2.ih-about-listing.fp
             span.ih-icon.ih-icon-family
           .flex-8
             h6 listing Type
-            h5.fc-03 {{listing.type}}
+            h5.fc-03 {{listing.Details.type}}
     .property-text.container-fluid
       .row
         .col-lg-8.col-md-8.col-sm-6.col-xs-12
