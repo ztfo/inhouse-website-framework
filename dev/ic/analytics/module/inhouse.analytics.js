@@ -32,6 +32,7 @@ angular.module('ihframework')
 				a.src = g;
 				m.parentNode.insertBefore(a, m)
 				})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+				console.log($scope.agent.gaKey);
 				ga('create', $scope.agent.gaKey, 'auto');			}
 		}
 	});
