@@ -1,8 +1,8 @@
 section.p6.ih-photo-slider.fp.fw
   .container-fluid.photo-slider-inner
     .gallery-carousel
-      ih-owl.owl-carousel.tst-carousel(items='listing.photos', responsive='responsive')
-        .listing-pic-block.full(ng-repeat='photo in listing.photos')
+      ih-owl.owl-carousel.tst-carousel(items='listing.Details.photos', responsive='responsive')
+        .listing-pic-block.full(ng-repeat='photo in listing.Details.photos')
           .listing-pic(ng-style="{'background-image': 'url(' + photo.large + ')'}")
             a.block.full.fw(ng-click='showLightBox($index)')
               span.fa.fa-camera
