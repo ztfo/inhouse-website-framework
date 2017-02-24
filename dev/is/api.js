@@ -2,7 +2,6 @@ angular.module('ihframework')
 .factory('inhouseApi', function($http, $rootScope) {
 	var urlBase = 'https://www.getinhouse.io/api/v1/';
 	var newApi = 'https://app.getinhouse.io/api/v1/web/';
-  var newApi = 'http://localhost/new-api/public/api/v1/web/';
 	var inhouseApi = {};
 	var userId = $rootScope.theUserData.userId;
 	var userHash = $rootScope.theUserData.userHash;

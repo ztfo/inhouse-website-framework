@@ -27,6 +27,19 @@ var paths = {
   buildTemplates: 'build/templates/**/*.html',
 };
 
+// Scripts
+gulp.task('uglyscripts', function() {
+  return gulp
+    .src(paths.scripts)
+    .pipe(order([
+      'dev/is/app.js',
+      'dev/**/*.js'
+    ]))
+    .pipe(concat('all.min.js'))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(gulp.dest('build/'));
+});
 
 // Scripts
 gulp.task('scripts', function() {
@@ -61,17 +74,11 @@ gulp.task('images', function() {
     .pipe(gulp.dest('build/'));
 });
 
-// Include vendor scripts
-// incomplete bower
-gulp.task('bower', function() {
-  return bower()
-    .pipe()
-});
-
 gulp.task('vendor-files', function() {
   return gulp
     .src(paths.vendorScripts)
     .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('build/'));
 });
 
@@ -83,20 +90,6 @@ gulp.task('templates', function() {
       console.log('PUG ERROR >>>> ', e.message)
       this.emit('end')
     })
-    .pipe(gulp.dest('build/templates'));
-});
-
-// Watchers
-gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.images, ['images']);
-  gulp.watch(paths.styles, ['css']);
-  gulp.watch(paths.srcTemplates, ['templatecache']);
-});
-
-// Template Caching
-gulp.task('templatecache', ['templates'], function() {
-  gulp.src(paths.buildTemplates)
     .pipe(templateCache({
       module: 'frameworkTemplates',
       standalone: true,
@@ -107,5 +100,16 @@ gulp.task('templatecache', ['templates'], function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templatecache', 'vendor-files']);
-gulp.task('templatecache', ['templates']);
+// Watchers
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.styles, ['css']);
+  gulp.watch(paths.srcTemplates, ['templates']);
+  gulp.watch(paths.vendorScripts, ['vendor-files']);
+
+});
+
+
+gulp.task('default', ['watch', 'scripts', 'css', 'images', 'templates', 'vendor-files']);
+gulp.task('build', ['uglyscripts', 'css', 'images', 'templates', 'vendor-files']);

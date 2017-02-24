@@ -6,17 +6,17 @@
   ul#listingData.uk-switcher.fs
     li(ng-repeat="(category, data) in listing")
       div.flex-grid
-        div(ng-repeat="(key, value) in data" ng-if="key !== 'primaryPhoto' && key !== 'photos' && value !== null && value !== '' && key !== 'publicRemarks' && key !== 'thumb' && key !== 'latlong'" style="padding:10px")
+        div.flex-3(ng-repeat="(key, value) in data" ng-if="key !== 'primaryPhoto' && key !== 'photos' && value !== null && value !== '' && key !== 'publicRemarks' && key !== 'thumb' && key !== 'latlong' && key !== 'documents'" style="padding:10px")
           strong(style="margin-right:10px;")
-            small.text-muted {{key}}
+            small.text-muted {{format[key] === undefined ? key : format[key]}}
           small.text-muted {{value}}
 //- mobile
 .ih-listing-table.mobile-details.hidden-lg.hidden-md.hidden-sm
     div(ng-repeat="(category, data) in listing")
       h3 {{category}}
         table.table.table-responsive.table-stripped.table-hover
-          tr(ng-repeat="(key, value) in data" ng-if="key !== 'primaryPhoto' && key !== 'photos' && value !== null && value !== '' && key !== 'publicRemarks' && key !== 'thumb' && key !== 'latlong'" style="padding:10px")
+          tr(ng-repeat="(key, value) in data" ng-if="key !== 'primaryPhoto' && key !== 'photos' && value !== null && value !== '' && key !== 'publicRemarks' && key !== 'thumb' && key !== 'latlong' && key !== 'documents'" style="padding:10px")
             th
-              small.text-muted {{key}}
+              small.text-muted {{format[key] === undefined ? key : format[key]}}
             th
               small.text-muted {{value}}
