@@ -9,6 +9,8 @@
     "bootstrap-slider": "*",
     "ng-maps": "ng-map#*",
     "owl-carousel": "^1.3.2",
-    "smoothscroll": "^0.3.4"
+    "smoothscroll": "^0.3.4",
+    "angulartics-facebook-pixel": "^0.2.0",
+    "angulartics-google-analytics": "^0.4.0"
   }
 }
