@@ -1,4 +1,4 @@
 .gmap-popwindow
-  a(href='#/listing/{{listing.mls}}')
+  a(href='#/listing/{{listing.Details.mls}}')
     i.fa.fa-map-marker
-    |  {{listing.address}} | {{listing.price | currency:'$':0}}
+    |  {{listing.Details.address}} | {{listing.Details.price | currency:'$':0}}

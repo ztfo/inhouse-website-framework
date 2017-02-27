@@ -2,11 +2,11 @@ section.p1.ih-amenities.flex-grid.fp
   .flex-5.image-fit(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
     .ih.afull.fullh.bkc-01.tpt.amenities-accent.fw
       h1
-        | {{listing.address}}
+        | {{listing.Details.address}}
         br
-        small.fw.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
+        small.fw.text-uppercase {{listing.Details.city}} {{listing.Details.state}} {{listing.Details.zipcode}}
       .price-badge.fc-01
-        strong {{listing.price | currency:undefined:0}}
+        strong {{listing.Details.price | currency:undefined:0}}
       blockquote.fs
         | {{data.cta}}
       .btn-row
@@ -14,9 +14,9 @@ section.p1.ih-amenities.flex-grid.fp
   .flex-7.amenities-box
     h1.ih-subheader.fc-02
       | Amenities at
-      strong &nbsp;{{listing.community}}
+      strong &nbsp;{{listing.Details.community}}
     p.fs
-      | {{listing.editableText}}
+      | {{listing.Details.editableText}}
     .amenity-grid.flex-grid
       .amenity-container.pull-left(ng-repeat='amenity in amenities')
         .amenity-item

@@ -1,0 +1,57 @@
+section.s11.ih-search
+  .container
+    .row
+      .ih-header.text-center.col-lg-2.col-md-2.col-sm-12.col-xs-12
+        i.fa.fa-angle-right
+        span &nbsp; home search
+      .ih-search-inner.col-lg-10.col-md-10.col-sm-12.col-xs-12
+        form(ng-submit='searchMLS()')
+          fieldset
+            .container-fluid
+              .ih-main-search.row
+                .ih-input-box.col-lg-2.col-md-2.col-sm-6.col-xs-12
+                  ih-dropdown#type(
+                    items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]',
+                    name='Type',
+                    ng-model='filters.type')
+                .ih-input-box.col-lg-2.col-md-2.col-sm-6.col-xs-12
+                  input.ih-search-input.full(
+                    type='text',
+                    placeholder='$ Min Price',
+                    name='propertyMinPrice',
+                    ng-model='filters.price_from')
+                  input.ih-search-input.full(
+                    type='text',
+                    placeholder='$ Max Price',
+                    name='propertyMaxPrice',
+                    ng-model='filters.price_to')
+                .ih-input-box.col-lg-2.col-md-2.col-sm-4.col-xs-12
+                  input.ih-search-input.full(
+                    type='text',
+                    placeholder='Min Beds',
+                    name='propertyMinBeds',
+                    ng-model='filters.min_beds')
+                  input.ih-search-input.full(
+                    type='text',
+                    placeholder='Max Beds',
+                    name='propertyMaxBeds',
+                    ng-model='filters.max_beds')
+                .ih-input-box.col-lg-2.col-md-2.col-sm-4.col-xs-12
+                  input.ih-search-input.full(
+                    type='text',
+                    placeholder='Min Sqft',
+                    name='propertyMinSF',
+                    ng-model='filters.min_sqft')
+                  input.ih-search-input.full(
+                    type='text',
+                    placeholder='Max Sqft',
+                    name='propertyMaxSF',
+                    ng-model='filters.max_sqft')
+                .ih-input-box.col-lg-2.col-md-2.col-sm-6.col-xs-12
+                  ih-dropdown#area(
+                    items='[{"name": "Central", "value": "Central"}, {"name": "North", "value": "North"}, {"name": "Northwest", "value": "Northwest"}, {"name": "Northeast", "value": "Northeast"}, {"name": "East", "value": "East"}, {"name": "West", "value": "West"}, {"name": "South", "value": "South"}, {"name": "Southwest", "value": "Southwest"}, {"name": "Southeast", "value": "Southeast"}, {"name": "Extended Northeast", "value": "Extended Northwest"}, {"name": "Extended Northwest", "value": "Extended Northeast"}, {"name": "Extended South", "value": "Extended South"}, {"name": "Extended Southwest", "value": "Extended Southwest"},  {"name": "Extended West", "value": "Extended West"}, {"name": "Pima East", "value": "Pima East"},  {"name": "Pima Far West", "value": "Pima Far West"}, {"name": "Pima Northwest", "value": "Pima Northwest"}, {"name": "Pima South", "value": "Pima South"}, {"name": "Pima Southwest", "value": "Pima Southwest"}]',
+                    name='Area',
+                    multi='true',
+                    ng-model='filters.area')
+                .ih-input-box.col-lg-2.col-md-2.col-sm-12.col-xs-12
+                  button.btn.btn-primary(type='submit') Search

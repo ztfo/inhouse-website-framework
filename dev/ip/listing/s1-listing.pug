@@ -7,19 +7,19 @@ section.s1.ih-listing
           .ih-gmap.full
             ih-gmaps.full
       .ih-listing-images.row
-        ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
-          .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')
+        ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.Details.photos', responsive='responsive')
+          .item.ih-owl-thumbnail(ng-repeat='home in listing.Details.photos')
             img.fit-image.ih-owl-thumbnail(ng-src='{{home.thumb}}', alt='{{home.caption}}')
       .ih-listing-factbar.row
         .ih-listing-addr.col-lg-6.col-md-6.col-sm-12.col-xs-12
-          ih-like-button.pull-left(mls='{{listing.mls}}', address="{{listing['Building Address']}}")
+          ih-like-button.pull-left(mls='{{listing.Details.mls}}', address="{{listing['Building Address']}}")
           .pull-left
-            h2.fs {{listing.address}}
-            h4.fs {{listing.city}} {{listing.state}} {{listing.zipcode}}
+            h2.fs {{listing.Details.address}}
+            h4.fs {{listing.Details.city}} {{listing.Details.state}} {{listing.Details.zipcode}}
         .ih-listing-dets.col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
-          h2.fs {{listing.price | currency:"$":0}}
+          h2.fs {{listing.Details.price | currency:"$":0}}
           h4.fs
-            | {{listing.beds}} BEDS | {{listing.baths}} BATHS | {{listing.sqft | number}} SQFT
+            | {{listing.Details.beds}} BEDS | {{listing.Details.baths}} BATHS | {{listing.Details.sqft | number}} SQFT
     .ih-sm-divider.ih-ext-divider
     .ih-listing-details
       .ih-listing-description.container-fluid
@@ -39,10 +39,10 @@ section.s1.ih-listing
                 i.fa.fa-twitter
               a.ih-social-icon(href='https://plus.google.com/share?url={{shareUrl|encode}}', target='_blank')
                 i.fa.fa-google-plus
-        p {{listing.publicRemarks | sentence}}
+        p {{listing.Details.publicRemarks | sentence}}
         p.small.text-uppercase
           | Listing Information Courtesy of:
-          strong {{listing.brokerage}}
+          strong {{listing.Details.brokerage}}
       .ih-sm-divider.ih-ext-divider
       ih-listing-details
     .ih-listing-contact
@@ -59,12 +59,12 @@ section.s1.ih-listing
                 a(href='#canvasDocs', aria-controls='canvasDocs', role='tab', data-toggle='tab', onclick='event.preventDefault()') Agent Attachments
             .tab-content
               #mlsDocs.tab-pane.active(role='tabpanel')
-                div(ng-repeat='doc in listing.documents')
+                div(ng-repeat='doc in listing.Details.documents')
                   a.ih-doc(href='{{doc.Uri}}', target='_blank')
                     i.fa.fa-file-o
                     |  {{doc.Name}}
               #canvasDocs.tab-pane(role='tabpanel')
-                div(ng-repeat='doc in listing.canvasDocuments')
+                div(ng-repeat='doc in listing.Details.canvasDocuments')
                   a.ih-doc(href='{{doc.Uri}}', target='_blank')
                     i.fa.fa-file-o
                     |  {{doc.Name}}
