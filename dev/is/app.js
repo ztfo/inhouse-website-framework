@@ -1,4 +1,4 @@
-angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 'ngMap', 'ngGPlaces', 'duScroll', 'angular-pinterest', 'angulartics', 
+angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 'ngMap', 'ngGPlaces', 'duScroll', 'angular-pinterest', 'angulartics', 'angulartics.facebook.pixel',
    'angulartics.google.analytics'])
 .run(function($http, $rootScope, userDataService){
 	$rootScope.theUserData = userDataService.userData;
@@ -59,7 +59,6 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 	$rootScope.$on("$routeChangeSuccess", function(e, data) {
 		$scope.$broadcast('viewChanged', data.controller);
 		window.ga('send', 'pageview', { page: window.location.href });
-		window.fbq(['track', 'PixelInitialized', {}]);
 	});
 	$scope.agent = $rootScope.theUserData;
 	$scope.story = $rootScope.theWebsiteData;
