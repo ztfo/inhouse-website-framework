@@ -1,37 +1,37 @@
 section#about.p4.ih-about-listing
   .container-fluid
-    h2.ih-header About {{listing.address}}
+    h2.ih-header About {{listing.Details.address}}
     .row.text-center.listing-price
-      h3 {{listing.price | currency:undefined:0}}
+      h3 {{listing.Details.price | currency:undefined:0}}
     .row.fact-list
       .fact-box.style1
         .ih-icon.ih-icon-houses.fc-02
         .fact-value.fc-01
-          | {{listing.beds}}
+          | {{listing.Details.beds}}
         .fact-label
           | Bedrooms
       .fact-box.style2
         .ih-icon.ih-icon-bathtub.fc-02
         .fact-value.fc-01
-          | {{listing.baths}}
+          | {{listing.Details.baths}}
         .fact-label
           | Baths
       .fact-box.style3
         .ih-icon.ih-icon-house.fc-02
         .fact-value.fc-01
-          | {{listing.sqft | number}}
+          | {{listing.Details.sqft | number}}
         .fact-label
-          | {{listing.sizeUnit}}
+          | {{listing.Details.sizeUnit}}
       .fact-box.style4
         .ih-icon.ih-icon-investment.fc-02
         .fact-value.fc-01
-          | {{listing.stories}}
+          | {{listing.Details.stories}}
         .fact-label
           | Stories
       .fact-box.style5
         .ih-icon.ih-icon-fence.fc-02
         .fact-value.fc-01
-          | {{listing.lotsize}}
+          | {{listing.Details.lotsize}}
         .fact-label
           | Acres
     .row.remarks

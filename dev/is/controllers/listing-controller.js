@@ -48,16 +48,16 @@ angular.module('ihframework')
 
 		inhouseApi.newApi.getListingDetails($scope.mls).success(function(response) {
 //		inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
-			$scope.listing = response.listing;
+			$scope.listing = response.data.listing;
 			$scope.url = window.location.href;
 			$scope.lightBox = [];
 
-			for (var i = 0; i < $scope.listing.photos.length; i++) {
+			for (var i = 0; i < $scope.listing.Details.photos.length; i++) {
 				$scope.lightBox.push({
 					'index': i,
-					'source' : $scope.listing.photos[i].large,
+					'source' : $scope.listing.Details.photos[i].large,
 					'type' : 'image',
-					'caption' : $scope.listing.photos[i].caption
+					'caption' : $scope.listing.Details.photos[i].caption
 				});
 			}
 
