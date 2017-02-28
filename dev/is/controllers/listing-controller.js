@@ -47,22 +47,33 @@ angular.module('ihframework')
 		}
 
 		inhouseApi.newApi.getListingDetails($scope.mls).success(function(response) {
-//		inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
-			if(typeof response.data.listing !== undefined) {
+			if(typeof response.listing !== 'undefined') {
+				
+				$scope.listing = response.listing;
+				$scope.listing.showOldTable = true;
+				
+				if($scope.listing.photos !== undefined) {
+					var photos = $scope.listing.photos;
+				} else {
+					var photos = [];
+				}
+				
+			} else if(typeof response.data !== 'undefined' && typeof response.data.listing !== 'undefined') {
 				$scope.listing = response.data.listing;
+				var photos = $scope.listing.Details.photos;
 			} else {
-				$scope.listing = response.data;
+				$scope.listing = response;
 			}
 			
 			$scope.url = window.location.href;
 			$scope.lightBox = [];
 
-			for (var i = 0; i < $scope.listing.Details.photos.length; i++) {
+			for (var i = 0; i < photos.length; i++) {
 				$scope.lightBox.push({
 					'index': i,
-					'source' : $scope.listing.Details.photos[i].large,
+					'source' : photos[i].large,
 					'type' : 'image',
-					'caption' : $scope.listing.Details.photos[i].caption
+					'caption' : photos[i].caption
 				});
 			}
 

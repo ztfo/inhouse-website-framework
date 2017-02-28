@@ -48,6 +48,9 @@ angular.module('ihframework')
 		link: function (scope, element, attrs) {
 			scope.$on('listingLoaded', function (event, args) {
 				scope.listing = args;
+				if(scope.listing.showOldTable == true) {
+					scope.config = 's2';
+				}
 			});
 		}
 	};

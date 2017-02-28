@@ -29,6 +29,10 @@ angular.module('ihframework')
 			$scope.$on('listingLoaded', function (event, args) {
 				$scope.lightBox = [];
 				$scope.listing = args;
+				
+				if($scope.listing.showOldTable == true) {
+					$scope.listing.Details = $scope.listing;
+				}
 
 				for (var i = 0; i < $scope.listing.Details.photos.length; i++) {
 					$scope.lightBox.push({
