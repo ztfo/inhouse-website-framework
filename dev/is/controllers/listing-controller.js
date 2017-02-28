@@ -48,7 +48,12 @@ angular.module('ihframework')
 
 		inhouseApi.newApi.getListingDetails($scope.mls).success(function(response) {
 //		inhouseApi.getData({resource: 'listing/' + $scope.mls}).success(function(response) {
-			$scope.listing = response.data.listing;
+			if(typeof response.data.listing !== undefined) {
+				$scope.listing = response.data.listing;
+			} else {
+				$scope.listing = response.data;
+			}
+			
 			$scope.url = window.location.href;
 			$scope.lightBox = [];
 
