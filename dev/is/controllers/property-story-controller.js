@@ -18,7 +18,8 @@ angular.module('ihframework')
 	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $rootScope.theWebsiteData.mls;
 	console.log($scope.shareUrl);
 	inhouseApi.newApi.getListingDetails($rootScope.theWebsiteData.mls, 'v2').success(function(response) {
-		$scope.listing = response.data.listing;
+		if(response.listing !== undefined) $scope.listing = response.listing;
+		else $scope.listing = response.data.listing;
 	});
 
 	$scope.showLightBox = function(index) {
