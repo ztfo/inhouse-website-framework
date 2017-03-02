@@ -102,7 +102,7 @@ angular.module('ihframework')
 			}
 		}
 
-		url = newApi + 'user/' + userId + '/listing/' + mls + '?' + $.param(data);
+		url = 'https://app.getinhouse.io/api/v2/web/user/' + userId + '/listing/' + mls + '?' + $.param(data);
 
 		return $http.jsonp(url);
 	};

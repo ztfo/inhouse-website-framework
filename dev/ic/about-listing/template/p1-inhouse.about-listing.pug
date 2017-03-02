@@ -1,47 +1,47 @@
 section.p1.ih-about-listing.container-fluid.fp
-  .container
-    h1.ih-header.text-center.fc-02.text-uppercase
-      small about
-      br
-      | {{listing.Details.address}}
-    .row
-      p.fs.columns
-        | {{data.cta || listing.publicRemarks}}
-    .row.text-center.fact-row.fs
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-houses.fc-02
-          .fact-value.fc-01
-            | {{listing.Details.beds}}
-          .fact-label
-            | Bedrooms
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-bathtub.fc-02
-          .fact-value.fc-01
-            | {{listing.Details.baths}}
-          .fact-label
-            | Baths
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-house.fc-02
-          .fact-value.fc-01
-            | {{listing.Details.sqft | number}}
-          .fact-label
-            | {{listing.Details.sizeUnit}}
-      .col-lg-15.col-md-15.col-sm-6.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-investment.fc-02
-          .fact-value.fc-01
-            | {{listing.Details.stories}}
-          .fact-label
-            | Stories
-      .col-lg-15.col-md-15.col-sm-12.col-sm-12
-        .fact-box
-          .ih-icon.ih-icon-fence.fc-02
-          .fact-value.fc-01
-            | {{listing.Details.lotsize}}
-          .fact-label
-            | Acres
-    .row.text-center.btn-row
-      ih-schedule-visit(listing="listing")
+	.container
+		h1.ih-header.text-center.fc-02.text-uppercase
+			small about
+			br
+			| {{listing.Details.address}}
+		.row
+			p.fs.columns
+				| {{data.cta || listing.Details.publicRemarks}}
+		.row.text-center.fact-row.fs
+			.col-lg-15.col-md-15.col-sm-6.col-sm-12
+				.fact-box
+					.ih-icon.ih-icon-houses.fc-02
+					.fact-value.fc-01
+						| {{listing.Details.beds}}
+					.fact-label
+						| Bedrooms
+			.col-lg-15.col-md-15.col-sm-6.col-sm-12
+				.fact-box
+					.ih-icon.ih-icon-bathtub.fc-02
+					.fact-value.fc-01
+						| {{listing.Details.baths}}
+					.fact-label
+						| Baths
+			.col-lg-15.col-md-15.col-sm-6.col-sm-12
+				.fact-box
+					.ih-icon.ih-icon-house.fc-02
+					.fact-value.fc-01
+						| {{listing.Details.sqft | number}}
+					.fact-label
+						| {{listing.Details.sizeUnit}}
+			.col-lg-15.col-md-15.col-sm-6.col-sm-12
+				.fact-box
+					.ih-icon.ih-icon-investment.fc-02
+					.fact-value.fc-01
+						| {{listing.Details.stories}}
+					.fact-label
+						| Stories
+			.col-lg-15.col-md-15.col-sm-12.col-sm-12
+				.fact-box
+					.ih-icon.ih-icon-fence.fc-02
+					.fact-value.fc-01
+						| {{listing.Details.lotsize}}
+					.fact-label
+						| Acres
+		.row.text-center.btn-row
+			ih-schedule-visit(listing="listing")

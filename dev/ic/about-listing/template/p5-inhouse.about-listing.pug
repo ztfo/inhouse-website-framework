@@ -1,10 +1,10 @@
 section.p5.ih-about-listing.fp.fw
-  .container
-    .listing-inner
-      h1.ih-header About {{listing.Details.address}}
-      .ih-sm-divider
-      p.listing-remarks.fs {{data.cta || listing.publicRemarks}}
-    .details
-      ih-listing-details(listing='listing')
-    .btn-row
-      ih-schedule-visit(listing="listing")
+	.container
+		.listing-inner
+			h1.ih-header About {{listing.Details.address}}
+			.ih-sm-divider
+			p.listing-remarks.fs {{data.cta || listing.Details.publicRemarks}}
+		.details
+			ih-listing-details(listing='listing')
+		.btn-row
+			ih-schedule-visit(listing="listing")
