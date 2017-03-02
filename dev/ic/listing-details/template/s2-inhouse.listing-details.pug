@@ -1,580 +1,580 @@
 .ih-listing-table.hidden-xs
-    ul.uk-subnav.nav.nav-pills(data-uk-switcher="{connect: '#listingData'}")
-        li
-            a(href='')
-                small Details
-        li
-            a(href='')
-                small Interior
-        li
-            a(href='')
-                small Exterior
-        li
-            a(href='')
-                small Community
-        li.hidden
-            a(href='')
-                small Mortgage
-    ul#listingData.uk-switcher.fs
-        li
-            //- listing details
-            table.table.table-stripped.table-hover
-                tbody.data-table
-                    tr
-                        th(colspan='1')
-                            small.text-muted Community
-                        td(colspan='2')
-                            small.text-muted {{listing.community}}
-                        th
-                            small.text-muted Type
-                        td(colspan='2')
-                            small.text-muted {{listing.type}}
-                    tr
-                        th
-                            small.text-muted Status
-                        td
-                            small.text-muted {{listing.status}}
-                        th
-                            small.text-muted MLS
-                        td
-                            small.text-muted {{listing.mls}}
-                        th
-                            small.text-muted Price/SF
-                        td
-                            small.text-muted {{listing.psf | currency}}
-                    tr
-                        th
-                            small.text-muted Bedrooms
-                        td
-                            small.text-muted {{listing.beds}}
-                        th
-                            small.text-muted Total Baths
-                        td
-                            small.text-muted {{listing.beds}}
-                        th
-                            small.text-muted Year Built
-                        td
-                            small.text-muted {{listing.yearBuilt}}
-                    tr
-                        th
-                            small.text-muted Sqft.
-                        td
-                            small.text-muted {{listing.sqft | number}}
-                        th
-                            small.text-muted Lot Size:
-                        td
-                            small.text-muted {{listing.lotsize}} Acres
-                        th
-                            small.text-muted Short Sale
-                        td
-                            small.text-muted {{listing.shortsale}}
-        li
-            //- interior features
-            .row
-                .col-lg-6
-                    table.table.table-responsive.table-stripped.table-hover
-                        tbody.data-table-inner
-                            tr
-                                th
-                                    small.text-muted Split Bedroom:
-                                td
-                                    small.text-muted {{listing.splitbed}}
-                                th
-                                    small.text-muted Split Level:
-                                td
-                                    small.text-muted {{listing.splitlevel}}
-                            tr
-                                th
-                                    small.text-muted Green Features:
-                                td
-                                    small.text-muted {{listing.green}}
-                                th
-                                    small.text-muted # Fireplace/Log
-                                td
-                                    small.text-muted {{listing.fireplace}}
-                            tr
-                                th
-                                    small.text-muted Floor Covering:
-                                td
-                                    small.text-muted {{listing.floorcovering}}
-                                th
-                                    small.text-muted View
-                                td
-                                    small.text-muted {{listing.view}}
-                            tr
-                                th
-                                    small.text-muted Disability Adapted:
-                                td
-                                    small.text-muted {{listing.disability}}
-                                th
-                                    small.text-muted Interior Steps:
-                                td
-                                    small.text-muted {{listing.steps}}
-                .col-lg-6
-                    .row
-                        .col-lg-6.col-md-6.col-sm-6.col-xs-12
-                            strong Appliances
-                            ul.accent-list
-                                li(ng-repeat='(appliance,v) in listing.appliances') {{appliance}}
-                        .col-lg-6.col-md-6.col-sm-6.col-xs-12
-                            strong Room Types
-                            ul.accent-list
-                                li(ng-repeat='room in listing.rooms') {{room}}
-        li
-            //- exterior features
-            table.table.table-stripped.table-hover
-                tbody.data-table
-                    tr
-                        th
-                            small.text-muted # of Garage
-                        td
-                            small.text-muted {{listing.garage}}
-                        th
-                            small.text-muted Pool
-                        td
-                            small.text-muted {{listing.pool}}
-                        th
-                            small.text-muted Spa
-                        td
-                            small.text-muted {{listing.spa}}
-                    tr
-                        th
-                            small.text-muted # of Stories
-                        td
-                            small.text-muted {{listing.stories}}
-                        th
-                            small.text-muted Patio:
-                        td
-                            small.text-muted {{listing.patio}}
-                        th
-                            small.text-muted RV Parking
-                        td
-                            small.text-muted {{listing.rv}}
-                    tr
-                        th
-                            small.text-muted Fence:
-                        td
-                            small.text-muted {{listing.fence}}
-                        th
-                            small.text-muted Style:
-                        td
-                            small.text-muted {{listing.style}}
-                        th
-                            small.text-muted Roof
-                        td
-                            small.text-muted {{listing.roof}}
-                    tr
-                        th
-                            small.text-muted Contruction
-                        td
-                            small.text-muted {{listing.construction}}
-                        th
-                            small.text-muted HVAC
-                        td
-                            small.text-muted {{listing.hvac}}
-                        th
-                            small.text-muted Security
-                        td
-                            small.text-muted {{listing.security}}
-                    tr
-                        th
-                            small.text-muted Contruction Status
-                        td
-                            small.text-muted {{listing.newconstruction}}
-                        th
-                            small.text-muted A/C
-                        td
-                            small.text-muted {{listing.ac}}
-                        th
-                            small.text-muted Heat
-                        td
-                            small.text-muted {{listing.heat}}
-                    tr
-                        th
-                            small.text-muted Gas
-                        td
-                            small.text-muted {{listing.gas}}
-                        th
-                            small.text-muted Water
-                        td
-                            small.text-muted {{listing.water}}
-                        th
-                            small.text-muted Sewer
-                        td
-                            small.text-muted {{listing.sewer}}
-                    tr
-                        th
-                            small.text-muted Athletic Facilities:
-                        td
-                            small.text-muted {{listing.athletic}}
-                        th
-                            small.text-muted Basement:
-                        td
-                            small.text-muted {{listing.basement}}
-                        th
-                            small.text-muted Cable Available:
-                        td
-                            small.text-muted {{listing.cable}}
-                    tr
-                        th
-                            small.text-muted Dividable Lot:
-                        td
-                            small.text-muted {{listing.dividable}}
-                        th
-                            small.text-muted Fix up:
-                        td
-                            small.text-muted {{listing.fix}}
-                        th
-                            small.text-muted Paved Street
-                        td
-                            small.text-muted {{listing.paved}}
-                    tr
-                        th
-                            small.text-muted Horse Facilities
-                        td
-                            small.text-muted {{listing.horsefacilities}}
-                        th
-                            small.text-muted Horses Allowed:
-                        td
-                            small.text-muted {{listing.horseallowed}}
-                        th
-                            small.text-muted On Golf Course:
-                        td
-                            small.text-muted {{listing.golfcourse}}
-        li
-            //- community details
-            table.table.table-stripped.table-hover
-                tbody.data-table
-                    tr
-                        th
-                            small.text-muted Community
-                        td
-                            small.text-muted {{listing.community}}
-                        th
-                            small.text-muted Adult Community
-                        td
-                            small.text-muted {{listing.adult}}
-                    tr
-                        th
-                            small.text-muted HOA
-                        td
-                            small.text-muted {{listing.hoa}}
-                        th
-                            small.text-muted Area
-                        td
-                            small.text-muted {{listing.area}}
-                    tr
-                        th
-                            small.text-muted School District
-                        td
-                            small.text-muted {{listing.schoolDistrict}}
-                        th
-                            small.text-muted Elementary
-                        td
-                            small.text-muted {{listing.elementarySchool}}
-                    tr
-                        th
-                            small.text-muted Middle School
-                        td
-                            small.text-muted {{listing.middleSchool}}
-                        th
-                            small.text-muted High School
-                        td
-                            small.text-muted {{listing.highSchool}}
-        li
-            //- mortgage details
-            p.text-center.hidden
-                | Coming Soon
+		ul.uk-subnav.nav.nav-pills(data-uk-switcher="{connect: '#listingData'}")
+				li
+						a(href='')
+								small Details
+				li
+						a(href='')
+								small Interior
+				li
+						a(href='')
+								small Exterior
+				li
+						a(href='')
+								small Community
+				li.hidden
+						a(href='')
+								small Mortgage
+		ul#listingData.uk-switcher.fs
+				li
+						//- listing details
+						table.table.table-stripped.table-hover
+								tbody.data-table
+										tr
+												th(colspan='1')
+														small.text-muted Community
+												td(colspan='2')
+														small.text-muted {{listing.community}}
+												th
+														small.text-muted Type
+												td(colspan='2')
+														small.text-muted {{listing.type}}
+										tr
+												th
+														small.text-muted Status
+												td
+														small.text-muted {{listing.status}}
+												th
+														small.text-muted MLS
+												td
+														small.text-muted {{listing.mls}}
+												th
+														small.text-muted Price/SF
+												td
+														small.text-muted {{listing.psf | currency}}
+										tr
+												th
+														small.text-muted Bedrooms
+												td
+														small.text-muted {{listing.beds}}
+												th
+														small.text-muted Total Baths
+												td
+														small.text-muted {{listing.beds}}
+												th
+														small.text-muted Year Built
+												td
+														small.text-muted {{listing.yearBuilt}}
+										tr
+												th
+														small.text-muted Sqft.
+												td
+														small.text-muted {{listing.sqft | number}}
+												th
+														small.text-muted Lot Size:
+												td
+														small.text-muted {{listing.lotsize}} Acres
+												th
+														small.text-muted Short Sale
+												td
+														small.text-muted {{listing.shortsale}}
+				li
+						//- interior features
+						.row
+								.col-lg-6
+										table.table.table-responsive.table-stripped.table-hover
+												tbody.data-table-inner
+														tr
+																th
+																		small.text-muted Split Bedroom:
+																td
+																		small.text-muted {{listing.splitbed}}
+																th
+																		small.text-muted Split Level:
+																td
+																		small.text-muted {{listing.splitlevel}}
+														tr
+																th
+																		small.text-muted Green Features:
+																td
+																		small.text-muted {{listing.green}}
+																th
+																		small.text-muted # Fireplace/Log
+																td
+																		small.text-muted {{listing.fireplace}}
+														tr
+																th
+																		small.text-muted Floor Covering:
+																td
+																		small.text-muted {{listing.floorcovering}}
+																th
+																		small.text-muted View
+																td
+																		small.text-muted {{listing.view}}
+														tr
+																th
+																		small.text-muted Disability Adapted:
+																td
+																		small.text-muted {{listing.disability}}
+																th
+																		small.text-muted Interior Steps:
+																td
+																		small.text-muted {{listing.steps}}
+								.col-lg-6
+										.row
+												.col-lg-6.col-md-6.col-sm-6.col-xs-12
+														strong Appliances
+														ul.accent-list
+																li(ng-repeat='(appliance,v) in listing.appliances') {{appliance}}
+												.col-lg-6.col-md-6.col-sm-6.col-xs-12
+														strong Room Types
+														ul.accent-list
+																li(ng-repeat='room in listing.rooms') {{room}}
+				li
+						//- exterior features
+						table.table.table-stripped.table-hover
+								tbody.data-table
+										tr
+												th
+														small.text-muted # of Garage
+												td
+														small.text-muted {{listing.garage}}
+												th
+														small.text-muted Pool
+												td
+														small.text-muted {{listing.pool}}
+												th
+														small.text-muted Spa
+												td
+														small.text-muted {{listing.spa}}
+										tr
+												th
+														small.text-muted # of Stories
+												td
+														small.text-muted {{listing.stories}}
+												th
+														small.text-muted Patio:
+												td
+														small.text-muted {{listing.patio}}
+												th
+														small.text-muted RV Parking
+												td
+														small.text-muted {{listing.rv}}
+										tr
+												th
+														small.text-muted Fence:
+												td
+														small.text-muted {{listing.fence}}
+												th
+														small.text-muted Style:
+												td
+														small.text-muted {{listing.style}}
+												th
+														small.text-muted Roof
+												td
+														small.text-muted {{listing.roof}}
+										tr
+												th
+														small.text-muted Contruction
+												td
+														small.text-muted {{listing.construction}}
+												th
+														small.text-muted HVAC
+												td
+														small.text-muted {{listing.hvac}}
+												th
+														small.text-muted Security
+												td
+														small.text-muted {{listing.security}}
+										tr
+												th
+														small.text-muted Contruction Status
+												td
+														small.text-muted {{listing.newconstruction}}
+												th
+														small.text-muted A/C
+												td
+														small.text-muted {{listing.ac}}
+												th
+														small.text-muted Heat
+												td
+														small.text-muted {{listing.heat}}
+										tr
+												th
+														small.text-muted Gas
+												td
+														small.text-muted {{listing.gas}}
+												th
+														small.text-muted Water
+												td
+														small.text-muted {{listing.water}}
+												th
+														small.text-muted Sewer
+												td
+														small.text-muted {{listing.sewer}}
+										tr
+												th
+														small.text-muted Athletic Facilities:
+												td
+														small.text-muted {{listing.athletic}}
+												th
+														small.text-muted Basement:
+												td
+														small.text-muted {{listing.basement}}
+												th
+														small.text-muted Cable Available:
+												td
+														small.text-muted {{listing.cable}}
+										tr
+												th
+														small.text-muted Dividable Lot:
+												td
+														small.text-muted {{listing.dividable}}
+												th
+														small.text-muted Fix up:
+												td
+														small.text-muted {{listing.fix}}
+												th
+														small.text-muted Paved Street
+												td
+														small.text-muted {{listing.paved}}
+										tr
+												th
+														small.text-muted Horse Facilities
+												td
+														small.text-muted {{listing.horsefacilities}}
+												th
+														small.text-muted Horses Allowed:
+												td
+														small.text-muted {{listing.horseallowed}}
+												th
+														small.text-muted On Golf Course:
+												td
+														small.text-muted {{listing.golfcourse}}
+				li
+						//- community details
+						table.table.table-stripped.table-hover
+								tbody.data-table
+										tr
+												th
+														small.text-muted Community
+												td
+														small.text-muted {{listing.community}}
+												th
+														small.text-muted Adult Community
+												td
+														small.text-muted {{listing.adult}}
+										tr
+												th
+														small.text-muted HOA
+												td
+														small.text-muted {{listing.hoa}}
+												th
+														small.text-muted Area
+												td
+														small.text-muted {{listing.area}}
+										tr
+												th
+														small.text-muted School District
+												td
+														small.text-muted {{listing.schoolDistrict}}
+												th
+														small.text-muted Elementary
+												td
+														small.text-muted {{listing.elementarySchool}}
+										tr
+												th
+														small.text-muted Middle School
+												td
+														small.text-muted {{listing.middleSchool}}
+												th
+														small.text-muted High School
+												td
+														small.text-muted {{listing.highSchool}}
+				li
+						//- mortgage details
+						p.text-center.hidden
+								| Coming Soon
 //- mobile
 .ih-listing-table.mobile-details.hidden-lg.hidden-md.hidden-sm
-    h3 Listing Details
-    table.table.table-responsive.table-stripped.table-hover
-        tbody
-            tr
-                th
-                    small.text-muted Community
-                td
-                    small.text-muted {{listing.community}}
-            tr
-                th
-                    small.text-muted Type
-                td
-                    small.text-muted {{listing.type}}
-            tr
-                th
-                    small.text-muted Status
-                td
-                    small.text-muted {{listing.status}}
-            tr
-                th
-                    small.text-muted MLS
-                td
-                    small.text-muted {{listing.mls}}
-            tr
-                th
-                    small.text-muted Price/SF
-                td
-                    small.text-muted {{listing.psf | currency}}
-            tr
-                th
-                    small.text-muted Bedrooms
-                td
-                    small.text-muted {{listing.beds_total}}
-            tr
-                th
-                    small.text-muted Total Baths
-                td
-                    small.text-muted {{listing.baths_total}}
-            tr
-                th
-                    small.text-muted Year Built
-                td
-                    small.text-muted {{listing.yearbuilt}}
-            tr
-                th
-                    small.text-muted Sqft.
-                td
-                    small.text-muted {{listing.sq_total | number}}
-            tr
-                th
-                    small.text-muted Lot Size:
-                td
-                    small.text-muted {{listing.lotsize}} Acres
-            tr
-                th
-                    small.text-muted Short Sale
-                td
-                    small.text-muted {{listing.shortsale}}
-    h3 Interior Features
-    table.table.table-responsive.table-stripped.table-hover
-        tbody.data-table-inner
-            tr
-                th
-                    small.text-muted Split Bedroom:
-                td
-                    small.text-muted {{listing.splitbed}}
-            tr
-                th
-                    small.text-muted Split Level:
-                td
-                    small.text-muted {{listing.splitlevel}}
-            tr
-                th
-                    small.text-muted Green Features:
-                td
-                    small.text-muted {{listing.green}}
-            tr
-                th
-                    small.text-muted # Fireplace/Log
-                td
-                    small.text-muted {{listing.fireplace}}
-            tr
-                th
-                    small.text-muted Floor Covering:
-                td
-                    small.text-muted {{listing.floorcovering}}
-            tr
-                th
-                    small.text-muted View
-                td
-                    small.text-muted {{listing.view}}
-            tr
-                th
-                    small.text-muted Disability Adapted:
-                td
-                    small.text-muted {{listing.disability}}
-            tr
-                th
-                    small.text-muted Interior Steps:
-                td
-                    small.text-muted {{listing.steps}}
-    h3 Exterior Features
-    table.table.table-responsive.table-stripped.table-hover
-        tbody.data-table-inner
-            tr
-                th
-                    small.text-muted # of Garage
-                td
-                    small.text-muted {{listing.garage}}
-            tr
-                th
-                    small.text-muted Pool
-                td
-                    small.text-muted {{listing.pool}}
-            tr
-                th
-                    small.text-muted Spa
-                td
-                    small.text-muted {{listing.spa}}
-            tr
-                th
-                    small.text-muted # of Stories
-                td
-                    small.text-muted {{listing.stories}}
-            tr
-                th
-                    small.text-muted Patio:
-                td
-                    small.text-muted {{listing.patio}}
-            tr
-                th
-                    small.text-muted RV Parking
-                td
-                    small.text-muted {{listing.rv}}
-            tr
-                th
-                    small.text-muted Fence:
-                td
-                    small.text-muted {{listing.fence}}
-            tr
-                th
-                    small.text-muted Style:
-                td
-                    small.text-muted {{listing.style}}
-            tr
-                th
-                    small.text-muted Roof
-                td
-                    small.text-muted {{listing.roof}}
-            tr
-                th
-                    small.text-muted Contruction
-                td
-                    small.text-muted {{listing.construction}}
-            tr
-                th
-                    small.text-muted HVAC
-                td
-                    small.text-muted {{listing.hvac}}
-            tr
-                th
-                    small.text-muted Security
-                td
-                    small.text-muted {{listing.security}}
-            tr
-                th
-                    small.text-muted Contruction Status
-                td
-                    small.text-muted {{listing.newconstruction}}
-            tr
-                th
-                    small.text-muted A/C
-                td
-                    small.text-muted {{listing.ac}}
-            tr
-                th
-                    small.text-muted Heat
-                td
-                    small.text-muted {{listing.heat}}
-            tr
-                th
-                    small.text-muted Gas
-                td
-                    small.text-muted {{listing.gas}}
-            tr
-                th
-                    small.text-muted Water
-                td
-                    small.text-muted {{listing.water}}
-            tr
-                th
-                    small.text-muted Sewer
-                td
-                    small.text-muted {{listing.sewer}}
-            tr
-                th
-                    small.text-muted Athletic Facilities:
-                td
-                    small.text-muted {{listing.athletic}}
-            tr
-                th
-                    small.text-muted Basement:
-                td
-                    small.text-muted {{listing.basement}}
-            tr
-                th
-                    small.text-muted Cable Available:
-                td
-                    small.text-muted {{listing.cable}}
-            tr
-                th
-                    small.text-muted Dividable Lot:
-                td
-                    small.text-muted {{listing.dividable}}
-            tr
-                th
-                    small.text-muted Fix up:
-                td
-                    small.text-muted {{listing.fix}}
-            tr
-                th
-                    small.text-muted Paved Street
-                td
-                    small.text-muted {{listing.paved}}
-            tr
-                th
-                    small.text-muted Horse Facilities
-                td
-                    small.text-muted {{listing.horsefacilities}}
-            tr
-                th
-                    small.text-muted Horses Allowed:
-                td
-                    small.text-muted {{listing.horseallowed}}
-            tr
-                th
-                    small.text-muted On Golf Course:
-                td
-                    small.text-muted {{listing.golfcourse}}
-    table.table.table-responsive.table-stripped.table-hover
-        tbody.data-table-inner
-            tr
-                th
-                    small.text-muted Community
-                td
-                    small.text-muted {{listing.community}}
-            tr
-                th
-                    small.text-muted Adult Community
-                td
-                    small.text-muted {{listing.adult}}
-            tr
-                th
-                    small.text-muted HOA
-                td
-                    small.text-muted {{listing.hoa}}
-            tr
-                th
-                    small.text-muted Area
-                td
-                    small.text-muted {{listing.area}}
-            tr
-                th
-                    small.text-muted School District
-                td
-                    small.text-muted {{listing.schoolDistrict}}
-            tr
-                th
-                    small.text-muted Elementary
-                td
-                    small.text-muted {{listing.elementarySchool}}
-            tr
-                th
-                    small.text-muted Middle School
-                td
-                    small.text-muted {{listing.middleSchool}}
-            tr
-                th
-                    small.text-muted High School
-                td
-                    small.text-muted {{listing.highSchool}}
-    .container-fluid
-        .row
-            .col-sm-6.col-xs-12
-                strong Appliances
-                ul.accent-list
-                    li(ng-repeat='(appliance,v) in listing.appliances') {{appliance}}
-            .col-sm-6.col-xs-12
-                strong Room Types
-                ul.accent-list
-                    li(ng-repeat='room in listing.rooms') {{room}}
+		h3 Listing Details
+		table.table.table-responsive.table-stripped.table-hover
+				tbody
+						tr
+								th
+										small.text-muted Community
+								td
+										small.text-muted {{listing.community}}
+						tr
+								th
+										small.text-muted Type
+								td
+										small.text-muted {{listing.type}}
+						tr
+								th
+										small.text-muted Status
+								td
+										small.text-muted {{listing.status}}
+						tr
+								th
+										small.text-muted MLS
+								td
+										small.text-muted {{listing.mls}}
+						tr
+								th
+										small.text-muted Price/SF
+								td
+										small.text-muted {{listing.psf | currency}}
+						tr
+								th
+										small.text-muted Bedrooms
+								td
+										small.text-muted {{listing.beds_total}}
+						tr
+								th
+										small.text-muted Total Baths
+								td
+										small.text-muted {{listing.baths_total}}
+						tr
+								th
+										small.text-muted Year Built
+								td
+										small.text-muted {{listing.yearbuilt}}
+						tr
+								th
+										small.text-muted Sqft.
+								td
+										small.text-muted {{listing.sq_total | number}}
+						tr
+								th
+										small.text-muted Lot Size:
+								td
+										small.text-muted {{listing.lotsize}} Acres
+						tr
+								th
+										small.text-muted Short Sale
+								td
+										small.text-muted {{listing.shortsale}}
+		h3 Interior Features
+		table.table.table-responsive.table-stripped.table-hover
+				tbody.data-table-inner
+						tr
+								th
+										small.text-muted Split Bedroom:
+								td
+										small.text-muted {{listing.splitbed}}
+						tr
+								th
+										small.text-muted Split Level:
+								td
+										small.text-muted {{listing.splitlevel}}
+						tr
+								th
+										small.text-muted Green Features:
+								td
+										small.text-muted {{listing.green}}
+						tr
+								th
+										small.text-muted # Fireplace/Log
+								td
+										small.text-muted {{listing.fireplace}}
+						tr
+								th
+										small.text-muted Floor Covering:
+								td
+										small.text-muted {{listing.floorcovering}}
+						tr
+								th
+										small.text-muted View
+								td
+										small.text-muted {{listing.view}}
+						tr
+								th
+										small.text-muted Disability Adapted:
+								td
+										small.text-muted {{listing.disability}}
+						tr
+								th
+										small.text-muted Interior Steps:
+								td
+										small.text-muted {{listing.steps}}
+		h3 Exterior Features
+		table.table.table-responsive.table-stripped.table-hover
+				tbody.data-table-inner
+						tr
+								th
+										small.text-muted # of Garage
+								td
+										small.text-muted {{listing.garage}}
+						tr
+								th
+										small.text-muted Pool
+								td
+										small.text-muted {{listing.pool}}
+						tr
+								th
+										small.text-muted Spa
+								td
+										small.text-muted {{listing.spa}}
+						tr
+								th
+										small.text-muted # of Stories
+								td
+										small.text-muted {{listing.stories}}
+						tr
+								th
+										small.text-muted Patio:
+								td
+										small.text-muted {{listing.patio}}
+						tr
+								th
+										small.text-muted RV Parking
+								td
+										small.text-muted {{listing.rv}}
+						tr
+								th
+										small.text-muted Fence:
+								td
+										small.text-muted {{listing.fence}}
+						tr
+								th
+										small.text-muted Style:
+								td
+										small.text-muted {{listing.style}}
+						tr
+								th
+										small.text-muted Roof
+								td
+										small.text-muted {{listing.roof}}
+						tr
+								th
+										small.text-muted Contruction
+								td
+										small.text-muted {{listing.construction}}
+						tr
+								th
+										small.text-muted HVAC
+								td
+										small.text-muted {{listing.hvac}}
+						tr
+								th
+										small.text-muted Security
+								td
+										small.text-muted {{listing.security}}
+						tr
+								th
+										small.text-muted Contruction Status
+								td
+										small.text-muted {{listing.newconstruction}}
+						tr
+								th
+										small.text-muted A/C
+								td
+										small.text-muted {{listing.ac}}
+						tr
+								th
+										small.text-muted Heat
+								td
+										small.text-muted {{listing.heat}}
+						tr
+								th
+										small.text-muted Gas
+								td
+										small.text-muted {{listing.gas}}
+						tr
+								th
+										small.text-muted Water
+								td
+										small.text-muted {{listing.water}}
+						tr
+								th
+										small.text-muted Sewer
+								td
+										small.text-muted {{listing.sewer}}
+						tr
+								th
+										small.text-muted Athletic Facilities:
+								td
+										small.text-muted {{listing.athletic}}
+						tr
+								th
+										small.text-muted Basement:
+								td
+										small.text-muted {{listing.basement}}
+						tr
+								th
+										small.text-muted Cable Available:
+								td
+										small.text-muted {{listing.cable}}
+						tr
+								th
+										small.text-muted Dividable Lot:
+								td
+										small.text-muted {{listing.dividable}}
+						tr
+								th
+										small.text-muted Fix up:
+								td
+										small.text-muted {{listing.fix}}
+						tr
+								th
+										small.text-muted Paved Street
+								td
+										small.text-muted {{listing.paved}}
+						tr
+								th
+										small.text-muted Horse Facilities
+								td
+										small.text-muted {{listing.horsefacilities}}
+						tr
+								th
+										small.text-muted Horses Allowed:
+								td
+										small.text-muted {{listing.horseallowed}}
+						tr
+								th
+										small.text-muted On Golf Course:
+								td
+										small.text-muted {{listing.golfcourse}}
+		table.table.table-responsive.table-stripped.table-hover
+				tbody.data-table-inner
+						tr
+								th
+										small.text-muted Community
+								td
+										small.text-muted {{listing.community}}
+						tr
+								th
+										small.text-muted Adult Community
+								td
+										small.text-muted {{listing.adult}}
+						tr
+								th
+										small.text-muted HOA
+								td
+										small.text-muted {{listing.hoa}}
+						tr
+								th
+										small.text-muted Area
+								td
+										small.text-muted {{listing.area}}
+						tr
+								th
+										small.text-muted School District
+								td
+										small.text-muted {{listing.schoolDistrict}}
+						tr
+								th
+										small.text-muted Elementary
+								td
+										small.text-muted {{listing.elementarySchool}}
+						tr
+								th
+										small.text-muted Middle School
+								td
+										small.text-muted {{listing.middleSchool}}
+						tr
+								th
+										small.text-muted High School
+								td
+										small.text-muted {{listing.highSchool}}
+		.container-fluid
+				.row
+						.col-sm-6.col-xs-12
+								strong Appliances
+								ul.accent-list
+										li(ng-repeat='(appliance,v) in listing.appliances') {{appliance}}
+						.col-sm-6.col-xs-12
+								strong Room Types
+								ul.accent-list
+										li(ng-repeat='room in listing.rooms') {{room}}

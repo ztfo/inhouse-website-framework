@@ -45,7 +45,7 @@ angular.module('ihframework')
 					},
 				];
 			}
-			
+
 			$scope.$watch('sources', function(newVal) {
 				if(newVal !== undefined) {
 					$scope.sources = newVal;
@@ -60,11 +60,11 @@ angular.module('ihframework')
 
 			$scope.$watch('listing', function(newVal) {
 				if(newVal !== undefined) {
-					if($scope.listing.latlong != undefined) {
-						if(typeof $scope.listing.latlong == 'string') {
-							$scope.listing.latlong = $scope.listing.latlong.split(',');
+					if($scope.listing.Details.latlong != undefined) {
+						if(typeof $scope.listing.Details.latlong == 'string') {
+							$scope.listing.Details.latlong = $scope.listing.Details.latlong.split(',');
 						}
-						$scope.centerCoordinates = $scope.listing.address + ' ' + $scope.listing.zipcode;
+						$scope.centerCoordinates = $scope.listing.Details.address + ' ' + $scope.listing.Details.zipcode;
 						if(typeof $scope.sources !== 'undefined' && $scope.sources.length > 0) {
 							$scope.loadNearby();
 						}
@@ -74,8 +74,8 @@ angular.module('ihframework')
 
 			$scope.fetchNearbyData = function(nearby) {
 				ngGPlacesAPI.nearbySearch({
-					latitude: $scope.listing.latlong[0],
-					longitude: $scope.listing.latlong[1],
+					latitude: $scope.listing.Details.latlong[0],
+					longitude: $scope.listing.Details.latlong[1],
 					type: nearby.source,
 					radius: nearby.radius || 10000
 				}).then((function(nearby) {
