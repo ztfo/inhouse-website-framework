@@ -17,7 +17,7 @@ angular.module('ihframework')
 	// not sure how to access shareUrl in components / possibly not needed here?; see inhouse.navbar.js
 	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $rootScope.theWebsiteData.mls;
 	console.log($scope.shareUrl);
-	inhouseApi.getListingDetails($rootScope.theWebsiteData.mls, 'v2').success(function(response) {
+	inhouseApi.newApi.getListingDetails($rootScope.theWebsiteData.mls, 'v2').success(function(response) {
 		$scope.listing = response.data.listing;
 	});
 
