@@ -66,12 +66,12 @@ angular.module('ihframework')
 
 				inhouseApi.newApi.featuredListings($scope.filters).success(function(response) {
 					$scope.listingLoaders = 0;
-					
+
 					if(response.listings == undefined && response.data !== undefined && response.data.listings !== undefined) {
 						$scope.homes = response.data.listings;
+					} else {
+						$scope.homes = response.listings;
 					}
-
-					$scope.homes = response.listings;
 				});
 			}
 		};

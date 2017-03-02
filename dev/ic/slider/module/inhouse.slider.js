@@ -66,7 +66,7 @@ angular.module('ihframework')
 			if(scope.data == undefined) scope.data = {};
 			if((scope.data.slides == undefined || scope.data.slides.length == 0) && scope.data.filters != undefined) {
 				inhouseApi.newApi.getSliderImages(scope.data.filters).success(function(response) {
-					scope.slides = response.images;
+					scope.slides = response.data.images;
 				});
 			}
 			scope.$emit('sliderLoaded', {
