@@ -46,25 +46,25 @@ angular.module('ihframework')
 			}
 		}
 
-		inhouseApi.newApi.getListingDetails($scope.mls).success(function(response) {
+		inhouseApi.newApi.getListingDetails($scope.mls, 'v2').success(function(response) {
 			if(typeof response.listing !== 'undefined') {
-				
+
 				$scope.listing = response.listing;
 				$scope.listing.showOldTable = true;
-				
+
 				if($scope.listing.photos !== undefined) {
 					var photos = $scope.listing.photos;
 				} else {
 					var photos = [];
 				}
-				
+
 			} else if(typeof response.data !== 'undefined' && typeof response.data.listing !== 'undefined') {
 				$scope.listing = response.data.listing;
 				var photos = $scope.listing.Details.photos;
 			} else {
 				$scope.listing = response;
 			}
-			
+
 			$scope.url = window.location.href;
 			$scope.lightBox = [];
 
