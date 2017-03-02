@@ -1,7 +1,8 @@
 angular.module('ihframework')
 .factory('inhouseApi', function($http, $rootScope) {
 	var urlBase = 'https://www.getinhouse.io/api/v1/';
-	var newApi = 'https://app.getinhouse.io/api/v1/web/';
+	var appUrl = 'https://app.getinhouse.io/';
+	var newApi = appUrl + 'api/v1/web/';
 	var inhouseApi = {};
 	var userId = $rootScope.theUserData.userId;
 	var userHash = $rootScope.theUserData.userHash;
@@ -106,7 +107,7 @@ angular.module('ihframework')
 			version = 'v1';
 		}
 
-		url = 'https://app.getinhouse.io/api/' + version + '/web/user/' + userId + '/listing/' + key + '?' + $.param(data);
+		url = appUrl + 'api/' + version + '/web/user/' + userId + '/listing/' + key + '?' + $.param(data);
 
 		return $http.jsonp(url);
 	};
