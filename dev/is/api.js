@@ -91,7 +91,7 @@ angular.module('ihframework')
 
 		return $http.jsonp(url);
 	};
-	inhouseApi.newApi.getListingDetails = function(key) {
+	inhouseApi.newApi.getListingDetails = function(key, version) {
 		data = {};
 
 		data.callback = 'JSON_CALLBACK';
@@ -102,7 +102,11 @@ angular.module('ihframework')
 			}
 		}
 
-		url = 'https://app.getinhouse.io/api/v2/web/user/' + userId + '/listing/' + mls + '?' + $.param(data);
+		if(version == undefined) {
+			version = 'v1';
+		}
+
+		url = 'https://app.getinhouse.io/api/' + version + '/web/user/' + userId + '/listing/' + mls + '?' + $.param(data);
 
 		return $http.jsonp(url);
 	};

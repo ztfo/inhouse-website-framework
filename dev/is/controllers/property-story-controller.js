@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.controller('propertyStoryView', ['$window', '$rootScope', '$scope', '$routeParams', 'inhouseApi', '$timeout', 'inhouseApiFactory', function($window, $rootScope, $scope, $route, inhouseApi, $timeout, inhouseApiFactory) {
+.controller('propertyStoryView', ['$window', '$rootScope', '$scope', '$routeParams', 'inhouseApi', '$timeout', function($window, $rootScope, $scope, $route, inhouseApi, $timeout) {
 	$('#main-view').addClass('load-overlay');
 
 	if(typeof $rootScope.theWebsiteData.listingConfig !== 'undefined' && $rootScope.theWebsiteData.listingConfig === 's2') {
@@ -17,7 +17,7 @@ angular.module('ihframework')
 	// not sure how to access shareUrl in components / possibly not needed here?; see inhouse.navbar.js
 	$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $rootScope.theWebsiteData.mls;
 	console.log($scope.shareUrl);
-	inhouseApiFactory.getListing($rootScope.theWebsiteData.mls).success(function(response) {
+	inhouseApi.getListingDetails($rootScope.theWebsiteData.mls, 'v2').success(function(response) {
 		$scope.listing = response.data.listing;
 	});
 
