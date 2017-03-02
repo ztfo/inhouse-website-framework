@@ -106,7 +106,7 @@ angular.module('ihframework')
 			version = 'v1';
 		}
 
-		url = 'https://app.getinhouse.io/api/' + version + '/web/user/' + userId + '/listing/' + mls + '?' + $.param(data);
+		url = 'https://app.getinhouse.io/api/' + version + '/web/user/' + userId + '/listing/' + key + '?' + $.param(data);
 
 		return $http.jsonp(url);
 	};
