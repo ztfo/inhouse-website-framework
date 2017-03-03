@@ -15,7 +15,7 @@ angular.module('ihframework')
 
 			// added shareUrl to scope so p1-inhouse.navbar can access it
 			if($scope.shareUrl == undefined) {
-				$scope.shareUrl = "https://www.getinhouse.io/share-listing/" + $rootScope.theUserData.userId + '/' + $rootScope.theWebsiteData.mls;
+				$scope.shareUrl = window.location.href;
 			}
 
 			$scope.theUrl = function(){
