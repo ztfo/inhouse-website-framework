@@ -20,14 +20,29 @@ angular.module('ihframework')
 			scope.limit = attrs.limit || 3;
 			var resources = [];
 			var featured = [];
+
+			var content = [];
+
+			//content lives in user data?
+			if(scope.$root.theUserData.content !== undefined) {
+				content = scope.$root.theUserData.content;
+			}
+
+			//content lives in story data?
+			if(scope.$root.theWebsiteData.content != undefined) {
+				content = scope.$root.theWebsiteData.content;
+			}
+
 			//loop through resources to see if any are featured
-			for (var i = 0; i < scope.$root.theWebsiteData.content.length; i++) {
-				if(typeof scope.$root.theWebsiteData.content[i].featured !== 'undefined' && scope.$root.theWebsiteData.content[i].featured === true) {
-					featured.push(scope.$root.theWebsiteData.content[i]);
+			for (var i = 0; i < content.length; i++) {
+				if(typeof content[i].featured !== 'undefined' && content[i].featured === true) { //featured flag
+					featured.push(content[i]);
 				} else {
-					resources.push(scope.$root.theWebsiteData.content[i]);
+					resources.push(content[i]);
 				}
 			}
+
+			//show the featured ones first, then list the rest of them and let the directives take care of limiting the number of items displayed. (scope.limit which can also be set  using the limit attr
 			scope.resources = featured.concat(resources);
 		}
 	};
