@@ -10,16 +10,16 @@ nav.p1.ih-nav.navbar.navbar-default.fp(class='{{classes}} {{controller}}', items
           li.text-uppercase.text-muted
             small Share on:
           li
-            a.ih-social-icon.facebook-hover(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank')
+            a.ih-social-icon.facebook-hover(href='https://www.facebook.com/sharer/sharer.php?u={{window.location.href|encode}}', target='_blank')
               i.fa.fa-facebook
           li
-            a.ih-social-icon.linkedin-hover(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank')
+            a.ih-social-icon.linkedin-hover(href='https://www.linkedin.com/shareArticle?mini=true&url={{window.location.href|encode}}', target='_blank')
               i.fa.fa-linkedin
           li
-            a.ih-social-icon.twitter-hover(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank')
+            a.ih-social-icon.twitter-hover(href='https://twitter.com/home?status={{window.location.href|encode}}', target='_blank')
               i.fa.fa-twitter
           li
-            a.ih-social-icon.google-hover(href='https://plus.google.com/share?url={{shareUrl|encode}}', target='_blank')
+            a.ih-social-icon.google-hover(href='https://plus.google.com/share?url={{window.location.href|encode}}', target='_blank')
               i.fa.fa-google-plus
   .container
     .navbar-header
