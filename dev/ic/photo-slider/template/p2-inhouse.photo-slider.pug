@@ -2,11 +2,11 @@ section.p2.ih-photo-slider.fp
     .ih.slider-row
         .image-grid.clearfix(ng-style="{right: rightPosition}")
           .slider-image.first-image
-            .listing-pic.full(ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+            .listing-pic.full(ng-style="{'background-image': 'url(' + listing.Details.primaryPhoto.large + ')'}")
               a.block.full.bkc-03.fw(ng-click='showLightBox(0)')
                 span.fa.fa-camera
           //- repeat rest of images -
-          .slider-image.grid-image(ng-repeat='photo in listing.photos')
+          .slider-image.grid-image(ng-repeat='photo in listing.Details.photos')
             .listing-pic.full(ng-style="{'background-image': 'url(' + photo.large + ')'}")
               a.block.full.bkc-03.fw(ng-click='showLightBox($index)')
                 span.fa.fa-camera

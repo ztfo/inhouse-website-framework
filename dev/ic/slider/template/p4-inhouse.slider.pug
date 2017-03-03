@@ -1,11 +1,11 @@
 section.p4.ih-slider.fp.bkc-01(class='{{classes}}')
-  .greeting.container-fluid.text-center.fw.z2
-    div
-      img.img-circle.img-responsive(
-        ng-src='{{agent.team[0].photo}}',
-        alt='{{agent.team[0].name}}')
-    h1 {{listing.address}}
-    p.lead {{listing.description}}
-    p
-      small.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
-  ih-navbar(configname="p4")
+	.greeting.container-fluid.text-center.fw.z2
+		div
+			img.img-circle.img-responsive(
+				ng-src='{{agent.team[0].photo}}',
+				alt='{{agent.team[0].name}}')
+		h1 {{listing.Details.address}}
+		p.lead {{listing.Details.description}}
+		p
+			small.text-uppercase presented by: {{agent.agentName}} of {{agent.brokerage}}
+	ih-navbar(configname="p4")

@@ -58,7 +58,6 @@ angular.module('ihframework')
 	$scope.searchTab = 'find';
 
 	$scope.toggleSearchTabs = function(tab){
-    debugger;
 		$scope.searchTab = tab;
 	};
 
@@ -145,6 +144,9 @@ angular.module('ihframework')
 			var params = $scope.filters;
 
 			inhouseApi.newApi.searchMls(params).success(function(response) {
+				if(response.listings == undefined && response.data !== undefined && response.data.listings !== undefined) {
+					response = {listings: response.data.listings, pagination: response.data.pagination};
+				}
 				if(typeof response.listings != 'undefined' && response.listings.length > 0) {
 					$scope.totalListings = response.pagination.last_count;
 					if(response.pagination.page_size == 15) {
