@@ -1,8 +1,8 @@
 .modal-header
-  button.close(type='button', data-dismiss='modal', aria-label='close' ng-click="cancel()")
-    span(aria-hidden='true') ×
-  h4.modal-title Schedule a visit
+	button.close(type='button', data-dismiss='modal', aria-label='close' ng-click="cancel()")
+		span(aria-hidden='true') ×
+	h4.modal-title Schedule a visit
 .modal-body
-  ih-contact(configname="f1" message="'I would like to visit ' + listing.address + '.'")
+	ih-contact(configname="f1" message="'I would like to visit ' + listing.Details.address + '.'")
 .modal-footer
-  button.btn.btn-default(type='button', data-dismiss='modal' ng-click="cancel()") Close
+	button.btn.btn-default(type='button', data-dismiss='modal' ng-click="cancel()") Close

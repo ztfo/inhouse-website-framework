@@ -1,9 +1,9 @@
 section.p3.ih-about-listing.flex-grid.fp.fw
-  div.flex-4.about-inner
-    h2.ih-header About {{listing.address}}
-    div.ih-sm-divider
-    p.description {{data.cta || listing.publicRemarks}}
-    div.btn-row
-      ih-schedule-visit(listing="listing")
-  div.flex-8.details
-    ih-listing-details.fw(listing='listing')
+	div.flex-4.about-inner
+		h2.ih-header About {{listing.Details.address}}
+		div.ih-sm-divider
+		p.description {{data.cta || listing.Details.publicRemarks}}
+		div.btn-row
+			ih-schedule-visit(listing="listing")
+	div.flex-8.details
+		ih-listing-details.fw(listing='listing')

@@ -1,45 +1,45 @@
 section.p1.ih-contact.ih.fw.fp.z0(class='{{classes}}', ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
-  .afull.bkc-01.tpt
-    h1.ih-header.text-center.fc-02 Get In Touch
-    .container.flex-grid.container-sm
-      .flex-8.wt80.contact-info-box
-        .contact-map
-          ih-gmaps.full(zoom='12', scrollwheel='false')
-        .contact-info.flex-grid.fc-01
-          .flex-6
-            strong
-              span Presented by: {{agent.agentName}}
-            address
-              | {{listing.address}}
-              br
-              | {{listing.city}} {{listing.state}} {{listing.zipcode}}
-            address
-              h6
-                small
-                  strong.text-uppercase Phone:
-                | {{agent.contactPhone | tel}}
-              h6
-                small
-                  strong.text-uppercase Email:
-                | {{agent.contactEmail}}
-          .flex-6
-            address
-              strong {{agent.brokerage}}
-              br
-              | {{agent.contactAddress}}
-              br
-              | {{agent.contactAddress2}}
-            ih-schedule-visit(listing="listing")
-      .flex-4.bkc-04.contact-form-box.tpt
-        ih-contact(configname='f1')
-    .container-fluid.contact-footer.bt80.fw.text-uppercase
-      .container
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          span.ih-ui-fairhousing
-          span.ih-ui-realtor
-          small © {{year}} - {{agent.agentName}} | {{listing.mlsAssociation}}
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
-          small
-            | Powered by
-            a(href='https://www.getinhouse.io') InHouse
-          span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
+	.afull.bkc-01.tpt
+		h1.ih-header.text-center.fc-02 Get In Touch
+		.container.flex-grid.container-sm
+			.flex-8.wt80.contact-info-box
+				.contact-map
+					ih-gmaps.full(zoom='12', scrollwheel='false')
+				.contact-info.flex-grid.fc-01
+					.flex-6
+						strong
+							span Presented by: {{agent.agentName}}
+						address
+							| {{listing.Details.address}}
+							br
+							| {{listing.Details.city}} {{listing.Details.state}} {{listing.Details.zipcode}}
+						address
+							h6
+								small
+									strong.text-uppercase Phone:
+								| {{agent.contactPhone | tel}}
+							h6
+								small
+									strong.text-uppercase Email:
+								| {{agent.contactEmail}}
+					.flex-6
+						address
+							strong {{agent.brokerage}}
+							br
+							| {{agent.contactAddress}}
+							br
+							| {{agent.contactAddress2}}
+						ih-schedule-visit(listing="listing")
+			.flex-4.bkc-04.contact-form-box.tpt
+				ih-contact(configname='f1')
+		.container-fluid.contact-footer.bt80.fw.text-uppercase
+			.container
+				.col-lg-6.col-md-6.col-sm-12.col-xs-12
+					span.ih-ui-fairhousing
+					span.ih-ui-realtor
+					small © {{year}} - {{agent.agentName}} | {{listing.Details.mlsAssociation}}
+				.col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
+					small
+						| Powered by
+						a(href='https://www.getinhouse.io') InHouse
+					span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem

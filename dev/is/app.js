@@ -1,4 +1,5 @@
-angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 'ngMap', 'ngGPlaces', 'duScroll', 'angular-pinterest'])
+angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 'ngMap', 'ngGPlaces', 'duScroll', 'angular-pinterest', 'angulartics', 'angulartics.facebook.pixel',
+	 'angulartics.google.analytics'])
 .run(function($http, $rootScope, userDataService){
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
@@ -6,9 +7,9 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 .config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider, ngGPlacesAPIProvider) {
 
 	ngGPlacesAPIProvider.setDefaults({
-    radius: 13200,
+		radius: 13200,
 		nearbySearchKeys: ['name','rating','vicinity', 'opening_hours'],
-  });
+	});
 
 //	$httpProvider.defaults.withCredentials = true;
 
@@ -57,11 +58,43 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 .controller('mainView', ['$rootScope', 'inhouseApi', '$scope', function($rootScope, inhouseApi, $scope) {
 	$rootScope.$on("$routeChangeSuccess", function(e, data) {
 		$scope.$broadcast('viewChanged', data.controller);
+		window.ga('send', 'pageview', { page: window.location.href });
 	});
 	$scope.agent = $rootScope.theUserData;
 	$scope.story = $rootScope.theWebsiteData;
 	$scope.freebies = true;
 	$scope.max = $rootScope.theUserData.maxSearchNoLead || 3;
+
+
+	$scope.signIn = function() {
+		this.showRegister = false;
+		$('#accountModal').modal('show');
+	};
+	$scope.$on('loginChanged', function(event, args) {
+		$scope.inhouseAgentLeadLoggedIn = args;
+	});
+
+	$scope.navbar = $rootScope.theWebsiteData.NavBar;
+	$scope.halfway = Math.ceil($scope.navbar.length/2);
+
+	if(typeof $rootScope.theWebsiteData.navbarClasses !== 'undefined') {
+		$scope.classes = $rootScope.theWebsiteData.navbarClasses;
+	}
+	
+	$scope.agent = $rootScope.theUserData;
+
+	$scope.scrollToElement = function(id) {
+		$document.scrollToElement(angular.element(document.getElementById('ih-component-' + id)), 0, 1000);
+	};
+	$scope.scrollToAgent = function(id) {
+		$rootScope.$broadcast('agents clicked', {data: false});
+		$document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
+	};
+
+	$scope.scrollToLender = function(id) {
+		$rootScope.$broadcast('lenders clicked', {data: true});
+		$document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
+	};
 
 	if(typeof Storage !== 'undefined') {
 		if(typeof localStorage.inhouseAgentLead !== 'undefined') {
@@ -165,15 +198,15 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 }])
 
 .directive('openTab', function () {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-          var href = element.href;
-          if(attrs.ngHref.includes('http')) {  // replace with your condition
-            element.attr("target", "_blank");
-          }
-        }
-    };
+		return {
+				restrict: 'A',
+				link: function(scope, element, attrs) {
+					var href = element.href;
+					if(attrs.ngHref.includes('http')) {  // replace with your condition
+						element.attr("target", "_blank");
+					}
+				}
+		};
 });
 
 // back to top

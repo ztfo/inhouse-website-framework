@@ -1,28 +1,28 @@
 section.p5.ih-slider.container-fluid.fp(class='{{classes}}')
-  .iha.afull.z3.fw
-    .ih.container.fullh
-      .inner-slider
-        .logo
-          span.icon
-            i.fa.fa-home
-        h2 {{listing.address}}
-        .ih-sm-divider
-        .flex-grid
-          .flex-8
-            .home-facts.text-uppercase
-              span {{listing.beds}} bedrooms | {{listing.baths}} baths | {{listing.sqft | number}} {{listing.sizeUnit}}
-              .lead.text-uppercase  {{listing.price | currency:undefined:0}}
-          .flex-4.text-right
-            ih-schedule-visit(listing="listing")
-  .ih-slider-row
-    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-      .full.fade.in(
-        uib-carousel='',
-        active='active',
-        no-wrap='false',
-        no-pause='true')
-        div(
-          uib-slide='',
-          ng-repeat='slide in slides track by $index',
-          index='$index',
-          ng-style="{'background-image':'url(' + slide.large + ')'}")
+	.iha.afull.z3.fw
+		.ih.container.fullh
+			.inner-slider
+				.logo
+					span.icon
+						i.fa.fa-home
+				h2 {{listing.Details.address}}
+				.ih-sm-divider
+				.flex-grid
+					.flex-8
+						.home-facts.text-uppercase
+							span {{listing.Details.beds}} bedrooms | {{listing.Details.baths}} baths | {{listing.Details.sqft | number}} {{listing.Details.sizeUnit}}
+							.lead.text-uppercase  {{listing.Details.price | currency:undefined:0}}
+					.flex-4.text-right
+						ih-schedule-visit(listing="listing")
+	.ih-slider-row
+		.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+			.full.fade.in(
+				uib-carousel='',
+				active='active',
+				no-wrap='false',
+				no-pause='true')
+				div(
+					uib-slide='',
+					ng-repeat='slide in slides track by $index',
+					index='$index',
+					ng-style="{'background-image':'url(' + slide.large + ')'}")
