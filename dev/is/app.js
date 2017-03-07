@@ -1,8 +1,19 @@
 angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 'ngMap', 'ngGPlaces', 'duScroll', 'angular-pinterest', 'angulartics', 'angulartics.facebook.pixel',
 	 'angulartics.google.analytics'])
-.run(function($http, $rootScope, userDataService){
+.run(function($http, $rootScope, userDataService, $document){
 	$rootScope.theUserData = userDataService.userData;
 	$rootScope.theWebsiteData = userDataService.storySettings;
+
+	$rootScope.scrollToElement = function(id) {
+		$document.scrollToElement(angular.element(document.getElementById('ih-component-' + id)), 0, 1000);
+	};
+
+  $('.ih-scroll-nav-link').on('click', function(event) {
+    $rootScope.scrollToElement($(this).attr('href'));
+
+    event.preventDefault();
+    return false;
+  });
 })
 .config(function($routeProvider, $locationProvider, $httpProvider, userDataServiceProvider, ngGPlacesAPIProvider) {
 
@@ -80,12 +91,20 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 	if(typeof $rootScope.theWebsiteData.navbarClasses !== 'undefined') {
 		$scope.classes = $rootScope.theWebsiteData.navbarClasses;
 	}
-	
+
 	$scope.agent = $rootScope.theUserData;
 
 	$scope.scrollToElement = function(id) {
 		$document.scrollToElement(angular.element(document.getElementById('ih-component-' + id)), 0, 1000);
 	};
+
+  $.find('.ih-scroll-nav-link').click(function(event) {
+    $scope.scrollToElement($(this).attr('href'));
+
+    event.preventDefault();
+    return false;
+  });
+
 	$scope.scrollToAgent = function(id) {
 		$rootScope.$broadcast('agents clicked', {data: false});
 		$document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
