@@ -68,8 +68,11 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 })
 .controller('mainView', ['$rootScope', 'inhouseApi', '$scope', function($rootScope, inhouseApi, $scope) {
 	$rootScope.$on("$routeChangeSuccess", function(e, data) {
+    $scope.controller = data.controller;
 		$scope.$broadcast('viewChanged', data.controller);
-		window.ga('send', 'pageview', { page: window.location.href });
+    if(typeof window.ga !== 'undefined') {
+  		window.ga('send', 'pageview', { page: window.location.href });
+    }
 	});
 	$scope.agent = $rootScope.theUserData;
 	$scope.story = $rootScope.theWebsiteData;
@@ -97,13 +100,6 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 	$scope.scrollToElement = function(id) {
 		$document.scrollToElement(angular.element(document.getElementById('ih-component-' + id)), 0, 1000);
 	};
-
-  $.find('.ih-scroll-nav-link').click(function(event) {
-    $scope.scrollToElement($(this).attr('href'));
-
-    event.preventDefault();
-    return false;
-  });
 
 	$scope.scrollToAgent = function(id) {
 		$rootScope.$broadcast('agents clicked', {data: false});
