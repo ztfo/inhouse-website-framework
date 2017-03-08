@@ -10,9 +10,9 @@ angular.module('ihframework')
 		},
 		link: function(scope, element, attrs) {
 			scope.$on('listingLoaded', function(event, args) {
-				if(typeof args.latlong === 'undefined') {
+				if(typeof args.Details.latlong === 'undefined') {
 					var geocoder = new google.maps.Geocoder();
-					geocoder.geocode( { 'address': args.address + ' ' + (args.zipcode !== undefined ? args.zipcode : '')}, function(results, status) {
+					geocoder.geocode( { 'address': args.Details.address + ' ' + (args.Details.zipcode !== undefined ? args.Details.zipcode : '')}, function(results, status) {
 						if (status == google.maps.GeocoderStatus.OK) {
 							scope.center = results[0].geometry.location;
 							scope.map = new google.maps.Map(element[0], {
@@ -24,14 +24,14 @@ angular.module('ihframework')
 							scope.marker = new google.maps.Marker({
 								position: scope.center,
 								map: scope.map,
-								title: args.address,
+								title: args.Details.address,
 								icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 							});
 						}
 					});
 
 				} else {
-					scope.center = {lat: parseFloat(args.latlong.split(',')[0]), lng: parseFloat(args.latlong.split(',')[1])};
+					scope.center = {lat: parseFloat(args.Details.latlong.split(',')[0]), lng: parseFloat(args.Details.latlong.split(',')[1])};
 					scope.map = new google.maps.Map(element[0], {
 						center: scope.center,
 						mapTypeId: google.maps.MapTypeId.SATELLITE,
@@ -40,7 +40,7 @@ angular.module('ihframework')
 					});
 					scope.marker = new google.maps.Marker({
 						position: scope.center,
-						title: args.address,
+						title: args.Details.address,
 						map: scope.map,
 						icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
 					});
