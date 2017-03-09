@@ -1,6 +1,6 @@
 section.p5.ih-contact.fw(
   class='{{classes}}',
-  ng-style="{'background-image': 'url(' + listing.primaryPhoto.large + ')'}")
+  ng-style="{'background-image': 'url(' + listing.Details.primaryPhoto + ')'}")
   .container
     .contact-inner.flex-grid
       .flex-12.contact-header
@@ -10,16 +10,16 @@ section.p5.ih-contact.fw(
         ih-contact(configname="f1")
       .flex-6.contact-social
         h4.text-uppercase Listed by:
-        h2 {{listing.agentName}}
-        p.text-uppercase {{listing.agentAssociation}}
+        h2 {{listing.Details.agentName}}
+        p.text-uppercase {{listing.Details.agentAssociation}}
         .social-block
           a.ih-social-icon(href='mailto:{{listing.agentEmail}}', ng-if='agent.agentEmail !== undefined')
             i.fa.fa-envelope
-          span {{listing.agentEmail}}
+          span {{listing.Details.agentEmail}}
         .social-block
           a.ih-social-icon(itemprop='telephone', ng-if="'agent.agentPhone'")
             i.fa.fa-phone
-          span {{listing.agentPhone | tel}}
+          span {{listing.Details.agentPhone | tel}}
   .footer
     .container
       .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
