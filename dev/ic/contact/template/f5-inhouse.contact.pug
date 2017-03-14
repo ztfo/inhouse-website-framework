@@ -42,14 +42,14 @@ h2.ih-subheader.fw.text-uppercase get a free home evaluation
           ih-dropdown#type(
             items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]',
             name='Type',
-            ng-model='filters.note["Property Type"]')
+            ng-model='contact.note["Property Type"]')
       .row
         .col-lg-10.col-md-9.col-sm-9.col-xs-12
           textarea#textMessage.ih-form-input.form-control(
             type='text',
             required='',
             row='5',
-            ng-model='contact.note',
+            ng-model='contact.note.message',
             placeholder='Write your message here.')
         .col-lg-2.col-md-3.col-xs-3.col-xs-12
           button.btn.btn-primary.block.fullw(type='submit') submit

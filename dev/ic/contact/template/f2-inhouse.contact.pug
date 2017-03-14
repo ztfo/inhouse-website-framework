@@ -56,23 +56,23 @@
           type='text',
           placeholder='Property Address',
           name='Property Address',
-          ng-model='contact.message["Property Address"]')
+          ng-model='contact.note["Property Address"]')
       .form-group
         ih-dropdown(
           items='[{"name": "Immediately", "value": "Immediately"}, {"name": "30-days", "value": "30-days"}, {"name": "60-days", "value": "60-days"}, {"name": "4 months +", "value": "4 months +"}]',
           name='How soon?',
-          ng-model='contact.message["Urgency"]')
+          ng-model='contact.note["Urgency"]')
       .form-group
         ih-dropdown(
           items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse/Condo", "value": "Townhouse/Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land/Lot"}]',
           name='Property Type',
-          ng-model='contact.message["Property Type"]')
+          ng-model='contact.note["Property Type"]')
       .form-group
         label(for='sellerMessage') additional details
         textarea#sellerMessage.form-control.ih-textarea(
           name='Additional Details',
           placeholder='Please provide a description of your home and/or reason for selling',
           required='',
-          ng-model='contact.message["Additional Details"]')
+          ng-model='contact.note["Additional Details"]')
       .text-center.submit-btn
         button.btn.btn-primary(type='submit') submit
