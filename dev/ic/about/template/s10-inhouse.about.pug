@@ -6,7 +6,7 @@ section.s10.ih-about
     h1.tagline.text-center {{agent.agentTagline}}
     .ih-about-inner.row
       .col-lg-4.col-md-4.col-sm-12.col-xs-12
-        a.text-center(href="#/bio/{{ agent.team[0].name | split: ' ':0 | lowercase }}")
+        a.text-center(href="#/{{ agent.team[0].name | split: ' ':0 | lowercase }}")
           img.img-square.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
       .ih-about-text.col-lg-8.col-md-8.col-sm-12.col-xs-12
         h2
