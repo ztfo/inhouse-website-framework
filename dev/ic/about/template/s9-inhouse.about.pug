@@ -18,11 +18,11 @@ section.s9.ih-about(class='{{classes}}')
             i.fa.fa-instagram
           a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined', target='_blank')
             i.fa.fa-pinterest
-          a.ih-social-icon(href='{{agent.facebook2}}', ng-if='agent.facebook2 !== undefined', target='_blank')
+          a.ih-social-icon(href='{{site.facebook2}}', ng-if='site.facebook2 !== undefined', target='_blank')
             i.fa.fa-facebook
-          a.ih-social-icon(href='{{agent.facebook3}}', ng-if='agent.facebook3 !== undefined', target='_blank')
+          a.ih-social-icon(href='{{site.facebook3}}', ng-if='site.facebook3 !== undefined', target='_blank')
             i.fa.fa-facebook
         .ih-md-divider
         .fs.bio-text(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
         .text-center.bio-more
-          a.btn.btn-primary(href="#/bio/{{agent.agentName | split: ' ':0 | lowercase}}") Read More
+          a.btn.btn-primary(href="#/bio/{{agent.team[0].key}") Read More

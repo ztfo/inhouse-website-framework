@@ -11,7 +11,7 @@ section.s8.ih-about
         .fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
     .ih-team.row.text-center
       figure.ih-headshot.col-lg-4.col-md-4.col-sm-4.col-xs-12.col-centered(ng-repeat='member in agent.team')
-        a.text-center(href="#/bio/{{member.name | split: ' ':0 | lowercase}}")
+        a.text-center(href="#/bio/{{member.key}")
           img.img-square.img-responsive(ng-src='{{member.photo}}', alt='{{member.name}}')
           span.ih-teammate-name.text-center.block(itemprop='name')
             | {{member.name | split: ' ':0}} {{member.name | split:' ':1}}

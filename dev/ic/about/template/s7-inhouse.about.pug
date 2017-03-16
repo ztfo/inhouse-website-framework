@@ -8,4 +8,4 @@ section.s7.ih-about(class='{{classes}}')
         h3.text-center {{agent.agentName}}
         .fs.bio-text(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
         .text-center.bio-more
-          a.btn.btn-primary(href="#/bio/{{agent.agentName | split: ' ':0 | lowercase}}") Read More
+          a.btn.btn-primary(href="#/bio/{{agent.team[0].key}}") Read More

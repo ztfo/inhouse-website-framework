@@ -12,6 +12,6 @@ section.s3.ih-about
     h2.ih-subheader.text-center.fs Agents
     .row
       figure.ih-headshot.col-lg-3.col-md-3.col-sm-6.col-xs-12(ng-repeat='member in agent.team')
-        a.text-center(href="#/bio/{{ member.name | split: ' ':0 | lowercase}}", style="background-image: url('{{member.photo}}');")
+        a.text-center(href="#/bio/{{member.key}}", style="background-image: url('{{member.photo}}');")
           span.ih-teammate-name.text-center.block.text-uppercase(itemprop='name')
             | {{member.name | split: ' ':0}}

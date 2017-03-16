@@ -25,6 +25,7 @@ angular.module('ihframework')
 			});
 
 			$scope.agent = $rootScope.theUserData;
+			$scope.site = $rootScope.theWebsiteData;
 		}
 	};
 });
