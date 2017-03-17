@@ -10,10 +10,10 @@ section.s2.ih-results
                 i.fa.fa-times
               span(ng-if='!$last') /
           .col-lg-2.col-md-2.col-sm-3.col-xs-12
-            a.btn.btn-primary.ih-adv-toggle(role='button', data-toggle='collapse', href='#searchFilters', aria-expanded='true', aria-controls='searchFilters', onclick='event.preventDefault()')
+            a.btn.btn-primary.ih-adv-toggle(role='button', data-toggle='collapse', href='#searchFilters', aria-expanded='false', aria-controls='searchFilters', onclick='event.preventDefault()')
               i.fa.fa-filter
               |  More Filters
-        #searchFilters.ih-advanced-filters.collapse.container-fluid.fs
+        #searchFilters.ih-advanced-filters.collapse.in.container-fluid.fs
           .row
             .ih-input-box.col-lg-6.col-md-6.col-sm-4.col-xs-12
               input.ih-search-input.full(type='text', placeholder='Address', name='propertyAddress', ng-model='filters.address')
