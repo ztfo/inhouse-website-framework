@@ -2,7 +2,7 @@ section.ih-content.s2
   header.text-center(style="background-image: url('{{content.thumb}}');")
     h1.inlineblock(itemprop='headline') {{content.title}}
   .ih-content-inner.container
-    div(ng-if='content.content !== undefined && content.contentUrl == undefined')
+    div(ng-if='content.content !== undefined && !content.contentUrl')
       div(ng-bind-html='content.content | to_trusted')
     div(ng-if='content.contentUrl !== undefined')
       ng-include(src='content.contentUrl')
