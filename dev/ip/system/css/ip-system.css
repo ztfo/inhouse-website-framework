@@ -110,7 +110,7 @@ section.ih404 {
 
 /* brand footer defaults */
 
-.ih-footer {
+.ih-rendered-footer {
     position: relative;
     text-align: center;
     padding: 15px 0;
@@ -120,16 +120,16 @@ section.ih404 {
     margin-top: 15px;
 }
 
-.ih-footer>div {
+.ih-rendered-footer>div {
     margin-top: -40px;
     margin-bottom: 20px;
 }
 
-.ih-footer>div>a {
+.ih-rendered-footer>div>a {
     color: #3277b2;
 }
 
-.ih-footer>div>a:hover {
+.ih-rendered-footer>div>a:hover {
     text-decoration: none;
 }
 
@@ -138,14 +138,14 @@ section.ih404 {
     margin-bottom: 15px;
 }
 
-.ih-footer .ih-ui-inhouse-emblem {
+.ih-rendered-footer .ih-ui-inhouse-emblem {
     font-size: 5em;
     opacity: .2;
     transition: .3s;
     color: #fff;
 }
 
-.ih-footer .ih-ui-inhouse-emblem:hover {
+.ih-rendered-footer .ih-ui-inhouse-emblem:hover {
     opacity: .5;
 }
 
