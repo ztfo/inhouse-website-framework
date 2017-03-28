@@ -1,8 +1,5 @@
 /*** INHOUSE Style Framework v.1.0 ***/
-/*** (c) 2016 - InHouse Real Estate Marketing, LLC. ***/
-
-/* TODO - Add to asana/or other documentation
-
+/*** (c) 2017 - InHouse Marketing, Inc. ***/
 
 /* element resets */
 body { overflow-x: hidden !important; }
@@ -41,11 +38,24 @@ body { overflow-x: hidden !important; }
 .flex-grid {
     position: relative;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
+
+.flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+a
 .flex-1 { position: relative; width: 8.3333%;}
 .flex-2 { position: relative; width: 16.6666%;}
 .flex-3 { position: relative; width: 25%;}
@@ -62,16 +72,13 @@ body { overflow-x: hidden !important; }
 
 .flex-col {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
     -webkit-transition: all .5s cubic-bezier(.77, 0, .175, 1);
@@ -80,14 +87,12 @@ body { overflow-x: hidden !important; }
 
 .flex-col.resize:hover {
     -webkit-box-flex: 2;
-    -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2;
 }
 
 .flex-col.resize:hover .flex-item, .flex-col:nth-child(1) .offset {
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
 }
@@ -95,7 +100,6 @@ body { overflow-x: hidden !important; }
 .flex-col .flex-item {
     position: relative;
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
     margin: 4px;
@@ -109,7 +113,6 @@ body { overflow-x: hidden !important; }
 
 .flex-col .flex-item.resize-item:hover {
   -webkit-box-flex: 2!important;
-  -webkit-flex: 2!important;
   -ms-flex: 2!important;
   flex: 2!important;
 }
@@ -182,7 +185,7 @@ a:focus { text-decoration: none; color: inherit; }
 /* list ends */
 
 /* social media hovers */
-.ih-social-icon { transition: .3s; }
+.ih-social-icon { -webkit-transition: .3s; transition: .3s; }
 .facebook-hover:hover {
   opacity: .9;
   background-color: #3B5998 !important;
@@ -251,7 +254,7 @@ a:focus { text-decoration: none; color: inherit; }
   background-color: transparent;
 }
 .ihweb input[type="radio"] {
-	display:none;
+  display:none;
 }
 .ihweb .dropdown-menu {
   padding-bottom: 0;
@@ -271,8 +274,7 @@ a:focus { text-decoration: none; color: inherit; }
   padding: 5px 15px !important;
 }
 
-
-/* new bootstrap */
+/* 5 col bootstrap */
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
