@@ -45,6 +45,10 @@ body { overflow-x: hidden !important; }
         flex-wrap: wrap;
 }
 
+.flex-grid>div {
+  height: 100%;
+}
+
 .flex-center {
     display: -webkit-box;
     display: -ms-flexbox;
