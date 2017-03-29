@@ -8,9 +8,10 @@ body { overflow-x: hidden !important; }
 /* resets */
 
 /* font defaults */
-.fw,.fw h1,.fw h2,.fw h3 ,.fw h4  { color: #f5f5f5 !important; }
+.fw,.fw h1,.fw h2,.fw h3 ,.fw h4  { color: #fff !important; }
 .fb,.fb h1,.fb h2,.fb h3 ,.fb h4 { color: #171717 !important; }
 .fo { font-family: 'Open Sans' , sans-serif; }
+.fl { font-family: 'Lato', sans-serif; }
 /* font ends */
 
 /* background color defaults */
@@ -55,7 +56,7 @@ body { overflow-x: hidden !important; }
     -ms-flex-align: center;
     align-items: center;
 }
-a
+
 .flex-1 { position: relative; width: 8.3333%;}
 .flex-2 { position: relative; width: 16.6666%;}
 .flex-3 { position: relative; width: 25%;}
@@ -123,6 +124,7 @@ a
 /* format styles */
 .ih { position: relative !important; }
 .iha { position: absolute !important; }
+.ihf { position: fixed !important; }
 .tp { top: 0; }
 .rt { right: 0; }
 .lt { left: 0; }
