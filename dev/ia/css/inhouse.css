@@ -143,6 +143,8 @@ body { overflow-x: hidden !important; }
 .nopad { padding: 0 !important; }
 .nopad-l { padding-left: 0 !important; }
 .nopad-r { padding-right: 0 !important; }
+.nopad-lr { padding-left: 0 !important; padding-right: 0 !important; }
+.nopad-tp { padding-top: 0 !important; padding-bottom: 0 !important; }
 .nomar { margin: 0 !important; }
 .nomar-r { margin-right: 0 !important; }
 .nomar-l { margin-left: 0 !important; }
