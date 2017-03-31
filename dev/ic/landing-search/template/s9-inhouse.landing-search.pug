@@ -21,14 +21,14 @@ section.s9.ih-search
               #advancedSearchXS.ih-advanced-search.collapse
                 .container-fluid
                   .row
-                    .col-lg-6.col-md-6.col-sm-12.col-xs-12
-                      .ih-slide
-                        label(for='#bedsFilter') Bedrooms
-                        bootstrap-slider(name='bedsFilter', ng-model='filters.bedsRange', type='text', data-slider-min='1', data-slider-max='10', data-slider-step='1', data-slider-value='[1,10]', data-filter='bedsRange')
-                    .col-lg-6.col-md-6.col-sm-12.col-xs-12
-                      .ih-slide
-                        label(for='#bathsFilter') Baths
-                        bootstrap-slider#bathsFilter(name='bathsFilter', ng-model='filters.bathsRange', type='text', data-slider-min='1', data-slider-max='15', data-slider-step='1', data-slider-value='[1,15]', data-filter='bathsRange')
+                    .ih-input-box.col-lg-3.col-md-3.col-sm-6.col-xs-6
+                      input.ih-search-input.full(type='text', placeholder='Min Beds', name='propertyMinBeds', ng-model='filters.min_beds')
+                    .ih-input-box.col-lg-3.col-md-3.col-sm-6.col-xs-6
+                      input.ih-search-input.full(type='text', placeholder='Max Beds', name='propertyMaxBeds', ng-model='filters.max_beds')
+                    .ih-input-box.col-lg-3.col-md-3.col-sm-6.col-xs-6
+                      input.ih-search-input.full(type='text', placeholder='Min Baths', name='propertyMinBaths', ng-model='filters.min_baths')
+                    .ih-input-box.col-lg-3.col-md-3.col-sm-6.col-xs-6
+                      input.ih-search-input.full(type='text', placeholder='Max Baths', name='propertyMaxBaths', ng-model='filters.max_baths')
                   .row
                     .ih-input-box.col-lg-6.col-md-6.col-sm-4.col-xs-12
                       input.ih-search-input.full(type='text', placeholder='Address', name='propertyAddress', ng-model='filters.address')
@@ -37,17 +37,19 @@ section.s9.ih-search
                     .ih-input-box.col-lg-3.col-md-3.col-sm-4.col-xs-12
                       input.ih-search-input.full(type='text', placeholder='MLS #', name='propertyMLS', ng-model='filters.mls')
                   .row
-                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden
                       input.ih-search-input.full(type='text', placeholder='Subdivision', name='propertySubdivision', ng-model='filters.subdivision')
                     .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
                       input.ih-search-input.full(type='text', placeholder='Min Sqft', name='propertyMinSF', ng-model='filters.min_sqft')
                     .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
                       input.ih-search-input.full(type='text', placeholder='Max Sqft', name='propertyMaxSF', ng-model='filters.max_sqft')
                   .row
-                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden
                       input.ih-search-input.full(type='text', placeholder='Min Lot Size (Acres)', name='propertyMinLot', ng-model='filters.min_acres')
-                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12
-                      ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
+                    //- garage custom field 
+                    .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden
+                      ih-dropdown#numGarage(items='[{"name": "0 or more", "value": "0"}, {"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
+                    //- stories not shown
                     .ih-input-box.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden
                       ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
                   .row

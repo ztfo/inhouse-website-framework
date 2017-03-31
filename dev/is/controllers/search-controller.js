@@ -182,6 +182,52 @@ angular.module('ihframework')
 					}
 				};
 			});
+
+            //price filter split
+            if (typeof this.filters.price_from !== 'undefined') {
+                this.filters.price = this.filters.price_from + ';';
+            }
+            if (typeof this.filters.price_to !== 'undefined') {
+                if (typeof this.filters.price == 'undefined') {
+                    this.filters.price = "0;";
+                }
+                this.filters.price += this.filters.price_to;
+            }
+
+            //beds filter split
+            if (typeof this.filters.min_beds !== 'undefined') {
+                this.filters.bedsRange = this.filters.min_beds + ';';
+            }
+            if (typeof this.filters.max_beds !== 'undefined') {
+                if (typeof this.filters.bedsRange == 'undefined') {
+                    this.filters.bedsRange = "0;";
+                }
+                this.filters.bedsRange += this.filters.max_beds;
+            }
+
+             //baths filter split
+            if (typeof this.filters.min_baths !== 'undefined') {
+                this.filters.bathsRange = this.filters.min_baths + ';';
+            }
+            if (typeof this.filters.max_baths !== 'undefined') {
+                if (typeof this.filters.bathsRange == 'undefined') {
+                    this.filters.bathsRange = "0;";
+                }
+                this.filters.bathsRange += this.filters.max_baths;
+            }
+
+            //sqft filter split
+            if (typeof this.filters.min_sqft !== 'undefined') {
+                this.filters.sqft = this.filters.min_sqft + ';';
+            }
+            if (typeof this.filters.max_sqft !== 'undefined') {
+                if (typeof this.filters.sqft == 'undefined') {
+                    this.filters.sqft = "0;";
+                }
+                this.filters.sqft += this.filters.max_sqft;
+            }
+
+            $location.path('search-mls').search(this.filters);			
 		}
 	};
 

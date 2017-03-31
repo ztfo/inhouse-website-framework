@@ -1,5 +1,5 @@
-//- custom template for teetsel phoenix
-section.ih-results.s5.s1
+//- custom template for teetsel pinetop
+section.ih-results.s6.s1
   .container
     //- results filter
     #mapResults.ihmap-results(ng-show='mapShown')
@@ -38,13 +38,10 @@ section.ih-results.s5.s1
               input.ih-search-input.full(type='text', placeholder='Zip-code', name='propertyZip', ng-model='filters.zipcode')
             .ih-input-box.col-lg-3.col-md-3.col-sm-4.col-xs-12
               input.ih-search-input.full(type='text', placeholder='MLS #', name='propertyMLS', ng-model='filters.mls')
-            //- communities hidden (only tucson)
+            //- hide communities
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12.hidden
               ih-dropdown#community(items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]', name='Community', ng-model='filters.community', truncate='4', multi='true')
-            .ih-input-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              ih-dropdown#county(items='[{"name": "Apache", "value": "Apache"}, {"name": "Navajo", "value": "Navajo"}, {"name": "Catron", "value": "Catron"}, {"name": "Cochise", "value": "Cochise"}, {"name": "Coconino", "value": "Coconino"}, {"name": "Gila", "value": "Gila"}, {"name": "Graham", "value": "Graham"}, {"name": "Greenlee", "value": "Greenlee"}, {"name": "LaPaz", "value": "LaPaz"}, {"name": "Maricopa", "value": "Maricopa"}, {"name": "Mohave", "value": "Mohave"}, {"name": "Other", "value": "Other"}, {"name": "Pima", "value": "Pima"}, {"name": "Pinal", "value": "Pinal"}, {"name": "Santa Cruz", "value": "Santa Cruz"}, {"name": "Yavapai", "value": "Yavapai"}, {"name": "Yuma", "value": "Yuma"}]', name='County', multi='true', ng-model='filters.county')
-            .ih-input-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              ih-dropdown#type(multi='true', items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse/Condo", "value": "Townhouse;Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type')
+            .ih-input-box.col-lg-6.col-md-6.col-sm-12.col-xs-12.hidden
           .row
             .col-lg-12.col-md-12.col-sm-12.col-xs-12
               .ih-input-box.col-lg-3.col-md-3.col-sm-6.col-xs-6
@@ -66,30 +63,19 @@ section.ih-results.s5.s1
               .ih-slide.hidden
                 label(for='#yearRange') Year Built
                 bootstrap-slider#yearRange(name='yearRange', ng-model='filters.yearRange', type='text', data-slider-min='1900', data-slider-max='2017', data-slider-step='1', data-slider-value='[1900,2017]', data-filter='yearRange')
-            .col-lg-6.col-md-6.col-sm-12.col-xs-12
-              //- type moved above / pool not used
-              .ih-filter-row.row.hidden
-                .ih-filter-box.col-lg-6
-                  ih-dropdown#type(multi='true', items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse/Condo", "value": "Townhouse;Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type')
-                .ih-filter-box.col-lg-6
-                  ih-dropdown#pool(items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]', name='Pool', ng-model='filters.pool')
-              //- garage and stories not used
-              .ih-filter-row.row.hidden
-                .ih-filter-box.col-lg-6
-                  ih-dropdown#numGarage(items='[{"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
-                .ih-filter-box.col-lg-6
-                  ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
-              //- .ih-filter-row.col-lg-12
-                .btn-group
-                  label.btn.btn-default(class="{{filters.active != undefined && filters.active != 'false' ? 'active' : ''}}")
-                    input(type='checkbox', autocomplete='off', checked='', ng-model='filters.active')
-                    |  Active
-                  label.btn.btn-default(class="{{filters.sold != undefined && filters.sold != 'false' ? 'active' : ''}}")
-                    input(type='checkbox', autocomplete='off', ng-model='filters.sold')
-                    |  Sold
-                  label.btn.btn-default(class="{{filters.pending != undefined && filters.pending != 'false' ? 'active' : ''}}")
-                    input(type='checkbox', autocomplete='off', ng-model='filters.pending', ng-true-value='true', ng-false-value='false')
-                    |  Pending
+            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+              .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
+                ih-dropdown#type(items='[{"name": "Site Built", "value": "Site Built"}, {"name": "Condo/Townhome", "value": "Condo/Townhome"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type', multi='true')
+              //- pool hidden as per request
+              .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12.hidden
+                ih-dropdown#pool(items='[{"name": "Only", "value": "true"}, {"name": "Exclude", "value": "false"}]', name='Pool', ng-model='filters.pool')
+              //- garage filter hidden
+              .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12.hidden
+                ih-dropdown#numGarage(items='[{"name": "0 or more", "value": "0"}, {"name": "1 or more", "value": "1"}, {"name": "2 or more", "value": "2"}, {"name": "3 or more", "value": "3"}, {"name": "4 or more", "value": "4"}]', name='Garage Size', ng-model='filters.numGarage')
+              //- stories hidden as per request
+              .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12.hidden
+                ih-dropdown#stories(items='[{"name": "1 Story", "value": "1"}, {"name": "2 Stories", "value": "2"}, {"name": "3 Stories", "value": "3"}, {"name": "4 Stories", "value": "4"}]', name='Stories', ng-model='filters.stories')
+
       .ih-listings.container-fluid
         .ih-listings-grid.row
           .no-results.hidden

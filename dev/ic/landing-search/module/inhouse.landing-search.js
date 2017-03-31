@@ -84,6 +84,19 @@ angular.module('ihframework')
                     delete this.filters.max_beds;
                     delete this.filters.min_beds;
 
+                    //baths filter split
+                    if (typeof this.filters.min_baths !== 'undefined') {
+                        this.filters.bathsRange = this.filters.min_baths + ';';
+                    }
+                    if (typeof this.filters.max_baths !== 'undefined') {
+                        if (typeof this.filters.bathsRange == 'undefined') {
+                            this.filters.bathsRange = "0;";
+                        }
+                        this.filters.bathsRange += this.filters.max_baths;
+                    }
+                    delete this.filters.max_baths;
+                    delete this.filters.min_baths;
+
                     //sqft filter split
                     if (typeof this.filters.min_sqft !== 'undefined') {
                         this.filters.sqft = this.filters.min_sqft + ';';
@@ -102,6 +115,12 @@ angular.module('ihframework')
                         this.filters.lotsizeRange = this.filters.min_acres + ';';
                     }
                     delete this.filters.min_acres;
+
+                    //county default for s9 pinetop config only
+                    if (typeof this.filters.county === 'undefined' &&  $scope.config == 's9') {
+                        this.filters.county = 'Apache;Navajo';
+                    }
+                    console.log(this.filters);
 
                     $location.path('search-mls').search(this.filters);
                 };
