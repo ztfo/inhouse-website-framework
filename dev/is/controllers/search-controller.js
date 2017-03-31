@@ -183,51 +183,137 @@ angular.module('ihframework')
 				};
 			});
 
+
+
+            //price clear both
+            if (typeof this.filters.price_from !== 'undefined' && this.filters.price_from.length == 0 && 
+            	typeof this.filters.price_to !== 'undefined' && this.filters.price_to.length == 0) {
+            	delete this.filters.price_from;
+            	delete this.filters.price_to;
+            	delete this.filters.price;
+            }
+            //price clear from
+            if (typeof this.filters.price_from !== 'undefined' && this.filters.price_from.length == 0 &&
+            	typeof this.filters.price_to == 'undefined') {
+            	delete this.filters.price_from;
+            	delete this.filters.price;
+            }
+            //price clear to
+            if (typeof this.filters.price_to !== 'undefined' && this.filters.price_to.length == 0 &&
+            	typeof this.filters.price_from == 'undefined') {
+            	delete this.filters.price_to;
+            	delete this.filters.price;
+            }
             //price filter split
             if (typeof this.filters.price_from !== 'undefined') {
                 this.filters.price = this.filters.price_from + ';';
             }
             if (typeof this.filters.price_to !== 'undefined') {
-                if (typeof this.filters.price == 'undefined') {
-                    this.filters.price = "0;";
+                if (typeof this.filters.price_from == 'undefined') {
+                    this.filters.price = "0;" + this.filters.price_to;
                 }
-                this.filters.price += this.filters.price_to;
+                else {
+                	this.filters.price = this.filters.price_from + ';' + this.filters.price_to;
+                }
             }
 
+            //beds clear both
+            if (typeof this.filters.min_beds !== 'undefined' && this.filters.min_beds.length == 0 && 
+            	typeof this.filters.max_beds !== 'undefined' && this.filters.max_beds.length == 0) {
+            	delete this.filters.min_beds;
+            	delete this.filters.max_beds;
+            	delete this.filters.bedsRange
+            }
+            //beds clear min
+            if (typeof this.filters.min_beds !== 'undefined' && this.filters.min_beds.length == 0 &&
+            	typeof this.filters.max_beds == 'undefined') {
+            	delete this.filters.min_beds;
+            	delete this.filters.bedsRange;
+            }
+            //beds clear max
+            if (typeof this.filters.max_beds !== 'undefined' && this.filters.max_beds.length == 0 &&
+            	typeof this.filters.min_beds == 'undefined') {
+            	delete this.filters.max_beds;
+            	delete this.filters.bedsRange;
+            }
             //beds filter split
             if (typeof this.filters.min_beds !== 'undefined') {
                 this.filters.bedsRange = this.filters.min_beds + ';';
             }
             if (typeof this.filters.max_beds !== 'undefined') {
-                if (typeof this.filters.bedsRange == 'undefined') {
-                    this.filters.bedsRange = "0;";
+                if (typeof this.filters.min_beds == 'undefined') {
+                    this.filters.bedsRange = "0;" + this.filters.max_beds;
                 }
-                this.filters.bedsRange += this.filters.max_beds;
+                else {
+	                this.filters.bedsRange = this.filters.min_baths + ';' + this.filters.max_beds;
+                }
             }
 
+            //baths clear both
+            if (typeof this.filters.min_baths !== 'undefined' && this.filters.min_baths.length == 0 && 
+            	typeof this.filters.max_baths !== 'undefined' && this.filters.max_baths.length == 0) {
+            	delete this.filters.min_baths;
+            	delete this.filters.max_baths;
+            	delete this.filters.bathsRange;
+            }
+            //baths clear min
+            if (typeof this.filters.min_baths !== 'undefined' && this.filters.min_baths.length == 0 &&
+            	typeof this.filters.max_baths == 'undefined') {
+            	delete this.filters.min_baths;
+            	delete this.filters.bathsRange;
+            }
+            //baths clear max
+            if (typeof this.filters.max_baths !== 'undefined' && this.filters.max_baths.length == 0 &&
+            	typeof this.filters.min_baths == 'undefined') {
+            	delete this.filters.max_baths;
+            	delete this.filters.bathsRange;
+           	}
              //baths filter split
             if (typeof this.filters.min_baths !== 'undefined') {
                 this.filters.bathsRange = this.filters.min_baths + ';';
             }
             if (typeof this.filters.max_baths !== 'undefined') {
-                if (typeof this.filters.bathsRange == 'undefined') {
-                    this.filters.bathsRange = "0;";
+                if (typeof this.filters.min_baths == 'undefined') {
+                    this.filters.bathsRange = "0;" + this.filters.max_baths;
                 }
-                this.filters.bathsRange += this.filters.max_baths;
+                else {
+	                this.filters.bathsRange = this.filters.min_baths + ';' + this.filters.max_baths;
+                }
             }
 
+            //sqft clear both
+            if (typeof this.filters.min_sqft !== 'undefined' && this.filters.min_sqft.length == 0 && 
+            	typeof this.filters.max_sqft !== 'undefined' && this.filters.max_sqft.length == 0) {
+            	delete this.filters.min_sqft;
+            	delete this.filters.max_sqft;
+            	delete this.filters.sqft;
+            }
+            //sqft clear min
+            if (typeof this.filters.min_sqft !== 'undefined' && this.filters.min_sqft.length == 0 &&
+            	typeof this.filters.max_sqft == 'undefined') {
+            	delete this.filters.min_sqft;
+            	delete this.filters.sqft;
+           	}
+            //sqft clear max
+            if (typeof this.filters.max_sqft !== 'undefined' && this.filters.max_sqft.length == 0 &&
+            	typeof this.filters.min_sqft == 'undefined') {
+            	delete this.filters.max_sqft;
+            	delete this.filters.sqft;            	
+            }
             //sqft filter split
             if (typeof this.filters.min_sqft !== 'undefined') {
                 this.filters.sqft = this.filters.min_sqft + ';';
             }
             if (typeof this.filters.max_sqft !== 'undefined') {
-                if (typeof this.filters.sqft == 'undefined') {
-                    this.filters.sqft = "0;";
+                if (typeof this.filters.min_sqft == 'undefined') {
+                    this.filters.sqft = "0;" + this.filters.max_sqft;
                 }
-                this.filters.sqft += this.filters.max_sqft;
+                else {
+	                this.filters.sqft = this.filters.min_sqft + ';' + this.filters.max_sqft;
+                }
             }
 
-            $location.path('search-mls').search(this.filters);			
+            $location.path('search-mls').search(this.filters);
 		}
 	};
 
