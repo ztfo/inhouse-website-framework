@@ -1,0 +1,18 @@
+@if ($letterhead)
+  @slot('header')
+    @component('mail::header', ['url' => config('app.url')])
+      <h1 class="logo">
+        <img src="{{ config('app.logo') }}" />
+      </h1>
+      <h1 class="header-message">
+        {{ $greeting or 'hello' }}
+      </h1>
+    @endcomponent
+  @endslot
+@elseif ($simple)
+  @slot('header')
+    @component('mail::header', ['url' => config('app.url')])
+        {{ $greeting }}
+    @endcomponent
+  @endslot
+@endif

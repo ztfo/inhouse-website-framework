@@ -1,0 +1,9 @@
+.search-homes
+  form(ng-submit='searchMLS()')
+    fieldset
+      .flex-grid
+        .ih.flex-10
+          i.fa.fa-search
+          input.ih-search-input.full(type='text', placeholder='Enter an agent, neighborhood, address, ZIP code, or listing ID...', name='propertyMLS', ng-model='filters.mlsOrAddress')
+        .flex-2
+          button.btn.btn-primary.text-uppercase(type='submit') find my home
