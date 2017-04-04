@@ -1,5 +1,5 @@
 section.s2.ih-featured-slider(class='{{classes}}')
-  h1.ih-header.text-center Featured Homes
+  h1.ih-header.text-center {{ !title ? "Featured Homes": title }}
   .ih-md-divider
   .ih-grid-carousel
     #gridCarousel.carousel.slide.listing-grid-carousel(data-ride='carousel')

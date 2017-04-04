@@ -1,6 +1,6 @@
 section.s1.ih-featured-slider(class="{{classes}}")
   .container
-    h1.ih-header.text-center Featured Homes
+    h1.ih-header.text-center {{ !title ? "Featured Homes": title }}
     .ih-md-divider
     ih-owl.ih-ft-carousel.owl-carousel(items='homes', responsive='responsive', length='listingLoaders')
       ih-listing-loader.item(ng-repeat='n in range(0,listingLoaders) | limitTo:12')

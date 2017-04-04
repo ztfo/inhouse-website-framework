@@ -1,7 +1,7 @@
 section.s5.ih.ih-featured-slider(class='{{classes}}')
   .container-fluid
     .row
-      h1.ih-header.text-center Featured Homes
+      h1.ih-header.text-center {{ !title ? "Featured Homes": title }}
       .ih-md-divider.bk-gd
     .flex-grid.ft-listing-grid.reverse-hover
       .flex-col.resize
