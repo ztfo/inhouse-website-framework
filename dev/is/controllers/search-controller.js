@@ -245,7 +245,7 @@ angular.module('ihframework')
                     this.filters.bedsRange = "0;" + this.filters.max_beds;
                 }
                 else {
-	                this.filters.bedsRange = this.filters.min_baths + ';' + this.filters.max_beds;
+	                this.filters.bedsRange = this.filters.min_beds + ';' + this.filters.max_beds;
                 }
             }
 
