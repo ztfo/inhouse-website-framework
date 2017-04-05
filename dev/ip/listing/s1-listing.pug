@@ -2,7 +2,7 @@ section.s1.ih-listing
   .container
     .container-fluid
       .row
-        ih-listing-slider(config='f1').col-lg-8.col-md-8.col-sm-8.col-xs-12.nopad-l
+        ih-listing-slider(config='f1').col-lg-8.col-md-8.col-sm-8.col-xs-12
         .ih-listing-map.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden-xs
           .ih-gmap.full
             ih-gmaps.full
@@ -41,7 +41,7 @@ section.s1.ih-listing
                 i.fa.fa-google-plus
         p {{listing.Details.publicRemarks | sentence}}
         p.small.text-uppercase
-          | Listing Information Courtesy of:
+          | Listing Information Courtesy of:&nbsp;
           strong {{listing.Details.brokerage}}
       .ih-sm-divider.ih-ext-divider
       ih-listing-details
