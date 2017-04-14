@@ -47,10 +47,10 @@
       textarea#textMessage.ih-form-input.ih-textarea.form-control(
         type='text',
         required='',
-        ng-model='contact.note')
+        ng-model='contact.note.message')
     .form-group.text-center
       span.field
-        input(type="checkbox", name="lenderConsent", id="lenderConsent", ng-model="lender.Consent")
+        input(type="checkbox", name="lenderConsent", id="lenderConsent", ng-model="contact.note.lenderConsent")
         label(for="lenderConsent")
     .text-center
       button.btn.btn-primary.block(type='submit') submit

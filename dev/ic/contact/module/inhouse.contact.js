@@ -34,7 +34,7 @@ angular.module('ihframework')
       $timeout(function() {
         $scope.context = $element.find('form').attr('name');
       });
-      
+
       if($scope.message != undefined) {
         if($scope.contact == undefined) $scope.contact = {};
         $scope.contact.message = $scope.message;
@@ -76,17 +76,17 @@ angular.module('ihframework')
         contact.form = this.scope.contactMessage;
         var api = this.scope.inhouseApi;
         $scope.contactSending = true;
-        
+
         //hoook in and append the lender to this contact form
-        if($rootScope.theWebsiteData.lender !== undefined && $rootScope.theWebsiteData.lender.userId !== undefined) {
+        if(typeof $rootScope.theWebsiteData.lender == 'object' && $rootScope.theWebsiteData.lender.userId) {
           contact.lender = $rootScope.theWebsiteData.lender.userId;
         }
-        
+
         if(contact.note !== undefined) {
           if(typeof contact.note !== 'object') {
             contact.note = {note: contact.note};
           }
-          
+
           contact.note['Contact Type'] = $scope.context;
         }
         api.newApi.postContactLead(contact).success((function($scope) {
