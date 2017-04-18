@@ -13,7 +13,7 @@ angular.module('ihframework')
       //only save the public remarks so the rest of the listing comes back unscathed
 
       $scope.shareUrl = window.location.href;
-      
+
       $scope.$watch('listing.publicRemarks', function(newVal, oldVal) {
         if(oldVal == undefined) { //first time running this
           if(typeof $scope.data == 'object' && $scope.data.publicRemarks !== undefined && typeof $scope.listing == 'object') {

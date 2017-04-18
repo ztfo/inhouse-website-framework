@@ -2,7 +2,7 @@ angular.module('ihframework')
   .directive('ihAnalytics', function() {
     return {
       templateUrl: 'build/templates/ic/analytics/template/s1-inhouse.analytics.html',
-      restrict: 'E',  
+      restrict: 'E',
       controller: function($rootScope, $scope, $element,  $attrs) {
         $scope.agent = $rootScope.theUserData;
         !function(f,b,e,v,n,t,s) {
