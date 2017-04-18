@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.factory('inhouseApi', ['$http', '$rootScope', 'listhub', function($http, $rootScope, listhub) {
+.factory('inhouseApi', ['$http', '$rootScope', 'listhub', 'ihLead', function($http, $rootScope, listhub, ihLead) {
   var urlBase = 'https://www.getinhouse.io/api/v1/';
   var appUrl = window.inhouseApiUrl == undefined ? 'https://app.getinhouse.io/' : window.inhouseApiUrl;
   var newApi = appUrl + 'api/v1/web/';
@@ -81,6 +81,8 @@ angular.module('ihframework')
     }
 
     url = newApi + 'user/' + userId + '/search?' + $.param(data);
+
+    ihLead.searchMls();
 
     return $http.jsonp(url).success(function(response) {
       listhub.listingsSearched(_.get(response, 'data.listings'));
