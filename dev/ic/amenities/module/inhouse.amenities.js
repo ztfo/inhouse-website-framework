@@ -1,30 +1,30 @@
 angular.module('ihframework')
 .directive('ihAmenities', function() {
-	return {
-		scope: {
-			classes: "@classes",
-			amenities: '=',
-			config: '=',
-			listing: '=',
+  return {
+    scope: {
+      classes: "@classes",
+      amenities: '=',
+      config: '=',
+      listing: '=',
       data: '='
-		},
-		template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
-		restrict: 'E',
-		controller: function($rootScope, $scope) {
-			$scope.$watch('data', function(newVal) {
-				if(newVal !== undefined) {
-					$scope.data = newVal;
-				}
-			});
-			$scope.$watch('config', function(newVal) {
-				if(newVal == undefined) {
-					$scope.templateUrl = 'build/templates/ic/amenities/template/p1-inhouse.amenities.html';
-				} else {
-					$scope.templateUrl = 'build/templates/ic/amenities/template/' + $scope.config + '-inhouse.amenities.html';
-				}
-			});
+    },
+    template: '<ng-include src="templateUrl" class="{{classes}}"></ng-include>',
+    restrict: 'E',
+    controller: function($rootScope, $scope) {
+      $scope.$watch('data', function(newVal) {
+        if(newVal !== undefined) {
+          $scope.data = newVal;
+        }
+      });
+      $scope.$watch('config', function(newVal) {
+        if(newVal == undefined) {
+          $scope.templateUrl = 'build/templates/ic/amenities/template/p1-inhouse.amenities.html';
+        } else {
+          $scope.templateUrl = 'build/templates/ic/amenities/template/' + $scope.config + '-inhouse.amenities.html';
+        }
+      });
 
-			$scope.agent = $rootScope.theUserData;
-		}
-	};
+      $scope.agent = $rootScope.theUserData;
+    }
+  };
 });

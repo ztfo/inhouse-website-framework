@@ -22,7 +22,7 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
     nearbySearchKeys: ['name','rating','vicinity', 'opening_hours'],
   });
 
-//	$httpProvider.defaults.withCredentials = true;
+//  $httpProvider.defaults.withCredentials = true;
 
   $routeProvider.when('/', {
     template: '<ih-landing-layout-wrapper layout="layout"></ih-landing-layout-wrapper>',
@@ -64,7 +64,7 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
     templateUrl: 'build/templates/ip/system/404.html'
   });
 
-//	$locationProvider.htmll5Mode(true);
+//  $locationProvider.htmll5Mode(true);
 })
 .controller('mainView', ['$rootScope', 'inhouseApi', '$scope', 'ihLead', function($rootScope, inhouseApi, $scope, ihLead) {
   $scope.lead = ihLead;

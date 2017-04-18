@@ -1,46 +1,46 @@
 section#contact.p4.ih-contact.fw(class='{{classes}}')
-	h2.ih-header Get in touch
-	div.container-fluid.contact-inner
-		div.contact-form-inner
-			ih-contact(configname="f1")
-		div.contact-social
-			.social-block
-				h3 Address
-				span {{agent.brokerage}}
-				br
-				span {{agent.contactAddress}}  {{agent.contactAddress2}}
-			.social-block
-				h3 Phone
-				span {{agent.contactPhone | tel}}
-			.social-block
-				h3 Email
-				a(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
-					span {{agent.contactEmail}}
-			.social-list
-				a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined && agent.facebook.length !== 0', target='_blank')
-					i.fa.fa-facebook
-				a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined && agent.linkedin.length !== 0', target='_blank')
-					i.fa.fa-linkedin
-				a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined && agent.twitter.length !== 0', target='_blank')
-					i.fa.fa-twitter
-				a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined && agent.instagram.length !== 0', target='_blank')
-					i.fa.fa-instagram
-				a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined && agent.pinterest.length !== 0', target='_blank')
-					i.fa.fa-pinterest
-	div.flex-12.footer.text-uppercase
-		.container-fluid.footer-inner
-			div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.no-padding
-				span.ih-ui-fairhousing
-				span.ih-ui-realtor
-				small © {{year}} - {{agent.agentName}} | {{listing.Details.mlsAssociation}}
-			div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right.no-padding
-				div.pull-right
-					a(href="https://www.getinhouse.io", target="_blank", rel="noopener")
-						span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
-				div.pull-right.text-uppercase
-					small
-						| inspired by &nbsp;
-						a(href="https://html5up.net/", target="_blank", rel="noopener") html5up
-					br
-					small powered by &nbsp;
-						a(href="http://www.getinhouse.io") InHouse
+  h2.ih-header Get in touch
+  div.container-fluid.contact-inner
+    div.contact-form-inner
+      ih-contact(configname="f1")
+    div.contact-social
+      .social-block
+        h3 Address
+        span {{agent.brokerage}}
+        br
+        span {{agent.contactAddress}}  {{agent.contactAddress2}}
+      .social-block
+        h3 Phone
+        span {{agent.contactPhone | tel}}
+      .social-block
+        h3 Email
+        a(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined')
+          span {{agent.contactEmail}}
+      .social-list
+        a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook !== undefined && agent.facebook.length !== 0', target='_blank')
+          i.fa.fa-facebook
+        a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin !== undefined && agent.linkedin.length !== 0', target='_blank')
+          i.fa.fa-linkedin
+        a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter !== undefined && agent.twitter.length !== 0', target='_blank')
+          i.fa.fa-twitter
+        a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram !== undefined && agent.instagram.length !== 0', target='_blank')
+          i.fa.fa-instagram
+        a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest !== undefined && agent.pinterest.length !== 0', target='_blank')
+          i.fa.fa-pinterest
+  div.flex-12.footer.text-uppercase
+    .container-fluid.footer-inner
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.no-padding
+        span.ih-ui-fairhousing
+        span.ih-ui-realtor
+        small © {{year}} - {{agent.agentName}} | {{listing.Details.mlsAssociation}}
+      div.col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs.text-right.no-padding
+        div.pull-right
+          a(href="https://www.getinhouse.io", target="_blank", rel="noopener")
+            span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
+        div.pull-right.text-uppercase
+          small
+            | inspired by &nbsp;
+            a(href="https://html5up.net/", target="_blank", rel="noopener") html5up
+          br
+          small powered by &nbsp;
+            a(href="http://www.getinhouse.io") InHouse

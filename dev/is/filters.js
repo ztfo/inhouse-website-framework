@@ -97,13 +97,13 @@ angular.module('ihframework')
       return [];
     }
   })
-	.filter('spaceless', function() {
-		return function(input) {
+  .filter('spaceless', function() {
+    return function(input) {
       if(input != undefined) {
-  			return input.replace(/ /g, '');
+        return input.replace(/ /g, '');
       }
-		};
-	})
+    };
+  })
   .filter('chunk', function() {
     return function(source, columns) {
       var r = [];

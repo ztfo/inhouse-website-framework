@@ -1,35 +1,35 @@
 section.p1.ih-nearby.container-fluid.fp
-		h1.ih-header.text-center.fc-02 Nearby Places
-		div.row
-			p.fs.text-center.col-md-6.col-md-offset-3
-				| {{listing.Details.listingDescription | limitTo: 250 }}
-		div.row.btn-row
-			.container
-				ul.nav.nav-pills.nav-justified.nearby-tabs
-					li(ng-repeat='source in sources')
-						a.pointer(ng-click='selectTab($index)') {{source.name}}
-		div.row
-			div.container.flex-grid
-				div.col-lg-6.col-md-6.col-sm-6.col-xs-12.nearby-list
-					.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
-						h3.fc-01 {{source.name}}
-						.nearby-place.clearfix(ng-repeat='place in source.data')
-							.pull-left.round-icon.bkc-04.fw
-								span.ih-icon-location3
-							.pull-left
-								h5.text-uppercase.fc-01 {{place.name}}
-								.g-rating(ng-if='place.rating')
-									| {{place.rating}}
-									i.fa.fa-star
-								.g-rating(ng-if='!place.rating')
-									| No rating available
-								div.loc-address
-									| {{place.address}}
-									br
-									|  {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
-				div.col-lg-6.col-md-6.col-sm-6.hidden-xs.nearby-map.nopad
-					map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
-						marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
-						marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")
-			div.container.text-center.btn-row
-				ih-schedule-visit(listing="listing")
+    h1.ih-header.text-center.fc-02 Nearby Places
+    div.row
+      p.fs.text-center.col-md-6.col-md-offset-3
+        | {{listing.Details.listingDescription | limitTo: 250 }}
+    div.row.btn-row
+      .container
+        ul.nav.nav-pills.nav-justified.nearby-tabs
+          li(ng-repeat='source in sources')
+            a.pointer(ng-click='selectTab($index)') {{source.name}}
+    div.row
+      div.container.flex-grid
+        div.col-lg-6.col-md-6.col-sm-6.col-xs-12.nearby-list
+          .nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
+            h3.fc-01 {{source.name}}
+            .nearby-place.clearfix(ng-repeat='place in source.data')
+              .pull-left.round-icon.bkc-04.fw
+                span.ih-icon-location3
+              .pull-left
+                h5.text-uppercase.fc-01 {{place.name}}
+                .g-rating(ng-if='place.rating')
+                  | {{place.rating}}
+                  i.fa.fa-star
+                .g-rating(ng-if='!place.rating')
+                  | No rating available
+                div.loc-address
+                  | {{place.address}}
+                  br
+                  |  {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
+        div.col-lg-6.col-md-6.col-sm-6.hidden-xs.nearby-map.nopad
+          map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
+            marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+            marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")
+      div.container.text-center.btn-row
+        ih-schedule-visit(listing="listing")

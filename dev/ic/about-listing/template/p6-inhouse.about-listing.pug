@@ -1,10 +1,10 @@
 section.p6.ih-about-listing.fp.fw
-	span.image-div
-		img(ng-src='')
-	div.container-fluid.about-inner
-		h1.ih-header About {{listing.Details.address}}
-		div.ih-sm-divider
-		p.listing-remarks.fs.text-center {{data.cta || listing.Details.publicRemarks}}
-		div.container-fluid.details
-			ih-listing-details(listing='listing')
-		ih-schedule-visit(listing="listing")
+  span.image-div
+    img(ng-src='')
+  div.container-fluid.about-inner
+    h1.ih-header About {{listing.Details.address}}
+    div.ih-sm-divider
+    p.listing-remarks.fs.text-center {{data.cta || listing.Details.publicRemarks}}
+    div.container-fluid.details
+      ih-listing-details(listing='listing')
+    ih-schedule-visit(listing="listing")
