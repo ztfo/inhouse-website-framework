@@ -7,10 +7,6 @@
     text-decoration: none;
 }
 
-.ih-like-btn .fa-heart, .ih-like-btn .fa-star, .ih-like-btn .fa-star-o {
-    display: none;
-}
-
 .ih-liked .fa-heart-o {
     display: none !important;
 }

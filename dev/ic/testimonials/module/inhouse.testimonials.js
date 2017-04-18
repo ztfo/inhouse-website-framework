@@ -20,7 +20,7 @@ angular.module('ihframework')
           $scope.templateUrl = 'build/templates/ic/testimonials/template/s1-inhouse.testimonials.html';
         }
       });
-      
+
       $scope.$watch('responsive', function(newVal) {
         if(newVal !== undefined) {
           $scope.responsive = newVal;
@@ -49,7 +49,7 @@ angular.module('ihframework')
         }
         return input;
       };
-      
+
       inhouseApi.newApi.getTestimonials().success(function(response) {
         $scope.testimonials = response.data;
       });

@@ -20,6 +20,9 @@ form(name='login', ng-submit='login.$valid && submitRegister(user)', ng-hide='sh
     | Welcome back!
   p.text-center
     | Sign-in below.
+  .alert.alert-warning(ng-if="loginError") We didn't recognize your information. If you don't have an account yet, click
+    a(href='', ng-click="showRegister=true") here
+    | to register.
   .form-group
     label(for='emailAddress') Email Address
     input#emailAddress.ih-form-input.form-control(type='email', required='', ng-model='user.email')

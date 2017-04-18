@@ -2,6 +2,7 @@ angular.module('ihframework')
 .factory('inhouseApi', ['$http', '$rootScope', 'listhub', 'ihLead', function($http, $rootScope, listhub, ihLead) {
   var urlBase = 'https://www.getinhouse.io/api/v1/';
   var appUrl = window.inhouseApiUrl == undefined ? 'https://app.getinhouse.io/' : window.inhouseApiUrl;
+
   var newApi = appUrl + 'api/v1/web/';
   var inhouseApi = {};
   var userId = $rootScope.theUserData.userId;
@@ -34,7 +35,11 @@ angular.module('ihframework')
 
     url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK&' + $.param(data);
 
-    return $http.jsonp(url);
+    return $http.jsonp(url).success(function(response) {
+      ihLead.likes = _.map(_.get(response, 'data.likes'), function(like) {
+        return _.get(like, 'mls');
+      });
+    });
   };
 
   inhouseApi.newApi.leadLikeListing = function(data) {
@@ -42,22 +47,12 @@ angular.module('ihframework')
     data = $.extend({}, data);
     data.callback = 'JSON_CALLBACK';
 
-    if(typeof Storage !== 'undefined') {
-      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-        data.lead = localStorage.inhouseAgentLead;
-      }
-    }
-
-    if(typeof window.geolocation !== 'undefined') {
-      if(typeof data.params === 'undefined') {
-        data.params = {};
-      }
-      data.params.geolocation = window.geolocation;
-    }
+    data.lead = ihLead.id;
 
     url = newApi + 'lead/' + data.lead + '/like?' + $.param(data);
 
     listhub.listingLiked(_.get(data, 'mls'));
+    ihLead.likeListing(data.mls);
 
     return $http.jsonp(url);
   };
@@ -67,11 +62,7 @@ angular.module('ihframework')
     data = $.extend({}, data);
     data.callback = 'JSON_CALLBACK';
 
-    if(typeof Storage !== 'undefined') {
-      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-        data.lead = localStorage.inhouseAgentLead;
-      }
-    }
+    data.lead = ihLead.id;
 
     if(typeof window.geolocation !== 'undefined') {
       if(typeof data.params === 'undefined') {
@@ -82,12 +73,13 @@ angular.module('ihframework')
 
     url = newApi + 'user/' + userId + '/search?' + $.param(data);
 
-    ihLead.searchMls();
-
     return $http.jsonp(url).success(function(response) {
       listhub.listingsSearched(_.get(response, 'data.listings'));
+
+      ihLead.searchMls();
     });
   };
+
   inhouseApi.newApi.getSliderImages = function(key) {
     data = {};
 
@@ -126,29 +118,6 @@ angular.module('ihframework')
     url = newApi + 'user/' + userId + '/featured-listings/' + JSON.stringify(key) + '?' + $.param(data);
 
     return $http.jsonp(url);
-  };
-
-  inhouseApi.getData = function(data) {
-    data.userId = userId;
-    data.userHash = userHash;
-    data.callback = 'JSON_CALLBACK';
-
-    if(typeof Storage !== 'undefined') {
-      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-        data.inhouseAgentLead = localStorage.inhouseAgentLead;
-      }
-    }
-    if(typeof window.geolocation !== 'undefined') {
-      if(typeof data.params === 'undefined') {
-        data.params = {};
-      }
-      data.params.geolocation = window.geolocation;
-    }
-
-    var url = urlBase + (typeof data.resource !== 'undefined' ? data.resource : '') + '?' + $.param(data);
-
-    var result = $http.jsonp(url);
-    return result;
   };
 
   return inhouseApi;

@@ -11,7 +11,7 @@ section.s2.ih-listing
             img.img-responsive.ih-owl-thumbnail(ng-src='{{home.thumb}}', alt='{{home.caption}}')
       .ih-listing-factbar.container-fluid
         .ih-listing-addr.col-lg-6.col-md-6.col-sm-12.col-xs-12
-          ih-like-button.pull-left.bkc-02.fw(mls='{{listing.Details.mls}}', address="{{listing['Building Address']}}")
+          ih-like-button.pull-left.bkc-02.fw(listing="home")
           .pull-left
             h2.fp {{listing.Details.address}}
             h4.fs.text-uppercase {{listing.Details.city}} {{listing.Details.state}} {{listing.Details.zipcode}}

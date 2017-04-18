@@ -66,36 +66,30 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
 
 //	$locationProvider.htmll5Mode(true);
 })
-.controller('mainView', ['$rootScope', 'inhouseApi', '$scope', function($rootScope, inhouseApi, $scope) {
+.controller('mainView', ['$rootScope', 'inhouseApi', '$scope', 'ihLead', function($rootScope, inhouseApi, $scope, ihLead) {
+  $scope.lead = ihLead;
+
   $rootScope.$on("$routeChangeSuccess", function(e, data) {
     $scope.controller = data.controller;
     $scope.$broadcast('viewChanged', data.controller);
+
+    ihLead.dismissModal();
+
     if(typeof window.ga !== 'undefined') {
       window.ga('send', 'pageview', { page: window.location.href });
     }
+
   });
+
   $scope.agent = $rootScope.theUserData;
   $scope.story = $rootScope.theWebsiteData;
-  $scope.freebies = true;
-  $scope.max = $rootScope.theUserData.maxSearchNoLead || 3;
-
 
   $scope.signIn = function() {
-    this.showRegister = false;
-    $('#accountModal').modal('show');
+    ihLead.openModal(function() {
+    });
   };
-  $scope.$on('loginChanged', function(event, args) {
-    $scope.inhouseAgentLeadLoggedIn = args;
-  });
 
   $scope.navbar = $rootScope.theWebsiteData.NavBar;
-  $scope.halfway = Math.ceil($scope.navbar.length/2);
-
-  if(typeof $rootScope.theWebsiteData.navbarClasses !== 'undefined') {
-    $scope.classes = $rootScope.theWebsiteData.navbarClasses;
-  }
-
-  $scope.agent = $rootScope.theUserData;
 
   $scope.scrollToElement = function(id) {
     $document.scrollToElement(angular.element(document.getElementById('ih-component-' + id)), 0, 1000);
@@ -110,98 +104,6 @@ angular.module('ihframework', ['ngRoute', 'ui.bootstrap', 'frameworkTemplates', 
     $rootScope.$broadcast('lenders clicked', {data: true});
     $document.scrollToElement(angular.element(document.getElementById(id)), 0, 1000);
   };
-
-  if(typeof Storage !== 'undefined') {
-    if(typeof localStorage.inhouseSearchFreebies !== 'undefined' && localStorage.inhouseSearchFreebies === 'false') {
-      $scope.freebies = false;
-    }
-  }
-  $scope.viewFreebies = function() {
-    if(typeof Storage !== 'undefined') {
-      if(typeof localStorage.inhouseSearchFreebies === 'undefined' && localStorage.inhouseSearchFreebies !== 'false') {
-        localStorage.inhouseSearchFreebies = 'false';
-        localStorage.inhouseSearchCount = 0;
-        $scope.freebies = false;
-        $('#accountModal').modal('hide');
-      }
-    }
-  };
-  $scope.submitRegister = (function($scope) {
-      return function() {
-      inhouseApi.newApi.leadLogin({name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
-        if(typeof Storage !== 'undefined') {
-          if(typeof result.data.lead.uuid === 'undefined') {
-            $scope.inhouseAgentLeadLoggedIn = false;
-            delete localStorage.inhouseAgentLead;
-            $('#accountModal').attr('data-success-register', 'false');
-          } else {
-            $scope.inhouseAgentLeadLoggedIn = true;
-            $scope.$broadcast('loginChanged', true);
-            localStorage.inhouseAgentLead = result.data.lead.uuid;
-            window.inhouseAgentLead = result.data.lead.uuid;
-            $('#accountModal').attr('data-success-register', 'true');
-            $('#accountModal').modal('hide');
-          }
-        }
-      });
-/*			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
-        if(typeof Storage !== 'undefined') {
-          if(typeof result.id === 'undefined') {
-            $scope.inhouseAgentLeadLoggedIn = false;
-            delete localStorage.inhouseAgentLead;
-            $('#accountModal').attr('data-success-register', 'false');
-            $scope.$broadcast('loginChanged', false);
-          } else {
-            $scope.inhouseAgentLeadLoggedIn = true;
-            $scope.$broadcast('loginChanged', true);
-            localStorage.inhouseAgentLead = result.id;
-            window.inhouseAgentLead = result.id;
-            $('#accountModal').attr('data-success-register', 'true');
-            $('#accountModal').modal('hide');
-          }
-        }
-      });
-      */
-    };
-  })($scope);
-  $scope.submitLogin = (function($scope) {
-      return function() {
-      inhouseApi.newApi.leadLogin({name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
-        if(typeof Storage !== 'undefined') {
-          if(typeof result.data.lead.uuid === 'undefined') {
-            $scope.inhouseAgentLeadLoggedIn = false;
-            delete localStorage.inhouseAgentLead;
-            $('#accountModal').attr('data-success-register', 'false');
-          } else {
-            $scope.inhouseAgentLeadLoggedIn = true;
-            $scope.$broadcast('loginChanged', true);
-            localStorage.inhouseAgentLead = result.data.lead.uuid;
-            window.inhouseAgentLead = result.data.lead.uuid;
-            $('#accountModal').attr('data-success-register', 'true');
-            $('#accountModal').modal('hide');
-          }
-        }
-      });
-/*			inhouseApi.getData({resource: 'new-lead', name: $scope.name, email: $scope.email, phone: $scope.phone}).success(function(result) {
-        if(typeof Storage !== 'undefined') {
-          if(typeof result.id === 'undefined') {
-            $scope.inhouseAgentLeadLoggedIn = false;
-            delete localStorage.inhouseAgentLead;
-            $('#accountModal').attr('data-success-register', 'false');
-            $scope.$broadcast('loginChanged', false);
-          } else {
-            $scope.inhouseAgentLeadLoggedIn = true;
-            localStorage.inhouseAgentLead = result.id;
-            window.inhouseAgentLead = result.id;
-            $('#accountModal').attr('data-success-register', 'true');
-            $('#accountModal').modal('hide');
-            $scope.$broadcast('loginChanged', true);
-          }
-        }
-      });
-      */
-    };
-  })($scope);
 }])
 
 .directive('openTab', function () {

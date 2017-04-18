@@ -8,7 +8,7 @@ section.s5.ih.ih-featured-slider(class='{{classes}}')
         .flex-item.offset.resize-item(ng-repeat='home in homes | limitTo:3')
           a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             .listing-hover.iha.afull
-              ih-like-button
+              ih-like-button(listing="home")
               .listing-info
                 strong {{home.address}}
                 br
@@ -24,7 +24,7 @@ section.s5.ih.ih-featured-slider(class='{{classes}}')
         .flex-item.offset.resize-item(ng-repeat='home in homes | startFrom:4 | limitTo: 2')
           a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             .listing-hover.iha.afull
-              ih-like-button
+              ih-like-button(listing="home")
               .listing-info
                 strong {{home.address}}
                 br
@@ -38,7 +38,7 @@ section.s5.ih.ih-featured-slider(class='{{classes}}')
         .flex-item.offset.resize-item(ng-repeat='home in homes | startFrom:7 | limitTo: 3')
           a.ih.block.full.listing-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}')", itemscope='', itemtype='http://schema.org/Product', itemprop='additionalProperty')
             .listing-hover.iha.afull
-              ih-like-button
+              ih-like-button(listing="home")
               .listing-info
                 strong {{home.address}}
                 br
