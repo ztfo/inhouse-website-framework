@@ -20,7 +20,15 @@ var config = {
 
 var paths = {
   scripts: ['dev/is/app.js', 'dev/**/*.js', '!dev/ia/**/*.js'],
-  vendorScripts: 'dev/ia/js/**/*.js',
+  vendorScripts: [
+    'dev/ia/js/0-core/**/*.js',
+    'dev/ia/js/1-priority/**/*.js',
+    'dev/ia/js/2-priority/**/*.js',
+    'dev/ia/js/3-priority/**/*.js',
+    'dev/ia/js/4-priority/**/*.js',
+    'dev/ia/js/5-priority/**/*.js',
+    'dev/ia/js/6-priority/**/*.js'
+  ],
   styles: 'dev/**/*.css',
   images: ['dev/**/*.jpg', 'dev/**/*.svg'],
   srcTemplates: ['dev/**/*.pug', 'dev/**/*.pug'],
@@ -77,8 +85,8 @@ gulp.task('images', function() {
 gulp.task('vendor-files', function() {
   return gulp
     .src(paths.vendorScripts)
-    .pipe(concat('vendor.min.js'))
     .pipe(uglify())
+    .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('build/'));
 });
 
