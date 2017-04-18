@@ -1,0 +1,11 @@
+.share-btns
+  strong
+    span.text-muted.text-uppercase Share on:
+  a.ih-social-icon(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank', ng-click="shared('FACEBOOK')")
+    i.fa.fa-facebook
+  a.ih-social-icon(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank', ng-click="shared('LINKEDIN')")
+    i.fa.fa-linkedin
+  a.ih-social-icon(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank', ng-click="shared('TWITTER')")
+    i.fa.fa-twitter
+  a.ih-social-icon(href='https://plus.google.com/share?url={{shareUrl}|encode}', target='_blank', ng-click="shared('GOOGLE_PLUS')")
+    i.fa.fa-google-plus

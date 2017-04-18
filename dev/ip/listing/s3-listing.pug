@@ -52,17 +52,7 @@ section.s3.ih-listing
     .row
       .col-xs-12.col-sm-12.col-md-8.col-lg-8
         h3 About Home
-        .share-btns
-          strong
-            span.text-muted.text-uppercase Share on:
-          a.ih-social-icon(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank')
-            i.fa.fa-facebook
-          a.ih-social-icon(href='https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl|encode}}', target='_blank')
-            i.fa.fa-linkedin
-          a.ih-social-icon(href='https://twitter.com/home?status={{shareUrl|encode}}', target='_blank')
-            i.fa.fa-twitter
-          a.ih-social-icon(href='https://plus.google.com/share?url={{shareUrl}|encode}', target='_blank')
-            i.fa.fa-google-plus
+        ih-social-buttons(mls="listing.Details.mls", user="user")
         p {{listing.Details.publicRemarks | sentence}}
         p.small.text-uppercase
           | Listing Information Courtesy of:

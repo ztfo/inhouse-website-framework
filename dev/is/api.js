@@ -1,148 +1,153 @@
 angular.module('ihframework')
-.factory('inhouseApi', function($http, $rootScope) {
-	var urlBase = 'https://www.getinhouse.io/api/v1/';
-	var appUrl = window.inhouseApiUrl == undefined ? 'https://app.getinhouse.io/' : window.inhouseApiUrl;
-	var newApi = appUrl + 'api/v1/web/';
-	var inhouseApi = {};
-	var userId = $rootScope.theUserData.userId;
-	var userHash = $rootScope.theUserData.userHash;
+.factory('inhouseApi', ['$http', '$rootScope', 'listhub', function($http, $rootScope, listhub) {
+  var urlBase = 'https://www.getinhouse.io/api/v1/';
+  var appUrl = window.inhouseApiUrl == undefined ? 'https://app.getinhouse.io/' : window.inhouseApiUrl;
+  var newApi = appUrl + 'api/v1/web/';
+  var inhouseApi = {};
+  var userId = $rootScope.theUserData.userId;
+  var userHash = $rootScope.theUserData.userHash;
 
-	inhouseApi.newApi = {};
+  inhouseApi.newApi = {};
 
-	inhouseApi.newApi.postContactLead = function(contact) {
-		//store contact type
-		if($rootScope.theWebsiteData.story_type != undefined) {
-			contact.story_type = $rootScope.theWebsiteData.story_type;
-		}
+  inhouseApi.newApi.postContactLead = function(contact) {
+    //store contact type
+    _.set(contact, 'story_type', _.get($rootScope, 'theWebsiteData.story_type'));
 
-		if(contact.note == undefined && contact.message != undefined) contact.note = contact.message;
-		contact.callback = 'JSON_CALLBACK';
-		url = newApi + 'user/' + userId + '/lead?' + $.param(contact);
-		return $http.jsonp(url);
-	};
+    if(contact.note == undefined && contact.message != undefined) contact.note = contact.message;
 
-	inhouseApi.newApi.getTestimonials = function() {
-		url = newApi + 'user/' + userId + '/testimonials?callback=JSON_CALLBACK';
+    contact.callback = 'JSON_CALLBACK';
 
-		return $http.jsonp(url);
-	};
+    url = newApi + 'user/' + userId + '/lead?' + $.param(contact);
+    return $http.jsonp(url).success(function(response) {
+      listhub.emailSent(_.get(contact, 'story_type.source'));
+    });
+  };
 
-	inhouseApi.newApi.leadLogin = function(data) {
+  inhouseApi.newApi.getTestimonials = function() {
+    url = newApi + 'user/' + userId + '/testimonials?callback=JSON_CALLBACK';
 
-		//store contact type
-		if($rootScope.theWebsiteData.story_type != undefined) {
-			data.story_type = $rootScope.theWebsiteData.story_type;
-		}
+    return $http.jsonp(url);
+  };
 
-		url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK&' + $.param(data);
+  inhouseApi.newApi.leadLogin = function(data) {
+    _.set(data, 'story_type', _.get($rootScope, 'theWebsiteData.story_type'));
 
-		return $http.jsonp(url);
-	};
+    url = newApi + 'user/' + userId + '/lead?callback=JSON_CALLBACK&' + $.param(data);
 
-	inhouseApi.newApi.leadLikeListing = function(data) {
+    return $http.jsonp(url);
+  };
 
-		data = $.extend({}, data);
-		data.callback = 'JSON_CALLBACK';
+  inhouseApi.newApi.leadLikeListing = function(data) {
 
-		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-				data.lead = localStorage.inhouseAgentLead;
-			}
-		}
+    data = $.extend({}, data);
+    data.callback = 'JSON_CALLBACK';
 
-		if(typeof window.geolocation !== 'undefined') {
-			if(typeof data.params === 'undefined') {
-				data.params = {};
-			}
-			data.params.geolocation = window.geolocation;
-		}
+    if(typeof Storage !== 'undefined') {
+      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+        data.lead = localStorage.inhouseAgentLead;
+      }
+    }
 
-		url = newApi + 'lead/' + data.lead + '/like?' + $.param(data);
+    if(typeof window.geolocation !== 'undefined') {
+      if(typeof data.params === 'undefined') {
+        data.params = {};
+      }
+      data.params.geolocation = window.geolocation;
+    }
 
-		return $http.jsonp(url);
-	};
-	inhouseApi.newApi.searchMls = function(data) {
+    url = newApi + 'lead/' + data.lead + '/like?' + $.param(data);
 
-		data = $.extend({}, data);
-		data.callback = 'JSON_CALLBACK';
+    listhub.listingLiked(_.get(data, 'mls'));
 
-		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-				data.lead = localStorage.inhouseAgentLead;
-			}
-		}
+    return $http.jsonp(url);
+  };
 
-		if(typeof window.geolocation !== 'undefined') {
-			if(typeof data.params === 'undefined') {
-				data.params = {};
-			}
-			data.params.geolocation = window.geolocation;
-		}
+  inhouseApi.newApi.searchMls = function(data) {
 
-		url = newApi + 'user/' + userId + '/search?' + $.param(data);
+    data = $.extend({}, data);
+    data.callback = 'JSON_CALLBACK';
 
-		return $http.jsonp(url);
-	};
-	inhouseApi.newApi.getSliderImages = function(key) {
-		data = {};
+    if(typeof Storage !== 'undefined') {
+      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+        data.lead = localStorage.inhouseAgentLead;
+      }
+    }
 
-		data.callback = 'JSON_CALLBACK';
+    if(typeof window.geolocation !== 'undefined') {
+      if(typeof data.params === 'undefined') {
+        data.params = {};
+      }
+      data.params.geolocation = window.geolocation;
+    }
 
-		url = newApi + 'user/' + userId + '/slider-images/' + JSON.stringify(key) + '?' + $.param(data);
+    url = newApi + 'user/' + userId + '/search?' + $.param(data);
 
-		return $http.jsonp(url);
-	};
-	inhouseApi.newApi.getListingDetails = function(key, version) {
-		data = {};
+    return $http.jsonp(url).success(function(response) {
+      listhub.listingsSearched(_.get(response, 'data.listings'));
+    });
+  };
+  inhouseApi.newApi.getSliderImages = function(key) {
+    data = {};
 
-		data.callback = 'JSON_CALLBACK';
+    data.callback = 'JSON_CALLBACK';
 
-		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-				data.lead = localStorage.inhouseAgentLead;
-			}
-		}
+    url = newApi + 'user/' + userId + '/slider-images/' + JSON.stringify(key) + '?' + $.param(data);
 
-		if(version == undefined) {
-			version = 'v1';
-		}
+    return $http.jsonp(url);
+  };
+  inhouseApi.newApi.getListingDetails = function(key, version) {
+    data = {};
 
-		url = appUrl + 'api/' + version + '/web/user/' + userId + '/listing/' + key + '?' + $.param(data);
+    data.callback = 'JSON_CALLBACK';
 
-		return $http.jsonp(url);
-	};
-	inhouseApi.newApi.featuredListings = function(key) {
-		data = {};
+    if(typeof Storage !== 'undefined') {
+      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+        data.lead = localStorage.inhouseAgentLead;
+      }
+    }
 
-		data.callback = 'JSON_CALLBACK';
+    if(version == undefined) {
+      version = 'v1';
+    }
 
-		url = newApi + 'user/' + userId + '/featured-listings/' + JSON.stringify(key) + '?' + $.param(data);
+    url = appUrl + 'api/' + version + '/web/user/' + userId + '/listing/' + key + '?' + $.param(data);
 
-		return $http.jsonp(url);
-	};
+    listhub.detailPage(key);
 
-	inhouseApi.getData = function(data) {
-		data.userId = userId;
-		data.userHash = userHash;
-		data.callback = 'JSON_CALLBACK';
+    return $http.jsonp(url);
+  };
+  inhouseApi.newApi.featuredListings = function(key) {
+    data = {};
 
-		if(typeof Storage !== 'undefined') {
-			if(typeof localStorage.inhouseAgentLead !== 'undefined') {
-				data.inhouseAgentLead = localStorage.inhouseAgentLead;
-			}
-		}
-		if(typeof window.geolocation !== 'undefined') {
-			if(typeof data.params === 'undefined') {
-				data.params = {};
-			}
-			data.params.geolocation = window.geolocation;
-		}
+    data.callback = 'JSON_CALLBACK';
 
-		var url = urlBase + (typeof data.resource !== 'undefined' ? data.resource : '') + '?' + $.param(data);
+    url = newApi + 'user/' + userId + '/featured-listings/' + JSON.stringify(key) + '?' + $.param(data);
 
-		var result = $http.jsonp(url);
-		return result;
-	};
+    return $http.jsonp(url);
+  };
 
-	return inhouseApi;
-});
+  inhouseApi.getData = function(data) {
+    data.userId = userId;
+    data.userHash = userHash;
+    data.callback = 'JSON_CALLBACK';
+
+    if(typeof Storage !== 'undefined') {
+      if(typeof localStorage.inhouseAgentLead !== 'undefined') {
+        data.inhouseAgentLead = localStorage.inhouseAgentLead;
+      }
+    }
+    if(typeof window.geolocation !== 'undefined') {
+      if(typeof data.params === 'undefined') {
+        data.params = {};
+      }
+      data.params.geolocation = window.geolocation;
+    }
+
+    var url = urlBase + (typeof data.resource !== 'undefined' ? data.resource : '') + '?' + $.param(data);
+
+    var result = $http.jsonp(url);
+    return result;
+  };
+
+  return inhouseApi;
+}]);

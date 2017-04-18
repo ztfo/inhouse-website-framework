@@ -16,7 +16,11 @@ angular.module('ihframework')
     $('#accountModal').off('hidden.bs.modal');
     $('#accountModal').modal('hide');
   });
-  $scope.shareUrl = "https://app.getinhouse.io/user/" + $rootScope.theUserData.userId + '/share-listing/' + $scope.mls;
+
+
+  $scope.user = $rootScope.theUserData;
+
+
   $scope.getData = function() {
     if(typeof Storage !== 'undefined') {
       if(typeof localStorage.inhouseAgentLead !== 'undefined') { //user is signed in already, load the listing
