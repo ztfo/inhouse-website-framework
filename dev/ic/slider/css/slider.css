@@ -320,15 +320,18 @@
 
 /* s8 */
 
-.s8.ih-slider {
+.s8.ih-slider,
+.s12.ih-slider {
     height: calc(100vh);
 }
 
-.s8.ih-slider .item {
+.s8.ih-slider .item,
+.s12.ih-slider .item {
     height: 100%;
 }
 
-.s8.ih-slider .ih-search-container {
+.s8.ih-slider .ih-search-container,
+.s12.ih-slider .ih-search-container {
     padding-top: 35%;
     z-index: 11;
 }

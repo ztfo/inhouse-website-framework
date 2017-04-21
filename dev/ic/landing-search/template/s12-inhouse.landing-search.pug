@@ -1,0 +1,62 @@
+section.ih-search.s6.container
+  .row
+    .col-lg-3.col-md-4.col-sm-12.col-xs-12.search-toggle
+      ul.search-toggle-btns.text-uppercase
+        li
+          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('find')")
+            span.ih-ui-icon.ih-ui-search
+            |  find a home
+          a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/search-mls?active')
+            span.ih-ui-icon.ih-ui-search
+            |  find a home
+        li
+          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('list')")
+            span.ih-ui-icon.ih-ui-home
+            |  list a home
+          a.toggle-btn.pointer.hidden-lg.hidden-md(href='#/sell')
+            span.ih-ui-icon.ih-ui-home
+            |  list a home
+        li
+          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('contact')")
+            span.ih-ui-icon.ih-ui-mail
+            |  contact us
+          a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/contact')
+            span.ih-ui-icon.ih-ui-mail
+            |  contact us
+    .col-lg-9.col-md-8.hidden-xs.hidden-sm.search-toggle
+      .tab-content.search-pane.text-center.fw(ng-if="!searchTab")
+        h1 Welcome to Tucson Living
+        p.lead lorem ipsum tacos. Bacon ipsum dolor amet sirloin short ribs landjaeger chuck doner andouille frankfurter brisket pork chop.
+        a.btn.btn-primary(href="{{agent.buyLink}}") learn more
+      .tab-content.search-pane(ng-if="searchTab == 'find'")
+        h2.ih-subheader.fw.text-uppercase start your search
+        form.search-form(ng-submit='searchMLS()')
+          fieldset
+            .container-fluid
+              .row
+                .col-lg-6.col-md-6.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='MLS #', name='propertyMLS', ng-model='filters.mls')
+                .col-lg-6.col-md-6.col-sm-6.col-xs-12
+                  ih-dropdown#type(items='[{"name": "Single Family", "value": "Single Family"}, {"name": "Townhouse", "value": "Townhouse"}, {"name": "Condo", "value": "Condo"}, {"name": "Manufactured", "value": "Manufactured"}, {"name": "Land/Lot", "value": "Land"}]', name='Type', ng-model='filters.type', multi='true')
+              .row
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='$ Min Price', name='propertyMinPrice', ng-model='filters.price_from')
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='$ Max Price', name='propertyMaxPrice', ng-model='filters.price_to')
+                .col-lg-6.col-md-6.col-sm-6.col-xs-12
+                  ih-dropdown#area(items='[{"name": "Central", "value": "Central"}, {"name": "North", "value": "North"}, {"name": "Northwest", "value": "Northwest"}, {"name": "Northeast", "value": "Northeast"}, {"name": "East", "value": "East"}, {"name": "West", "value": "West"}, {"name": "South", "value": "South"}, {"name": "Southwest", "value": "Southwest"}, {"name": "Southeast", "value": "Southeast"}, {"name": "Extended Northeast", "value": "Extended Northwest"}, {"name": "Extended Northwest", "value": "Extended Northeast"}, {"name": "Extended South", "value": "Extended South"}, {"name": "Extended Southwest", "value": "Extended Southwest"},  {"name": "Extended West", "value": "Extended West"}, {"name": "Pima East", "value": "Pima East"},  {"name": "Pima Far West", "value": "Pima Far West"}, {"name": "Pima Northwest", "value": "Pima Northwest"}, {"name": "Pima South", "value": "Pima South"}, {"name": "Pima Southwest", "value": "Pima Southwest"}]', name='Area', multi='true', ng-model='filters.area')
+              .row
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='Min Beds', name='propertyMinBeds', ng-model='filters.min_beds')
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='Max Beds', name='propertyMaxBeds', ng-model='filters.max_beds')
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='Min Sqft', name='propertyMinSF', ng-model='filters.min_sqft')
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                  input.ih-search-input.full(type='text', placeholder='Max Sqft', name='propertyMaxSF', ng-model='filters.max_sqft')
+              .row.ih-search-btns.text-center
+                button.btn.btn-primary(type='submit') Search
+      .tab-content.sell-pane(ng-if="searchTab == 'list'")
+        ih-contact(configname='f5')
+      .tab-content.contact-pane(ng-if="searchTab == 'contact'")
+        ih-contact(configname='f6')

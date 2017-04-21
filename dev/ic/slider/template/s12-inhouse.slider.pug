@@ -1,0 +1,9 @@
+section.s12.ih-slider.container-fluid
+  .iha.afull.ih-search-container
+    ih-landing-search(configname='s12')
+  .bottom-btn.fw
+    i.fa.fa-angle-down
+  .ih-slider-row.row(no-pause='true')
+    .ih-slider-inner.carousel.slide.carousel-fade(id='{{slider}}', data-ride='carousel')
+      div(uib-carousel='', active='active', no-wrap='false', no-pause='true')
+        div(uib-slide='', ng-repeat='slide in slides', index='$index', style="background-image: url('{{slide.large}}');")
