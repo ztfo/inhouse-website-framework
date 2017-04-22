@@ -78,7 +78,7 @@ angular.module('ihframework')
         $scope.contactSending = true;
 
         //hoook in and append the lender to this contact form
-        if(typeof $rootScope.theWebsiteData.lender == 'object' && $rootScope.theWebsiteData.lender.userId) {
+        if($rootScope.theWebsiteData.lender && typeof $rootScope.theWebsiteData.lender == 'object' && $rootScope.theWebsiteData.lender.userId) {
           contact.lender = $rootScope.theWebsiteData.lender.userId;
         }
 
@@ -89,10 +89,13 @@ angular.module('ihframework')
 
           contact.note['Contact Type'] = $scope.context;
         }
+        console.log("sending");
+        console.log(contact);
         api.newApi.postContactLead(contact).success((function($scope) {
           return function(response) {
             delete $scope.contactSending;
             $scope.contactSent = true;
+            console.log("sent");
           };
         })($scope));
       };
