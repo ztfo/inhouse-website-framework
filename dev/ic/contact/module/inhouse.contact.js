@@ -89,13 +89,11 @@ angular.module('ihframework')
 
           contact.note['Contact Type'] = $scope.context;
         }
-        console.log("sending");
-        console.log(contact);
+
         api.newApi.postContactLead(contact).success((function($scope) {
           return function(response) {
             delete $scope.contactSending;
             $scope.contactSent = true;
-            console.log("sent");
           };
         })($scope));
       };
