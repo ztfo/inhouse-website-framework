@@ -28,7 +28,7 @@ angular.module('ihframework')
         });
       });
     },
-    controller: ['$element', '$timeout', '$rootScope', '$scope', 'inhouseApi', 'userDataService', function($element, $timeout, $rootScope, $scope, inhouseApi, userDataService) {
+    controller: ['$element', '$timeout', '$rootScope', '$scope', 'inhouseApi', 'userDataService', 'ihLead', function($element, $timeout, $rootScope, $scope, inhouseApi, userDataService, ihLead) {
 
       $scope.story_type = $rootScope.theWebsiteData.story_type;
       $timeout(function() {
@@ -39,6 +39,9 @@ angular.module('ihframework')
         if($scope.contact == undefined) $scope.contact = {};
         $scope.contact.message = $scope.message;
       }
+
+      $scope.lead = ihLead;
+
       //don't load dynamic if the static is set
       if($scope.configname == undefined) {
         $scope.$watch('config', function(newVal) {

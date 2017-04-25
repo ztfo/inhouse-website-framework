@@ -21,6 +21,6 @@ section.s3.ih-featured-slider(class='{{classes}}')
                 small(ng-show='home.beds < 0') {{home.lotsize}} ACRES
                 .clear
                 span.fl-btn.btn.btn-primary(href='') View Listing
-              ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+              ih-like-button(listing="home")
       .row.text-center.ft-more-btn
         a.btn.btn-primary(ng-href='#/search-mls?{{viewMore}}') View More

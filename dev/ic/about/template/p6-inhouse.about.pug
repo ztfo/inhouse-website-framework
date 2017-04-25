@@ -1,23 +1,23 @@
 section.p6.ih-about.fw
-	div.container-fluid.flex-grid
-		div.agent-bio.flex-9
-			h1.ih-header {{agent.agentName}}
-			div.ih-sm-divider
-			div.bio.fs(ng-bind-html='agent.bio1 | to_trusted')
-			h3.text-uppercase connect
-			.about-social
-				a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
-					i.fa.fa-envelope
-				a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook', target='_blank')
-					i.fa.fa-facebook
-				a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin', target='_blank')
-					i.fa.fa-linkedin
-				a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter', target='_blank')
-					i.fa.fa-twitter
-				a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram', target='_blank')
-					i.fa.fa-instagram
-				a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest', target='_blank')
-					i.fa.fa-pinterest
-				a.btn.btn-primary(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
-		div.agent-image.flex-3
-			img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+  div.container-fluid.flex-grid
+    div.agent-bio.flex-9
+      h1.ih-header {{agent.agentName}}
+      div.ih-sm-divider
+      div.bio.fs(ng-bind-html='agent.bio1 | to_trusted')
+      h3.text-uppercase connect
+      .about-social
+        a.ih-social-icon.bkc-02(href='mailto:{{agent.contactEmail}}', ng-if='agent.contactEmail !== undefined', target='_blank')
+          i.fa.fa-envelope
+        a.ih-social-icon(href='{{agent.facebook}}', ng-if='agent.facebook', target='_blank')
+          i.fa.fa-facebook
+        a.ih-social-icon(href='{{agent.linkedin}}', ng-if='agent.linkedin', target='_blank')
+          i.fa.fa-linkedin
+        a.ih-social-icon(href='{{agent.twitter}}', ng-if='agent.twitter', target='_blank')
+          i.fa.fa-twitter
+        a.ih-social-icon(href='{{agent.instagram}}', ng-if='agent.instagram', target='_blank')
+          i.fa.fa-instagram
+        a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest', target='_blank')
+          i.fa.fa-pinterest
+        a.btn.btn-primary(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
+    div.agent-image.flex-3
+      img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')

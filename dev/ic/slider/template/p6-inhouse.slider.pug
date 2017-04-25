@@ -1,26 +1,26 @@
 section.p6.ih-slider.container-fluid.fp(class='{{classes}}')
-	.iha.afull.z3.fw
-		.ih.container.fullh
-			.inner-slider
-				h1 {{listing.Details.address}}
-				.home-facts
-					span {{listing.Details.beds}} Bedrooms&nbsp
-					span {{listing.Details.baths}} Baths&nbsp
-					span {{listing.Details.sqft | number}} {{listing.Details.sizeUnit}}&nbsp
-				.lead
-					strong {{listing.Details.price | currency:undefined:0}}
-				span.text-uppercase Presented by {{agent.team[0].name}} of {{agent.brokerage}}
-			.agent-image
-				img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
-	.ih-slider-row
-		.ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
-			.full.fade.in(
-				uib-carousel='',
-				active='active',
-				no-wrap='false',
-				no-pause='true')
-				div(
-					uib-slide='',
-					ng-repeat='slide in slides track by $index',
-					index='$index',
-					ng-style="{'background-image':'url(' + slide.large + ')'}")
+  .iha.afull.z3.fw
+    .ih.container.fullh
+      .inner-slider
+        h1 {{listing.Details.address}}
+        .home-facts
+          span {{listing.Details.beds}} Bedrooms&nbsp
+          span {{listing.Details.baths}} Baths&nbsp
+          span {{listing.Details.sqft | number}} {{listing.Details.sizeUnit}}&nbsp
+        .lead
+          strong {{listing.Details.price | currency:undefined:0}}
+        span.text-uppercase Presented by {{agent.team[0].name}} of {{agent.brokerage}}
+      .agent-image
+        img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+  .ih-slider-row
+    .ih-slider-inner.carousel-inner.carousel.slide.carousel-fade.full(data-ride='carousel')
+      .full.fade.in(
+        uib-carousel='',
+        active='active',
+        no-wrap='false',
+        no-pause='true')
+        div(
+          uib-slide='',
+          ng-repeat='slide in slides track by $index',
+          index='$index',
+          ng-style="{'background-image':'url(' + slide.large + ')'}")

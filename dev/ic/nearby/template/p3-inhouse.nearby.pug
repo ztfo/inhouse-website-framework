@@ -1,28 +1,28 @@
 section.p3.ih-nearby.flex-grid.fw
-	div.flex-4.nearby-list
-		div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
-			h2.ih-header Nearby Places
-			div.ih-sm-divider
-			h4.lead.text-uppercase {{source.name}}
-			div.inner-list
-				div.nearby-place.flex-grid(ng-repeat='place in source.data')
-					div.flex-3.nearby-icon
-						span.ih-icon-location3
-					div.flex-9
-						h5.text-uppercase {{place.name}}
-						div.g-rating(ng-if='place.rating')
-							| {{place.rating}}
-							i.fa.fa-star
-						div.g-rating(ng-if='!place.rating')
-							| No rating available
-						div.loc-address
-							| {{place.address}}
-							br
-							em {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
-	div.flex-8.map-box
-		ul.nav.nav-pills.nav-justified.nearby-tabs
-			li(ng-repeat='source in sources')
-				a.pointer(ng-click='selectTab($index)') {{source.name}}
-		map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
-			marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
-			marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")
+  div.flex-4.nearby-list
+    div.nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
+      h2.ih-header Nearby Places
+      div.ih-sm-divider
+      h4.lead.text-uppercase {{source.name}}
+      div.inner-list
+        div.nearby-place.flex-grid(ng-repeat='place in source.data')
+          div.flex-3.nearby-icon
+            span.ih-icon-location3
+          div.flex-9
+            h5.text-uppercase {{place.name}}
+            div.g-rating(ng-if='place.rating')
+              | {{place.rating}}
+              i.fa.fa-star
+            div.g-rating(ng-if='!place.rating')
+              | No rating available
+            div.loc-address
+              | {{place.address}}
+              br
+              em {{place.hours.open_now ? &apos;Open now!&apos; : &apos;Closed&apos;}}
+  div.flex-8.map-box
+    ul.nav.nav-pills.nav-justified.nearby-tabs
+      li(ng-repeat='source in sources')
+        a.pointer(ng-click='selectTab($index)') {{source.name}}
+    map(center='{{centerCoordinates}}', zoom='12', scrollwheel='false')
+      marker(ng-repeat='coord in markerCoordinates track by $index', position='{{coord}}')
+      marker(position="{{centerCoordinates}}", icon="https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png")

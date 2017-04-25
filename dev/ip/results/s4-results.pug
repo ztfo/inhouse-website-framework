@@ -2,7 +2,7 @@ section.ih-results.s4.s1
   .container
     //- results filter
     #mapResults.ihmap-results(ng-show='mapShown')
-      ih-listing-map.full
+      ih-listing-map.full(results="listigns")
     //- listing results - TODO filters need to be turned into directives
     .ih-results-inner
       .ih-listings-menu
@@ -82,7 +82,7 @@ section.ih-results.s4.s1
               .ih-listing-card-img(style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
                 a.ih-ft-listing-link.block.full(href='#/listing/{{home.mls}}')
                   | View Home
-                ih-like-button(mls='{{home.mls}}', address='{{address}}')
+                ih-like-button(listing="home")
               .ih-listing-card-desc.container-fluid
                 .ih-ft-listing-addr.text-center
                   h4 {{home.address}}

@@ -10,7 +10,7 @@ section.s1.ih-featured-slider(class="{{classes}}")
             img.fit-image(ng-src="{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}", alt='{{home.caption}}', ng='', itemprop='photo')
             a.ih-ft-listing-link.block.full(itemprop='url', href='#/listing/{{home.mls}}')
               | View Home
-            ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+            ih-like-button(listing="home")
           .ih-ft-listing-desc.container-fluid
             .ih-ft-listing-addr.text-center
               h4 {{home.address}}

@@ -1,40 +1,40 @@
 section#about.p4.ih-about-listing
-	.container-fluid
-		h2.ih-header About {{listing.Details.address}}
-		.row.text-center.listing-price
-			h3 {{listing.Details.price | currency:undefined:0}}
-		.row.fact-list
-			.fact-box.style1
-				.ih-icon.ih-icon-houses.fc-02
-				.fact-value.fc-01
-					| {{listing.Details.beds}}
-				.fact-label
-					| Bedrooms
-			.fact-box.style2
-				.ih-icon.ih-icon-bathtub.fc-02
-				.fact-value.fc-01
-					| {{listing.Details.baths}}
-				.fact-label
-					| Baths
-			.fact-box.style3
-				.ih-icon.ih-icon-house.fc-02
-				.fact-value.fc-01
-					| {{listing.Details.sqft | number}}
-				.fact-label
-					| {{listing.Details.sizeUnit}}
-			.fact-box.style4
-				.ih-icon.ih-icon-investment.fc-02
-				.fact-value.fc-01
-					| {{listing.Details.stories}}
-				.fact-label
-					| Stories
-			.fact-box.style5
-				.ih-icon.ih-icon-fence.fc-02
-				.fact-value.fc-01
-					| {{listing.Details.lotsize}}
-				.fact-label
-					| Acres
-		.row.remarks
-			p.columns.text-center {{data.cta || listing.Details.publicRemarks}}
-		.row.text-center
-			ih-schedule-visit(listing="listing")
+  .container-fluid
+    h2.ih-header About {{listing.Details.address}}
+    .row.text-center.listing-price
+      h3 {{listing.Details.price | currency:undefined:0}}
+    .row.fact-list
+      .fact-box.style1
+        .ih-icon.ih-icon-houses.fc-02
+        .fact-value.fc-01
+          | {{listing.Details.beds}}
+        .fact-label
+          | Bedrooms
+      .fact-box.style2
+        .ih-icon.ih-icon-bathtub.fc-02
+        .fact-value.fc-01
+          | {{listing.Details.baths}}
+        .fact-label
+          | Baths
+      .fact-box.style3
+        .ih-icon.ih-icon-house.fc-02
+        .fact-value.fc-01
+          | {{listing.Details.sqft | number}}
+        .fact-label
+          | {{listing.Details.sizeUnit}}
+      .fact-box.style4
+        .ih-icon.ih-icon-investment.fc-02
+        .fact-value.fc-01
+          | {{listing.Details.stories}}
+        .fact-label
+          | Stories
+      .fact-box.style5
+        .ih-icon.ih-icon-fence.fc-02
+        .fact-value.fc-01
+          | {{listing.Details.lotsize}}
+        .fact-label
+          | Acres
+    .row.remarks
+      p.columns.text-center {{data.cta || listing.Details.publicRemarks}}
+    .row.text-center
+      ih-schedule-visit(listing="listing")

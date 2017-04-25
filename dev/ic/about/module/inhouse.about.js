@@ -22,11 +22,11 @@ angular.module('ihframework')
 
       $scope.agent = $rootScope.theUserData;
       $scope.site = $rootScope.theWebsiteData;
-      
+
       $scope.$on('lenders clicked', function(event, args){
         $scope.lenderOnly = args.data;
       });
-      
+
       if($rootScope.theWebsiteData.lender !== undefined) {
         $scope.lender = $rootScope.theWebsiteData.lender;
       }

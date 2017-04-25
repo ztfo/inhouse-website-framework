@@ -1,5 +1,5 @@
-a.ih-like-btn(href='#', ng-click='likeButton($event)')
-  i.fa.fa-heart-o
-  i.fa.fa-heart
-  i.fa.fa-star-o
-  i.fa.fa-star
+a.ih-like-btn(ng-click='likeButton($event)' style="cursor:pointer")
+  i.fa.fa-heart-o(ng-if="style == 'heart' && !liked")
+  i.fa.fa-heart(ng-if="liked && style == 'heart'")
+  i.fa.fa-star-o(ng-if="style == 'star' && !liked")
+  i.fa.fa-star(ng-if="liked && style == 'star'")

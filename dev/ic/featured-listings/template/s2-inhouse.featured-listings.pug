@@ -18,6 +18,6 @@ section.s2.ih-featured-slider(class='{{classes}}')
                   | {{home.price | currency}}
                   span(ng-show='home.beds > 0')  | {{home.beds}} BEDS - {{home.baths}} BATHS
                 small(ng-show='home.beds < 0') {{home.acres}}
-              ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+              ih-like-button(listing="home")
       .row.text-center.ft-more-btn
         a.btn.btn-primary(ng-href='#/search-mls?{{viewMore}}') View More

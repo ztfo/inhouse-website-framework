@@ -13,7 +13,7 @@ section.s3.ih-listing
               img.img-responsive.ih-owl-thumbnail(ng-src='{{home.thumb}}', alt='{{home.caption}}')
       .col-xs-12.col-sm-12.col-md-4.col-lg-4.listing-details.bkc-02.fw
         header.ih
-          ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+          ih-like-button(listing="home")
           h3.nomar Price
           h1.nomar {{listing.Details.price | currency:"$":0}}
         .item-list

@@ -1,5 +1,5 @@
 angular.module('ihframework')
-.directive('ihTestimonials', ['inhouseApi', '$timeout', 'userData', function(inhouseApi, $timeout, userData) {
+.directive('ihTestimonials', ['inhouseApi', '$timeout', function(inhouseApi, $timeout) {
   return {
     template: '<ng-include src="templateUrl"></ng-include>',
     restrict: 'E',
@@ -12,7 +12,7 @@ angular.module('ihframework')
       responsive: '=',
       listing: '='
     },
-    controller: function($rootScope, $scope, $http, userDataService, userData, $element) {
+    controller: function($rootScope, $scope, $http, $element) {
       $scope.$watch('config', function(newVal) {
         if(newVal !== undefined) {
           $scope.templateUrl = 'build/templates/ic/testimonials/template/' + $scope.config + '-inhouse.testimonials.html';
@@ -20,7 +20,7 @@ angular.module('ihframework')
           $scope.templateUrl = 'build/templates/ic/testimonials/template/s1-inhouse.testimonials.html';
         }
       });
-      
+
       $scope.$watch('responsive', function(newVal) {
         if(newVal !== undefined) {
           $scope.responsive = newVal;
@@ -49,7 +49,7 @@ angular.module('ihframework')
         }
         return input;
       };
-      
+
       inhouseApi.newApi.getTestimonials().success(function(response) {
         $scope.testimonials = response.data;
       });

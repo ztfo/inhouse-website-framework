@@ -1,6 +1,6 @@
 section.s3.ih-results
   #map-results
-    ih-listing-map.full
+    ih-listing-map.full(results="listings")
   .listing-results
     .container
       .row.page-list
@@ -73,7 +73,7 @@ section.s3.ih-results
           |  Sorry, there are no listings that match your search criteria.
         article.ih-listing-block.container-fluid(class='ih-mls-status-{{home.status}}', ng-repeat='home in listings', ng-class="showListView ? 'ih-listview' : ''", ng-mouseover='focusListing($index)')
           .ih.property-img.col-lg-4.col-md-4.col-sm-6.col-xs-12.nopad
-            ih-like-button(mls='{{home.mls}}', address='{{home.address}}')
+            ih-like-button(listing="home")
             a.block.full.img-link(href='#/listing/{{home.mls}}', style="background-image: url('{{home.thumb || 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/images/noimage-placeholder.jpg'}}');")
           .property-data.col-lg-4.col-md-4.col-sm-6.col-xs-12
             header

@@ -57,8 +57,8 @@ gulp.task('scripts', function() {
       'dev/is/app.js',
       'dev/**/*.js'
     ]))
-    .pipe(concat('all.min.js'))
     .pipe(ngAnnotate())
+    .pipe(concat('all.min.js'))
     .pipe(gulp.dest('build/'));
 });
 

@@ -1,0 +1,51 @@
+div.modal-header.fp
+  button.close(ng-click="$close()")
+    span &times;
+  h2.modal-title.text-center(ng-hide="showRegister") Login
+  h2.modal-title.text-center(ng-show="showRegister") Register
+div.modal-body.fp
+  form(name='register', ng-submit='register.$valid && submitRegister(user)', ng-show='showRegister')
+    p.lead.text-center
+      | Create an account to save your favorite listings, searches, and continue to view properties.
+    p.lead.text-center
+      | Fill out the information below to create an account.
+    .form-group
+      label(for='messageName') Your Name
+      input#messageName.ih-form-input.form-control(type='name', required='', ng-model='user.name')
+    .form-group
+      label(for='emailAddress') Email Address
+      input#emailAddress.ih-form-input.form-control(type='email', required='', ng-model='user.email')
+      input.hidden(type='text', ng-model='contact.confirmEmail', name='confirmEmail')
+    .form-group
+      label(for='accountPassword') Phone Number
+      input#accountPassword.ih-form-input.form-control(type='text', required='', ng-model='user.phone', placeholder='This will be your password')
+    .text-center
+      button#inhouseAgentLeadCreate.btn.btn-default.inline-block(type='submit') Login
+  form(name='login', ng-submit='login.$valid && submitRegister(user)', ng-hide='showRegister')
+    h2.text-center
+      | Welcome back!
+    p.text-center
+      | Sign-in below.
+    .alert.alert-warning(ng-if="loginError") We didn't recognize your information. If you don't have an account yet, click
+      a(href='', ng-click="showRegister=true") here
+      | to register.
+    .form-group
+      label(for='emailAddress') Email Address
+      input#emailAddress.ih-form-input.form-control(type='email', required='', ng-model='user.email')
+      input.hidden(type='text', ng-model='contact.confirmEmail', name='confirmEmail')
+    .form-group
+      label(for='accountPassword') Phone Number
+      input#accountPassword.ih-form-input.form-control(type='text', required='', ng-model='user.phone')
+    .text-center
+      button#inhouseAgentLeadCreate.btn.btn-default.inline-block(type='submit') Login
+  p.text-center.reg-divider
+    small(ng-hide='showRegister') Don't have an account?
+    small(ng-show='showRegister') Already have an account?
+  .text-center.reg-btns
+    a(href='', ng-click='showRegister=false', ng-show='showRegister') Login
+    a(href='', ng-click='showRegister=true', ng-hide='showRegister') Register
+.modal-footer.fo.text-uppercase
+  p.text-center
+    small
+      | Your information is not sold to anyone. All your information is kept confidential.
+      a.block.privacy-link.clean-link(href='#/privacy', target='_blank') View Privacy Policy

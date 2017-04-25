@@ -1,141 +1,137 @@
 <!DOCTYPE html>
 <html ng-app="ihframework" ng-controller="mainView" prefix="og: http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope itemtype="http://schema.org/WebPage">
 <!-- PROPERTY OF INHOUSE MARKETING, INC. -->
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-		<title ng-model="windowTitle">title</title>
-		<link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="copyright" content="The programming and software materials herein are copyright of InHouse Marketing, Inc. (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited."/>
-		<!-- ui -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDBWvKLR4KXrh_O3nGJL3hF1wuZs0WgF-A&libraries=places"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap-tpls.min.js"></script>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="build/bundle.css" media="screen" title="no title" charset="utf-8">
-		<!-- fs -->
-		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
-		<link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
-	</ignore>
-	<!-- og -->
-	<link href="ua/css/ih-brand.css?{{microtime()}}" rel="stylesheet" type="text/css" />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title ng-model="windowTitle">title</title>
+    <link rel="icon" type="image/x-icon" href="ua/images/favicon.ico" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="copyright" content="The programming and software materials herein are copyright of InHouse Real Estate Marketing (InHouse). The programming and software materials are owned, held, or licensed by InHouse. Personal, educational, non-commercial, commercial or any other use of these materials, without the written permission of InHouse, is strictly prohibited."/>
+    <!-- ui -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="build/bundle.css" media="screen" title="no title" charset="utf-8">
+    <!-- fs -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
+    <script>
+    window.inhouseApiUrl = "http://localhost:8000";
+    </script>
+  </ignore>
+  <!-- og -->
+  <link href="ua/css/ih-brand.css?{{microtime()}}" rel="stylesheet" type="text/css" />
+  </head>
 
-	<body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
+  <body class="{{story.bodyClasses}}" itemscope itemtype="http://schema.org/RealEstateAgent">
 
-		<ih-navbar></ih-navbar>
-		<div class="ih-view-container">
-			<div ng-view autoscroll="true" class="" id='main-view'></div>
-		</div>
-		<ih-footer></ih-footer>
+    <ih-navbar></ih-navbar>
+    <div class="ih-view-container">
+      <div ng-view autoscroll="true" class="" id='main-view'></div>
+    </div>
+    <ih-footer></ih-footer>
 
-		<a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a href="#" class="ih-scroll-up"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-		<div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content fp">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title text-center" id="accountLabel" ng-hide="showRegister">Login</h2>
-						<h2 class="modal-title text-center" id="accountLabel" ng-show="showRegister">Register</h2>
-					</div>
-					<div class="modal-body fs">
-						<form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
-							<p class="lead text-center">
-								Create an account to save your favorite listings, searches, and continue to view properties.
-							</p>
-							<p class="lead text-center">
-								Fill out the information below to create an account.
-							</p>
-							<div class="form-group">
-								<label for="messageName">Your Name</label>
-								<input type="name" class="ih-form-input form-control" id="messageName" required ng-model="name">
-							</div>
-							<div class="form-group">
-								<label for="emailAddress">Email Address</label>
-								<input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="email">
-								<input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
-							</div>
-							<div class="form-group">
-								<label for="accountPassword">Phone Number</label>
-								<input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="phone" placeholder="This will be your password">
-							</div>
-							<div class="text-center">
-								<button type="submit" class="btn btn-default inline-block" id="inhouseAgentLeadCreate">Login</button>
-							</div>
-						</form>
-						<form name="login" ng-submit="login.$valid && submitLogin()" ng-hide="showRegister">
-							<h2 class="text-center">
-								Welcome back!
-							</h2>
-							<p class="text-center">
-								Sign-in below.
-							</p>
-							<div class="form-group">
-								<label for="emailAddress">Email Address</label>
-								<input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="email">
-								<input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
-							</div>
-							<div class="form-group">
-								<label for="accountPassword">Phone Number</label>
-								<input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="phone">
-							</div>
-							<div class="text-center">
-								<button type="submit" class="btn btn-default inline-block" id="inhouseAgentLeadCreate">Login</button>
-							</div>
-						</form>
-						<p class="text-center reg-divider">
-							<small ng-hide="showRegister">Don't have an account?</small>
-							<small ng-show="showRegister">Already have an account?</small>
-						</p>
-						<div class="text-center reg-btns">
-							<a href="" ng-click="showRegister=false" ng-show="showRegister">Login</a>
-							<a href="" ng-click="showRegister=true" ng-hide="showRegister">Register</a>
-						</div>
-					</div>
-					<div class="modal-footer fo text-uppercase">
-						<p class="text-center">
-							<small>
-								Your information is not sold to anyone. All your information is kept confidential.
-								<a href="#/privacy" class="block privacy-link clean-link" target="_blank">View Privacy Policy</a>
-							</small>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="modal fade account-modal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content fp">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title text-center" id="accountLabel" ng-hide="showRegister">Login</h2>
+            <h2 class="modal-title text-center" id="accountLabel" ng-show="showRegister">Register</h2>
+          </div>
+          <div class="modal-body fs">
+            <form name="register" ng-submit="register.$valid && submitRegister()" ng-show="showRegister">
+              <p class="lead text-center">
+                Create an account to save your favorite listings, searches, and continue to view properties.
+              </p>
+              <p class="lead text-center">
+                Fill out the information below to create an account.
+              </p>
+              <div class="form-group">
+                <label for="messageName">Your Name</label>
+                <input type="name" class="ih-form-input form-control" id="messageName" required ng-model="name">
+              </div>
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="email">
+                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+              </div>
+              <div class="form-group">
+                <label for="accountPassword">Phone Number</label>
+                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="phone" placeholder="This will be your password">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-default inline-block" id="inhouseAgentLeadCreate">Login</button>
+              </div>
+            </form>
+            <form name="login" ng-submit="login.$valid && submitLogin()" ng-hide="showRegister">
+              <h2 class="text-center">
+                Welcome back!
+              </h2>
+              <p class="text-center">
+                Sign-in below.
+              </p>
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" class="ih-form-input form-control" id="emailAddress" required ng-model="email">
+                <input type="text" class="hidden" ng-model="contact.confirmEmail" name="confirmEmail">
+              </div>
+              <div class="form-group">
+                <label for="accountPassword">Phone Number</label>
+                <input type="text" class="ih-form-input form-control" id="accountPassword" required ng-model="phone">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-default inline-block" id="inhouseAgentLeadCreate">Login</button>
+              </div>
+            </form>
+            <p class="text-center reg-divider">
+              <small ng-hide="showRegister">Don't have an account?</small>
+              <small ng-show="showRegister">Already have an account?</small>
+            </p>
+            <div class="text-center reg-btns">
+              <a href="" ng-click="showRegister=false" ng-show="showRegister">Login</a>
+              <a href="" ng-click="showRegister=true" ng-hide="showRegister">Register</a>
+            </div>
+          </div>
+          <div class="modal-footer fo text-uppercase">
+            <p class="text-center">
+              <small>
+                Your information is not sold to anyone. All your information is kept confidential.
+                <a href="#/privacy" class="block privacy-link clean-link" target="_blank">View Privacy Policy</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- ia -->
-		<script src="build/vendor.min.js" charset="utf-8"></script>
-		<script src="build/templates.js" charset="utf-8"></script>
-		<script src="build/all.min.js" charset="utf-8"></script>
-		<script src="ua/data/user-service.js"></script>
-		<script src="https://checkout.stripe.com/checkout.js"></script>
-		<script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
-		<!-- fb/ga -->
-		<ih-analytics></ih-analytics>
-	</body>
-	<!-- (c) 2016 - All Rights Reserved - InHouse Marketing, Inc. -->
+    <!-- ia -->
+    <script src="build/vendor.min.js" charset="utf-8"></script>
+    <script src="build/templates.js" charset="utf-8"></script>
+    <script src="build/all.min.js" charset="utf-8"></script>
+    <script src="ua/data/user-service.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://cdn.getinhouse.io/js/smoothscroll.js"></script>
+    <!-- fb/ga -->
+    <ih-analytics></ih-analytics>
+  </body>
+  <!-- (c) 2016 - All Rights Reserved - InHouse Marketing, Inc. -->
 </html>
