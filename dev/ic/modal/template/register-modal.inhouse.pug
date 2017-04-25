@@ -1,9 +1,9 @@
-div.modal-header
+div.modal-header.fp
   button.close(ng-click="$close()")
     span &times;
-    h2.modal-title.text-center(ng-hide="showRegister") Login
-    h2.modal-title.text-center(ng-show="showRegister") Register
-div.modal-body
+  h2.modal-title.text-center(ng-hide="showRegister") Login
+  h2.modal-title.text-center(ng-show="showRegister") Register
+div.modal-body.fp
   form(name='register', ng-submit='register.$valid && submitRegister(user)', ng-show='showRegister')
     p.lead.text-center
       | Create an account to save your favorite listings, searches, and continue to view properties.
