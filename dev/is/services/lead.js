@@ -137,7 +137,8 @@ angular.module('ihframework')
 
       this.modalInstance = $uibModal.open({
         templateUrl: 'build/templates/ic/modal/template/register-modal.inhouse.html',
-        controller: modalController
+        controller: modalController,
+        windowClass: 'account-modal'
       });
 
       this.modalInstance.result.then(callback, rejected);
