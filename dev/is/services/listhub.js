@@ -69,7 +69,7 @@ angular.module('ihframework')
       }
 
       if($window.lh) {
-        lh(e, data);
+        lh('submit', e, data);
       }
     }
   };
