@@ -62,15 +62,15 @@ angular.module('ihframework')
     set views(value) {
       return _.set(localStorage, 'inhouseViewedListings', JSON.stringify(value));
     },
-    likesListing(listing) {
+    likesListing: function(listing) {
       return _.indexOf(this.likes, listing) !== -1;
     },
-    likeListing(listing) {
+    likeListing: function(listing) {
       var likes = this.likes;
       likes.push(listing);
       this.likes = likes;
     },
-    viewListing(listing, callback) {
+    viewListing: function(listing, callback) {
       if(_.indexOf(this.views, listing) < 0) {
         var views = this.views;
         views.push(listing);
@@ -97,7 +97,7 @@ angular.module('ihframework')
     set searchCount(value) {
       _.set(localStorage, 'inhouseSearchCount', value);
     },
-    searchMls(callback, maxSearches) {
+    searchMls: function(callback, maxSearches) {
       if(!maxSearches) {
         maxSearches = 6;
       }
