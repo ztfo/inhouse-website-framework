@@ -49,6 +49,9 @@ angular.module('ihframework')
     get details() {
       return this.listingData;
     },
+    get listingUrl() {
+      return _.get(this, 'listingData.Details.url');
+    },
     get address() {
       return _.get(this, 'listingData.Details.address');
     },
