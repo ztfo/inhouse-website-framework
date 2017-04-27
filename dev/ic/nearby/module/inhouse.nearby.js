@@ -9,7 +9,7 @@ angular.module('ihframework')
     },
     template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
     restrict: 'E',
-    controller: function($rootScope, $scope, NgMap, $http, userData, ngGPlacesAPI, $timeout) {
+    controller: function($rootScope, $scope, NgMap, $http, ngGPlacesAPI, $timeout) {
       $scope.$watch('config', function(newVal) {
         if(newVal == undefined) {
           $scope.templateUrl = 'build/templates/ic/nearby/template/p1-inhouse.nearby.html';
