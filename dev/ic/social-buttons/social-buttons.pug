@@ -1,7 +1,7 @@
 .share-btns
   strong
     span.text-muted.text-uppercase Share on:
-  a.ih-social-icon(ng-if="listingUrl", href="{{listignUrl}}", target="_blank")
+  a.ih-social-icon(ng-if="listingUrl", href="{{listingUrl}}", target="_blank")
     i.fa.fa-external-link
   a.ih-social-icon(href='https://www.facebook.com/sharer/sharer.php?u={{shareUrl|encode}}', target='_blank', ng-click="shared('FACEBOOK')")
     i.fa.fa-facebook

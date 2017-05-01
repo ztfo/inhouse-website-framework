@@ -49,7 +49,7 @@ angular.module('ihframework')
     get details() {
       return this.listingData;
     },
-    get listingUrl() {
+    get url() {
       return _.get(this, 'listingData.Details.url');
     },
     get address() {

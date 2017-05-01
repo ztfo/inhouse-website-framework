@@ -10,7 +10,11 @@ angular.module('ihframework')
     controller: ['$scope', 'listhub', function($scope, listhub) {
       $scope.shareUrl = "https://app.getinhouse.io/user/" + $scope.user.userId, + '/share-listing/' + $scope.mls;
 
-      $scope.listingUrl = listing.listingUrl;
+      $scope.$watch('listing.url', function(newVal) {
+        if(newVal) {
+          $scope.listingUrl = $scope.listing.url;
+        }
+      });
 
       $scope.shared = function(source) {
         listhub.listingShared($scope.mls, source);

@@ -27,8 +27,8 @@ angular.module('ihframework')
         'documents',
         'sizeUnit',
         'agentAddress',
-        'agentAssociation',
-        'mlsAssociation'
+        'url',
+        'agentId',
       ];
 
       $scope.showingTab = 0;
@@ -61,6 +61,11 @@ angular.module('ihframework')
         community: 'Community',
         brokerage: 'Brokerage',
         mlsAssociation: 'MLS Association',
+        office: 'List Office',
+        agentWebsite: 'List Agent Website',
+        agentCity: 'List Agent City',
+        agentAssociation: 'Agent Association',
+        agentState: 'List Agent State',
         agentName: 'List Agent Name',
         agentPhone: 'List Agent Phone',
         agentEmail: 'List Agent Email',
