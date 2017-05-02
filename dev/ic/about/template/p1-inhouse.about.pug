@@ -5,7 +5,7 @@ section.p1.ih-about.container-fluid.fp
     .ih-about-inner.row
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.nopad-l
         a.text-center.agent-pic-link(href='{{agent.website}}')
-          img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+          img.img-circle.img-responsive.full(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
       .ih-about-text.col-lg-8.col-md-8.col-sm-12.col-xs-12
         h2.ih.fc-01
           span(itemprop='name') {{agent.agentName}}
@@ -23,7 +23,7 @@ section.p1.ih-about.container-fluid.fp
             a.ih-social-icon(href='{{agent.pinterest}}', ng-if='agent.pinterest', target='_blank')
               i.fa.fa-pinterest
         h4.text-muted.fs
-          strong {{agent.designations}} | {{agent.teamName}} - {{agent.brokerage}}
+          strong {{agent.brokerage}}
         .bio.fs(itemprop='description', ng-bind-html='agent.bio1 | to_trusted')
         p.fp
           strong

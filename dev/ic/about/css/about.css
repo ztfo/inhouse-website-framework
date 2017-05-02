@@ -312,10 +312,6 @@
     padding: 75px 0;
 }
 
-.p1.ih-about {
-    background-color: #f5f5f5;
-}
-
 .p1.ih-about .img-circle {
     border: 10px solid #fff;
 }
@@ -331,26 +327,54 @@
 }
 
 .p1.ih-about .ih-social-icon {
-    width: 25px;
-    height: 25px;
+  width: 40px;
+    height: 40px;
     display: inline-block;
     text-align: center;
-    line-height: 25px;
+    line-height: 40px;
     border-radius: 50%;
-    background-color: #3277b2;
+    background-color: #2ba8de;
     margin: 0 5px;
+    font-size: 1.5em;
 }
 
 .p1.ih-about .bio {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 25px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding: 15px 0;
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .p1.ih-about h4 {
     font-size: 16px;
 }
 
+.p1.ih-about .ih-sm-icon {
+  font-size: 1.5em;
+  min-width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  margin-right: 15px;
+  color: #2ba8de;
+  text-align: center;
+}
+
+/* l1 */
+
+.l1.ih-about .about-social {
+  float: none;
+}
+
+.l1.ih-about .ih-sm-icon {
+  margin-right: 0;
+  margin-left: 15px;
+  border-right: 0;
+  border-left: 1px solid #ddd;
+}
 
 /* p2 */
 

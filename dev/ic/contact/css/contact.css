@@ -118,6 +118,15 @@
     border-right: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+.p1.ih-contact .field label {
+  color: #fff;
+  text-align: left;
+  display: block;
+  clear: both;
+  width: 100%;
+  font-size: 11px;
+}
+
 
 /* responsive */
 

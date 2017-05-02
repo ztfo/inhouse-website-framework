@@ -1,4 +1,3 @@
-//- TODO NEEDS WORK - not implemented
 section.p1.l1.ih-lender.ih-about.container-fluid.fp
   .container
     .row
@@ -7,33 +6,31 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp
       .col-lg-8.col-md-8.col-sm-12.col-xs-12.lender-info.text-right
         h2.ih.fc-01
           span(itemprop='name') {{lender.name}}
-          .about-social
-            a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
-              i.fa.fa-envelope
-            a.ih-social-icon.bkc-02(href='{{lender.facebook}}', ng-if='lender.facebook !== undefined', target='_blank')
-              i.fa.fa-facebook
-            a.ih-social-icon.bkc-02(href='{{lender.linkedin}}', ng-if='lender.linkedin !== undefined', target='_blank')
-              i.fa.fa-linkedin
-            a.ih-social-icon.bkc-02(href='{{lender.twitter}}', ng-if='lender.twitter !== undefined', target='_blank')
-              i.fa.fa-twitter
-            a.ih-social-icon.bkc-02(href='{{lender.instagram}}', ng-if='lender.instagram !== undefined', target='_blank')
-              i.fa.fa-instagram
-            a.ih-social-icon.bkc-02(href='{{lender.pinterest}}', ng-if='lender.pinterest !== undefined', target='_blank')
-              i.fa.fa-pinterest
         h4.text-muted
-          strong
-            | {{lender.title}} | {{lender.teamName}} {{lender.brokerage}}
+          strong {{lender.brokerage}}
         .text-justify.bio(itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
+        .about-social.block
+          a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
+            i.fa.fa-envelope
+          a.ih-social-icon.bkc-02(href='{{lender.facebook}}', ng-if='lender.facebook !== undefined', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon.bkc-02(href='{{lender.linkedin}}', ng-if='lender.linkedin !== undefined', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon.bkc-02(href='{{lender.twitter}}', ng-if='lender.twitter !== undefined', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon.bkc-02(href='{{lender.instagram}}', ng-if='lender.instagram !== undefined', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon.bkc-02(href='{{lender.pinterest}}', ng-if='lender.pinterest !== undefined', target='_blank')
+            i.fa.fa-pinterest
         p.fp
           strong
             small.text-uppercase.text-muted
               a.clean-link(href='mailto:{{lender.contactEmail}}') {{lender.contactEmail}}
               span.ih-icon.ih-sm-icon.ih-icon-house-mailbox
               br
-              a.clean-link(href='tel:{{lender.contactPhone | tel}}') {{lender.contactPhone | tel}}
+              a.clean-link(href='tel:{{lender.contactPhone}}') {{lender.contactPhone | tel}}
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
-        a.btn.btn-default(href='#/') Contact Me
+        a.btn.btn-default(href='{{lender.contactEmail}}') Contact Me
         a.btn.btn-primary(href='{{lender.meta.applyLink}}') Apply Today
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.lender-picture
-        img.img-circle.img-responsive(src="{{lender.avatar}}", alt="{{lender.name}}")
-
+        img.img-circle.img-responsive.full(src="{{lender.avatar}}", alt="{{lender.name}}")
