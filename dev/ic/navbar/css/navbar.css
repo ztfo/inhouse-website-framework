@@ -161,9 +161,6 @@
 .p2.ih-nav .navbar-brand>img {
     max-width: 250px;
 }
-.p2.ih-nav .navbar-nav {
-    margin: 10px 0;
-}
 
 .p2.ih-nav .ih-social-icon {
     display: inline-block;
@@ -173,6 +170,7 @@
 }
 
 .p2.ih-nav .ih-cta {
+    background-color: rgba(255,255,255,0.1);
     padding: 0;
 }
 

@@ -1,4 +1,3 @@
-//- TODO NEEDS WORK - not implemented
 section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}')
   .about-row.container
     .row
@@ -6,7 +5,7 @@ section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}')
     .row
       .col-lg-4.col-md-4.col-sm-12.col-xs-12
         div
-          img.img-square.inlineblock(ng-src='{{lender.team[0].photo}}', alt='{{lender.team[0].name}}')
+          img.img-circle.img-responsive.full(src="{{lender.avatar}}", alt="{{lender.name}}")
         .about-social.text-muted
           a.ih-social-icon(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
             i.fa.fa-envelope
@@ -22,9 +21,9 @@ section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}')
             i.fa.fa-pinterest
       .col-lg-8.col-md-8.col-sm-12.col-xs-12
         .lender-box
-          h2.inlinblock.fc-01 {{lender.lenderName}}
+          h2.inlinblock.fc-01 {{lender.name}}
           h5.inlineblock.text-muted
-            em {{lender.title}} | {{lender.designations}}
+            strong {{lender.brokerage}}
           .bio.fs(itemprop='description', ng-bind-html="lender.bio1 | to_trusted")
         .contact-info.container-fluid
           .row
@@ -40,5 +39,5 @@ section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}')
                 small.text-muted.text-uppercase email
                 br
                 |  {{lender.contactEmail}}
-        a.btn.btn-default(href='#/') Contact Me
-        a.btn.btn-primary(href='#/') Apply Today
+        a.btn.btn-default(href='mailto:{{lender.contactEmail}}') Contact Me
+        a.btn.btn-primary(href='{{lender.meta.applyLink}}') Apply Today

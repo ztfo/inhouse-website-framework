@@ -30,7 +30,7 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp
               br
               a.clean-link(href='tel:{{lender.contactPhone}}') {{lender.contactPhone | tel}}
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
-        a.btn.btn-default(href='{{lender.contactEmail}}') Contact Me
+        a.btn.btn-default(href='mailto:{{lender.contactEmail}}') Contact Me
         a.btn.btn-primary(href='{{lender.meta.applyLink}}') Apply Today
       .col-lg-4.col-md-4.col-sm-12.col-xs-12.lender-picture
         img.img-circle.img-responsive.full(src="{{lender.avatar}}", alt="{{lender.name}}")
