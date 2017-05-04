@@ -32,19 +32,27 @@ angular.module('ihframework').directive('ihPhotoSlider', function(){
       };
 
       $scope.showLightBox = function(index) {
-        var listing = $scope.listing.Details.photos;
-
-        var photos = [];
-        var i = 0;
-        listing.map(function(listing) {
-          photos[i] = listing.large;
-          i++;
-        });
-
-        var firstHalf = photos.slice().slice(0, index - 1);
-        var secondHalf = photos.slice().slice(index);
-
+        var firstHalf = $scope.lightBox.slice().slice(0, index - 1);
+        var secondHalf = $scope.lightBox.slice().slice(index);
+        
         UIkit.lightbox.create(secondHalf.concat(firstHalf)).show();
+      };
+
+      $scope.$watch('listing.Details.photos', function(newVal) {
+        if(newVal) {
+          $scope.prepLightBox();
+        }
+      });
+
+      $scope.prepLightBox = function() {
+        _.each($scope.listing.Details.photos, function(photo, index) {
+          _.set($scope, 'lightBox[' + index + ']', {
+            'index': index,
+            'source' : photo.large,
+            'type' : 'image',
+            'caption' : photo.caption
+          });
+        });
       };
 
       $scope.loadOwl = function() {
