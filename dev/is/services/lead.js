@@ -113,7 +113,7 @@ angular.module('ihframework')
       }
     },
     capture: function(callback) {
-      if($rootScope.disableLeadSignup || this.id) {
+      if($rootScope.theWebsiteData.disableLeadSignup || this.id) {
         if(callback) {
           callback();
         }
