@@ -13,9 +13,9 @@
 .ih-listing-table.mobile-details.hidden-lg.hidden-md.hidden-sm
     div(ng-repeat="(category, data) in listing.details")
       h3 {{category}}
-        table.table.table-responsive.table-stripped.table-hover
-          tr(ng-repeat="(key, value) in data" ng-if="show(key)" style="padding:10px")
-            th
-              small.text-muted {{format[key] === undefined ? key : format[key]}}
-            th
-              small.text-muted {{value}}
+      table.table.table-responsive.table-stripped.table-hover
+        tr(ng-repeat="(key, value) in data" ng-if="show(key)" style="padding:10px")
+          th
+            small.text-muted {{format[key] === undefined ? key : format[key]}}
+          th
+            small.text-muted {{value}}
