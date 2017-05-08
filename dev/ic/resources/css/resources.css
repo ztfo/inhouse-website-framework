@@ -77,11 +77,11 @@
   margin-top: 0;
 }
 
-.s11.ih-resources .post-block.featured, .s11.ih-resources .post-block.slim-featured {
+.s11.ih-resources .featured .post-block, .s11.ih-resources .slim-featured .post-block {
   min-height: 420px;
 }
 
-.post-block.split-featured {
+.split-featured .post-block {
   min-height: 197px;
   margin-bottom: 25px;
 }
