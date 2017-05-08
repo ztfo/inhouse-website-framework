@@ -1,6 +1,6 @@
 section.s7.ih-about(class='{{classes}}')
   .about-frame
-    h1.ih-header.text-center About Me
+    h1.ih-header.text-center {{ !title ? "About": title }}
     .about-inner
       .about-img.text-center
         img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')

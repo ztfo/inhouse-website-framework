@@ -3,7 +3,8 @@ angular.module('ihframework')
   return {
     scope: {
       classes: "@classes",
-      config: '='
+      config: '=',
+      title: '='
     },
     template: '<ng-include src="templateUrl" class="{{classes}}"><ng-include>',
     restrict: 'E',

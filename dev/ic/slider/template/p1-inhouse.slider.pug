@@ -11,13 +11,13 @@ section.p1.ih-slider.container-fluid.fp
             h1.text-uppercase.fs {{listing.Details.address}}, {{listing.Details.city}} {{listing.Details.zip}}
             .home-facts
               span.fact
-                | {{listing.Details.beds}}
+                | {{listing.Details.beds}} &nbsp;
                 small.text-uppercase Bedrooms
               span.fact
-                | {{listing.Details.baths}}
+                | {{listing.Details.baths}} &nbsp;
                 small.text-uppercase Baths
               span.fact
-                | {{listing.Details.sqft | number}}
+                | {{listing.Details.sqft | number}} &nbsp;
                 small.text-uppercase {{listing.Details.sizeUnit}}
           .col-lg-5.col-md-5.col-sm-5.col-xs-5.fullh.bkc-02.fw.banner-box
             h1 {{listing.Details.price | currency:undefined:0}}
