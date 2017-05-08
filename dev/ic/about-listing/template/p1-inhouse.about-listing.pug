@@ -31,17 +31,17 @@ section.p1.ih-about-listing.container-fluid.fp
             | {{listing.Details.sizeUnit}}
       .col-lg-15.col-md-15.col-sm-6.col-sm-12
         .fact-box
-          .ih-icon.ih-icon-investment.fc-02
+          .ih-icon.ih-icon-duplex.fc-02
           .fact-value.fc-01
             | {{listing.Details.stories}}
           .fact-label
             | Stories
       .col-lg-15.col-md-15.col-sm-12.col-sm-12
         .fact-box
-          .ih-icon.ih-icon-fence.fc-02
+          .ih-icon.ih-icon-crane.fc-02
           .fact-value.fc-01
-            | {{listing.Details.type}}
+            | {{listing.Details.yearBuilt}}
           .fact-label
-            | type
+            | Year Built
     .row.text-center.btn-row
       ih-schedule-visit(listing="listing")
