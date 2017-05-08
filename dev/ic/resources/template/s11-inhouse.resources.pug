@@ -1,29 +1,15 @@
 section.s11.ih-resources(class='{{classes}}')
   h1.ih-header.text-center Tucson Living at it's Finest
-  p.lead.text-center.col-md-6.col-md-offset-3 {{agent.bio2}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nibh tortor, aliquet hendrerit lorem non, fringilla eleifend eros. Suspendisse sodales ut sem quis consectetur. Suspendisse finibus felis ac felis varius tincidunt. Aenean luctus nunc velit, id volutpat metus fringilla id.
+  p.lead.text-center.col-md-6.col-md-offset-3(itemprop='description', ng-bind-html='agent.bio | to_trusted')
   .container
     .col-lg-6.col-md-6.col-sm-12.col-xs-12
-      .post-block.featured
-        .post-caption
-          h1 Post Title Here
-          p lorem ipsum and tacos and stuff and yea and whatever
-            a.read-more read more
+      ih-resource-block(resource="resources[0]")
     .col-lg-3.col-md-3.col-sm-12.col-xs-12
-      .post-block.slim-featured
-        .post-caption
-          h2 Post Title Here
+      ih-resource-block(resource="resources[1]")
     .col-lg-3.col-md-3.col-sm-12.col-xs-12
       .row-50
-        .post-block.split-featured
-          .post-caption
-            h3 Post Title Here
-            p lorem ipsum and tacos and stuff and yea and whatever
-              a.read-more read more
+        ih-resource-block(resource="resources[2]")
       .row-50
-        .post-block.split-featured
-          .post-caption
-            h3 Post Title Here
-            p lorem ipsum and tacos and stuff and yea and whatever
-              a.read-more read more
+        ih-resource-block(resource="resources[3]")
   .container.text-center
     a.btn.btn-primary(href="{{agent.blogLink}}") view more
