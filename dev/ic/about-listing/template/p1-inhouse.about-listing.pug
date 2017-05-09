@@ -28,7 +28,7 @@ section.p1.ih-about-listing.container-fluid.fp
           .fact-value.fc-01
             | {{listing.Details.sqft | number}}
           .fact-label
-            | {{listing.Details.sizeUnit}}
+            | {{listing.Details.sizeUnit ? listing.Details.sizeUnit : "Sqft"}}
       .col-lg-15.col-md-15.col-sm-6.col-sm-12
         .fact-box
           .ih-icon.ih-icon-duplex.fc-02
