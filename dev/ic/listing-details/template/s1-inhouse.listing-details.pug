@@ -5,7 +5,7 @@
         small {{category}}
   div(ng-repeat="(category, data) in listing.details track by category" ng-show="showingTab == $index")
     div.flex-grid
-      div.flex-3(ng-repeat="(key, value) in data" ng-if="show(key) && value" style="padding:10px")
+      div.flex-3(ng-repeat="(key, value) in data track by $index" ng-if="show(key) && value" style="padding:10px")
         strong(style="margin-right:10px;")
           small.text-muted {{format[key] === undefined ? key : format[key]}}
         small.text-muted {{value}}
