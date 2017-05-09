@@ -26,6 +26,15 @@ angular.module('ihframework')
       }
     }
   })
+  .filter('onlyNumeric', function() {
+    return function(str) {
+      if(typeof str == 'string') {
+        return str.replace(/[^0-9]/g, '');
+      }
+
+      return str;
+    };
+  })
   .filter('tel', function() {
     return function(tel) {
       if (!tel) {
@@ -120,7 +129,7 @@ angular.module('ihframework')
           i = 0;
         }
       }
-      
+
       return r;
     };
   })
