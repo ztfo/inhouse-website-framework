@@ -1,9 +1,9 @@
 .ih-listing-table.hidden-xs
   ul.nav.nav-tabs
-    li(ng-repeat="(category, data) in listing.details" ng-class="{'active':showingTab == $index}" ng-click="showTab($index)")
+    li(ng-repeat="(category, data) in listing.details track by category" ng-class="{'active':showingTab == $index}" ng-click="showTab($index)")
       a(href='')
         small {{category}}
-  div(ng-repeat="(category, data) in listing.details" ng-show="showingTab == $index")
+  div(ng-repeat="(category, data) in listing.details track by category" ng-show="showingTab == $index")
     div.flex-grid
       div.flex-3(ng-repeat="(key, value) in data" ng-if="show(key) && value" style="padding:10px")
         strong(style="margin-right:10px;")
@@ -11,10 +11,10 @@
         small.text-muted {{value}}
 //- mobile
 .ih-listing-table.mobile-details.hidden-lg.hidden-md.hidden-sm
-    div(ng-repeat="(category, data) in listing.details")
+    div(ng-repeat="(category, data) in listing.details track by category")
       h3 {{category}}
       table.table.table-responsive.table-stripped.table-hover
-        tr(ng-repeat="(key, value) in data" ng-if="show(key)" style="padding:10px")
+        tr(ng-repeat="(key, value) in data track by key" ng-if="show(key)" style="padding:10px")
           th
             small.text-muted {{format[key] === undefined ? key : format[key]}}
           th
