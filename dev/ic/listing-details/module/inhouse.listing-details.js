@@ -70,7 +70,8 @@ angular.module('ihframework')
         agentPhone: 'List Agent Phone',
         agentEmail: 'List Agent Email',
         lotsize: 'Lot Acres',
-        psf: 'Price/SQFT'
+        psf: 'Price/SQFT',
+        listOfficePhone: 'Brokerage Phone'
       };
     },
   };
