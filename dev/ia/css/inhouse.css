@@ -326,12 +326,6 @@ a:focus { text-decoration: none; color: inherit; }
 }
 /* 5-column ends */
 
-@media screen and (max-width: 1050px) {
-  .flex-grid {
-    display: -webkit-box !important;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .container-sm {
     width: 100% !important;
