@@ -52,6 +52,9 @@ angular.module('ihframework')
 
   $scope.searchTab = 'find';
 
+  $scope.filterCollapse = _.get($rootScope, 'theWebsiteData.filterCollapse');
+
+
   $scope.toggleSearchTabs = function(tab){
     $scope.searchTab = tab;
   };

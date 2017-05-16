@@ -13,7 +13,7 @@ section.s2.ih-results
             a.btn.btn-primary.ih-adv-toggle(role='button', data-toggle='collapse', href='#searchFilters', aria-expanded='false', aria-controls='searchFilters', onclick='event.preventDefault()')
               i.fa.fa-filter
               |  More Filters
-        #searchFilters.ih-advanced-filters.collapse.in.container-fluid.fs
+        #searchFilters(ng-class="[filterCollapse ? 'in' : '']").ih-advanced-filters.collapse.container-fluid.fs
           .row
             .ih-input-box.col-lg-6.col-md-6.col-sm-4.col-xs-12
               input.ih-search-input.full(type='text', placeholder='Address', name='propertyAddress', ng-model='filters.address')
