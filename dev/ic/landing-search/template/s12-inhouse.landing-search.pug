@@ -3,32 +3,23 @@ section.ih-search.s12.s6.container
     .col-lg-3.col-md-4.col-sm-12.col-xs-12.search-toggle
       ul.search-toggle-btns.text-uppercase
         li
-          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('find')")
-            span.ih-ui-icon.ih-ui-search
-            |  {{LandingComponent.buyAHomeText}}
-          a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/search-mls?active')
+          a.toggle-btn.pointer(href='{{LandingComponent.buyLink}}')
             span.ih-ui-icon.ih-ui-search
             |  {{LandingComponent.buyAHomeText}}
         li
-          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('list')")
-            span.ih-ui-icon.ih-ui-home
-            |  {{LandingComponent.sellAHomeText}}
-          a.toggle-btn.pointer.hidden-lg.hidden-md(href='#/sell')
+          a.toggle-btn.pointer(href='{{LandingComponent.sellLink}}')
             span.ih-ui-icon.ih-ui-home
             |  {{LandingComponent.sellAHomeText}}
         li
-          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('contact')")
+          a.toggle-btn.pointer(href='{{LandingComponent.adviceLink}}')
             span.ih-ui-icon.ih-ui-mail
             |  {{LandingComponent.adviceText}}
-          a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/contact')
-            span.ih-ui-icon.ih-ui-mail
-            |  {{LandingComponent.adviceText}}
-    .col-lg-9.col-md-8.hidden-xs.hidden-sm.search-toggle
+    .col-lg-9.col-md-8.search-toggle
       .tab-content.search-pane.text-center.fw(ng-if="!searchTab")
         h1 {{LandingComponent.welcomeText}}
         p.lead {{story.landingText1}}
         p.lead {{story.landingText2}}
-        a.btn.btn-primary(href="{{LandingComponent.buyLink}}") learn more
+        a.btn.btn-primary(href="{{story.learnMore}}") learn more
       .tab-content.search-pane(ng-if="searchTab == 'find'")
         h2.ih-subheader.fw.text-uppercase start your search
         form.search-form(ng-submit='searchMLS()')
