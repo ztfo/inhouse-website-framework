@@ -4,7 +4,7 @@ section.s1.ih-testimonials(class='{{classes}}', ng-show='testimonials.length > 0
     .ih-md-divider
     #mainTestimonials.ih-testimonials-inner.carousel.slide.carousel-fade(data-ride='carousel')
       .carousel-inner(role='listbox')
-        .item.ih-testimonial(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
+        .item.ih-testimonial(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials | filter: !!hidden')
           .container-fluid
             .col-lg-2.col-md-2.col-sm-3.col-xs-12.text-center-sm.text-center-xs
               span.ih-ui.testimonials-icon.ih-ui-testimonial-01

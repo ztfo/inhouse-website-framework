@@ -1,33 +1,33 @@
-section.ih-search.s6.container
+section.ih-search.s12.s6.container
   .row
     .col-lg-3.col-md-4.col-sm-12.col-xs-12.search-toggle
       ul.search-toggle-btns.text-uppercase
         li
           a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('find')")
             span.ih-ui-icon.ih-ui-search
-            |  find a home
+            |  {{agent.buyAHomeText}}
           a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/search-mls?active')
             span.ih-ui-icon.ih-ui-search
-            |  find a home
+            |  {{agent.buyAHomeText}}
         li
           a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('list')")
             span.ih-ui-icon.ih-ui-home
-            |  list a home
+            |  {{agent.sellAHomeText}}
           a.toggle-btn.pointer.hidden-lg.hidden-md(href='#/sell')
             span.ih-ui-icon.ih-ui-home
-            |  list a home
+            |  {{agent.sellAHomeText}}
         li
           a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('contact')")
             span.ih-ui-icon.ih-ui-mail
-            |  contact us
+            |  {{agent.adviceText}}
           a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/contact')
             span.ih-ui-icon.ih-ui-mail
-            |  contact us
+            |  {{agent.adviceText}}
     .col-lg-9.col-md-8.hidden-xs.hidden-sm.search-toggle
       .tab-content.search-pane.text-center.fw(ng-if="!searchTab")
-        h1 Welcome to Tucson Living
-        p.lead This page is dedicated to showcasing all the things we love about life in the “Old Pueblo.” From Tucson institutions, to cultural events, to the unique and quirky things that just make this place so cool, this page will include it all.
-        p.lead If there something you’d like us to feature, send us a message and we’ll add it to the list.
+        h1 {{agent.welcomeText}}
+        p.lead {{story.landingText1}}
+        p.lead {{story.landingText2}}
         a.btn.btn-primary(href="{{agent.buyLink}}") learn more
       .tab-content.search-pane(ng-if="searchTab == 'find'")
         h2.ih-subheader.fw.text-uppercase start your search
