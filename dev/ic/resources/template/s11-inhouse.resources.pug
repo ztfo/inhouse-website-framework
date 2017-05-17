@@ -1,5 +1,5 @@
 section.s11.ih-resources(class='{{classes}}')
-  h1.ih-header.text-center Tucson Living at it's Finest
+  h1.ih-header.text-center {{ !title ? "Resources" : title }}
   p.lead.text-center.col-md-6.col-md-offset-3(itemprop='description', ng-bind-html='agent.bio | to_trusted')
   .container
     .col-lg-6.col-md-6.col-sm-12.col-xs-12

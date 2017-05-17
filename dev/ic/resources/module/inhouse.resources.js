@@ -5,6 +5,7 @@ angular.module('ihframework')
     scope: {
       classes: "@classes",
       config: '=',
+      title: '=',
       header: '@'
     },
     restrict: 'E',
