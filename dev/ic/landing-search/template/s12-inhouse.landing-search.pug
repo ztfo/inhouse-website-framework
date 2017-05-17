@@ -5,30 +5,30 @@ section.ih-search.s12.s6.container
         li
           a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('find')")
             span.ih-ui-icon.ih-ui-search
-            |  {{agent.buyAHomeText}}
+            |  {{LandingComponent.buyAHomeText}}
           a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/search-mls?active')
             span.ih-ui-icon.ih-ui-search
-            |  {{agent.buyAHomeText}}
+            |  {{LandingComponent.buyAHomeText}}
         li
           a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('list')")
             span.ih-ui-icon.ih-ui-home
-            |  {{agent.sellAHomeText}}
+            |  {{LandingComponent.sellAHomeText}}
           a.toggle-btn.pointer.hidden-lg.hidden-md(href='#/sell')
             span.ih-ui-icon.ih-ui-home
-            |  {{agent.sellAHomeText}}
+            |  {{LandingComponent.sellAHomeText}}
         li
           a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('contact')")
             span.ih-ui-icon.ih-ui-mail
-            |  {{agent.adviceText}}
+            |  {{LandingComponent.adviceText}}
           a.toggle-btn.pointer.hidden-md.hidden-lg(href='#/contact')
             span.ih-ui-icon.ih-ui-mail
-            |  {{agent.adviceText}}
+            |  {{LandingComponent.adviceText}}
     .col-lg-9.col-md-8.hidden-xs.hidden-sm.search-toggle
       .tab-content.search-pane.text-center.fw(ng-if="!searchTab")
         h1 {{agent.welcomeText}}
         p.lead {{story.landingText1}}
         p.lead {{story.landingText2}}
-        a.btn.btn-primary(href="{{agent.buyLink}}") learn more
+        a.btn.btn-primary(href="{{LandingComponent.buyLink}}") learn more
       .tab-content.search-pane(ng-if="searchTab == 'find'")
         h2.ih-subheader.fw.text-uppercase start your search
         form.search-form(ng-submit='searchMLS()')

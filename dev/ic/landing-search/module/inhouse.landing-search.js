@@ -27,6 +27,8 @@ angular.module('ihframework')
 
                 $scope.agent = $rootScope.theUserData;
                 $scope.story = $rootScope.theWebsiteData;
+                $scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
+                
                 $scope.filters = {
                     active: true
                 };
