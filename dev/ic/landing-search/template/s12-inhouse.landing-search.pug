@@ -3,18 +3,27 @@ section.ih-search.s12.s6.container
     .col-lg-3.col-md-4.col-sm-12.col-xs-12.search-toggle
       ul.search-toggle-btns.text-uppercase
         li
-          a.toggle-btn.pointer(href='{{LandingComponent.buyLink}}')
+          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('find')")
+            span.ih-ui-icon.ih-ui-search
+            |  {{LandingComponent.buyAHomeText}}
+          a.toggle-btn.pointer.hidden-md.hidden-lg(href='{{LandingComponent.buyLink}}')
             span.ih-ui-icon.ih-ui-search
             |  {{LandingComponent.buyAHomeText}}
         li
-          a.toggle-btn.pointer(href='{{LandingComponent.sellLink}}')
+          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('list')")
+            span.ih-ui-icon.ih-ui-home
+            |  {{LandingComponent.sellAHomeText}}
+          a.toggle-btn.pointer.hidden-lg.hidden-md(href='{{LandingComponent.sellLink}}')
             span.ih-ui-icon.ih-ui-home
             |  {{LandingComponent.sellAHomeText}}
         li
-          a.toggle-btn.pointer(href='{{LandingComponent.adviceLink}}')
+          a.toggle-btn.pointer.hidden-xs.hidden-sm(data-toggle='', ng-click="toggleSearchTabs('contact')")
             span.ih-ui-icon.ih-ui-mail
             |  {{LandingComponent.adviceText}}
-    .col-lg-9.col-md-8.search-toggle
+          a.toggle-btn.pointer.hidden-md.hidden-lg(href='{{LandingComponent.adviceLink}}')
+            span.ih-ui-icon.ih-ui-mail
+            |  {{LandingComponent.adviceText}}
+    .col-lg-9.col-md-8.hidden-xs.hidden-sm.search-toggle
       .tab-content.search-pane.text-center.fw(ng-if="!searchTab")
         h1 {{LandingComponent.welcomeText}}
         p.lead {{story.landingText1}}
