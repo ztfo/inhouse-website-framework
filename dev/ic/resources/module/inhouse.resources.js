@@ -17,6 +17,7 @@ angular.module('ihframework')
           $scope.templateUrl = 'build/templates/ic/resources/template/s1-inhouse.resources.html';
         }
       });
+      $scope.story = $rootScope.theWebsiteData;
     },
     link: function(scope, el, attrs) {
       scope.limit = attrs.limit || 3;
