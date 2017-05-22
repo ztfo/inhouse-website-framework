@@ -1,2 +1,2 @@
 .ih-divider.ih-logo-divider(class='{{classes}}')
-  img(ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')
+  img(ng-if='agent.brokerageLogo', ng-src='{{agent.brokerageLogo}}', alt='{{agent.brokerage}}')

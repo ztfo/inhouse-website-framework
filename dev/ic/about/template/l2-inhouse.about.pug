@@ -5,26 +5,26 @@ section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}')
     .row
       .col-lg-4.col-md-4.col-sm-12.col-xs-12
         div
-          img.img-circle.img-responsive.fullw(src="{{lender.avatar}}", alt="{{lender.name}}")
+          img.img-circle.img-responsive.fullw(ng-if="lender.avatar", src="{{lender.avatar}}", alt="{{lender.name}}")
         .about-social.text-muted
           a.ih-social-icon(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
             i.fa.fa-envelope
-          a.ih-social-icon(href='{{lender.facebook}}', ng-if='lender.facebook !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.facebook}}', ng-if='lender.facebook', target='_blank')
             i.fa.fa-facebook
-          a.ih-social-icon(href='{{lender.linkedin}}', ng-if='lender.linkedin !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.linkedin}}', ng-if='lender.linkedin', target='_blank')
             i.fa.fa-linkedin
-          a.ih-social-icon(href='{{lender.twitter}}', ng-if='lender.twitter !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.twitter}}', ng-if='lender.twitter', target='_blank')
             i.fa.fa-twitter
-          a.ih-social-icon(href='{{lender.instagram}}', ng-if='lender.instagram !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.instagram}}', ng-if='lender.instagram', target='_blank')
             i.fa.fa-instagram
-          a.ih-social-icon(href='{{lender.pinterest}}', ng-if='lender.pinterest !== undefined', target='_blank')
+          a.ih-social-icon(href='{{lender.pinterest}}', ng-if='lender.pinterest', target='_blank')
             i.fa.fa-pinterest
       .col-lg-8.col-md-8.col-sm-12.col-xs-12
         .lender-box
           h2.inlinblock.fc-01 {{lender.name}}
           h5.inlineblock.text-muted
             strong {{lender.brokerage}}
-          .bio.fs(itemprop='description', ng-bind-html="lender.bio1 | to_trusted")
+          .bio.fs(ng-if='lender.bio1', itemprop='description', ng-bind-html="lender.bio1 | to_trusted")
         .contact-info.container-fluid
           .row
             .col-sm-6
