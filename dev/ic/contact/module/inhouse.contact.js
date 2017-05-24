@@ -31,6 +31,7 @@ angular.module('ihframework')
     controller: ['$element', '$timeout', '$rootScope', '$scope', 'inhouseApi', 'userDataService', 'ihLead', function($element, $timeout, $rootScope, $scope, inhouseApi, userDataService, ihLead) {
 
       $scope.story_type = $rootScope.theWebsiteData.story_type;
+
       $timeout(function() {
         $scope.context = $element.find('form').attr('name');
       });
@@ -63,6 +64,8 @@ angular.module('ihframework')
       $scope.agent = $rootScope.theUserData;
       $scope.inhouseApi = inhouseApi;
       $scope.scope = $scope;
+
+      $scope.lender = _.get($rootScope, 'theWebsiteData.lender');
 
       if(typeof $scope.contact == 'undefined') {
         $scope.contact = {};
