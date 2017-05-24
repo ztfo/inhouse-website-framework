@@ -50,6 +50,10 @@ angular.module('ihframework')
         return input;
       };
 
+      if($rootScope.theWebsiteData.lender !== undefined) {
+        $scope.lender = $rootScope.theWebsiteData.lender;
+      }
+
       inhouseApi.newApi.getTestimonials().success(function(response) {
         $scope.testimonials = response.data;
       });

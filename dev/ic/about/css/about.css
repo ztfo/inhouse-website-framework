@@ -1,3 +1,11 @@
+.ih-li .ih-about .badge {
+  padding: 10px 25px;
+  border-radius: 999px;
+  opacity: .5;
+  letter-spacing: 1px;
+}
+
+
 /* s1 */
 
 .s1.ih-about {

@@ -15,6 +15,10 @@ section.p2.ih-testimonials.ih.z0.fp.fw(
       .ih.text-center(ng-hide='!showZillow')
         span.ih-ui.ih-ui-zillow
     .footer.bt70
+      .container.legal-disclaimers.small
+        | {{listing.Details.disclaimer | limitTo: 355}} {{user.meta.disclaimer1 | limitTo: 355}} |
+        hr
+        | &nbsp; {{lender.disclaimer | limitTo: 355}}
       .container
         .col-lg-6.col-md-6.col-sm-6.col-xs-12.text-center-xs
           span.ih-ui-fairhousing
@@ -25,9 +29,8 @@ section.p2.ih-testimonials.ih.z0.fp.fw(
             a(href="https://www.getinhouse.io", target="_blank", rel="noopener")
               span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
           .pull-right.text-uppercase
-            small
-              | inspired by &nbsp;
-              a(href="https://html5up.net/", target="_blank", rel="noopener") html5up
-            br
-            small powered by &nbsp;
-              a(href="http://www.getinhouse.io") InHouse
+            a(href="http://www.getinhouse.io", target="_blank")
+              small
+                | inspired by html5up
+              br
+              small powered by InHouse

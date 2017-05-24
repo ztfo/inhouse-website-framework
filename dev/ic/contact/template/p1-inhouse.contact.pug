@@ -33,13 +33,16 @@ section.p1.ih-contact.ih.fw.fp.z0(class='{{classes}}', ng-style="{'background-im
       .flex-4.bkc-04.contact-form-box.tpt
         ih-contact(configname='fp1')
     .container-fluid.contact-footer.bt80.fw.text-uppercase
+      .container.legal-disclaimers.small
+        | {{listing.Details.disclaimer | limitTo: 355}} {{user.meta.disclaimer1 | limitTo: 355}}&nbsp;|&nbsp;
+        hr
+        | {{lender.disclaimer | limitTo: 355}}
       .container
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           span.ih-ui-fairhousing
           span.ih-ui-realtor
           small © {{year}} - {{agent.agentName}} | {{listing.Details.mlsAssociation}}
         .col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
-          small
-            | Powered by&nbsp;
-            a(href='https://www.getinhouse.io') InHouse
-          span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
+          a(href='https://www.getinhouse.io', target="_blank")
+            small Powered by InHouse
+            span.ih-icon.ih-sm-icon.ih-ui-inhouse-emblem
