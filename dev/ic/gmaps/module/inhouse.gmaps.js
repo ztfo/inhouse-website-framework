@@ -7,12 +7,19 @@ angular.module('ihframework')
     scope: {
       center: '@',
       classes: '@',
-      listing: '='
+      listing: '=',
+      address: '='
     },
     controller: ['$scope', '$element', function($scope, $element) {
       $scope.$watch('listing.details', function(newVal) {
         if(newVal) {
           $scope.prepareMap();
+        }
+      });
+
+      $scope.$watch('address', function(newVal) {
+        if(newVal) {
+          $scope.geocodeAddress(newVal);
         }
       });
 
@@ -37,7 +44,7 @@ angular.module('ihframework')
 
         $scope.marker = new google.maps.Marker({
           position: $scope.center,
-          title: $scope.listing.address,
+          title: _.get($scope, 'listing.address'),
           map: $scope.map,
           icon: 'https://s3-us-west-2.amazonaws.com/inhouse-websites/ia/icons/map-pin.png'
         });
@@ -53,7 +60,7 @@ angular.module('ihframework')
 
           var location = _.get(results, '[0].geometry.location');
 
-          $scope.placeMarker(location);
+          $scope.placeMarker(location.lat() + ',' + location.lng());
         });
       };
 
