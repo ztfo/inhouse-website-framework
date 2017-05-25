@@ -9,7 +9,7 @@ section.p1.ih-slider.container-fluid.fp
         .container-fluid.full.nopad
           .col-lg-7.col-md-7.col-sm-7.col-xs-7.fullh.bkc-04.fw.banner-box
             h1.text-uppercase.fs {{listing.Details.address}}, {{listing.Details.city}} {{listing.Details.zip}}
-            .home-facts
+            .home-facts(ng-if="listing.Details.beds && listing.Details.baths")
               span.fact
                 | {{listing.Details.beds}} &nbsp;
                 small.text-uppercase Bedrooms

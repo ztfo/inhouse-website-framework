@@ -46,6 +46,10 @@
     margin: 5px;
 }
 
+.ih-li .ih-ui-fairhousing, .ih-li .ih-ui-realtor, .ih-li .icon-equal-lender {
+  font-size: 2em;
+  margin-right: 10px;
+}
 
 /* s1 */
 

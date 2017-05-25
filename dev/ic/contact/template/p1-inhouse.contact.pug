@@ -34,13 +34,15 @@ section.p1.ih-contact.ih.fw.fp.z0(class='{{classes}}', ng-style="{'background-im
         ih-contact(configname='fp1')
     .container-fluid.contact-footer.bt80.fw.text-uppercase
       .container.legal-disclaimers.small
-        | {{listing.Details.disclaimer | limitTo: 355}} {{agent.disclaimer | limitTo: 355}}&nbsp;|&nbsp;
+        | {{listing.Details.disclaimer | limitTo: 355}} {{user.meta.disclaimer1 | limitTo: 355}}&nbsp;
+        span(ng-if="lender") |&nbsp;
+        | {{lender.disclaimer | limitTo: 355}}
         hr
-        | {{lender.meta.disclaimer1 | limitTo: 355}}
       .container
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           span.ih-ui-fairhousing
           span.ih-ui-realtor
+          span.icon-equal-lender(ng-if="lender")
           small © {{year}} - {{agent.agentName}} | {{listing.Details.mlsAssociation}}
         .col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
           a(href='https://www.getinhouse.io', target="_blank")

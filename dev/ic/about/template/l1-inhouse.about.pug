@@ -1,9 +1,9 @@
-section.p1.l1.ih-lender.ih-about.container-fluid.fp
+section.p1.l1.ih-lender.ih-about.container-fluid.fp(ng-if="lender")
   .container
     .row
       h1.ih-header.fc-02.text-center Meet Your Lender
     .ih-about-inner.row
-      .col-lg-8.col-md-8.col-sm-12.col-xs-12.lender-info.text-right
+      .col-lg-12.lender-info.text-center(ng-if="!lender.avatar")
         h2.ih.fc-01
           span(itemprop='name') {{lender.name}}
         h4.text-muted
@@ -32,7 +32,36 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
         a.btn.btn-default(href='mailto:{{lender.contactEmail}}', ng-if="lender.contactEmail") Contact Me
         a.btn.btn-primary(href='{{lender.meta.applyLink}}', ng-if="lender.meta.applyLink") Apply Today
-      .col-lg-4.col-md-4.col-sm-12.col-xs-12.lender-picture
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12.lender-info.text-right(ng-if="lender.avatar")
+        h2.ih.fc-01
+          span(itemprop='name') {{lender.name}}
+        h4.text-muted
+          strong {{lender.brokerage}}
+        .text-justify.bio(ng-if="lender.bio1" itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
+        .about-social.block
+          a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
+            i.fa.fa-envelope
+          a.ih-social-icon.bkc-02(href='{{lender.facebook}}', ng-if='lender.facebook', target='_blank')
+            i.fa.fa-facebook
+          a.ih-social-icon.bkc-02(href='{{lender.linkedin}}', ng-if='lender.linkedin', target='_blank')
+            i.fa.fa-linkedin
+          a.ih-social-icon.bkc-02(href='{{lender.twitter}}', ng-if='lender.twitter', target='_blank')
+            i.fa.fa-twitter
+          a.ih-social-icon.bkc-02(href='{{lender.instagram}}', ng-if='lender.instagram', target='_blank')
+            i.fa.fa-instagram
+          a.ih-social-icon.bkc-02(href='{{lender.pinterest}}', ng-if='lender.pinterest', target='_blank')
+            i.fa.fa-pinterest
+        p.fp
+          strong
+            small.text-uppercase.text-muted
+              a.clean-link(href='mailto:{{lender.contactEmail}}') {{lender.contactEmail}}
+              span.ih-icon.ih-sm-icon.ih-icon-house-mailbox
+              br
+              a.clean-link(href='tel:{{lender.contactPhone}}') {{lender.contactPhone | tel}}
+              span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
+        a.btn.btn-default(href='mailto:{{lender.contactEmail}}', ng-if="lender.contactEmail") Contact Me
+        a.btn.btn-primary(href='{{lender.meta.applyLink}}', ng-if="lender.meta.applyLink") Apply Today
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.lender-picture(ng-if="lender.avatar")
         img.img-circle.img-responsive.fullw(src="{{lender.avatar}}", alt="{{lender.name}}")
     .row.text-center
       span.badge Advertisement
