@@ -133,4 +133,11 @@ angular.module('ihframework')
       return r;
     };
   })
+  .filter('htmlEntity', function() {
+    return function(val) {
+      var txt = document.createElement("textarea");
+      txt.innerHTML = val;
+      return txt.value;
+    };
+  })
   ;
