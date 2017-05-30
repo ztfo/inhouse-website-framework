@@ -6,19 +6,19 @@ section.s2.ih-listing
       .container-fluid
         ih-listing-slider(config='f1')
       .ih-listing-images
-        ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.Details.photos', responsive='responsive')
-          .item.ih-owl-thumbnail(ng-repeat='home in listing.Details.photos')
+        ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
+          .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')
             img.img-responsive.ih-owl-thumbnail(ng-src='{{home.thumb}}', alt='{{home.caption}}')
       .ih-listing-factbar.container-fluid
         .ih-listing-addr.col-lg-6.col-md-6.col-sm-12.col-xs-12
           ih-like-button.pull-left.bkc-02.fw(listing="home")
           .pull-left
-            h2.fp {{listing.Details.address}}
-            h4.fs.text-uppercase {{listing.Details.city}} {{listing.Details.state}} {{listing.Details.zipcode}}
+            h2.fp {{listing.address}}
+            h4.fs.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
         .ih-listing-dets.col-lg-6.col-md-6.col-sm-12.col-xs-12.text-right
-          h2.fp {{listing.Details.price | currency:"$":0}}
+          h2.fp {{listing.price | currency:"$":0}}
           h4.fs
-            | {{listing.Details.beds}} BEDS | {{listing.Details.baths}} BATHS | {{listing.Details.sqft | number}} SQFT
+            | {{listing.beds}} BEDS | {{listing.baths}} BATHS | {{listing.sqft | number}} SQFT
       .ih-listing-details.container-fluid
         .ih-listing-description.fs
           .row
@@ -26,11 +26,11 @@ section.s2.ih-listing
               p
                 strong.text-uppercase.fp About this listing:
             .ih.col-lg-6.text-right
-              ih-social-buttons(mls="listing.Details.mls", user="user")
-          p.fs {{listing.Details.publicRemarks | sentence}}
+              ih-social-buttons(mls="listing.mls", user="user")
+          p.fs {{listing.publicRemarks | sentence}}
           p.small.text-uppercase.fs
             | Listing Information Courtesy of:
-            strong {{listing.Details.brokerage}}
+            strong {{listing.brokerage}}
         .ih-sm-divider.ih-ext-divider
         ih-listing-details(listing='listing')
       .container-fluid.hidden-lg.hidden-md.mobile-map
@@ -49,12 +49,12 @@ section.s2.ih-listing
                 a(href='#canvasDocs', aria-controls='canvasDocs', role='tab', data-toggle='tab', onclick='event.preventDefault()') Agent Attachments
             .tab-content
               #mlsDocs.tab-pane.active(role='tabpanel')
-                div(ng-repeat='doc in listing.Details.documents')
+                div(ng-repeat='doc in listing.documents')
                   a.ih-doc(href='{{doc.Uri}}', target='_blank')
                     i.fa.fa-file-o
                     |  {{doc.Name}}
               #canvasDocs.tab-pane(role='tabpanel')
-                div(ng-repeat='doc in listing.Details.canvasDocuments')
+                div(ng-repeat='doc in listing.canvasDocuments')
                   a.ih-doc(href='{{doc.Uri}}', target='_blank')
                     i.fa.fa-file-o
                     |  {{doc.Name}}
