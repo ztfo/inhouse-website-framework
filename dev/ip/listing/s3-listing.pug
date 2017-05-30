@@ -1,66 +1,66 @@
 section.s3.ih-listing
   header.text-center.fw
-    h1 {{listing.Details.address}}
-    h4.fs.text-uppercase {{listing.Details.city}} {{listing.Details.state}} {{listing.Details.zipcode}}
+    h1 {{listing.address}}
+    h4.fs.text-uppercase {{listing.city}} {{listing.state}} {{listing.zipcode}}
   .ih-md-divider
   .container
     .row
       .col-xs-12.col-sm-12.col-md-8.col-lg-8.nopad
-        ih-listing-slider(config='f1')
+        ih-listing-slider(config='f1' listing="listing")
         .ih-listing-images
-          ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.Details.photos', responsive='responsive')
-            .item.ih-owl-thumbnail(ng-repeat='home in listing.Details.photos')
+          ih-owl.ih-nav-carousel.owl-carousel.ih-owl-carousel(items='listing.photos', responsive='responsive')
+            .item.ih-owl-thumbnail(ng-repeat='home in listing.photos')
               img.img-responsive.ih-owl-thumbnail(ng-src='{{home.thumb}}', alt='{{home.caption}}')
       .col-xs-12.col-sm-12.col-md-4.col-lg-4.listing-details.bkc-02.fw
         header.ih
-          ih-like-button(listing="home")
+          ih-like-button(listing="listing")
           h3.nomar Price
-          h1.nomar {{listing.Details.price | currency:"$":0}}
+          h1.nomar {{listing.price | currency:"$":0}}
         .item-list
           .meta-item
             i.fa.fa-object-group
             .meta-item-field
               .meta-item-label Size
               div
-                | {{listing.Details.sqft}}
+                | {{listing.sqft}}
                 small SQFT
           .meta-item
             i.fa.fa-bed
             .meta-item-field
               .meta-item-label Bedrooms
-              div {{listing.Details.beds}}
+              div {{listing.beds}}
           .meta-item
             i.fa.fa-tint
             .meta-item-field
               .meta-item-label Bathrooms
-              div {{listing.Details.baths}}
+              div {{listing.baths}}
           .meta-item
             i.fa.fa-car
             .meta-item-field
               .meta-item-label Garage
-              div {{listing.Details.garage}}
+              div {{listing.garage}}
           .meta-item
             i.fa.fa-home
             .meta-item-field
               .meta-item-label Type
-              div {{listing.Details.type}}
+              div {{listing.type}}
           .meta-item
             i.fa.fa-tag
             .meta-item-field
               .meta-item-label Status
-              div {{listing.Details.status}}
+              div {{listing.status}}
     .row
       .col-xs-12.col-sm-12.col-md-8.col-lg-8
         h3 About Home
-        ih-social-buttons(mls="listing.Details.mls", user="user")
-        p {{listing.Details.publicRemarks | sentence}}
+        ih-social-buttons(mls="listing.mls", user="user")
+        p {{listing.publicRemarks | sentence}}
         p.small.text-uppercase
           | Listing Information Courtesy of:
-          strong {{listing.Details.brokerage}}
-        h3 Home Details
+          strong {{listing.brokerage}}
+        h3 Home
         ih-listing-details
         .listing-map
-          ih-gmaps.full
+          ih-gmaps.full(listing="listing")
       .col-xs-12.col-sm-12.col-md-4.col-lg-4.bkc-01.fw.contact-panel
         .text-center
           img.img-circle.img-responsive(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
