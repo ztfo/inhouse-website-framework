@@ -12,7 +12,7 @@ section.p1.ih-testimonials.ih.z0.fp.fw(
           responsive='responsive')
           .item.text-center(
             class="{{$index == 0 ? 'active' : ''}}",
-            ng-repeat='slide in testimonials | filter: !!hidden')
+            ng-repeat='slide in testimonials')
             blockquote.testimonial(
               itemprop='review')
               .ih-ratings(itemprop='rating')

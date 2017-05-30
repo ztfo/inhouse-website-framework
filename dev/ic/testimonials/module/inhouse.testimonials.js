@@ -33,6 +33,16 @@ angular.module('ihframework')
         }
       });
 
+      $scope.testimonialFilter = function() {
+        var filtered = [];
+        angular.forEach($scope.testimonials, function(value, key) {
+          if(value.hidden === undefined || value.hidden == false) {
+            this.push(value);
+          }
+        }, filtered);
+        $scope.testimonials = filtered;
+      };
+
       $scope.next = function(id) {
         $element.find('#' + id).carousel('next');
       };
@@ -56,6 +66,7 @@ angular.module('ihframework')
 
       inhouseApi.newApi.getTestimonials().success(function(response) {
         $scope.testimonials = response.data;
+        $scope.testimonialFilter();
       });
     },
     link: function(scope, element, attrs) {
