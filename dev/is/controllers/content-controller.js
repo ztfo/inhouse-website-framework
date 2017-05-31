@@ -4,6 +4,7 @@ angular.module('ihframework')
   $scope.showTab = 'press-coverage';
   $scope.showMLSTab = 'us';
   $scope.showOrderTab = 'landing';
+  $scope.agent = $rootScope.theUserData;
 
   $scope.togglePressTabs = function(tab){
     $scope.showTab = tab;

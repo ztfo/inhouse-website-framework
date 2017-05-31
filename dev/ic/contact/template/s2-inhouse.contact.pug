@@ -7,5 +7,5 @@ section.s2.ih-contact.container-fluid(class='{{classes}}')
         strong {{agent.teamName}}
       ih-contact(configname='f1')
     .col-lg-6.col-md-6.col-sm-12.col-xs-12.contact-map.bkc-04.nopad
-      ih-gmaps.full(zoom='12', scrollwheel='false')
+      ih-gmaps.full(zoom='12', scrollwheel='false', address="agent.contactAddress + ' ' + agent.contactAddress2")
   .ih-md-divider
