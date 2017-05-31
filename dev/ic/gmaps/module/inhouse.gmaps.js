@@ -10,7 +10,10 @@ angular.module('ihframework')
       listing: '=',
       address: '='
     },
-    controller: ['$scope', '$element', function($scope, $element) {
+    controller: ['$rootScope', '$scope', '$element', function($rootScope, $scope, $element) {
+
+      $scope.agent = $rootScope.theUserData;
+
       $scope.$watch('listing.details', function(newVal) {
         if(newVal) {
           $scope.prepareMap();
@@ -19,7 +22,10 @@ angular.module('ihframework')
 
       $scope.$watch('address', function(newVal) {
         if(newVal) {
-          $scope.geocodeAddress(newVal);
+          var marker = {}
+          marker.address = newVal;
+          marker.zipcode = '';
+          $scope.geocodeAddress(marker);
         }
       });
 
@@ -37,8 +43,8 @@ angular.module('ihframework')
 
         $scope.map = new google.maps.Map($element[0], {
           center: $scope.center,
-          mapTypeId: google.maps.MapTypeId.SATELLITE,
-          crollwheel: false,
+          mapTypeId: google.maps.MapTypeId.HYBRID,
+          scrollwheel: false,
           zoom: 19
         });
 
