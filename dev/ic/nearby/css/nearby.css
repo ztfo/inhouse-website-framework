@@ -250,6 +250,11 @@ map {
 
 @media screen and (min-width: 1921px) {}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 768px) and (max-width: 1050px) {
+  .ih-nearby map {
+    height: 818px;
+  }
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 @media screen and (min-width: 376px) and (max-width: 768px) {
 
