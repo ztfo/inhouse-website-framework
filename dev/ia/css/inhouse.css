@@ -118,6 +118,23 @@ body { overflow-x: hidden !important; }
   flex: 2!important;
 }
 
+/* safari flex fix */
+
+.safari .flex-grid {
+    position: relative;
+    display: -webkit-box !important;
+    flex-wrap: wrap;
+}
+
+.safari .flex-center {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
 /* flex ends*/
 
@@ -334,15 +351,4 @@ a:focus { text-decoration: none; color: inherit; }
     display: block;
     margin: 5px 0;
   }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-/* Safari and Chrome */
-
-/* Safari only override */
-::i-block-chrome,.flex-grid {
-  position: relative;
-  display: -webkit-box !important;
-  flex-wrap: wrap;
-}
 }
