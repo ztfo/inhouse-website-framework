@@ -5,7 +5,7 @@ section.s2.ih-testimonials(class='{{classes}}', ng-show='testimonials.length > 0
       .ih-md-divider.bk-gd
     .row
       ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
-        .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials | filter: !!hidden')
+        .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
           blockquote.testimonial(itemprop='review')
             .ih-sm-header
             .ih-ratings(itemprop='rating')

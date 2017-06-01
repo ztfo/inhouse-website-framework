@@ -3,7 +3,7 @@ section#testimonials.p4.ih-testimonials(class='{{classes}}')
     h2.ih-header What our clients say
     .ih-sm-divider
     ih-owl.owl-carousel.tst-carousel(items='testimonials', responsive='responsive')
-      .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials | filter: !!hidden')
+      .item.text-center(class="{{$index == 0 ? 'active' : ''}}", ng-repeat='slide in testimonials')
         blockquote.testimonial(itemprop='review')
           .ih-ratings(itemprop='rating')
             i.fa.fa-star(ng-repeat='i in range(1, slide.stars)')
