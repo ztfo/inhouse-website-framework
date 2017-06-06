@@ -8,7 +8,7 @@ angular.module('ihframework')
       listing: '='
     },
     controller: ['$scope', 'listhub', function($scope, listhub) {
-      $scope.shareUrl = "https://app.getinhouse.io/user/" + $scope.user.userId, + '/share-listing/' + $scope.mls;
+      $scope.shareUrl = "https://app.getinhouse.io/user/" + $scope.user.userId + '/share-listing/' + mls;
 
       $scope.$watch('listing.url', function(newVal) {
         if(newVal) {
