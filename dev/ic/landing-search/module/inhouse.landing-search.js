@@ -28,7 +28,7 @@ angular.module('ihframework')
                 $scope.agent = $rootScope.theUserData;
                 $scope.story = $rootScope.theWebsiteData;
                 $scope.LandingComponent = $rootScope.theWebsiteData.LandingComponent;
-                
+
                 $scope.filters = {
                     active: true
                 };
@@ -123,7 +123,6 @@ angular.module('ihframework')
                     if (typeof this.filters.county === 'undefined' &&  $scope.config == 's9') {
                         this.filters.county = 'Apache;Navajo';
                     }
-                    console.log(this.filters);
 
                     $location.path('search-mls').search(this.filters);
                 };

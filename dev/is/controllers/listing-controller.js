@@ -25,6 +25,10 @@ angular.module('ihframework')
     }
   });
 
+  $scope.$on('owlItemClicked', function(event, args) {
+    $('#listingSlider').carousel(args.index);
+  });
+
   ihLead.viewListing($scope.mls, $scope.getData);
 
 }]);
