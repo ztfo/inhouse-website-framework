@@ -466,6 +466,14 @@
 }
 
 
+/* inhouse */
+
+.price-row>div {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+
 /*** *** responsive *** ***/
 
 @media screen and (min-width: 1921px) {}
