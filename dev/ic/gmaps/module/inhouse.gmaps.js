@@ -59,7 +59,17 @@ angular.module('ihframework')
       $scope.geocodeAddress = function(listing) {
         var geocoder = new google.maps.Geocoder();
 
-        geocoder.geocode( { 'address': listing.address + ' ' + listing.zipcode}, function(results, status) {
+        var address = null;
+
+        if(_.get(listing, 'address')) {
+          address = { 'address': listing.address + ' ' + listing.zipcode };
+        }
+
+        if(!address) {
+          address = {address: listing};
+        }
+
+        geocoder.geocode(address , function(results, status) {
           if (status != google.maps.GeocoderStatus.OK) {
             return;
           }
