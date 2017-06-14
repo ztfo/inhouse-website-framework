@@ -38,9 +38,9 @@ section.ih-results.s4.s1
             .ih-input-box.col-lg-3.col-md-3.col-sm-4.col-xs-12
               input.ih-search-input.full(type='text', placeholder='MLS #', name='propertyMLS', ng-model='filters.mls')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Min Price', name='propertyMinPrice', ng-model='filters.min_price')
+              input.ih-search-input.full(type='text', placeholder='Min Price', name='propertyMinPrice', ng-model='filters.price_from')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Max Price', name='propertyMaxPrice', ng-model='filters.max_price')
+              input.ih-search-input.full(type='text', placeholder='Max Price', name='propertyMaxPrice', ng-model='filters.price_to')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
               input.ih-search-input.full(type='text', placeholder='Min Sqft', name='propertyMinSF', ng-model='filters.min_sqft')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
@@ -48,7 +48,11 @@ section.ih-results.s4.s1
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
               input.ih-search-input.full(type='text', placeholder='Min Beds', name='propertyMinBeds', ng-model='filters.min_beds')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
-              input.ih-search-input.full(type='text', placeholder='Max Baths', name='propertyMaxBeds', ng-model='filters.max_beds')
+              input.ih-search-input.full(type='text', placeholder='Max Beds', name='propertyMaxBeds', ng-model='filters.max_beds')
+            .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
+              input.ih-search-input.full(type='text', placeholder='Min Baths', name='propertyMinBaths', ng-model='filters.min_baths')
+            .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
+              input.ih-search-input.full(type='text', placeholder='Max Baths', name='propertyMaxBaths', ng-model='filters.max_baths')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
               ih-dropdown#community(items='[{"name":"Canada Hills","value":"Canada Hills"},{"name":"Cobblestone","value":"Cobblestone"},{"name":"Continental Ranch","value":"Continental Ranch"},{"name":"Continental Reserve","value":"Continental Reserve"},{"name":"Dorado CC Estates","value":"Dorado Country Club Estates"},{"name":"Dove Mountain","value":"dove mountain*"},{"name":"Fairfield","value":"Fairfield"},{"name":"Gladden Farms","value":"Gladden Farms"},{"name":"Hillcrest at Wingate","value":"Hillcrest at Wingate"},{"name":"Indian Ridge","value":"Indian Ridge"},{"name":"La Paloma","value":"La Paloma"},{"name":"La Reserve","value":"La Reserve"},{"name":"Midvale","value":"Midvale"},{"name":"None","value":"None"},{"name":"North Ranch","value":"North Ranch"},{"name":"Oro Valley CC","value":"oro valley c*"},{"name":"Rancho Del Lago","value":"Rancho Del Lago"},{"name":"Rancho Sahuarita","value":"Rancho Sahuarita"},{"name":"Rancho Vistoso","value":"Rancho Vistoso"},{"name":"Rita Ranch","value":"Rita Ranch"},{"name":"Sabino Springs","value":"Sabino Springs"},{"name":"Sabino Vista","value":"Sabino Vista"},{"name":"Salida Del Sol","value":"Salida Del Sol"},{"name":"Sam Hughes","value":"Sam Hughes"},{"name":"Silverado Hills","value":"Silverado Hills"},{"name":"Skyline CC","value":"oro valley c*"},{"name":"Starr Pass","value":"Starr Pass"},{"name":"Sun City Oro Valley","value":"Sun City Oro Valley"},{"name":"Tucson CC","value":"tucson c*"},{"name":"Tucson National CC","value":"tucson national*"},{"name":"Ventana CC","value":"ventana c*"}]', name='Community', ng-model='filters.community', truncate='4', multi='true')
             .ih-filter-box.col-lg-6.col-md-6.col-sm-12.col-xs-12
