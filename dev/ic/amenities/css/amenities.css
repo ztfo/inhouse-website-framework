@@ -86,7 +86,11 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
 
-@media screen and (min-width: 376px) and (max-width: 768px) {}
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .p1.ih-amenities .flex-5.image-fit {
+    min-height: 400px;
+  }
+}
 
 @media screen and (max-width: 767px) {}
 
