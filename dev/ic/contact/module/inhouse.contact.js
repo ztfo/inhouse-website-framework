@@ -28,7 +28,7 @@ angular.module('ihframework')
         });
       });
     },
-    controller: ['$element', '$timeout', '$rootScope', '$scope', 'inhouseApi', 'userDataService', 'ihLead', function($element, $timeout, $rootScope, $scope, inhouseApi, userDataService, ihLead) {
+    controller: ['$element', '$timeout', '$rootScope', '$scope', 'inhouseApi', 'userDataService', 'ihLead', 'errors', function($element, $timeout, $rootScope, $scope, inhouseApi, userDataService, ihLead, errors) {
 
       $scope.story_type = $rootScope.theWebsiteData.story_type;
 
@@ -77,11 +77,14 @@ angular.module('ihframework')
         }
         $scope.contact.message = pre + window[$scope.prefill];
       }
+
       $scope.submitContact = function() {
         var contact = $.extend({}, this.scope.contact);
         contact.form = this.scope.contactMessage;
         var api = this.scope.inhouseApi;
         $scope.contactSending = true;
+        delete $scope.contactSendFailed;
+        delete $scope.contactSent;
 
         //hoook in and append the lender to this contact form
         if($rootScope.theWebsiteData.lender && typeof $rootScope.theWebsiteData.lender == 'object' && $rootScope.theWebsiteData.lender.userId) {
@@ -96,9 +99,17 @@ angular.module('ihframework')
           contact.note['Contact Type'] = $scope.context;
         }
 
+
         api.newApi.postContactLead(contact).success((function($scope) {
           return function(response) {
             delete $scope.contactSending;
+
+            if(_.get(response, 'data.result') == 'failed') {
+              $scope.errors = errors.build(response);
+              $scope.contactSendFailed = true;
+              return;
+            }
+
             $scope.contactSent = true;
           };
         })($scope));
