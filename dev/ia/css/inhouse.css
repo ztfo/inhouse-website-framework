@@ -205,6 +205,22 @@ a:focus { text-decoration: none; color: inherit; }
 }
 /* list ends */
 
+/* testimonial fix */
+
+.ih-ui-testimonial-01 {
+  padding: 0 !important;
+  position: relative !important;
+  display: block !important;
+}
+
+.ih-ui-testimonial-01 span.path1,
+.ih-ui-testimonial-01 span.path2,
+.ih-ui-testimonial-01 span.path3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* social media hovers */
 .ih-social-icon { -webkit-transition: .3s; transition: .3s; }
 .facebook-hover:hover {
