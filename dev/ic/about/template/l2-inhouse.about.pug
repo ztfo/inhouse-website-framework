@@ -1,11 +1,11 @@
-section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}', ng-if="lender")
+section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}', ng-if="lender && !lender.meta.hideMyBranding")
   .about-row.container
     .row
       h1.ih-header.fc-02.text-center Meet Your Lender
     .row
       .col-lg-4.col-md-4.col-sm-12.col-xs-12
         div
-          img.img-circle.img-responsive.fullw(ng-if="lender.avatar", src="{{lender.avatar}}", alt="{{lender.name}}")
+          img.img-circle.img-responsive.fullw(ng-if="lender.avatar || lender.headshot", src="{{lender.avatar}}", alt="{{lender.name}}")
         .about-social.text-muted
           a.ih-social-icon(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
             i.fa.fa-envelope
