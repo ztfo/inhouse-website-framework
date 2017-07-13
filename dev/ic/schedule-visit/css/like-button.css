@@ -7,14 +7,6 @@
     text-decoration: none;
 }
 
-.ih-liked .fa-heart-o {
-    display: none !important;
-}
-
-.ih-liked .fa-heart {
-    display: inline !important;
-}
-
 .ih-mls-status-Closed .ih-like-btn {
     display: none;
 }
