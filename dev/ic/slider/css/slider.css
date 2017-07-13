@@ -21,6 +21,13 @@
     background-position: 50%;
 }
 
+.ih-slider .full-screen-image {
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
 .ih-greeting-picture img {
     width: 230px;
     margin-bottom: 25px;
