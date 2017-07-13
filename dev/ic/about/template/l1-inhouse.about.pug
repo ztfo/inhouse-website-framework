@@ -1,7 +1,7 @@
 section.p1.l1.ih-lender.ih-about.container-fluid.fp(ng-if="lender && !lender.meta.hideMyBranding")
   .container
     .row
-      h1.ih-header.fc-02.text-center Meet Your Lender
+      h1.ih-header.fc-02.text-center {{lender.meta.callToAction}}
     .ih-about-inner.row
       .col-lg-12.lender-info.text-center(ng-if="!lender.avatar && !lender.headshot")
         h2.ih.fc-01
