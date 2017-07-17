@@ -131,6 +131,16 @@
   font-size: 11px;
 }
 
+/* mini form contact */
+
+.mini-form .input-group {
+  width: 100%;
+}
+
+.mini-form button.btn.btn-primary.fullw {
+  margin-top: 20px;
+}
+
 
 /* responsive */
 

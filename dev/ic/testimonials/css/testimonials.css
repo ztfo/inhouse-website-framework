@@ -94,7 +94,9 @@
     border: 1px solid #eee;
     background-color: #fff;
     padding: 25px 40px !important;
-    min-height: 300px;
+    min-height: 350px;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .s2.ih-testimonials .ih-ratings {
@@ -143,6 +145,7 @@
 .s2.ih-testimonials .owl-nav>div:first-child {
     border-right: 1px solid #ddd;
 }
+
 
 
 /* s3 */

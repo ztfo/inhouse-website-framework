@@ -30,6 +30,20 @@
 .ih-nav .share-btns small {
   margin-right: 15px;
 }
+
+.nav-accounts .flex-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-accounts .btn {
+  padding: 5px 20px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
 /** AGENT STORIES **/
 
 
