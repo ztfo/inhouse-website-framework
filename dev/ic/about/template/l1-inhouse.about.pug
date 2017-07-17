@@ -8,6 +8,8 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp(ng-if="lender && !lender.met
           span(itemprop='name') {{lender.name}}
         h4.text-muted
           strong {{lender.brokerage}}
+        h4.text-muted(ng-if="lender.nmls || lender.meta.nmls")
+          strong NMLS# {{lender.meta.nmls || lender.nmls}}
         .text-justify.bio(ng-if="lender.bio1" itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
         .about-social.block
           a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')
@@ -37,6 +39,8 @@ section.p1.l1.ih-lender.ih-about.container-fluid.fp(ng-if="lender && !lender.met
           span(itemprop='name') {{lender.name}}
         h4.text-muted
           strong {{lender.brokerage}}
+        h4.text-muted(ng-if="lender.nmls || lender.meta.nmls")
+          strong NMLS# {{lender.meta.nmls || lender.nmls}}
         .text-justify.bio(ng-if="lender.bio1" itemprop="description" class="bio" ng-bind-html="lender.bio1 | to_trusted")
         .about-social.block
           a.ih-social-icon.bkc-02(href='mailto:{{lender.contactEmail}}', ng-if='lender.contactEmail !== undefined', target='_blank')

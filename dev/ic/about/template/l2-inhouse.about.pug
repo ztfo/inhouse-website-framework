@@ -24,6 +24,8 @@ section.p2.l2.ih-lender.ih-about.container-fluid.fp(class='{{classes}}', ng-if="
           h2.inlinblock.fc-01 {{lender.name}}
           h5.inlineblock.text-muted
             strong {{lender.brokerage}}
+          h5.text-muted(ng-if="lender.nmls || lender.meta.nmls")
+            strong NMLS# {{lender.meta.nmls || lender.nmls}}
           .bio.fs(ng-if='lender.bio1', itemprop='description', ng-bind-html="lender.bio1 | to_trusted")
         .contact-info.container-fluid
           .row
