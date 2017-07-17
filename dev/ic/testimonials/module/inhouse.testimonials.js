@@ -64,10 +64,14 @@ angular.module('ihframework')
         $scope.lender = $rootScope.theWebsiteData.lender;
       }
 
-      inhouseApi.newApi.getTestimonials().success(function(response) {
-        $scope.testimonials = response.data;
-        $scope.testimonialFilter();
-      });
+      if(testimonials = _.get($rootScope, 'theUserData.testimonials')) {
+        $scope.testimonials = testimonials;
+      } else {
+        inhouseApi.newApi.getTestimonials().success(function(response) {
+          $scope.testimonials = response.data;
+          $scope.testimonialFilter();
+        });
+      }
     },
     link: function(scope, element, attrs) {
     }
