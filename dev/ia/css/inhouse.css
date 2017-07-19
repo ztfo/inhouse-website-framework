@@ -368,3 +368,12 @@ a:focus { text-decoration: none; color: inherit; }
     margin: 5px 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+
+  .ih-scroll-up {
+    bottom: 15px;
+    right: 15px;
+  }
+
+}
