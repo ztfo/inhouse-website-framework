@@ -17,6 +17,9 @@ angular.module('ihframework')
       });
       $scope.site = $rootScope.theWebsiteData;
       $scope.agent = $rootScope.theUserData;
+      if($rootScope.theWebsiteData.lender !== undefined) {
+        $scope.lender = $rootScope.theWebsiteData.lender;
+      }
     }
   };
 });
