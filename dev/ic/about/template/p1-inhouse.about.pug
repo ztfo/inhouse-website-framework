@@ -3,9 +3,8 @@ section.p1.ih-about.container-fluid.fp
     .row
       h1.ih-header.fc-02.text-center Meet Your Agent
     .ih-about-inner.row
-      .col-lg-4.col-md-4.col-sm-12.col-xs-12.nopad-l(ng-if="agent.team[0].photo")
-        a.text-center.agent-pic-link(ng-if="agent.team[0].photo" href='{{agent.website}}')
-          img.img-circle.img-responsive.fullw(ng-src='{{agent.team[0].photo}}', alt='{{agent.team[0].name}}')
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12.nopad-l.agent-pic(ng-if="agent.team[0].photo")
+        a.text-center.agent-pic-link.iha.afull(ng-if="agent.team[0].photo", href='{{agent.website}}', style='background-image: url({{agent.team[0].photo}})', alt='{{agent.team[0].name}}')
       .ih-about-text.col-lg-8.col-md-8.col-sm-12.col-xs-12(ng-if="agent.team[0].photo")
         h2.ih.fc-01
           span(itemprop='name') {{agent.agentName}}
