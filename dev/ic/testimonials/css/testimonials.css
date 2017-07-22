@@ -362,6 +362,18 @@
   background-color: rgba(48,48,48,.9) !important;
 }
 
+.l2.p2.ih-testimonials>div::before {
+  height: 0;
+}
+
+.l2.p2.ih-testimonials .item {
+  background-color: #f8f8f8;
+}
+
+.l2.ih-testimonials .owl-nav>div {
+  background-color: #f8f8f8;
+  color: #333;
+}
 
 /* responsive */
 
