@@ -541,8 +541,8 @@
     .p2.ih-about .about-social {
         margin: 25px 0;
     }
-    /* l2 */
-    .l2.ih-lender .btn {
+    /* p1/l2/p2/l2 */
+    .p1.ih-about .btn, .p2.ih-about .btn {
         margin-bottom: 15px;
         width: 100%;
     }

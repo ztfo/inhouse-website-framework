@@ -32,7 +32,8 @@ section.p1.ih-about.container-fluid.fp
               br
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
               a.clean-link(href='tel:{{agent.contactPhone | tel}}') {{agent.contactPhone | tel}}
-        a.btn.btn-primary(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
+        a.btn.btn-default(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
+        a.btn.btn-primary(href='{{agent.searchPortal}}', ng-if='agent.searchPortal', target='_blank') Search More Homes
       .ih-about-text.col-lg-12.text-center(ng-if="!agent.team[0].photo")
         h2.ih.fc-01
           span(itemprop='name') {{agent.agentName}}
@@ -60,4 +61,5 @@ section.p1.ih-about.container-fluid.fp
               br
               span.ih-icon.ih-sm-icon.ih-icon-mobile-phone
               a.clean-link(href='tel:{{agent.contactPhone | tel}}') {{agent.contactPhone | tel}}
-        a.btn.btn-primary(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
+        a.btn.btn-default(href='{{agent.website}}', ng-if='agent.website', target='_blank') Visit My Website
+        a.btn.btn-primary(href='{{agent.searchPortal}}', ng-if='agent.searchPortal', target='_blank') Search More Homes
