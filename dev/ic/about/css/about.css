@@ -494,7 +494,12 @@
 
 @media screen and (min-width: 1921px) {}
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .p1.ih-about .agent-pic, .p2.ih-about .agent-pic {
+    height: 295px;
+    width: 295px !important;
+  }
+}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .p1.ih-about .agent-pic, .p2.ih-about .agent-pic {
