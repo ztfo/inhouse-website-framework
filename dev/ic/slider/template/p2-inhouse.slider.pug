@@ -1,10 +1,8 @@
 section.p2.ih-slider.container-fluid.fp.bkc-01
   .iha.afull.property-greeting.z3.fw
     .container.container-sm.text-center
-      .row(ng-if="agent.team[0].photo")
-        img.img-circle(
-          ng-src='{{agent.team[0].photo}}',
-          alt='{{agent.team[0].name}}')
+      div.agent-pic(ng-if="agent.team[0].photo")
+        div.agent-pic-link.iha.afull(style='background-image: url({{agent.team[0].photo}})', alt='{{agent.team[0].name}}')
       .text-uppercase
         h4 welcome to
         h1 {{listing.Details.address}}

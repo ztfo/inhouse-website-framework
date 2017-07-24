@@ -516,6 +516,23 @@
     border: 5px solid #fff;
 }
 
+.p2.ih-slider .agent-pic {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 3em;
+  border: 5px solid #fff;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.p2.ih-slider .agent-pic-link {
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .p2.ih-slider h4 {
     margin: 0;
     letter-spacing: 5px;
