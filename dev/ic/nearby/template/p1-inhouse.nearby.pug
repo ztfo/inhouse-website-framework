@@ -1,4 +1,4 @@
-section.p1.ih-nearby.container-fluid.fp
+section.p1.ih-nearby.container-fluid.fp(ng-if="sources[0].data.length || sources[1].data.length || sources[2].data.length")
     h1.ih-header.text-center.fc-02 Nearby Places
     div.row
       p.fs.text-center.col-md-6.col-md-offset-3
@@ -6,12 +6,12 @@ section.p1.ih-nearby.container-fluid.fp
     div.row.btn-row
       .container
         ul.nav.nav-pills.nav-justified.nearby-tabs
-          li(ng-repeat='source in sources')
+          li(ng-show="source.data.length", ng-repeat='source in sources')
             a.pointer(ng-click='selectTab($index)') {{source.name}}
     div.row
       div.container.flex-grid
         div.col-lg-6.col-md-6.col-sm-6.col-xs-12.nearby-list
-          .nearby-list-panel(ng-repeat='source in sources', ng-if='showTab == source.source')
+          .nearby-list-panel(ng-show="source.data.length", ng-repeat='source in sources', ng-if='showTab == source.source')
             h3.fc-01 {{source.name}}
             .nearby-place.clearfix(ng-repeat='place in source.data')
               .pull-left.round-icon.bkc-04.fw
