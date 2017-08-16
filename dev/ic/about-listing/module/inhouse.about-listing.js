@@ -14,16 +14,14 @@ angular.module('ihframework')
 
       $scope.shareUrl = window.location.href;
 
-      $scope.$watch('listing.publicRemarks', function(newVal, oldVal) {
-        if(oldVal == undefined) { //first time running this
-          if(typeof $scope.data == 'object' && $scope.data.publicRemarks !== undefined && typeof $scope.listing == 'object') {
-            $scope.listing.publicRemarks = $scope.data.publicRemarks;
-          }
-        } else {
-          if(typeof $scope.data == 'object') {
-            $scope.data.publicRemarks = newVal;
-          }
+      $scope.$watch('data.publicRemarks', function(newVal) {
+        if(newVal != _.get($scope, 'listing.Details.publicRemarks')) {
+          _.set($scope, 'listing.Details.publicRemarks', newVal);
         }
+      });
+
+      $scope.$watch('listing.Details.publicRemarks', function(newVal) {
+        _.set($scope, 'data.publicRemarks', _.get($scope, 'listing.Details.publicRemarks'));
       });
 
       $scope.$watch('config', function(newVal) {
