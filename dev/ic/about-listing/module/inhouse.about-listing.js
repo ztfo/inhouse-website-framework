@@ -15,7 +15,7 @@ angular.module('ihframework')
       $scope.shareUrl = window.location.href;
 
       $scope.$watch('data.publicRemarks', function(newVal) {
-        if(newVal != _.get($scope, 'listing.Details.publicRemarks')) {
+        if(newVal != _.get($scope, 'listing.Details.publicRemarks' && newVal)) {
           _.set($scope, 'listing.Details.publicRemarks', newVal);
         }
       });
