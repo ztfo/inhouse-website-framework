@@ -16,15 +16,15 @@ section.p2.ih-testimonials.ih.z0.fp.fw(
         span.ih-ui.ih-ui-zillow
     .footer.bt70
       .container.legal-disclaimers.small
-        | {{listing.Details.disclaimer | limitTo: 355}} {{user.meta.disclaimer1 | limitTo: 355}}
-        span(ng-if="lender") &nbsp;|&nbsp;
-        |{{lender.disclaimer | limitTo: 355}}
+        | {{listing.Details.disclaimer || listing.disclaimer}} {{user.meta.disclaimer1 || user.meta.disclaimer}}
+        span &nbsp;|&nbsp;
+        | {{lender.disclaimer || lender.disclaimer1 || lender.meta.disclaimer || lender.meta.disclaimer1}}
         hr
       .container
         .col-lg-8.col-md-8.col-sm-8.col-xs-12.text-center-xs
           span.ih-ui-fairhousing
           span.ih-ui-realtor
-          span.icon-equal-lender(ng-if="lender")
+          span.icon-equal-lender
           small © {{year}} - InHouse Marketing, Inc. | {{agent.agentName}}
         .col-lg-4.col-md-4.col-sm-4.col-xs-12.text-center-xs.text-right
           .pull-right

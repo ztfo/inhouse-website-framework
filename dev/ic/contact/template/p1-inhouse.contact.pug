@@ -34,9 +34,9 @@ section.p1.ih-contact.ih.fw.fp.z0(class='{{classes}}', ng-style="{'background-im
         ih-contact(configname='fp1')
     .container-fluid.contact-footer.bt80.fw.text-uppercase
       .container.legal-disclaimers.small
-        | {{listing.Details.disclaimer | limitTo: 355}} {{user.meta.disclaimer1 | limitTo: 355}}&nbsp;
+        | {{listing.Details.disclaimer || listing.disclaimer}} {{user.meta.disclaimer1 || user.meta.disclaimer}}&nbsp;
         span(ng-if="lender") |&nbsp;
-        | {{lender.disclaimer | limitTo: 355}}
+        | {{lender.disclaimer || lender.disclaimer1 || lender.meta.disclaimer || lender.meta.disclaimer1}}
         hr
       .container
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
